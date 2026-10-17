@@ -1,12 +1,14 @@
 {
-  "status": "FULL_ROM_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "status": "INSTALLED_BOOTED_READBACK_PASSED_OWNER_CHECKS_PENDING",
   "job": "dependency-status-rom-build-01",
   "build_exit": 0,
   "audit_worker": "complete",
   "incremental": "1792261801",
   "global_selinux": "Permissive",
-  "phone_installed": false,
+  "phone_installed": true,
   "enforcing_trial": false,
   "own_resources": "CPU6/7 nice10 ionice2/7 Ninja2 GOMAXPROCS2",
-  "other_tasks_changed": false
+  "other_tasks_changed": false,
+  "flash_and_first_normal_reboot_authorization_consumed": true,
+  "owner_checks_pending": true
 }

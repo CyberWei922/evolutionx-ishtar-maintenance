@@ -1,10 +1,10 @@
 # 当前维护状态
 
-2026-10-18，Xiaomi 13 Ultra / ishtar，Evolution X Android 16 / SDK36，当前已安装版本1792257806，Unofficial。上一验收源码基线为1792226532。
+2026-10-18，Xiaomi 13 Ultra / ishtar，Evolution X Android 16 / SDK36，当前已安装版本1792261801，Unofficial。上一验收源码基线为1792226532。
 
 ## 已完成并保留
 
-最新工作增量见 `plans/selinux-dependency-status-20261018/`，活动59项清单以该plan为准。五路径公共库传递依赖、MIUI公开sensor属性只读及Mtd精确状态/标签数据库修复已合入，局部编译和独立核验通过，策略544dd102…；累计完整候选1792261801已28:01/exit0，实际34分区及保留数据升级静态检查通过，正式归档完成，尚未安装。已安装仍1792257806，其34分区静态及38文件/21分区范围运行读回已通过。机主其他请求项报告正常，相机间歇变暗未复现，最新表示当前又无明显问题、先按现状使用，流畅度留后续优化。没有改动相机性能参数。secure XDSP直连仍禁止，实际HAL回退和Enforcing功能待实测；Mtd DAC/消费者、原9静态宽松域与KSU例外仍待处理。
+最新工作增量见 `plans/selinux-dependency-status-20261018/`，活动59项清单以该plan为准。五路径公共库传递依赖、MIUI公开sensor属性只读及Mtd精确状态/标签数据库修复已合入，策略544dd102…；完整1792261801经过实际34分区和静态升级检查，并按机主新授权保留数据刷入、正常启动，39文件/21分区范围及新库/5项Mtd属性标签读回通过。六默认相机解析、DSP进程/注册、FBE/空模块/快照none和数据基线保持，112次命令、0重试。机主本版相机/有声录像/指纹和数据验收待答。仍Permissive，原9静态宽松域+KSU保持，实际DSP回退和Enforcing未验证；Mtd DAC及新增attestation.status精确属性写拒绝待下一批。
 
 - MIUI camera03原生集成；机主确认日常拍照/录像正常。Aperture录像无声为旧UID录音ignore，已恢复foreground并获新录像有声确认。
 - Recovery触控修复：补载配套PM8008供电驱动，使用ROM配套触控固件。验收镜像SHA c39e0236…；当前固定配套内核，换内核需重新核对。
@@ -55,3 +55,10 @@
 ## 公共库依赖与Mtd精确状态（最新工作入口）
 
 机主最新表示相机又无明显问题，先保持现状、性能后续优化，继续SELinux。plans/selinux-dependency-status-20261018五路径增量已应用、组件02:24/exit0及verified01首轮通过：22路径、59源码、属性精确匹配、权限和xperm边界及原9宽松域保持。组件116项本地交付校验通过，未上传策略二进制。CPU6/7/nice10/I/O7/Ninja2的整包任务dependency-status-rom-build-01已28:01/exit0，audit-worker/audit-status均complete，34实际分区、源码、策略/新库inode标签、原有修复及静态保留数据升级检查通过。候选1792261801，4,545,440,201 bytes/SHA2bff039e…；正式ROM在Ubuntu同名delivery，Mac为41项薄交接。完整OTA签名未独立密码学核验；现场手机预检查和运行验收待新授权后执行。所有本轮worker结束，未调整其他任务，本轮无新手机采集、刷写、重启或Enforcing。
+
+
+## 1792261801运行结果（最新）
+
+机主回复“直接开刷吧”，新flash01完成74动作/73完整下载，wire SHA5078adfb…核验通过；03:25:30正常重启，postboot01 success，39文件/21分区范围全匹配。加载策略6b156e09…/2,151,534 bytes，原9静态宽松域+ksu共10保持。初始快照未见MIUI相机运行，不能据此声称本轮实际相机域/算法回退验收通过；机主新功能测试待答。启动logcat317 AVC/18域、audit_lost1，非全量/完成百分比；新RKP类型本窗口未见拒绝，不是全部消费者验收。Mtd仍有DAC及persist.vendor.sys.attestation.status对vendor_system_prop的set拒绝，后续精确核查。
+
+本次刷入及首次正常重启授权已使用，没有额外重启或Enforcing。有限worker全部结束，无手机常驻采集/模块。Mac/Ubuntu22项运行证据和归档摘要匹配，Git仅存筛选摘要，不含ROM/原始日志/策略二进制。原回退包与新旧暂存待机主验收后按保留两版要求处理，本轮尚未清理。

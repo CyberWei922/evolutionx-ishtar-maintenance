@@ -1,0 +1,69 @@
+{
+  "status": "INSTALLED_BOOTED_READBACK_PASSED_OWNER_CHECKS_PENDING",
+  "incremental": "1792261801",
+  "mode": "Permissive",
+  "native_files_verified": 39,
+  "partition_ranges_verified": 21,
+  "data_baseline_matches": {
+    "media_directory_stat": true,
+    "user_xml_owner_mode": true,
+    "third_party_package_count": true
+  },
+  "disk_policy_sha256": "544dd102b0cfb1dc51db49d0091dfc380dfc303eaf60e656ac21846ea3699302",
+  "loaded_policy": {
+    "bytes": 2151534,
+    "sha256": "6b156e09cf7e353f5549b2ab29dbfa0aa29d63c78777445fd0c27ec7515c0208"
+  },
+  "loaded_permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "ksu",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "library_label_verified": true,
+  "rkp_property_label_verified": true,
+  "all_six_camera_default_routes_match": true,
+  "miui_dedicated_domain_seen": false,
+  "camera_audio_ignore_absent": true,
+  "dsp_service_process_seen": true,
+  "dsp_hidl_registered": true,
+  "runtime_dsp_hal_fallback_proven": false,
+  "owner_checks_pending": true,
+  "enforcing_trial_performed": false,
+  "normal_reboot_count": 1,
+  "wire_audit": {
+    "state": "write-transcript-verified",
+    "at": "2026-10-18T03:25:15.659772+08:00",
+    "completed_operations": 74,
+    "super_chunks": 59,
+    "boot_writes": 14,
+    "slot": "a",
+    "userdata_metadata_operations": 0,
+    "firmware_writes": 0,
+    "all_download_sizes_match": true,
+    "data_complete_count": 73,
+    "wire_sha256": "5078adfb27156dc1d0300693f4973b9f8f1e283f1376d49048c01fc369ed396b",
+    "reboot_acknowledged": false
+  },
+  "raw_logs_or_policy_binary_in_git": false,
+  "command_attempts": 112,
+  "retries": 0,
+  "boot_security_observation": {
+    "logcat_avc_lines": 317,
+    "domains": 18,
+    "audit_lost_max": 1,
+    "miui_process_seen_in_capture": false,
+    "new_rkp_type_denials_observed": 0,
+    "mtd_remaining": [
+      "dac_read_search",
+      "persist.vendor.sys.attestation.status set on vendor_system_prop"
+    ],
+    "limitations": "Startup snapshot; MIUI camera was not running in the process snapshot. Audit losses exist. Do not compare line counts as repair percentage or infer complete camera/consumer validation."
+  }
+}

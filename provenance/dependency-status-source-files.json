@@ -1,5 +1,5 @@
 {
-  "status": "FULL_ROM_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "status": "INSTALLED_BOOTED_READBACK_PASSED_OWNER_CHECKS_PENDING",
   "baseline_incremental": "1792257806",
   "files": [
     {
@@ -43,5 +43,6 @@
       "sha256": "2996ebec235a577afc3552b464b1eef73f2f8e10b2a55685088604e7b13523d6"
     }
   ],
-  "candidate_incremental": "1792261801"
+  "candidate_incremental": "1792261801",
+  "phone_installed": true
 }
