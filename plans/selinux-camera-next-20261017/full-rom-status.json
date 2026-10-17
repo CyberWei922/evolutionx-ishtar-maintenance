@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-18",
+  "status": "FULL_PERMISSIVE_ROM_BUILT_STATICALLY_VERIFIED",
+  "incremental": "1792252694",
+  "rom": {
+    "file": "EvolutionX-16.0-20261017-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545399102,
+    "sha256": "999dd46495f1d2a99b748ee757f1a9609892e53d2d25598688b385984d82075b"
+  },
+  "mode": "Permissive",
+  "build_exit": 0,
+  "build_duration": "22:05",
+  "actual_payload_partitions_verified": 34,
+  "source_files_verified": 59,
+  "policy_sha256": "76314da3fd7dac6fadda20c342110688346869c299d6d5dae2e0b17b7244b232",
+  "packaged_camera_default_files": [
+    {
+      "path": "system_ext/app/IshtarCameraDefaults/IshtarCameraDefaults.apk",
+      "sha256": "9af56163b24a283e8e8a5ea4af5625531f0d61ae45fab469da705f84c079069f",
+      "bytes": 16798
+    },
+    {
+      "path": "system_ext/etc/preferred-apps/ishtar-camera.xml",
+      "sha256": "42df062ee033576b4735d2bceb170c0897c711084654fe94a2cebe1e05a0579a",
+      "bytes": 1637
+    },
+    {
+      "path": "product/app/Aperture/Aperture.apk",
+      "sha256": "80b2ff6d86db97e9572b793812667964f3fde48dc01eb533b49ed53bdf2eb5b6",
+      "bytes": 8280587
+    }
+  ],
+  "existing_camera_brightness_recovery_surfaceflinger_payloads_preserved": true,
+  "static_data_preserving_upgrade_precheck": {
+    "status": "STATIC_DATA_PRESERVING_UPGRADE_PRECHECK_PASSED",
+    "installed_archive_baseline_incremental": "1792246397",
+    "candidate_incremental": "1792252694",
+    "candidate_timestamp_forward": true,
+    "sdk": "36",
+    "security_patch": "2026-10-01",
+    "no_wipe_or_downgrade_metadata": true,
+    "no_userdata_or_metadata_payload": true,
+    "ota_certificate_bytes_match": true,
+    "ota_certificate_sha256": "a4384ba815b9499a5ce349b4e33c1755278873fe2eac150a068823f526e6dbde",
+    "actual_payload_vendor_fstab_sha256": "b488efdf1a3923c33b3b4d7ca62db1149975e6aa6da8b71dabb6343c534ea0aa",
+    "fstab_matches_previously_preserved_encryption_baseline": true,
+    "whole_ota_signature_independently_verified": false,
+    "phone_accessed": false,
+    "phone_flash_authorized": false,
+    "live_phone_preflight_still_required": true,
+    "runtime_verified": false
+  },
+  "phone_installed": false,
+  "runtime_verified": false,
+  "enforcing_ready": false,
+  "remaining": [
+    "New MIUI app domain and six default routes: runtime validation",
+    "Mtd persist/DAC and actual status-property consumers",
+    "MIUI ODM/MiSys and HAL optional-versus-required denials",
+    "Original nine static permissive domains and KernelSU engineering exception",
+    "Rollback-protected short Enforcing trial, then functional and cold-boot validation"
+  ],
+  "whole_ota_signature_independently_verified": false,
+  "other_processes_stopped": false,
+  "resource_policy": "Own build initially CPUs 6/7, later only own descendants CPUs 4-7 after idle measurement; nice10/io7/Ninja2 preserved."
+}

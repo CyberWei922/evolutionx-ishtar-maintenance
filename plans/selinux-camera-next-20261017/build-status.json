@@ -1,5 +1,5 @@
 {
-  "status": "NEXT_POLICY_AND_HELPER_COMPILED_VERIFIED",
+  "status": "FULL_PERMISSIVE_ROM_BUILT_STATICALLY_VERIFIED",
   "policy_bytes": 1604045,
   "policy_sha256": "76314da3fd7dac6fadda20c342110688346869c299d6d5dae2e0b17b7244b232",
   "helper_bytes": 16798,
@@ -108,7 +108,7 @@
   "phone_rebooted": false,
   "enforcing_switched": false,
   "runtime_default_and_camera_tests_pending": true,
-  "full_rom_not_built": true,
+  "full_rom_not_built": false,
   "module_build_exit": 0,
   "module_build_duration": "07:30",
   "source_changes": 14,
@@ -124,6 +124,35 @@
   },
   "host_behavior_test_output": "PASS: 11 migration checks, three route-contract checks and six unique MIUI routes",
   "independent_patch_apply_passed": true,
-  "full_new_rom_created": false,
-  "other_processes_stopped": false
+  "full_new_rom_created": true,
+  "other_processes_stopped": false,
+  "full_rom_incremental": "1792252694",
+  "full_rom": {
+    "file": "EvolutionX-16.0-20261017-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545399102,
+    "sha256": "999dd46495f1d2a99b748ee757f1a9609892e53d2d25598688b385984d82075b"
+  },
+  "full_rom_build_exit": 0,
+  "full_rom_build_duration": "22:05",
+  "full_rom_actual_payload_partitions": 34,
+  "full_rom_protected_sources": 59,
+  "actual_packaged_default_files": [
+    {
+      "path": "system_ext/app/IshtarCameraDefaults/IshtarCameraDefaults.apk",
+      "sha256": "9af56163b24a283e8e8a5ea4af5625531f0d61ae45fab469da705f84c079069f",
+      "bytes": 16798
+    },
+    {
+      "path": "system_ext/etc/preferred-apps/ishtar-camera.xml",
+      "sha256": "42df062ee033576b4735d2bceb170c0897c711084654fe94a2cebe1e05a0579a",
+      "bytes": 1637
+    },
+    {
+      "path": "product/app/Aperture/Aperture.apk",
+      "sha256": "80b2ff6d86db97e9572b793812667964f3fde48dc01eb533b49ed53bdf2eb5b6",
+      "bytes": 8280587
+    }
+  ],
+  "static_upgrade_precheck": "STATIC_DATA_PRESERVING_UPGRADE_PRECHECK_PASSED",
+  "enforcing_ready": false
 }
