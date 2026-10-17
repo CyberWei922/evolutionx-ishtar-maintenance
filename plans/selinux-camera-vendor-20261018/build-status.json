@@ -1,16 +1,23 @@
 {
-  "state": "COMPONENT_POLICY_VERIFIED_FULL_ROM_BUILDING",
-  "installed_incremental": "1792252694",
+  "state": "INSTALLED_BOOTED_READBACK_PASSED_OWNER_CHECKS_PENDING",
+  "installed_incremental": "1792257806",
   "source_files": 59,
   "component_policy_sha256": "88ff29aab9c50ef5c7e765fcec01b09413d647894dcab9981cb6c39818706f5b",
   "exact_library_label_cases": 14,
   "qspm_and_dsp_hal_clients": true,
   "secure_xdsp_direct_access_granted": false,
-  "phone_accessed": false,
+  "phone_accessed": true,
   "enforcing_switched": false,
   "unrelated_processes_changed": false,
   "own_build_cpus": "4-7 after >95% idle sample",
   "nice": 10,
   "io_priority": 7,
-  "ninja_jobs": 2
+  "ninja_jobs": 2,
+  "candidate_incremental": "1792257806",
+  "candidate_ota_sha256": "71d4e05fa56a116a973900fbc778709532543f68f7bf597ebc85f2883b5a9ceb",
+  "candidate_ota_bytes": 4545427001,
+  "flash_authorized": true,
+  "normal_reboot_authorized": true,
+  "owner_checks_pending": true,
+  "normal_reboot_completed": true
 }

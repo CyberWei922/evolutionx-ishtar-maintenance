@@ -1,10 +1,10 @@
 # 当前维护状态
 
-2026-10-18，Xiaomi 13 Ultra / ishtar，Evolution X Android 16 / SDK36，当前已安装版本1792252694，Unofficial。上一验收源码基线为1792226532。
+2026-10-18，Xiaomi 13 Ultra / ishtar，Evolution X Android 16 / SDK36，当前已安装版本1792257806，Unofficial。上一验收源码基线为1792226532。
 
 ## 已完成并保留
 
-最新工作增量见 `plans/selinux-camera-vendor-20261018/`。三份既有公共算法库/HTP依赖精确标签和MIUI QSPM/DSP HAL客户端已局部编译核验，策略88ff29aa…；新的累计完整ROM构建中，未安装。活动59项清单以该plan为准。secure XDSP直连仍禁止，实际HAL回退和Enforcing相机功能待实测；原9静态宽松域与KSU例外未完成最终验收。
+最新工作增量见 `plans/selinux-camera-vendor-20261018/`。三份既有公共算法库/HTP依赖精确标签和MIUI QSPM/DSP HAL客户端已局部编译核验，策略88ff29aa…；累计完整ROM1792257806已编译和34分区实际镜像核验通过，已按机主新授权保留数据刷入、正常启动，38文件/21分区范围及新标签读回通过；本候选机主功能验收待答。活动59项清单以该plan为准。secure XDSP直连仍禁止，实际HAL回退和Enforcing相机功能待实测；原9静态宽松域与KSU例外未完成最终验收。
 
 - MIUI camera03原生集成；机主确认日常拍照/录像正常。Aperture录像无声为旧UID录音ignore，已恢复foreground并获新录像有声确认。
 - Recovery触控修复：补载配套PM8008供电驱动，使用ROM配套触控固件。验收镜像SHA c39e0236…；当前固定配套内核，换内核需重新核对。
@@ -39,3 +39,11 @@
 新完整ROM已保留数据刷入并启动，32文件/21分区范围和数据基线匹配，六类相机解析到MIUI，实际新域进程正确。机主回复“正常 都是MIUI相机 声音指纹都正常”，仅记录所问数据/默认入口/拍摄收音/指纹正常。当前Permissive，9静态宽松域+ksu保持，没有Enforcing试验。
 
 活动源码已继续单文件补app_api_service/radio_service find，见plans/selinux-framework-api-20261018/及其新59项清单；该增量未打包/安装。计时器25秒mark-only脱离ADB存活和到期演练通过，未验证Enforcing下实际还原。后续先补必要功能阻点，再安排单独获授权的短时Enforcing及冷启动验证。
+
+## 1792257806累计包
+
+完整ROM构建exit0、实际34分区/59源码及DSP产品契约检查通过。ROM4,545,427,001 bytes，SHA71d4e05f…；Mac40文件薄交接不含ROM。机主授权保留数据刷入和首次正常重启，不含Enforcing试验；现场1792252694/A槽/FBE/空模块/快照none和40固件范围通过，新74动作runner不写固件或数据分区。此时仅进入新flash01执行，运行结果需另记，不复用旧runner。
+
+## 1792257806运行结果
+
+本次74动作/73完整下载及wire核验通过，已正常重启；38文件/21范围SHA、数据基线、六默认相机解析、MIUI专用域及DSP进程/HIDL注册通过。加载策略cacf2720…，原9静态宽松域+ksu保持、全局Permissive。机主测试尚未答复；实际DSP HAL回退与Enforcing未验证。有限worker已结束，新库依赖libc++_shared和属性/MiSys、Mtd及HAL枚举等继续待办。新ROM及前两已安装ROM暂保留，等待新验收后按双版本规则清理。

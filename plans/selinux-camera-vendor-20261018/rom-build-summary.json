@@ -1,0 +1,18 @@
+{
+  "status": "FULL_ROM_STATICALLY_VERIFIED",
+  "incremental": "1792257806",
+  "bytes": 4545427001,
+  "sha256": "71d4e05fa56a116a973900fbc778709532543f68f7bf597ebc85f2883b5a9ceb",
+  "payload_partitions_verified": 34,
+  "source_files_verified": 59,
+  "global_selinux": "Permissive",
+  "original_static_permissive_domains_unchanged": 9,
+  "dsp_product_contract_verified": true,
+  "whole_ota_signature_independently_verified": false,
+  "owner_authorization": "preserve-data flash and first normal reboot; no Enforcing trial",
+  "runtime_validation_pending": false,
+  "binary_location": "Ubuntu delivery/ishtar-camera-dsp-permissive-candidate-20261018-01",
+  "mac_thin_handoff_files": 40,
+  "runtime_readbacks_passed": true,
+  "owner_checks_pending": true
+}

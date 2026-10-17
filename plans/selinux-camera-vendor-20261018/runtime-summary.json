@@ -1,0 +1,49 @@
+{
+  "status": "INSTALLED_BOOTED_READBACK_PASSED_OWNER_CHECKS_PENDING",
+  "incremental": "1792257806",
+  "mode": "Permissive",
+  "native_file_hashes": 38,
+  "partition_range_hashes": 21,
+  "all_live_labels_match": true,
+  "data_baseline_matches": {
+    "media_directory_stat": true,
+    "user_xml_owner_mode": true,
+    "third_party_package_count": true
+  },
+  "loaded_policy": {
+    "bytes": 2151384,
+    "sha256": "cacf27202ce56d4696e65e837d332c021944d1baacbd1992e484afb85dd879d5"
+  },
+  "static_policy_sha256": "88ff29aab9c50ef5c7e765fcec01b09413d647894dcab9981cb6c39818706f5b",
+  "static_permissive_domains": 9,
+  "loaded_permissive_domains_including_ksu": 10,
+  "all_six_miui_defaults_match": true,
+  "miui_app_domain_seen": true,
+  "dsp_service_running": true,
+  "dsp_hidl_registered": true,
+  "actual_dsp_fallback_proven": false,
+  "command_attempts": 109,
+  "command_retries": 0,
+  "enforcing_trial": false,
+  "owner_checks_pending": true,
+  "avc_snapshot": {
+    "kernel-avc": {
+      "retained_avc_lines_including_possible_duplicates": 32,
+      "source_domains": 13,
+      "audit_lost_max": 837
+    },
+    "logcat-avc": {
+      "retained_avc_lines_including_possible_duplicates": 610,
+      "source_domains": 20,
+      "audit_lost_max": 837
+    }
+  },
+  "remaining_observed": [
+    "vendor libc++_shared.so dependency exact boundary",
+    "vendor camera property reads and missing MiSys service lookup",
+    "Mtd DAC/file_contexts and persist.vendor.sys.rkp.status",
+    "camera HAL property enumeration and other domains",
+    "original static permissive domains and KSU exception"
+  ],
+  "do_not_batch_allow_all_denials": true
+}
