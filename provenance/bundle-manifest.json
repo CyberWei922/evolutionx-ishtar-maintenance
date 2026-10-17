@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 7747,
-      "sha256": "e33e5725e9bde41b585c3b4bdafcee87c872b5ef2f64c59423cf53503998e715"
+      "bytes": 7882,
+      "sha256": "0755321e88f2693d193b830412eec691d1d70aa34e5de432f92ccfe61176f0df"
     },
     "LICENSE.md": {
       "bytes": 1395,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 8667,
-      "sha256": "d0d4c1d9dcb105bd23476a923846f9e99d9bcd90fb2eb3145d121e9977c26646"
+      "bytes": 9032,
+      "sha256": "9ac75ed5ac9c5f78463555f129377917e9d114bb5b66d4a8d759f55ff348e953"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -402,12 +402,12 @@
       "sha256": "6e4dda1269867b22cc053a5a07cdcd1209d978852ab85d8efd5b1dbf97c30f84"
     },
     "plans/selinux-dependency-status-20261018/README.md": {
-      "bytes": 3066,
-      "sha256": "ec526c80d44d803755dfb29044fcdb8f898d02c92e0fb537859bd50d3a32ab14"
+      "bytes": 3909,
+      "sha256": "4de20cee93053e0ab7f6fe376b73de5e9f43a04fe26d749ba56dbb22ec933f13"
     },
     "plans/selinux-dependency-status-20261018/build-status.json": {
-      "bytes": 417,
-      "sha256": "7ba706c8d3bd3903b2fe98b9fd1819c08a9786dd8663bf1fb0349e2122fbba6c"
+      "bytes": 371,
+      "sha256": "e2660590d782393569c18b5e5afce712512919061eec6a8ee256de01c215414c"
     },
     "plans/selinux-dependency-status-20261018/camera-runtime-library-label.fragment": {
       "bytes": 209,
@@ -421,9 +421,17 @@
       "bytes": 2061,
       "sha256": "29c09f96a8bca78cfa7ca6039d115120cb8fb38dca15bd8b73648d704e1d7273"
     },
+    "plans/selinux-dependency-status-20261018/data-preserving-preflight.json": {
+      "bytes": 838,
+      "sha256": "0e40289ae14c4c902c84938d2e72d3559668bccdc5f80894684533f470fcc65e"
+    },
     "plans/selinux-dependency-status-20261018/original-permissive-origins.json": {
       "bytes": 4154,
       "sha256": "fd3e2989f2b58b5cc42f151bd1c366eb2bcae6de2627336200b2a77139d1b72e"
+    },
+    "plans/selinux-dependency-status-20261018/rom-build-summary.json": {
+      "bytes": 1274,
+      "sha256": "cec722a44b81f927a7fb21c2a8ba3164a3164d26023c8e9050eb4dc0cd0bc97b"
     },
     "plans/selinux-dependency-status-20261018/source-baselines.json": {
       "bytes": 1932,
@@ -582,8 +590,8 @@
       "sha256": "f3ef58f0e3f256c15b3fc76bfa52ccc69174dd99662502828493ac90ad58099c"
     },
     "provenance/dependency-status-source-files.json": {
-      "bytes": 2597,
-      "sha256": "8784f4ca1644235c1b04b916097ba79db99f28c0687479c12401a53b953b556f"
+      "bytes": 2630,
+      "sha256": "811982e20cf5f142775468ee4e1c22f5f60ebae118c0ce4fce2f19d7df4c370d"
     },
     "provenance/excluded-camera-recipes.json": {
       "bytes": 1236,

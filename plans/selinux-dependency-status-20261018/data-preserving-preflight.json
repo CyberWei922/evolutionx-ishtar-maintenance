@@ -1,0 +1,19 @@
+{
+  "status": "STATIC_DATA_PRESERVING_UPGRADE_PRECHECK_PASSED",
+  "installed_archive_baseline_incremental": "1792257806",
+  "candidate_incremental": "1792261801",
+  "candidate_timestamp_forward": true,
+  "sdk": "36",
+  "security_patch": "2026-10-01",
+  "no_wipe_or_downgrade_metadata": true,
+  "no_userdata_or_metadata_payload": true,
+  "ota_certificate_bytes_match": true,
+  "ota_certificate_sha256": "a4384ba815b9499a5ce349b4e33c1755278873fe2eac150a068823f526e6dbde",
+  "actual_payload_vendor_fstab_sha256": "b488efdf1a3923c33b3b4d7ca62db1149975e6aa6da8b71dabb6343c534ea0aa",
+  "fstab_matches_previously_preserved_encryption_baseline": true,
+  "whole_ota_signature_independently_verified": false,
+  "phone_accessed": false,
+  "phone_flash_authorized": false,
+  "live_phone_preflight_still_required": true,
+  "runtime_verified": false
+}
