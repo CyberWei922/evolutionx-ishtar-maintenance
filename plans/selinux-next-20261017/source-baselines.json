@@ -3,7 +3,7 @@
   "ubuntu_source_applied": true,
   "policy_compiled_verified": true,
   "rom_build": "compiled_and_statically_verified",
-  "phone_installed": false,
+  "phone_installed": true,
   "enforcing_ready": false,
   "files": [
     {
@@ -73,5 +73,8 @@
     }
   ],
   "candidate_incremental": "1792246397",
-  "candidate_rom_sha256": "9c1f4c0212aa7fd6613ad8e7a7123c94391b7e1a6c20a4a050d5d19532d84440"
+  "candidate_rom_sha256": "9c1f4c0212aa7fd6613ad8e7a7123c94391b7e1a6c20a4a050d5d19532d84440",
+  "normal_boot_observed": true,
+  "runtime_file_label_and_partition_verification": true,
+  "runtime_feature_acceptance_complete": false
 }

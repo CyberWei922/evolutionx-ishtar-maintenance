@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 2669,
-      "sha256": "77e158b3fb1a8d1fd28b6453785885f4b6687e14628d78727697034e2bf25853"
+      "bytes": 2981,
+      "sha256": "6e7b47f105568443bbfd64d71bae2db069c246cc274585ae05f32b6886445d37"
     },
     "LICENSE.md": {
       "bytes": 1395,
@@ -18,8 +18,8 @@
       "sha256": "ae317f17a0c39da1ed19fc39bfd7eabf1e27067d8f8394e634ff48cd7909e3f1"
     },
     "README.md": {
-      "bytes": 2765,
-      "sha256": "bd15966ef81e54300b1a7f0b24fa87087fc7c54b1b0ababdfa43da8d4f33332a"
+      "bytes": 2915,
+      "sha256": "b8fb572fc83c8f5e2593ff8ff781391292231b56136c66c782a97b4cde007b5e"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 2807,
-      "sha256": "3e8b3064826d96758c4bec8553851e29a4f16319cdfe014427cd63347c4a5010"
+      "bytes": 3461,
+      "sha256": "176defdfb2a0a5b0a5a987cd8c06778851d99e6ae50be227958db2d6988329d8"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -214,8 +214,8 @@
       "sha256": "7ceb5d64ea7cae6a59a1c0f5d445177d3f3877e1bb19ee7ac4f25fd2afb647fb"
     },
     "plans/selinux-next-20261017/README.md": {
-      "bytes": 2515,
-      "sha256": "16634b8a80cdba194dcb53d0417247326e3528b4d59e3c6f6451a2c131a926ca"
+      "bytes": 2913,
+      "sha256": "3975d09c6e94efe9e169141765913176942cc480f4d1d19d5a10c60fbb662bdb"
     },
     "plans/selinux-next-20261017/candidate.patch": {
       "bytes": 5184,
@@ -226,8 +226,8 @@
       "sha256": "abc32d3505f8bc0ec3af4e5f3b7ef889fed893e47b91a14aa64bdc4d3e327e24"
     },
     "plans/selinux-next-20261017/source-baselines.json": {
-      "bytes": 3488,
-      "sha256": "bf5d5b2de9003db0fbe5f283560ddee895d979d9394ac51643773b6e67515286"
+      "bytes": 3624,
+      "sha256": "8d3c385171c7ded35ed5dda0080c8f3575e2d5642f62138db6e4f8554a40e8d4"
     },
     "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/file.te": {
       "bytes": 170,
@@ -286,8 +286,8 @@
       "sha256": "9408363c9cb9854dc2490a4c88069e56919409a9b4e1518921bc56240c7f2672"
     },
     "plans/selinux-phase3/README.md": {
-      "bytes": 3864,
-      "sha256": "d357a5f18803a31b4343c9fc93b3d0791e8268773133e9fe417cb8b2821e6f0d"
+      "bytes": 3875,
+      "sha256": "055a8da997c4a887340d23ddd3786ea728cbe3987457e7c403677e2515e4149f"
     },
     "plans/selinux-phase3/candidate.patch": {
       "bytes": 2710,
@@ -362,8 +362,8 @@
       "sha256": "aaf448fc0c3185f75ad3307885266cd8f0ae971625921374b38fbf1b48a1a5a8"
     },
     "releases/ishtar-1792246397-candidate.json": {
-      "bytes": 1338,
-      "sha256": "d9ad4a8e156d3fc0e697c718bcae11d8bf9f602e6ad54a609229a6a09a5e4400"
+      "bytes": 1796,
+      "sha256": "592d50fff6daa66adacc19770b3acf4faea7f4c0024b51c3f413780786decdd5"
     },
     "scripts/check_patch_baselines.py": {
       "bytes": 1184,

@@ -4,9 +4,9 @@
 
 ## 当前版本
 
-当前已安装Unofficial incremental **1792226532**；相机camera03、Recovery触控、自动亮度平滑和开机刷新率同步已纳入构建。机主确认首次开机桌面第一段滑动流畅；SELinux仍为**Permissive**，Enforcing及快充待修。下一版MIUI默认相机尚未实现。
+当前已安装Unofficial incremental **1792246397**，SELinux仍为**Permissive**。29文件、21分区范围及运行标签/策略核对通过，机主反馈正常启动；本版相机/录像/指纹单项验收待补充。Enforcing及快充待修，MIUI默认相机尚未实现。
 
-SELinux第三至五批源码和整包候选 **1792246397** 已编译、静态核验并归档，尚未刷入。累计候选源码见`plans/selinux-next-20261017/`；已安装源码清单及验收标签保持原基线。
+上一验收版本 **1792226532** 的camera03、Recovery触控、亮度平滑和开机刷新率修复完整保留。第三至五批累计源码见`plans/selinux-next-20261017/`；原accepted源码清单及验收标签继续指1792226532，当前源码由原基线叠加累计候选补丁复现。
 
 ## 代码与依赖
 
@@ -19,7 +19,7 @@ SELinux第三至五批源码和整包候选 **1792246397** 已编译、静态核
 - `artifacts/`、`provenance/`：二进制/外部文本的路径、尺寸、SHA和构建基线，不含其载荷。
 - `docs/`、`releases/`：版本、验收范围、依赖和后续修复方案。
 
-完整Android基线、原厂依赖、MIUI APK、Recovery镜像、Google软件、ROM及签名材料单独保存；**克隆本仓库不能直接编译完整ROM，也不代表全部ROM组件已获再分发授权。** 当前ROM SHA256为`f1618f556cd9238cfea14bb6e87cdd45a7569491bc905efe715ec50eaca15a8b`。
+完整Android基线、原厂依赖、MIUI APK、Recovery镜像、Google软件、ROM及签名材料单独保存；**克隆本仓库不能直接编译完整ROM，也不代表全部ROM组件已获再分发授权。** 当前ROM SHA256为`9c1f4c0212aa7fd6613ad8e7a7123c94391b7e1a6c20a4a050d5d19532d84440`，上一验收包SHA为`f1618f556cd9238cfea14bb6e87cdd45a7569491bc905efe715ec50eaca15a8b`。
 
 ## 本次许可整理
 

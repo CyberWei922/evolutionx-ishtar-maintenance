@@ -1,5 +1,5 @@
 {
-  "status": "STATICALLY_VERIFIED_PERMISSIVE_CANDIDATE",
+  "status": "FLASHED_BOOTED_RUNTIME_FILES_LABELS_AND_PARTITIONS_VERIFIED",
   "installed_baseline_incremental": "1792226532",
   "candidate_incremental": "1792246397",
   "rom": {
@@ -19,7 +19,7 @@
   "recovery_sha256": "c39e0236d4aac787e59827f835d58ec3af127357bcd576fb2b66da72c2c4057e",
   "surfaceflinger_sha256": "099b882b2e71941a25a10b45f0c73ff15e060f3243b2700755545c2251d1dc99",
   "packaged_qrtr_restorecon_order_verified": true,
-  "phone_flashed": false,
+  "phone_flashed": true,
   "runtime_verified": false,
   "enforcing_ready": false,
   "whole_ota_signature_independently_verified": false,
@@ -29,5 +29,13 @@
     "Other AVC triage and required feature checks",
     "Original nine static permissive domains and KSU dynamic exception"
   ],
-  "binary_artifacts_in_repository": false
+  "binary_artifacts_in_repository": false,
+  "runtime_file_label_and_partition_verification": true,
+  "native_files_verified": 29,
+  "partition_ranges_read_back_verified": 21,
+  "wire_sha256": "28d637dc5c015b2aad15551ed8a8ec631056baf2a1bc8e2472733319ece81d94",
+  "owner_normal_boot_reported": true,
+  "owner_camera_audio_fingerprint_pending": true,
+  "loaded_permissive_domain_count": 10,
+  "loaded_policy_sha256": "a6279beb3e9ddf4b9cc3166fe57ddda4672d42c035a94856437114ed9419ae69"
 }
