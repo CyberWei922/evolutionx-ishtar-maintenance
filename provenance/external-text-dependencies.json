@@ -1,0 +1,2720 @@
+[
+  {
+    "path": "vendor/xiaomi/ishtar/Android.bp",
+    "bytes": 409897,
+    "sha256": "4559ac938cee2904e9bcbd4d710673e7985675044d5c870bf251bf10f2a19b2d",
+    "mode": 436,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-generated-metadata-regenerate-from-authorized-inputs",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/Android.mk",
+    "bytes": 2003,
+    "sha256": "2d1c6df47989e9f93829bb33bb6e09dc41329696ac5271bfa707f603e235d817",
+    "mode": 436,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-generated-metadata-regenerate-from-authorized-inputs",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/BoardConfigVendor.mk",
+    "bytes": 335,
+    "sha256": "d273c57417e1c3fd539e063115c1a41aea692a6b411188fca653892850798900",
+    "mode": 436,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-generated-metadata-regenerate-from-authorized-inputs",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/ishtar-vendor.mk",
+    "bytes": 203705,
+    "sha256": "f3f5482b1196d5670f350ce78f8cf24ca851730ad6a63210561a3445d9403347",
+    "mode": 436,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-generated-metadata-regenerate-from-authorized-inputs",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/T-handset.txt",
+    "bytes": 384,
+    "sha256": "9bfc42400bc713ea569950b309b3dd9e532703b0a7629605e1e8f36002a6900e",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/B-music.txt",
+    "bytes": 444,
+    "sha256": "73944e4de169508a82d603e08e294d3cc5365e7c057916e85b8f43bc9056440f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/CAMERA_ICP.b15",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/CAMERA_ICP.b16",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/T-handfree.txt",
+    "bytes": 453,
+    "sha256": "7d408144cfe53d6942c99a70f156775bb3ef4a1d7e5f43d3a2763d94dae20a7a",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/CAMERA_ICP.b12",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/CAMERA_ICP.b11",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/CAMERA_ICP.b13",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/CAMERA_ICP.b10",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/stm_fts_production_limits.csv",
+    "bytes": 34379,
+    "sha256": "6b0f8d7cca55e7a6298b58075268c9af1f15fd379750fd1e9ad7f5341d790ad0",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/B-handfree.txt",
+    "bytes": 455,
+    "sha256": "c12c108a78105ebfdd748d0a134052473009a045fba0319840dffbcc952ea517",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/CAMERA_ICP.b19",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/CAMERA_ICP.b14",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/firmware/T-music.txt",
+    "bytes": 440,
+    "sha256": "2b278cc56af36229165cf027674553df75bb1ca2f667d972d812c51961ad31e3",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/thermal-chg-only.conf",
+    "bytes": 2103,
+    "sha256": "cd9fa4ead4a0dab1497ab97001e827b603bd7c1b07e06a9f15978e25fef43a25",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/setting.xml",
+    "bytes": 12247,
+    "sha256": "319b383b53c5f864be4721ed749b49eee47b35dd5e6a89c50385813a213e5ff7",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/df_default.xml",
+    "bytes": 65768,
+    "sha256": "f87d9367f7ca2a118bf512944619aaae8bc262fc2dcd629a895b2b3f0b9a74dc",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/mdss_dsi_m1_42_02_0a_dsc_cmd_mi.xml",
+    "bytes": 69270,
+    "sha256": "dd8a4359b3051afe604fd883a671748590610b1beba4edc58afb1e9f8f9d0df5",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_tcs3408.json",
+    "bytes": 9989,
+    "sha256": "3a2ebab4568eddc156b2edea7569f4de4fa12298951360b56135e1c9af2b51cb",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_oem13.json",
+    "bytes": 1043,
+    "sha256": "a5ee0ef107ecd083a108171c48335ea4ff3f608ca270e288e265e53a63a590b9",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_bmi26x_0.json",
+    "bytes": 9253,
+    "sha256": "31d079264486130446b7979ded01df316fc018ae4744ed98ed68c803d9f45af5",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_aod.json",
+    "bytes": 529,
+    "sha256": "e9fc4cbda63a000ada3727c16a87f05842c66c832200f765684f12f469c5c625",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_geomag_rv.json",
+    "bytes": 1203,
+    "sha256": "87c21d6d247d566311e01aa560f0076e64b49f503589e44b8f35cc948d26b2ce",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/tcs3408.json",
+    "bytes": 1437,
+    "sha256": "b00e0a90056472cbb6fcc47f79eeec1c9a0304d4b0a39765efafbb84b9553143",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_tilt.json",
+    "bytes": 783,
+    "sha256": "c53b92eae35c282f2b011b430b4fd4c37d1e0110db936916e09e52dd1c08afb8",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_bmp5_0.json",
+    "bytes": 3853,
+    "sha256": "aff2351bbbafc2748b0f825c66ec89d4fa7c622b5379eaf604bed44111b5f747",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_rmd.json",
+    "bytes": 877,
+    "sha256": "dfbdac82f22461c5162a52bde8861c71344311c13190edb15cdf41ca4d0f4638",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_irq.json",
+    "bytes": 144,
+    "sha256": "805ec8c427a028bfa4b9665dc7c0163e7d7a781142631967c22f82425ad2ec3a",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/ak991x_dri_0.json",
+    "bytes": 872,
+    "sha256": "9cd3ad7d635b8ed42064fbb913548f23d062f4e4112541931cdae9ed9c5bad57",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_fmv.json",
+    "bytes": 1445,
+    "sha256": "6cef5dead891aa08a0579805be2ead3cbf7381c31664fd28e0472e4866bf2a2a",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_sx933x_0.json",
+    "bytes": 13769,
+    "sha256": "d14181d96588736e19f4933ba9f41ccfd26b375f93e996732321b2a9dd308eaa",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_tcs3720_fb.json",
+    "bytes": 16028,
+    "sha256": "2d693750574f7a2296b8ffe14dc95f0f024c75b9811ac794a354d574c9e7e5f6",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_tilt_to_wake.json",
+    "bytes": 1559,
+    "sha256": "bafd77322a141bd15c7ca0037bdf7694501db72fc626c97f2b7e2dc6c2a63f7e",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_pedometer.json",
+    "bytes": 1051,
+    "sha256": "ab0d9bc708c16fbf14fbbdbddb68a574d80c6fca3ff4fe1890bb3c4dd035c691",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_dpc.json",
+    "bytes": 904,
+    "sha256": "bab69176ce0a72ac52b2079c2da8a0b2ca69c084202eb66a5f2c5762209ca488",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_device_orient.json",
+    "bytes": 1199,
+    "sha256": "32027f05b5387dd7cf2bdee0a71e2ee4843f0b4a88953793707d105cac050e74",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_hand_detect.json",
+    "bytes": 1349,
+    "sha256": "86136dd44a71367ba933ccfcbe59abcdce99af159cb663395d1c8005d6147923",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_cm.json",
+    "bytes": 776,
+    "sha256": "bb3d43ea3bf7368c889efb00e733016f2ec8ede73fad04ada94e2fb7393a9199",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_screen_down.json",
+    "bytes": 921,
+    "sha256": "93fe0cdd467de19bf3a2c75dde964f5c4b7f76da061f7a09119696c82376dfb5",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_diag_filter.json",
+    "bytes": 6413,
+    "sha256": "8de663ab9a99c83f9977bdf9eb172eda2e81d100cb1573717408cac36fbba78e",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_amd_sw_disabled.json",
+    "bytes": 285,
+    "sha256": "9c904a806221c40bd22625ae77909c20633e85af529fba9767c2575fb0687545",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_tilt_sw_disabled.json",
+    "bytes": 294,
+    "sha256": "f44d5ab5d3d7f43f42b3f1c546440e916e2a23757c8b45076525d7b38bdfcbbd",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_ccd_v4_0_sensors.json",
+    "bytes": 1107,
+    "sha256": "50e630d0300955dfc75bdf944245e0d4c7ba676e812c7c71c9619fc21f55470b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_ccd_v5.json",
+    "bytes": 1730,
+    "sha256": "038ad9a7c2bba3f0844f1e26f8b4c713b18b77e9a513e3d26787bb797478945d",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_dae.json",
+    "bytes": 915,
+    "sha256": "d781411205d1fc3fbdf23ac9478a8cce88dc48983e4c9780eb6f1f20584f78f7",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_dbtap.json",
+    "bytes": 271,
+    "sha256": "a9db6fcdf7da48478d2d891e818b8649e463b17bf7f20afb346ef75847fdbc12",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_nonui.json",
+    "bytes": 901,
+    "sha256": "c36334fb68db8d8e3587736f5303d2ed13cb2564acbc0f204795ff19290cd323",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_power_0.json",
+    "bytes": 280,
+    "sha256": "591bc12f7ec251577f71ceadc35f0a7ccbea47bda6e1679c5750271461acbf63",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_gyro_cal.json",
+    "bytes": 944,
+    "sha256": "588a393cabe929e8af2b4121837ea928cdeb6647b28cc2a6cdd3d55bc218acb5",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_ccd_v3_1_walk.json",
+    "bytes": 1293,
+    "sha256": "0a23b3039c37911fe51b8345141f4d263bde8b1ae557d53073d1cbc7da0fb164",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/qsh_camera.json",
+    "bytes": 9183,
+    "sha256": "446f2f6732e0bd12b90c2b08e58342639f31abea148d9fcd0001757a7b2dd598",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_collision_detection.json",
+    "bytes": 1872,
+    "sha256": "b89536a73d9b8b2c03150ca4d65c1bcc6f3c0cac2e58d2a47b9b77ea3ce47eea",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_smd.json",
+    "bytes": 1341,
+    "sha256": "b6e2948b5921f8ae01f3ebcda0ab5d12b0f76212b7a7bb04bf1d2071c8fea6f3",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_default_sensors.json",
+    "bytes": 5483,
+    "sha256": "311d0be8ef3a53d5a720047d504adbf2f4b86ab126334c79729b7ec51e5ac072",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/chre_dynamic_sensors.json",
+    "bytes": 566,
+    "sha256": "d1fe3abd08d6a69336bb8bdc7db3b178d8eaf3d8f0780ca1c2b0ad4997253c14",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_tcs3720.json",
+    "bytes": 29066,
+    "sha256": "3761cc04a245f5402ad1976ab63bbe0a2dbe738258a5aee83d9375a548e5b95c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_pointing_light_source.json",
+    "bytes": 435,
+    "sha256": "988f484924d7be8cd431867bfe589a283f871dee4958dda79d01e84035b25b69",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_sar_algo.json",
+    "bytes": 1413,
+    "sha256": "6ac5d5b21555c0347d421d7903374b64bc314b95f77cb7fea74965c41cb3bd47",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_sar_algo_1.json",
+    "bytes": 1424,
+    "sha256": "32ea1aae0a95e366ff139c3c25400322d96d88aa44524c618ecb8ce66615e52c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/kailua_qsh_ble_0.json",
+    "bytes": 397,
+    "sha256": "53b21139f25360df6b8fb50bfe8459c2b3a8dea61fe955ad10763785f4a40b31",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/qsh_ble.json",
+    "bytes": 927,
+    "sha256": "92d3a18bd4243b7447ce7ddb1f9c94ada7f9debbcf63f36660f5174708708471",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_dynamic_sensors.json",
+    "bytes": 169,
+    "sha256": "838bcaedbd2da30bdef4d6380dc738f79694e41878f96c7a479d1cd78237552a",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_amd.json",
+    "bytes": 724,
+    "sha256": "970915c1aa2655bf206949ea00ff4869f4bee1b3e38e2c300f85424561699c5f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_ccd_v5_0_te_cd_regs.json",
+    "bytes": 1980,
+    "sha256": "2bc4dd8b4f3b225033482910dc4ecae3d398f19d88f39137604d26bc722ab4a5",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/lightSensorConfig.json",
+    "bytes": 16363,
+    "sha256": "64eba37bcdc1577eb24d33e6fe0bac0144eb97c0f806d9f1586cec8e6078077c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_rotv.json",
+    "bytes": 831,
+    "sha256": "1f8aedf34a3f0c6bed499795334b2a008a7d9106047db38e671c382db3acf35e",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sx933x_0.json",
+    "bytes": 600,
+    "sha256": "f65e307c61925769b686b4d99a7f6f73782a1d5f89651e4386122a380473c6d9",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_mag_cal.json",
+    "bytes": 625,
+    "sha256": "a9099ba75b916c86d4fc9035c04d2bc053d47dc4c80ba6ba1fd011fbfed20266",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_distance_bound.json",
+    "bytes": 1116,
+    "sha256": "d06201af44c2307cd5e2f174209ee847f9687aba7e55ec2012dab9734e917a49",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_ccd_v1_0_amd.json",
+    "bytes": 370,
+    "sha256": "2a0b3eb995c8cd543ef1ac0390ac46e3e307b3f8a456c359ee8bc3a8a42dd778",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sm8550_ak991x_0.json",
+    "bytes": 5838,
+    "sha256": "8b62fdf9ceb0345e621e9ecb89dfabf3aac5713e9bf4f3c25d5a798df3e40656",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/sensors/config/sns_oem_pocket.json",
+    "bytes": 315,
+    "sha256": "6da54277658fb9f5e3eb30ae41a95efa0a40f63b5b38ceb292dfd47b40b32d58",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/vintf/manifest/vendor.xiaomi.camera.aon-impl.xml",
+    "bytes": 287,
+    "sha256": "bb8be0cb9895a7f4445333ddaa3148f8f4b5e1efaeb03edbd2044d45dfe36956",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/MILDC_CAPTURE_PARAMS.json",
+    "bytes": 533,
+    "sha256": "8906084af8a5fe17796516986f31444ffee5300d8f6ae220ab8018af6ceacbd3",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/ellv_params.xml",
+    "bytes": 11780,
+    "sha256": "0d1a281f71e16e94de75505852fa1c7bbc5415f1f7d784a9621be1938034f201",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_raw_classic_config.yaml",
+    "bytes": 29438,
+    "sha256": "9c9d01c70ec2a42bd734fd1b339a17bb06e9ed1d9b11b4610882829e1bfedd5e",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/bokehParams.json",
+    "bytes": 352,
+    "sha256": "592cb8b0943bbeed9e6f8192492192cf5c4e4bf214105e58e070aed550827ff9",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/dualcam_mdbokeh_params_depth.json",
+    "bytes": 9432,
+    "sha256": "76204b117cc93e2d475ef9964b07cea9025825fa5212e16f4b3ff5e31f09c14e",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/hdrcheckerextendparamsettings.yml",
+    "bytes": 1075,
+    "sha256": "9c9af2cb746760f4299e64df3f803e93d39ffcca9fb5159249c9ac88740d471f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_raw_denoise_tele_vivid_config.yaml",
+    "bytes": 3481,
+    "sha256": "9ed4fa288b4eb5a6c73b2965025097c0621678104443af171234aed4861051bf",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/hdrcheckerparamsettings.yml",
+    "bytes": 9829,
+    "sha256": "6103b30a91160d7f88ff9e542496c8d8d15f673aec5bdbe3483034f936c7551c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/enhance_motiontuning.xml",
+    "bytes": 101307,
+    "sha256": "013ae2395420fb3bb5410b76cd63d0ffb2582281e57983fa7781318c0e106deb",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/eisoverridesettings.txt",
+    "bytes": 184,
+    "sha256": "3523299205c92ae6dd86c3eb2b5850f277f4f0c6d6610bbe1c607fabc8884a94",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miSATTRatio_params_4sat.json",
+    "bytes": 493,
+    "sha256": "f4164978e79061669487b3d3d80f8bbb524f1b7aecf29e6583d6bb0c29cefd49",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/portraitrepaire_rear_class.json",
+    "bytes": 1171,
+    "sha256": "83b45d8f24dc07cb116e72cd4d8f134e9b8c5d268895f1a38f0afa6b6b97d88c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/beauty_config_cn_8g.json",
+    "bytes": 7082,
+    "sha256": "581885ab48bdfea59c8a904089d9d99e5e81be18969caa4928f0a8bb332e914b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/cameraopt_reclaim.json",
+    "bytes": 9141,
+    "sha256": "0dd6ac5d8bdd91df0a76aa5d36f606877d5dc444ceb73b8b02373bded5e6d912",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/portraitrepaire_rear_iso3000.json",
+    "bytes": 1171,
+    "sha256": "99c677009834b3e709a5b90c5f41d4aa55ff4022b81534813e439d3908f9c503",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_mfnr_config.yaml",
+    "bytes": 11675,
+    "sha256": "3171c6a6aa38ec9482cb5b5ab9f3d37f92734038cc7d9bb2f8e79888404e67fe",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_psn_config.yaml",
+    "bytes": 2036,
+    "sha256": "ba4ef0132af9d178353875e12ad31508f6cd4ea899f58fc9eba9bd2b8b926934",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/sceneDetection.xml",
+    "bytes": 43512,
+    "sha256": "95889f7b1fc6f24ada66a80ab838c0c63ea007d8e072e069bed5d4c9631dc1cb",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_raw_denoise_tele_classic_config.yaml",
+    "bytes": 3476,
+    "sha256": "42e0baade4617d451f5679f19aa90d0656e3c1ec1065ddfc0f265c80331d2e81",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_raw_denoise_wide_vivid_config.yaml",
+    "bytes": 3484,
+    "sha256": "1261e0946df2c58e979f05eedc55e6ba87e6f008e6ea0e5118fb172223914c78",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_raw_vivid_config.yaml",
+    "bytes": 29431,
+    "sha256": "69b9dbfd303036f850a45dab697a3ac33568d06b9d3eff31d561f9bfbd594f7a",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/portraitrepaire_front_live.json",
+    "bytes": 1167,
+    "sha256": "d3e99622bf83db563ca05f584bbb4dff7a46cb4e4eaaea8311387b1f6531c6e9",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/camerascene.json",
+    "bytes": 2428,
+    "sha256": "37e32595b23cf273957ed8530a9d85d316aa21d409bedbf591526baef20df55b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_raw_denoise_wide_classic_config.yaml",
+    "bytes": 3499,
+    "sha256": "cc4c1588cc16f665f4dc0732fb631071b26b0b08827180f2b54b3720754abeda",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/antibanding_params.json",
+    "bytes": 1025,
+    "sha256": "c8d12271dd16a3caeab6879955085fbc08315da5623de51301873c85a5e8c812",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miSAT_params_2sat.json",
+    "bytes": 7858,
+    "sha256": "0003cad4cf1c9d207f01914355ab8ff7cab192c05bbbc585fddcca5e1d52ee4f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/aiur_params.json",
+    "bytes": 6008,
+    "sha256": "b993e2d71612673aee95290e76a99b94cba5c483c6c41d3c0007f0c190437724",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/night_motiontuning.xml",
+    "bytes": 78790,
+    "sha256": "e968d2665e1177199a9a0ec6a1b9cd2489f162502f43fab631fb323b43d0dae6",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/dualcam_depth_params_pro.json",
+    "bytes": 9089,
+    "sha256": "a478f06a16597faa4a3d1066f22214b00689caa5088d7db2b563be89d7d2ccad",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_raw_denoise_uw_classic_config.yaml",
+    "bytes": 3488,
+    "sha256": "b185b0ac13b21b5a298c04c43aa4f3de5a7c6c166616fca914b600504b1d48d2",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/snsc_params.json",
+    "bytes": 5440,
+    "sha256": "b44f03bd9622734147b723cf7d1b0ac7aadac8f6c9d4a60e69d92ab2c0be5d22",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/vidhance_calibration",
+    "bytes": 3780,
+    "sha256": "00126b65978cd2a50b34993c02aaaaedd80ac2b05d64d8c8e488223b5f062335",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/beauty_config_gl.json",
+    "bytes": 13053,
+    "sha256": "7df949c158087730cb3d62c0e509a3478a297c3da938aaf2b8960e3955da3dd0",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/ellc_params.json",
+    "bytes": 2843,
+    "sha256": "46f0fb86a58f8a93e9bf701f679debf537b8551b876bf804ab2002a9b458e513",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/preview_bokeh_params_mono.json",
+    "bytes": 4768,
+    "sha256": "ebfa69617e7b35e9be4a7c316c7a9fa630dfeca860410a69bb2bc58caa8ebde8",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/preview_bokeh_params_pro.json",
+    "bytes": 7129,
+    "sha256": "b402010e56ad752fb4102faac4f0458f2f74abec9d463cbdc4b5900456f27b38",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/sdsr_params.json",
+    "bytes": 9030,
+    "sha256": "ce2d15356d579f1f8b044a4f7e3bb9c0ce35d975b8d72326faa693ad250de655",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/portraitrepaire_rear_live.json",
+    "bytes": 1171,
+    "sha256": "83b45d8f24dc07cb116e72cd4d8f134e9b8c5d268895f1a38f0afa6b6b97d88c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/dualcam_bokeh_params_pro.json",
+    "bytes": 11631,
+    "sha256": "e3dfeda09456da5a2334ab4a8639044469209dbafb195b5d81e72a54dc23c6db",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miSAT_params_4sat.json",
+    "bytes": 7853,
+    "sha256": "f05d212d93b4734942458a2ee0cfc6a56e5139e2457fa335d908795ce465ac9d",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/preview_mdbokeh_params_pro.json",
+    "bytes": 9253,
+    "sha256": "95891ba9cbb04d97d029075c52fac2d9736db85e4e8e72323a63de14038c3713",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/dualcam_predepth_params_pro.json",
+    "bytes": 1637,
+    "sha256": "c52e5c4611642bcec3a640db3d02435aa1a895f4e73b8d311f17aaa5038dcb32",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/dualcam_bokeh_params_pro_front.json",
+    "bytes": 5136,
+    "sha256": "5de04805ab8eaab116bff4a92e6569ab322a955f5934c3c10d535f4afb21f430",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_config.yaml",
+    "bytes": 8851,
+    "sha256": "c53e83de82a4ce2ebf0e2efe6ac59b81314901d0ed53190bda9ebef5b397315f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_raw_denoise_uw_vivid_config.yaml",
+    "bytes": 3482,
+    "sha256": "4bc228f6e5970a1ecfe0605b22cbe83426eaf4715ea5d3798c7081ed0d9bd9d2",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/arcsoft_dynamicEV_config.ini",
+    "bytes": 3357,
+    "sha256": "4e300fc4b93a6d2fe46b4772a8027a82eca44a0cf971d259f73dcdc78f183f7b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/beauty_config_cn.json",
+    "bytes": 7082,
+    "sha256": "581885ab48bdfea59c8a904089d9d99e5e81be18969caa4928f0a8bb332e914b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/dualcam_mdbokeh_params_pro.json",
+    "bytes": 29850,
+    "sha256": "bfc4d79069a4f2f2b6663cb866c7aa7a91991a2472f7c946fb9bb43c2f2374db",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miasd_config.json",
+    "bytes": 104,
+    "sha256": "86f553f6c0023abda4121afa63a1166ecb899610966013ddcad363000272577d",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/config_para_normal.yaml",
+    "bytes": 4004,
+    "sha256": "c3b3a4391d3f432d373bd05ea658230780cbb19e1a76212f350370aca6f9a1de",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/MILDC_PREVIEW_PARAMS.json",
+    "bytes": 221,
+    "sha256": "dbeaa78044600c2b33de94ca909195ec3df6c748068ebd6adbca418bc53994a0",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_raw_denoise_st_vivid_config.yaml",
+    "bytes": 3481,
+    "sha256": "9ed4fa288b4eb5a6c73b2965025097c0621678104443af171234aed4861051bf",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/video_stabilizer.xml",
+    "bytes": 6572,
+    "sha256": "72f625f8fa686b9c0b22da57e06948939ba9962ad707f0ab99ecd8f7a1bbbe62",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/portraitrepaire_front_class.json",
+    "bytes": 1167,
+    "sha256": "d3e99622bf83db563ca05f584bbb4dff7a46cb4e4eaaea8311387b1f6531c6e9",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/dualcam_preMdbokeh_params_pro.json",
+    "bytes": 385,
+    "sha256": "eb97140089318740b9a492331b1e0d513323f145f58faee5804ad0d4df153eb3",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/aiur50M_params.json",
+    "bytes": 5995,
+    "sha256": "9382c76a998c1adadcb2203ec91697bffc7a4ede2ff9d311a2c8da4877af3844",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/dualcam_prebokeh_params_pro.json",
+    "bytes": 389,
+    "sha256": "86fefb0180801c731b7e6ee9474bf27d717ffc517e38a6d0b44229811c725427",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomiSceneDetection.xml",
+    "bytes": 43524,
+    "sha256": "f32ab93ffcdcd40340fbf8d1b50d167daa61fa179c5165d9a6861ff286b069f4",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/misoverridesettings.txt",
+    "bytes": 296,
+    "sha256": "857e09c1641515dda4b7a879bb7b7e0db3c7ed88f98ac5e7b18380a17f2df6f4",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/motiontuning.xml",
+    "bytes": 91834,
+    "sha256": "c6ca3e47610df8c482c005505cc767622583507cf118b7d8b629ce079661fd6c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/camxoverridesettings.txt",
+    "bytes": 14736,
+    "sha256": "c891376a9d9bc6b65c5253bb34570564791dd5db6526a307ffe83d97ce510724",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/sdsr_version.txt",
+    "bytes": 165,
+    "sha256": "b5c62a4a073a5a83d5eac3f98073bcd8e0a2c3764438c043bc51e693f97e03b6",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miai_hdr_raw_denoise_st_classic_config.yaml",
+    "bytes": 3476,
+    "sha256": "42e0baade4617d451f5679f19aa90d0656e3c1ec1065ddfc0f265c80331d2e81",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/miSATTRatio_params_2sat.json",
+    "bytes": 499,
+    "sha256": "7c708935879d0c80aba31fd33d1a0d9810b38f28013be04a6c654b0c2542c6a8",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/quickcamera.json",
+    "bytes": 1435,
+    "sha256": "5bc937259bf0d9bbba3fe05ac5648300152fc134eea909873d1c3fc9cd93fe61",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/cameradfx_config.json",
+    "bytes": 1980,
+    "sha256": "d21e7e85e30191c0bf88d1b9923598b2fa68743c0d1bdebc0a425157e35eee1b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/config_para_madrid.yaml",
+    "bytes": 3879,
+    "sha256": "f53133447f8f2bcde6039b721825fb3c1e28e00fba9fd2ed77f79306def2c0c8",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/beauty_config_gl_8g.json",
+    "bytes": 13053,
+    "sha256": "7df949c158087730cb3d62c0e509a3478a297c3da938aaf2b8960e3955da3dd0",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/VideoNight4K/ellv_params.xml",
+    "bytes": 11780,
+    "sha256": "0d1a281f71e16e94de75505852fa1c7bbc5415f1f7d784a9621be1938034f201",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/immune-system/hook_case.json",
+    "bytes": 2241,
+    "sha256": "823e318131ed67da77c0e9d9aca50f3140eec5976379c6173e9086482dc764cf",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/truesight_param_debug.json",
+    "bytes": 3703,
+    "sha256": "ded7d4597e057162c1c31f7bae44e335caf0c954415dab759f2d10ac19556333",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/truesight_param.json",
+    "bytes": 3827,
+    "sha256": "8fcc64a775cb12e096ca3dfe81909fd5a9eed58e716d9cac613a1b98cdd81f9b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/default_param.json",
+    "bytes": 9694,
+    "sha256": "e75efdc113e68e185589f8e2a3914f312b55eeb9473d17d475d3528ac31652f3",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/TStools_default_param.json",
+    "bytes": 9745,
+    "sha256": "61873bb02a400f11eb3999bca67d014f12337ada3e9952727bdacfa20d9e92ed",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/GlobalConfig.json",
+    "bytes": 1352,
+    "sha256": "6935741871e0b658a1b2485b2407f7f36c2bb4ea24454097f5213856eba61569",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_list.json",
+    "bytes": 5301,
+    "sha256": "5583f15e11f591e3042a1715dc7d140762feb9f33a4c3e4e64dacef1e7fcf8b9",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_mode_native_otherFront.json",
+    "bytes": 365,
+    "sha256": "63e18b7a2a8221cbb9b6caab9def0b79643652ab0aa641b4764271cd6a9c52e2",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_mode_video.json",
+    "bytes": 439,
+    "sha256": "950daef2a8b0236c0e10fa868dc196a523978d2c12b4b9523a3386aff9d44237",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_mode_rear_vivid.json",
+    "bytes": 675,
+    "sha256": "6d8baa1383578b7bd6b92d3f055d5074d029b64afa50d9c4846a80ec64164dc2",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_mode_rear_classical.json",
+    "bytes": 683,
+    "sha256": "5bc45add4dc9c0b0c39cc46d260702fcc207628b7566d749a04bcee58a9091e2",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_mode_clear.json",
+    "bytes": 50,
+    "sha256": "100da76bcfe3e4b3e0e15e317ad9c4ab881af717e686447d90dad7d7e6a418c2",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_mode_native.json",
+    "bytes": 681,
+    "sha256": "6907677c6a229b506f91056e588406e78e0a827fc1c33853bbf47ace05dddd25",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_mode_IQ.json",
+    "bytes": 119,
+    "sha256": "c17c1f43b75f7374b4bef14dc739e244c7026ca1541ad7afd1277b5950295f5f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_mode_classical_otherFront.json",
+    "bytes": 374,
+    "sha256": "f0c661fd99c16271a98a6232c82375e0f810a2c831f5ebdd61d8abd2d64adeda",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_mode_otherRear.json",
+    "bytes": 305,
+    "sha256": "b7ba017f17c7981181121c5598e964a11b424ffd723ffb789be3bd1a96207078",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/effect_mode_classical.json",
+    "bytes": 702,
+    "sha256": "b79b415044353602938c22c80ee9aa0c35ef20a3cf18f0d36f62ed8815b314c9",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/20_FaceRetouch/mode_classical.json",
+    "bytes": 790,
+    "sha256": "94959c3b15b879caef94adfc43a1b681508c2969e0564386fbb032313dd9ed7c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/20_FaceRetouch/mode_native.json",
+    "bytes": 506,
+    "sha256": "954fbd9ed46674d8a29f4b0e0df24f598ddd20e7d4efd39b8aa7d0c02ca375ca",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/20_FaceRetouch/mode_rear.json",
+    "bytes": 406,
+    "sha256": "09fc3d6e7ee84d003e6b98d19c60f01c931fbb536489c0a9ffef20e81025b626",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/20_FaceRetouch/mode_rear_portraiture_class.json",
+    "bytes": 420,
+    "sha256": "29c792753fc56d00fed1aaaf2e78dfe76fb24799e2a296d3db1dc25854e20630",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/20_FaceRetouch/mode_video.json",
+    "bytes": 184,
+    "sha256": "0398a48fad3762a7d315ab1434306ddb974598cc46fc0db7e5df00daf1c7a65f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/20_FaceRetouch/mode_rear_portraiture_vivid.json",
+    "bytes": 420,
+    "sha256": "6db5ae11b56bd2522f2f287855245b392174867e1efcc718901632129c9e69fd",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/30_BasicRetouch/mode_rear.json",
+    "bytes": 332,
+    "sha256": "dbfabe2aa68ae42057881262b45f8cfb966daac6f1063fac751a766cb5d05317",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/30_BasicRetouch/mode_base_all.json",
+    "bytes": 337,
+    "sha256": "a47a96c69eadf29e60424e83d15c5dc6dd46324ab9da6c577fc8b73b0d13ce81",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/30_BasicRetouch/mode_base.json",
+    "bytes": 237,
+    "sha256": "adf8300c7851a8d7da1bb388fdbb394aa669d1a70037cf8d7db31f0f28c42845",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/70_FacialRefine/mode_classical_other_front.json",
+    "bytes": 424,
+    "sha256": "38739245872ed0799d49026a18a501f08d74d8664eca48857792742c9beaf8e1",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/70_FacialRefine/mode_rear_portrait.json",
+    "bytes": 394,
+    "sha256": "4503fbedb48f611dbed34d3f827abdeae279203244441f2b7a17f48dced125a9",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/70_FacialRefine/mode_classical.json",
+    "bytes": 404,
+    "sha256": "984da19884a2ddf8ea11612086997eedfd01efa383513e09c61232ce7e506650",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/70_FacialRefine/mode_native.json",
+    "bytes": 398,
+    "sha256": "5205a280367a5031b0e78c8b95ce416a9ff94cd9fd84c2223a978edb32439f59",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/70_FacialRefine/mode_rear.json",
+    "bytes": 379,
+    "sha256": "fe17d043b5eaa5c2f9ffbdae1f730b0414a39a43d7b2932dc52a4617bb39cdd0",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/70_FacialRefine/mode_video.json",
+    "bytes": 283,
+    "sha256": "75653e4b25bc25cb8bdb833ddadc26e20496ff2606c807c1ab192e1618b5078c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/70_FacialRefine/mode_native_other_front.json",
+    "bytes": 418,
+    "sha256": "9662fe024408a5d1e7cb18303fa32aab5cfb17fb1f559cc58df1c87e7ab1bcbb",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/5_DLRetouch/mode_classical.json",
+    "bytes": 1323,
+    "sha256": "110a6c5f2a951259de00bde42f7f6357ec719fa709e966fd2cef418a977c457a",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/5_DLRetouch/mode_none.json",
+    "bytes": 516,
+    "sha256": "5e86aac9c8e0f9dbaa43156c8cb20a89987eb6a37517d4af7ede0d8701cecd38",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/5_DLRetouch/mode_native.json",
+    "bytes": 1418,
+    "sha256": "e5409dc2e875f4c198bf2bbf2d5bbd8b6a2a0e286c39998f89576e6bf5790d23",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/5_DLRetouch/mode_rear.json",
+    "bytes": 793,
+    "sha256": "5d71cdad0585a27ec7d7b4f9d81d8455850247ce86d51e89a2c25c0430f90a49",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/5_DLRetouch/mode_video.json",
+    "bytes": 566,
+    "sha256": "97c0c34dfaa626222a1ea8fd3e25cea3b7a798218556549a62c1add32dbb481c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/5_DLRetouch/mode_rear_portraiture_vivid.json",
+    "bytes": 1488,
+    "sha256": "ce806050197dc923e5df8577743a27924981c694f472edd631ecf24bdcf53698",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/5_DLRetouch/mode_rear_portraiture_classical.json",
+    "bytes": 1488,
+    "sha256": "0c9921c63502576b78df2d14779989a60728a360987c9131119b3a35bd86eecc",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/Parameter/mode_rear_classical_style.json",
+    "bytes": 616,
+    "sha256": "60cd5b178683f1fc8870d1fdcb19382b4ed9bbdf74e0dae8ccc08102b2f426f8",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/Parameter/mode_rear.json",
+    "bytes": 725,
+    "sha256": "b096eb136d4ee8bd475c1bd63eb1a33d11ad1d0cc288dced60b01af179a57ffd",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/Parameter/mode_rear_vivid_style.json",
+    "bytes": 616,
+    "sha256": "29c7e29f71f3e632a482a0cf6577eec2682851a7cce5b5a47166820f6b0d4bc8",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/50_SkinTone/mode_classical.json",
+    "bytes": 138,
+    "sha256": "6271c5e48b8f89df55b4b1a996ca4835723847232824e17fc39a9e7f5e8a4a7d",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/50_SkinTone/mode_native.json",
+    "bytes": 135,
+    "sha256": "758b86f9bee0ae5cc3a4d608c9db161dacdc429a6a99420e10ab5f186f4daada",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/50_SkinTone/mode_IQ.json",
+    "bytes": 135,
+    "sha256": "749dce34f9fe045498c6f3918039d978e2bc80f50977136a3454889c43c59b4d",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/50_SkinTone/mode_rear.json",
+    "bytes": 137,
+    "sha256": "1c393ebb95c56ebd0724121ae69c3a7942d9941bb95233ffe116212fb4308be6",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/40_FaceStereo/mode_classical.json",
+    "bytes": 259,
+    "sha256": "2c9a7c534f3f687241ef66249c5ed6e4c5eb93ddc6a5d631a39959015de30439",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/40_FaceStereo/mode_native.json",
+    "bytes": 253,
+    "sha256": "bbb3ef4430d102d92406b30bf14107bc076512d3acafd2cf2cc03840d0bef011",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/40_FaceStereo/mode_rear.json",
+    "bytes": 249,
+    "sha256": "c7f226bb8901a88bcc3d61bd659afebce895d95b3f44be4a7d26918076140d8f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/40_FaceStereo/mode_video.json",
+    "bytes": 138,
+    "sha256": "646f384ba0d8d6abd6717f9d5ea350e8f0331295427675626d9d6e0f0064f894",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/10_ColorTone/mode_classical.json",
+    "bytes": 138,
+    "sha256": "6271c5e48b8f89df55b4b1a996ca4835723847232824e17fc39a9e7f5e8a4a7d",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/10_ColorTone/mode_native.json",
+    "bytes": 135,
+    "sha256": "758b86f9bee0ae5cc3a4d608c9db161dacdc429a6a99420e10ab5f186f4daada",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_YK.json",
+    "bytes": 566,
+    "sha256": "8ce9d1fc2eb8f365c4b0c62f834329784273d216e91305436c9b758b44d12326",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_QJ.json",
+    "bytes": 566,
+    "sha256": "d25d86b2e40fbab9c74181cbbcfd60f8a4d8d0bfa5459156fcd800ab11f24985",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_classical.json",
+    "bytes": 354,
+    "sha256": "94237aee878398105270314f88e851d7b82e0604b599cf47e78965f26f514ec1",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_native.json",
+    "bytes": 348,
+    "sha256": "1db105c903c10bf7c9ed1a6b5093ed1413ebc864286dd13cd27e2c0b258c8fb3",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_DY.json",
+    "bytes": 566,
+    "sha256": "aaff1eb26dfe7bc55b19b2534d523e4debe52ac0b47608e799af17b97c2ccf35",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_BMS.json",
+    "bytes": 577,
+    "sha256": "57c87861c4930f57c4f951ebe992aadd4937c91bdc83b3224958c32e501075cf",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_QCY.json",
+    "bytes": 575,
+    "sha256": "6b06c7b18704c048c3d2354df525f5db02600c104860cd26eff1ec38c5ee9e1f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_MLL.json",
+    "bytes": 577,
+    "sha256": "2a8fbada0be1f5a9259d17f3561d1c62be5d4298f73fd4b22983bbdee1d0c2e7",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_rear.json",
+    "bytes": 228,
+    "sha256": "e91ddcbb6899afb908b89f1bd7f7e7686420595b0c09035c6f8d2d1b23af47b6",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_video.json",
+    "bytes": 233,
+    "sha256": "d3ce38c14dcba96d48b8c34b75eb5904990729cd16e947698a78718fb0d21972",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_LTS.json",
+    "bytes": 348,
+    "sha256": "9217ad9c4adb07b5e4fc25e563a2320b189a86d65326c0ff781b25b8afae3616",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_XZ.json",
+    "bytes": 566,
+    "sha256": "f4267df6dae1e8fe8083446d98136b436d4360e446a19547674cf9d522a64412",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_MYQ.json",
+    "bytes": 575,
+    "sha256": "a7e1e6e69dce222ef480a1e6b9565e3aadb1ce9838df8a04c8ae0ceee2297224",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_YQ.json",
+    "bytes": 566,
+    "sha256": "2202f60842d68c0fd1f51a28ac506cf5e869d0568bc0fec540f9394b5c371f16",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_RM.json",
+    "bytes": 566,
+    "sha256": "e36d429be5c3b9868e594322bd9a7f119dab65d8bae80f8deed2a76a90b62377",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/resources/render/Effect/60_Makeup/mode_XQC.json",
+    "bytes": 575,
+    "sha256": "f93bcc7d039314a43a5a284127cb59c3aa11891082ebe26a630ad2a8246757a8",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/satsnapshotjpeg.json",
+    "bytes": 16475,
+    "sha256": "fed709a9df2f7646ad1f8d2b3b0413b32fc5f1f9e77ad18fa5a440a4a0930e1f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/superhdsnapshot.json",
+    "bytes": 1496,
+    "sha256": "627bbf153f3f46844d526a6242d7b1d3cfb11403670825f493bdc2945050fbdd",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/dualbokehjpegsnapshot.json",
+    "bytes": 10481,
+    "sha256": "4e489dd9426f32904e1e45af3a4f74c6e2cb357e759f446482cf16fd649141a1",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/thirdpartyrawsupernightjpeg.json",
+    "bytes": 6623,
+    "sha256": "22d073f4d8012e0d0d7df1e6e7541a12a97138ec0d7e5a45758a8938a7a07180",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/overridesettings.json",
+    "bytes": 5719,
+    "sha256": "22e6cf864e8c182063f361e07bd9120a3a8636eb35b56d5e37ce86d1464144b3",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/EcoCloudInfo.json",
+    "bytes": 2431,
+    "sha256": "eac6d9628563d796868c92e6fce4c74c6cabe15da5d8ef9a73cf84beee56d7de",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/mivistreamformat.json",
+    "bytes": 12540,
+    "sha256": "a78826309531de24aaec9b37b6dd16c7db851be323bd589b5a86428d69156f18",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/thirdpartydualbokehyuvsnapshot.json",
+    "bytes": 9821,
+    "sha256": "0cffd0a70189115483f2a259271361f31b4c7761d63e594ff9008369361c9a82",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/frontbokehsnapshot.json",
+    "bytes": 3086,
+    "sha256": "9cf8a71c5d9605ca3622981eec3ad31786b63358e2b381ab63c4d1123b47542f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/thirdpartyjpegsnapshot.json",
+    "bytes": 10055,
+    "sha256": "a5279d39786f7216e8032bb6a857367426b9f20628d11095c47f71848d93f9e7",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/leicasnapshot.json",
+    "bytes": 11905,
+    "sha256": "f262f4956588b7fc4d0d0f9e57bc2c37b1c66a91e4967b702c5306b08099ae83",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/thirdpartyrawsupernightyuv.json",
+    "bytes": 6111,
+    "sha256": "418ac55e43a744dea2d89c58ed40950b0c8f5b02c453dc86545f1ce39c92cb44",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/frontsinglesnapshot.json",
+    "bytes": 2471,
+    "sha256": "40f4eeed243eea9bc0c2067fefa5f64a8991b7a5952a35d132b89303373304fe",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/satburstsnapshot.json",
+    "bytes": 2015,
+    "sha256": "81f5e8ddd986bfb5c2bd1e39f9bd15bde8a57f2fd8b527379a0ea5772c7c4f3f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/dualbokehsnapshot.json",
+    "bytes": 9063,
+    "sha256": "60d6f6828240dc848a329abe115b5e14ca1a8cca10377cffda24f50d0e4cfce5",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/ecovendorstreamconfig.json",
+    "bytes": 19283,
+    "sha256": "c197b97fcd23ab96f804d4bec225ccccd5c42d9f1dc6e1372439a75c17397956",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/frontsupernightsnapshot.json",
+    "bytes": 2851,
+    "sha256": "54134d2c32b8d0a965abf5d8e8bab899b65e1def070a33e5f368e93cea97a54d",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/mivivendorstreamconfig.json",
+    "bytes": 23816,
+    "sha256": "964742647c0f571bc182ee56477761cd412b3f2358be11171eccc237a8e585a3",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/satsnapshot.json",
+    "bytes": 23305,
+    "sha256": "c1c001f1d6cc510eda7a5109653417e8dc534908845ede6965695dd80b6e6772",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/settings.json",
+    "bytes": 1299,
+    "sha256": "436d25d8c0819afec928792f4700b3f3392286b8609a96198dfc5f509f79eaa5",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/normalsnapshot.json",
+    "bytes": 1415,
+    "sha256": "e0224440e54f984ced2047cc59025730152641e2a273c23c2826cdf026c39f11",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/rearsupernightsnapshot.json",
+    "bytes": 6107,
+    "sha256": "e571fbe5fa698249d6c4732249fe25b8246451ca3e1d01b7e972df3891ff0909",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/manualsnapshot.json",
+    "bytes": 1493,
+    "sha256": "1396dff777de27f00a128da667259dc3284dce8683613ac4bf38e22b1e29d873",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/miuicamerayuv2heic.json",
+    "bytes": 1191,
+    "sha256": "bc01824dd28ccd7fab475244fd9fafd0762854e23d8411009e2372f2850e963a",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/frontsupernightsnapshotjpeg.json",
+    "bytes": 3279,
+    "sha256": "69e4e2ebf3528bb67f471d9ef5119a3b0c7c7659ae31e0b12dbf3b5046bad122",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/mivisettings.json",
+    "bytes": 85,
+    "sha256": "d271734e567e9bfd5820ea9a25898a4325195b52e4badd32819e482853bf29ff",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/manualultrarawsnapshot.json",
+    "bytes": 7625,
+    "sha256": "f411666ffdfb737a9dc7b633d716db485c16d589605d2070a4c7fbb4e650a5d2",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/miuicamerayuv2jpeg.json",
+    "bytes": 907,
+    "sha256": "0163874a8b2982879cedb8c7426fb2e03861645c1324516163ef8ae00a00b532",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/xiaomi/thirdpartysnapshot.json",
+    "bytes": 9383,
+    "sha256": "007a5f0931eb91b7272ff2bc5105f5f710cf868497d45bc003f45ce38eeb3e67",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/mihal_overlap/proj_overlap_config.json",
+    "bytes": 29536,
+    "sha256": "43aea9ce2c6c8a100f89a2bac42302300a2c3de92d1b3e021756eaaf93418867",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/camera/mihal_overlap/overlap_config.json",
+    "bytes": 20018,
+    "sha256": "8db1c6b59d22b97dc43fb951f082ef53db55089f7dbf914ffcc02ffbc5d9d7d3",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/mi_gc_1.txt",
+    "bytes": 4137,
+    "sha256": "e1f0a612c15caec5356deb80754e14951783f46330b0bea1706ab8e4c976a0cc",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_8.txt",
+    "bytes": 143971,
+    "sha256": "b7c7ecb38cf6d34644a01f6537b609a1595a3aed6bedd75edd83bb2a75d7f651",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_10.txt",
+    "bytes": 143401,
+    "sha256": "c6453a27825ef7b4ac992a7ce3dd181e76982e13794ee6cef0bdb5bb0a13cc15",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_19.txt",
+    "bytes": 136986,
+    "sha256": "34e57ebc1076eda5cac2e526e52b2759a69e6f6fa1a25119879a9bbe4d80483b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_20.txt",
+    "bytes": 142059,
+    "sha256": "05fc512ebce12afd92eebcd51b70ee35654d9830ae745e5f50c326c6984082a0",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/mi_gc_0.txt",
+    "bytes": 5163,
+    "sha256": "cc528b1e8348cde798527a277d104b72dbc08acf2744c3c277eabab59ba61ab1",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_3.txt",
+    "bytes": 142783,
+    "sha256": "8cb3ef8ad1a2c27bc0dd92903aa83fe29a910ad0cac553d8990d62798f2f6310",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/mi_gc_3.txt",
+    "bytes": 5164,
+    "sha256": "d001d95c22772aac0523559f5160df17ba611ea866d9ba67158af48bc8138109",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_7.txt",
+    "bytes": 144938,
+    "sha256": "cd1e92bcee030a7ee4c051b8f6cd4908b3de5d1f069b0f37f709645725107e06",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_17.txt",
+    "bytes": 137923,
+    "sha256": "08da038afeac572b94be33a32548030f3555902e9ef90a10b9fbc0e8e44c593d",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_14.txt",
+    "bytes": 142614,
+    "sha256": "c843f59fc059fc1d6bfa0c1479a05f06bb252472cd41d2b224367547ab7cfd1c",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/mi_gc_2.txt",
+    "bytes": 5163,
+    "sha256": "d9db3f3423d9089eb8901d247d7ca5744e182bcc42c29301a4ebc73f1a455c77",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_11.txt",
+    "bytes": 143627,
+    "sha256": "bdfa1b8fbb1cabd9041d1303ced4e94ee8fd8cef4a09ce66808e8493133f1a8f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_9.txt",
+    "bytes": 143959,
+    "sha256": "689a040e568e76580b825f7e3a42e615de5351f504e9fa2b2eaafc17f2589f6b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_12.txt",
+    "bytes": 145343,
+    "sha256": "527cc8adc05ddf43217465b3183d396c7d0cb672df0ab2f7e4ea92a5cc6d4669",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLutInfo.txt",
+    "bytes": 3,
+    "sha256": "6e2ae11dad0616f66bbb2b6e6556f580bb987fd911d7132aa6bee2bfc7cc7b52",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_6.txt",
+    "bytes": 143961,
+    "sha256": "73a40dd710ab7174bceeee9314c0ef5f5f401522c16a0ab24526542fd7f92a10",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_18.txt",
+    "bytes": 136510,
+    "sha256": "47e858858f36a672c31c47f01376e7d78ecd1466f6c5561d780d5cfa26767950",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_1.txt",
+    "bytes": 142534,
+    "sha256": "bba580ded262d27f6efc16d0f8aa774773ae8fb13da3f97d01bb707db4645bf0",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_5.txt",
+    "bytes": 141482,
+    "sha256": "a969f5b36a325141e6ea6b544e7416ae33a17536dbe335af0431a6dd42ffb465",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_0.txt",
+    "bytes": 143444,
+    "sha256": "f7f366539b97d570c5d68020662c4c56252544a750fad7d982c951150d82cfe1",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_2.txt",
+    "bytes": 143593,
+    "sha256": "1a31832f2395e8130ca1c37e20104bde61508a3fe34c72000d5636ab787bfe52",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_16.txt",
+    "bytes": 142132,
+    "sha256": "c5ab7ffbf9969fd42ab9f57d49df0211c74efb347aff9d422382d22c69fab233",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_13.txt",
+    "bytes": 144164,
+    "sha256": "dd6e1f5b19f3f44f54743b19afbe0acf3159e8b489fc96ca22dc16ba11f432a4",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_15.txt",
+    "bytes": 143347,
+    "sha256": "dfcdd4bb89f019ce6008538de9f81e5a08433618a3603cdda657acc99224e3af",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/miLut_4.txt",
+    "bytes": 142659,
+    "sha256": "121626ad2d421a84cac9376930d37a78f479472c240a1444ba43100df2a9a908",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/clstc/clstc_igc_0.txt",
+    "bytes": 1320,
+    "sha256": "bd8bbd2beebf216ba78f05acadcc04bd857c3c2971115d7bcb3acaec42592fed",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/clstc/ClstcLutInfo.txt",
+    "bytes": 2,
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/clstc/PicHDRLchIn.txt",
+    "bytes": 53491,
+    "sha256": "6a00c28df9fdcf827d0e2bb852511848f1865d8d06b84c572fd48ce77093e53b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/clstc/clstc_gc_0.txt",
+    "bytes": 1258,
+    "sha256": "251013af1c16c4df98f1a9d2fe90c12d05ec2dc3cdf71fab255727778f9ce915",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/disp0/mdss_dsi_m1_42_02_0a_dsc_cmd/clstc/ClstcLut0.txt",
+    "bytes": 119357,
+    "sha256": "eef4b5303238b558b010ac8c3f22c045176a2b9eba016e17105eeb9a62fe25e6",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/init/vendor.qti.camera.provider-service_64.rc",
+    "bytes": 1013,
+    "sha256": "b4bb019f4b3344ef40369df2299360004b5c783316ec82ec7e1763876de73519",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/odm/etc/init/init.vl53l5.rc",
+    "bytes": 383,
+    "sha256": "19a62e0959c24ae3f522482546d49755edb1d42dc85f51bc6d1c5dbc9bea0d13",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/thermald-devices.conf",
+    "bytes": 3169,
+    "sha256": "52fdfb9b59f46527a9d4cfcb8028409368d811f46d6b8440d2477c0140eff6b1",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/df_default.xml",
+    "bytes": 65768,
+    "sha256": "f87d9367f7ca2a118bf512944619aaae8bc262fc2dcd629a895b2b3f0b9a74dc",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/thermal-engine.conf",
+    "bytes": 84,
+    "sha256": "c32b39af7a19759a7db7f8b2d92d069a0534848aa7a195ca2cec24aa6c317cb3",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/sensors/sns_reg_config",
+    "bytes": 554,
+    "sha256": "37f4e1b9da8991c368fdcf318005af6d696539d47bff81f7f8c9513d356fd75d",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/sensors/config/chre_dynamic_sensors.json",
+    "bytes": 573,
+    "sha256": "a8a59b0b2f3c7379bd39c745e53311b7928e91e481cc1996c1ae1a490a68a223",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/displayconfig/display_id_4630947134992368259.xml",
+    "bytes": 2467,
+    "sha256": "3fc51df62b982f92ec5ee6e35eb5ef937596efb7d0ff79b5fb1c39313b0e509f",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/displayconfig/display_layout_configuration.xml",
+    "bytes": 68,
+    "sha256": "f81d6e3568211cbccc6b528beecb8de91f78d89abb4207744b698c447605fa12",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/displayconfig/display_id_4630946545580055171.xml",
+    "bytes": 2481,
+    "sha256": "203236f6bf57a283aa00e13d4cde639d66bee2b2eafc72a027d5f754b07c0ed1",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vcamera.provider.xml",
+    "bytes": 333,
+    "sha256": "3888ea680d746145025f8dadb6aa84940ccf168659af1c7cf07cc4ad5469da73",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/vintf/manifest/vendor.xiaomi.hardware.quickcamera@1.0-service.xml",
+    "bytes": 377,
+    "sha256": "fccd414f836053bf1ad82c59c50267446e8b5c47ad968bc03275cf5a7ab599df",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/vintf/manifest/android.hardware.camera.provider.external.xml",
+    "bytes": 333,
+    "sha256": "f02b3a00b1d95fce2374a172bbbb5c19a1567f01de3268409a5fed376bc6ccbc",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/qvr/qvrservice_config.txt",
+    "bytes": 527,
+    "sha256": "b6c16fdcc62f8b516e0a27f848c339e3ba3f6020255b6b699e4ac28e6dc89f13",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "explicit-proprietary-marker",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/qvr/qvr_hid_device_list.txt",
+    "bytes": 30,
+    "sha256": "16b22bf8a738f62c64d4650c5eab2447d9f23117888295e360015f09a05a6385",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/qvr/qvr_usb_device_list.txt",
+    "bytes": 40,
+    "sha256": "477720348ca6a792575c0ad958ea960232450fa67fbeab6f5fb9d1635a0182b2",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/qvr/cfg/519/0/65536/mtpkailua_qvr_3dof_tracker_config.txt",
+    "bytes": 918,
+    "sha256": "e3adf901fc23bdcc7ce3e1d4b9d8c74999ff4e4906f2e328550b1e898e45f94a",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "explicit-proprietary-marker",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/qvr/cfg/519/0/65536/mtpkailua_6dof_config.xml",
+    "bytes": 591,
+    "sha256": "a38f03a0c23f04fa38eeebc5a4463168e1e48cdd044c05a60beeb5dd60dd46c5",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "explicit-proprietary-marker",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/qvr/cfg/519/0/65536/mtpkailua.txt",
+    "bytes": 17082,
+    "sha256": "5b6d626d48b7c9cb3865d5a35a9cd4e6476c864a38e2c9044c7b65d0c8bb335b",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "explicit-proprietary-marker",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/init/android.hardware.camera.provider@2.7-virtual-camera-service.rc",
+    "bytes": 612,
+    "sha256": "1060a62c2fbe4159d37ad677f56212378cffb0be64d032984a2e77f6e9e19b44",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar/proprietary/vendor/etc/init/android.hardware.camera.provider@2.7-external-service.rc",
+    "bytes": 601,
+    "sha256": "20cd15c0f9d5282dd8af733ebbd76690ef945b17c93d442bbdbd7e72bbf04110",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar-camera/proprietary/system/etc/default-permissions/miuicamera-permissions.xml",
+    "bytes": 1501,
+    "sha256": "95fc1793d62979e1fe4e417b989c7dc80d6c910512146ff5aff1dab3163fadf9",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar-camera/proprietary/system/etc/sysconfig/miuicamera-hiddenapi-package-whitelist.xml",
+    "bytes": 120,
+    "sha256": "09967b083b85c68836091042e60a54be0c30f55d7175b94f4d04f3f6a46ec877",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar-camera/proprietary/system/etc/permissions/privapp-permissions-miuicamera.xml",
+    "bytes": 1529,
+    "sha256": "cfd337db2c9635362913354ba4f0dcf1d05bce0913c18ee5cf143e3e5a140fc1",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  },
+  {
+    "path": "vendor/xiaomi/ishtar-camera/proprietary/vendor/etc/camera/camxoverridesettings.txt",
+    "bytes": 14736,
+    "sha256": "c891376a9d9bc6b65c5253bb34570564791dd5db6526a307ffe83d97ce510724",
+    "mode": 420,
+    "origin": "unmanaged-tree",
+    "reason": "vendor-text-no-redistribution-grant-established",
+    "content_in_repository": false
+  }
+]

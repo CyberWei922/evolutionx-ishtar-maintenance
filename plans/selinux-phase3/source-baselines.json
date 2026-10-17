@@ -1,0 +1,43 @@
+{
+  "status": "UNAPPLIED_SOURCE_PROPOSAL",
+  "current_installed_incremental": "1792226532",
+  "source_files": [
+    {
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mfidoca.te",
+      "before_sha256": "2b9cd1dec4a87533a5c0e8b2a2ed66eacc66182439f43a8bcce5471c3a4643cb",
+      "proposed_sha256": "d03dff288c27e42ad1cee556a58c7c98a0dac2dd2b8f99586011700a75dcf59d",
+      "proposed_file": "vendor_mfidoca.te"
+    },
+    {
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "before_sha256": "665d685ab658be5f9a614513b0e61b7a3ea0779f18aa6bb860154842d9887395",
+      "proposed_sha256": "a5524a43f3b293cfa48469c6897df1094e272c1a68160d7a52668bf4cd1df9ba",
+      "proposed_file": "vendor_mtd.te"
+    }
+  ],
+  "local_evidence": "recovery/ishtar-selinux-repair-20261017-01/postboot02/logcat-avc.log",
+  "local_evidence_sha256": "665eed4949500dd961701a4f8167bc6e9f7888ee63748b38b6203cf543b9e7fc",
+  "avc_line_numbers_in_logcat_buffer": {
+    "fidoca_smcinvoke_invoke": [
+      19
+    ],
+    "mtd_smcinvoke_invoke": [
+      28,
+      39,
+      822,
+      879
+    ],
+    "mtd_qce_unmap": [
+      45
+    ],
+    "fidoca_payment_property": [
+      35
+    ]
+  },
+  "audit_lost_max_in_existing_snapshot": 1612,
+  "new_phone_collection": false,
+  "active_android_source_changed": false,
+  "compiled": false,
+  "flashed": false,
+  "enforcing_validated": false
+}

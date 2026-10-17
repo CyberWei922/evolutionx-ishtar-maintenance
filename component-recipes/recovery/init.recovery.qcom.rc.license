@@ -1,0 +1,2 @@
+SPDX-License-Identifier: LicenseRef-Recovery-init
+SPDX-FileComment: Modified by CyberWei922, 2026-10-17, to load the matching PM8008 regulator before touch initialization; original Linux Foundation copyright and license retained in file.

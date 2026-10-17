@@ -1,0 +1,12 @@
+--- a/init.recovery.qcom.rc
++++ b/init.recovery.qcom.rc
+@@ -50,6 +50,9 @@
+     setprop sys.usb.config adb
+ 
+ on property:twrp.modules.loaded=true
++    # Recovery-only supply prerequisite, pinned to the running ROM kernel.
++    # Must be paired with the matched .307 st_fts_m1.ftb, never the old FW.
++    insmod /vendor/lib/modules/1.1/qcom_pm8008-regulator.ko
+     start touch_report
+     start touchsensor
+     # Mount firmware

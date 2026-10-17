@@ -1,0 +1,160 @@
+Maintenance changes by CyberWei922 (2026-10-17).
+Upstream authors/licenses are retained; see NOTICE and licenses/component-map.json.
+Files modified: cc/llndk_library.go, filesystem/system_image.go, scripts/conv_linker_config.py, scripts/conv_linker_config_test.py
+
+diff --git a/cc/llndk_library.go b/cc/llndk_library.go
+index b119fdac1e232bb30cdca89a5c2819db9b1add9c..bdbefd140023e6234d04fc05a84362f35d81fc9f 100644
+--- a/cc/llndk_library.go
++++ b/cc/llndk_library.go
+@@ -76,30 +76,33 @@ func movedToApexLlndkLibrariesFactory() android.Singleton {
+ }
+ 
+ type movedToApexLlndkLibraries struct {
+-	movedToApexLlndkLibraries []string
++	movedToApexLlndkLibraries        []string
++	movedToApexLlndkLibraryFilenames []string
+ }
+ 
+ func (s *movedToApexLlndkLibraries) GenerateBuildActions(ctx android.SingletonContext) {
+-	// Make uses LLNDK_MOVED_TO_APEX_LIBRARIES to generate the linker config.
++	// Keep module names for existing Make consumers, but linker configuration
++	// needs real device library filenames, which may differ due to stem/suffix.
+ 	movedToApexLlndkLibrariesMap := make(map[string]bool)
++	movedToApexLlndkLibraryFilenamesMap := make(map[string]bool)
+ 	ctx.VisitAllModuleProxies(func(module android.ModuleProxy) {
+ 		if library, ok := android.OtherModuleProvider(ctx, module, LinkableInfoProvider); ok {
+ 			if library.HasLLNDKStubs && library.IsLLNDKMovedToApex {
+ 				movedToApexLlndkLibrariesMap[library.ImplementationModuleName] = true
++				if shared, ok := android.OtherModuleProvider(ctx, module, SharedLibraryInfoProvider); ok &&
++					shared.Target.Os == android.Android && !shared.IsStubs &&
++					!library.InVendorOrProduct && !library.InRamdisk &&
++					!library.InVendorRamdisk && !library.InRecovery {
++					movedToApexLlndkLibraryFilenamesMap[shared.SharedLibrary.Base()] = true
++				}
+ 			}
+ 		}
+ 	})
+ 	s.movedToApexLlndkLibraries = android.SortedKeys(movedToApexLlndkLibrariesMap)
++	s.movedToApexLlndkLibraryFilenames = android.SortedKeys(movedToApexLlndkLibraryFilenamesMap)
+ 
+-	var sb strings.Builder
+-	for i, l := range s.movedToApexLlndkLibraries {
+-		if i > 0 {
+-			sb.WriteRune(' ')
+-		}
+-		sb.WriteString(l)
+-		sb.WriteString(".so")
+-	}
+-	android.WriteFileRule(ctx, MovedToApexLlndkLibrariesFile(ctx), sb.String())
++	android.WriteFileRule(ctx, MovedToApexLlndkLibrariesFile(ctx),
++		strings.Join(s.movedToApexLlndkLibraryFilenames, " "))
+ }
+ 
+ func MovedToApexLlndkLibrariesFile(ctx android.PathContext) android.WritablePath {
+@@ -108,6 +111,7 @@ func MovedToApexLlndkLibrariesFile(ctx android.PathContext) android.WritablePath
+ 
+ func (s *movedToApexLlndkLibraries) MakeVars(ctx android.MakeVarsContext) {
+ 	ctx.Strict("LLNDK_MOVED_TO_APEX_LIBRARIES", strings.Join(s.movedToApexLlndkLibraries, " "))
++	ctx.Strict("LLNDK_MOVED_TO_APEX_LIBRARY_FILENAMES", strings.Join(s.movedToApexLlndkLibraryFilenames, " "))
+ }
+ 
+ func RegisterLlndkLibraryTxtType(ctx android.RegistrationContext) {
+diff --git a/filesystem/system_image.go b/filesystem/system_image.go
+index 166b052f851cc9118b94e62872c6c47401e6f0a0..4e4c077f61e1833392c2ac10542eb88f70ae5c5a 100644
+--- a/filesystem/system_image.go
++++ b/filesystem/system_image.go
+@@ -96,6 +96,7 @@ func (s *systemImage) BuildLinkerConfigFile(
+ 			FlagWithArg("--source ", output.String()).
+ 			FlagWithOutput("--output ", output).
+ 			FlagWithArg("--key ", "requireLibs").
++			Flag("--exclude-provided").
+ 			Textf(`--value "$(cat %s)"`, llndkMovedToApexLibraries).
+ 			Implicit(llndkMovedToApexLibraries)
+ 		// TODO: Make also supports adding an extra append command with PRODUCT_EXTRA_STUB_LIBRARIES,
+diff --git a/scripts/conv_linker_config.py b/scripts/conv_linker_config.py
+index ed3fbb79f118e657496dec146abc777dadacf001..5f43b73a590fe110572af85cf934f4a4350ff10d 100644
+--- a/scripts/conv_linker_config.py
++++ b/scripts/conv_linker_config.py
+@@ -99,9 +99,14 @@ def Append(args):
+     with open(args.source, 'rb') as f:
+         pb.ParseFromString(f.read())
+ 
++    if args.exclude_provided and args.key != 'requireLibs':
++        sys.exit('--exclude-provided is only valid for requireLibs')
++
+     if getattr(type(pb),
+                args.key).DESCRIPTOR.label == FieldDescriptor.LABEL_REPEATED:
+         for value in args.value.split():
++            if args.exclude_provided and value in pb.provideLibs:
++                continue
+             getattr(pb, args.key).append(value)
+     else:
+         setattr(pb, args.key, args.value)
+@@ -268,6 +273,11 @@ def GetArgParser():
+         help='Values of the libraries to append. If there are more than one'
+         'it should be separated by empty space'
+     )
++    append.add_argument(
++        '--exclude-provided',
++        action='store_true',
++        help='For requireLibs only, do not add libraries already declared in provideLibs.'
++    )
+     append.set_defaults(func=Append)
+ 
+     append = subparsers.add_parser('merge', help='Merge configurations')
+diff --git a/scripts/conv_linker_config_test.py b/scripts/conv_linker_config_test.py
+index d19a47be6cd9a797154de0f029247bdb77b92508..85d1e7e2140a3a8313cd766fa2bb940582b87b26 100644
+--- a/scripts/conv_linker_config_test.py
++++ b/scripts/conv_linker_config_test.py
+@@ -122,6 +122,51 @@ class ConvLinkerConfigTest(TempDirTest):
+     self.assertSetEqual(set(pb.provideLibs), set(['libbar.so']))
+ 
+ 
++  def test_Append_require_excludes_actual_providers_only(self):
++    self.write('in.pb', LinkerConfig(provideLibs=['libfoo.so'],
++                                    requireLibs=['libprior.so']).SerializeToString())
++    self.command(['append', '-s', FileArg('in.pb'), '-o', FileArg('out.pb'),
++                  '--key', 'requireLibs', '--value', 'libfoo.so libmissing.so',
++                  '--exclude-provided'])
++    pb = LinkerConfig()
++    pb.ParseFromString(self.read('out.pb'))
++    self.assertSequenceEqual(pb.provideLibs, ['libfoo.so'])
++    self.assertSequenceEqual(pb.requireLibs, ['libprior.so', 'libmissing.so'])
++
++
++  def test_Append_default_still_rejects_provider_requirement_overlap(self):
++    self.write('in.pb', LinkerConfig(provideLibs=['libfoo.so']).SerializeToString())
++    with self.assertRaises(SystemExit) as err:
++      with redirect_stderr(io.StringIO()):
++        self.command(['append', '-s', FileArg('in.pb'), '-o', FileArg('out.pb'),
++                      '--key', 'requireLibs', '--value', 'libfoo.so'])
++    self.assertEqual(err.exception.code, 1)
++    self.assertFalse(os.path.exists(os.path.join(self.tempdir, 'out.pb')))
++
++
++  def test_Append_exclusion_does_not_sanitize_invalid_existing_input(self):
++    self.write('in.pb', LinkerConfig(provideLibs=['libfoo.so'],
++                                    requireLibs=['libfoo.so']).SerializeToString())
++    with self.assertRaises(SystemExit) as err:
++      with redirect_stderr(io.StringIO()):
++        self.command(['append', '-s', FileArg('in.pb'), '-o', FileArg('out.pb'),
++                      '--key', 'requireLibs', '--value', 'libbar.so',
++                      '--exclude-provided'])
++    self.assertEqual(err.exception.code, 1)
++    self.assertFalse(os.path.exists(os.path.join(self.tempdir, 'out.pb')))
++
++
++  def test_Append_exclusion_rejects_wrong_field(self):
++    self.write('in.pb', LinkerConfig().SerializeToString())
++    with self.assertRaises(SystemExit) as err:
++      with redirect_stderr(io.StringIO()):
++        self.command(['append', '-s', FileArg('in.pb'), '-o', FileArg('out.pb'),
++                      '--key', 'provideLibs', '--value', 'libfoo.so',
++                      '--exclude-provided'])
++    self.assertIn('only valid for requireLibs', str(err.exception))
++    self.assertFalse(os.path.exists(os.path.join(self.tempdir, 'out.pb')))
++
++
+   def command(self, args):
+     parser = conv_linker_config.GetArgParser()
+     parsed_args = parser.parse_args(self.resolve_paths(args))

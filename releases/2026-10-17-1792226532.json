@@ -1,0 +1,32 @@
+{
+  "device": "ishtar",
+  "rom": "EvolutionX",
+  "android_sdk": 36,
+  "incremental": "1792226532",
+  "build_type": "Unofficial",
+  "file": "EvolutionX-16.0-20261017-ishtar-11.12-Unofficial.zip",
+  "bytes": 4545144494,
+  "sha256": "f1618f556cd9238cfea14bb6e87cdd45a7569491bc905efe715ec50eaca15a8b",
+  "local_artifact_directory": "/mnt/android-download/delivery/ishtar-refresh-boot-sync-candidate-20261017-01",
+  "installed_and_booted": true,
+  "data_preserving_flash": true,
+  "owner_observation": "第一段开始就流畅",
+  "acceptance_scope": "one first-boot desktop swipe; not repeated cold boots or all ROM functions",
+  "selinux": "Permissive",
+  "selected_tests": {
+    "total": 57,
+    "pass": 51,
+    "fail": 6,
+    "new_regressions_pass": 4,
+    "mode_switch_tests_pass": 24,
+    "all_tests_passed": false
+  },
+  "full_new_partition_readbacks_completed": false,
+  "new_complete_boot_trace_analysis_completed": false,
+  "miui_default_camera": "planned_next_version",
+  "miui_camera_payload_sha256": "b7b2c4c77c4a4656e94569b918b208293f4d1a0d60900c0e805082770452f9ea",
+  "recovery_sha256": "c39e0236d4aac787e59827f835d58ec3af127357bcd576fb2b66da72c2c4057e",
+  "selinux_policy_sha256": "8452f8c56d9ea0b5ebb533ea48eaf12951a09802a2129a5b1750fd9e3a3a23a3",
+  "brightness_ramp_fast_up_down": 0.301001098767,
+  "brightness_ramp_slow_up_down": 0.240813087535
+}

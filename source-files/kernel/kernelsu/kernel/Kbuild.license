@@ -1,0 +1,3 @@
+SPDX-License-Identifier: GPL-2.0-only
+SPDX-FileComment: Modified by CyberWei922 on 2026-10-17; see the project patch and NOTICE. Exact archived build-source SHA256: 245093097d3f34f40548b2e7deb171d4b9dd28e63fc5f8319a2aca13057a580e
+Original notice: Preserve upstream kernel/directory ownership and license; no ownership transfer is asserted.

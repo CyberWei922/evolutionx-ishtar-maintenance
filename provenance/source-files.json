@@ -1,0 +1,186 @@
+{
+  "build/make/tools/releasetools/add_img_to_target_files.py": {
+    "sha256": "8529a247945c5f8b8227d1828688248b42abd418727a229e949114062d6c1e9f",
+    "mode": 436,
+    "bytes": 50097,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "build/soong/cc/llndk_library.go": {
+    "sha256": "e16de7a4e707a062484a20c9aca5229fe4ca0cf243a50b7cbe337997c3bacdfa",
+    "mode": 436,
+    "bytes": 8995,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "build/soong/filesystem/system_image.go": {
+    "sha256": "7f22e91aa87fbd0a80846bccdcb77c94692f84651bc8e864c04e25ee6e9dc261",
+    "mode": 436,
+    "bytes": 4974,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "build/soong/scripts/conv_linker_config.py": {
+    "sha256": "18cb6ae58a37745d4824dfd2162bd1db7ff4253db755db7516359e1cb1ddf096",
+    "mode": 436,
+    "bytes": 10508,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "build/soong/scripts/conv_linker_config_test.py": {
+    "sha256": "bac5427c63b56286863dfbff13ef18dfa8468b15be2e598d264dd2d693f23fba",
+    "mode": 436,
+    "bytes": 6515,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "device/xiaomi/ishtar/BoardConfig.mk": {
+    "sha256": "459283111b544d36b9c0273455d9f5ee1ec167e6789dca7b98f3c8fd41301833",
+    "mode": 436,
+    "bytes": 2000,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "device/xiaomi/ishtar/device.mk": {
+    "sha256": "4a0b7d19587f9c378d017f4bd3f820f6693123b2019e23cc2ef8847fad28366d",
+    "mode": 436,
+    "bytes": 2703,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "device/xiaomi/ishtar/overlay/ApertureOverlayIshtar/res/values/config.xml": {
+    "sha256": "ca1b9d6125989bbbb59a54899d7c511e9daffe458d067edcd1dcafed257639af",
+    "mode": 436,
+    "bytes": 2436,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "frameworks/native/services/surfaceflinger/Scheduler/Scheduler.cpp": {
+    "sha256": "1ea4c0a6ae1faea8d317ed9aa064eb0a26732d7c6e537feb1c0744b51afe3a2e",
+    "mode": 436,
+    "bytes": 76466,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "frameworks/native/services/surfaceflinger/Scheduler/Scheduler.h": {
+    "sha256": "e5daf7fbe5cf93d80395ef86220a54bcf703b8b37235c5b5400db45e368e638a",
+    "mode": 436,
+    "bytes": 31330,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "frameworks/native/services/surfaceflinger/SurfaceFlinger.cpp": {
+    "sha256": "74dfd1dd9de8f2acf889280a079c31b23bc0db3bb8d263428e69ca77f319e582",
+    "mode": 436,
+    "bytes": 482705,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "frameworks/native/services/surfaceflinger/tests/unittests/SchedulerTest.cpp": {
+    "sha256": "205a409f16a73df469366c8629c40f190463d9d8c11f3e61a8916614aa55375f",
+    "mode": 436,
+    "bytes": 99757,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "frameworks/native/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h": {
+    "sha256": "cd0aa7583c85611daf7ae42f29e445a30bac4577cbe9ddc8449fdf2a13c1799e",
+    "mode": 436,
+    "bytes": 53103,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "kernel/kernelsu/kernel/Kbuild": {
+    "sha256": "245093097d3f34f40548b2e7deb171d4b9dd28e63fc5f8319a2aca13057a580e",
+    "mode": 436,
+    "bytes": 4221,
+    "license": "GPL-2.0-only",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "kernel/xiaomi/sm8550/arch/arm64/configs/vendor/ishtar_GKI.config": {
+    "sha256": "13fa6af0b932184433bdfc4577271ffb9bf85cad448212130633478037474ea5",
+    "mode": 436,
+    "bytes": 944,
+    "license": "GPL-2.0-only",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "kernel/xiaomi/sm8550/drivers/Kconfig": {
+    "sha256": "86245808cf5ae89398fc774564d93d34befc10fe8395db5fba52c49c8b391240",
+    "mode": 436,
+    "bytes": 3980,
+    "license": "GPL-2.0-only",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "kernel/xiaomi/sm8550/drivers/Makefile": {
+    "sha256": "3d99d2b6f152e208b11f74c66f9dcdc300a815ff715a276b39e49114e24b504f",
+    "mode": 436,
+    "bytes": 5504,
+    "license": "GPL-2.0-only",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "kernel/xiaomi/sm8550-modules/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c": {
+    "sha256": "53e4e8de427cb490564e5fe3406ab6fca612db68c142b849ce47b8da3d776a9e",
+    "mode": 436,
+    "bytes": 64562,
+    "license": "GPL-2.0-only",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "packages/apps/Aperture/app/src/main/java/org/lineageos/aperture/models/Camera.kt": {
+    "sha256": "dc9831fb0adaa29816e136763a386914b1c72699ddea1c68692f5e1262c4df7d",
+    "mode": 436,
+    "bytes": 11472,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "packages/apps/Aperture/app/src/main/java/org/lineageos/aperture/repositories/OverlaysRepository.kt": {
+    "sha256": "ad41a27b30073b455033861931c2f6a24a0dbbf016bdd1879476ffb048b6d1a3",
+    "mode": 436,
+    "bytes": 5159,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "packages/apps/Aperture/app/src/main/res/values/config.xml": {
+    "sha256": "d08b521f4f132453001b43dc51d0ed259ba6049a0b40b77d1091043d9685fdb2",
+    "mode": 436,
+    "bytes": 4595,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "system/linkerconfig/contents/section/sectionbuilder.cc": {
+    "sha256": "e25c01e29a7f4d7e7620666675c2568c7be56e94641914b53c2f3d93a52bbec0",
+    "mode": 436,
+    "bytes": 7316,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  },
+  "vendor/lineage/build/tasks/evolution.mk": {
+    "sha256": "98d27e77ffe054e929d929f0d11b0db503b69391adf404ba8ff6054a4072488e",
+    "mode": 436,
+    "bytes": 1516,
+    "license": "Apache-2.0",
+    "modified": true,
+    "exact_build_source_bytes": true
+  }
+}

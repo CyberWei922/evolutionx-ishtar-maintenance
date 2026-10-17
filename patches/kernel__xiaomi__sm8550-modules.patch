@@ -1,0 +1,23 @@
+Maintenance changes by CyberWei922 (2026-10-17).
+Upstream authors/licenses are retained; see NOTICE and licenses/component-map.json.
+Files modified: qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c
+
+diff --git a/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c b/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c
+index 0ac1f8744a289014fa4d046e16da841e5a318ec6..ab213704c920af061a8a05a9f4d5ecc1b76f6f37 100644
+--- a/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c
++++ b/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c
+@@ -1685,14 +1685,6 @@ int cam_sensor_publish_dev_info(struct cam_req_mgr_device_info *info)
+ 		info->p_delay = CAM_PIPELINE_DELAY_2;
+ 		info->m_delay = CAM_MODESWITCH_DELAY_2;
+ 	}
+-#if defined(CONFIG_TARGET_PRODUCT_ISHTAR)
+-	if (info->p_delay > CAM_PIPELINE_DELAY_1) {
+-		CAM_INFO(CAM_REQ,
+-			"Clamp ishtar sensor pipeline delay %d to %d",
+-			info->p_delay, CAM_PIPELINE_DELAY_1);
+-		info->p_delay = CAM_PIPELINE_DELAY_1;
+-	}
+-#endif
+ 	info->trigger = CAM_TRIGGER_POINT_SOF;
+ 
+ 	CAM_DBG(CAM_REQ, "num batched frames %d p_delay is %d",

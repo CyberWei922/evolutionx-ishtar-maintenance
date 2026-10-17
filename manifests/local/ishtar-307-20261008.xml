@@ -1,0 +1,10 @@
+<manifest>
+  <remote name="ishtar-307-github" fetch="https://github.com/" />
+  <project name="ishtar-aosp/android_device_xiaomi_ishtar" path="device/xiaomi/ishtar" remote="ishtar-307-github" revision="8605aa5b3749f70b062fae1932db5c5e531a21b1" upstream="refs/heads/lineage-23.2" clone-depth="1" />
+  <project name="ishtar-aosp/android_device_xiaomi_sm8550-common" path="device/xiaomi/sm8550-common" remote="ishtar-307-github" revision="a27e05da9dea27a593deb11ba49e17dab39018c5" upstream="refs/heads/lineage-23.2" clone-depth="1" />
+  <project name="LineageOS/android_hardware_xiaomi" path="hardware/xiaomi" remote="ishtar-307-github" revision="af5766acc6d6766eddeb52574996247128428ff6" upstream="refs/heads/lineage-23.2" clone-depth="1" />
+  <project name="ishtar-aosp/android_kernel_xiaomi_sm8550-devicetrees" path="kernel/xiaomi/sm8550-devicetrees" remote="ishtar-307-github" revision="459e035f746ca8110a72c984b123db8b3f08516e" upstream="refs/heads/lineage-23.2" clone-depth="1" />
+  <project name="ishtar-aosp/android_kernel_xiaomi_sm8550-modules" path="kernel/xiaomi/sm8550-modules" remote="ishtar-307-github" revision="cf984f86bcfc795190429a7c094fe6bbde5f7b02" upstream="refs/heads/lineage-23.2" clone-depth="1" />
+  <project name="ishtar-aosp/android_kernel_xiaomi_sm8550" path="kernel/xiaomi/sm8550" remote="ishtar-307-github" revision="34eaaccbb3d71edb8e03eb903d113e0e105b6237" upstream="refs/heads/lineage-23.2" clone-depth="1" />
+  <project name="ishtar-aosp/android_vendor_xiaomi_sm8550-common" path="vendor/xiaomi/sm8550-common" remote="ishtar-307-github" revision="698e2ee32cd36a828556c680b790539d6239b3b2" upstream="refs/heads/lineage-23.2" clone-depth="1" />
+</manifest>

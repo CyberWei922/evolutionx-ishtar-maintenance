@@ -1,0 +1,28 @@
+{
+  "device": "ishtar",
+  "date": "2026-10-17",
+  "snapshot_kind": "source-maintenance-increment-not-build-output",
+  "upstream_projects_pinned": 1187,
+  "changed_projects_exported": 12,
+  "source_text_overrides": 22,
+  "external_binary_references": 1261,
+  "gms_custom_delta_exported": false,
+  "followup_verification_stopped_at_owner_request": true,
+  "phone_accessed": false,
+  "new_build_performed": false,
+  "compiled_artifacts_uploaded": false,
+  "gemini_directory_description": {
+    "task_id": "6c07e484381b48b1",
+    "model": "gemini-3.8-flash-high",
+    "status": "completed",
+    "attempts": 1,
+    "retries": 0
+  },
+  "source_full_files": 23,
+  "external_text_references": 302,
+  "license_cleanup": true,
+  "license_cleanup_phone_accessed": false,
+  "production_source_modified": false,
+  "complete_corresponding_source_offer": false,
+  "old_history_is_ancestor": false
+}

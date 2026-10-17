@@ -1,0 +1,32 @@
+[
+  {
+    "path": "component-recipes/miui-camera03/build-ishtar-factory-camera-20261016.py",
+    "bytes": 4426,
+    "sha256": "9b8dfbd045f283774c1f9698ea8a818ca0e991ff5346cbdcb6985c90551f133d",
+    "reason": "license-unconfirmed-derived-camera-recipe"
+  },
+  {
+    "path": "component-recipes/miui-camera03/request-factory-client.patch",
+    "bytes": 722,
+    "sha256": "cba823e30c99a52883fdf5886a1a25076b1bc73577c2805a890e85842e9104d7",
+    "reason": "license-unconfirmed-derived-camera-recipe"
+  },
+  {
+    "path": "component-recipes/miui-camera03/IshtarRequestFactoryCandidate.java",
+    "bytes": 5839,
+    "sha256": "4eec21acb18903b062d7f6b73518ff6598414e6d5692e7c5341afd0f74b31538",
+    "reason": "license-unconfirmed-derived-camera-recipe"
+  },
+  {
+    "path": "component-recipes/miui-camera03/message13-toast.patch",
+    "bytes": 259,
+    "sha256": "b0fdae0abb1367ff6fcd7f5f0a395c961493b7ca5d58a8e40f58e4845f98f785",
+    "reason": "license-unconfirmed-derived-camera-recipe"
+  },
+  {
+    "path": "component-recipes/miui-camera03/request-factory-client-block.smali",
+    "bytes": 579,
+    "sha256": "19f048caffd9fbf3dba32d3b0c12185bb56d7d6ccbd2533e129e59226978c246",
+    "reason": "license-unconfirmed-derived-camera-recipe"
+  }
+]

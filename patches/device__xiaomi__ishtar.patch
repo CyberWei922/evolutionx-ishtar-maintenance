@@ -1,0 +1,122 @@
+Maintenance changes by CyberWei922 (2026-10-17).
+Upstream authors/licenses are retained; see NOTICE and licenses/component-map.json.
+Files modified: BoardConfig.mk, device.mk, overlay/ApertureOverlayIshtar/res/values/config.xml, proprietary-files.txt, sepolicy/vendor/file_contexts
+
+diff --git a/BoardConfig.mk b/BoardConfig.mk
+index 9aa123ba472a58fd9b41279268b7302a69e0bae7..ef19251944a8fd9253edfda1e2737cad6cf0f9cb 100644
+--- a/BoardConfig.mk
++++ b/BoardConfig.mk
+@@ -40,7 +40,18 @@ BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD += \
+ BOOT_KERNEL_MODULES += \
+ 	fts_touch_spi.ko
+ 
++# Owner-accepted Recovery touch repair (2026-10-17): PM8008 loading and ROM FTS firmware.
++# Fixed same-kernel prebuilt; Data decryption and new-ROM runtime need separate validation.
++BOARD_PREBUILT_RECOVERYIMAGE := $(DEVICE_PATH)/recovery/prebuilt-recovery.img
++BOARD_PREBUILT_RECOVERYIMAGE_SHA256 := c39e0236d4aac787e59827f835d58ec3af127357bcd576fb2b66da72c2c4057e
++
++# Preserve the current owner-tested engineering boot mode from full07-permissive-02.
++# Enforcing policy adaptation is a separate task; AVB configuration is unchanged.
++BOARD_BOOTCONFIG += androidboot.selinux=permissive
++BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive enforcing=0
++
+ # Properties
++TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/camera-system.prop
+ TARGET_ODM_PROP += $(DEVICE_PATH)/properties/odm.prop
+ TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
+ TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
+diff --git a/device.mk b/device.mk
+index a3a34adf14ffa8585c32104c3c0804516b0c4107..da093ddcbf50a167c38aee13916d7aab9bdb6f37 100644
+--- a/device.mk
++++ b/device.mk
+@@ -68,3 +68,6 @@ PRODUCT_COPY_FILES += \
+ 
+ # Inherit from the proprietary version
+ $(call inherit-product, vendor/xiaomi/ishtar/ishtar-vendor.mk)
++
++# Owner-accepted MIUI camera03 native integration.
++$(call inherit-product, vendor/xiaomi/ishtar-camera/camera.mk)
+diff --git a/overlay/ApertureOverlayIshtar/res/values/config.xml b/overlay/ApertureOverlayIshtar/res/values/config.xml
+index a94283dc1288b382d942fcca8bed2b7213669000..a12019a728d7edd22cb2efeee07c5c101ee5cd88 100644
+--- a/overlay/ApertureOverlayIshtar/res/values/config.xml
++++ b/overlay/ApertureOverlayIshtar/res/values/config.xml
+@@ -4,10 +4,13 @@
+      SPDX-License-Identifier: Apache-2.0
+ -->
+ <resources>
+-    <!-- MCXSuperFG cannot map a 4K P010 application stream. Keep Ultra HDR on
+-         a sub-4K P010 + JPEG combination while regular JPEG remains uncapped. -->
+-    <bool name="config_enableJpegUltraHdr">true</bool>
+-    <integer name="config_maxJpegUltraHdrPixels">3000000</integer>
++    <!-- Standalone auxiliary cameras reject JPEG_R sessions on the .307 HAL.
++         Normal JPEG works; keep the main/front camera policy unchanged. -->
++    <string-array name="config_jpegUltraHdrDisabledCameraIds">
++        <item>3</item>
++        <item>4</item>
++        <item>5</item>
++    </string-array>
+ 
+     <!-- Enable auxiliary cameras selector. -->
+     <bool name="config_enableAuxCameras">true</bool>
+diff --git a/proprietary-files.txt b/proprietary-files.txt
+index e32b24c3b0a387d428b4f64d6f39d15ed50b6e48..885de8c80b1e482ee59f5fef8643bfcc277de6e2 100644
+--- a/proprietary-files.txt
++++ b/proprietary-files.txt
+@@ -1,6 +1,9 @@
+ ## All proprietary files from this list, unless pinned and noted otherwise,
+ ## are taken from ishtar-ota_full-OS3.0.307.0.WMACNXM-user-16.0
+ 
++## The TrueSight trio below is pinned to this same OTA. libTrueSight's second
++## hash includes the existing AHardwareBuffer symbol-version fixups.
++
+ # ACDBs
+ odm/etc/acdbdata/Forte/Forte_acdb_cal.acdb:vendor/etc/acdbdata/kalama_mtp/Forte_acdb_cal.acdb
+ odm/etc/acdbdata/Forte/Forte_workspaceFileXml.qwsp:vendor/etc/acdbdata/kalama_mtp/Forte_workspaceFileXml.qwsp
+@@ -974,7 +977,7 @@ odm/lib64/camera/components/com.mi.node.mimovie.so
+ odm/lib64/camera/components/com.mi.node.realtimebokeh.so
+ odm/lib64/camera/components/com.mi.node.rearvideo.so
+ odm/lib64/camera/components/com.mi.node.skinbeautifier.so
+-odm/lib64/camera/components/com.mi.node.tsskinbeautifier.so|c681fb5a766f0c72e49a1f89a010ad7b1fde2d85
++odm/lib64/camera/components/com.mi.node.tsskinbeautifier.so|adf21f034bc7febf012673c6bd2fe7cb5cc16ba9
+ odm/lib64/camera/components/com.mi.node.videobokeh.so
+ odm/lib64/camera/components/com.mi.node.videofilter.so
+ odm/lib64/camera/components/com.mi.node.videonight.so
+@@ -1079,7 +1082,7 @@ odm/lib64/camera/plugins/com.xiaomi.plugin.portraitrepair.so
+ odm/lib64/camera/plugins/com.xiaomi.plugin.sdsr.so
+ odm/lib64/camera/plugins/com.xiaomi.plugin.sr.so
+ odm/lib64/camera/plugins/com.xiaomi.plugin.supermoon.so
+-odm/lib64/camera/plugins/com.xiaomi.plugin.tsskinbeautifier.so|c6cf84066319f8a59b7abf23bf89db5c64aa3df2
++odm/lib64/camera/plugins/com.xiaomi.plugin.tsskinbeautifier.so|0a96af8caa27463d7e01a13b845c0d107868fd10
+ odm/lib64/hw/camera.qcom.so
+ odm/lib64/hw/camera.xiaomi.so
+ odm/lib64/hw/com.qti.chi.offline.so
+@@ -1136,7 +1139,7 @@ odm/lib64/com.xiaomi.immunesystem.so
+ odm/lib64/libAF.so
+ odm/lib64/libHISCppAlgos.so
+ odm/lib64/libMiMotion.so
+-odm/lib64/libTrueSight.so|6c0247bf345973df8960f9f96da62cc9f49e9f23|806b0d7e5fc467fedb2732985fe0671c9b6f0b7e
++odm/lib64/libTrueSight.so|46e190eadad304087441d0dec16480c208474e92|b242378f2e1831ed7f2cef247a0bc669ae81d095
+ odm/lib64/libXMFaceFocus.so
+ odm/lib64/libaidenoiser.so
+ odm/lib64/libaidenoiserv2.so
+diff --git a/sepolicy/vendor/file_contexts b/sepolicy/vendor/file_contexts
+index 83d99190e516366f638fdf3d0c873a20a8b3dccb..a3ad7c63cba64353a053b549e735e7044d8822dc 100644
+--- a/sepolicy/vendor/file_contexts
++++ b/sepolicy/vendor/file_contexts
+@@ -1,2 +1,16 @@
+ # NFC
+ /odm/bin/hw/android\.hardware\.nfc@1\.2-service-st u:object_r:hal_nfc_default_exec:s0
++
++# Camera time-of-flight range sensor
++/dev/stmvl53l5 u:object_r:vendor_stmvl53l5_device:s0
++
++# Vendor external/virtual HIDL camera provider
++/vendor/bin/hw/android\.hardware\.camera\.provider@2\.7-virtual-camera-service u:object_r:hal_camera_default_exec:s0
++
++# Xiaomi HIDL vendor daemons: each leaves init through its own exec type.
++/odm/bin/fidoca u:object_r:vendor_mfidoca_exec:s0
++/odm/bin/mtd@1\.3 u:object_r:vendor_mtd_exec:s0
++/odm/bin/tidad@1\.2 u:object_r:vendor_tida_exec:s0
++
++# QRTR lookup uses the existing Qualcomm QRTR domain and socket policy.
++/vendor/bin/qrtr-lookup u:object_r:vendor_qrtr_exec:s0

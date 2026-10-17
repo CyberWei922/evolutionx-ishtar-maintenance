@@ -1,0 +1,22 @@
+{
+  "license": "Apache-2.0 for this maintenance recipe, not a grant to the input XMLs",
+  "rates": {
+    "screenBrightnessRampFastDecrease": 0.301001098767,
+    "screenBrightnessRampFastIncrease": 0.301001098767,
+    "screenBrightnessRampSlowDecrease": 0.240813087535,
+    "screenBrightnessRampSlowIncrease": 0.240813087535
+  },
+  "inputs": [
+    {
+      "name": "display_id_4630946545580055171.xml",
+      "baseline_sha256": "b2dbf44f11d8a444dac0ea968f5d2f22b005a609bafbd13fd2405291d438e6c1",
+      "accepted_sha256": "203236f6bf57a283aa00e13d4cde639d66bee2b2eafc72a027d5f754b07c0ed1"
+    },
+    {
+      "name": "display_id_4630947134992368259.xml",
+      "baseline_sha256": "66411f75887116f0084c65a39d45882a2095829974aca8b37fd59cb0f7104e32",
+      "accepted_sha256": "3fc51df62b982f92ec5ee6e35eb5ef937596efb7d0ff79b5fb1c39313b0e509f"
+    }
+  ],
+  "accepted_scope": "Owner accepted current smoothing feel; further tuning is a new version."
+}

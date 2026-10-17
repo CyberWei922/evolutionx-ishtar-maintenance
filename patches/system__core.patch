@@ -1,0 +1,19 @@
+Maintenance changes by CyberWei922 (2026-10-17).
+Upstream authors/licenses are retained; see NOTICE and licenses/component-map.json.
+Files modified: rootdir/etc/linker.config.json
+
+diff --git a/rootdir/etc/linker.config.json b/rootdir/etc/linker.config.json
+index 24e17dcc6cc254bc22b4fef0105509451a93edf8..d9c9371e269c57d7eeb62d309a471b21c770ba97 100644
+--- a/rootdir/etc/linker.config.json
++++ b/rootdir/etc/linker.config.json
+@@ -2,7 +2,9 @@
+   "requireLibs": [
+     "libandroidicu.so",
+     "libdexfile.so",
+-    "libdexfiled.so",
++    // libdexfiled is an RTLD_NOLOAD probe with a release libdexfile fallback.
++    // Link it only when the currently activated ART APEX exports it.
++    ":optional-art-debug",
+     "libicu.so",
+     "libjdwp.so",
+     "libnativebridge.so",

@@ -1,0 +1,17 @@
+Maintenance changes by CyberWei922 (2026-10-17).
+Upstream authors/licenses are retained; see NOTICE and licenses/component-map.json.
+Files modified: configs/properties/vendor.prop
+
+diff --git a/configs/properties/vendor.prop b/configs/properties/vendor.prop
+index 86cac083977a1c99770c344e39033c3024d5c08f..c43a21ff957ed3cf3757d68480110a631d302ba1 100644
+--- a/configs/properties/vendor.prop
++++ b/configs/properties/vendor.prop
+@@ -93,7 +93,7 @@ camera.disable_zsl_mode=true
+ persist.sys.miui.camera.version=3.0
+ ro.camera.enableCamera1MaxZsl=1
+ ro.hardware.camera=xiaomi
+-vendor.camera.aux.packagelist=com.android.camera,org.lineageos.aperture,org.lineageos.aperture.dev
++vendor.camera.aux.packagelist=com.android.camera,org.lineageos.aperture,org.lineageos.aperture.dev,org.codeaurora.snapcam
+ 
+ # Display
+ ro.vendor.displayfeature.dump=true

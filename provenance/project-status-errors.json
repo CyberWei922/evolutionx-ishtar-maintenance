@@ -1,0 +1,7 @@
+[
+  {
+    "project": "vendor/gms",
+    "exit": 128,
+    "error": "git-lfs filter-process --skip: 1: git-lfs: not found\nfatal: the remote end hung up unexpectedly\n"
+  }
+]

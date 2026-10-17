@@ -1,0 +1,454 @@
+[
+  {
+    "project": "build/make",
+    "head": "d029f2917532024a5d5788cf024c0067eaf88e23",
+    "patch": "patches/build__make.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "core/Makefile",
+      "tools/releasetools/add_img_to_target_files.py"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "core/Makefile",
+        "kind": "file",
+        "bytes": 381356,
+        "sha256": "6a3af6dbf3c25724210fbee58c17823797ba78031eb25225b8619d4d173e29da",
+        "mode": 436
+      },
+      {
+        "path": "tools/releasetools/add_img_to_target_files.py",
+        "kind": "file",
+        "bytes": 50097,
+        "sha256": "8529a247945c5f8b8227d1828688248b42abd418727a229e949114062d6c1e9f",
+        "mode": 436
+      }
+    ],
+    "untracked": [],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "build/soong",
+    "head": "8dc46958b4c2614bdfe5250cde4d0642a1d5d231",
+    "patch": "patches/build__soong.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "cc/llndk_library.go",
+      "filesystem/system_image.go",
+      "scripts/conv_linker_config.py",
+      "scripts/conv_linker_config_test.py"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "cc/llndk_library.go",
+        "kind": "file",
+        "bytes": 8995,
+        "sha256": "e16de7a4e707a062484a20c9aca5229fe4ca0cf243a50b7cbe337997c3bacdfa",
+        "mode": 436
+      },
+      {
+        "path": "filesystem/system_image.go",
+        "kind": "file",
+        "bytes": 4974,
+        "sha256": "7f22e91aa87fbd0a80846bccdcb77c94692f84651bc8e864c04e25ee6e9dc261",
+        "mode": 436
+      },
+      {
+        "path": "scripts/conv_linker_config.py",
+        "kind": "file",
+        "bytes": 10508,
+        "sha256": "18cb6ae58a37745d4824dfd2162bd1db7ff4253db755db7516359e1cb1ddf096",
+        "mode": 436
+      },
+      {
+        "path": "scripts/conv_linker_config_test.py",
+        "kind": "file",
+        "bytes": 6515,
+        "sha256": "bac5427c63b56286863dfbff13ef18dfa8468b15be2e598d264dd2d693f23fba",
+        "mode": 436
+      }
+    ],
+    "untracked": [
+      {
+        "status": "??",
+        "path": "cc/llndk_library_filenames_test.go",
+        "export_kind": "text"
+      }
+    ],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "device/xiaomi/ishtar",
+    "head": "8605aa5b3749f70b062fae1932db5c5e531a21b1",
+    "patch": "patches/device__xiaomi__ishtar.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "BoardConfig.mk",
+      "device.mk",
+      "overlay/ApertureOverlayIshtar/res/values/config.xml",
+      "proprietary-files.txt",
+      "sepolicy/vendor/file_contexts"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "BoardConfig.mk",
+        "kind": "file",
+        "bytes": 2000,
+        "sha256": "459283111b544d36b9c0273455d9f5ee1ec167e6789dca7b98f3c8fd41301833",
+        "mode": 436
+      },
+      {
+        "path": "device.mk",
+        "kind": "file",
+        "bytes": 2703,
+        "sha256": "4a0b7d19587f9c378d017f4bd3f820f6693123b2019e23cc2ef8847fad28366d",
+        "mode": 436
+      },
+      {
+        "path": "overlay/ApertureOverlayIshtar/res/values/config.xml",
+        "kind": "file",
+        "bytes": 2436,
+        "sha256": "ca1b9d6125989bbbb59a54899d7c511e9daffe458d067edcd1dcafed257639af",
+        "mode": 436
+      },
+      {
+        "path": "proprietary-files.txt",
+        "kind": "file",
+        "bytes": 91635,
+        "sha256": "477aa98b48c259f0f2e5bbfcb387c701275451f08a418b27af842344df40da07",
+        "mode": 436
+      },
+      {
+        "path": "sepolicy/vendor/file_contexts",
+        "kind": "file",
+        "bytes": 700,
+        "sha256": "077f1c098e2c0b4f1659c18c42521d0366d14eaf6936c2d334e3a5f6fcfd0556",
+        "mode": 436
+      }
+    ],
+    "untracked": [
+      {
+        "status": "??",
+        "path": "properties/camera-system.prop",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "recovery/README.md",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "recovery/prebuilt-recovery.img",
+        "export_kind": "binary"
+      },
+      {
+        "status": "??",
+        "path": "sepolicy/vendor/device.te",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "sepolicy/vendor/hal_camera_default.te",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "sepolicy/vendor/hal_xiaomi_tee_services.te",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "sepolicy/vendor/hwservice_contexts",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "sepolicy/vendor/service.te",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "sepolicy/vendor/service_contexts",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "sepolicy/vendor/vendor_mfidoca.te",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "sepolicy/vendor/vendor_mtd.te",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "sepolicy/vendor/vendor_tida.te",
+        "export_kind": "text"
+      }
+    ],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "device/xiaomi/sm8550-common",
+    "head": "a27e05da9dea27a593deb11ba49e17dab39018c5",
+    "patch": "patches/device__xiaomi__sm8550-common.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "configs/properties/vendor.prop"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "configs/properties/vendor.prop",
+        "kind": "file",
+        "bytes": 8349,
+        "sha256": "f3f9de1dabd2daf43e209fdece6df270c8e5ad8d2951195d7d8f734270d03629",
+        "mode": 436
+      }
+    ],
+    "untracked": [],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "frameworks/native",
+    "head": "8a54c845ecac7cf4e5b5bd80b0753b5d979ef062",
+    "patch": "patches/frameworks__native.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "services/surfaceflinger/Scheduler/Scheduler.cpp",
+      "services/surfaceflinger/Scheduler/Scheduler.h",
+      "services/surfaceflinger/SurfaceFlinger.cpp",
+      "services/surfaceflinger/tests/unittests/SchedulerTest.cpp",
+      "services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "services/surfaceflinger/Scheduler/Scheduler.cpp",
+        "kind": "file",
+        "bytes": 76466,
+        "sha256": "1ea4c0a6ae1faea8d317ed9aa064eb0a26732d7c6e537feb1c0744b51afe3a2e",
+        "mode": 436
+      },
+      {
+        "path": "services/surfaceflinger/Scheduler/Scheduler.h",
+        "kind": "file",
+        "bytes": 31330,
+        "sha256": "e5daf7fbe5cf93d80395ef86220a54bcf703b8b37235c5b5400db45e368e638a",
+        "mode": 436
+      },
+      {
+        "path": "services/surfaceflinger/SurfaceFlinger.cpp",
+        "kind": "file",
+        "bytes": 482705,
+        "sha256": "74dfd1dd9de8f2acf889280a079c31b23bc0db3bb8d263428e69ca77f319e582",
+        "mode": 436
+      },
+      {
+        "path": "services/surfaceflinger/tests/unittests/SchedulerTest.cpp",
+        "kind": "file",
+        "bytes": 99757,
+        "sha256": "205a409f16a73df469366c8629c40f190463d9d8c11f3e61a8916614aa55375f",
+        "mode": 436
+      },
+      {
+        "path": "services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h",
+        "kind": "file",
+        "bytes": 53103,
+        "sha256": "cd0aa7583c85611daf7ae42f29e445a30bac4577cbe9ddc8449fdf2a13c1799e",
+        "mode": 436
+      }
+    ],
+    "untracked": [],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "kernel/kernelsu",
+    "head": "932014ab5b2c9b74a3d11e2ec4d17dd10fc9442e",
+    "patch": "patches/kernel__kernelsu.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "kernel/Kbuild"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "kernel/Kbuild",
+        "kind": "file",
+        "bytes": 4221,
+        "sha256": "245093097d3f34f40548b2e7deb171d4b9dd28e63fc5f8319a2aca13057a580e",
+        "mode": 436
+      }
+    ],
+    "untracked": [],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "kernel/xiaomi/sm8550",
+    "head": "34eaaccbb3d71edb8e03eb903d113e0e105b6237",
+    "patch": "patches/kernel__xiaomi__sm8550.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "arch/arm64/configs/vendor/ishtar_GKI.config",
+      "drivers/Kconfig",
+      "drivers/Makefile"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "arch/arm64/configs/vendor/ishtar_GKI.config",
+        "kind": "file",
+        "bytes": 944,
+        "sha256": "13fa6af0b932184433bdfc4577271ffb9bf85cad448212130633478037474ea5",
+        "mode": 436
+      },
+      {
+        "path": "drivers/Kconfig",
+        "kind": "file",
+        "bytes": 3980,
+        "sha256": "86245808cf5ae89398fc774564d93d34befc10fe8395db5fba52c49c8b391240",
+        "mode": 436
+      },
+      {
+        "path": "drivers/Makefile",
+        "kind": "file",
+        "bytes": 5504,
+        "sha256": "3d99d2b6f152e208b11f74c66f9dcdc300a815ff715a276b39e49114e24b504f",
+        "mode": 436
+      }
+    ],
+    "untracked": [
+      {
+        "status": "??",
+        "path": "drivers/kernelsu",
+        "export_kind": "symlink"
+      }
+    ],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "kernel/xiaomi/sm8550-modules",
+    "head": "cf984f86bcfc795190429a7c094fe6bbde5f7b02",
+    "patch": "patches/kernel__xiaomi__sm8550-modules.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c",
+        "kind": "file",
+        "bytes": 64562,
+        "sha256": "53e4e8de427cb490564e5fe3406ab6fca612db68c142b849ce47b8da3d776a9e",
+        "mode": 436
+      }
+    ],
+    "untracked": [],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "packages/apps/Aperture",
+    "head": "f7c0a93f787cc9e0db4193b6094bd51575567898",
+    "patch": "patches/packages__apps__Aperture.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "app/src/main/java/org/lineageos/aperture/models/Camera.kt",
+      "app/src/main/java/org/lineageos/aperture/repositories/OverlaysRepository.kt",
+      "app/src/main/res/values/config.xml"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "app/src/main/java/org/lineageos/aperture/models/Camera.kt",
+        "kind": "file",
+        "bytes": 11472,
+        "sha256": "dc9831fb0adaa29816e136763a386914b1c72699ddea1c68692f5e1262c4df7d",
+        "mode": 436
+      },
+      {
+        "path": "app/src/main/java/org/lineageos/aperture/repositories/OverlaysRepository.kt",
+        "kind": "file",
+        "bytes": 5159,
+        "sha256": "ad41a27b30073b455033861931c2f6a24a0dbbf016bdd1879476ffb048b6d1a3",
+        "mode": 436
+      },
+      {
+        "path": "app/src/main/res/values/config.xml",
+        "kind": "file",
+        "bytes": 4595,
+        "sha256": "d08b521f4f132453001b43dc51d0ed259ba6049a0b40b77d1091043d9685fdb2",
+        "mode": 436
+      }
+    ],
+    "untracked": [],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "system/core",
+    "head": "1429ff95cf1df69179994461b18c49921a0ebc65",
+    "patch": "patches/system__core.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "rootdir/etc/linker.config.json"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "rootdir/etc/linker.config.json",
+        "kind": "file",
+        "bytes": 1098,
+        "sha256": "f42b030896ebde5917d17546904b2dbf89482d546578a11e1fe4734aed24fde1",
+        "mode": 436
+      }
+    ],
+    "untracked": [],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "system/linkerconfig",
+    "head": "12743643593c9f13784ed30424db2ea09a7bc65f",
+    "patch": "patches/system__linkerconfig.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "contents/section/sectionbuilder.cc"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "contents/section/sectionbuilder.cc",
+        "kind": "file",
+        "bytes": 7316,
+        "sha256": "e25c01e29a7f4d7e7620666675c2568c7be56e94641914b53c2f3d93a52bbec0",
+        "mode": 436
+      }
+    ],
+    "untracked": [
+      {
+        "status": "??",
+        "path": "contents/tests/configuration/artdebug_test.cc",
+        "export_kind": "text"
+      },
+      {
+        "status": "??",
+        "path": "contents/tests/configuration/sphalcontract_test.cc",
+        "export_kind": "text"
+      }
+    ],
+    "nested_repo_entries_skipped": []
+  },
+  {
+    "project": "vendor/lineage",
+    "head": "0ad4fa86fdaec71fa2daa8f0b59410dc93155ec5",
+    "patch": "patches/vendor__lineage.patch",
+    "patch_applies_to_recorded_head": true,
+    "tracked_text_paths": [
+      "build/tasks/evolution.mk"
+    ],
+    "tracked_worktree": [
+      {
+        "path": "build/tasks/evolution.mk",
+        "kind": "file",
+        "bytes": 1516,
+        "sha256": "98d27e77ffe054e929d929f0d11b0db503b69391adf404ba8ff6054a4072488e",
+        "mode": 436
+      }
+    ],
+    "untracked": [],
+    "nested_repo_entries_skipped": []
+  }
+]

@@ -1,0 +1,67 @@
+Maintenance changes by CyberWei922 (2026-10-17).
+Upstream authors/licenses are retained; see NOTICE and licenses/component-map.json.
+Files modified: app/src/main/java/org/lineageos/aperture/models/Camera.kt, app/src/main/java/org/lineageos/aperture/repositories/OverlaysRepository.kt, app/src/main/res/values/config.xml
+
+diff --git a/app/src/main/java/org/lineageos/aperture/models/Camera.kt b/app/src/main/java/org/lineageos/aperture/models/Camera.kt
+index 0847e6fd0c324d502037861064150c946fb6f8f2..bf72b1db230a20b980f611bcc69c48ff345daa4a 100644
+--- a/app/src/main/java/org/lineageos/aperture/models/Camera.kt
++++ b/app/src/main/java/org/lineageos/aperture/models/Camera.kt
+@@ -40,6 +40,7 @@ class Camera private constructor(
+     val logicalZoomRatios: SortedMap<Float, Float>,
+     additionalVideoFrameRates: Map<Quality, Map<FrameRate, Boolean>>,
+     val supportedExtensionModes: Set<Int>,
++    jpegUltraHdrDisabled: Boolean,
+ ) {
+     /**
+      * The [androidx.camera.core.CameraSelector] for this camera.
+@@ -82,6 +83,8 @@ class Camera private constructor(
+             ImageCapture.OUTPUT_FORMAT_RAW_JPEG -> PhotoOutputFormat.RAW_JPEG
+             else -> error("Unknown CameraX output format $it")
+         }
++    }.filter { format ->
++        !jpegUltraHdrDisabled || format != PhotoOutputFormat.JPEG_ULTRA_HDR
+     }
+ 
+     private val supportedVideoFrameRates = cameraInfo.supportedFrameRateRanges.mapNotNull {
+@@ -301,6 +304,7 @@ class Camera private constructor(
+                 logicalZoomRatios,
+                 additionalVideoFrameRates,
+                 supportedExtensionModes,
++                jpegUltraHdrDisabled = cameraId in overlaysRepository.jpegUltraHdrDisabledCameraIds,
+             )
+         }
+     }
+diff --git a/app/src/main/java/org/lineageos/aperture/repositories/OverlaysRepository.kt b/app/src/main/java/org/lineageos/aperture/repositories/OverlaysRepository.kt
+index 3b7663ce9845e7c05090e5d8a5b02055a30efa07..6574d8d28874c091a2cd019d36111abc68575b9d 100644
+--- a/app/src/main/java/org/lineageos/aperture/repositories/OverlaysRepository.kt
++++ b/app/src/main/java/org/lineageos/aperture/repositories/OverlaysRepository.kt
+@@ -48,6 +48,12 @@ class OverlaysRepository(private val context: Context) {
+      */
+     val ignoredAuxCameraIds = getStringArray(R.array.config_ignoredAuxCameraIds)
+ 
++    /**
++     * Cameras that advertise JPEG Ultra HDR but cannot configure its output stream.
++     */
++    val jpegUltraHdrDisabledCameraIds =
++        getStringArray(R.array.config_jpegUltraHdrDisabledCameraIds).toSet()
++
+     /**
+      * @see R.bool.config_ignoreLogicalAuxCameras
+      */
+diff --git a/app/src/main/res/values/config.xml b/app/src/main/res/values/config.xml
+index 1920aa1393a61d6e43b5d76474105b0fdd1addfa..db0564fa83195bc10ac81b97400e673726b49403 100644
+--- a/app/src/main/res/values/config.xml
++++ b/app/src/main/res/values/config.xml
+@@ -12,6 +12,12 @@
+         <!-- No camera is ignored by default. -->
+     </string-array>
+ 
++    <!-- Camera IDs with an incompatible JPEG Ultra HDR output stream.
++         Normal JPEG, RAW and other cameras remain unchanged. -->
++    <string-array name="config_jpegUltraHdrDisabledCameraIds">
++        <!-- No camera is restricted by default. -->
++    </string-array>
++
+     <!-- Decide whether to ignore auxiliary cameras that
+          are logical (made of multiple physical sensors).
+          Set this to false if your camera HAL doesn't expose

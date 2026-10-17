@@ -1,0 +1,72 @@
+# Upstream attribution and maintenance changes
+
+Upstream copyright, license, attribution, patent and trademark notices remain applicable. This is not an official LineageOS or Evolution X release.
+
+Maintenance changes by CyberWei922, 2026-10-17: camera integration/compatibility, Recovery PM8008 initialization, brightness ramp parameters, initial SELinux device/service labeling, build/linker compatibility, KernelSU integration and SurfaceFlinger startup mode synchronization. Exact changes are recorded in the project patches. No claim is made that all upstream code was authored by this maintainer.
+
+All files below are modified relative to the recorded upstream HEAD unless marked as a new maintenance file. Full snapshots preserve the exact build-source bytes; adjacent `.license` files identify the modifications without altering those bytes. The five metadata/configuration files omitted from full snapshots are listed in provenance/full-source-omissions.json; their narrow changes remain in the patches.
+
+
+## build/make @ d029f2917532024a5d5788cf024c0067eaf88e23
+
+- Modified: build/make/core/Makefile
+- Modified: build/make/tools/releasetools/add_img_to_target_files.py
+
+## build/soong @ 8dc46958b4c2614bdfe5250cde4d0642a1d5d231
+
+- Modified: build/soong/cc/llndk_library.go
+- Modified: build/soong/filesystem/system_image.go
+- Modified: build/soong/scripts/conv_linker_config.py
+- Modified: build/soong/scripts/conv_linker_config_test.py
+
+## device/xiaomi/ishtar @ 8605aa5b3749f70b062fae1932db5c5e531a21b1
+
+- Modified: device/xiaomi/ishtar/BoardConfig.mk
+- Modified: device/xiaomi/ishtar/device.mk
+- Modified: device/xiaomi/ishtar/overlay/ApertureOverlayIshtar/res/values/config.xml
+- Modified: device/xiaomi/ishtar/proprietary-files.txt
+- Modified: device/xiaomi/ishtar/sepolicy/vendor/file_contexts
+
+## device/xiaomi/sm8550-common @ a27e05da9dea27a593deb11ba49e17dab39018c5
+
+- Modified: device/xiaomi/sm8550-common/configs/properties/vendor.prop
+
+## frameworks/native @ 8a54c845ecac7cf4e5b5bd80b0753b5d979ef062
+
+- Modified: frameworks/native/services/surfaceflinger/Scheduler/Scheduler.cpp
+- Modified: frameworks/native/services/surfaceflinger/Scheduler/Scheduler.h
+- Modified: frameworks/native/services/surfaceflinger/SurfaceFlinger.cpp
+- Modified: frameworks/native/services/surfaceflinger/tests/unittests/SchedulerTest.cpp
+- Modified: frameworks/native/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h
+
+## kernel/kernelsu @ 932014ab5b2c9b74a3d11e2ec4d17dd10fc9442e
+
+- Modified: kernel/kernelsu/kernel/Kbuild
+
+## kernel/xiaomi/sm8550 @ 34eaaccbb3d71edb8e03eb903d113e0e105b6237
+
+- Modified: kernel/xiaomi/sm8550/arch/arm64/configs/vendor/ishtar_GKI.config
+- Modified: kernel/xiaomi/sm8550/drivers/Kconfig
+- Modified: kernel/xiaomi/sm8550/drivers/Makefile
+
+## kernel/xiaomi/sm8550-modules @ cf984f86bcfc795190429a7c094fe6bbde5f7b02
+
+- Modified: kernel/xiaomi/sm8550-modules/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c
+
+## packages/apps/Aperture @ f7c0a93f787cc9e0db4193b6094bd51575567898
+
+- Modified: packages/apps/Aperture/app/src/main/java/org/lineageos/aperture/models/Camera.kt
+- Modified: packages/apps/Aperture/app/src/main/java/org/lineageos/aperture/repositories/OverlaysRepository.kt
+- Modified: packages/apps/Aperture/app/src/main/res/values/config.xml
+
+## system/core @ 1429ff95cf1df69179994461b18c49921a0ebc65
+
+- Modified: system/core/rootdir/etc/linker.config.json
+
+## system/linkerconfig @ 12743643593c9f13784ed30424db2ea09a7bc65f
+
+- Modified: system/linkerconfig/contents/section/sectionbuilder.cc
+
+## vendor/lineage @ 0ad4fa86fdaec71fa2daa8f0b59410dc93155ec5
+
+- Modified: vendor/lineage/build/tasks/evolution.mk

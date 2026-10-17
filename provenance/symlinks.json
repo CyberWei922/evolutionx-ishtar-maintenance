@@ -1,0 +1,117 @@
+[
+  {
+    "path": "kernel/xiaomi/sm8550/drivers/kernelsu",
+    "target": "../../../kernelsu/kernel",
+    "origin": "untracked:kernel/xiaomi/sm8550"
+  },
+  {
+    "path": "device/qcom/sepolicy_vndr/SEPolicy.mk",
+    "target": "../../../hardware/qcom-caf/common/os_pickup_sepolicy_vndr.mk",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom/Android.mk",
+    "target": "../qcom-caf/common/os_pickup_aosp.mk",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/msm8953/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/msm8996/Android.bp",
+    "target": "../common/os_pickup.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/msm8996/Android.mk",
+    "target": "../common/os_pickup.mk",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/msm8998/Android.bp",
+    "target": "../common/os_pickup.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/sdm660/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/sdm845/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/sm8150/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/sm8250/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/sm8350/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/sm8450/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/sm8450-6.6/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/sm8550/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/sm8650/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "hardware/qcom-caf/sm8750/Android.bp",
+    "target": "../common/os_pickup_qssi.bp",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "build/CleanSpec.mk",
+    "target": "make/CleanSpec.mk",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "build/buildspec.mk.default",
+    "target": "make/buildspec.mk.default",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "build/core",
+    "target": "make/core",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "build/envsetup.sh",
+    "target": "make/envsetup.sh",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "build/target",
+    "target": "make/target",
+    "origin": "unmanaged-symlink"
+  },
+  {
+    "path": "build/tools",
+    "target": "make/tools",
+    "origin": "unmanaged-symlink"
+  }
+]

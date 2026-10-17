@@ -1,0 +1,203 @@
+Maintenance changes by CyberWei922 (2026-10-17).
+Upstream authors/licenses are retained; see NOTICE and licenses/component-map.json.
+Files modified: services/surfaceflinger/Scheduler/Scheduler.cpp, services/surfaceflinger/Scheduler/Scheduler.h, services/surfaceflinger/SurfaceFlinger.cpp, services/surfaceflinger/tests/unittests/SchedulerTest.cpp, services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h
+
+diff --git a/services/surfaceflinger/Scheduler/Scheduler.cpp b/services/surfaceflinger/Scheduler/Scheduler.cpp
+index 09343113ef7befd32d1f92eba23afbf20a4dde68..dfc025ce89e5b3bf490fa5baf63724e54e68c020 100644
+--- a/services/surfaceflinger/Scheduler/Scheduler.cpp
++++ b/services/surfaceflinger/Scheduler/Scheduler.cpp
+@@ -1667,6 +1667,29 @@ auto Scheduler::applyPolicy(S Policy::* statePtr, T&& newState,
+     return consideredSignals;
+ }
+ 
++void Scheduler::reapplyDisplayModes() {
++    SFTRACE_CALL();
++    std::vector<display::DisplayModeRequest> modeRequests;
++    {
++        std::scoped_lock policyLock(mPolicyLock);
++        std::scoped_lock displayLock(mDisplayLock);
++        if (!mPacesetterDisplayId) return;
++
++        const auto modeChoices = chooseDisplayModes();
++        modeRequests.reserve(modeChoices.size());
++        for (const auto& [id, choice] : modeChoices) {
++            mPolicy.modeOpt[id] = choice.mode;
++            modeRequests.emplace_back(
++                    display::DisplayModeRequest{.mode = choice.mode,
++                                                .emitEvent = choice.consideredSignals
++                                                                     .shouldEmitEvent()});
++        }
++    }
++    // The cache can already contain these modes even though the earlier requests were dropped.
++    // Release Scheduler locks before calling back into SurfaceFlinger, as in applyPolicy.
++    mSchedulerCallback.requestDisplayModes(std::move(modeRequests));
++}
++
+ auto Scheduler::chooseDisplayModes() const -> DisplayModeChoiceMap {
+     SFTRACE_CALL();
+ 
+diff --git a/services/surfaceflinger/Scheduler/Scheduler.h b/services/surfaceflinger/Scheduler/Scheduler.h
+index c9410f92b185858e7ed36daab2602aabc680cfc2..c6601c81fbbdf948edde0842d4cc38053f2a5001 100644
+--- a/services/surfaceflinger/Scheduler/Scheduler.h
++++ b/services/surfaceflinger/Scheduler/Scheduler.h
+@@ -275,6 +275,10 @@ public:
+     void chooseRefreshRateForContent(const surfaceflinger::frontend::LayerHierarchy*,
+                                      bool updateAttachedChoreographer) EXCLUDES(mDisplayLock);
+ 
++    // Reconcile selections made while SurfaceFlinger was not accepting mode requests.
++    // Recompute from the current policy instead of replaying stale startup requests.
++    void reapplyDisplayModes() REQUIRES(kMainThreadContext) EXCLUDES(mPolicyLock, mDisplayLock);
++
+     void resetAllIdleTimers() EXCLUDES(mDisplayLock);
+ 
+     // Indicates that touch interaction is taking place.
+diff --git a/services/surfaceflinger/SurfaceFlinger.cpp b/services/surfaceflinger/SurfaceFlinger.cpp
+index 502355fd68b106ca70b3e6a4b40cea85d75e4a1a..95871a1b1cff0b61ca3653f9adb8dee6153336e6 100644
+--- a/services/surfaceflinger/SurfaceFlinger.cpp
++++ b/services/surfaceflinger/SurfaceFlinger.cpp
+@@ -865,7 +865,14 @@ void SurfaceFlinger::bootFinished() {
+             }
+         }
+ 
+-        mBootStage = BootStage::FINISHED;
++        {
++            Mutex::Autolock lock(mStateLock);
++            mBootStage = BootStage::FINISHED;
++            // Scheduler may have cached a choice whose request was rejected during boot.
++            // Submit a fresh selection now that mode changes are accepted.
++            SFTRACE_NAME("reapplyDisplayModesAfterBoot");
++            mScheduler->reapplyDisplayModes();
++        }
+ 
+         if (base::GetBoolProperty("sf.debug.show_refresh_rate_overlay"s, false)) {
+             ftl::FakeGuard guard(mStateLock);
+@@ -4872,18 +4879,17 @@ void SurfaceFlinger::requestHardwareVsync(PhysicalDisplayId displayId, bool enab
+ }
+ 
+ void SurfaceFlinger::requestDisplayModes(std::vector<display::DisplayModeRequest> modeRequests) {
++    // Main-thread callers hold mStateLock, including the boot-completion reconciliation.
++    ConditionalLock lock(mStateLock, std::this_thread::get_id() != mMainThreadId);
++
++    SFTRACE_INT("DisplayModeRequestBootStage", static_cast<int>(mBootStage));
+     if (mBootStage != BootStage::FINISHED) [[unlikely]] {
++        SFTRACE_NAME("displayModeRequestDeferredDuringBoot");
+         return;
+     }
+ 
+     SFTRACE_CALL();
+ 
+-    // If this is called from the main thread mStateLock must be locked before
+-    // Currently the only way to call this function from the main thread is from
+-    // Scheduler::chooseRefreshRateForContent
+-
+-    ConditionalLock lock(mStateLock, std::this_thread::get_id() != mMainThreadId);
+-
+     for (auto& request : modeRequests) {
+         const auto& modePtr = request.mode.modePtr;
+ 
+diff --git a/services/surfaceflinger/tests/unittests/SchedulerTest.cpp b/services/surfaceflinger/tests/unittests/SchedulerTest.cpp
+index e33b7d365cccfbc13f0ad0d3b92e412d302a29e7..abf948c7884769db98795b1a7ed1b4b4a981ca6a 100644
+--- a/services/surfaceflinger/tests/unittests/SchedulerTest.cpp
++++ b/services/surfaceflinger/tests/unittests/SchedulerTest.cpp
+@@ -451,6 +451,83 @@ TEST_F(SchedulerTest, chooseRefreshRateForContentSelectsMaxRefreshRate) {
+                                             /*updateAttachedChoreographer*/ false);
+ }
+ 
++TEST_F(SchedulerTest, reapplyDisplayModesRequestsCachedChoice) {
++    mScheduler->registerDisplay(kDisplayId1, ui::DisplayConnectionType::Internal,
++                                std::make_shared<RefreshRateSelector>(kDisplay1Modes,
++                                                                      kDisplay1Mode60->getId()));
++    auto layer = kLayer;
++    layer.vote = RefreshRateSelector::LayerVoteType::Max;
++    mScheduler->setContentRequirements({layer});
++    // getPreferredDisplayMode caches 120Hz without submitting a mode request.
++    ASSERT_EQ(mScheduler->getPreferredDisplayMode(), kDisplay1Mode120_120);
++
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode120_120))))
++            .Times(1);
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->reapplyDisplayModes());
++}
++
++TEST_F(SchedulerTest, reapplyDisplayModesRecomputesAfterIdle) {
++    mScheduler->registerDisplay(kDisplayId1, ui::DisplayConnectionType::Internal,
++                                std::make_shared<RefreshRateSelector>(kDisplay1Modes,
++                                                                      kDisplay1Mode60->getId()));
++    auto layer = kLayer;
++    layer.vote = RefreshRateSelector::LayerVoteType::Max;
++    mScheduler->setContentRequirements({layer});
++    ASSERT_EQ(mScheduler->getPreferredDisplayMode(), kDisplay1Mode120_120);
++    // An old 120Hz choice must not be replayed if the display has since become idle.
++    mScheduler->setTouchStateAndIdleTimerPolicy(kDisplayId1, {.idle = true});
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode60_60))))
++            .Times(1);
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->reapplyDisplayModes());
++    // Reconciliation must also update the cache so the next activity transition can raise it.
++    mScheduler->setTouchStateAndIdleTimerPolicy(kDisplayId1, {.idle = false});
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode120_120))))
++            .Times(1);
++    mScheduler->touchTimerCallback(TestableScheduler::TimerState::Reset);
++}
++
++TEST_F(SchedulerTest, reapplyDisplayModesHonorsSingleModeDisplay) {
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode60_60))))
++            .Times(1);
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->reapplyDisplayModes());
++}
++
++TEST_F(SchedulerTest, reapplyDisplayModesIncludesPoweredOnFollowers) {
++    SET_FLAG_FOR_TEST(flags::follower_arbitrary_refresh_rate_selection, true);
++    mScheduler->registerDisplay(kDisplayId1, ui::DisplayConnectionType::Internal,
++                                std::make_shared<RefreshRateSelector>(kDisplay1Modes,
++                                                                      kDisplay1Mode60->getId()),
++                                kDisplayId1);
++    mScheduler->registerDisplay(kDisplayId2, ui::DisplayConnectionType::External,
++                                std::make_shared<RefreshRateSelector>(kDisplay2Modes,
++                                                                      kDisplay2Mode60->getId()),
++                                kDisplayId1);
++    FTL_FAKE_GUARD(kMainThreadContext,
++                   mScheduler->setDisplayPowerMode(kDisplayId1, hal::PowerMode::ON));
++    FTL_FAKE_GUARD(kMainThreadContext,
++                   mScheduler->setDisplayPowerMode(kDisplayId2, hal::PowerMode::ON));
++    ASSERT_EQ(mScheduler->getPacesetterDisplayId(), kDisplayId1);
++    auto layer = kLayer;
++    layer.vote = RefreshRateSelector::LayerVoteType::Max;
++    mScheduler->setContentRequirements({layer});
++    mScheduler->setTouchStateAndIdleTimerPolicy(kDisplayId2, {.idle = true});
++
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode120_120),
++                        Field(&DisplayModeRequest::mode, kDisplay2Mode60_60))))
++            .Times(1);
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->reapplyDisplayModes());
++}
++
+ TEST_F(SchedulerTest, chooseRefreshRateForContentFollowerModeChangeRequest) {
+     SET_FLAG_FOR_TEST(flags::pacesetter_selection, true);
+     SET_FLAG_FOR_TEST(flags::follower_arbitrary_refresh_rate_selection, true);
+diff --git a/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h b/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h
+index 181d135a2db7c5dc38aa6b4165c2fef1f5360441..d8700f108d4b524a85233395e74f066ec77fe081 100644
+--- a/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h
++++ b/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h
+@@ -379,9 +379,11 @@ public:
+ 
+     auto acquireVirtualDisplay(ui::Size resolution, ui::PixelFormat format,
+                                const std::string& uniqueId,
+-                               compositionengine::DisplayCreationArgsBuilder& builder) {
++                               compositionengine::DisplayCreationArgsBuilder& builder,
++                               bool canAllocateHwcForVDS = true) {
+         ftl::FakeGuard guard(mFlinger->mStateLock);
+-        return mFlinger->acquireVirtualDisplay(resolution, format, uniqueId, builder);
++        return mFlinger->acquireVirtualDisplay(resolution, format, uniqueId, builder,
++                                               canAllocateHwcForVDS);
+     }
+ 
+     auto destroyVirtualDisplay(const sp<IBinder>& displayToken) {

@@ -1,0 +1,7 @@
+# Recovery触控修复
+
+正式镜像100MiB，SHA c39e0236d4aac787e59827f835d58ec3af127357bcd576fb2b66da72c2c4057e。机主触控验收通过，实际源码device/xiaomi/ishtar/recovery/prebuilt-recovery.img取此文件。
+
+直接阻点为Recovery没有加载PM8008供电驱动。离线镜像只改init.recovery.qcom.rc、配套qcom_pm8008-regulator.ko和ROM配套st_fts_m1.ftb；4033个其他CPIO条目逐字节保留。模块SHA a8addc89be2caf94dfe5472afcb8b0c34f8648c1f56016efb468e2bce769f22b；固件SHA71b2af98db9ca30a6e330756dc5f935d472c0d4a05517c961836f0abfa5e9f2a，版本0015/0018。
+
+当前镜像固定配套内核5.15.211-g34eaaccbb3d7-dirty，换内核须重新核对，不把成功加载供电驱动解释为触控API混载已经证明。修复镜像及其原始备份留在原组件交接，Git只记录外部取件和源码集成配置。Recovery重进解密/实际OTA等未逐项扩写验收，不允许用旧b757…镜像替代。

@@ -1,0 +1,10 @@
+{
+  "reason": "No standalone explicit file license established; keep minimal functional/configuration deltas and metadata, not full copied file",
+  "paths": [
+    "build/make/core/Makefile",
+    "device/xiaomi/ishtar/proprietary-files.txt",
+    "device/xiaomi/ishtar/sepolicy/vendor/file_contexts",
+    "device/xiaomi/sm8550-common/configs/properties/vendor.prop",
+    "system/core/rootdir/etc/linker.config.json"
+  ]
+}
