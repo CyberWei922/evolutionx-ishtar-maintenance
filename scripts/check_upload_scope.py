@@ -17,6 +17,13 @@ for p in list((r/'source-files').rglob('*'))+list((r/'source-overrides').rglob('
 for name,row in json.loads((r/'provenance/source-files.json').read_text()).items():
  p=r/'source-files'/name
  assert hashlib.sha256(p.read_bytes()).hexdigest()==row['sha256'],name
+candidate=r/'provenance/candidate-source-files.json'
+if candidate.exists():
+ for row in json.loads(candidate.read_text())['files']:
+  p=r/row['repository_path']
+  assert p.resolve().is_relative_to(r/'plans') and not p.is_symlink(),p
+  assert p.stat().st_size==row['bytes'] and hashlib.sha256(p.read_bytes()).hexdigest()==row['sha256'],p
+  assert Path(str(p)+'.license').is_file() and row['license']=='Apache-2.0',p
 for p in r.rglob('*'):
  if not p.is_file() or '.git' in p.relative_to(r).parts:continue
  assert p.suffix.lower() not in ['.apk','.img','.zip','.ko','.so','.dex','.pk8','.key','.jks','.keystore','.p12','.pfx'],p

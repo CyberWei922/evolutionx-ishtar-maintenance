@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# Preserve the closed service string ABI while narrowing property ownership.
+persist.vendor.sys.pay.widevine u:object_r:vendor_mtd_widevine_prop:s0 exact string
+vendor.sys.rpmb_state u:object_r:vendor_mtd_rpmb_prop:s0 exact string

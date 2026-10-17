@@ -70,3 +70,8 @@ All files below are modified relative to the recorded upstream HEAD unless marke
 ## vendor/lineage @ 0ad4fa86fdaec71fa2daa8f0b59410dc93155ec5
 
 - Modified: vendor/lineage/build/tasks/evolution.mk
+SELinux phases 3–5 candidate (2026-10-17):
+Original maintenance additions are Apache-2.0. The modified common init file
+retains its 2026 LineageOS Project copyright and Apache-2.0 SPDX notice.
+The cumulative patch is relative to the recorded installed-source baseline.
+No proprietary Mtd executable/library or raw device logs are included.

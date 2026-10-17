@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# Status outputs of the Xiaomi Mtd service; no generic vendor property writes.
+vendor_restricted_prop(vendor_mtd_widevine_prop)
+vendor_restricted_prop(vendor_mtd_rpmb_prop)

@@ -1,0 +1,62 @@
+{
+  "phase3": {
+    "status": "PHASE3_POLICY_COMPILED_AND_VERIFIED",
+    "policy_build_exit": 0,
+    "policy_sha256": "e6095043e753966e8b18bc2607178c628a16986f68d32a3da071476d9b2ccde4",
+    "policy_bytes": 1600481,
+    "permissive_domains": [
+      "su",
+      "qti-testscripts",
+      "backuptool",
+      "vendor_pdt_app",
+      "vendor-qti-testscripts",
+      "aoncameraservice_app",
+      "vendor_hal_debugutils_default",
+      "vendor_cta_app",
+      "vendor_logkit_app"
+    ],
+    "source_files_verified": 45,
+    "phone_installed": false,
+    "enforcement_switched": false
+  },
+  "phase4": {
+    "status": "PHASE4_POLICY_COMPILED_AND_VERIFIED",
+    "policy_build_exit": 0,
+    "policy_sha256": "4e3bf5111bdc076c2ecc0522be45e8bad82021e50cebc52cebb54145a5ed0eb4",
+    "policy_bytes": 1600789,
+    "permissive_domains": [
+      "su",
+      "qti-testscripts",
+      "backuptool",
+      "vendor_pdt_app",
+      "vendor-qti-testscripts",
+      "aoncameraservice_app",
+      "vendor_hal_debugutils_default",
+      "vendor_cta_app",
+      "vendor_logkit_app"
+    ],
+    "source_files_verified": 48,
+    "phone_installed": false,
+    "enforcement_switched": false
+  },
+  "phase5": {
+    "status": "PHASE5_POLICY_COMPILED_AND_VERIFIED",
+    "policy_build_exit": 0,
+    "policy_sha256": "b69311c6d9dcef93be9b25947af9b6e292bb2eaca552ed4acc734b5b844f2a69",
+    "policy_bytes": 1601057,
+    "permissive_domains": [
+      "su",
+      "qti-testscripts",
+      "backuptool",
+      "vendor_pdt_app",
+      "vendor-qti-testscripts",
+      "aoncameraservice_app",
+      "vendor_hal_debugutils_default",
+      "vendor_cta_app",
+      "vendor_logkit_app"
+    ],
+    "source_files_verified": 50,
+    "phone_installed": false,
+    "enforcement_switched": false
+  }
+}

@@ -1,0 +1,106 @@
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/vendor/file.te
+@@ -0,0 +1,4 @@
++# SPDX-License-Identifier: Apache-2.0
++
++# QRTR lookup output only; keep other vendor data outside this type.
++type vendor_qrtr_lookup_data_file, file_type, data_file_type;
+--- a/device/xiaomi/ishtar/sepolicy/vendor/file_contexts
++++ b/device/xiaomi/ishtar/sepolicy/vendor/file_contexts
+@@ -14,3 +14,6 @@
+ 
+ # QRTR lookup uses the existing Qualcomm QRTR domain and socket policy.
+ /vendor/bin/qrtr-lookup u:object_r:vendor_qrtr_exec:s0
++
++# QRTR lookup output (also relabeled for data-preserving upgrades).
++/data/vendor/qrtr(/.*)? u:object_r:vendor_qrtr_lookup_data_file:s0
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/vendor/property.te
+@@ -0,0 +1,5 @@
++# SPDX-License-Identifier: Apache-2.0
++
++# Status outputs of the Xiaomi Mtd service; no generic vendor property writes.
++vendor_restricted_prop(vendor_mtd_widevine_prop)
++vendor_restricted_prop(vendor_mtd_rpmb_prop)
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/vendor/property_contexts
+@@ -0,0 +1,5 @@
++# SPDX-License-Identifier: Apache-2.0
++
++# Preserve the closed service string ABI while narrowing property ownership.
++persist.vendor.sys.pay.widevine u:object_r:vendor_mtd_widevine_prop:s0 exact string
++vendor.sys.rpmb_state u:object_r:vendor_mtd_rpmb_prop:s0 exact string
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/vendor/qrtr.te
+@@ -0,0 +1,5 @@
++# SPDX-License-Identifier: Apache-2.0
++
++# Operations observed for /data/vendor/qrtr/qrtr-lookup.txt.
++allow vendor_qrtr vendor_qrtr_lookup_data_file:dir { getattr search write add_name };
++allow vendor_qrtr vendor_qrtr_lookup_data_file:file { create open write setattr };
+--- a/device/xiaomi/ishtar/sepolicy/vendor/vendor_mfidoca.te
++++ b/device/xiaomi/ishtar/sepolicy/vendor/vendor_mfidoca.te
+@@ -7,9 +7,12 @@
+ get_prop(vendor_mfidoca, hwservicemanager_prop)
+ allow vendor_mfidoca hidl_manager_hwservice:hwservice_manager find;
+ 
+-# Startup AVCs identify smcinvoke ioctl 0x9803 and DMA_HEAP_IOCTL_ALLOC
+-# 0x4800. Keep device access and ioctl authorization scoped to this daemon.
++# Startup AVCs identify smcinvoke INVOKE_REQ 0x9801 / SERVER_REQ 0x9803
++# and DMA_HEAP_IOCTL_ALLOC 0x4800. Keep access scoped to this daemon.
+ allow vendor_mfidoca tee_device:chr_file { getattr open read write ioctl };
+-allowxperm vendor_mfidoca tee_device:chr_file ioctl { 0x9803 };
++allowxperm vendor_mfidoca tee_device:chr_file ioctl { 0x9801 0x9803 };
+ allow vendor_mfidoca { vendor_dmabuf_qseecom_heap_device vendor_dmabuf_qseecom_ta_heap_device }:chr_file { open read ioctl };
+ allowxperm vendor_mfidoca { vendor_dmabuf_qseecom_heap_device vendor_dmabuf_qseecom_ta_heap_device }:chr_file ioctl { 0x4800 };
++
++# Publish the existing FIDO payment capability property.
++set_prop(vendor_mfidoca, vendor_payment_security_prop)
+--- a/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te
++++ b/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te
+@@ -7,10 +7,10 @@
+ get_prop(vendor_mtd, hwservicemanager_prop)
+ allow vendor_mtd hidl_manager_hwservice:hwservice_manager find;
+ 
+-# Startup AVCs identify smcinvoke ioctl 0x9803 and DMA_HEAP_IOCTL_ALLOC
+-# 0x4800. Keep device access and ioctl authorization scoped to this daemon.
++# Startup AVCs identify smcinvoke INVOKE_REQ 0x9801 / SERVER_REQ 0x9803
++# and DMA_HEAP_IOCTL_ALLOC 0x4800. Keep access scoped to this daemon.
+ allow vendor_mtd tee_device:chr_file { getattr open read write ioctl };
+-allowxperm vendor_mtd tee_device:chr_file ioctl { 0x9803 };
++allowxperm vendor_mtd tee_device:chr_file ioctl { 0x9801 0x9803 };
+ allow vendor_mtd { vendor_dmabuf_qseecom_heap_device vendor_dmabuf_qseecom_ta_heap_device }:chr_file { open read ioctl };
+ allowxperm vendor_mtd { vendor_dmabuf_qseecom_heap_device vendor_dmabuf_qseecom_ta_heap_device }:chr_file ioctl { 0x4800 };
+ 
+@@ -21,6 +21,19 @@
+ # MTService startup obtains ISystemSuspend, as seen in the current AVCs.
+ wakelock_use(vendor_mtd)
+ 
+-# Current MT startup ioctl observed on the QCE crypto device.
++# MT startup maps and unmaps QCE crypto buffers.
+ allow vendor_mtd vendor_qce_device:chr_file { getattr open read write ioctl };
+-allowxperm vendor_mtd vendor_qce_device:chr_file ioctl { 0x870a };
++allowxperm vendor_mtd vendor_qce_device:chr_file ioctl { 0x870a 0x870b };
++
++# Read the existing TEE listener readiness property.
++get_prop(vendor_mtd, vendor_tee_listener_prop)
++
++# Parent-directory metadata/traversal observed during startup.
++# File access and Unix DAC are separate and remain unresolved here.
++allow vendor_mtd mnt_vendor_file:dir { getattr search };
++allow vendor_mtd vendor_persist_data_file:dir { getattr search };
++
++# Exact status properties written by libmt@1.3. Consumer access is audited
++# under global Permissive before any Enforcing candidate.
++set_prop(vendor_mtd, vendor_mtd_widevine_prop)
++set_prop(vendor_mtd, vendor_mtd_rpmb_prop)
+--- a/device/xiaomi/sm8550-common/init/init.sm8550.rc
++++ b/device/xiaomi/sm8550-common/init/init.sm8550.rc
+@@ -163,6 +163,7 @@
+ 
+     # qrtr-lookup
+     mkdir /data/vendor/qrtr 0775 system system
++    restorecon_recursive /data/vendor/qrtr
+ 
+     # add wlan log output path
+     mkdir /data/vendor/wlan_logs 0777 root shell

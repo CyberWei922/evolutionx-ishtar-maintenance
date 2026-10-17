@@ -6,20 +6,20 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 2258,
-      "sha256": "27a2eaef600f861725d3dc6609ea0d7058aeb82c2de97450855521ed7dc3d511"
+      "bytes": 2669,
+      "sha256": "77e158b3fb1a8d1fd28b6453785885f4b6687e14628d78727697034e2bf25853"
     },
     "LICENSE.md": {
       "bytes": 1395,
       "sha256": "ccb2f316976a3ab457d94652179151cece8650913d0e789b17a6cc31b598956c"
     },
     "NOTICE": {
-      "bytes": 3696,
-      "sha256": "9fc4d3e86d098a9959298679c2f80cf722959a92141413528e67285ac948665d"
+      "bytes": 4038,
+      "sha256": "ae317f17a0c39da1ed19fc39bfd7eabf1e27067d8f8394e634ff48cd7909e3f1"
     },
     "README.md": {
-      "bytes": 2545,
-      "sha256": "177fc5c8a12115971dd0a84c0db90a493f0023dc156155bf5ed3c7052fe7bedb"
+      "bytes": 2765,
+      "sha256": "bd15966ef81e54300b1a7f0b24fa87087fc7c54b1b0ababdfa43da8d4f33332a"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 2216,
-      "sha256": "2fb7e1fec41cebe359f6a0521e1ff69565625b996ccb1599e405f27d359e0f91"
+      "bytes": 2807,
+      "sha256": "3e8b3064826d96758c4bec8553851e29a4f16319cdfe014427cd63347c4a5010"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -213,9 +213,81 @@
       "bytes": 1068,
       "sha256": "7ceb5d64ea7cae6a59a1c0f5d445177d3f3877e1bb19ee7ac4f25fd2afb647fb"
     },
+    "plans/selinux-next-20261017/README.md": {
+      "bytes": 2515,
+      "sha256": "16634b8a80cdba194dcb53d0417247326e3528b4d59e3c6f6451a2c131a926ca"
+    },
+    "plans/selinux-next-20261017/candidate.patch": {
+      "bytes": 5184,
+      "sha256": "1557b1d12c8eaba649b2b318d490425c01d9fe46f6f1f883ea0374edbeda265d"
+    },
+    "plans/selinux-next-20261017/policy-build-summary.json": {
+      "bytes": 1749,
+      "sha256": "abc32d3505f8bc0ec3af4e5f3b7ef889fed893e47b91a14aa64bdc4d3e327e24"
+    },
+    "plans/selinux-next-20261017/source-baselines.json": {
+      "bytes": 3488,
+      "sha256": "bf5d5b2de9003db0fbe5f283560ddee895d979d9394ac51643773b6e67515286"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/file.te": {
+      "bytes": 170,
+      "sha256": "b1bdee784a8264d9e3e2969724d00b8f548f3871c264cbb98c3ee4268a074a90"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/file.te.license": {
+      "bytes": 150,
+      "sha256": "9408363c9cb9854dc2490a4c88069e56919409a9b4e1518921bc56240c7f2672"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/property.te": {
+      "bytes": 212,
+      "sha256": "8bbe8accaaf4f4e943febd59759ba1e677b9ad4360871788be2640caff0717a5"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/property.te.license": {
+      "bytes": 150,
+      "sha256": "9408363c9cb9854dc2490a4c88069e56919409a9b4e1518921bc56240c7f2672"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/property_contexts": {
+      "bytes": 270,
+      "sha256": "be4507a29c05f274a76988662333b3c59ebafc11b808e65fda636ac3cfae6b8f"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/property_contexts.license": {
+      "bytes": 150,
+      "sha256": "9408363c9cb9854dc2490a4c88069e56919409a9b4e1518921bc56240c7f2672"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/qrtr.te": {
+      "bytes": 269,
+      "sha256": "019b109c53e121d3be28ab232c33de95b509756f112c7fa02ff99e77968dd003"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/qrtr.te.license": {
+      "bytes": 150,
+      "sha256": "9408363c9cb9854dc2490a4c88069e56919409a9b4e1518921bc56240c7f2672"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mfidoca.te": {
+      "bytes": 1026,
+      "sha256": "d03dff288c27e42ad1cee556a58c7c98a0dac2dd2b8f99586011700a75dcf59d"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mfidoca.te.license": {
+      "bytes": 150,
+      "sha256": "9408363c9cb9854dc2490a4c88069e56919409a9b4e1518921bc56240c7f2672"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te": {
+      "bytes": 1902,
+      "sha256": "eb780aebaf27572539833406b78328bcaadf256597d575aa67692e37078acdad"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te.license": {
+      "bytes": 150,
+      "sha256": "9408363c9cb9854dc2490a4c88069e56919409a9b4e1518921bc56240c7f2672"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/sm8550-common/init/init.sm8550.rc": {
+      "bytes": 12616,
+      "sha256": "29fc233f44274edd31cae8d1e76caf92707170e03a561a8e5b57850a9526ef96"
+    },
+    "plans/selinux-next-20261017/source/device/xiaomi/sm8550-common/init/init.sm8550.rc.license": {
+      "bytes": 150,
+      "sha256": "9408363c9cb9854dc2490a4c88069e56919409a9b4e1518921bc56240c7f2672"
+    },
     "plans/selinux-phase3/README.md": {
-      "bytes": 3485,
-      "sha256": "0f3a2f9cb3249250309b738969124cc389eb0f025dbdc397492209f929e20bd2"
+      "bytes": 3864,
+      "sha256": "d357a5f18803a31b4343c9fc93b3d0791e8268773133e9fe417cb8b2821e6f0d"
     },
     "plans/selinux-phase3/candidate.patch": {
       "bytes": 2710,
@@ -236,6 +308,10 @@
     "provenance/accepted-source-files.json": {
       "bytes": 8017,
       "sha256": "16274a2511ef2bcedfcfa1910e38d8a730a758903538561ef74a221a1cefb489"
+    },
+    "provenance/candidate-source-files.json": {
+      "bytes": 3244,
+      "sha256": "f3ef58f0e3f256c15b3fc76bfa52ccc69174dd99662502828493ac90ad58099c"
     },
     "provenance/excluded-camera-recipes.json": {
       "bytes": 1236,
@@ -285,13 +361,17 @@
       "bytes": 1362,
       "sha256": "aaf448fc0c3185f75ad3307885266cd8f0ae971625921374b38fbf1b48a1a5a8"
     },
+    "releases/ishtar-1792246397-candidate.json": {
+      "bytes": 1338,
+      "sha256": "d9ad4a8e156d3fc0e697c718bcae11d8bf9f602e6ad54a609229a6a09a5e4400"
+    },
     "scripts/check_patch_baselines.py": {
       "bytes": 1184,
       "sha256": "378c10388bdf62e106242231149414b1a9d34ddea5b0fc537abac3179b95b279"
     },
     "scripts/check_upload_scope.py": {
-      "bytes": 1461,
-      "sha256": "c50e67fb254e898e45e01b7866561c525c56257c20163e851ef689cd548763c6"
+      "bytes": 1876,
+      "sha256": "352873cbc38604a72aa8414fd3402f56bbd4c7084533816d80992d5ca69f6a81"
     },
     "scripts/export_source_snapshot.py": {
       "bytes": 1134,
@@ -413,6 +493,14 @@
       "bytes": 340,
       "sha256": "09b6a4ed97c822c8fb8d64f325216962a41f3c96cc34b665d78d942365581532"
     },
+    "source-files/kernel/xiaomi/sm8550-modules/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c": {
+      "bytes": 64562,
+      "sha256": "53e4e8de427cb490564e5fe3406ab6fca612db68c142b849ce47b8da3d776a9e"
+    },
+    "source-files/kernel/xiaomi/sm8550-modules/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c.license": {
+      "bytes": 411,
+      "sha256": "7509fe8dc28287f423be2631e759fb3fc4643244fcfb9a76954350c41e70b7c8"
+    },
     "source-files/kernel/xiaomi/sm8550/arch/arm64/configs/vendor/ishtar_GKI.config": {
       "bytes": 944,
       "sha256": "13fa6af0b932184433bdfc4577271ffb9bf85cad448212130633478037474ea5"
@@ -436,14 +524,6 @@
     "source-files/kernel/xiaomi/sm8550/drivers/Makefile.license": {
       "bytes": 340,
       "sha256": "98366595df3218bd2512e56c08c3bcaf09c1806f81b1c28175fdf6626dc7c889"
-    },
-    "source-files/kernel/xiaomi/sm8550-modules/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c": {
-      "bytes": 64562,
-      "sha256": "53e4e8de427cb490564e5fe3406ab6fca612db68c142b849ce47b8da3d776a9e"
-    },
-    "source-files/kernel/xiaomi/sm8550-modules/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c.license": {
-      "bytes": 411,
-      "sha256": "7509fe8dc28287f423be2631e759fb3fc4643244fcfb9a76954350c41e70b7c8"
     },
     "source-files/packages/apps/Aperture/app/src/main/java/org/lineageos/aperture/models/Camera.kt": {
       "bytes": 11472,
@@ -597,21 +677,21 @@
       "bytes": 167,
       "sha256": "a5a2ae563e90acfe8420b3aa4f94dd976a26e1c1a35077e3bd319ab86d73889e"
     },
-    "source-overrides/vendor/xiaomi/ishtar/proprietary/vendor/etc/clstc_config_library.xml": {
-      "bytes": 2162,
-      "sha256": "81c3820c83a1dd92b6e5cd0ac40fdc9ad4cb11e5e220b434402b464707daeb0e"
+    "source-overrides/vendor/xiaomi/ishtar-camera-platform/Android.bp": {
+      "bytes": 908,
+      "sha256": "cbe4b534d467707e1e20929fbec2b559c113d631974e0a3d3c7115becb14fc21"
     },
-    "source-overrides/vendor/xiaomi/ishtar/proprietary/vendor/etc/clstc_config_library.xml.license": {
-      "bytes": 208,
-      "sha256": "4c661c214ee851c02cc40f06b2319d8dac1df4d01c775c9437a461fe91c57f99"
+    "source-overrides/vendor/xiaomi/ishtar-camera-platform/Android.bp.license": {
+      "bytes": 163,
+      "sha256": "84b25b54d61b1a0709b5beb580cf4d948c8fb83c7e97b06208e7322f3add9b83"
     },
-    "source-overrides/vendor/xiaomi/ishtar/proprietary/vendor/etc/snapdragon_color_libs_config.xml": {
-      "bytes": 1831,
-      "sha256": "dd41f581cbd151bfbfe92f1db1ee80ebc12ed8c21851790d770d30fb3e0c4dea"
+    "source-overrides/vendor/xiaomi/ishtar-camera-platform/README.md": {
+      "bytes": 433,
+      "sha256": "8a999b335e48d2b0f945c0b17f9f64c5cb1a29014074aaba24c9c2879f3687ac"
     },
-    "source-overrides/vendor/xiaomi/ishtar/proprietary/vendor/etc/snapdragon_color_libs_config.xml.license": {
-      "bytes": 216,
-      "sha256": "1712314af139766e63d5ccb4f9a7e108c36fa33be75e87890182f0f9c1ccfdc6"
+    "source-overrides/vendor/xiaomi/ishtar-camera-platform/README.md.license": {
+      "bytes": 163,
+      "sha256": "84b25b54d61b1a0709b5beb580cf4d948c8fb83c7e97b06208e7322f3add9b83"
     },
     "source-overrides/vendor/xiaomi/ishtar-camera/Android.bp": {
       "bytes": 5010,
@@ -645,21 +725,21 @@
       "bytes": 163,
       "sha256": "84b25b54d61b1a0709b5beb580cf4d948c8fb83c7e97b06208e7322f3add9b83"
     },
-    "source-overrides/vendor/xiaomi/ishtar-camera-platform/Android.bp": {
-      "bytes": 908,
-      "sha256": "cbe4b534d467707e1e20929fbec2b559c113d631974e0a3d3c7115becb14fc21"
+    "source-overrides/vendor/xiaomi/ishtar/proprietary/vendor/etc/clstc_config_library.xml": {
+      "bytes": 2162,
+      "sha256": "81c3820c83a1dd92b6e5cd0ac40fdc9ad4cb11e5e220b434402b464707daeb0e"
     },
-    "source-overrides/vendor/xiaomi/ishtar-camera-platform/Android.bp.license": {
-      "bytes": 163,
-      "sha256": "84b25b54d61b1a0709b5beb580cf4d948c8fb83c7e97b06208e7322f3add9b83"
+    "source-overrides/vendor/xiaomi/ishtar/proprietary/vendor/etc/clstc_config_library.xml.license": {
+      "bytes": 208,
+      "sha256": "4c661c214ee851c02cc40f06b2319d8dac1df4d01c775c9437a461fe91c57f99"
     },
-    "source-overrides/vendor/xiaomi/ishtar-camera-platform/README.md": {
-      "bytes": 433,
-      "sha256": "8a999b335e48d2b0f945c0b17f9f64c5cb1a29014074aaba24c9c2879f3687ac"
+    "source-overrides/vendor/xiaomi/ishtar/proprietary/vendor/etc/snapdragon_color_libs_config.xml": {
+      "bytes": 1831,
+      "sha256": "dd41f581cbd151bfbfe92f1db1ee80ebc12ed8c21851790d770d30fb3e0c4dea"
     },
-    "source-overrides/vendor/xiaomi/ishtar-camera-platform/README.md.license": {
-      "bytes": 163,
-      "sha256": "84b25b54d61b1a0709b5beb580cf4d948c8fb83c7e97b06208e7322f3add9b83"
+    "source-overrides/vendor/xiaomi/ishtar/proprietary/vendor/etc/snapdragon_color_libs_config.xml.license": {
+      "bytes": 216,
+      "sha256": "1712314af139766e63d5ccb4f9a7e108c36fa33be75e87890182f0f9c1ccfdc6"
     }
   }
 }

@@ -1,0 +1,63 @@
+{
+  "kind": "uninstalled-candidate-source",
+  "installed_baseline": "1792226532",
+  "files": [
+    {
+      "repository_path": "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/file.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/file.te",
+      "bytes": 170,
+      "sha256": "b1bdee784a8264d9e3e2969724d00b8f548f3871c264cbb98c3ee4268a074a90",
+      "license": "Apache-2.0",
+      "review": "Original maintenance additions; common init retains explicit upstream SPDX and copyright."
+    },
+    {
+      "repository_path": "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "bytes": 212,
+      "sha256": "8bbe8accaaf4f4e943febd59759ba1e677b9ad4360871788be2640caff0717a5",
+      "license": "Apache-2.0",
+      "review": "Original maintenance additions; common init retains explicit upstream SPDX and copyright."
+    },
+    {
+      "repository_path": "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "bytes": 270,
+      "sha256": "be4507a29c05f274a76988662333b3c59ebafc11b808e65fda636ac3cfae6b8f",
+      "license": "Apache-2.0",
+      "review": "Original maintenance additions; common init retains explicit upstream SPDX and copyright."
+    },
+    {
+      "repository_path": "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/qrtr.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/qrtr.te",
+      "bytes": 269,
+      "sha256": "019b109c53e121d3be28ab232c33de95b509756f112c7fa02ff99e77968dd003",
+      "license": "Apache-2.0",
+      "review": "Original maintenance additions; common init retains explicit upstream SPDX and copyright."
+    },
+    {
+      "repository_path": "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mfidoca.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mfidoca.te",
+      "bytes": 1026,
+      "sha256": "d03dff288c27e42ad1cee556a58c7c98a0dac2dd2b8f99586011700a75dcf59d",
+      "license": "Apache-2.0",
+      "review": "Original maintenance additions; common init retains explicit upstream SPDX and copyright."
+    },
+    {
+      "repository_path": "plans/selinux-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "bytes": 1902,
+      "sha256": "eb780aebaf27572539833406b78328bcaadf256597d575aa67692e37078acdad",
+      "license": "Apache-2.0",
+      "review": "Original maintenance additions; common init retains explicit upstream SPDX and copyright."
+    },
+    {
+      "repository_path": "plans/selinux-next-20261017/source/device/xiaomi/sm8550-common/init/init.sm8550.rc",
+      "source_path": "device/xiaomi/sm8550-common/init/init.sm8550.rc",
+      "bytes": 12616,
+      "sha256": "29fc233f44274edd31cae8d1e76caf92707170e03a561a8e5b57850a9526ef96",
+      "license": "Apache-2.0",
+      "review": "Original maintenance additions; common init retains explicit upstream SPDX and copyright."
+    }
+  ],
+  "full_file_contexts_not_exported": true
+}

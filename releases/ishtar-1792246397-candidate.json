@@ -1,0 +1,33 @@
+{
+  "status": "STATICALLY_VERIFIED_PERMISSIVE_CANDIDATE",
+  "installed_baseline_incremental": "1792226532",
+  "candidate_incremental": "1792246397",
+  "rom": {
+    "file": "EvolutionX-16.0-20261017-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545144938,
+    "sha256": "9c1f4c0212aa7fd6613ad8e7a7123c94391b7e1a6c20a4a050d5d19532d84440"
+  },
+  "policy_sha256": "b69311c6d9dcef93be9b25947af9b6e292bb2eaca552ed4acc734b5b844f2a69",
+  "mode": "Permissive",
+  "full_build_target": "m -j8 evolution",
+  "full_build_tool_duration": "09:50",
+  "full_build_exit": 0,
+  "actual_payload_partitions_verified": 34,
+  "camera_payloads_verified": 21,
+  "protected_hals_verified": 3,
+  "brightness_xmls_verified": 2,
+  "recovery_sha256": "c39e0236d4aac787e59827f835d58ec3af127357bcd576fb2b66da72c2c4057e",
+  "surfaceflinger_sha256": "099b882b2e71941a25a10b45f0c73ff15e060f3243b2700755545c2251d1dc99",
+  "packaged_qrtr_restorecon_order_verified": true,
+  "phone_flashed": false,
+  "runtime_verified": false,
+  "enforcing_ready": false,
+  "whole_ota_signature_independently_verified": false,
+  "remaining": [
+    "Mtd persist credentials/DAC",
+    "New status-property consumer audit",
+    "Other AVC triage and required feature checks",
+    "Original nine static permissive domains and KSU dynamic exception"
+  ],
+  "binary_artifacts_in_repository": false
+}

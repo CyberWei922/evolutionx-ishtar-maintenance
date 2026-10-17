@@ -1,0 +1,77 @@
+{
+  "installed_baseline_incremental": "1792226532",
+  "ubuntu_source_applied": true,
+  "policy_compiled_verified": true,
+  "rom_build": "compiled_and_statically_verified",
+  "phone_installed": false,
+  "enforcing_ready": false,
+  "files": [
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/file.te",
+      "before_sha256": null,
+      "after_sha256": "b1bdee784a8264d9e3e2969724d00b8f548f3871c264cbb98c3ee4268a074a90",
+      "bytes": 170,
+      "license": "Apache-2.0 (maintenance additions; common init retains LineageOS SPDX)",
+      "snapshot_exported": true
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/file_contexts",
+      "before_sha256": "077f1c098e2c0b4f1659c18c42521d0366d14eaf6936c2d334e3a5f6fcfd0556",
+      "after_sha256": "fbe09353a1bfcef79c5ff26744b3234b89a1c570770b67766a2309f6c35b2916",
+      "bytes": 836,
+      "license": "Apache-2.0 (maintenance additions; common init retains LineageOS SPDX)",
+      "snapshot_exported": false,
+      "reason": "Only reviewed maintenance diff is exported; full input file is not reclassified for redistribution."
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "before_sha256": null,
+      "after_sha256": "8bbe8accaaf4f4e943febd59759ba1e677b9ad4360871788be2640caff0717a5",
+      "bytes": 212,
+      "license": "Apache-2.0 (maintenance additions; common init retains LineageOS SPDX)",
+      "snapshot_exported": true
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "before_sha256": null,
+      "after_sha256": "be4507a29c05f274a76988662333b3c59ebafc11b808e65fda636ac3cfae6b8f",
+      "bytes": 270,
+      "license": "Apache-2.0 (maintenance additions; common init retains LineageOS SPDX)",
+      "snapshot_exported": true
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/qrtr.te",
+      "before_sha256": null,
+      "after_sha256": "019b109c53e121d3be28ab232c33de95b509756f112c7fa02ff99e77968dd003",
+      "bytes": 269,
+      "license": "Apache-2.0 (maintenance additions; common init retains LineageOS SPDX)",
+      "snapshot_exported": true
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mfidoca.te",
+      "before_sha256": "2b9cd1dec4a87533a5c0e8b2a2ed66eacc66182439f43a8bcce5471c3a4643cb",
+      "after_sha256": "d03dff288c27e42ad1cee556a58c7c98a0dac2dd2b8f99586011700a75dcf59d",
+      "bytes": 1026,
+      "license": "Apache-2.0 (maintenance additions; common init retains LineageOS SPDX)",
+      "snapshot_exported": true
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "before_sha256": "665d685ab658be5f9a614513b0e61b7a3ea0779f18aa6bb860154842d9887395",
+      "after_sha256": "eb780aebaf27572539833406b78328bcaadf256597d575aa67692e37078acdad",
+      "bytes": 1902,
+      "license": "Apache-2.0 (maintenance additions; common init retains LineageOS SPDX)",
+      "snapshot_exported": true
+    },
+    {
+      "path": "device/xiaomi/sm8550-common/init/init.sm8550.rc",
+      "before_sha256": "c04a548596f16b249f902ea2982ce2d8cd65d79d50e20a990a0f7c40d4191a71",
+      "after_sha256": "29fc233f44274edd31cae8d1e76caf92707170e03a561a8e5b57850a9526ef96",
+      "bytes": 12616,
+      "license": "Apache-2.0 (maintenance additions; common init retains LineageOS SPDX)",
+      "snapshot_exported": true
+    }
+  ],
+  "candidate_incremental": "1792246397",
+  "candidate_rom_sha256": "9c1f4c0212aa7fd6613ad8e7a7123c94391b7e1a6c20a4a050d5d19532d84440"
+}
