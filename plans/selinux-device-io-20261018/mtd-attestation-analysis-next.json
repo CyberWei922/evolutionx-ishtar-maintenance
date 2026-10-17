@@ -1,0 +1,19 @@
+{
+  "artifact": "odm/lib64/libmt@1.3.so",
+  "sha256": "2276402a6726291342d2b2da0f2b9eb23dc6fea5c0a7413bf1d45f504def1f26",
+  "exact_output_property": "persist.vendor.sys.attestation.status",
+  "writer_function": "vendor::xiaomi::hardware::mtdservice::implementation::devid_attestation_reload(void*)",
+  "writer_function_va": "0x11158",
+  "exact_key_string_va": "0xa2bb",
+  "property_set_call_VAs": [
+    "0x11250",
+    "0x112d0",
+    "0x11368"
+  ],
+  "static_exact_key_occurrence": "Only odm/lib64/libmt@1.3.so in inspected shipped non-APK/JAR/etc/bin/lib files; dynamic consumers not excluded",
+  "startup_main": "stat/directory-check/restorecon failure branches continue to RPC setup and service registration; not an unconditional boot abort",
+  "attestation_failure": "devid_attestation_reload stat failure takes property_set error-status path and exits thread; optional attestation effect remains to validate",
+  "method": "Existing pinned artifact + focused cached LLVM disassembly and ELF string mapping; not runtime execution",
+  "recommendation": "vendor_restricted_prop exact string key; vendor_mtd set_prop, inherit existing precise status contract; no generic property write/DAC bypass/persist ownership change",
+  "phone_accessed": false
+}

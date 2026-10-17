@@ -1,0 +1,16 @@
+{
+  "incremental": "1792261801",
+  "reply": "我检测了一下，没有什么问题，你直接进行下一版的制作吧",
+  "accepted_scope": [
+    "Original applications and photos retained",
+    "MIUI camera photo and newly recorded video audio",
+    "Fingerprint unlock"
+  ],
+  "not_claimed": [
+    "All camera modes or sustained performance",
+    "Enforcing operation or cold boot",
+    "Hardware attestation correctness"
+  ],
+  "recorded_at": 1792266337.7837133,
+  "phone_accessed": false
+}

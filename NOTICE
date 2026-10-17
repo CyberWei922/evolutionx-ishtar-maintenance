@@ -105,3 +105,9 @@ file_contexts text, vendor implementations, compiled policies and original
 device logs remain external. Reviewed paths and hashes are recorded in
 provenance/dependency-status-source-files.json. Component verification does
 not imply installation or Enforcing validation.
+
+SELinux device-I/O maintenance additions (2026-10-18)
+Original exact Mtd attestation status, GNSS property read, Goodix private-event
+netlink permissions and specific SPI wakeup genfs mapping: CyberWei922, Apache-2.0.
+No GNSS, Goodix or Mtd proprietary implementation is included. See
+provenance/device-io-source-files.json and the matching plan for scope.

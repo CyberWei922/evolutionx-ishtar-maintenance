@@ -1,0 +1,12 @@
+{
+  "status": "FULL_ROM_BUILDING",
+  "baseline_incremental": "1792261801",
+  "job": "device-io-rom-build-01",
+  "source_files": 62,
+  "component_verified": true,
+  "phone_installed": false,
+  "enforcing_trial": false,
+  "own_resources": "CPU6/7 nice10 ionice2/7 Ninja2 GOMAXPROCS2",
+  "other_tasks_changed": false,
+  "location": "Ubuntu control/ishtar-selinux-device-io-20261018-01/rom-candidate01"
+}

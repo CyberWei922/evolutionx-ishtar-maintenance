@@ -1,0 +1,561 @@
+{
+  "schema": 1,
+  "analysis_utc": "2026-10-17T19:43:23.369847+00:00",
+  "installed_incremental": "1792261801",
+  "mode": "Permissive",
+  "scope": "Read-only saved runtime and source/artifact inspection; no phone actions, no source edits, no build or process changes.",
+  "method": "Existing runtime evidence plus source review and focused LLVM dynamic-symbol/disassembly inspection. REA Ghidra/IDA unavailable as previously established; no new installation or backend diagnostics.",
+  "limitations": [
+    "audit_lost=1 and suppressed callbacks mean this is not complete denial coverage.",
+    "No MIUI process was present in the initial runtime snapshot; no claim that camera app denials disappeared.",
+    "New candidates have not been compiled or installed; neverallow review is source-level until main build gates pass.",
+    "Property-area read AVCs identify a label, not the precise requested property key.",
+    "Static strings or syscall disassembly do not prove an optional branch was exercised at runtime."
+  ],
+  "logs": {
+    "kernel-avc.log": {
+      "bytes": 6239,
+      "sha256": "5714fcc48afcf466557ff92990d5b78b4f4865b0e36955b5d58b9de008ce880d",
+      "parsed_denial_lines": 23,
+      "domains": {
+        "vendor_init": 3,
+        "vendor_modprobe": 1,
+        "toolbox": 1,
+        "mi_thermald": 3,
+        "hal_camera_default": 1,
+        "hal_fingerprint_default": 4,
+        "vendor_diag-router": 2,
+        "system_server": 3,
+        "rild": 2,
+        "system_suspend": 2,
+        "vendor_mtd": 1
+      }
+    },
+    "logcat-avc.log": {
+      "bytes": 94327,
+      "sha256": "adec2cc41252334c237cf31e9b274bc6ba971ca502c8c616888ac79dabfc7145",
+      "parsed_denial_lines": 317,
+      "domains": {
+        "vendor_init": 4,
+        "vendor_modprobe": 1,
+        "toolbox": 1,
+        "hal_sensors_default": 4,
+        "hal_secure_element_default": 4,
+        "vendor_hal_gnss_qti": 4,
+        "vendor_mtd": 3,
+        "hal_camera_default": 255,
+        "vendor_qti_init_shell": 3,
+        "bootanim": 1,
+        "hal_audio_default": 2,
+        "mi_thermald": 4,
+        "hal_fingerprint_default": 8,
+        "vendor_diag-router": 2,
+        "rild": 12,
+        "system_server": 5,
+        "system_suspend": 2,
+        "priv_app": 2
+      }
+    }
+  },
+  "source_files": {
+    "device/qcom/sepolicy_vndr/sm8550/generic/vendor/common/property.te": {
+      "bytes": 4639,
+      "sha256": "393e68ff67926e3d7aae89cb4eab9f5c00f676349b8577568ee0e49fb1d250a3"
+    },
+    "device/qcom/sepolicy_vndr/sm8550/generic/vendor/common/property_contexts": {
+      "bytes": 8253,
+      "sha256": "520c0a0ebdabdd8a6169e630d11ee7dbba50e025902f5aea517f84f5d932666d"
+    },
+    "device/qcom/sepolicy_vndr/sm8550/generic/vendor/common/hal_gnss_qti.te": {
+      "bytes": 4534,
+      "sha256": "5465b46ad410d06e316ead58f52d32dcbeb9ee293f10f7e5f88c74e1b70f1182"
+    },
+    "device/qcom/sepolicy_vndr/sm8550/generic/vendor/common/hal_telephony.te": {
+      "bytes": 1805,
+      "sha256": "dfed88390dc4f9447b8efc13fb6d7d63275d211b339de2f1239c8cb0936a2f3f"
+    },
+    "hardware/xiaomi/aidl/fingerprint/Fingerprint.cpp": {
+      "bytes": 9336,
+      "sha256": "3ee7fb6a20030d51ae38dfdd4b3bb85ddbd5d2a1bea77dee06a590b602942a8a"
+    },
+    "kernel/xiaomi/sm8550/drivers/input/fingerprint/goodix_fod/gf_spi.h": {
+      "bytes": 4125,
+      "sha256": "96859824a48c4399933a9c520183c3d7d84a7714fd1150a42abf6e2b5ab1fa81"
+    },
+    "kernel/xiaomi/sm8550/drivers/input/fingerprint/goodix_fod/gf_spi.c": {
+      "bytes": 26649,
+      "sha256": "87aebdd008dd55eba16d4e12f783ed37e08f6c42ce9e53f8117ec6f691904ced"
+    },
+    "kernel/xiaomi/sm8550/drivers/input/fingerprint/goodix_fod/netlink.c": {
+      "bytes": 1879,
+      "sha256": "926fb6fa6ce42a0be2bc7fd73382c6f5c5e9bddd0525bdf1352eaa2a4f350c03"
+    },
+    "system/sepolicy/public/te_macros": {
+      "bytes": 42239,
+      "sha256": "b749c90e4ad0b7873eaa03192309846fddc7a33b06284e1925ad849c2d5111cd"
+    },
+    "system/sepolicy/private/hal_neverallows.te": {
+      "bytes": 4088,
+      "sha256": "1b101968bf726743c3affe93fbb2f0e57cc77e7e5e05ab18be2a3d9bc72dfce6"
+    },
+    "system/sepolicy/private/app_neverallows.te": {
+      "bytes": 14414,
+      "sha256": "925b7fb035ebb61fa0b9fadbcb0e8b8759818aeb2c8b1a9f9272fcc11d035b1a"
+    },
+    "system/sepolicy/private/system_suspend.te": {
+      "bytes": 2059,
+      "sha256": "dfd8f47b80baadf3c5cc048ec083cb656f99273621113ad3cc6573a64e1931c6"
+    },
+    "device/xiaomi/sm8550-common/sepolicy/vendor/genfs_contexts": {
+      "bytes": 1771,
+      "sha256": "3342519dbe48e5cdc30a39ed3734dcc3dc6ec55d2785899ef9cf287717067b26"
+    }
+  },
+  "artifacts": {
+    "vendor/lib64/libgnss.so": {
+      "bytes": 610600,
+      "sha256": "9ae162029e867ac3c8dbd6674d707cb4ad4d7383b7670bad3abe59a23035658b"
+    },
+    "odm/lib64/libgf_hal.so": {
+      "bytes": 659296,
+      "sha256": "3d375442f6fd24ef11c7a4bc8f0f5ba80c15dc06d953ce80d414bb1078f62576"
+    },
+    "odm/lib64/hw/fingerprint.goodix_fod.default.so": {
+      "bytes": 67433,
+      "sha256": "0e31882da9ff78f7fb8e8bdba1adf22e49d391d3553b72889926d288f262217f"
+    },
+    "vendor/lib64/sensors.ssc.so": {
+      "bytes": 1059104,
+      "sha256": "0953df2300d68d5700e17797dfc77954debccd0b2fd1caf63076256ece34e4c1"
+    }
+  },
+  "recommended_contracts": [
+    {
+      "id": "gnss-sensor-ins-read",
+      "domain": "vendor_hal_gnss_qti",
+      "target": "vendor_sensors_prop",
+      "class": "file",
+      "perms": [
+        "getattr",
+        "open",
+        "read",
+        "map"
+      ],
+      "logcat_lines": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "suggested_source": "device/xiaomi/ishtar/sepolicy/vendor/hal_gnss_qti.te",
+      "suggested_rule": "get_prop(vendor_hal_gnss_qti, vendor_sensors_prop)",
+      "runtime_observation": "GNSS HAL requests read/open/getattr/map on the existing vendor_sensors_prop area.",
+      "artifact_support": {
+        "path": "vendor/lib64/libgnss.so",
+        "strings": [
+          "persist.vendor.sensors.ins_enabled",
+          "persist.vendor.sensors.ins.batch",
+          "persist.vendor.sensors.ins.file",
+          "persist.vendor.sensors.ins_debug"
+        ],
+        "limit": "Exact triggering key is not present in AVC; strings corroborate INS property category, not exact executed getter."
+      },
+      "source_contracts": [
+        {
+          "path": "device/qcom/sepolicy_vndr/sm8550/generic/vendor/common/property.te",
+          "line": 44,
+          "fact": "vendor_internal_prop(vendor_sensors_prop)"
+        },
+        {
+          "path": "device/qcom/sepolicy_vndr/sm8550/generic/vendor/common/property_contexts",
+          "lines": [
+            41,
+            42,
+            43
+          ],
+          "fact": "Existing ctl.vendor.sensors, persist.vendor.sensors. and ro.vendor.sensors. mapping to vendor_sensors_prop"
+        },
+        {
+          "path": "system/sepolicy/public/te_macros",
+          "lines": [
+            409,
+            410,
+            411
+          ],
+          "fact": "get_prop expands to exactly getattr/open/read/map"
+        },
+        {
+          "path": "system/sepolicy/public/te_macros",
+          "lines": [
+            1030,
+            1031,
+            1032,
+            1033,
+            1034,
+            1035,
+            1036
+          ],
+          "fact": "vendor_internal_prop restricts coredomain reads except init/dumpstate; this GNSS server is a vendor domain, not a coredomain declaration"
+        }
+      ],
+      "neverallow_review": "No source-level vendor-internal-property boundary conflict identified for this vendor GNSS server. Keep all neverallow enabled in compilation; no set_prop/new property/prefix relabel required.",
+      "negative_boundaries": [
+        "No vendor_sensors_prop write",
+        "No generic default_prop/system_prop read",
+        "No added filesystem/netlink permissions",
+        "Existing type includes control/debug sensor entries too, so this is not an exact-key-only capability"
+      ]
+    },
+    {
+      "id": "goodix-private-netlink",
+      "domain": "hal_fingerprint_default",
+      "target": "self",
+      "class": "netlink_socket",
+      "perms": [
+        "create",
+        "bind",
+        "write",
+        "read"
+      ],
+      "logcat_lines": [
+        287,
+        288,
+        289,
+        292
+      ],
+      "suggested_source": "device/xiaomi/ishtar/sepolicy/vendor/hal_fingerprint_default.te",
+      "suggested_rule": "allow hal_fingerprint_default self:netlink_socket { create bind write read };",
+      "runtime_observation": "Four observed socket operations match driver-event channel startup and delivery.",
+      "source_contracts": [
+        {
+          "path": "hardware/xiaomi/aidl/fingerprint/Fingerprint.cpp",
+          "lines": [
+            35,
+            36,
+            133,
+            138
+          ],
+          "fact": "AIDL wrapper loads legacy fingerprint modules through hw_get_module_by_class"
+        },
+        {
+          "path": "kernel/xiaomi/sm8550/drivers/input/fingerprint/goodix_fod/gf_spi.h",
+          "lines": [
+            111,
+            115
+          ],
+          "fact": "GF_NETLINK_ENABLE=1; NETLINK_TEST=25"
+        },
+        {
+          "path": "kernel/xiaomi/sm8550/drivers/input/fingerprint/goodix_fod/netlink.c",
+          "lines": [
+            14,
+            70,
+            78
+          ],
+          "fact": "netlink_init registers kernel netlink protocol 25"
+        },
+        {
+          "path": "kernel/xiaomi/sm8550/drivers/input/fingerprint/goodix_fod/gf_spi.c",
+          "lines": [
+            426,
+            462
+          ],
+          "fact": "Driver exposes selected netlink route byte through ioctl"
+        }
+      ],
+      "artifact_support": {
+        "wrapper": "odm/lib64/hw/fingerprint.goodix_fod.default.so",
+        "needed": "libgf_hal.so",
+        "library": "odm/lib64/libgf_hal.so",
+        "symbol": "_ZN6goodix6Device20NetlinkRoutingThread10threadLoopEv",
+        "symbol_range_hex": [
+          "0x3f034",
+          "0x3f474"
+        ],
+        "llvm_calls": {
+          "0x3f0a8": "socket(AF_NETLINK=16, SOCK_RAW=3, route loaded from object+0x18)",
+          "0x3f0d0": "bind",
+          "0x3f24c": "sendmsg",
+          "0x3f3e8": "recvmsg"
+        },
+        "failure_behavior": "socket/bind/sendmsg error branches eventually close the descriptor and return false from threadLoop; runtime denial matters when enforcing."
+      },
+      "neverallow_review": "Source netlink_socket neverallows examined target app/sandbox classes or hal_uwb_vendor_server, not hal_fingerprint_default. Keep full neverallow checks enabled; final viability must be confirmed by build.",
+      "negative_boundaries": [
+        "No create_socket_perms or create_socket_perms_no_ioctl macro",
+        "No ioctl/setopt/getopt/connect/sendto or capability grant",
+        "No generic networking domain",
+        "SELinux netlink_socket class cannot further restrict this unmapped private family to protocol 25; application UID/domain remains the boundary"
+      ]
+    },
+    {
+      "id": "spi-wakeup-label",
+      "domain": "system_suspend",
+      "existing_target": "sysfs",
+      "required_target": "sysfs_wakeup",
+      "class": "file",
+      "observed_perms": [
+        "read",
+        "open"
+      ],
+      "logcat_lines": [
+        310,
+        311
+      ],
+      "suggested_source": "device/xiaomi/ishtar/sepolicy/vendor/genfs_contexts",
+      "suggested_rule": "genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi1/spi1.0/wakeup u:object_r:sysfs_wakeup:s0",
+      "runtime_path": "/sys/devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi1/spi1.0/wakeup/wakeup28/name",
+      "source_contracts": [
+        {
+          "path": "system/sepolicy/private/system_suspend.te",
+          "line": 17,
+          "fact": "Existing r_dir_file(system_suspend, sysfs_wakeup)"
+        },
+        {
+          "path": "device/xiaomi/sm8550-common/sepolicy/vendor/genfs_contexts",
+          "lines": [
+            22,
+            23,
+            24,
+            25
+          ],
+          "fact": "Analogous existing SPI/key wakeup prefixes already use sysfs_wakeup"
+        }
+      ],
+      "negative_boundaries": [
+        "No allow system_suspend sysfs:file",
+        "Limit new label to precise wakeup prefix, not entire SPI device",
+        "wakeup28 is dynamic numbering so label stable parent /wakeup prefix"
+      ]
+    }
+  ],
+  "deferred_or_rejected": [
+    {
+      "id": "hal-camera-enumeration",
+      "domain": "hal_camera_default",
+      "denial_lines": 255,
+      "classification": "Mostly property-area enumeration shape",
+      "evidence": "Consecutive alphabetic property labels from aac_drc_prop through debug_tracing_desktop_mode_visible_tasks_prop; repeated open/getattr/map.",
+      "action": "Do not blanket get_prop across labels. Unknown empty service name/default_android_service also not allow. Exact vendor.miui.vcamera.state setter is separate future precise property contract; no consumers established here."
+    },
+    {
+      "id": "sensors-default-property",
+      "domain": "hal_sensors_default",
+      "target": "default_prop:file",
+      "perms": [
+        "read",
+        "open",
+        "getattr",
+        "map"
+      ],
+      "logcat_lines": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "action": "Do not grant generic default_prop. sensors.ssc.so contains persist.sensor.sardisable and ro.arch candidates, but exact triggering getter/key and ownership are unproven."
+    },
+    {
+      "id": "fingerprint-system-property",
+      "domain": "hal_fingerprint_default",
+      "target": "system_prop:file",
+      "perms": [
+        "read",
+        "open",
+        "getattr",
+        "map"
+      ],
+      "logcat_lines": [
+        293,
+        294,
+        295,
+        296
+      ],
+      "action": "Do not grant generic system_prop. libgf_hal.so contains sys.panel.touch_vendor; nearby message mentions sys.panel.display, plus product/build keys. These strings do not establish which getter caused area read. Needs exact key/API-owner contract."
+    },
+    {
+      "id": "rild-default-property",
+      "domain": "rild",
+      "target": "default_prop:file",
+      "perms": [
+        "read",
+        "open",
+        "getattr",
+        "map"
+      ],
+      "logcat_lines": [
+        297,
+        298,
+        299,
+        300
+      ],
+      "action": "Do not grant generic default_prop without exact getter/key."
+    },
+    {
+      "id": "rild-oem-serial",
+      "domain": "rild",
+      "target": "vendor_default_prop:property_service",
+      "perms": [
+        "set"
+      ],
+      "property": "ro.vendor.oem.sno",
+      "logcat_lines": [
+        301
+      ],
+      "action": "Precise key observed, but writer/consumers and serial-number exposure contract not yet established. Prefer exact vendor-owned type if retained; never set vendor_default_prop. Existing vendor_radio_prop is vendor_restricted and HAL telephony set already exists, but mapping this key into it requires deliberate consumer review."
+    },
+    {
+      "id": "rild-diag-sync",
+      "domain": "rild",
+      "target": "vendor_data_file",
+      "classes": [
+        "dir",
+        "file"
+      ],
+      "logcat_lines": [
+        302,
+        303,
+        304,
+        305,
+        306,
+        308,
+        309
+      ],
+      "path": "/data/vendor/diag/sync_info",
+      "action": "Do not allow generic vendor_data_file. OEM diagnostic sync side path, not proven telephony-critical. If retained, exact path/type and directory creation/restorecon ownership needed."
+    },
+    {
+      "id": "diag-router-bootup",
+      "domain": "vendor_diag-router",
+      "target": "vendor_data_file:fifo_file",
+      "perms": [
+        "write",
+        "open"
+      ],
+      "logcat_lines": [
+        290,
+        291
+      ],
+      "path": "/data/vendor/modem/diag_logs/bootup",
+      "action": "Diagnostic path; do not generalize vendor data FIFO permissions. Exact dedicated type if later required."
+    },
+    {
+      "id": "audio-debugfs",
+      "domain": "hal_audio_default",
+      "target": "debugfs:dir",
+      "perms": [
+        "read",
+        "open"
+      ],
+      "logcat_lines": [
+        280,
+        281
+      ],
+      "action": "Reject debugfs broadening; diagnostic enumeration is not essential playback/recording contract."
+    },
+    {
+      "id": "secure-element-init-status",
+      "domain": "hal_secure_element_default",
+      "target": "init_service_status_private_prop:file",
+      "perms": [
+        "read",
+        "open",
+        "getattr",
+        "map"
+      ],
+      "logcat_lines": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "action": "Private init state API; no exact service property key. Do not grant blanket private status access."
+    },
+    {
+      "id": "priv-app-service-probes",
+      "domain": "priv_app",
+      "targets": [
+        "fwk_vibrator_control_service",
+        "hal_power_stats_service"
+      ],
+      "class": "service_manager",
+      "perms": [
+        "find"
+      ],
+      "logcat_lines": [
+        316,
+        317
+      ],
+      "action": "No identified app/package/required use. Avoid granting all privileged apps these service APIs."
+    },
+    {
+      "id": "root-adb-probes",
+      "domains": [
+        "toolbox",
+        "system_server"
+      ],
+      "target": "adb_data_file:dir",
+      "perms": [
+        "search",
+        "getattr"
+      ],
+      "logcat_lines": [
+        5,
+        307
+      ],
+      "action": "Do not widen core/system access to /data/adb; likely cleanup/root integration path and not essential app functionality."
+    },
+    {
+      "id": "thermal-capabilities-and-state",
+      "domain": "mi_thermald",
+      "targets": [
+        "self:capability { chown fowner }",
+        "vendor_default_prop:property_service set"
+      ],
+      "property": "vendor.sys.thermal.bcl.boot_completed",
+      "logcat_lines": [
+        282,
+        283,
+        322,
+        323
+      ],
+      "action": "Existing permissive daemon requires separate capability/ownership and exact property-consumer review. No blanket capability or vendor_default_prop write."
+    },
+    {
+      "id": "bootanim-qspm",
+      "domain": "bootanim",
+      "target": "vendor_hal_qspmhal_default:binder",
+      "perms": [
+        "call"
+      ],
+      "logcat_lines": [
+        278
+      ],
+      "action": "Boot performance hook appears optional; prefer correct existing HAL-client macro/contract after checking service use rather than binder-wide allow."
+    },
+    {
+      "id": "vendor-init-props",
+      "domain": "vendor_init",
+      "properties": [
+        "audio.sys.noisy.broadcast.delay",
+        "bluetooth.auto_connect_profiles.enabled",
+        "persist.radio.restart_rild",
+        "vendor.qti.qcc.oper.mode"
+      ],
+      "action": "Cross-owner/default property scripts require source/property producer-consumer review; do not generic allow system/default writes."
+    },
+    {
+      "id": "vendor-modprobe-block-search",
+      "domain": "vendor_modprobe",
+      "target": "block_device:dir",
+      "perms": [
+        "search"
+      ],
+      "logcat_lines": [
+        4
+      ],
+      "action": "Only parent-directory search observed; module/path intent not established in this scope. Do not expand block-device access."
+    }
+  ]
+}

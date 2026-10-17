@@ -4,7 +4,7 @@
 
 ## 已完成并保留
 
-最新工作增量见 `plans/selinux-dependency-status-20261018/`，活动59项清单以该plan为准。五路径公共库传递依赖、MIUI公开sensor属性只读及Mtd精确状态/标签数据库修复已合入，策略544dd102…；完整1792261801经过实际34分区和静态升级检查，并按机主新授权保留数据刷入、正常启动，39文件/21分区范围及新库/5项Mtd属性标签读回通过。六默认相机解析、DSP进程/注册、FBE/空模块/快照none和数据基线保持，112次命令、0重试。机主本版相机/有声录像/指纹和数据验收待答。仍Permissive，原9静态宽松域+KSU保持，实际DSP回退和Enforcing未验证；Mtd DAC及新增attestation.status精确属性写拒绝待下一批。
+最新工作增量见 `plans/selinux-dependency-status-20261018/`，活动59项清单以该plan为准。五路径公共库传递依赖、MIUI公开sensor属性只读及Mtd精确状态/标签数据库修复已合入，策略544dd102…；完整1792261801经过实际34分区和静态升级检查，并按机主新授权保留数据刷入、正常启动，39文件/21分区范围及新库/5项Mtd属性标签读回通过。六默认相机解析、DSP进程/注册、FBE/空模块/快照none和数据基线保持，112次命令、0重试。机主已确认所问数据、MIUI拍照/新录像收音和指纹无问题。仍Permissive，原9静态宽松域+KSU保持，实际DSP回退和Enforcing未验证；Mtd DAC及新增attestation.status精确属性写拒绝待下一批。
 
 - MIUI camera03原生集成；机主确认日常拍照/录像正常。Aperture录像无声为旧UID录音ignore，已恢复foreground并获新录像有声确认。
 - Recovery触控修复：补载配套PM8008供电驱动，使用ROM配套触控固件。验收镜像SHA c39e0236…；当前固定配套内核，换内核需重新核对。
@@ -59,6 +59,18 @@
 
 ## 1792261801运行结果（最新）
 
-机主回复“直接开刷吧”，新flash01完成74动作/73完整下载，wire SHA5078adfb…核验通过；03:25:30正常重启，postboot01 success，39文件/21分区范围全匹配。加载策略6b156e09…/2,151,534 bytes，原9静态宽松域+ksu共10保持。初始快照未见MIUI相机运行，不能据此声称本轮实际相机域/算法回退验收通过；机主新功能测试待答。启动logcat317 AVC/18域、audit_lost1，非全量/完成百分比；新RKP类型本窗口未见拒绝，不是全部消费者验收。Mtd仍有DAC及persist.vendor.sys.attestation.status对vendor_system_prop的set拒绝，后续精确核查。
+机主回复“直接开刷吧”，新flash01完成74动作/73完整下载，wire SHA5078adfb…核验通过；03:25:30正常重启，postboot01 success，39文件/21分区范围全匹配。加载策略6b156e09…/2,151,534 bytes，原9静态宽松域+ksu共10保持。初始快照未见MIUI相机运行，不能据此声称本轮实际相机域/算法回退验收通过；机主随后确认所问数据、MIUI拍照/有声新录像及指纹无问题，独立owner-acceptance.json保存范围。启动logcat317 AVC/18域、audit_lost1，非全量/完成百分比；新RKP类型本窗口未见拒绝，不是全部消费者验收。Mtd仍有DAC及persist.vendor.sys.attestation.status对vendor_system_prop的set拒绝，后续精确核查。
 
 本次刷入及首次正常重启授权已使用，没有额外重启或Enforcing。有限worker全部结束，无手机常驻采集/模块。Mac/Ubuntu22项运行证据和归档摘要匹配，Git仅存筛选摘要，不含ROM/原始日志/策略二进制。原回退包与新旧暂存待机主验收后按保留两版要求处理，本轮尚未清理。
+
+## 1792261801机主验收后的保留状态
+
+机主确认所问功能正常并授权制作下一版。完整ROM现仅保留1792261801及1792257806；1792252694/1792246397 ZIP和两已完成刷机暂存已删除，旧runner不可重放。SSD释放49.48GiB/HDD8.47GiB，空闲154.52/255.43GiB；保留ZIP为元数据及先前实际读回证据核对，没有新一轮全ROM哈希。原始证据/源码/闭源依赖/增量缓存保留。
+
+下一批六路径已合入62项活动源码清单control/ishtar-selinux-device-io-20261018-01/expected-source-files.json，策略组件正在编译。未刷入/重启/切Enforcing，Ubuntu其他任务未调整。旧59项清单仅用于已安装1792261801基线。
+
+## 设备IO与attestation状态（当前源码入口）
+
+plans/selinux-device-io-20261018/working-source-files.json共62项，覆盖旧59项活动入口。六路径修改Mtd精确attestation.status restricted属性、GNSS只读现有sensors、Goodix私有netlink四操作、指定SPI wakeup标签。策略组件1e158ee4…/1,604,531 bytes已编译核验；62源码/22路径、精确属性契约、2条已有类型allow增量、单个genfs新增、0删除、xperm/原9宽松域保持通过。Mac/Ubuntu组件116项通过。完整ROM device-io-rom-build-01正在CPU6/7低优先级构建，自动审计仅电脑。手机仍机主已测1792261801/Permissive，未操作手机。
+
+Mtd检查失败仍注册服务，独立attestation线程stat失败则skip该可选重载；目录身份/实际功能仍待核查，不为消日志扩persist权限或DAC绕过。相机性能参数按机主要求保持，Enforcing未验证，下一候选需另确认刷入重启。

@@ -1,5 +1,5 @@
 {
-  "status": "INSTALLED_BOOTED_READBACK_PASSED_OWNER_CHECKS_PENDING",
+  "status": "INSTALLED_BOOTED_READBACK_AND_OWNER_CHECKS_PASSED",
   "incremental": "1792261801",
   "file": "EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
   "bytes": 4545440201,
@@ -26,7 +26,14 @@
   "runtime_validation_pending": false,
   "other_tasks_changed": false,
   "flash_and_first_normal_reboot_authorization_consumed": true,
-  "owner_checks_pending": true,
+  "owner_checks_pending": false,
   "runtime_readbacks_passed": true,
-  "additional_flash_or_reboot_requires_new_authorization": true
+  "additional_flash_or_reboot_requires_new_authorization": true,
+  "owner_acceptance_record": "owner-acceptance.json",
+  "owner_confirmed_scope": [
+    "Original applications and photos retained",
+    "MIUI camera photo and newly recorded video audio",
+    "Fingerprint unlock"
+  ],
+  "enforcing_trial_performed": false
 }

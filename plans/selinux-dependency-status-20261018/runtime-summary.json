@@ -1,5 +1,5 @@
 {
-  "status": "INSTALLED_BOOTED_READBACK_PASSED_OWNER_CHECKS_PENDING",
+  "status": "INSTALLED_BOOTED_READBACK_AND_OWNER_CHECKS_PASSED",
   "incremental": "1792261801",
   "mode": "Permissive",
   "native_files_verified": 39,
@@ -34,7 +34,7 @@
   "dsp_service_process_seen": true,
   "dsp_hidl_registered": true,
   "runtime_dsp_hal_fallback_proven": false,
-  "owner_checks_pending": true,
+  "owner_checks_pending": false,
   "enforcing_trial_performed": false,
   "normal_reboot_count": 1,
   "wire_audit": {
@@ -65,5 +65,11 @@
       "persist.vendor.sys.attestation.status set on vendor_system_prop"
     ],
     "limitations": "Startup snapshot; MIUI camera was not running in the process snapshot. Audit losses exist. Do not compare line counts as repair percentage or infer complete camera/consumer validation."
-  }
+  },
+  "owner_acceptance_record": "owner-acceptance.json",
+  "owner_confirmed_scope": [
+    "Original applications and photos retained",
+    "MIUI camera photo and newly recorded video audio",
+    "Fingerprint unlock"
+  ]
 }

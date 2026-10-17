@@ -40,3 +40,7 @@ original-permissive-origins.json按实际生成conf定位九个不同源文件�
 初始进程快照未见MIUI相机运行，不能称本轮实际MIUI进程域或算法回退已验证；机主新拍照/有声录像/指纹和数据验收待答。logcat317条AVC/18域、audit_lost最大1，包含HAL属性枚举和Mtd DAC/新增persist.vendor.sys.attestation.status写拒绝；不是全量或完成百分比，不能与前版不同测试窗口直接比较。新RKP类型本窗口未见拒绝，不等于所有消费者完成验收。具体摘要见runtime-summary.json，原始日志/加载策略留在本地。
 
 有限构建、刷写和读回worker全部结束，未创建手机常驻采集/自启/模块，也未再次重启或切Enforcing。Mac/Ubuntu runtime22项及697,254 bytes归档匹配，SHAd9a35dc58c4b857d02372133e28679c1932e86095a186067aec9e0b2e9b7870a。新包及原回退包暂保留，等待机主功能验收后按既有双版本规则处理。
+
+## 1792261801机主验收与清理
+
+机主已确认此前所问原应用/照片、MIUI拍照/新录像收音、指纹无问题；原初始快照MIUI进程未出现的记录不改。owner-acceptance.json保存范围，仍Permissive，Enforcing未试。按双版本要求保留1792261801/1792257806完整ROM；老两ZIP和已完成暂存已删除，旧runner不可重放。下一版62项源入口为control/ishtar-selinux-device-io-20261018-01/expected-source-files.json，本目录59清单是已安装基线。

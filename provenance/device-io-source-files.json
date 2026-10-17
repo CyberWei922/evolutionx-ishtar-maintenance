@@ -1,0 +1,54 @@
+{
+  "status": "COMPONENT_VERIFIED_FULL_ROM_BUILDING_NOT_INSTALLED",
+  "baseline_incremental": "1792261801",
+  "files": [
+    {
+      "repository_path": "plans/selinux-device-io-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "license": "Apache-2.0",
+      "review": "Original maintenance-only policy; previous Mtd sources already reviewed, new GNSS/Goodix/SPI rules original and SPDX-marked. No vendor implementation copied.",
+      "bytes": 629,
+      "sha256": "27646e856efd8edb5393fc2ddd5d4add91612da8bc34318c99e3512a8a6daee4"
+    },
+    {
+      "repository_path": "plans/selinux-device-io-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "license": "Apache-2.0",
+      "review": "Original maintenance-only policy; previous Mtd sources already reviewed, new GNSS/Goodix/SPI rules original and SPDX-marked. No vendor implementation copied.",
+      "bytes": 785,
+      "sha256": "1f81011ce1a25769a7d58fe5b8fc6bf7bdd0ae8b2d80770c73dab8e85915eb28"
+    },
+    {
+      "repository_path": "plans/selinux-device-io-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "license": "Apache-2.0",
+      "review": "Original maintenance-only policy; previous Mtd sources already reviewed, new GNSS/Goodix/SPI rules original and SPDX-marked. No vendor implementation copied.",
+      "bytes": 2617,
+      "sha256": "5c00ce4272fc29fc092368b61e0037d9f190172d7c0abbe5e39337d3a6517ace"
+    },
+    {
+      "repository_path": "plans/selinux-device-io-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/hal_gnss_qti.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/hal_gnss_qti.te",
+      "license": "Apache-2.0",
+      "review": "Original maintenance-only policy; previous Mtd sources already reviewed, new GNSS/Goodix/SPI rules original and SPDX-marked. No vendor implementation copied.",
+      "bytes": 248,
+      "sha256": "a133924c74c15f276ab14363b902152533381c13947c30ebdb726f999ee2d0fd"
+    },
+    {
+      "repository_path": "plans/selinux-device-io-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/hal_fingerprint_default.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/hal_fingerprint_default.te",
+      "license": "Apache-2.0",
+      "review": "Original maintenance-only policy; previous Mtd sources already reviewed, new GNSS/Goodix/SPI rules original and SPDX-marked. No vendor implementation copied.",
+      "bytes": 366,
+      "sha256": "1a04fd44c3780467ba4756cda6ed5d67c7b1fac31cfe61a9612656adadbca1b6"
+    },
+    {
+      "repository_path": "plans/selinux-device-io-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/genfs_contexts",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/genfs_contexts",
+      "license": "Apache-2.0",
+      "review": "Original maintenance-only policy; previous Mtd sources already reviewed, new GNSS/Goodix/SPI rules original and SPDX-marked. No vendor implementation copied.",
+      "bytes": 357,
+      "sha256": "938a4af177f98054b2096c98a3b8a35a03e3bb4759b437eeb28dc01f93816734"
+    }
+  ]
+}

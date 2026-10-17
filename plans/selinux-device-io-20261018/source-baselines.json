@@ -1,0 +1,57 @@
+{
+  "status": "DEVICE_IO_EXACT_STATUS_SOURCE_APPLIED",
+  "baseline_incremental": "1792261801",
+  "baseline_control": "/mnt/android-download/control/ishtar-selinux-dependency-status-20261018-01",
+  "source_files": 62,
+  "changed_source_paths": 6,
+  "changes": [
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "new_file": false,
+      "before_sha256": "198af98ce1cfe4b4cf28158e2e6e10c1ff2ac48e354032f0b8041176a5ceb6d7",
+      "after_sha256": "27646e856efd8edb5393fc2ddd5d4add91612da8bc34318c99e3512a8a6daee4",
+      "bytes": 629
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "new_file": false,
+      "before_sha256": "37f41923064318a24b70d624ac2ea63eaecc2f2ab5da848a21e33007c22279cd",
+      "after_sha256": "1f81011ce1a25769a7d58fe5b8fc6bf7bdd0ae8b2d80770c73dab8e85915eb28",
+      "bytes": 785
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "new_file": false,
+      "before_sha256": "0fa58d7cb81ea12995da35740f8bd6b5db0bf72d214d8bb442ac8f76ab22420b",
+      "after_sha256": "5c00ce4272fc29fc092368b61e0037d9f190172d7c0abbe5e39337d3a6517ace",
+      "bytes": 2617
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/hal_gnss_qti.te",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "a133924c74c15f276ab14363b902152533381c13947c30ebdb726f999ee2d0fd",
+      "bytes": 248
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/hal_fingerprint_default.te",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "1a04fd44c3780467ba4756cda6ed5d67c7b1fac31cfe61a9612656adadbca1b6",
+      "bytes": 366
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/genfs_contexts",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "938a4af177f98054b2096c98a3b8a35a03e3bb4759b437eeb28dc01f93816734",
+      "bytes": 357
+    }
+  ],
+  "phone_accessed": false,
+  "enforcing_switched": false,
+  "unrelated_processes_changed": false,
+  "binary_payload_changed": false,
+  "unix_dac_or_persist_labels_changed": false,
+  "at": 1792266395.198877
+}

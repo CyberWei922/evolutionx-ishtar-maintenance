@@ -1,0 +1,62 @@
+{
+  "status": "DEVICE_IO_EXACT_STATUS_COMPILED_VERIFIED",
+  "baseline_incremental": "1792261801",
+  "policy_sha256": "1e158ee4b36d7c0847fc1888a7afcbd8a4c9d5742c9247bba46013a363f024d6",
+  "policy_bytes": 1604531,
+  "changed_source_paths": [
+    "device/xiaomi/ishtar/sepolicy/vendor/genfs_contexts",
+    "device/xiaomi/ishtar/sepolicy/vendor/hal_fingerprint_default.te",
+    "device/xiaomi/ishtar/sepolicy/vendor/hal_gnss_qti.te",
+    "device/xiaomi/ishtar/sepolicy/vendor/property.te",
+    "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+    "device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te"
+  ],
+  "source_files_verified": 62,
+  "file_context_cases": 22,
+  "new_property_exact": "persist.vendor.sys.attestation.status",
+  "new_property_type": "vendor_mtd_attestation_status_prop",
+  "new_property_contract_matches_previous_mtd_feature_state": true,
+  "existing_type_allow_additions": 2,
+  "existing_type_allow_removals": 0,
+  "extended_permissions_unchanged": true,
+  "permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "generic_vendor_access_denied": true,
+  "secure_xdsp_access_denied": true,
+  "mtd_generic_property_writes_denied": true,
+  "mtd_dac_and_mac_bypasses_denied": true,
+  "mtd_file_context_read_only": true,
+  "camera_sensor_property_read_only": true,
+  "gnss_sensor_property_read_only": true,
+  "fingerprint_netlink_added_permissions": [
+    "bind",
+    "create",
+    "read",
+    "write"
+  ],
+  "compiled_wakeup_genfs_delta": "(genfscon sysfs \"/devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi1/spi1.0/wakeup\" (u object_r sysfs_wakeup ((s0) (s0))))",
+  "public_library_list_unchanged": true,
+  "library_payload_sha256": "1b27c5ec6f0dba72ad91e59ecbd2cabeaa5cb58e6f9b1adb600ec3f60b837ded",
+  "binary_payload_changed": false,
+  "phone_installed": false,
+  "phone_rebooted": false,
+  "enforcing_trial": false,
+  "full_rom_built": false,
+  "runtime_validation_pending": true,
+  "remaining": [
+    "Secure DSP direct access and actual HAL fallback",
+    "MiSys implementation missing; do not grant default service find",
+    "Optional private/default property and PSI reads require separate design",
+    "Mtd Unix DAC and precise property consumers",
+    "Camera HAL enumeration and original permissive domains"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "new_compiled_mapping": "(genfscon sysfs \"/devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi1/spi1.0/wakeup\" (u object_r sysfs_wakeup ((s0) (s0))))",
+  "removed": [],
+  "system_suspend_permissions_unchanged": true,
+  "runtime_relabel_not_yet_observed": true
+}
