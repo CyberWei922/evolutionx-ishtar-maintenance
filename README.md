@@ -4,7 +4,9 @@
 
 ## 当前版本
 
-当前已安装Unofficial incremental **1792246397**，SELinux仍为**Permissive**。29文件、21分区范围及运行标签/策略核对通过，机主反馈正常启动；本版相机/录像/指纹单项验收待补充。Enforcing及快充待修，MIUI默认相机尚未实现。
+当前已安装Unofficial incremental **1792246397**，SELinux仍为**Permissive**。29文件、21分区范围及运行标签/策略核对通过，机主反馈正常启动；本版相机/录像/指纹单项验收待补充。Enforcing及快充待修，当前手机默认相机未改。
+
+下一版的MIUI默认六入口/保留数据偏好迁移及下一批SELinux源码已实现，并完成策略、签名辅助程序和出厂规则XML的组件编译核验，见`plans/selinux-camera-next-20261017/`。它还没有新完整ROM或实机安装/功能验收；Aperture保留备用。
 
 上一验收版本 **1792226532** 的camera03、Recovery触控、亮度平滑和开机刷新率修复完整保留。第三至五批累计源码见`plans/selinux-next-20261017/`；原accepted源码清单及验收标签继续指1792226532，当前源码由原基线叠加累计候选补丁复现。
 

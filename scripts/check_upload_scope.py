@@ -17,8 +17,9 @@ for p in list((r/'source-files').rglob('*'))+list((r/'source-overrides').rglob('
 for name,row in json.loads((r/'provenance/source-files.json').read_text()).items():
  p=r/'source-files'/name
  assert hashlib.sha256(p.read_bytes()).hexdigest()==row['sha256'],name
-candidate=r/'provenance/candidate-source-files.json'
-if candidate.exists():
+for inventory in ['candidate-source-files.json','next-source-files.json']:
+ candidate=r/'provenance'/inventory
+ if not candidate.exists():continue
  for row in json.loads(candidate.read_text())['files']:
   p=r/row['repository_path']
   assert p.resolve().is_relative_to(r/'plans') and not p.is_symlink(),p

@@ -75,3 +75,10 @@ Original maintenance additions are Apache-2.0. The modified common init file
 retains its 2026 LineageOS Project copyright and Apache-2.0 SPDX notice.
 The cumulative patch is relative to the recorded installed-source baseline.
 No proprietary Mtd executable/library or raw device logs are included.
+
+Next SELinux and default-camera source (2026-10-17):
+Original IshtarCameraDefaults receiver, migration policy/test, preferred XML
+and dedicated app policy additions are Apache-2.0, Copyright 2026 CyberWei922.
+The two modified device makefiles retain the LineageOS Project 2025 notice.
+This is an uninstalled 14-path delta on installed 1792246397, not a new ROM.
+No proprietary MIUI APK/library, compiled policy/helper or raw phone logs are uploaded.

@@ -1,0 +1,129 @@
+{
+  "status": "NEXT_POLICY_AND_HELPER_COMPILED_VERIFIED",
+  "policy_bytes": 1604045,
+  "policy_sha256": "76314da3fd7dac6fadda20c342110688346869c299d6d5dae2e0b17b7244b232",
+  "helper_bytes": 16798,
+  "helper_sha256": "9af56163b24a283e8e8a5ea4af5625531f0d61ae45fab469da705f84c079069f",
+  "helper_certificate_sha256": "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8",
+  "permissive_domains": [
+    "su",
+    "qti-testscripts",
+    "backuptool",
+    "vendor_pdt_app",
+    "vendor-qti-testscripts",
+    "aoncameraservice_app",
+    "vendor_hal_debugutils_default",
+    "vendor_cta_app",
+    "vendor_logkit_app"
+  ],
+  "source_files_verified": 59,
+  "precise_permissions": [
+    {
+      "source": "vendor_mtd",
+      "target": "vendor_mtd_provision_status_prop",
+      "class": "property_service",
+      "permissions": [
+        "set"
+      ]
+    },
+    {
+      "source": "vendor_mtd",
+      "target": "vendor_mtd_provision_status_prop",
+      "class": "file",
+      "permissions": [
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ]
+    },
+    {
+      "source": "vendor_mtd",
+      "target": "vendor_mtd_feature_state_prop",
+      "class": "property_service",
+      "permissions": [
+        "set"
+      ]
+    },
+    {
+      "source": "vendor_mtd",
+      "target": "vendor_mtd_feature_state_prop",
+      "class": "file",
+      "permissions": [
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ]
+    },
+    {
+      "source": "ishtar_miui_camera_app",
+      "target": "vendor_camera_p3enable_prop",
+      "class": "file",
+      "permissions": [
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ]
+    },
+    {
+      "source": "ishtar_miui_camera_app",
+      "target": "vendor_audio_prop",
+      "class": "file",
+      "permissions": [
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ]
+    },
+    {
+      "source": "ishtar_miui_camera_app",
+      "target": "vendor_hal_camerapostproc_xiaomi_hwservice",
+      "class": "hwservice_manager",
+      "permissions": [
+        "find"
+      ]
+    }
+  ],
+  "property_contexts": [
+    [
+      "persist.vendor.sys.provision.status",
+      "u:object_r:vendor_mtd_provision_status_prop:s0",
+      "exact",
+      "string"
+    ],
+    [
+      "vendor.sys.feature_state",
+      "u:object_r:vendor_mtd_feature_state_prop:s0",
+      "exact",
+      "string"
+    ]
+  ],
+  "seapp_context": "user=_app seinfo=platform isPrivApp=true name=com.android.camera domain=ishtar_miui_camera_app type=app_data_file levelFrom=user",
+  "compiled_allow_attributes_resolved": true,
+  "platform_app_direct_permissions_unchanged": true,
+  "phone_installed": false,
+  "phone_rebooted": false,
+  "enforcing_switched": false,
+  "runtime_default_and_camera_tests_pending": true,
+  "full_rom_not_built": true,
+  "module_build_exit": 0,
+  "module_build_duration": "07:30",
+  "source_changes": 14,
+  "native_preferred_xml": {
+    "state": "ACTUAL_PREFERRED_XML_BUILT_AND_MATCHED",
+    "bytes": 1637,
+    "sha256": "42df062ee033576b4735d2bceb170c0897c711084654fe94a2cebe1e05a0579a",
+    "commands": [
+      "[1/1] Copy xml: out/target/product/ishtar/system_ext/etc/preferred-apps/ishtar-camera.xml"
+    ],
+    "phone_changed": false,
+    "other_processes_stopped": false
+  },
+  "host_behavior_test_output": "PASS: 11 migration checks, three route-contract checks and six unique MIUI routes",
+  "independent_patch_apply_passed": true,
+  "full_new_rom_created": false,
+  "other_processes_stopped": false
+}

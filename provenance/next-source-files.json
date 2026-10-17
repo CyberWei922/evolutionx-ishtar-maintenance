@@ -1,0 +1,130 @@
+{
+  "kind": "next-permissive-uninstalled-source",
+  "installed_baseline": "1792246397",
+  "files": [
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/BoardConfig.mk",
+      "source_path": "device/xiaomi/ishtar/BoardConfig.mk",
+      "sha256": "8b1029aa3ee39cf36607dba64972b975cb78c16224be822026b32915e9d27166",
+      "bytes": 2219,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/camera-defaults/Android.bp",
+      "source_path": "device/xiaomi/ishtar/camera-defaults/Android.bp",
+      "sha256": "937174a40282dda0cde6735784522fab29a54809b419db649e5ef03569ce3bfe",
+      "bytes": 272,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/camera-defaults/AndroidManifest.xml",
+      "source_path": "device/xiaomi/ishtar/camera-defaults/AndroidManifest.xml",
+      "sha256": "2d51c81fbc885a99eb353086ed7ee73c6e07c0312a9105e7089fb40a74f56e79",
+      "bytes": 1622,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsPolicy.java",
+      "source_path": "device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsPolicy.java",
+      "sha256": "ed28eba1d84bd136909b8c01d24b20d7134899e5359933a48bd82310aee3ca82",
+      "bytes": 2916,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsReceiver.java",
+      "source_path": "device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsReceiver.java",
+      "sha256": "85284c65df084beeaa938af067073c2b9d9d0fd09cb0f21c959d3cc104ecda4d",
+      "bytes": 5301,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/configs/ishtar-camera-preferred.xml",
+      "source_path": "device/xiaomi/ishtar/configs/ishtar-camera-preferred.xml",
+      "sha256": "42df062ee033576b4735d2bceb170c0897c711084654fe94a2cebe1e05a0579a",
+      "bytes": 1637,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/device.mk",
+      "source_path": "device/xiaomi/ishtar/device.mk",
+      "sha256": "da0c9b853a3bbf53c924319fb702bec78a1e1c71d100734a8f6f9e50caf857a4",
+      "bytes": 2974,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te",
+      "sha256": "c6668a385b1ffe19521e6175b34fc725d3fce4c291d80db49e101b8f333f8cd8",
+      "bytes": 831,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/sepolicy/private/seapp_contexts",
+      "source_path": "device/xiaomi/ishtar/sepolicy/private/seapp_contexts",
+      "sha256": "4eb5ef7f0e5f5a43a92faa766cf107544b4f88a8d5a082602b94efe00e778b56",
+      "bytes": 293,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/sepolicy/public/ishtar_miui_camera_app.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/public/ishtar_miui_camera_app.te",
+      "sha256": "47d34d32eab747c61c2d8c98f103b7dbdf4aa7ae77f8d8411857c53a7dc16387",
+      "bytes": 178,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te",
+      "sha256": "cf94dcee31443665c507a6a7c1368f57c9f4ff885212b8bcff9c6cd926b9a4ea",
+      "bytes": 502,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "sha256": "60989c28815611b2c6944f8884462594a965f6f0b8f5647efe7161104cb88cf1",
+      "bytes": 382,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "sha256": "daa8253e2a92e683a1a68eacca260f6073ff8e9a64694ce847608ee85faf9144",
+      "bytes": 449,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "sha256": "221ce349765081418499ab2171d226913a78578d0c6a9e7cc11885f3bf477261",
+      "bytes": 2087,
+      "license": "Apache-2.0",
+      "review": "Original maintenance source; two modified LineageOS device makefiles retain upstream Apache-2.0 notices. No APK or vendor library payload."
+    },
+    {
+      "repository_path": "plans/selinux-camera-next-20261017/CameraDefaultsPolicyTest.java",
+      "source_path": null,
+      "kind": "host-behavior-test",
+      "bytes": 4620,
+      "sha256": "cafc212f429d8e98b9cd876eab9a08e090c5d1332a9a63630595efe2a2242d18",
+      "license": "Apache-2.0",
+      "review": "Original host-only migration test; never contacts a device."
+    }
+  ],
+  "module_build_exit": 0,
+  "phone_installed": false,
+  "full_rom_created": false
+}

@@ -1,0 +1,392 @@
+diff --git a/device/xiaomi/ishtar/BoardConfig.mk b/device/xiaomi/ishtar/BoardConfig.mk
+--- a/device/xiaomi/ishtar/BoardConfig.mk
++++ b/device/xiaomi/ishtar/BoardConfig.mk
+@@ -61,3 +61,7 @@
+ 
+ # Inherit from the proprietary version
+ include vendor/xiaomi/ishtar/BoardConfigVendor.mk
++
++# Keep this system camera application's type exported to its narrow vendor clients.
++SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
++SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+diff --git a/device/xiaomi/ishtar/camera-defaults/Android.bp b/device/xiaomi/ishtar/camera-defaults/Android.bp
+new file mode 100644
+--- /dev/null
++++ b/device/xiaomi/ishtar/camera-defaults/Android.bp
+@@ -0,0 +1,11 @@
++// Copyright (C) 2026 CyberWei922
++// SPDX-License-Identifier: Apache-2.0
++
++android_app {
++    name: "IshtarCameraDefaults",
++    srcs: ["src/**/*.java"],
++    certificate: "platform",
++    platform_apis: true,
++    system_ext_specific: true,
++    optimize: { enabled: false },
++}
+diff --git a/device/xiaomi/ishtar/camera-defaults/AndroidManifest.xml b/device/xiaomi/ishtar/camera-defaults/AndroidManifest.xml
+new file mode 100644
+--- /dev/null
++++ b/device/xiaomi/ishtar/camera-defaults/AndroidManifest.xml
+@@ -0,0 +1,25 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="org.lineageos.ishtar.cameradefaults" android:versionCode="1" android:versionName="1">
++    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
++    <uses-permission android:name="android.permission.SET_PREFERRED_APPLICATIONS" />
++    <queries>
++        <intent><action android:name="android.media.action.STILL_IMAGE_CAMERA" /></intent>
++        <intent><action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE" /></intent>
++        <intent><action android:name="android.media.action.IMAGE_CAPTURE" /></intent>
++        <intent><action android:name="android.media.action.IMAGE_CAPTURE_SECURE" /></intent>
++        <intent><action android:name="android.media.action.VIDEO_CAMERA" /></intent>
++        <intent><action android:name="android.media.action.VIDEO_CAPTURE" /></intent>
++    </queries>
++    <application android:label="Camera defaults" android:allowBackup="false"
++        android:directBootAware="true" android:defaultToDeviceProtectedStorage="true">
++        <receiver android:name=".CameraDefaultsReceiver" android:exported="false">
++            <intent-filter>
++                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
++                <action android:name="android.intent.action.BOOT_COMPLETED" />
++                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
++            </intent-filter>
++        </receiver>
++    </application>
++</manifest>
+diff --git a/device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsPolicy.java b/device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsPolicy.java
+new file mode 100644
+--- /dev/null
++++ b/device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsPolicy.java
+@@ -0,0 +1,72 @@
++/* Copyright (C) 2026 CyberWei922
++ * SPDX-License-Identifier: Apache-2.0
++ */
++package org.lineageos.ishtar.cameradefaults;
++
++import java.util.List;
++
++/** A one-time migration of six camera actions, independent of Android for host testing. */
++final class CameraDefaultsPolicy {
++    static final String CAMERA_PACKAGE = "com.android.camera";
++    static final String APERTURE_PACKAGE = "org.lineageos.aperture";
++
++    static final class Route {
++        final String action;
++        final String component;
++        Route(String action, String activity) {
++            this.action = "android.media.action." + action;
++            this.component = CAMERA_PACKAGE + "/" + CAMERA_PACKAGE + "." + activity;
++        }
++    }
++
++    static final Route[] ROUTES = {
++        new Route("STILL_IMAGE_CAMERA", "AssistantCamera"),
++        // Camera is the APK's dedicated secure-camera activity. Its second
++        // AssistantCamera alias must not leave the secure action at a chooser.
++        new Route("STILL_IMAGE_CAMERA_SECURE", "Camera"),
++        new Route("IMAGE_CAPTURE", "OneShotImageCapture"),
++        new Route("IMAGE_CAPTURE_SECURE", "OneShotCamera"),
++        new Route("VIDEO_CAMERA", "VideoCamera"),
++        new Route("VIDEO_CAPTURE", "OneShotVideoCapture"),
++    };
++
++    interface Backend {
++        boolean completed(Route route);
++        boolean targetAvailable(Route route);
++        String resolvedComponent(Route route);
++        String resolvedPackage(Route route);
++        void prefer(Route route);
++        void complete(Route route);
++        void log(Route route, String result);
++    }
++
++    static void migrate(Backend backend) {
++        for (Route route : ROUTES) {
++            if (backend.completed(route)) continue;
++            if (!backend.targetAvailable(route)) {
++                backend.log(route, "target unavailable; retry at next boot");
++                continue;
++            }
++            if (route.component.equals(backend.resolvedComponent(route))) {
++                backend.complete(route);
++                continue;
++            }
++            String current = backend.resolvedPackage(route);
++            // Replace the old ROM camera or an unresolved choice. Preserve an
++            // explicit third-party choice, and never change it on later boots.
++            if (current != null && !"android".equals(current)
++                    && !CAMERA_PACKAGE.equals(current) && !APERTURE_PACKAGE.equals(current)) {
++                backend.complete(route);
++                backend.log(route, "kept explicit third-party default");
++                continue;
++            }
++            backend.prefer(route);
++            if (route.component.equals(backend.resolvedComponent(route))) {
++                backend.complete(route);
++                backend.log(route, "MIUI default applied");
++            } else {
++                backend.log(route, "resolution unconfirmed; retry at next boot");
++            }
++        }
++    }
++}
+diff --git a/device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsReceiver.java b/device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsReceiver.java
+new file mode 100644
+--- /dev/null
++++ b/device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsReceiver.java
+@@ -0,0 +1,100 @@
++/* Copyright (C) 2026 CyberWei922
++ * SPDX-License-Identifier: Apache-2.0
++ */
++package org.lineageos.ishtar.cameradefaults;
++
++import android.content.BroadcastReceiver;
++import android.content.ComponentName;
++import android.content.Context;
++import android.content.Intent;
++import android.content.IntentFilter;
++import android.content.SharedPreferences;
++import android.content.pm.ActivityInfo;
++import android.content.pm.PackageManager;
++import android.content.pm.ResolveInfo;
++import android.os.UserHandle;
++import android.util.Log;
++
++import java.util.LinkedHashSet;
++import java.util.List;
++
++/** Runs briefly on boot/package replacement; there is no service or launcher activity. */
++public final class CameraDefaultsReceiver extends BroadcastReceiver {
++    private static final String TAG = "IshtarCameraDefaults";
++    private static final int QUERY_FLAGS = PackageManager.MATCH_DEFAULT_ONLY
++            | PackageManager.MATCH_DIRECT_BOOT_AWARE | PackageManager.MATCH_DIRECT_BOOT_UNAWARE;
++
++    @Override
++    public void onReceive(Context context, Intent intent) {
++        String action = intent.getAction();
++        if (!Intent.ACTION_LOCKED_BOOT_COMPLETED.equals(action)
++                && !Intent.ACTION_BOOT_COMPLETED.equals(action)
++                && !Intent.ACTION_MY_PACKAGE_REPLACED.equals(action)) return;
++        // The owner requested migration of this personal phone. Work profiles
++        // and secondary users retain their own defaults and administrative policy.
++        if (UserHandle.myUserId() != UserHandle.USER_SYSTEM) return;
++        Context storage = context.createDeviceProtectedStorageContext();
++        SharedPreferences state = storage.getSharedPreferences("camera-defaults-v1", 0);
++        PackageManager pm = context.getPackageManager();
++        try {
++            CameraDefaultsPolicy.migrate(new CameraDefaultsPolicy.Backend() {
++                private List<ResolveInfo> candidates(CameraDefaultsPolicy.Route route) {
++                    return pm.queryIntentActivities(new Intent(route.action), QUERY_FLAGS);
++                }
++                private String key(CameraDefaultsPolicy.Route route) { return route.action; }
++                public boolean completed(CameraDefaultsPolicy.Route route) {
++                    return state.getBoolean(key(route), false);
++                }
++                public boolean targetAvailable(CameraDefaultsPolicy.Route route) {
++                    ComponentName desired = ComponentName.unflattenFromString(route.component);
++                    for (ResolveInfo candidate : candidates(route)) {
++                        ActivityInfo ai = candidate.activityInfo;
++                        if (desired.equals(new ComponentName(ai.packageName, ai.name))) {
++                            return ai.exported && ai.enabled && ai.applicationInfo.enabled;
++                        }
++                    }
++                    return false;
++                }
++                private ResolveInfo resolved(CameraDefaultsPolicy.Route route) {
++                    return pm.resolveActivity(new Intent(route.action), QUERY_FLAGS);
++                }
++                public String resolvedComponent(CameraDefaultsPolicy.Route route) {
++                    ResolveInfo ri = resolved(route);
++                    return ri == null || ri.activityInfo == null ? null
++                            : new ComponentName(ri.activityInfo.packageName,
++                                    ri.activityInfo.name).flattenToString();
++                }
++                public String resolvedPackage(CameraDefaultsPolicy.Route route) {
++                    ResolveInfo ri = resolved(route);
++                    return ri == null || ri.activityInfo == null ? null : ri.activityInfo.packageName;
++                }
++                @SuppressWarnings("deprecation")
++                public void prefer(CameraDefaultsPolicy.Route route) {
++                    LinkedHashSet<ComponentName> components = new LinkedHashSet<>();
++                    int bestMatch = 0;
++                    for (ResolveInfo ri : candidates(route)) {
++                        components.add(new ComponentName(ri.activityInfo.packageName,
++                                ri.activityInfo.name));
++                        bestMatch = Math.max(bestMatch, ri.match);
++                    }
++                    IntentFilter filter = new IntentFilter(route.action);
++                    filter.addCategory(Intent.CATEGORY_DEFAULT);
++                    pm.replacePreferredActivity(filter, bestMatch,
++                            components.toArray(new ComponentName[0]),
++                            ComponentName.unflattenFromString(route.component));
++                }
++                public void complete(CameraDefaultsPolicy.Route route) {
++                    if (!state.edit().putBoolean(key(route), true).commit()) {
++                        Log.w(TAG, "Could not save migration state for " + route.action);
++                    }
++                }
++                public void log(CameraDefaultsPolicy.Route route, String result) {
++                    Log.i(TAG, route.action + ": " + result);
++                }
++            });
++        } catch (RuntimeException error) {
++            // Keep normal boot usable; an incomplete action can retry next boot.
++            Log.e(TAG, "Camera default migration deferred", error);
++        }
++    }
++}
+diff --git a/device/xiaomi/ishtar/configs/ishtar-camera-preferred.xml b/device/xiaomi/ishtar/configs/ishtar-camera-preferred.xml
+new file mode 100644
+--- /dev/null
++++ b/device/xiaomi/ishtar/configs/ishtar-camera-preferred.xml
+@@ -0,0 +1,40 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
++<preferred-activities>
++    <item name="com.android.camera/com.android.camera.AssistantCamera">
++        <filter>
++            <action name="android.media.action.STILL_IMAGE_CAMERA" />
++            <cat name="android.intent.category.DEFAULT" />
++        </filter>
++    </item>
++    <item name="com.android.camera/com.android.camera.Camera">
++        <filter>
++            <action name="android.media.action.STILL_IMAGE_CAMERA_SECURE" />
++            <cat name="android.intent.category.DEFAULT" />
++        </filter>
++    </item>
++    <item name="com.android.camera/com.android.camera.OneShotImageCapture">
++        <filter>
++            <action name="android.media.action.IMAGE_CAPTURE" />
++            <cat name="android.intent.category.DEFAULT" />
++        </filter>
++    </item>
++    <item name="com.android.camera/com.android.camera.OneShotCamera">
++        <filter>
++            <action name="android.media.action.IMAGE_CAPTURE_SECURE" />
++            <cat name="android.intent.category.DEFAULT" />
++        </filter>
++    </item>
++    <item name="com.android.camera/com.android.camera.VideoCamera">
++        <filter>
++            <action name="android.media.action.VIDEO_CAMERA" />
++            <cat name="android.intent.category.DEFAULT" />
++        </filter>
++    </item>
++    <item name="com.android.camera/com.android.camera.OneShotVideoCapture">
++        <filter>
++            <action name="android.media.action.VIDEO_CAPTURE" />
++            <cat name="android.intent.category.DEFAULT" />
++        </filter>
++    </item>
++</preferred-activities>
+diff --git a/device/xiaomi/ishtar/device.mk b/device/xiaomi/ishtar/device.mk
+--- a/device/xiaomi/ishtar/device.mk
++++ b/device/xiaomi/ishtar/device.mk
+@@ -71,3 +71,8 @@
+ 
+ # Owner-accepted MIUI camera03 native integration.
+ $(call inherit-product, vendor/xiaomi/ishtar-camera/camera.mk)
++
++# Camera routes: retain Aperture as fallback and migrate the owner's defaults once.
++PRODUCT_PACKAGES += IshtarCameraDefaults
++PRODUCT_COPY_FILES += \
++    $(LOCAL_PATH)/configs/ishtar-camera-preferred.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/preferred-apps/ishtar-camera.xml
+diff --git a/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te b/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te
+new file mode 100644
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te
+@@ -0,0 +1,24 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# A system-side app domain, selected only for the platform-signed MIUI package.
++typeattribute ishtar_miui_camera_app coredomain;
++app_domain(ishtar_miui_camera_app)
++net_domain(ishtar_miui_camera_app)
++bluetooth_domain(ishtar_miui_camera_app)
++
++# Platform camera/media APIs, with standard app-domain data/graphics permissions.
++allow ishtar_miui_camera_app {
++    cameraserver_service
++    audioserver_service
++    mediaserver_service
++    mediaextractor_service
++    mediadrmserver_service
++    mediametrics_service
++    thermal_service
++    stats_service
++    system_api_service
++}:service_manager find;
++
++# Preserve the existing app-data type and MCS convention during data-preserving OTA.
++# No raw persist access, generic vendor library access or permissive declaration.
+diff --git a/device/xiaomi/ishtar/sepolicy/private/seapp_contexts b/device/xiaomi/ishtar/sepolicy/private/seapp_contexts
+new file mode 100644
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/private/seapp_contexts
+@@ -0,0 +1,5 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# Keep the APK certificate and app UID/data layout intact. More specific than platform_app.
++user=_app seinfo=platform isPrivApp=true name=com.android.camera domain=ishtar_miui_camera_app type=app_data_file levelFrom=user
+diff --git a/device/xiaomi/ishtar/sepolicy/public/ishtar_miui_camera_app.te b/device/xiaomi/ishtar/sepolicy/public/ishtar_miui_camera_app.te
+new file mode 100644
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/public/ishtar_miui_camera_app.te
+@@ -0,0 +1,5 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# Export only this app's domain name to the product's vendor policy.
++type ishtar_miui_camera_app, domain;
+diff --git a/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te b/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te
+new file mode 100644
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te
+@@ -0,0 +1,10 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# The camera provider implements Xiaomi IBGService. Only the MIUI app is its client.
++hal_client_domain(ishtar_miui_camera_app, vendor_hal_camerapostproc_xiaomi)
++hal_server_domain(hal_camera_default, vendor_hal_camerapostproc_xiaomi)
++
++# Reads observed in MIUI camera startup; neither property is writable by the app.
++get_prop(ishtar_miui_camera_app, vendor_camera_p3enable_prop)
++get_prop(ishtar_miui_camera_app, vendor_audio_prop)
+diff --git a/device/xiaomi/ishtar/sepolicy/vendor/property.te b/device/xiaomi/ishtar/sepolicy/vendor/property.te
+--- a/device/xiaomi/ishtar/sepolicy/vendor/property.te
++++ b/device/xiaomi/ishtar/sepolicy/vendor/property.te
+@@ -3,3 +3,7 @@
+ # Status outputs of the Xiaomi Mtd service; no generic vendor property writes.
+ vendor_restricted_prop(vendor_mtd_widevine_prop)
+ vendor_restricted_prop(vendor_mtd_rpmb_prop)
++
++# Additional libmt status outputs observed on 1792246397.
++vendor_restricted_prop(vendor_mtd_provision_status_prop)
++vendor_restricted_prop(vendor_mtd_feature_state_prop)
+diff --git a/device/xiaomi/ishtar/sepolicy/vendor/property_contexts b/device/xiaomi/ishtar/sepolicy/vendor/property_contexts
+--- a/device/xiaomi/ishtar/sepolicy/vendor/property_contexts
++++ b/device/xiaomi/ishtar/sepolicy/vendor/property_contexts
+@@ -3,3 +3,6 @@
+ # Preserve the closed service string ABI while narrowing property ownership.
+ persist.vendor.sys.pay.widevine u:object_r:vendor_mtd_widevine_prop:s0 exact string
+ vendor.sys.rpmb_state u:object_r:vendor_mtd_rpmb_prop:s0 exact string
++
++persist.vendor.sys.provision.status u:object_r:vendor_mtd_provision_status_prop:s0 exact string
++vendor.sys.feature_state u:object_r:vendor_mtd_feature_state_prop:s0 exact string
+diff --git a/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te b/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te
+--- a/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te
++++ b/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te
+@@ -37,3 +37,7 @@
+ # under global Permissive before any Enforcing candidate.
+ set_prop(vendor_mtd, vendor_mtd_widevine_prop)
+ set_prop(vendor_mtd, vendor_mtd_rpmb_prop)
++
++# Separate exact types; no writes to vendor_system_prop/vendor_default_prop.
++set_prop(vendor_mtd, vendor_mtd_provision_status_prop)
++set_prop(vendor_mtd, vendor_mtd_feature_state_prop)
