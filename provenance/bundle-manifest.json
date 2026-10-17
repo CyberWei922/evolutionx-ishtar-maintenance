@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 9422,
-      "sha256": "7ef2c191591cac8071b690674af48f5657c8a84e54cb03b0c80e79c3621e20dd"
+      "bytes": 10214,
+      "sha256": "ee8b00995fcaef84ad158f3386c817c164170163838ebacdb33be831a8027eb1"
     },
     "LICENSE.md": {
       "bytes": 1395,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 11773,
-      "sha256": "ae43d4d86d71c6e3b9b40460b9e2119aff15edfffa5632809c280ee5f56a29cf"
+      "bytes": 12677,
+      "sha256": "0bdf759b764b96f11433ebc3c0fb53f1cc389cee681a82b23f3e056ce8e51550"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -466,12 +466,12 @@
       "sha256": "4e7ad5c21291ceaa473b21845f5ad820c9dc735601594c93f8b4c42afb1c756e"
     },
     "plans/selinux-device-io-20261018/README.md": {
-      "bytes": 2360,
-      "sha256": "7707e48a4123cf2f6b4450dd42cc6485d9eac9263d6088a0ebf62ac2e9de0432"
+      "bytes": 3582,
+      "sha256": "41d4e75810c95ff7266995146acd4418392617bee625d698667c2772a647b9a8"
     },
     "plans/selinux-device-io-20261018/build-status.json": {
-      "bytes": 401,
-      "sha256": "d5b6522cd19ec0b8a82400ff390800e312be92e6fad364ee7a70b51666b14bb3"
+      "bytes": 855,
+      "sha256": "b956ee02cae15db14bb3d2848f60ebba64696d2fc582bb0fbcaf4218451f16f8"
     },
     "plans/selinux-device-io-20261018/candidate.patch": {
       "bytes": 2679,
@@ -492,6 +492,10 @@
     "plans/selinux-device-io-20261018/non-mtd-analysis-next.json": {
       "bytes": 19334,
       "sha256": "aa2c3ba5f1e24625c8bcb5ae5a95bcd713fc0eb2f63fa033e116596c9bcdf613"
+    },
+    "plans/selinux-device-io-20261018/rom-build-summary.json": {
+      "bytes": 2759,
+      "sha256": "b70e563f4a485e806e5f170ef895683ac4c42789f733307b390041eae389777c"
     },
     "plans/selinux-device-io-20261018/source-baselines.json": {
       "bytes": 2139,
@@ -662,8 +666,8 @@
       "sha256": "acfeaf58b7c04c0e83255fe0be8da3b5939e77b1064b97ab25967a814eb0e3ec"
     },
     "provenance/device-io-source-files.json": {
-      "bytes": 3271,
-      "sha256": "d90c10f13b98005c937a938b5b950eba246ff6cce1f699458e73556c55d21118"
+      "bytes": 3306,
+      "sha256": "d4c55f2fdf16061db8bb8a6a66e6c56aec90c1a787ee220c4a7ab375fbc0cb7f"
     },
     "provenance/excluded-camera-recipes.json": {
       "bytes": 1236,

@@ -1,5 +1,5 @@
 {
-  "status": "COMPONENT_VERIFIED_FULL_ROM_BUILDING_NOT_INSTALLED",
+  "status": "FULL_ROM_BUILT_STATIC_VERIFIED_NOT_INSTALLED",
   "baseline_incremental": "1792261801",
   "files": [
     {
@@ -50,5 +50,6 @@
       "bytes": 357,
       "sha256": "938a4af177f98054b2096c98a3b8a35a03e3bb4759b437eeb28dc01f93816734"
     }
-  ]
+  ],
+  "candidate_incremental": "1792266978"
 }

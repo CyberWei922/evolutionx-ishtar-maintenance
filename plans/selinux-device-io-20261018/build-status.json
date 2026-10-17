@@ -1,5 +1,5 @@
 {
-  "status": "FULL_ROM_BUILDING",
+  "status": "FULL_ROM_BUILT_ACTUAL_IMAGES_STATIC_UPGRADE_VERIFIED_NOT_INSTALLED",
   "baseline_incremental": "1792261801",
   "job": "device-io-rom-build-01",
   "source_files": 62,
@@ -8,5 +8,16 @@
   "enforcing_trial": false,
   "own_resources": "CPU6/7 nice10 ionice2/7 Ninja2 GOMAXPROCS2",
   "other_tasks_changed": false,
-  "location": "Ubuntu control/ishtar-selinux-device-io-20261018-01/rom-candidate01"
+  "location": "Ubuntu control/ishtar-selinux-device-io-20261018-01/rom-candidate01",
+  "candidate_incremental": "1792266978",
+  "rom": {
+    "file": "EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545439425,
+    "sha256": "5021325057439cbbca4a35f89cb32c24575ebc5ebeefe2da3994f96e3c28b19b"
+  },
+  "full_rom_built": true,
+  "actual_image_checks_complete": true,
+  "static_upgrade_checks_complete": true,
+  "runtime_validation_pending": true,
+  "enforcing_ready": false
 }

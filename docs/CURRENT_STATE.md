@@ -74,3 +74,9 @@
 plans/selinux-device-io-20261018/working-source-files.json共62项，覆盖旧59项活动入口。六路径修改Mtd精确attestation.status restricted属性、GNSS只读现有sensors、Goodix私有netlink四操作、指定SPI wakeup标签。策略组件1e158ee4…/1,604,531 bytes已编译核验；62源码/22路径、精确属性契约、2条已有类型allow增量、单个genfs新增、0删除、xperm/原9宽松域保持通过。Mac/Ubuntu组件116项通过。完整ROM device-io-rom-build-01正在CPU6/7低优先级构建，自动审计仅电脑。手机仍机主已测1792261801/Permissive，未操作手机。
 
 Mtd检查失败仍注册服务，独立attestation线程stat失败则skip该可选重载；目录身份/实际功能仍待核查，不为消日志扩persist权限或DAC绕过。相机性能参数按机主要求保持，Enforcing未验证，下一候选需另确认刷入重启。
+
+## 设备IO候选1792266978已完成（最新）
+
+整包构建exit0，新rom-audit02的audit-status及candidate-finalization-status complete，实际34分区/62源码、策略1e158ee4…和原保护载荷/设备IO库检查通过。ROM 4,545,439,425 bytes/SHA5021325057439cbbca4a35f89cb32c24575ebc5ebeefe2da3994f96e3c28b19b，正式包在Ubuntu delivery/ishtar-selinux-device-io-permissive-candidate-20261018-01，Mac同名薄交接不含ROM。静态保留数据升级检查通过，OTA完整签名未独立密码学核验。源码见plans/selinux-device-io-20261018。
+
+手机仍1792261801/Permissive、机主已测所问功能正常；新候选未安装/重启/Enforcing。Mtd DAC/可选认证重载、消费者、其他必要功能拒绝及原9静态宽松域/KSU、短时和冷启动Enforcing继续单列。构建/审计worker全部结束，未调整其他任务。新候选刷入/重启另确认。

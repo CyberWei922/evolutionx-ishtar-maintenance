@@ -1,0 +1,60 @@
+{
+  "status": "FULL_ROM_BUILT_ACTUAL_IMAGES_STATIC_UPGRADE_VERIFIED_NOT_INSTALLED",
+  "candidate_incremental": "1792266978",
+  "installed_baseline_incremental": "1792261801",
+  "rom": {
+    "file": "EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545439425,
+    "sha256": "5021325057439cbbca4a35f89cb32c24575ebc5ebeefe2da3994f96e3c28b19b"
+  },
+  "ubuntu_location": "/mnt/android-download/delivery/ishtar-selinux-device-io-permissive-candidate-20261018-01/EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+  "build_control": "control/ishtar-selinux-device-io-20261018-01/rom-candidate01",
+  "audit_control": "control/ishtar-selinux-device-io-20261018-01/rom-audit02",
+  "computer_audit_attempts": 2,
+  "static_upgrade_preflight_attempts": 2,
+  "preflight_retry_reason": "Checker control path still selected failed original audit; corrected isolated preflight passed",
+  "first_audit_failure": "Checker retained previous job-prefix regex; stopped before payload inspection",
+  "build_repeated": false,
+  "source_or_policy_changed_for_audit_retry": false,
+  "source_files": 62,
+  "source_delta_paths": 6,
+  "payload_partitions_verified": 34,
+  "policy_sha256": "1e158ee4b36d7c0847fc1888a7afcbd8a4c9d5742c9247bba46013a363f024d6",
+  "policy_bytes": 1604531,
+  "mode": "Permissive",
+  "permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "component_verified": true,
+  "packaged_policy_matches_component": true,
+  "retained_device_io_libraries": {
+    "vendor/lib64/libgnss.so": "9ae162029e867ac3c8dbd6674d707cb4ad4d7383b7670bad3abe59a23035658b",
+    "odm/lib64/libgf_hal.so": "3d375442f6fd24ef11c7a4bc8f0f5ba80c15dc06d953ce80d414bb1078f62576",
+    "odm/lib64/hw/fingerprint.goodix_fod.default.so": "0e31882da9ff78f7fb8e8bdba1adf22e49d391d3553b72889926d288f262217f"
+  },
+  "protected_camera_recovery_brightness_surfaceflinger_kernel_ksu_checks": true,
+  "static_data_preserving_upgrade_precheck_passed": true,
+  "whole_ota_signature_independently_verified": false,
+  "phone_installed": false,
+  "phone_rebooted": false,
+  "runtime_validation_pending": true,
+  "enforcing_trial_performed": false,
+  "enforcing_ready": false,
+  "unrelated_tasks_changed": false,
+  "owner_tests_for_candidate_pending": true,
+  "remaining": [
+    "Mtd persist DAC and optional attestation reload functional impact",
+    "Exact status-property consumers",
+    "Other required-feature denials and secure XDSP/HAL fallback",
+    "Original nine static permissive domains and KSU exception",
+    "Separately authorized short Enforcing trial then cold boot validation"
+  ]
+}
