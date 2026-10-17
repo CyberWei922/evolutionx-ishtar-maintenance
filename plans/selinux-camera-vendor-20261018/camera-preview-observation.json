@@ -1,0 +1,43 @@
+{
+  "status": "FUNCTIONAL_OWNER_REPORT_WITH_PREVIEW_FLUIDITY_FOLLOWUP",
+  "incremental": "1792257806",
+  "owner_other_requested_checks": "reported no problem",
+  "initial_owner_report": [
+    "camera button/lens/mode transition feels less smooth",
+    "intermittent 5x preview darkening also in bright light"
+  ],
+  "controlled_wireless_retest": {
+    "owner_report": "no flicker in this run; still slightly sluggish",
+    "5x_entry_count": 4,
+    "logged_internal_master_handoff_ms": [
+      524,
+      536,
+      549,
+      435
+    ],
+    "5x_stable_preview_fps_medians": [
+      16.56,
+      16.35,
+      16.61,
+      16.53
+    ],
+    "1x_and_3_2x_preview_fps_approx": 25,
+    "app_logged_zoom_update_delay_ms_range": [
+      1,
+      3
+    ],
+    "not_end_to_end_touch_latency": true,
+    "current_photo_session_allows_dynamic_fps": true,
+    "actual_exposure_cause_not_measured": true,
+    "AEC_warnings_seen_on_5x_to_1x_only": true,
+    "invalid_video_quality_warning_count": 1
+  },
+  "intermittent_dimming_permanently_resolved": false,
+  "SELinux_change_proven_cause": false,
+  "camera_fluidity_optimization_pending": true,
+  "camera_source_and_settings_changed": false,
+  "phone_rebooted": false,
+  "enforcing_trial": false,
+  "bounded_loggers_finished": true,
+  "raw_logs_not_in_repository": true
+}

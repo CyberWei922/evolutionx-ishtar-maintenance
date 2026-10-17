@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 6232,
-      "sha256": "1bfbfe90fe848dca644fd5816e9e2660eb3240096a912dbae1d741ec1f066f56"
+      "bytes": 6755,
+      "sha256": "1b8bd155c4c12cc3a3841e9708c275ce4c0b563efc7a188bafd776a335822d71"
     },
     "LICENSE.md": {
       "bytes": 1395,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 7197,
-      "sha256": "ab1ee5ff20a62fc4218cacaba59ced47512a9afa2155cee215224d7385b54749"
+      "bytes": 7789,
+      "sha256": "f9456e2fb0368215799ff4456319acf6d5b4b701ea68104aceb33a1061b56113"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -358,12 +358,16 @@
       "sha256": "97685647f8b04913d776e92adb4ee4636c60681718b1ce9d7c269f6afd6a3ff5"
     },
     "plans/selinux-camera-vendor-20261018/README.md": {
-      "bytes": 2862,
-      "sha256": "ff3a0555d3714b751a87fe7d27bd102030a85811907360166ad727a5d9d5d20d"
+      "bytes": 3335,
+      "sha256": "bca080755c782168f91f64c89367ee0a63a8ab343f0290834a15956acdeffb85"
     },
     "plans/selinux-camera-vendor-20261018/build-status.json": {
-      "bytes": 851,
-      "sha256": "1a1d0b9c0de6c1fbcd399fb15cb456c2ab13c153225b1627f8e70c70dd322fbb"
+      "bytes": 899,
+      "sha256": "4e71b340c215a8f346777ca3cb207ca5e37d983f9db2d6869eb1b857b0d0cf73"
+    },
+    "plans/selinux-camera-vendor-20261018/camera-preview-observation.json": {
+      "bytes": 1308,
+      "sha256": "576466130050a9956500d95b86bf8ecc6da08f23042a31baf7131bc3ff839743"
     },
     "plans/selinux-camera-vendor-20261018/camera-public-library-labels.fragment": {
       "bytes": 445,
@@ -378,12 +382,12 @@
       "sha256": "7f0da410716506aa953a80fe79f50c928aa22d5268b7e847186efa9960aa7d97"
     },
     "plans/selinux-camera-vendor-20261018/rom-build-summary.json": {
-      "bytes": 754,
-      "sha256": "9f593c04eff5fd5bbe3426070334364ba1060268e0ddffdf24afce38c52ffb97"
+      "bytes": 799,
+      "sha256": "a2e9547f5347451be126b4ee5b426e2ab88a9f342f58ab2a509ad70d4d5cf63d"
     },
     "plans/selinux-camera-vendor-20261018/runtime-summary.json": {
-      "bytes": 1641,
-      "sha256": "e242a5d00427b8bf94a82d1e03e49c682c139893bd625bfe854b09e2ef44aa99"
+      "bytes": 1782,
+      "sha256": "116499d4ddbfacb00dfd0a5cecb84d787853f2adf691b9ce8bd230178f2dbb81"
     },
     "plans/selinux-camera-vendor-20261018/source-baselines.json": {
       "bytes": 743,

@@ -1,5 +1,5 @@
 {
-  "state": "INSTALLED_BOOTED_READBACK_PASSED_OWNER_CHECKS_PENDING",
+  "state": "INSTALLED_READBACK_PASSED_OWNER_CAMERA_FLUIDITY_FOLLOWUP",
   "installed_incremental": "1792257806",
   "source_files": 59,
   "component_policy_sha256": "88ff29aab9c50ef5c7e765fcec01b09413d647894dcab9981cb6c39818706f5b",
@@ -18,6 +18,7 @@
   "candidate_ota_bytes": 4545427001,
   "flash_authorized": true,
   "normal_reboot_authorized": true,
-  "owner_checks_pending": true,
-  "normal_reboot_completed": true
+  "owner_checks_pending": false,
+  "normal_reboot_completed": true,
+  "camera_fluidity_followup_pending": true
 }

@@ -1,5 +1,5 @@
 {
-  "status": "INSTALLED_BOOTED_READBACK_PASSED_OWNER_CHECKS_PENDING",
+  "status": "INSTALLED_READBACK_PASSED_OWNER_CAMERA_FLUIDITY_FOLLOWUP",
   "incremental": "1792257806",
   "mode": "Permissive",
   "native_file_hashes": 38,
@@ -25,7 +25,7 @@
   "command_attempts": 109,
   "command_retries": 0,
   "enforcing_trial": false,
-  "owner_checks_pending": true,
+  "owner_checks_pending": false,
   "avc_snapshot": {
     "kernel-avc": {
       "retained_avc_lines_including_possible_duplicates": 32,
@@ -45,5 +45,8 @@
     "camera HAL property enumeration and other domains",
     "original static permissive domains and KSU exception"
   ],
-  "do_not_batch_allow_all_denials": true
+  "do_not_batch_allow_all_denials": true,
+  "camera_acceptance_pending": true,
+  "owner_report_received": true,
+  "camera_preview_observation": "camera-preview-observation.json"
 }

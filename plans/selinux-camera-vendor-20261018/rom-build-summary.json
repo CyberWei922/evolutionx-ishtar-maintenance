@@ -14,5 +14,6 @@
   "binary_location": "Ubuntu delivery/ishtar-camera-dsp-permissive-candidate-20261018-01",
   "mac_thin_handoff_files": 40,
   "runtime_readbacks_passed": true,
-  "owner_checks_pending": true
+  "owner_checks_pending": false,
+  "camera_fluidity_followup_pending": true
 }
