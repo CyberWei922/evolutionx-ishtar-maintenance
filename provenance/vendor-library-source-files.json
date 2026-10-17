@@ -1,0 +1,20 @@
+{
+  "status": "COMPONENT_POLICY_VERIFIED_NOT_INSTALLED",
+  "baseline_incremental": "1792252694",
+  "files": [
+    {
+      "repository_path": "plans/selinux-camera-vendor-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te",
+      "license": "Apache-2.0",
+      "review": "Original CyberWei922 maintenance additions; no vendor implementation or original vendor text payload",
+      "bytes": 933,
+      "sha256": "e6aeb626a4022f99f78aeb3b647edf1b305b2880344b4b532714c8f4bee9f5f3"
+    },
+    {
+      "repository_path": "plans/selinux-camera-vendor-20261018/camera-public-library-labels.fragment",
+      "license": "Apache-2.0",
+      "review": "Original CyberWei922 maintenance additions; no vendor implementation or original vendor text payload",
+      "bytes": 445,
+      "sha256": "4d42ce7f7de3e5dfb197badd49dbd82ed6a9d72b5dc251da9f028aa386221715"
+    }
+  ]
+}

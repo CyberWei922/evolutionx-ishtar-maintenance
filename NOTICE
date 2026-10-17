@@ -88,3 +88,11 @@ The one-file MIUI service-find adjustment and temporary enforcing-return-guard.s
 are original CyberWei922 maintenance sources under Apache-2.0. Exact reviewed
 paths and hashes are recorded in provenance/framework-api-source-files.json.
 Compiled policy and original device logs remain external to this repository.
+
+Camera public-library and DSP client plan (2026-10-18):
+The MIUI vendor-domain additions and exact three-file labeling fragment are
+original CyberWei922 maintenance additions under Apache-2.0. The cumulative
+patch is relative to the recorded framework-api source baseline. Existing
+device-tree attribution remains applicable. The old file_contexts full text,
+vendor ELF/APK implementations, policy binaries and raw phone logs are external.
+Reviewed upload paths are in provenance/vendor-library-source-files.json.

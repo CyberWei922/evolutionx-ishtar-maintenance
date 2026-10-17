@@ -4,6 +4,8 @@
 
 ## 已完成并保留
 
+最新工作增量见 `plans/selinux-camera-vendor-20261018/`。三份既有公共算法库/HTP依赖精确标签和MIUI QSPM/DSP HAL客户端已局部编译核验，策略88ff29aa…；新的累计完整ROM构建中，未安装。活动59项清单以该plan为准。secure XDSP直连仍禁止，实际HAL回退和Enforcing相机功能待实测；原9静态宽松域与KSU例外未完成最终验收。
+
 - MIUI camera03原生集成；机主确认日常拍照/录像正常。Aperture录像无声为旧UID录音ignore，已恢复foreground并获新录像有声确认。
 - Recovery触控修复：补载配套PM8008供电驱动，使用ROM配套触控固件。验收镜像SHA c39e0236…；当前固定配套内核，换内核需重新核对。
 - 自动亮度渐变：fast升/降0.301001098767，slow升/降0.240813087535，机主体感验收通过；入口是厂商两份displayconfig XML中的screenBrightnessRamp*。

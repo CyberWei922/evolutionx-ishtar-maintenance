@@ -1,0 +1,18 @@
+{
+  "baseline": "installed 1792252694 plus framework-api plan",
+  "changed_files": [
+    {
+      "build_source_path": "device/xiaomi/ishtar/sepolicy/vendor/file_contexts",
+      "before_sha256": "fbe09353a1bfcef79c5ff26744b3234b89a1c570770b67766a2309f6c35b2916",
+      "after_sha256": "332e3f1ffa5b5ea49fa9e3e3808c3b99b834ce4e4fa9e0ffcd2dda409d4baf57",
+      "bytes": 1281
+    },
+    {
+      "build_source_path": "device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te",
+      "before_sha256": "cf94dcee31443665c507a6a7c1368f57c9f4ff885212b8bcff9c6cd926b9a4ea",
+      "after_sha256": "e6aeb626a4022f99f78aeb3b647edf1b305b2880344b4b532714c8f4bee9f5f3",
+      "bytes": 933
+    }
+  ],
+  "file_context_full_snapshot_kept_external": true
+}

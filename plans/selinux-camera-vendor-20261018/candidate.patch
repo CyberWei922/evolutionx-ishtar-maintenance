@@ -1,0 +1,27 @@
+--- a/device/xiaomi/ishtar/sepolicy/vendor/file_contexts
++++ b/device/xiaomi/ishtar/sepolicy/vendor/file_contexts
+@@ -17,3 +17,10 @@
+ 
+ # QRTR lookup output (also relabeled for data-preserving upgrades).
+ /data/vendor/qrtr(/.*)? u:object_r:vendor_qrtr_lookup_data_file:s0
++
++# Public camera algorithms already exported by vendor/etc/public.libraries.txt.
++# The HTP stub is a runtime helper of that in-process SNPE implementation.
++# Exact 64-bit files only; linker namespace/public-library lists stay unchanged.
++/odm/lib64/libmialgo_ai_vision\.so u:object_r:vendor_public_lib_file:s0
++/vendor/lib64/libSNPE\.so u:object_r:vendor_public_lib_file:s0
++/vendor/lib64/libSnpeHtpV73Stub\.so u:object_r:vendor_public_lib_file:s0
+--- a/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te
++++ b/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te
+@@ -8,3 +8,11 @@
+ # Reads observed in MIUI camera startup; neither property is writable by the app.
+ get_prop(ishtar_miui_camera_app, vendor_camera_p3enable_prop)
+ get_prop(ishtar_miui_camera_app, vendor_audio_prop)
++
++# Match the shipped QSPM HIDL client contract for this camera only.
++# The Qualcomm platform_app baseline already used this HAL client attribute.
++hal_client_domain(ishtar_miui_camera_app, vendor_hal_qspmhal)
++
++# The shipped FastRPC library has a DSP HAL fallback when direct device open
++# fails. Grant its standard client contract, keeping secure XDSP access denied.
++hal_client_domain(ishtar_miui_camera_app, vendor_hal_dspmanager)

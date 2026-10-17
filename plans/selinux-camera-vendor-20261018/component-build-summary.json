@@ -1,0 +1,83 @@
+{
+  "status": "CAMERA_LIBRARY_QSPM_AND_DSP_HAL_POLICY_COMPILED_VERIFIED",
+  "policy_sha256": "88ff29aab9c50ef5c7e765fcec01b09413d647894dcab9981cb6c39818706f5b",
+  "policy_bytes": 1604093,
+  "source_files_verified": 59,
+  "changed_source_files": 1,
+  "cumulative_changed_source_files_from_framework_api": 2,
+  "permissive_domains": [
+    "su",
+    "qti-testscripts",
+    "backuptool",
+    "vendor_pdt_app",
+    "vendor-qti-testscripts",
+    "aoncameraservice_app",
+    "vendor_hal_debugutils_default",
+    "vendor_cta_app",
+    "vendor_logkit_app"
+  ],
+  "file_context_cases": {
+    "/odm/lib64/libmialgo_ai_vision.so": "vendor_public_lib_file",
+    "/vendor/lib64/libSNPE.so": "vendor_public_lib_file",
+    "/vendor/lib64/libSnpeHtpV73Stub.so": "vendor_public_lib_file",
+    "/odm/lib/libmialgo_ai_vision.so": "vendor_file",
+    "/vendor/lib/libSNPE.so": "vendor_file",
+    "/vendor/lib/libSnpeHtpV73Stub.so": "vendor_file",
+    "/odm/lib64/libmialgo_ai_visionXso": "vendor_file",
+    "/vendor/lib64/libSNPEXso": "vendor_file",
+    "/vendor/lib64/libSnpeHtpV73StubXso": "vendor_file",
+    "/vendor/lib64/libSNPE_debug.so": "vendor_file",
+    "/vendor/lib64/libSnpeHtpV73Skel.so": "vendor_file",
+    "/dev/adsprpc-smd-secure": "vendor_xdsp_device",
+    "/dev/adsprpc-smd": "vendor_qdsp_device",
+    "/odm/lib64/libmialgo_utils.so": "same_process_hal_file"
+  },
+  "camera_public_library_permissions": [
+    {
+      "target": "vendor_public_lib_file",
+      "class": "file",
+      "permissions": [
+        "execute",
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ]
+    },
+    {
+      "target": "same_process_hal_file",
+      "class": "file",
+      "permissions": [
+        "execute",
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ]
+    }
+  ],
+  "qspm_client_attribute_verified": true,
+  "dsp_hal_client_verified": true,
+  "nonsecure_dsp_read_ioctl_preserved": true,
+  "platform_app_rules_unchanged": true,
+  "generic_vendor_access_denied": true,
+  "secure_xdsp_access_denied": true,
+  "xdsp_neverallow_unchanged": true,
+  "libraries": {
+    "odm/lib64/libmialgo_ai_vision.so": "3c8c0c3b90bd0fcf3ddcf2c027cae1d2c748f6908f897462497c4a1cc8a94715",
+    "vendor/lib64/libSNPE.so": "88f8781476d7f2ad2d851162529859114e55c53ae8a7f5eb2c5c4063dac416c6",
+    "vendor/lib64/libSnpeHtpV73Stub.so": "8f7639f8398a6c41616071ddff96b095e53527b7e18406a843fb0f79833ae16f"
+  },
+  "public_library_list_sha256": "742f03964dc7c6bd952ed50be973137f3364b0c7ebd83c68571c1c92d771a714",
+  "public_library_list_modified": false,
+  "binary_payload_modified": false,
+  "compiler_checks_enabled": true,
+  "runtime_validation_pending": true,
+  "phone_accessed": false,
+  "full_rom_built": false,
+  "enforcing_switched": false,
+  "remaining": [
+    "Secure DSP direct ioctl remains forbidden; permitted DSP HAL/nonsecure fallback requires runtime validation",
+    "Other required domains and original permissive exceptions"
+  ]
+}

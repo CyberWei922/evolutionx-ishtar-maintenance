@@ -1,0 +1,16 @@
+{
+  "state": "COMPONENT_POLICY_VERIFIED_FULL_ROM_BUILDING",
+  "installed_incremental": "1792252694",
+  "source_files": 59,
+  "component_policy_sha256": "88ff29aab9c50ef5c7e765fcec01b09413d647894dcab9981cb6c39818706f5b",
+  "exact_library_label_cases": 14,
+  "qspm_and_dsp_hal_clients": true,
+  "secure_xdsp_direct_access_granted": false,
+  "phone_accessed": false,
+  "enforcing_switched": false,
+  "unrelated_processes_changed": false,
+  "own_build_cpus": "4-7 after >95% idle sample",
+  "nice": 10,
+  "io_priority": 7,
+  "ninja_jobs": 2
+}

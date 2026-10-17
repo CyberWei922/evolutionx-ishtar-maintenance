@@ -1,0 +1,7 @@
+
+# Public camera algorithms already exported by vendor/etc/public.libraries.txt.
+# The HTP stub is a runtime helper of that in-process SNPE implementation.
+# Exact 64-bit files only; linker namespace/public-library lists stay unchanged.
+/odm/lib64/libmialgo_ai_vision\.so u:object_r:vendor_public_lib_file:s0
+/vendor/lib64/libSNPE\.so u:object_r:vendor_public_lib_file:s0
+/vendor/lib64/libSnpeHtpV73Stub\.so u:object_r:vendor_public_lib_file:s0

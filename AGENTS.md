@@ -16,7 +16,7 @@ This is an incremental maintenance source repository for Xiaomi 13 Ultra (ishtar
 ## License-scoped upload (2026-10-17)
 
 - Read LICENSE.md, NOTICE and docs/LICENSE_AND_DISTRIBUTION.md. Preserve per-file upstream licenses; original maintenance additions use Apache-2.0.
-- Only export reviewed paths in provenance/source-files.json, provenance/source-overrides.json, provenance/candidate-source-files.json, provenance/next-source-files.json or provenance/framework-api-source-files.json. Candidate inventories are separate from installed acceptance. Never classify arbitrary text as safe to upload.
+- Only export reviewed paths in provenance/source-files.json, provenance/source-overrides.json, provenance/candidate-source-files.json, provenance/next-source-files.json, provenance/framework-api-source-files.json or provenance/vendor-library-source-files.json. Candidate inventories are separate from installed acceptance. Never classify arbitrary text as safe to upload.
 - Original vendor text and derived MIUI implementation with unconfirmed redistribution permission stay external. Keep hashes/paths, not payloads. Preserve local frozen deliveries.
 - Full source snapshots preserve build-source bytes. Adjacent .license notices and project patches describe modifications; do not copy .license sidecars into build rules.
 - Read each plan's actual status. SELinux phases 3–5 are applied, compiled and installed as 1792246397; 29 files, 21 partition ranges, live labels and loaded policy are verified. Owner reported normal boot; camera/audio/fingerprint acceptance for this build remains pending. SELinux remains Permissive.
@@ -25,6 +25,9 @@ This is an incremental maintenance source repository for Xiaomi 13 Ultra (ishtar
 - Current main/tag replace the previous single-commit snapshot after a local-only backup. Do not merge the excluded historical commit back into this repository.
 
 ## Post-install next batch (2026-10-18)
+
+- Latest working input is plans/selinux-camera-vendor-20261018/working-source-files.json (59 files). It includes framework API plus exact public-library labels and MIUI QSPM/DSP HAL clients. Final component policy 88ff29aa… is compiled and verified, and the cumulative full ROM is building. No phone changes or Enforcing test. Original secure-XDSP neverallow and generic vendor access denial remain; actual HAL fallback is not proven.
+- The earlier partial full build was stopped only within this task's verified process sessions after discovering the missing DSP client. Preserve its stop/lock-refusal evidence. Do not replay it or interpret its stale waiting status as an active worker. Current full build uses control/ishtar-camera-dsp-client-20261018-01/rom-candidate01 on Ubuntu, CPU6/7/nice10/I/O7/Ninja2; leave unrelated tasks alone.
 
 - The working checkout now has a further one-file app_api_service/radio_service find change; use plans/selinux-framework-api-20261018/working-source-files.json (59 files), not the installed baseline inventory. New policy is not installed or in a new ROM.
 - A 25-second marker-only detached watchdog dry run passed in the retained ksu domain; it never called setenforce. Actual restoration from Enforcing is unverified and needs new explicit trial authorization. No startup hook or module exists. Never reuse an expired run token or PID.
