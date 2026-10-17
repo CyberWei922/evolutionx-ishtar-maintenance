@@ -1,0 +1,238 @@
+{
+  "vendor/xiaomi/ishtar-camera/proprietary/system/etc/default-permissions/miuicamera-permissions.xml": {
+    "sha256": "95fc1793d62979e1fe4e417b989c7dc80d6c910512146ff5aff1dab3163fadf9",
+    "bytes": 1501
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/etc/permissions/privapp-permissions-miuicamera.xml": {
+    "sha256": "cfd337db2c9635362913354ba4f0dcf1d05bce0913c18ee5cf143e3e5a140fc1",
+    "bytes": 1529
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/etc/sysconfig/miuicamera-hiddenapi-package-whitelist.xml": {
+    "sha256": "09967b083b85c68836091042e60a54be0c30f55d7175b94f4d04f3f6a46ec877",
+    "bytes": 120
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/lib64/libOpenCL.so": {
+    "sha256": "808d0c3ae88e9d5db241082a2bfa130dd711b5266f5775a23365a2a54cbadcb3",
+    "bytes": 221097
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/lib64/libcamera_algoup_jni.xiaomi.so": {
+    "sha256": "ae329487ccd16b947a06c5e4ab74d55ffc528e460c32a03da7660b370334ffcc",
+    "bytes": 64584
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/lib64/libcamera_mianode_jni.xiaomi.so": {
+    "sha256": "a29cec35409a19cbe7f135d2ca1f4acde099053c70143da064e2f05b06666cf1",
+    "bytes": 76448
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/lib64/libcdsprpc.so": {
+    "sha256": "69ab29cad88e56cb4d8dc1552b08542053ef84f43e572e2e3c873b16ba9b729a",
+    "bytes": 442568
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/lib64/libhidltransport.so": {
+    "sha256": "4e1f3cf6421cebfca5cdd30b9a5185949a6c8a19c396db7f343139dc41fb7906",
+    "bytes": 10680
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/lib64/libmicampostproc_client.so": {
+    "sha256": "deeb8d47c3f4b135ccb6fb8c2fb479edb3672ddd6901b4d1417eb726c3073174",
+    "bytes": 131344
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/lib64/libopencl-camera.so": {
+    "sha256": "1307fd7db43d37427976241819756b1006533e02b0634cb5858766c1984c7c84",
+    "bytes": 149120
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/lib64/libvmmem.so": {
+    "sha256": "796c71ea830a1f07aa76d22c7d06b3214ba8723b1e18213099820dda24dcc1a7",
+    "bytes": 40688
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/lib64/vendor.qti.hardware.dsp@1.0.so": {
+    "sha256": "05f40566029e08a243f51834c1497e37687897c8bbf40f8add6cf889ef8eb376",
+    "bytes": 160344
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/lib64/vendor.xiaomi.hardware.campostproc@1.0.so": {
+    "sha256": "1caf3d76f1cb446844423081ea8f73430e2d6ba2b41297a0fbc683184f8c08b6",
+    "bytes": 206776
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk": {
+    "sha256": "b7b2c4c77c4a4656e94569b918b208293f4d1a0d60900c0e805082770452f9ea",
+    "bytes": 183994431
+  },
+  "vendor/xiaomi/ishtar-camera/proprietary/vendor/etc/camera/camxoverridesettings.txt": {
+    "sha256": "c891376a9d9bc6b65c5253bb34570564791dd5db6526a307ffe83d97ce510724",
+    "bytes": 14736
+  },
+  "vendor/xiaomi/ishtar/proprietary/vendor/etc/displayconfig/display_id_4630946545580055171.xml": {
+    "sha256": "203236f6bf57a283aa00e13d4cde639d66bee2b2eafc72a027d5f754b07c0ed1",
+    "bytes": 2481
+  },
+  "vendor/xiaomi/ishtar/proprietary/vendor/etc/displayconfig/display_id_4630947134992368259.xml": {
+    "sha256": "3fc51df62b982f92ec5ee6e35eb5ef937596efb7d0ff79b5fb1c39313b0e509f",
+    "bytes": 2467
+  },
+  "device/xiaomi/ishtar/recovery/prebuilt-recovery.img": {
+    "sha256": "c39e0236d4aac787e59827f835d58ec3af127357bcd576fb2b66da72c2c4057e",
+    "bytes": 104857600
+  },
+  "vendor/xiaomi/ishtar-camera/Android.bp": {
+    "sha256": "82a9bb6a9365f30e6eea160719653a62724427b5bb7d5e8391c1ca5ac5379ff8",
+    "bytes": 5010
+  },
+  "vendor/xiaomi/ishtar-camera/camera.mk": {
+    "sha256": "8b08e45e774f476fae7d6589755a0437456951585c5b4b1d16701446ac4b085d",
+    "bytes": 1419
+  },
+  "kernel/xiaomi/sm8550-modules/qcom/opensource/camera-kernel/drivers/cam_sensor_module/cam_sensor/cam_sensor_core.c": {
+    "sha256": "53e4e8de427cb490564e5fe3406ab6fca612db68c142b849ce47b8da3d776a9e",
+    "bytes": 64562
+  },
+  "device/xiaomi/ishtar/BoardConfig.mk": {
+    "sha256": "8b1029aa3ee39cf36607dba64972b975cb78c16224be822026b32915e9d27166",
+    "bytes": 2219
+  },
+  "device/xiaomi/ishtar/device.mk": {
+    "sha256": "da0c9b853a3bbf53c924319fb702bec78a1e1c71d100734a8f6f9e50caf857a4",
+    "bytes": 2974
+  },
+  "device/xiaomi/sm8550-common/configs/properties/vendor.prop": {
+    "sha256": "f3f9de1dabd2daf43e209fdece6df270c8e5ad8d2951195d7d8f734270d03629",
+    "bytes": 8349
+  },
+  "device/xiaomi/ishtar/properties/camera-system.prop": {
+    "sha256": "66a3dd464cddad9398a121e330ccde4630cb1d6c798d4c2c932433e5068a754e",
+    "bytes": 361
+  },
+  "device/xiaomi/ishtar/recovery/README.md": {
+    "sha256": "b367c22d0ebb8c8a5f2bd95053cfb66ac0c1689dffa2e3650770d609ceb5462f",
+    "bytes": 1113
+  },
+  "vendor/xiaomi/ishtar-camera/README.md": {
+    "sha256": "94492544bde0728682b62931892a48f8f9b318d532c67db78a64e7ec9c541702",
+    "bytes": 1189
+  },
+  "vendor/xiaomi/ishtar-camera/accepted-payloads.json": {
+    "sha256": "fea79d96eea130899431d291eb5a065ab5462624df937940a96fe1ee59d95d0e",
+    "bytes": 6966
+  },
+  "vendor/xiaomi/ishtar-camera-platform/Android.bp": {
+    "sha256": "cbe4b534d467707e1e20929fbec2b559c113d631974e0a3d3c7115becb14fc21",
+    "bytes": 908
+  },
+  "vendor/xiaomi/ishtar-camera-platform/README.md": {
+    "sha256": "8a999b335e48d2b0f945c0b17f9f64c5cb1a29014074aaba24c9c2879f3687ac",
+    "bytes": 433
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/device.te": {
+    "sha256": "375288d63bbef602bbf730cb8eb90fa3a35c7b74f125413cb0a42b9b41c51289",
+    "bytes": 117
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/file_contexts": {
+    "sha256": "fbe09353a1bfcef79c5ff26744b3234b89a1c570770b67766a2309f6c35b2916",
+    "bytes": 836
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/hal_camera_default.te": {
+    "sha256": "40a8584d02ec606609a8d5b7d46046afab310f0e03dca3a71f6fdab857565699",
+    "bytes": 917
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/service.te": {
+    "sha256": "a2137c4add37069429218313c111169166f8bef266896922f04dfa3d25f18ab6",
+    "bytes": 116
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/service_contexts": {
+    "sha256": "365c3b81ab7790b2b37ad5450a2063330d1f5ebc0a23daff9f74522860e568d0",
+    "bytes": 93
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/hal_xiaomi_tee_services.te": {
+    "sha256": "402da7af43ae1ffc075ba11ebd5db8de729770dc64e9ca7729606584b96147ed",
+    "bytes": 841
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/hwservice_contexts": {
+    "sha256": "0b650b1b7e971f1a3ceec2b59834be7f249de9a85bebfef21b372baec3b98f8c",
+    "bytes": 250
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/vendor_mfidoca.te": {
+    "sha256": "d03dff288c27e42ad1cee556a58c7c98a0dac2dd2b8f99586011700a75dcf59d",
+    "bytes": 1026
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te": {
+    "sha256": "221ce349765081418499ab2171d226913a78578d0c6a9e7cc11885f3bf477261",
+    "bytes": 2087
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/vendor_tida.te": {
+    "sha256": "4e8a339df5f4550a70b2d7afaf0c3b90260867023dd84b32de20a71246126cdb",
+    "bytes": 474
+  },
+  "frameworks/native/services/surfaceflinger/Scheduler/Scheduler.h": {
+    "sha256": "e5daf7fbe5cf93d80395ef86220a54bcf703b8b37235c5b5400db45e368e638a",
+    "bytes": 31330
+  },
+  "frameworks/native/services/surfaceflinger/Scheduler/Scheduler.cpp": {
+    "sha256": "1ea4c0a6ae1faea8d317ed9aa064eb0a26732d7c6e537feb1c0744b51afe3a2e",
+    "bytes": 76466
+  },
+  "frameworks/native/services/surfaceflinger/SurfaceFlinger.cpp": {
+    "sha256": "74dfd1dd9de8f2acf889280a079c31b23bc0db3bb8d263428e69ca77f319e582",
+    "bytes": 482705
+  },
+  "frameworks/native/services/surfaceflinger/tests/unittests/SchedulerTest.cpp": {
+    "sha256": "205a409f16a73df469366c8629c40f190463d9d8c11f3e61a8916614aa55375f",
+    "bytes": 99757
+  },
+  "frameworks/native/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h": {
+    "sha256": "cd0aa7583c85611daf7ae42f29e445a30bac4577cbe9ddc8449fdf2a13c1799e",
+    "bytes": 53103
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/file.te": {
+    "sha256": "b1bdee784a8264d9e3e2969724d00b8f548f3871c264cbb98c3ee4268a074a90",
+    "bytes": 170
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/qrtr.te": {
+    "sha256": "019b109c53e121d3be28ab232c33de95b509756f112c7fa02ff99e77968dd003",
+    "bytes": 269
+  },
+  "device/xiaomi/sm8550-common/init/init.sm8550.rc": {
+    "sha256": "29fc233f44274edd31cae8d1e76caf92707170e03a561a8e5b57850a9526ef96",
+    "bytes": 12616
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/property.te": {
+    "sha256": "60989c28815611b2c6944f8884462594a965f6f0b8f5647efe7161104cb88cf1",
+    "bytes": 382
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/property_contexts": {
+    "sha256": "daa8253e2a92e683a1a68eacca260f6073ff8e9a64694ce847608ee85faf9144",
+    "bytes": 449
+  },
+  "device/xiaomi/ishtar/camera-defaults/Android.bp": {
+    "sha256": "937174a40282dda0cde6735784522fab29a54809b419db649e5ef03569ce3bfe",
+    "bytes": 272
+  },
+  "device/xiaomi/ishtar/camera-defaults/AndroidManifest.xml": {
+    "sha256": "2d51c81fbc885a99eb353086ed7ee73c6e07c0312a9105e7089fb40a74f56e79",
+    "bytes": 1622
+  },
+  "device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsPolicy.java": {
+    "sha256": "ed28eba1d84bd136909b8c01d24b20d7134899e5359933a48bd82310aee3ca82",
+    "bytes": 2916
+  },
+  "device/xiaomi/ishtar/camera-defaults/src/org/lineageos/ishtar/cameradefaults/CameraDefaultsReceiver.java": {
+    "sha256": "85284c65df084beeaa938af067073c2b9d9d0fd09cb0f21c959d3cc104ecda4d",
+    "bytes": 5301
+  },
+  "device/xiaomi/ishtar/configs/ishtar-camera-preferred.xml": {
+    "sha256": "42df062ee033576b4735d2bceb170c0897c711084654fe94a2cebe1e05a0579a",
+    "bytes": 1637
+  },
+  "device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te": {
+    "bytes": 869,
+    "sha256": "3e2d538e6b1f03733a8f8ff4e24dfde49c08fe013d5f768730e4c8aee681837c"
+  },
+  "device/xiaomi/ishtar/sepolicy/private/seapp_contexts": {
+    "sha256": "4eb5ef7f0e5f5a43a92faa766cf107544b4f88a8d5a082602b94efe00e778b56",
+    "bytes": 293
+  },
+  "device/xiaomi/ishtar/sepolicy/public/ishtar_miui_camera_app.te": {
+    "sha256": "47d34d32eab747c61c2d8c98f103b7dbdf4aa7ae77f8d8411857c53a7dc16387",
+    "bytes": 178
+  },
+  "device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te": {
+    "sha256": "cf94dcee31443665c507a6a7c1368f57c9f4ff885212b8bcff9c6cd926b9a4ea",
+    "bytes": 502
+  }
+}

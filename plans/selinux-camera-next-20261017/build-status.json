@@ -104,10 +104,10 @@
   "seapp_context": "user=_app seinfo=platform isPrivApp=true name=com.android.camera domain=ishtar_miui_camera_app type=app_data_file levelFrom=user",
   "compiled_allow_attributes_resolved": true,
   "platform_app_direct_permissions_unchanged": true,
-  "phone_installed": false,
-  "phone_rebooted": false,
+  "phone_installed": true,
+  "phone_rebooted": true,
   "enforcing_switched": false,
-  "runtime_default_and_camera_tests_pending": true,
+  "runtime_default_and_camera_tests_pending": false,
   "full_rom_not_built": false,
   "module_build_exit": 0,
   "module_build_duration": "07:30",
@@ -154,5 +154,16 @@
     }
   ],
   "static_upgrade_precheck": "STATIC_DATA_PRESERVING_UPGRADE_PRECHECK_PASSED",
-  "enforcing_ready": false
+  "enforcing_ready": false,
+  "runtime_verified": true,
+  "owner_functional_acceptance": "正常 都是MIUI相机 声音指纹都正常",
+  "native_files_readback": 32,
+  "partition_range_readbacks": 21,
+  "all_camera_default_routes_match": true,
+  "miui_dedicated_domain_seen": true,
+  "loaded_policy": {
+    "bytes": 2151336,
+    "sha256": "e60522678bd9109eab646b0f107c4ff5f906bba2bb85491e0640bd5887cccf44"
+  },
+  "enforcing_trial_performed": false
 }

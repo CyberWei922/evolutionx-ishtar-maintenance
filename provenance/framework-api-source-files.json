@@ -1,0 +1,20 @@
+{
+  "baseline_incremental": "1792252694",
+  "status": "SOURCE_APPLIED_COMPONENT_POLICY_VERIFIED_NOT_INSTALLED",
+  "files": [
+    {
+      "repository_path": "plans/selinux-framework-api-20261018/source/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te",
+      "build_source_path": "device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te",
+      "license": "Apache-2.0",
+      "bytes": 869,
+      "sha256": "3e2d538e6b1f03733a8f8ff4e24dfde49c08fe013d5f768730e4c8aee681837c"
+    },
+    {
+      "repository_path": "plans/selinux-framework-api-20261018/enforcing-return-guard.sh",
+      "build_source_path": "temporary diagnostics/enforcing-return-guard.sh",
+      "license": "Apache-2.0",
+      "bytes": 2092,
+      "sha256": "57f712673431951458f254871b7dc4478de1f20198711b9f0bb7a2442c53b7db"
+    }
+  ]
+}

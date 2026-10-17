@@ -82,3 +82,9 @@ and dedicated app policy additions are Apache-2.0, Copyright 2026 CyberWei922.
 The two modified device makefiles retain the LineageOS Project 2025 notice.
 This is an uninstalled 14-path delta on installed 1792246397, not a new ROM.
 No proprietary MIUI APK/library, compiled policy/helper or raw phone logs are uploaded.
+
+Post-install framework API plan (2026-10-18):
+The one-file MIUI service-find adjustment and temporary enforcing-return-guard.sh
+are original CyberWei922 maintenance sources under Apache-2.0. Exact reviewed
+paths and hashes are recorded in provenance/framework-api-source-files.json.
+Compiled policy and original device logs remain external to this repository.

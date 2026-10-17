@@ -1,0 +1,212 @@
+{
+  "status": "FRAMEWORK_APP_API_POLICY_COMPILED_VERIFIED",
+  "policy_bytes": 1604069,
+  "policy_sha256": "3202ea7d5bed51f1a5b6c34d958d9ecc82bf057f76db733e4efc0727dd6eea08",
+  "helper_bytes": 16798,
+  "helper_sha256": "9af56163b24a283e8e8a5ea4af5625531f0d61ae45fab469da705f84c079069f",
+  "helper_certificate_sha256": "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8",
+  "permissive_domains": [
+    "su",
+    "qti-testscripts",
+    "backuptool",
+    "vendor_pdt_app",
+    "vendor-qti-testscripts",
+    "aoncameraservice_app",
+    "vendor_hal_debugutils_default",
+    "vendor_cta_app",
+    "vendor_logkit_app"
+  ],
+  "source_files_verified": 59,
+  "framework_api_find_checks": [
+    {
+      "target": "activity_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "netstats_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "radio_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "activity_task_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "gpu_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "location_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "trust_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "audio_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "sensorservice_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "virtual_device_native_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "voiceinteraction_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "autofill_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "shortcut_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "sensitive_content_protection_service",
+      "permissions": [
+        "find"
+      ]
+    },
+    {
+      "target": "uimode_service",
+      "permissions": [
+        "find"
+      ]
+    }
+  ],
+  "baseline_incremental": "1792252694",
+  "changed_source_paths": 1,
+  "precise_permissions": [
+    {
+      "source": "vendor_mtd",
+      "target": "vendor_mtd_provision_status_prop",
+      "class": "property_service",
+      "permissions": [
+        "set"
+      ]
+    },
+    {
+      "source": "vendor_mtd",
+      "target": "vendor_mtd_provision_status_prop",
+      "class": "file",
+      "permissions": [
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ]
+    },
+    {
+      "source": "vendor_mtd",
+      "target": "vendor_mtd_feature_state_prop",
+      "class": "property_service",
+      "permissions": [
+        "set"
+      ]
+    },
+    {
+      "source": "vendor_mtd",
+      "target": "vendor_mtd_feature_state_prop",
+      "class": "file",
+      "permissions": [
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ]
+    },
+    {
+      "source": "ishtar_miui_camera_app",
+      "target": "vendor_camera_p3enable_prop",
+      "class": "file",
+      "permissions": [
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ]
+    },
+    {
+      "source": "ishtar_miui_camera_app",
+      "target": "vendor_audio_prop",
+      "class": "file",
+      "permissions": [
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ]
+    },
+    {
+      "source": "ishtar_miui_camera_app",
+      "target": "vendor_hal_camerapostproc_xiaomi_hwservice",
+      "class": "hwservice_manager",
+      "permissions": [
+        "find"
+      ]
+    }
+  ],
+  "property_contexts": [
+    [
+      "persist.vendor.sys.provision.status",
+      "u:object_r:vendor_mtd_provision_status_prop:s0",
+      "exact",
+      "string"
+    ],
+    [
+      "vendor.sys.feature_state",
+      "u:object_r:vendor_mtd_feature_state_prop:s0",
+      "exact",
+      "string"
+    ]
+  ],
+  "seapp_context": "user=_app seinfo=platform isPrivApp=true name=com.android.camera domain=ishtar_miui_camera_app type=app_data_file levelFrom=user",
+  "compiled_allow_attributes_resolved": true,
+  "platform_app_direct_permissions_unchanged": true,
+  "phone_installed": false,
+  "phone_rebooted": false,
+  "enforcing_switched": false,
+  "runtime_default_and_camera_tests_pending": false,
+  "new_policy_runtime_pending": true,
+  "full_rom_not_built": true,
+  "component_build_exit": 0,
+  "component_build_duration": "08:01",
+  "first_build_failure": "Soong fsgen absolute OUT_DIR path rejection; no policy gate reached",
+  "dry_run_timer_passed": true,
+  "actual_restore_from_enforcing_verified": false
+}

@@ -50,11 +50,11 @@
     "live_phone_preflight_still_required": true,
     "runtime_verified": false
   },
-  "phone_installed": false,
-  "runtime_verified": false,
+  "phone_installed": true,
+  "runtime_verified": true,
   "enforcing_ready": false,
   "remaining": [
-    "New MIUI app domain and six default routes: runtime validation",
+    "External capture-result delivery and secure-camera privacy beyond completed resolver/owner checks",
     "Mtd persist/DAC and actual status-property consumers",
     "MIUI ODM/MiSys and HAL optional-versus-required denials",
     "Original nine static permissive domains and KernelSU engineering exception",
@@ -62,5 +62,17 @@
   ],
   "whole_ota_signature_independently_verified": false,
   "other_processes_stopped": false,
-  "resource_policy": "Own build initially CPUs 6/7, later only own descendants CPUs 4-7 after idle measurement; nice10/io7/Ninja2 preserved."
+  "resource_policy": "Own build initially CPUs 6/7, later only own descendants CPUs 4-7 after idle measurement; nice10/io7/Ninja2 preserved.",
+  "phone_rebooted": true,
+  "runtime_default_and_camera_tests_pending": false,
+  "owner_functional_acceptance": "正常 都是MIUI相机 声音指纹都正常",
+  "native_files_readback": 32,
+  "partition_range_readbacks": 21,
+  "all_camera_default_routes_match": true,
+  "miui_dedicated_domain_seen": true,
+  "loaded_policy": {
+    "bytes": 2151336,
+    "sha256": "e60522678bd9109eab646b0f107c4ff5f906bba2bb85491e0640bd5887cccf44"
+  },
+  "enforcing_trial_performed": false
 }

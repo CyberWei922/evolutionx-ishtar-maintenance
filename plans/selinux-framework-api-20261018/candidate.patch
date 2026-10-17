@@ -1,0 +1,7 @@
+--- a/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te
++++ b/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te
+@@ -19,2 +19,4 @@
+     stats_service
++    app_api_service
++    radio_service
+     system_api_service
