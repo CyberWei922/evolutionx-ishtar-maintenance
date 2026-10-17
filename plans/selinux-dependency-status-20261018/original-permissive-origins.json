@@ -1,0 +1,100 @@
+{
+  "status": "SELECTED_POLICY_ORIGINS_IDENTIFIED",
+  "hits": [
+    {
+      "domain": "su",
+      "source": "system/sepolicy/private/su.te",
+      "source_lines": [
+        137
+      ],
+      "source_sha256": "aa90a463c2e7a98f749c474f08c864be65467bca8118481de0388e8ce85e924f",
+      "permissive_inside_userdebug_or_eng": false,
+      "status": "inherited declaration, retained in current candidate"
+    },
+    {
+      "domain": "qti-testscripts",
+      "source": "device/qcom/sepolicy/generic/private/qti-testscripts.te",
+      "source_lines": [
+        34
+      ],
+      "source_sha256": "ae00824a49551cd7a2fb3ce2a317ce617eec1c72f7f7a7bf08dd63ccbb7e4de1",
+      "permissive_inside_userdebug_or_eng": true,
+      "status": "inherited declaration, retained in current candidate"
+    },
+    {
+      "domain": "backuptool",
+      "source": "device/lineage/sepolicy/common/private/backuptool.te",
+      "source_lines": [
+        3
+      ],
+      "source_sha256": "cff90d8a5c7c7dcd3332cf74c1200ebbd0e7feeb8a43dba4bb41f64fe5775ba2",
+      "permissive_inside_userdebug_or_eng": false,
+      "status": "inherited declaration, retained in current candidate"
+    },
+    {
+      "domain": "vendor_pdt_app",
+      "source": "device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/pdt_app.te",
+      "source_lines": [
+        35
+      ],
+      "source_sha256": "831fbf6cd45b9e52285bbcf54eaf69e7bd0357d3d9446b9be420e3e6aaf458c8",
+      "permissive_inside_userdebug_or_eng": true,
+      "status": "inherited declaration, retained in current candidate"
+    },
+    {
+      "domain": "vendor-qti-testscripts",
+      "source": "device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/vendor-qti-testscripts.te",
+      "source_lines": [
+        31
+      ],
+      "source_sha256": "74fafb14bfa39af6b7fa326e9aa633f1741864ca43e3f6f25c9db24c72cb3050",
+      "permissive_inside_userdebug_or_eng": true,
+      "status": "inherited declaration, retained in current candidate"
+    },
+    {
+      "domain": "aoncameraservice_app",
+      "source": "device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/aoncameraservice_app.te",
+      "source_lines": [
+        30
+      ],
+      "source_sha256": "b0593cfd2446db1c5931c18d6f72d66cd607b9c5da2e4a7797ef0f1b38f02b8d",
+      "permissive_inside_userdebug_or_eng": true,
+      "status": "inherited declaration, retained in current candidate"
+    },
+    {
+      "domain": "vendor_hal_debugutils_default",
+      "source": "device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/hal_debugutils_default.te",
+      "source_lines": [
+        34
+      ],
+      "source_sha256": "8cdf62f0ef66852ea41b56d931c26622b024f1c3737561f6cba59f921242f3dd",
+      "permissive_inside_userdebug_or_eng": false,
+      "status": "inherited declaration, retained in current candidate"
+    },
+    {
+      "domain": "vendor_cta_app",
+      "source": "device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_cta_app.te",
+      "source_lines": [
+        34
+      ],
+      "source_sha256": "5a184ddf2dc529a2261ddb9a4f724c90cb4562028f478d03bfbe1777c93787dd",
+      "permissive_inside_userdebug_or_eng": true,
+      "status": "inherited declaration, retained in current candidate"
+    },
+    {
+      "domain": "vendor_logkit_app",
+      "source": "device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_logkit_app.te",
+      "source_lines": [
+        34
+      ],
+      "source_sha256": "b6e313423e550630650c993b39b8b9a0d11f9d2327e8e087fac1480104742e49",
+      "permissive_inside_userdebug_or_eng": true,
+      "status": "inherited declaration, retained in current candidate"
+    }
+  ],
+  "phone_accessed": false,
+  "source_modified": false,
+  "build_variant_change_applied": false,
+  "note": "Six declarations are inside userdebug_or_eng; su, backuptool and vendor_hal_debugutils_default statements are outside that macro. Actual user-build inclusion and runtime needs must still be checked. No user build or removal was tested.",
+  "analysis_history": "First source scan omitted device/lineage; first generated-conf count mistook cumulative declarations for distinct domains. Corrected by exact generated-conf source mapping and nine distinct source/domain pairs; no policy changed."
+}

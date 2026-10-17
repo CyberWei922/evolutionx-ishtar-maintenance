@@ -1,0 +1,51 @@
+--- a/device/xiaomi/ishtar/sepolicy/vendor/file_contexts
++++ b/device/xiaomi/ishtar/sepolicy/vendor/file_contexts
+@@ -24,3 +24,7 @@
+ /odm/lib64/libmialgo_ai_vision\.so u:object_r:vendor_public_lib_file:s0
+ /vendor/lib64/libSNPE\.so u:object_r:vendor_public_lib_file:s0
+ /vendor/lib64/libSnpeHtpV73Stub\.so u:object_r:vendor_public_lib_file:s0
++
++# C++ runtime required by the existing public mialgo/SNPE libraries.
++# This is a transitive dependency, not a new public.libraries entry.
++/vendor/lib64/libc\+\+_shared\.so u:object_r:vendor_public_lib_file:s0
+--- a/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te
++++ b/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te
+@@ -16,3 +16,7 @@
+ # The shipped FastRPC library has a DSP HAL fallback when direct device open
+ # fails. Grant its standard client contract, keeping secure XDSP access denied.
+ hal_client_domain(ishtar_miui_camera_app, vendor_hal_dspmanager)
++
++# CameraSetup reads the existing vendor-public sensor capability properties.
++# Only the camera provider remains responsible for writing these properties.
++get_prop(ishtar_miui_camera_app, vendor_camera_sensor_prop)
+--- a/device/xiaomi/ishtar/sepolicy/vendor/property.te
++++ b/device/xiaomi/ishtar/sepolicy/vendor/property.te
+@@ -7,3 +7,6 @@
+ # Additional libmt status outputs observed on 1792246397.
+ vendor_restricted_prop(vendor_mtd_provision_status_prop)
+ vendor_restricted_prop(vendor_mtd_feature_state_prop)
++
++# libmt@1.3 reports RKP provisioning status; keep ownership vendor-side.
++vendor_restricted_prop(vendor_mtd_rkp_status_prop)
+--- a/device/xiaomi/ishtar/sepolicy/vendor/property_contexts
++++ b/device/xiaomi/ishtar/sepolicy/vendor/property_contexts
+@@ -6,3 +6,6 @@
+ 
+ persist.vendor.sys.provision.status u:object_r:vendor_mtd_provision_status_prop:s0 exact string
+ vendor.sys.feature_state u:object_r:vendor_mtd_feature_state_prop:s0 exact string
++
++# Exact libmt@1.3 output; do not relabel the persist.vendor.sys prefix.
++persist.vendor.sys.rkp.status u:object_r:vendor_mtd_rkp_status_prop:s0 exact string
+--- a/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te
++++ b/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te
+@@ -41,3 +41,10 @@
+ # Separate exact types; no writes to vendor_system_prop/vendor_default_prop.
+ set_prop(vendor_mtd, vendor_mtd_provision_status_prop)
+ set_prop(vendor_mtd, vendor_mtd_feature_state_prop)
++
++# Exact RKP status output observed from MTService::rkp_get_status.
++set_prop(vendor_mtd, vendor_mtd_rkp_status_prop)
++
++# The shipped service invokes restorecon and reads the label database.
++# This grants no relabel, persist-file or Unix-DAC bypass permissions.
++allow vendor_mtd file_contexts_file:file { getattr open read };

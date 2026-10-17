@@ -1,0 +1,46 @@
+{
+  "status": "DEPENDENCY_AND_EXACT_STATUS_SOURCE_APPLIED",
+  "baseline_incremental": "1792257806",
+  "baseline_control": "/mnt/android-download/control/ishtar-camera-dsp-client-20261018-01",
+  "source_files": 59,
+  "changed_source_paths": 5,
+  "changes": [
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/file_contexts",
+      "before_sha256": "332e3f1ffa5b5ea49fa9e3e3808c3b99b834ce4e4fa9e0ffcd2dda409d4baf57",
+      "after_sha256": "1cfd6bc36e1ce0a59052652d5dcd235c9132a01bb4eefb098bff2b2fc199d2d3",
+      "bytes": 1491
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te",
+      "before_sha256": "e6aeb626a4022f99f78aeb3b647edf1b305b2880344b4b532714c8f4bee9f5f3",
+      "after_sha256": "8af377ff01471fb23e1c312aecf35770ce43f9990103e0b858b8e547932b0e6f",
+      "bytes": 1148
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "before_sha256": "60989c28815611b2c6944f8884462594a965f6f0b8f5647efe7161104cb88cf1",
+      "after_sha256": "198af98ce1cfe4b4cf28158e2e6e10c1ff2ac48e354032f0b8041176a5ceb6d7",
+      "bytes": 507
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "before_sha256": "daa8253e2a92e683a1a68eacca260f6073ff8e9a64694ce847608ee85faf9144",
+      "after_sha256": "37f41923064318a24b70d624ac2ea63eaecc2f2ab5da848a21e33007c22279cd",
+      "bytes": 606
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "before_sha256": "221ce349765081418499ab2171d226913a78578d0c6a9e7cc11885f3bf477261",
+      "after_sha256": "0fa58d7cb81ea12995da35740f8bd6b5db0bf72d214d8bb442ac8f76ab22420b",
+      "bytes": 2411
+    }
+  ],
+  "phone_accessed": false,
+  "enforcing_switched": false,
+  "unrelated_processes_changed": false,
+  "public_library_list_changed": false,
+  "binary_payload_changed": false,
+  "unix_dac_or_persist_labels_changed": false,
+  "at": 1792261543.967941
+}

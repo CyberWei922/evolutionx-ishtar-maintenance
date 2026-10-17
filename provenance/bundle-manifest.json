@@ -6,16 +6,16 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 6755,
-      "sha256": "1b8bd155c4c12cc3a3841e9708c275ce4c0b563efc7a188bafd776a335822d71"
+      "bytes": 7747,
+      "sha256": "e33e5725e9bde41b585c3b4bdafcee87c872b5ef2f64c59423cf53503998e715"
     },
     "LICENSE.md": {
       "bytes": 1395,
       "sha256": "ccb2f316976a3ab457d94652179151cece8650913d0e789b17a6cc31b598956c"
     },
     "NOTICE": {
-      "bytes": 5365,
-      "sha256": "81c14da329b242ecd66c5b56b1dc2c40522c74ba882a9347b5d45af66365c734"
+      "bytes": 5930,
+      "sha256": "92c975cb7b9dda772bd6150501141a0e563e16d4be884a17370f7377f81e3ce7"
     },
     "README.md": {
       "bytes": 3638,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 7789,
-      "sha256": "f9456e2fb0368215799ff4456319acf6d5b4b701ea68104aceb33a1061b56113"
+      "bytes": 8667,
+      "sha256": "d0d4c1d9dcb105bd23476a923846f9e99d9bcd90fb2eb3145d121e9977c26646"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -401,6 +401,54 @@
       "bytes": 10434,
       "sha256": "6e4dda1269867b22cc053a5a07cdcd1209d978852ab85d8efd5b1dbf97c30f84"
     },
+    "plans/selinux-dependency-status-20261018/README.md": {
+      "bytes": 3066,
+      "sha256": "ec526c80d44d803755dfb29044fcdb8f898d02c92e0fb537859bd50d3a32ab14"
+    },
+    "plans/selinux-dependency-status-20261018/build-status.json": {
+      "bytes": 417,
+      "sha256": "7ba706c8d3bd3903b2fe98b9fd1819c08a9786dd8663bf1fb0349e2122fbba6c"
+    },
+    "plans/selinux-dependency-status-20261018/camera-runtime-library-label.fragment": {
+      "bytes": 209,
+      "sha256": "2996ebec235a577afc3552b464b1eef73f2f8e10b2a55685088604e7b13523d6"
+    },
+    "plans/selinux-dependency-status-20261018/candidate.patch": {
+      "bytes": 2714,
+      "sha256": "2bbafbbaaae079d33835a44ad1b43eb78dd583d87e42b0cf5f95a7c25d972002"
+    },
+    "plans/selinux-dependency-status-20261018/component-build-summary.json": {
+      "bytes": 2061,
+      "sha256": "29c09f96a8bca78cfa7ca6039d115120cb8fb38dca15bd8b73648d704e1d7273"
+    },
+    "plans/selinux-dependency-status-20261018/original-permissive-origins.json": {
+      "bytes": 4154,
+      "sha256": "fd3e2989f2b58b5cc42f151bd1c366eb2bcae6de2627336200b2a77139d1b72e"
+    },
+    "plans/selinux-dependency-status-20261018/source-baselines.json": {
+      "bytes": 1932,
+      "sha256": "61a26ee817d23e24fe9599769d8fb11cba6e4351968cb5b2a84d8e029d58e142"
+    },
+    "plans/selinux-dependency-status-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te": {
+      "bytes": 1148,
+      "sha256": "8af377ff01471fb23e1c312aecf35770ce43f9990103e0b858b8e547932b0e6f"
+    },
+    "plans/selinux-dependency-status-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/property.te": {
+      "bytes": 507,
+      "sha256": "198af98ce1cfe4b4cf28158e2e6e10c1ff2ac48e354032f0b8041176a5ceb6d7"
+    },
+    "plans/selinux-dependency-status-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/property_contexts": {
+      "bytes": 606,
+      "sha256": "37f41923064318a24b70d624ac2ea63eaecc2f2ab5da848a21e33007c22279cd"
+    },
+    "plans/selinux-dependency-status-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te": {
+      "bytes": 2411,
+      "sha256": "0fa58d7cb81ea12995da35740f8bd6b5db0bf72d214d8bb442ac8f76ab22420b"
+    },
+    "plans/selinux-dependency-status-20261018/working-source-files.json": {
+      "bytes": 10435,
+      "sha256": "4e7ad5c21291ceaa473b21845f5ad820c9dc735601594c93f8b4c42afb1c756e"
+    },
     "plans/selinux-framework-api-20261018/README.md": {
       "bytes": 2331,
       "sha256": "c75dc4d47c74a9ebc768d3db6a4e55aa47e185a12df6db54d20e70e9aab0c31f"
@@ -532,6 +580,10 @@
     "provenance/candidate-source-files.json": {
       "bytes": 3244,
       "sha256": "f3ef58f0e3f256c15b3fc76bfa52ccc69174dd99662502828493ac90ad58099c"
+    },
+    "provenance/dependency-status-source-files.json": {
+      "bytes": 2597,
+      "sha256": "8784f4ca1644235c1b04b916097ba79db99f28c0687479c12401a53b953b556f"
     },
     "provenance/excluded-camera-recipes.json": {
       "bytes": 1236,

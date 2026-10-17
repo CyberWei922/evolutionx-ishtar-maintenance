@@ -96,3 +96,12 @@ patch is relative to the recorded framework-api source baseline. Existing
 device-tree attribution remains applicable. The old file_contexts full text,
 vendor ELF/APK implementations, policy binaries and raw phone logs are external.
 Reviewed upload paths are in provenance/vendor-library-source-files.json.
+
+Public-library dependency and exact Mtd status plan (2026-10-18):
+The four full maintenance policy snapshots, exact libc++_shared label fragment
+and narrow cumulative patch are original CyberWei922 maintenance work under
+Apache-2.0. Earlier device-tree notices remain applicable. Full previous
+file_contexts text, vendor implementations, compiled policies and original
+device logs remain external. Reviewed paths and hashes are recorded in
+provenance/dependency-status-source-files.json. Component verification does
+not imply installation or Enforcing validation.

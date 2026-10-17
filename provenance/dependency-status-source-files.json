@@ -1,0 +1,46 @@
+{
+  "status": "COMPONENT_VERIFIED_FULL_ROM_BUILDING_NOT_INSTALLED",
+  "baseline_incremental": "1792257806",
+  "files": [
+    {
+      "repository_path": "plans/selinux-dependency-status-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/ishtar_miui_camera_app.te",
+      "license": "Apache-2.0",
+      "review": "Original maintenance source, previously reviewed in next-source-files or vendor-library-source-files; new narrow additions reviewed separately.",
+      "bytes": 1148,
+      "sha256": "8af377ff01471fb23e1c312aecf35770ce43f9990103e0b858b8e547932b0e6f"
+    },
+    {
+      "repository_path": "plans/selinux-dependency-status-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/property.te",
+      "license": "Apache-2.0",
+      "review": "Original maintenance source, previously reviewed in next-source-files or vendor-library-source-files; new narrow additions reviewed separately.",
+      "bytes": 507,
+      "sha256": "198af98ce1cfe4b4cf28158e2e6e10c1ff2ac48e354032f0b8041176a5ceb6d7"
+    },
+    {
+      "repository_path": "plans/selinux-dependency-status-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "license": "Apache-2.0",
+      "review": "Original maintenance source, previously reviewed in next-source-files or vendor-library-source-files; new narrow additions reviewed separately.",
+      "bytes": 606,
+      "sha256": "37f41923064318a24b70d624ac2ea63eaecc2f2ab5da848a21e33007c22279cd"
+    },
+    {
+      "repository_path": "plans/selinux-dependency-status-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te",
+      "license": "Apache-2.0",
+      "review": "Original maintenance source, previously reviewed in next-source-files or vendor-library-source-files; new narrow additions reviewed separately.",
+      "bytes": 2411,
+      "sha256": "0fa58d7cb81ea12995da35740f8bd6b5db0bf72d214d8bb442ac8f76ab22420b"
+    },
+    {
+      "repository_path": "plans/selinux-dependency-status-20261018/camera-runtime-library-label.fragment",
+      "source_path": null,
+      "license": "Apache-2.0",
+      "review": "Original exact-path maintenance fragment; full previous file_contexts text remains external.",
+      "bytes": 209,
+      "sha256": "2996ebec235a577afc3552b464b1eef73f2f8e10b2a55685088604e7b13523d6"
+    }
+  ]
+}
