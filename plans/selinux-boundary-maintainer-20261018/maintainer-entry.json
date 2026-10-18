@@ -1,0 +1,21 @@
+{
+  "status": "OWNER_CONFIRMED_PAGE_FOUND_IMAGE_SAVE_NOT_REPORTED",
+  "installed_incremental": "1792311835",
+  "chinese_menu_path": [
+    "设置",
+    "关于本机",
+    "型号",
+    "CyberWei"
+  ],
+  "fragment": "com.android.settings.deviceinfo.hardwareinfo.HardwareInfoFragment",
+  "profile_component": "org.evolution.ishtar.maintainer/org.evolution.ishtar.maintainer.MaintainerActivity",
+  "initial_owner_report": "Could not find the new local entry via Evolution X > About ROM.",
+  "actual_runtime_labels_verified": true,
+  "maintainer_overlay_name": "CyberWei",
+  "source_route_verified": true,
+  "owner_image_display_or_save_confirmed": false,
+  "phone_settings_changed_during_routing_review": false,
+  "ui_acceptance_claimed": false,
+  "owner_page_found_confirmed": true,
+  "owner_report": "我看到这个页面了"
+}

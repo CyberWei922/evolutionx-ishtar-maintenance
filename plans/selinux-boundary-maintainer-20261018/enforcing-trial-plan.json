@@ -1,6 +1,6 @@
 {
   "status": "DESIGN_ONLY_FRESH_OWNER_AUTHORIZATION_REQUIRED",
-  "target": "New permissive candidate only after successful separately authorized preserve-data flash, first boot and readback",
+  "target": "Installed1792311835 after successful preserve-data flash, first boot and50-file/21-range/19-contract automated readback",
   "guard_reference": "plans/selinux-framework-api-20261018/enforcing-return-guard.sh",
   "guard_sha256": "57f712673431951458f254871b7dc4478de1f20198711b9f0bb7a2442c53b7db",
   "guard_limit_seconds": 30,
@@ -26,5 +26,7 @@
   "module_startup_review_pending": false,
   "phone_actions_performed_by_this_plan": false,
   "authorization_granted": false,
-  "module_startup_cold_boot_uncertainty_remains": true
+  "module_startup_cold_boot_uncertainty_remains": true,
+  "target_policy_sha256": "38cde3d5a478bc285ba63fdb16c39cea8a1961208633dc6cd36e9239dd4f8bdc",
+  "target_loaded_policy_sha256": "a603e2d5734cfb2c04a1632fe81ed5d85e1dc09293b1f4fdcb4292b199652b80"
 }

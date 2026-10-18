@@ -1,5 +1,18 @@
 # 当前维护状态
 
+## 1792311835已刷入正常启动，自动读回通过（最新）
+
+新flash01完成74动作/73完整下载，wire SHA `e79febfde6d2774750cf48022faf28f03166cfe642d62c09547e4d0d1d63ba14` 通过；核验后首次正常重启。无userdata/metadata/底层固件写入，未锁BL。刷入与首次正常重启授权已使用，不复用作额外重启或Enforcing。
+
+postboot01及worker exit0：50文件、21分区范围SHA全匹配，数据目录/属主权限/第三方应用数10基线保持；142次命令尝试、0重试。新19组策略契约与实际编译策略一致；105项包含新类型结构继承，不是105个bug。两诊断目录实际标签和原属主模式、两精确属性标签、三条system参数及三维护者APK摘要/三个运行资源值通过，维护者名CyberWei。实机卡片/图片显示和主动保存仍待机主回复；未自动打开支付链接或做扫码/到账验收。
+
+磁盘策略38cde3d5…/1,604,906 bytes；加载策略 `a603e2d5734cfb2c04a1632fe81ed5d85e1dc09293b1f4fdcb4292b199652b80` /2,152,197 bytes。原9静态宽松域+ksu保持，全局Permissive/enforce0，未做Enforcing。六MIUI默认入口保持；初始MIUI进程观察为True，不能据此扩写所有相机模式或算法回退通过。
+
+运行归档24项、1,520,153 bytes/SHA `68499f399fc68dc1eea9eac7e02db4074e489ee3831660c33779762f35733676` 两主机匹配；有限worker结束，无手机自启/模块或新增常驻采集。AVC仅一次启动快照，不代表全量/完成比例。模块启动、原静态宽松域/KSU及短时Enforcing/冷启动仍单独验证；下一里程碑为先启动独立30秒回退guard的受控运行试验，需要具体新授权。
+
+活动82源/20路径保持，正式ROM仍在Ubuntu冻结delivery，Mac68项薄交接无ROM。保留新包、三个旧完整ROM和当前暂存，待正常使用反馈后按双版本规则处理；本轮未清理或调整Ubuntu其他任务。完整OTA签名未独立密码学核验。
+
+
 ## 边界与维护者候选1792311835完整构建完成（2026-10-18，最新）
 
 boundary-maintainer-rom-build-01 exit0，audit-worker-status/audit-status均complete。实际34个payload分区、82项源码、策略38cde3d5a478bc285ba63fdb16c39cea8a1961208633dc6cd36e9239dd4f8bdc及保护载荷通过；三条启动参数仅在system，诊断目录重标记紧随原mkdir。三个维护者APK与组件摘要相同；原9静态宽松域/KSU保持，全局仍Permissive。没有Enforcing或UI交互验收，未据此声称相机性能提升。

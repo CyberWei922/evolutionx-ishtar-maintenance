@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 15814,
-      "sha256": "66c12d7fbbbb498aff0090f4d21f3a8ca53e27dcf135dfb2323e4ca6437c8364"
+      "bytes": 16098,
+      "sha256": "fa317aca4849b4f1206eb357d35c5cd60593db7efe8463d26ef3dac33a2ad926"
     },
     "LICENSE.md": {
       "bytes": 1395,
@@ -18,8 +18,8 @@
       "sha256": "91a3b9816688c64b3af3347dbd47e3986645773451a9a81073aed33cd1ebc5ec"
     },
     "README.md": {
-      "bytes": 3779,
-      "sha256": "472b3f0f113375cd44a0e15c76d704abbae3e0fe3723099be34d7c08b80e8dd0"
+      "bytes": 3713,
+      "sha256": "6d20bbb8006622dc1bebf15f16fee54de1ed5a092c3e16c6e817eae240cb20a2"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 21057,
-      "sha256": "1690d9d184fdfdd152492e29cb07ccefc9ad13ce8f2cbd87692b816ec45100dd"
+      "bytes": 23030,
+      "sha256": "46793773911e2ad1784396fcd6940aed3fd1d78a93ce7952e8fd8971c26a4001"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -214,8 +214,8 @@
       "sha256": "7ceb5d64ea7cae6a59a1c0f5d445177d3f3877e1bb19ee7ac4f25fd2afb647fb"
     },
     "plans/selinux-boundary-maintainer-20261018/README.md": {
-      "bytes": 1682,
-      "sha256": "6a886a98543f10931b3bf2761a81b08846efda8cd2f327ca8da02b5e48bea8ec"
+      "bytes": 4707,
+      "sha256": "c7113f5850a02250a886c4bb49b1b91b7f4ff18d23972687ead36d3bfd54fc94"
     },
     "plans/selinux-boundary-maintainer-20261018/actual-boot-properties.json": {
       "bytes": 593,
@@ -226,8 +226,8 @@
       "sha256": "737f3401893480cd83debc0ba7b443e6af41fd390bf739c5beada421ec4c0507"
     },
     "plans/selinux-boundary-maintainer-20261018/build-status.json": {
-      "bytes": 2607,
-      "sha256": "644c9e179b8bf40de9e1a0c538e6cb80356eb92fe23cd5200ea2777ca41a5732"
+      "bytes": 5944,
+      "sha256": "9333c25002b563ecb6e452a775c8809e44349a16320d4d63eb49d43b02214c8f"
     },
     "plans/selinux-boundary-maintainer-20261018/candidate.patch": {
       "bytes": 20961,
@@ -242,8 +242,8 @@
       "sha256": "61ce63e3772953f03541f946b950b1ab00aa53a9e38495c7d4f3b7cae4e956d6"
     },
     "plans/selinux-boundary-maintainer-20261018/enforcing-trial-plan.json": {
-      "bytes": 2048,
-      "sha256": "552827745138d2b839470440fcbb788229253387c50f135547903d20b01f6067"
+      "bytes": 2249,
+      "sha256": "ef1ed8bc2764e8257fad759c6d7047be757bd2ab9d44a21f21c8568bba7b75e5"
     },
     "plans/selinux-boundary-maintainer-20261018/external-inputs.json": {
       "bytes": 2041,
@@ -252,6 +252,14 @@
     "plans/selinux-boundary-maintainer-20261018/external-reproduction-check.json": {
       "bytes": 178,
       "sha256": "67429fb60826c8ed6aaba7b24b3647f7664ae74c79213383030390d902cfaad1"
+    },
+    "plans/selinux-boundary-maintainer-20261018/installed-readback-summary.json": {
+      "bytes": 5944,
+      "sha256": "9333c25002b563ecb6e452a775c8809e44349a16320d4d63eb49d43b02214c8f"
+    },
+    "plans/selinux-boundary-maintainer-20261018/maintainer-entry.json": {
+      "bytes": 829,
+      "sha256": "f8a780d2aae3eb1d50619c6f939749b2b442f0b59ee8c83ed483ee9dc6a12d66"
     },
     "plans/selinux-boundary-maintainer-20261018/module-startup-assessment.json": {
       "bytes": 920,
@@ -336,6 +344,10 @@
     "plans/selinux-boundary-maintainer-20261018/source/packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java": {
       "bytes": 34853,
       "sha256": "14ba8e2f613db73c55b130712c95d56a52e8b988a8cf51c7cb3d8b935a49834b"
+    },
+    "plans/selinux-boundary-maintainer-20261018/startup-avc-summary.json": {
+      "bytes": 1555,
+      "sha256": "afd9a428f778e3dc33f0ee99624c132c010bc8e1a29d2a270ca9d93ba53a63c7"
     },
     "plans/selinux-boundary-maintainer-20261018/working-source-files.json": {
       "bytes": 14421,
@@ -910,8 +922,8 @@
       "sha256": "16274a2511ef2bcedfcfa1910e38d8a730a758903538561ef74a221a1cefb489"
     },
     "provenance/boundary-maintainer-source-files.json": {
-      "bytes": 7793,
-      "sha256": "a28e0cfa9aa2f828a56210e357829d9d7bb71baef6c8517280f2bb30ad28a9ae"
+      "bytes": 7833,
+      "sha256": "c2ea837c815df7f1e351f817a1e5893fbd926d511b0a18a22798656a62c90ba0"
     },
     "provenance/candidate-source-files.json": {
       "bytes": 3244,

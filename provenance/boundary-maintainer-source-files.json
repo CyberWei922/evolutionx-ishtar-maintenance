@@ -1,5 +1,5 @@
 {
-  "status": "ROM_BUILT_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_PASSED",
   "baseline_incremental": "1792300213",
   "files": [
     {
@@ -137,5 +137,6 @@
     "device/xiaomi/ishtar/sepolicy/vendor/file_contexts",
     "device/xiaomi/sm8550-common/configs/properties/vendor.prop"
   ],
-  "candidate_incremental": "1792311835"
+  "candidate_incremental": "1792311835",
+  "installed_incremental": "1792311835"
 }

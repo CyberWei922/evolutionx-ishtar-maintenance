@@ -1,0 +1,168 @@
+{
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_PASSED",
+  "baseline_incremental": "1792300213",
+  "candidate_incremental": "1792311835",
+  "rom": {
+    "ubuntu_path": "/mnt/android-download/delivery/ishtar-selinux-boundary-maintainer-permissive-candidate-20261018-01/EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+    "file": "EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+    "bytes": 4546311909,
+    "sha256": "4f40938189396d92f2fa2a294a82ef6f7c6bf954bf149abd54c2f47a0fda3bd1"
+  },
+  "policy_sha256": "38cde3d5a478bc285ba63fdb16c39cea8a1961208633dc6cd36e9239dd4f8bdc",
+  "policy_bytes": 1604906,
+  "source_files": 82,
+  "changed_source_paths": 20,
+  "payload_partitions_verified": 34,
+  "old_type_permission_additions": 0,
+  "effective_permission_removals": 0,
+  "new_type_effective_permissions_including_structural_inheritance": 105,
+  "explicit_diag_directory_fifo_permissions": 8,
+  "actual_system_only_property_values_verified": {
+    "bluetooth.auto_connect_profiles.enabled": "true",
+    "bluetooth.profile.bap.unicast.server.enabled": "true",
+    "audio.sys.noisy.broadcast.delay": "600"
+  },
+  "actual_diagnostic_restorecon_order_verified": true,
+  "actual_maintainer_apks_verified": [
+    {
+      "path": "system_ext/app/IshtarMaintainerInfo/IshtarMaintainerInfo.apk",
+      "sha256": "5bd3f67a13eb4bb4e53845eb8dac5cdccc358e232b18a3bc637341841a2b1edd",
+      "bytes": 283236
+    },
+    {
+      "path": "system_ext/priv-app/Settings/Settings.apk",
+      "sha256": "d8d1290def01b4c37c8046a0499f7bd425f8974aa16e7968d0827cbd5699f71c",
+      "bytes": 95947285
+    },
+    {
+      "path": "system_ext/overlay/IshtarMaintainerOverlay.apk",
+      "sha256": "4a80d7219a303c20d671459da2654fb1c2784d8457c04047f77470b6e143ccaa",
+      "bytes": 8542
+    }
+  ],
+  "permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "mode": "Permissive",
+  "thin_local_files": 68,
+  "component_archive_files": 194,
+  "static_data_preserving_upgrade_passed": true,
+  "whole_ota_signature_independently_verified": false,
+  "phone_installed": true,
+  "phone_rebooted": true,
+  "enforcing_trial": false,
+  "flash_reboot_authorized": true,
+  "enforcing_authorized": false,
+  "maintainer_ui_interactively_tested": false,
+  "other_ubuntu_tasks_changed": false,
+  "job": "boundary-maintainer-rom-build-01",
+  "audit_steps": 43,
+  "retained_installed_roms": [
+    "1792300213",
+    "1792266978",
+    "1792261801"
+  ],
+  "installed_incremental": "1792311835",
+  "loaded_policy": {
+    "bytes": 2152197,
+    "sha256": "a603e2d5734cfb2c04a1632fe81ed5d85e1dc09293b1f4fdcb4292b199652b80"
+  },
+  "loaded_permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "ksu",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "native_file_readbacks": 50,
+  "partition_range_readbacks": 21,
+  "loaded_new_contracts": 19,
+  "loaded_new_type_effective_permissions_including_inheritance": 105,
+  "all_new_loaded_contracts_match_compiled_policy": true,
+  "data_baseline_matches": {
+    "media_directory_stat": true,
+    "user_xml_owner_mode": true,
+    "third_party_package_count": true
+  },
+  "third_party_package_count": 10,
+  "boundary_directory_modes": {
+    "/data/vendor/diag": "0|1007|2771",
+    "/data/vendor/modem/diag_logs": "0|0|777"
+  },
+  "boundary_property_contexts": {
+    "vendor.miui.vcamera.state": "u:object_r:vendor_camera_prop:s0",
+    "ro.vendor.oem.sno": "u:object_r:vendor_radio_prop:s0"
+  },
+  "boundary_system_property_values": {
+    "bluetooth.auto_connect_profiles.enabled": "true",
+    "bluetooth.profile.bap.unicast.server.enabled": "true",
+    "audio.sys.noisy.broadcast.delay": "600"
+  },
+  "maintainer_overlay_resources": {
+    "ishtar_maintainer_name": "CyberWei",
+    "ishtar_maintainer_profile_package": "org.evolution.ishtar.maintainer",
+    "ishtar_maintainer_profile_activity": "org.evolution.ishtar.maintainer.MaintainerActivity"
+  },
+  "all_six_miui_default_routes_match": true,
+  "miui_process_domain_seen_in_initial_snapshot": true,
+  "runtime_dsp_hal_fallback_proven": false,
+  "command_attempts": 142,
+  "command_retries": 0,
+  "wire_audit": {
+    "state": "write-transcript-verified",
+    "at": "2026-10-18T17:06:32.954775+08:00",
+    "completed_operations": 74,
+    "super_chunks": 59,
+    "boot_writes": 14,
+    "slot": "a",
+    "userdata_metadata_operations": 0,
+    "firmware_writes": 0,
+    "all_download_sizes_match": true,
+    "data_complete_count": 73,
+    "wire_sha256": "e79febfde6d2774750cf48022faf28f03166cfe642d62c09547e4d0d1d63ba14",
+    "reboot_acknowledged": false
+  },
+  "normal_reboot_epoch": 1792314399.9295712,
+  "postboot_worker_exit": 0,
+  "finite_workers_finished": true,
+  "runtime_archive": {
+    "state": "RUNTIME_ARCHIVE_AND_FILES_MATCH",
+    "files": 24,
+    "archive_bytes": 1520153,
+    "archive_sha256": "68499f399fc68dc1eea9eac7e02db4074e489ee3831660c33779762f35733676",
+    "manual_checks_required": true,
+    "enforcing_trial": false
+  },
+  "manual_checks_required": true,
+  "manual_check_scope": "Maintainer card, image display and owner-triggered original image save. No repeated full hardware checklist.",
+  "new_owner_functional_acceptance_claimed": false,
+  "google_account_or_credentials_read": false,
+  "flash_and_first_reboot_authorization_consumed": true,
+  "additional_reboot_authorized": false,
+  "retained_complete_roms": [
+    "1792311835",
+    "1792300213",
+    "1792266978",
+    "1792261801"
+  ],
+  "retention_cleanup_executed_this_turn": false,
+  "current_flash_staging_retained": true,
+  "maintainer_ui_owner_feedback": {
+    "page_found": true,
+    "image_display_or_save": "not_reported",
+    "whole_ui_functional_acceptance": false
+  }
+}

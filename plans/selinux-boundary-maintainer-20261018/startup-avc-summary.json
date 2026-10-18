@@ -1,0 +1,49 @@
+{
+  "scope": "Finite startup kernel/logcat security snapshots; overlap and audit loss prevent complete coverage.",
+  "enforcing_trial_performed": false,
+  "samples": {
+    "kernel-avc.log": {
+      "denial_lines": 22,
+      "source_domain_count": 9,
+      "source_domains": {
+        "hal_fingerprint_default": 4,
+        "vendor_init": 3,
+        "priv_app": 3,
+        "system_app": 3,
+        "vendor_location_xtra_daemon": 3,
+        "rild": 2,
+        "untrusted_app": 2,
+        "vendor_modprobe": 1,
+        "toolbox": 1
+      },
+      "audit_lost_max_seen": 782
+    },
+    "logcat-avc.log": {
+      "denial_lines": 617,
+      "source_domain_count": 19,
+      "source_domains": {
+        "hal_camera_default": 554,
+        "priv_app": 10,
+        "untrusted_app": 6,
+        "system_app": 6,
+        "vendor_location_xtra_daemon": 6,
+        "rild": 5,
+        "hal_sensors_default": 4,
+        "hal_secure_element_default": 4,
+        "hal_fingerprint_default": 4,
+        "gmscore_app": 4,
+        "vendor_init": 3,
+        "vendor_qti_init_shell": 3,
+        "hal_audio_default": 2,
+        "vendor_modprobe": 1,
+        "toolbox": 1,
+        "vendor_mtd": 1,
+        "system_server": 1,
+        "permissioncontroller_app": 1,
+        "ishtar_miui_camera_app": 1
+      },
+      "audit_lost_max_seen": 782
+    }
+  },
+  "interpretation": "Counts are observations, not repaired percentages or Enforcing proof. Optional property enumeration must not be blanket-allowed; module initialization still needs separately authorized cold-boot evidence."
+}
