@@ -1,0 +1,15 @@
+{
+  "state": "BOTH_HOSTS_THIN_CANDIDATE_MATCH",
+  "archive_bytes": 494864,
+  "archive_sha256": "69fa8ea4dfc3522fd4234bbf3c0eb2858cd2442d7ac0d17029c87d372cdcbaa7",
+  "files": 91,
+  "incremental": "1792357362",
+  "rom": {
+    "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545237136,
+    "sha256": "a2c7945bcd847a9109c409313d13723e55d2d148d00701c29c7f4b53eea48ebc"
+  },
+  "full_rom_included": false,
+  "phone_accessed": false,
+  "manifest_verified_files": 91
+}

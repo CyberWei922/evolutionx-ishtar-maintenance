@@ -1,0 +1,32 @@
+type backuptool, domain, coredomain;
+
+# Protocol 2 stages only in broker tmpfs. Never grant a worker raw block or
+# mount privileges, or writes/relabels to active/target system file types.
+r_dir_file(backuptool, system_file_type)
+# Respect Treble: only explicitly supported vendor configuration files are
+# readable; generic vendor apps, executables and private HAL files stay denied.
+allow backuptool vendor_file:dir r_dir_perms;
+allow backuptool vendor_file:lnk_file r_file_perms;
+r_dir_file(backuptool, vendor_configs_file)
+allow backuptool rootfs:dir search;
+allow backuptool backuptool_broker_root_file:dir r_dir_perms;
+allow backuptool backuptool_broker_root_file:file r_file_perms;
+allow backuptool postinstall_file:dir r_dir_perms;
+allow backuptool postinstall_file:file r_file_perms;
+allow backuptool postinstall_file:lnk_file r_file_perms;
+allow backuptool backuptool_workspace_file:dir create_dir_perms;
+allow backuptool backuptool_workspace_file:file create_file_perms;
+allow backuptool backuptool_workspace_file:lnk_file { create read getattr setattr unlink rename };
+allow backuptool { shell_exec toolbox_exec backuptool_store_exec postinstall_exec }:file { rx_file_perms execute_no_trans };
+allow backuptool self:global_capability_class_set { chown fowner fsetid };
+allow backuptool update_engine:fd use;
+allow backuptool update_engine:fifo_file rw_file_perms;
+neverallow backuptool self:global_capability_class_set { sys_admin sys_chroot mknod dac_override dac_read_search };
+neverallow backuptool dev_type:blk_file { open read write ioctl };
+neverallow backuptool fs_type:filesystem { mount remount unmount relabelfrom relabelto };
+
+neverallow {
+    domain
+    -recovery
+    -update_engine
+} backuptool:process transition;

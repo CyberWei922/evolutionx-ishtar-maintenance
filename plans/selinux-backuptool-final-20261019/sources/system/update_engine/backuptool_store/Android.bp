@@ -1,0 +1,20 @@
+// Copyright (C) 2026 CyberWei
+// SPDX-License-Identifier: GPL-2.0-only
+package {
+    default_applicable_licenses: ["backuptool_store_license"],
+}
+license {
+    name: "backuptool_store_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["SPDX-license-identifier-GPL-2.0"],
+    license_text: ["COPYING"],
+}
+cc_binary {
+    name: "backuptool_store",
+    host_supported: true,
+    srcs: ["main.cpp", "io.cpp", "offline.cpp"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+    shared_libs: ["libext2fs", "libext2_com_err", "libselinux"],
+    cppflags: ["-fexceptions"],
+    stl: "libc++",
+}

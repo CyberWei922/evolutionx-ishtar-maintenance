@@ -14,3 +14,7 @@ This is a mixed-license maintenance source collection, not a license for an enti
 Full license texts and upstream notices are under `licenses/`. This repository does not assert ownership of upstream code or grant rights to LineageOS, Evolution X, Android, Xiaomi, Google or Qualcomm trademarks.
 
 - The native Backuptool broker plan retains AOSP Apache-2.0 notices, vendor/lineage licensing and device/lineage/sepolicy REUSE Apache-2.0 annotations; original additions are Copyright 2026 CyberWei. See `provenance/broker-source-files.json`.
+
+## Backuptool Store
+
+`plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/` 为GPL-2.0-only（完整COPYING在目录内），其余本批broker/worker/脚本及集成改动保持Apache-2.0。原始版权/NOTICE及LineageOS REUSE声明保留。具体归属和依赖HEAD见provenance/backuptool-final-source-files.json；不据此声明整个ROM的再分发许可。

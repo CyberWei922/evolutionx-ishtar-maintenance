@@ -1,0 +1,165 @@
+{
+  "state": "SOURCE_CANDIDATE_HOST_TESTING_ONLY",
+  "baseline_incremental": "1792347689",
+  "baseline_source_inputs": 94,
+  "candidate_source_inputs_expected": 104,
+  "changes": [
+    {
+      "path": "device/lineage/sepolicy/common/private/backuptool.te",
+      "before_sha256": "cff90d8a5c7c7dcd3332cf74c1200ebbd0e7feeb8a43dba4bb41f64fe5775ba2",
+      "after_sha256": "12f479b6846b38b0befde18a331830216a9c975112a5e8addfe5a1bfd6b6a632",
+      "bytes": 1740,
+      "new": false
+    },
+    {
+      "path": "device/lineage/sepolicy/common/private/file_contexts",
+      "before_sha256": "6f489da3d636460ad3bcc3df5748dac372454d9c9f4bd92c9a7095242671b3ce",
+      "after_sha256": "22733f94866a513a1275215a9672b6350afe88fd2274d872fa6ceead3e574e1d",
+      "bytes": 1368,
+      "new": false
+    },
+    {
+      "path": "device/lineage/sepolicy/common/private/update_engine.te",
+      "before_sha256": "416915f1b771ea4d36917c94bccf2a8babbc67839bf2120f658c1cfc71d96819",
+      "after_sha256": "e82e5272ade35628dcbd033fa20a0978a43d54b3b3bedf17f7ac2254cd8fcba6",
+      "bytes": 2599,
+      "new": false
+    },
+    {
+      "path": "system/update_engine/Android.bp",
+      "before_sha256": "b332ab916fc0b692b6cfe0b03fca47a5af31727d6a351f8451770a5454480c85",
+      "after_sha256": "135a8fa20c7860a52b3387bc3d92d033b0a2446acc2b04de2355f4611c2cc77d",
+      "bytes": 41926,
+      "new": false
+    },
+    {
+      "path": "system/update_engine/backuptool_broker/Android.bp",
+      "before_sha256": "1f7ffa8a60947b1c47638d5b7ffc58c7b92f1982172e7407a22793dbbe62d536",
+      "after_sha256": "2898f92f87203a36897b35401d657b717a45c6f9eb87f6c575a4e9a97e539f5b",
+      "bytes": 895,
+      "new": false
+    },
+    {
+      "path": "system/update_engine/backuptool_broker/backuptool_staged.sh",
+      "before_sha256": null,
+      "after_sha256": "7a56d7ce4a56d86abb9b3fbbdc0293cc5ffc8e460132ac6941290d74ed4ca267",
+      "bytes": 3298,
+      "new": true
+    },
+    {
+      "path": "system/update_engine/backuptool_broker/broker.cpp",
+      "before_sha256": "b7b2831c6c18a8bd3b831103eb67d3944c90883ced9307d5b9a7924f2f81e4f1",
+      "after_sha256": "13eac290b1a6b458e447b3bfa2c1b97794fe17d4f37b1c764eb92b3c44b1844e",
+      "bytes": 2107,
+      "new": false
+    },
+    {
+      "path": "system/update_engine/backuptool_broker/broker.h",
+      "before_sha256": "550cbd0c158ef5ee337b68b3c4085093c1d3d8ef3269897add3f3ce158ef6c78",
+      "after_sha256": "078d0ce3ec730ef2876995925c5c38dcb1564c566c5192c0cfa1806d74d97825",
+      "bytes": 884,
+      "new": false
+    },
+    {
+      "path": "system/update_engine/backuptool_broker/main.cpp",
+      "before_sha256": "b64010e4c15745bade8f46a8551a82d44f766a1776eccec1d97e0d2bbf0b4480",
+      "after_sha256": "427073d786c5fb85587d47e3cc461053cb4fe036efdd255d40ceb09b973966b0",
+      "bytes": 11678,
+      "new": false
+    },
+    {
+      "path": "system/update_engine/backuptool_broker/worker.cpp",
+      "before_sha256": null,
+      "after_sha256": "59a99e791dfb872d82c1088a66894b65e123225da6176fab715c2bb596b416a3",
+      "bytes": 7217,
+      "new": true
+    },
+    {
+      "path": "system/update_engine/backuptool_broker/worker.h",
+      "before_sha256": null,
+      "after_sha256": "ef36782b9d56fc1661695c7e85560a693337c928d3cf9bb73e48b35f23785c2f",
+      "bytes": 522,
+      "new": true
+    },
+    {
+      "path": "system/update_engine/backuptool_store/Android.bp",
+      "before_sha256": null,
+      "after_sha256": "7419dc862e8de4ea33d7b01a3b732475a5895d897b0f9d13535fe655b4d7a57a",
+      "bytes": 602,
+      "new": true
+    },
+    {
+      "path": "system/update_engine/backuptool_store/COPYING",
+      "before_sha256": null,
+      "after_sha256": "f6b78c087c3ebdf0f3c13415070dd480a3f35d8fc76f3d02180a407c1c812f79",
+      "bytes": 18729,
+      "new": true
+    },
+    {
+      "path": "system/update_engine/backuptool_store/io.cpp",
+      "before_sha256": null,
+      "after_sha256": "1e8ba94a74db4271f1f2b4adf78b456d2ca0c2ace1a600d5f0476038e50d257c",
+      "bytes": 19749,
+      "new": true
+    },
+    {
+      "path": "system/update_engine/backuptool_store/main.cpp",
+      "before_sha256": null,
+      "after_sha256": "4b6b1c9d14bf5f5cfae5035d0e123ef5ec291ca704ac571614e04e13c5826e61",
+      "bytes": 2149,
+      "new": true
+    },
+    {
+      "path": "system/update_engine/backuptool_store/offline.cpp",
+      "before_sha256": null,
+      "after_sha256": "05bb8d346eceafde2bc30ebe33543a9f17d827ddcdce761ae364ba40951f1194",
+      "bytes": 16834,
+      "new": true
+    },
+    {
+      "path": "system/update_engine/backuptool_store/store.h",
+      "before_sha256": null,
+      "after_sha256": "e02d5a9485da4fc5cb9c4291bdb173137a573c5bef479e46b732f681b558b340",
+      "bytes": 2143,
+      "new": true
+    },
+    {
+      "path": "system/update_engine/payload_consumer/postinstall_runner_action.cc",
+      "before_sha256": "bed4bba03bdfcdbdca83cb006e631df38d11e58d9c8ae997c4421e07dff2688e",
+      "after_sha256": "255c7effc2dfeb9ec4d0699e2376195d2e64a99badf00dd03c297db59f0cc1f6",
+      "bytes": 22860,
+      "new": false
+    },
+    {
+      "path": "vendor/lineage/prebuilt/common/bin/backuptool_ab.functions",
+      "before_sha256": "1255534c5768e024b39c1f21c8264adabf8c1888aa607864987a941201457d05",
+      "after_sha256": "7096c4224709877eec19551ebe8a47e106961e0c9dd303f21d64e2cd34cca91f",
+      "bytes": 2447,
+      "new": false
+    }
+  ],
+  "source_and_full_build_authorized": true,
+  "phone_operations_authorized": false,
+  "mode": "Permissive",
+  "host_store_cases_so_far": 28,
+  "real_android_ota_or_enforcing_tested": false,
+  "legacy_scripts_retained": true,
+  "upstream_neverallow_modified": false,
+  "optional_postinstall_logic_unchanged": true,
+  "backup_failure_uses_existing_fatal_mount_path": true,
+  "prior_host_broker_compile_warning_failure_preserved": true,
+  "source_candidate": "source-candidate08",
+  "protocol2_missing_file_handled_natively": true,
+  "native_cplusplus_sources_identical_to_successful_candidate02_host_compile": false,
+  "failure_marker_uses_nofollow_directory_fd": true,
+  "parent_death_lifecycle_and_pid1_supervisor": false,
+  "offline_inode_nanoseconds_preserved": true,
+  "private_process_group_seccomp_subreaper": true,
+  "kernel_unchanged": true,
+  "prior_pid_namespace_candidate_rejected": true,
+  "policy_undefined_macro_fixed": true,
+  "host_implementation_unchanged_from_candidate06": false,
+  "generic_vendor_access_denied": true,
+  "tmpfs_addon_scripts_interpreted_by_system_shell": true,
+  "android_supported_selabel_lookup": true
+}

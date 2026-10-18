@@ -1,5 +1,22 @@
 # ishtar maintenance repository
 
+## 1792357362 完整候选已打包核验，尚未安装（本轮最终）
+
+本轮Backuptool暂存与离线恢复修复已完成，104项活动输入/19路径，组件build03/verified05及完整ROM build01/实际镜像检查通过。实际包内静态宽松域为0，最后的backuptool声明已去掉；全局仍Permissive、内核/KSU动态例外保持。手机本轮未读写、采集、刷入、重启、切模式或执行OTA，最后确认版本仍1792347689/P，不将候选静态结果当手机实机验收。
+
+正式完整ROM：Ubuntu delivery/ishtar-selinux-backuptool-final-permissive-candidate-20261019-01/EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip，4,545,237,136 bytes，SHA256 `a2c7945bcd847a9109c409313d13723e55d2d148d00701c29c7f4b53eea48ebc`。完整构建15:17/exit0，34个实际payload分区及13份新/保留执行文件、init和共享依赖，实际新inode标签/保护载荷检查通过。与1792347689归档的OTA证书字节、SDK36、补丁2026-10-01及fstab保持，无userdata/metadata/wipe/downgrade载荷，时间戳向前；完整OTA签名未独立密码学核验。
+
+Mac同名目录是薄交接，不含完整ROM；双端91项，归档494,864 bytes/SHA `69fa8ea4dfc3522fd4234bbf3c0eb2858cd2442d7ac0d17029c87d372cdcbaa7`一致。正式新候选与旧回退ROM、源码和增量缓存保留，本轮未清旧正式包。仅许可明确的源码/测试源/脱敏摘要进入Git，无ROM、ELF、策略二进制或原始手机日志。
+
+220项主机场景通过，不能替代Android实际挂载、SELinux域切换、真实OTA或Enforcing冷启动验收。工作脚本由系统shell解释，只向tmpfs暂存；native broker在私有挂载空间提供只读目标视图/受保护新标签规则，清理固定工作进程组及后台后代、卸载全部目标后由GPL Store离线恢复ext4文件及元数据/新目标标签。现有类型权限删除0；worker无system/vendor文件写、块I/O或挂载授权，上游neverallow/genfs/ioctl保持。Generic vendor私有文件依旧受限，EROFS恢复明确拒绝，普通只读postinstall与optional调用逻辑保持，不保证任意第三方root脚本兼容。
+
+构建launcher/Ninja限制CPU4–7/Ninja4/GOMAX4/highmem1/nice15/I/O7，ckati曾自行选两核；一次约6.0秒实测约399.6%CPU（8线程约一半）。未用GPU、未调整或停止其他Ubuntu任务。本轮任务已结束；不再采集、重启或切模式。机主要求仅打包，不含刷入/重启/Enforcing/真实OTA授权，明早验证须另获授权。
+
+当前活动控制为final control/expected-source-files.json共104项，source-candidate08/source-apply03、组件build03/verified05、rom-candidate01为准。PID_NS方案未合入；组件01宏未定义、02上游neverallow/未导出raw API链接失败、检查器03既有cgroup误判和04符号拼写失败均保留，未改上游限制或为检查器改二进制。可复现补丁按LF计数保留GPL COPYING换页符，19源码SHA不变。831只是状态读取SSH断开，832恢复后原构建继续，未重复启动。
+
+下方构建中或未核验描述为历史阶段。
+
+
 ## 1792347689 已安装、自动读回通过（当前状态）
 
 机主随后反馈“这几个版本手机一直在变流畅，功能也没有问题”，记录为1792347689日常使用未见功能异常及主观流畅度改善；未做跨版本帧时间对照，性能变化原因尚未确认，不归因为本轮SELinux修复。没有补记全硬件重测，应用/照片保留仍仅有自动基线检查，未获得单独明确答复。

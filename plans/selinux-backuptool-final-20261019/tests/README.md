@@ -1,0 +1,5 @@
+# 隔离主机测试源
+
+保留实际运行版本，SHA见manifest.json，共220项。脚本使用冻结的Ubuntu控制目录结构和候选源路径，依赖外部Android树/host libext2fs/libselinux及编译工具；不是可直接在手机运行的测试。
+
+运行目录使用exist_ok=False防止重复覆盖已完成证据。复现需在独立的新控制布局准备对应候选源及主机编译产物，不能直接重放生产控制目录中的旧脚本。主机挂载、SELinux域切换及部分I/O依赖由明确替身提供；worker测试实际使用主机seccomp/fork/exec/后台清理，但rootless no_new_privs分支不编入Android。镜像测试实际写入隔离ext4文件并检查内容/标签/元数据及e2fsck，不是Android分区或OTA验收。

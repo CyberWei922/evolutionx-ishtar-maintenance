@@ -1,0 +1,49 @@
+{
+  "state": "FULL_PERMISSIVE_CANDIDATE_COMPILED_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "baseline_incremental": "1792347689",
+  "candidate_incremental": "1792357362",
+  "rom": {
+    "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545237136,
+    "sha256": "a2c7945bcd847a9109c409313d13723e55d2d148d00701c29c7f4b53eea48ebc"
+  },
+  "source_files": 104,
+  "changed_paths": 19,
+  "policy_sha256": "a1152f338c5f9f012206e166aadbc7eb280c4b6fd0725ee2eaaa48e5cead283f",
+  "static_permissive_domains": [],
+  "host_isolated_tests": 220,
+  "global_candidate_mode": "Permissive",
+  "phone_installed": false,
+  "flash_authorized": false,
+  "reboot_authorized": false,
+  "enforcing_authorized": false,
+  "actual_ota_performed": false,
+  "whole_ota_signature_independently_verified": false,
+  "resource_cap": {
+    "launcher_cpu": "4-7",
+    "ninja_jobs": 4,
+    "highmem_jobs": 1,
+    "GOMAXPROCS": 4,
+    "nice": 15,
+    "io_priority": 7,
+    "gpu_used": false,
+    "ckati_self_selected_two_cpus_observed": [
+      2,
+      3
+    ]
+  },
+  "other_tasks_changed": false,
+  "build_exit": 0,
+  "build_duration_seconds": 917,
+  "source_patch_files_verified": 19,
+  "host_fixture_source_files_verified": 5,
+  "actual_payload_partitions": 34,
+  "actual_new_or_retained_executable_init_and_dependency_files": 13,
+  "observed_average_cpu_percent_estimate": 399.5640363287675,
+  "observed_cpu_window_seconds": 6.009049318003235,
+  "resource_affinity_observations_all_at_most_four_cpus": true,
+  "static_data_preserving_precheck": "STATIC_DATA_PRESERVING_UPGRADE_PRECHECK_PASSED",
+  "ota_certificate_bytes_match": true,
+  "sdk": "36",
+  "security_patch": "2026-10-01"
+}

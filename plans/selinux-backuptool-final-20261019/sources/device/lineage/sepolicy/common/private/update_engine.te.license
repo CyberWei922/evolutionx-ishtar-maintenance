@@ -1,0 +1,5 @@
+SPDX-FileCopyrightText: The LineageOS Project
+SPDX-FileCopyrightText: 2026 CyberWei
+SPDX-License-Identifier: Apache-2.0
+
+Modified 2026 by CyberWei for tmpfs staging, constrained workers and offline target-label restore. Original notices are preserved.

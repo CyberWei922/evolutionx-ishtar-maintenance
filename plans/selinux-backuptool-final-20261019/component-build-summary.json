@@ -1,0 +1,87 @@
+{
+  "state": "BACKUPTOOL_FINAL_COMPONENTS_COMPILED_VERIFIED",
+  "baseline_incremental": "1792347689",
+  "source_files_verified": 104,
+  "changed_paths": 19,
+  "policy_sha256": "a1152f338c5f9f012206e166aadbc7eb280c4b6fd0725ee2eaaa48e5cead283f",
+  "policy_bytes": 1605893,
+  "static_permissive_domains": [],
+  "new_policy_types": [
+    "backuptool_broker_root_file",
+    "backuptool_store_exec"
+  ],
+  "existing_type_permissions_removed": [],
+  "existing_genfs_and_ioctl_boundaries_preserved": true,
+  "contexts": {
+    "/system/bin/backuptool_broker": "u:object_r:backuptool_broker_exec:s0",
+    "/system/bin/backuptool_store": "u:object_r:backuptool_store_exec:s0",
+    "/system/bin/backuptool_staged.sh": "u:object_r:postinstall_exec:s0"
+  },
+  "outputs": {
+    "system/bin/backuptool_ab.sh": {
+      "bytes": 8057,
+      "sha256": "0e435d96ba4185ea694185b0b2cd43b8cb331ec6fda0a80ab2a26bbfbbc6a404"
+    },
+    "system/bin/backuptool_ab.functions": {
+      "bytes": 2447,
+      "sha256": "7096c4224709877eec19551ebe8a47e106961e0c9dd303f21d64e2cd34cca91f"
+    },
+    "system/bin/backuptool_postinstall.sh": {
+      "bytes": 841,
+      "sha256": "c2d1e629690837997eba4e71692b9fea2149c6a5a0e4244cbe54273bfd1868dc"
+    },
+    "system/addon.d/50-lineage.sh": {
+      "bytes": 1051,
+      "sha256": "362fbbea03f91f8106bc19ef36cf5602b7a0a8b1190fa37f2495026fd3a49ab1"
+    },
+    "system/bin/backuptool_staged.sh": {
+      "bytes": 3298,
+      "sha256": "7a56d7ce4a56d86abb9b3fbbdc0293cc5ffc8e460132ac6941290d74ed4ca267"
+    },
+    "system/bin/update_engine": {
+      "bytes": 2845584,
+      "sha256": "399d115dd1f6b87e7ef78006120ca670cfac0e5ca87acc1a64d5d12c294df776"
+    },
+    "system/bin/backuptool_broker": {
+      "bytes": 48336,
+      "sha256": "98112fa458ed38cfcc4ede3d99e2d23f5f46375b624524c453d2b3c2c155d79a"
+    },
+    "system/bin/backuptool_store": {
+      "bytes": 123416,
+      "sha256": "eead456360dc6e74df37f198d54f252187bbcb005355b1dfa7a6adcd9f27cf58"
+    },
+    "system/lib64/libext2fs.so": {
+      "bytes": 387072,
+      "sha256": "1bc89250bc0bef8d548fd9529dad1818b6614078cb200d878bb72169a8106aa2"
+    },
+    "system/lib64/libext2_com_err.so": {
+      "bytes": 18720,
+      "sha256": "90b355a231bb0ea8717d632b7881fec6d56bbe4b49bfc9b48c09d1004fe766d3"
+    }
+  },
+  "host_isolated_cases": 220,
+  "host_case_groups": {
+    "method-tests01": 70,
+    "parent-tests01": 33,
+    "worker-tests02": 67,
+    "script-tests01": 10,
+    "real_ext4": 40
+  },
+  "worker_has_no_block_mount_or_system_write": true,
+  "real_android_mount_selinux_or_ota_tested": false,
+  "backuptool_enforcing_ready": false,
+  "phone_installed": false,
+  "full_rom_built": false,
+  "global_candidate_mode": "Permissive",
+  "enforcing_trial_performed": false,
+  "cold_boot_enforcing_tested": false,
+  "actual_ota_performed": false,
+  "other_tasks_changed": false,
+  "kernel_pid_namespace_required": false,
+  "native_symbol_text_matches_installed_elf": true,
+  "time": 1792357300.056362,
+  "existing_type_permissions_added_count": 5487,
+  "all_new_existing_type_permissions_scoped_to_worker_or_updater_stage_read_and_worker_sigkill": true,
+  "initial_checker_baseline_cgroup_and_symbol_spelling_failures_preserved": true,
+  "component_build_duration_seconds": 145
+}

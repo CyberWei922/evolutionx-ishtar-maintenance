@@ -6,20 +6,20 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 35983,
-      "sha256": "5778eb45e3c87618728cc8b0e846c9b943746b2f7995ee5b6e3b62a52a30b3a1"
+      "bytes": 39092,
+      "sha256": "e79e51bfc53742c7d89122ee5e7e747d17d1c9f80df7ef09782c2309411696e8"
     },
     "LICENSE.md": {
-      "bytes": 2053,
-      "sha256": "bd9a2cb66769d89f32fdf88748e3f76a5bea27bba08c1928cfc0f82c28503c45"
+      "bytes": 2453,
+      "sha256": "2f79807e3803c4e46dab6ffa9085ecbcfd6be0ebc7d3622858f9bfc879e199b4"
     },
     "NOTICE": {
-      "bytes": 9108,
-      "sha256": "d4b4aab6c614be3dd0a0a28e045e1f5ff7db8f56b60dcc1ec99147cc896cd133"
+      "bytes": 9481,
+      "sha256": "ed3b2704aa9020c95371c012b8d3f4c784c2ce2ece5ec660a27947b4b17482dc"
     },
     "README.md": {
-      "bytes": 3551,
-      "sha256": "d95ec5e2c8325580e51dd200a63e941f09b66dd81ec1485949922b345cecd9e6"
+      "bytes": 3897,
+      "sha256": "b6c88c16a158cfb91a87683e7f030dfa24212a8050cc6a1d2063cb6a49da9b05"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 52364,
-      "sha256": "b5772662628817127aa0f4e2c571568ca63d2f1fa3ea14d6b757336db1c79c26"
+      "bytes": 55473,
+      "sha256": "f8420a4ae8f59e940c3ec11e2149671649e342c188886a2727c839c304f83e0c"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -360,6 +360,254 @@
     "plans/selinux-backuptool-broker-20261019/working-source-files.json": {
       "bytes": 16353,
       "sha256": "b77055953ab92217e2cfe41707f1dd51765c9f520c5267e9727cb0b3e4b4a43f"
+    },
+    "plans/selinux-backuptool-final-20261019/README.md": {
+      "bytes": 2484,
+      "sha256": "ed3cfa66ceac6e9ac8799e25b42dd353c2ea1fcf3b0fd91d3ffb8c24e383d6cd"
+    },
+    "plans/selinux-backuptool-final-20261019/component-build-summary.json": {
+      "bytes": 3239,
+      "sha256": "244725e33bab2f46f36a8641e688c8ddb589df3732628002e5c5df9793908327"
+    },
+    "plans/selinux-backuptool-final-20261019/patch-verification.json": {
+      "bytes": 349,
+      "sha256": "fd0bb1989197ae906dc05290575c62d4d902b8f1a757b5aec243877c65e96980"
+    },
+    "plans/selinux-backuptool-final-20261019/rom-archive-summary.json": {
+      "bytes": 490,
+      "sha256": "fbf7e190653a5e703c4a8fc07e0b3d967ec7d93f9c12398b1e619fbdd3091239"
+    },
+    "plans/selinux-backuptool-final-20261019/rom-build-summary.json": {
+      "bytes": 1673,
+      "sha256": "3ecbe55a0e9f15feb8235b1256b9439033dd15709518d80170133a65014611c2"
+    },
+    "plans/selinux-backuptool-final-20261019/source-baselines.json": {
+      "bytes": 6488,
+      "sha256": "121266ed360d42d22968ce1103275444df6577323cc59cab1bc41313777fe4d5"
+    },
+    "plans/selinux-backuptool-final-20261019/source-changes.patch": {
+      "bytes": 107071,
+      "sha256": "5a5b8d8083ed94cc65a1ce180167adc3ea6cd39c20c588676ad875973bf408c6"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/device/lineage/sepolicy/common/private/backuptool.te": {
+      "bytes": 1740,
+      "sha256": "12f479b6846b38b0befde18a331830216a9c975112a5e8addfe5a1bfd6b6a632"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/device/lineage/sepolicy/common/private/backuptool.te.license": {
+      "bytes": 252,
+      "sha256": "6f9518e44ced675704fcbc20fb7152c50fcd3bd2d6193adcc1e5e51241889b89"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/device/lineage/sepolicy/common/private/file_contexts": {
+      "bytes": 1368,
+      "sha256": "22733f94866a513a1275215a9672b6350afe88fd2274d872fa6ceead3e574e1d"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/device/lineage/sepolicy/common/private/file_contexts.license": {
+      "bytes": 252,
+      "sha256": "6f9518e44ced675704fcbc20fb7152c50fcd3bd2d6193adcc1e5e51241889b89"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/device/lineage/sepolicy/common/private/update_engine.te": {
+      "bytes": 2599,
+      "sha256": "e82e5272ade35628dcbd033fa20a0978a43d54b3b3bedf17f7ac2254cd8fcba6"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/device/lineage/sepolicy/common/private/update_engine.te.license": {
+      "bytes": 252,
+      "sha256": "6f9518e44ced675704fcbc20fb7152c50fcd3bd2d6193adcc1e5e51241889b89"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/Android.bp": {
+      "bytes": 41926,
+      "sha256": "135a8fa20c7860a52b3387bc3d92d033b0a2446acc2b04de2355f4611c2cc77d"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/Android.bp.license": {
+      "bytes": 262,
+      "sha256": "d5b6ff26d5e35bd4ba461ea75168004d76fe5ac2975c9f84a3d72d05a74378cd"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/Android.bp": {
+      "bytes": 895,
+      "sha256": "2898f92f87203a36897b35401d657b717a45c6f9eb87f6c575a4e9a97e539f5b"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/Android.bp.license": {
+      "bytes": 206,
+      "sha256": "af9281da1ef72630ce1d3127ce35503b43cf2fdf881275ea7ca244f555e47801"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/backuptool_staged.sh": {
+      "bytes": 3298,
+      "sha256": "7a56d7ce4a56d86abb9b3fbbdc0293cc5ffc8e460132ac6941290d74ed4ca267"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/backuptool_staged.sh.license": {
+      "bytes": 206,
+      "sha256": "af9281da1ef72630ce1d3127ce35503b43cf2fdf881275ea7ca244f555e47801"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/broker.cpp": {
+      "bytes": 2107,
+      "sha256": "13eac290b1a6b458e447b3bfa2c1b97794fe17d4f37b1c764eb92b3c44b1844e"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/broker.cpp.license": {
+      "bytes": 206,
+      "sha256": "af9281da1ef72630ce1d3127ce35503b43cf2fdf881275ea7ca244f555e47801"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/broker.h": {
+      "bytes": 884,
+      "sha256": "078d0ce3ec730ef2876995925c5c38dcb1564c566c5192c0cfa1806d74d97825"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/broker.h.license": {
+      "bytes": 206,
+      "sha256": "af9281da1ef72630ce1d3127ce35503b43cf2fdf881275ea7ca244f555e47801"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/main.cpp": {
+      "bytes": 11678,
+      "sha256": "427073d786c5fb85587d47e3cc461053cb4fe036efdd255d40ceb09b973966b0"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/main.cpp.license": {
+      "bytes": 206,
+      "sha256": "af9281da1ef72630ce1d3127ce35503b43cf2fdf881275ea7ca244f555e47801"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/worker.cpp": {
+      "bytes": 7217,
+      "sha256": "59a99e791dfb872d82c1088a66894b65e123225da6176fab715c2bb596b416a3"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/worker.cpp.license": {
+      "bytes": 206,
+      "sha256": "af9281da1ef72630ce1d3127ce35503b43cf2fdf881275ea7ca244f555e47801"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/worker.h": {
+      "bytes": 522,
+      "sha256": "ef36782b9d56fc1661695c7e85560a693337c928d3cf9bb73e48b35f23785c2f"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_broker/worker.h.license": {
+      "bytes": 206,
+      "sha256": "af9281da1ef72630ce1d3127ce35503b43cf2fdf881275ea7ca244f555e47801"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/Android.bp": {
+      "bytes": 602,
+      "sha256": "7419dc862e8de4ea33d7b01a3b732475a5895d897b0f9d13535fe655b4d7a57a"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/Android.bp.license": {
+      "bytes": 208,
+      "sha256": "ce2e9e40f4f5bf1b01746c493128cd20c60aa282e5be3436b5729c7ac458beb7"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/COPYING": {
+      "bytes": 18729,
+      "sha256": "f6b78c087c3ebdf0f3c13415070dd480a3f35d8fc76f3d02180a407c1c812f79"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/COPYING.license": {
+      "bytes": 236,
+      "sha256": "5e5c39835d92671d5d2bef751aeb3ffa794b5f3a6d12836e2230fe5986a85cb6"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/io.cpp": {
+      "bytes": 19749,
+      "sha256": "1e8ba94a74db4271f1f2b4adf78b456d2ca0c2ace1a600d5f0476038e50d257c"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/io.cpp.license": {
+      "bytes": 208,
+      "sha256": "ce2e9e40f4f5bf1b01746c493128cd20c60aa282e5be3436b5729c7ac458beb7"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/main.cpp": {
+      "bytes": 2149,
+      "sha256": "4b6b1c9d14bf5f5cfae5035d0e123ef5ec291ca704ac571614e04e13c5826e61"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/main.cpp.license": {
+      "bytes": 208,
+      "sha256": "ce2e9e40f4f5bf1b01746c493128cd20c60aa282e5be3436b5729c7ac458beb7"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/offline.cpp": {
+      "bytes": 16834,
+      "sha256": "05bb8d346eceafde2bc30ebe33543a9f17d827ddcdce761ae364ba40951f1194"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/offline.cpp.license": {
+      "bytes": 208,
+      "sha256": "ce2e9e40f4f5bf1b01746c493128cd20c60aa282e5be3436b5729c7ac458beb7"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/store.h": {
+      "bytes": 2143,
+      "sha256": "e02d5a9485da4fc5cb9c4291bdb173137a573c5bef479e46b732f681b558b340"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/backuptool_store/store.h.license": {
+      "bytes": 208,
+      "sha256": "ce2e9e40f4f5bf1b01746c493128cd20c60aa282e5be3436b5729c7ac458beb7"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/payload_consumer/postinstall_runner_action.cc": {
+      "bytes": 22860,
+      "sha256": "255c7effc2dfeb9ec4d0699e2376195d2e64a99badf00dd03c297db59f0cc1f6"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/system/update_engine/payload_consumer/postinstall_runner_action.cc.license": {
+      "bytes": 262,
+      "sha256": "d5b6ff26d5e35bd4ba461ea75168004d76fe5ac2975c9f84a3d72d05a74378cd"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/vendor/lineage/prebuilt/common/bin/backuptool_ab.functions": {
+      "bytes": 2447,
+      "sha256": "7096c4224709877eec19551ebe8a47e106961e0c9dd303f21d64e2cd34cca91f"
+    },
+    "plans/selinux-backuptool-final-20261019/sources/vendor/lineage/prebuilt/common/bin/backuptool_ab.functions.license": {
+      "bytes": 206,
+      "sha256": "af9281da1ef72630ce1d3127ce35503b43cf2fdf881275ea7ca244f555e47801"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/README.md": {
+      "bytes": 769,
+      "sha256": "7d733684824baef38f3e9fa07106b2a2208001e5a4a2b6e5ff76235e5f5366ec"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/manifest.json": {
+      "bytes": 1112,
+      "sha256": "c2ab9e656082a7f9286b4d41cfc15197d59a28e63f51b0d802fffd1d775242f4"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/test_ishtar_backuptool_final_methods06_20261019.py": {
+      "bytes": 7361,
+      "sha256": "75d123b35eaa8a2f7bc7fd23e67c3a98283542ef6cc76c19f435922c2ddd2913"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/test_ishtar_backuptool_final_methods06_20261019.py.license": {
+      "bytes": 74,
+      "sha256": "7ef826b9facc7f9ba83850472534fbbe9393c1518e717d937984177fedd81535"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/test_ishtar_backuptool_final_parent06_20261019.py": {
+      "bytes": 8580,
+      "sha256": "2e9c0bfac76d0043672f5aa687a92657ef1460b9687ac1db06581e6ecb093734"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/test_ishtar_backuptool_final_parent06_20261019.py.license": {
+      "bytes": 74,
+      "sha256": "7ef826b9facc7f9ba83850472534fbbe9393c1518e717d937984177fedd81535"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/test_ishtar_backuptool_final_scripts08_20261019.py": {
+      "bytes": 7802,
+      "sha256": "f3025211e61fb754b6d1666b65c0952b9c184da2ddcede645741f2f40c2ebdf7"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/test_ishtar_backuptool_final_scripts08_20261019.py.license": {
+      "bytes": 74,
+      "sha256": "7ef826b9facc7f9ba83850472534fbbe9393c1518e717d937984177fedd81535"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/test_ishtar_backuptool_final_worker06b_20261019.py": {
+      "bytes": 5664,
+      "sha256": "ba1224f9b6ffaf6574ef821a8ebc7e55e5099674ea5c1ac37a3422ac66c3e441"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/test_ishtar_backuptool_final_worker06b_20261019.py.license": {
+      "bytes": 74,
+      "sha256": "7ef826b9facc7f9ba83850472534fbbe9393c1518e717d937984177fedd81535"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/test_ishtar_backuptool_store_images08_20261019.py": {
+      "bytes": 8863,
+      "sha256": "3e57bde087a6889cc866e97e5a1b95df869f4988f375598cb0cb8814ee680e24"
+    },
+    "plans/selinux-backuptool-final-20261019/tests/test_ishtar_backuptool_store_images08_20261019.py.license": {
+      "bytes": 74,
+      "sha256": "7ef826b9facc7f9ba83850472534fbbe9393c1518e717d937984177fedd81535"
+    },
+    "plans/selinux-backuptool-final-20261019/upstream-notices/device-lineage-sepolicy-Apache-2.0.txt": {
+      "bytes": 10280,
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
+    },
+    "plans/selinux-backuptool-final-20261019/upstream-notices/device-lineage-sepolicy-REUSE.toml": {
+      "bytes": 482,
+      "sha256": "6103b425cab94802456297cb3fc0d2dc51fde1dd6f121fcfecd4c822769a8e18"
+    },
+    "plans/selinux-backuptool-final-20261019/upstream-notices/system-update-engine-NOTICE": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "plans/selinux-backuptool-final-20261019/upstream-notices/vendor-lineage-LICENSE": {
+      "bytes": 640,
+      "sha256": "6686cda24fdf8158112cea8bcea0ff7254696b09547374cc77c6f74d26744b46"
+    },
+    "plans/selinux-backuptool-final-20261019/working-source-files.json": {
+      "bytes": 17968,
+      "sha256": "12b39dcbc012d036ffcefe8c9ed2213e5f6f04d07cbea4fa21de413f14c32b55"
     },
     "plans/selinux-boot-contracts-20261018/README.md": {
       "bytes": 3833,
@@ -1524,6 +1772,10 @@
     "provenance/accepted-source-files.json": {
       "bytes": 8017,
       "sha256": "16274a2511ef2bcedfcfa1910e38d8a730a758903538561ef74a221a1cefb489"
+    },
+    "provenance/backuptool-final-source-files.json": {
+      "bytes": 12259,
+      "sha256": "49c7dd180d8506ce323ea05b87d8734dcd7ef7a8f82c771e83ed03380d1988ba"
     },
     "provenance/boot-contracts-source-files.json": {
       "bytes": 4167,

@@ -1,0 +1,33 @@
+{
+  "kind": "frozen-host-fixtures-not-device-tests",
+  "cases": 220,
+  "files": [
+    {
+      "file": "test_ishtar_backuptool_final_methods06_20261019.py",
+      "sha256": "75d123b35eaa8a2f7bc7fd23e67c3a98283542ef6cc76c19f435922c2ddd2913",
+      "cases": 70
+    },
+    {
+      "file": "test_ishtar_backuptool_final_parent06_20261019.py",
+      "sha256": "2e9c0bfac76d0043672f5aa687a92657ef1460b9687ac1db06581e6ecb093734",
+      "cases": 33
+    },
+    {
+      "file": "test_ishtar_backuptool_final_scripts08_20261019.py",
+      "sha256": "f3025211e61fb754b6d1666b65c0952b9c184da2ddcede645741f2f40c2ebdf7",
+      "cases": 10
+    },
+    {
+      "file": "test_ishtar_backuptool_store_images08_20261019.py",
+      "sha256": "3e57bde087a6889cc866e97e5a1b95df869f4988f375598cb0cb8814ee680e24",
+      "cases": 40
+    },
+    {
+      "file": "test_ishtar_backuptool_final_worker06b_20261019.py",
+      "sha256": "ba1224f9b6ffaf6574ef821a8ebc7e55e5099674ea5c1ac37a3422ac66c3e441",
+      "cases": 67
+    }
+  ],
+  "phone_accessed": false,
+  "requires_external_android_tree_host_libraries_and_isolated_control_layout": true
+}

@@ -1,0 +1,4 @@
+SPDX-FileCopyrightText: 1989, 1991 Free Software Foundation, Inc.
+SPDX-License-Identifier: GPL-2.0-only
+
+Modified 2026 by CyberWei for tmpfs staging, constrained workers and offline target-label restore. Original notices are preserved.

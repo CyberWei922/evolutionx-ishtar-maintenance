@@ -1,0 +1,103 @@
+#!/system/bin/sh
+#
+# Functions for backuptool_ab.sh
+# Modified 2026 CyberWei: propagate copy/move errors; do not delete the old
+# replacement if restoring its successor failed.
+#
+
+export S=/system
+export C=/postinstall/tmp/backupdir
+export backuptool_ab=true
+
+copy_file() {
+  if [ "$BACKUPTOOL_BROKER_PROTOCOL" = 2 ]; then
+    mkdir -m755 -p "$(dirname "$2")" || return "$?"
+    cp -dp --preserve=motx "$1" "$2"
+    return "$?"
+  fi
+  local old status
+  old=$(umask)
+  umask 0322
+  mkdir -m755 -p "$(dirname "$2")"
+  status="$?"
+  umask "$old"
+  [ "$status" -eq 0 ] || return "$status"
+  cp -dp --preserve=a "$1" "$2"
+}
+
+move_file() {
+  local old status
+  old=$(umask)
+  umask 0322
+  mkdir -m755 -p "$(dirname "$2")"
+  status="$?"
+  umask "$old"
+  [ "$status" -eq 0 ] || return "$status"
+  mv "$1" "$2"
+}
+
+backup_file() {
+  if [ "$BACKUPTOOL_BROKER_PROTOCOL" = 2 ]; then
+    /system/bin/backuptool_store --backup "$1"
+    return "$?"
+  fi
+  if [ -e "$1" ] || [ -L "$1" ]; then
+    if echo "$1" | grep -q "\.apk$" && [ -e "$(echo "$1" | sed 's/\.apk$/\.odex/')" ]; then
+      echo "Skipping odexed apk $1"
+    else
+      copy_file "$1" "$C/$1" || return "$?"
+    fi
+  fi
+  return 0
+}
+
+restore_file() {
+  if [ "$BACKUPTOOL_BROKER_PROTOCOL" = 2 ]; then
+    /system/bin/backuptool_store --restore "$1" "${2:-}"
+    return "$?"
+  fi
+  if [ -e "$C/$1" ] || [ -L "$C/$1" ]; then
+    move_file "$C/$1" "$(get_output_path "$1")" || return "$?"
+    if [ -n "$2" ]; then
+      echo "Deleting obsolete file $2"
+      rm "$(get_output_path "$2")" || return "$?"
+    fi
+  fi
+  return 0
+}
+
+get_output_path() {
+  if [ "$BACKUPTOOL_BROKER_PROTOCOL" = 2 ]; then
+    /system/bin/backuptool_store --output "$1"
+    return "$?"
+  fi
+  if [ "$ADDOND_VERSION" -lt 3 ]; then
+    echo "/postinstall/$1"
+    return
+  fi
+  local file
+  file=$(echo "$1" | sed "s|^$S/||")
+  if __is_on_mounted_partition "$file"; then
+    echo "/postinstall/$file"
+  else
+    echo "/postinstall/$1"
+  fi
+}
+
+__is_on_mounted_partition() {
+  if [ "$BACKUPTOOL_BROKER_PROTOCOL" = 2 ]; then
+    # Protocol 2 mounts stay read-only in the broker; do not infer writability.
+    local p
+    p=${1%%/*}
+    grep -q "^$p " /postinstall/partitions
+    return "$?"
+  fi
+  local p mnt_point
+  for p in $all_V3_partitions; do
+    mnt_point="/postinstall/$p"
+    if echo "$1" | grep -q "^$p/" && [ ! -L "$mnt_point" ] && mountpoint "$mnt_point" >/dev/null 2>&1; then
+      return 0
+    fi
+  done
+  return 1
+}

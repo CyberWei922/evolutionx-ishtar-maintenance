@@ -1,0 +1,7 @@
+{
+  "applies_to_exact_baseline": true,
+  "files_match": 19,
+  "source_bytes_unchanged": true,
+  "patch_sha256": "5a5b8d8083ed94cc65a1ce180167adc3ea6cd39c20c588676ad875973bf408c6",
+  "prior_ancillary_diff_rejected": "Unicode splitlines treated GPL COPYING form feed as a line break; corrected to LF hunk boundaries and /dev/null new-file headers."
+}
