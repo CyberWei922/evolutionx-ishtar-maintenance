@@ -1,12 +1,12 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
-最新安装：**1792311835 / Permissive**，50文件/21分区范围、19组新策略契约和维护者运行资源检查通过；未进行Enforcing。见[`plans/selinux-boundary-maintainer-20261018/`](plans/selinux-boundary-maintainer-20261018/)：82项输入、20路径，维护者卡片及图片保存待机主实测。
+最新安装仍为 **1792311835 / Permissive**。已完成一次有限运行时Enforcing操作测试并恢复Permissive，桌面与MIUI打开/1×和5×由机主确认正常；冷启动未验。下一候选恢复原版Settings，并修复相机HAL QSPM与CPU/IO PSI读取，见 [`plans/selinux-runtime-camera-stock-settings-20261018/`](plans/selinux-runtime-camera-stock-settings-20261018/)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**
 
 ## 当前版本
 
-当前已安装Unofficial incremental **1792311835**，SELinux仍为 **Permissive**。50文件、21分区范围、19组新加载策略契约、目录标签/原模式、三条system启动参数和维护者资源核对通过；原9静态宽松域/KSU保持。没有Enforcing、冷启动或机主UI验收结果。
+当前已安装Unofficial incremental **1792311835**，SELinux仍为 **Permissive**。50文件、21分区范围、19组新加载策略契约、目录标签/原模式、三条system启动参数和维护者资源核对通过；原9静态宽松域/KSU保持。有限运行时Enforcing操作结果已记录，回退存在电脑兜底参与的证据限制；没有冷启动Enforcing结果。
 
 本轮累计20路径/82输入，修复精确属性及诊断数据标签和启动属性归属，合入CyberWei维护者卡片/群组与本地收款图入口。保留此前相机、亮度和开机刷新率修复，相机性能参数未调整。旧完整ROM/暂存保留，等待正常使用反馈，本轮未清理。
 

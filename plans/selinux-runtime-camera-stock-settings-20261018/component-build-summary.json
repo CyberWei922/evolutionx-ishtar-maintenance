@@ -1,0 +1,79 @@
+{
+  "baseline_incremental": "1792311835",
+  "settings_apk": {
+    "path": "system_ext/priv-app/Settings/Settings.apk",
+    "bytes": 95943189,
+    "sha256": "50cedf20dcdad7cf238b17ba58d5605c7de2fb0374a1d81964720f7ded57c9bc",
+    "signer_sha256": "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+  },
+  "upstream_controller_sha256": "f9d1b471b439e886517a2f6abd0a695736d946147e0b690bb7d3cd2d0cd72474",
+  "stock_settings_resources_verified": true,
+  "deleted_ui_source_paths": [
+    "device/xiaomi/ishtar/maintainer/Android.bp",
+    "device/xiaomi/ishtar/maintainer/AndroidManifest.xml",
+    "device/xiaomi/ishtar/maintainer/res/values/strings.xml",
+    "device/xiaomi/ishtar/maintainer/res/values-zh-rCN/strings.xml",
+    "device/xiaomi/ishtar/maintainer/src/org/evolution/ishtar/maintainer/MaintainerActivity.java",
+    "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/Android.bp",
+    "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/AndroidManifest.xml",
+    "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/res/values/config.xml",
+    "packages/apps/Settings/res/values/ishtar_maintainer.xml",
+    "device/xiaomi/ishtar/maintainer/res/drawable-nodpi/ishtar_donate_alipay.jpg",
+    "device/xiaomi/ishtar/maintainer/res/drawable-nodpi/ishtar_donate_wechat.jpg"
+  ],
+  "protected_payloads": {
+    "system/bin/surfaceflinger": "099b882b2e71941a25a10b45f0c73ff15e060f3243b2700755545c2251d1dc99",
+    "system/bin/bootanimation": "ca070ac28c5be9467e94d1c7de793a6e775d46ce968a2f26afe89bb4364b6684",
+    "vendor/lib64/libc++_shared.so": "1b27c5ec6f0dba72ad91e59ecbd2cabeaa5cb58e6f9b1adb600ec3f60b837ded",
+    "vendor/lib64/libgnss.so": "9ae162029e867ac3c8dbd6674d707cb4ad4d7383b7670bad3abe59a23035658b",
+    "odm/lib64/libgf_hal.so": "3d375442f6fd24ef11c7a4bc8f0f5ba80c15dc06d953ce80d414bb1078f62576"
+  },
+  "file_context_cases": {
+    "/data/vendor/diag": "vendor_radio_vendor_data_file",
+    "/data/vendor/diag/sync_info": "vendor_radio_vendor_data_file",
+    "/data/vendor/modem/diag_logs": "vendor_ishtar_diag_router_data_file",
+    "/data/vendor/modem/diag_logs/bootup": "vendor_ishtar_diag_router_data_file",
+    "/data/vendor/modem": "vendor_data_file",
+    "/data/vendor/modem/unrelated": "vendor_data_file",
+    "/data/vendor/qrtr": "vendor_qrtr_lookup_data_file"
+  },
+  "property_cases": {
+    "vendor.miui.vcamera.state": "vendor_camera_prop",
+    "ro.vendor.oem.sno": "vendor_radio_prop"
+  },
+  "status": "STOCK_SETTINGS_RUNTIME_CAMERA_COMPONENTS_VERIFIED",
+  "policy_sha256": "ade0b38afe44ecd4a0afbd364978ffa6479c58b9ad5dbba8958420f801dfb818",
+  "policy_bytes": 1604930,
+  "source_files_verified": 71,
+  "changed_source_paths": 17,
+  "effective_permission_additions": 13,
+  "effective_permission_removals": 0,
+  "permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "all_contexts_and_genfs_unchanged": true,
+  "extended_permissions_unchanged": true,
+  "original_static_permissive_domains_unchanged": true,
+  "secure_dsp_and_absent_misys_still_denied": true,
+  "settings_byte_identical_to_verified_upstream_restore": true,
+  "maintainer_payload_absence_pending_actual_rom": true,
+  "phone_installed": false,
+  "enforcing_trial_of_this_new_policy": false,
+  "full_rom_built": false,
+  "verified_at": 1792325469.2303247,
+  "remaining": [
+    "Actual final payload and preserve-data checks",
+    "New runtime policy readback after authorized flash",
+    "Independent guard-only real restoration remains unproven",
+    "Separately authorized Enforcing cold boot and required feature checks",
+    "Original static permissive domains and KSU exception"
+  ]
+}

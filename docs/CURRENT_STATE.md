@@ -1,5 +1,25 @@
 # 当前维护状态
 
+## 最终候选1792325510完整构建与实际镜像核对通过（最新）
+
+最终02整包及audit/worker均complete：34实际payload分区、71源/17路径、策略ade0b38afe44ecd4a0afbd364978ffa6479c58b9ad5dbba8958420f801dfb818、13项有效权限新增与保护载荷通过。自定义维护者APP/RRO在实际镜像缺席，Settings与固定上游恢复组件一致；五条旧值仅在system。相机HAL QSPM客户端与MIUI CPU/IO PSI只读合入，没有放开安全DSP或缺失MiSys。仍Permissive，原9静态宽松域/KSU保持，新策略尚未在手机运行/E实测。
+
+Ubuntu正式delivery/ishtar-selinux-stock-settings-permissive-candidate-20261018-02，incremental1792325510，ZIP4,545,440,761 bytes/SHA25ac87915377aa8e914e4951bf170528a822df807127f6afccd0994e7e645796；Mac同名薄交接不含ROM。保留数据升级静态检查通过，完整OTA签名未独立密码学核验。机主已授权该下一候选现场检查后保留数据刷入、完整核验后首次正常重启，不重复询问。随后将用有限电脑端observer尽早读取该次正常开机的安全日志，约180秒/每流8MiB，不修改手机日志速率或启动项；实际覆盖以first_observed_uptime和丢失记录为准。
+
+当前手机仍1792311835/Permissive；旧基线实际短时E功能验收与回退兜底限制另见试验摘要，不外推本候选或冷启动。未停其他任务、未清理旧ROM/暂存。
+
+
+## 实际Enforcing新缺口已并入最终候选，02整包构建中（最新活动入口）
+
+本轮实际短试机主确认桌面/MIUI打开/1×和5×均流畅，手机已恢复Permissive；独立guard和电脑兜底均参与，不能记独立回退单独成功。54份私有试验文件39,396 bytes归档SHA e9ee905d9bbc9269d659f0a50777cd94c3ce7b521997c59030e724e5f8f62f48，Mac/Ubuntu一致，原始日志不入Git。没有再次切E/重启，原9静态宽松域+ksu与冷启动边界保持。
+
+实际E日志与独立契约核对后，新增两处：HAL camera标准QSPM客户端和MIUI CPU/IO PSI read/open/getattr（保留memory权限），无写/map/ioctl扩权。完整新增13项有效权限、0删除；类型/上下文/genfs/扩展ioctl/原宽松域保持。新策略ade0b38afe44ecd4a0afbd364978ffa6479c58b9ad5dbba8958420f801dfb818/1,604,930 bytes，组件03:33/exit0、verified01及audit worker通过；Settings仍50cedf20…且上游资源回退通过。该新策略未在手机运行或做E实测。
+
+**活动71源清单改为Ubuntu control/ishtar-selinux-stock-settings-next-20261018-02/expected-source-files.json，共17路径（11删除）**。01目录的71清单及38cde组件仅是中间态；01整包/等待器在实际E发现缺口后已只对归属核验的自有会话1202864/1202865及Ninja子组发TERM，全部退出/锁空闲后才改源，没有形成交付ROM，禁止重跑旧worker。
+
+最终02的rom-candidate01/stock-settings-rom-build-02正在构建，build1316867、audit-worker1316868；CPU6/7 nice10 I/O7 Ninja2。只看此新任务exit/audit状态，编译锁忙时不改活动源码；Ubuntu其他任务未调整，旧完整ROM/暂存未清理。私有仓库已准备5份许可明确源码、最小删除/属性差异与元数据，未提交/推送（main仍552d9f1…）。下一候选保留数据刷入、完整核验后首次正常重启已获机主授权，不重复问；没有额外E/持久模式/第二次重启授权。
+
+
 ## 1792311835已刷入正常启动，自动读回通过（最新）
 
 新flash01完成74动作/73完整下载，wire SHA `e79febfde6d2774750cf48022faf28f03166cfe642d62c09547e4d0d1d63ba14` 通过；核验后首次正常重启。无userdata/metadata/底层固件写入，未锁BL。刷入与首次正常重启授权已使用，不复用作额外重启或Enforcing。

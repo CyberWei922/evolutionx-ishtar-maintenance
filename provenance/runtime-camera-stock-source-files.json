@@ -1,0 +1,50 @@
+{
+  "status": "FINAL_ROM_BUILT_AND_STATICALLY_VERIFIED",
+  "baseline_incremental": "1792311835",
+  "files": [
+    {
+      "repository_path": "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/device.mk",
+      "source_path": "device/xiaomi/ishtar/device.mk",
+      "license": "Apache-2.0",
+      "bytes": 2974,
+      "sha256": "da0c9b853a3bbf53c924319fb702bec78a1e1c71d100734a8f6f9e50caf857a4",
+      "review": "Previously reviewed upstream or original maintenance source; unchanged license boundary. Settings controller restored to pinned upstream db45a93f300e53110cc5306bb484b5175bbcf188."
+    },
+    {
+      "repository_path": "plans/selinux-runtime-camera-stock-settings-20261018/source/packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java",
+      "source_path": "packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java",
+      "license": "Apache-2.0",
+      "bytes": 33528,
+      "sha256": "f9d1b471b439e886517a2f6abd0a695736d946147e0b690bb7d3cd2d0cd72474",
+      "review": "Previously reviewed upstream or original maintenance source; unchanged license boundary. Settings controller restored to pinned upstream db45a93f300e53110cc5306bb484b5175bbcf188."
+    },
+    {
+      "repository_path": "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/properties/platform-system.prop",
+      "source_path": "device/xiaomi/ishtar/properties/platform-system.prop",
+      "license": "Apache-2.0",
+      "bytes": 581,
+      "sha256": "2dad9912f2c315850f2314301396d4d0f07264f2c42bb6598097e1b815af37c1",
+      "review": "Previously reviewed upstream or original maintenance source; unchanged license boundary. Settings controller restored to pinned upstream db45a93f300e53110cc5306bb484b5175bbcf188."
+    },
+    {
+      "repository_path": "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te",
+      "license": "Apache-2.0",
+      "bytes": 1327,
+      "sha256": "0eb8042cf038b663f01f41c2fd5df8561b71fbed0acc4c4cc8577ee1098851af",
+      "review": "Previously reviewed upstream or original maintenance source; unchanged license boundary. Settings controller restored to pinned upstream db45a93f300e53110cc5306bb484b5175bbcf188."
+    },
+    {
+      "repository_path": "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/hal_camera_default.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/hal_camera_default.te",
+      "license": "Apache-2.0",
+      "bytes": 1126,
+      "sha256": "420a5c3f99a291f79453f6b0747b643e5a493a0481e5b3192d7fc344148b0308",
+      "review": "Previously reviewed upstream or original maintenance source; unchanged license boundary. Settings controller restored to pinned upstream db45a93f300e53110cc5306bb484b5175bbcf188."
+    }
+  ],
+  "full_source_omissions": [
+    "device/xiaomi/sm8550-common/configs/properties/vendor.prop"
+  ],
+  "candidate_incremental": "1792325510"
+}

@@ -1,0 +1,13 @@
+{
+  "private_analysis_sha256": "a9e643dcc2fa409af45541d83ad3eae05a2d9b1a6822824b29ac484b1a1a1820",
+  "analysis_kept_local": true,
+  "actual_baseline_enforcing_observed": true,
+  "runtime_findings": [
+    "hal_camera_default lacks standard QSPM client discovery/contract",
+    "Dedicated MIUI domain lacks CPU/IO PSI read/open/getattr"
+  ],
+  "new_policy_not_enforcing_tested": true,
+  "secure_dsp_direct_access_and_absent_MiSys_still_denied": true,
+  "cold_boot_not_tested": true,
+  "optional_QSPM_property_reads_require_separate_evidence": true
+}

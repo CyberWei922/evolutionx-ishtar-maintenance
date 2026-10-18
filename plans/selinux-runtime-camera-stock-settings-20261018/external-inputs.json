@@ -1,0 +1,16 @@
+{
+  "full_source_omissions": [
+    {
+      "path": "device/xiaomi/sm8550-common/configs/properties/vendor.prop",
+      "before_sha256": "39557a26a1baa5c1eb7487eaefdbba95c0513e69b3fc0f4152223d81148062c0",
+      "after_sha256": "6dfe2a638308282f7dadd88148c0b2208364501beca75d7375d22fdf06f7eb38",
+      "bytes": 8141
+    }
+  ],
+  "reason": "Keep the existing explicit-license exclusion for full stock-derived vendor.prop; publish only two own line removals.",
+  "property_lines_removed": [
+    "audio.sys.offload.pstimeout.secs=3",
+    "bluetooth.profile.tbs.server.enabled=true"
+  ],
+  "owner_images_deleted_from_next_rom_not_uploaded": true
+}

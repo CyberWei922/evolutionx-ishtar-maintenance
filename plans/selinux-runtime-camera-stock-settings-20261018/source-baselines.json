@@ -1,0 +1,137 @@
+{
+  "status": "STOCK_SETTINGS_AND_RUNTIME_CAMERA_SOURCE_APPLIED",
+  "baseline_incremental": "1792311835",
+  "intermediate_control": "/mnt/android-download/control/ishtar-selinux-stock-settings-next-20261018-01",
+  "source_files": 71,
+  "changed_source_paths": 17,
+  "this_stage_changed_paths": [
+    "device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te",
+    "device/xiaomi/ishtar/sepolicy/vendor/hal_camera_default.te"
+  ],
+  "changes": [
+    {
+      "path": "device/xiaomi/ishtar/maintainer/Android.bp",
+      "deleted": true,
+      "before_sha256": "62a2be42fc29df6763cdd7d646396cd9d22bc0baf137ba9381f1925d04458463",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/AndroidManifest.xml",
+      "deleted": true,
+      "before_sha256": "2b34147bc4232f08a93b5c12139da4780550cd4364b6146b7e4fd2fa410f1a14",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/res/values/strings.xml",
+      "deleted": true,
+      "before_sha256": "72e87bd582589874f0b99e3d946b104da0fc46beb2e1bee4fcbf357dcc5447ee",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/res/values-zh-rCN/strings.xml",
+      "deleted": true,
+      "before_sha256": "4174afbcad28165837b51fe9f1fc940bc9931e4917e77ececfa36892a92c13bd",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/src/org/evolution/ishtar/maintainer/MaintainerActivity.java",
+      "deleted": true,
+      "before_sha256": "aa93b254460e83bba2788b5ae01920e24cf450a8ee835f8feb7e595e1053dd90",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/Android.bp",
+      "deleted": true,
+      "before_sha256": "2b5d23234f4195c0ec72d1de988cde45755b0bdef9e2d9833ef450de8003c7f5",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/AndroidManifest.xml",
+      "deleted": true,
+      "before_sha256": "e14d4ce2c0d82a309e428017fa225c8d12cd8885b54dd69ddbf2fb0f5a1a6c5d",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/res/values/config.xml",
+      "deleted": true,
+      "before_sha256": "f973c8d47afc71143c6811de461dd491d2d76e6cebc0d352b90fa3f8fd5894f6",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "packages/apps/Settings/res/values/ishtar_maintainer.xml",
+      "deleted": true,
+      "before_sha256": "f0d7c0b9c2819938b8db915fe290dea140e74fc6e4f137933c2d29cf79d71cd0",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/res/drawable-nodpi/ishtar_donate_alipay.jpg",
+      "deleted": true,
+      "before_sha256": "5ab99ab5aef6fc04ae8e7c090a3d05bfe23933528685aaeb18f806d9c46799da",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/res/drawable-nodpi/ishtar_donate_wechat.jpg",
+      "deleted": true,
+      "before_sha256": "025561eb9f0310e854d15f8986fe967d5af8881dcd88b8b028e62bbb82f146f1",
+      "after_sha256": null,
+      "bytes": 0
+    },
+    {
+      "path": "device/xiaomi/ishtar/device.mk",
+      "deleted": false,
+      "before_sha256": "b85cfe07268d03756a682c5f9574eff13fb38f25358f9ec30aeb0f5e52f7cc77",
+      "after_sha256": "da0c9b853a3bbf53c924319fb702bec78a1e1c71d100734a8f6f9e50caf857a4",
+      "bytes": 2974
+    },
+    {
+      "path": "packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java",
+      "deleted": false,
+      "before_sha256": "14ba8e2f613db73c55b130712c95d56a52e8b988a8cf51c7cb3d8b935a49834b",
+      "after_sha256": "f9d1b471b439e886517a2f6abd0a695736d946147e0b690bb7d3cd2d0cd72474",
+      "bytes": 33528
+    },
+    {
+      "path": "device/xiaomi/sm8550-common/configs/properties/vendor.prop",
+      "deleted": false,
+      "before_sha256": "39557a26a1baa5c1eb7487eaefdbba95c0513e69b3fc0f4152223d81148062c0",
+      "after_sha256": "6dfe2a638308282f7dadd88148c0b2208364501beca75d7375d22fdf06f7eb38",
+      "bytes": 8141
+    },
+    {
+      "path": "device/xiaomi/ishtar/properties/platform-system.prop",
+      "deleted": false,
+      "before_sha256": "f6215dec38768a630387cc6f0aa69d8ae201c7030ec3782a63f24ecab0098d50",
+      "after_sha256": "2dad9912f2c315850f2314301396d4d0f07264f2c42bb6598097e1b815af37c1",
+      "bytes": 581
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te",
+      "deleted": false,
+      "before_sha256": "5e726cc69bc4a59efce537d06719d6a1592b910ce368df5cd5382a96824b72ec",
+      "after_sha256": "0eb8042cf038b663f01f41c2fd5df8561b71fbed0acc4c4cc8577ee1098851af",
+      "bytes": 1327
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/hal_camera_default.te",
+      "deleted": false,
+      "before_sha256": "40a8584d02ec606609a8d5b7d46046afab310f0e03dca3a71f6fdab857565699",
+      "after_sha256": "420a5c3f99a291f79453f6b0747b643e5a493a0481e5b3192d7fc344148b0308",
+      "bytes": 1126
+    }
+  ],
+  "phone_accessed": false,
+  "enforcing_changed": false,
+  "generic_property_or_secure_dsp_permissions_added": false,
+  "other_processes_changed": false,
+  "time": 1792325204.4120266
+}

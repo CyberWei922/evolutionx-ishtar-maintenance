@@ -1,5 +1,13 @@
 # ishtar maintenance repository
 
+## Stock Settings and runtime-camera batch (current working input)
+
+- Use plans/selinux-runtime-camera-stock-settings-20261018/working-source-files.json:71 pinned inputs,17 paths over installed1792311835. Remove custom maintainer APP/RRO/resources and restore upstream Settings; preserve IshtarCameraDefaults and all accepted payloads.
+- New policy adds the standard camera HAL QSPM client and dedicated MIUI CPU/IO PSI read-only contract. Complete delta/neverallow checks passed. Current ROM remains globally Permissive; original nine static permissive domains and KSU remain. Baseline short runtime Enforcing user checks passed within stated scope, with host-restoration fallback caveat; no cold-boot or new-policy Enforcing acceptance.
+- Reviewed upload list is provenance/runtime-camera-stock-source-files.json. Keep full vendor.prop, owner images, compiled files and raw phone logs external. Old maintainer plan is historical and must not be reapplied after this cumulative patch.
+- The owner already authorized this next candidate's preserve-data flash and first normal reboot after checks. Do not ask again for that same action. No extra Enforcing attempt, persistent switch, extra reboot or unrelated-process change is authorized.
+
+
 This is an incremental maintenance source repository for Xiaomi 13 Ultra (ishtar), Evolution X Android 16. Read README.md and docs/CURRENT_STATE.md first.
 
 - The owner has disabled Gemini delegation. Do not invoke Gemini Delegate MCP, delegate.py or AGY as an alternative. Older delegation preferences are superseded.

@@ -1,0 +1,53 @@
+{
+  "status": "FINAL_ROM_BUILT_AND_STATICALLY_VERIFIED",
+  "baseline_incremental": "1792311835",
+  "candidate_incremental": "1792325510",
+  "rom": {
+    "ubuntu_path": "/mnt/android-download/delivery/ishtar-selinux-stock-settings-permissive-candidate-20261018-02/EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+    "file": "EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545440761,
+    "sha256": "25ac87915377aa8e914e4951bf170528a822df807127f6afccd0994e7e645796"
+  },
+  "source_files": 71,
+  "changed_paths": 17,
+  "policy_sha256": "ade0b38afe44ecd4a0afbd364978ffa6479c58b9ad5dbba8958420f801dfb818",
+  "effective_permission_additions": 13,
+  "effective_permission_removals": 0,
+  "payload_partitions_verified": 34,
+  "removed_maintainer_paths_verified_absent": [
+    "app/IshtarMaintainerInfo",
+    "overlay/IshtarMaintainerOverlay.apk"
+  ],
+  "settings_apk": {
+    "path": "system_ext/priv-app/Settings/Settings.apk",
+    "bytes": 95943189,
+    "sha256": "50cedf20dcdad7cf238b17ba58d5605c7de2fb0374a1d81964720f7ded57c9bc",
+    "signer_sha256": "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+  },
+  "system_only_legacy_values": {
+    "bluetooth.auto_connect_profiles.enabled": "true",
+    "bluetooth.profile.bap.unicast.server.enabled": "true",
+    "audio.sys.noisy.broadcast.delay": "600",
+    "audio.sys.offload.pstimeout.secs": "3",
+    "bluetooth.profile.tbs.server.enabled": "true"
+  },
+  "mode": "Permissive",
+  "original_static_permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "phone_installed": false,
+  "new_policy_enforcing_tested": false,
+  "cold_boot_enforcing_tested": false,
+  "baseline_short_enforcing_user_checks_recorded_separately": true,
+  "whole_ota_signature_independently_verified": false,
+  "next_rom_flash_and_first_normal_reboot_already_authorized": true,
+  "other_tasks_changed": false
+}

@@ -1,0 +1,20 @@
+# 原版设置恢复与实际 Enforcing 日志修复
+
+## 最终候选1792325510完整构建与实际镜像核对通过（最新）
+
+最终02整包及audit/worker均complete：34实际payload分区、71源/17路径、策略ade0b38afe44ecd4a0afbd364978ffa6479c58b9ad5dbba8958420f801dfb818、13项有效权限新增与保护载荷通过。自定义维护者APP/RRO在实际镜像缺席，Settings与固定上游恢复组件一致；五条旧值仅在system。相机HAL QSPM客户端与MIUI CPU/IO PSI只读合入，没有放开安全DSP或缺失MiSys。仍Permissive，原9静态宽松域/KSU保持，新策略尚未在手机运行/E实测。
+
+Ubuntu正式delivery/ishtar-selinux-stock-settings-permissive-candidate-20261018-02，incremental1792325510，ZIP4,545,440,761 bytes/SHA25ac87915377aa8e914e4951bf170528a822df807127f6afccd0994e7e645796；Mac同名薄交接不含ROM。保留数据升级静态检查通过，完整OTA签名未独立密码学核验。机主已授权该下一候选现场检查后保留数据刷入、完整核验后首次正常重启，不重复询问。随后将用有限电脑端observer尽早读取该次正常开机的安全日志，约180秒/每流8MiB，不修改手机日志速率或启动项；实际覆盖以first_observed_uptime和丢失记录为准。
+
+当前手机仍1792311835/Permissive；旧基线实际短时E功能验收与回退兜底限制另见试验摘要，不外推本候选或冷启动。未停其他任务、未清理旧ROM/暂存。
+
+
+基线1792311835；71项输入、17路径累计改动，含11个自定义维护者页面文件删除。恢复固定上游Settings控制器，保留MIUI默认相机和已验收载荷；两条音频/蓝牙旧值迁至system初始化。新增相机HAL的标准QSPM HIDL客户端，以及MIUI域CPU/IO PSI read/open/getattr，无写/map/ioctl。
+
+组件已通过neverallow编译与完整有效权限增量核对；最终ROM/安装状态以build-status.json及后续摘要为准。原9静态宽松域和KSU保持，新包仍Permissive。
+
+此前安装基线实际短时Enforcing中，机主确认桌面/MIUI打开/1×与5×切换正常，关键进程及boot保持。已恢复Permissive；电脑回退兜底也参与，不能证明独立guard单独完成真实恢复；冻结自动结果仍为false。新策略及冷启动尚未在Enforcing下测试。两次切换前的脚本格式失败保持真实记录，未算成功。
+
+上传五份已审查Apache-2.0源文件及最小补丁、删除记录和元数据。完整vendor.prop、APK/镜像/策略、原始手机日志、ELF反汇编、二维码图片和密钥不入仓库。旧计划保留历史，不重新应用维护者UI。复现外部属性变化使用SHA门禁脚本。
+
+复现删除时，文本补丁移除九份页面源码/资源；两张原私有JPEG未放入补丁或仓库。若本地基线仍有它们，按source-baselines.json的deleted与before_sha256核对后移除对应两条项目内路径。它们没有Android.bp打包入口，下一ROM不需要提供这两张图片。

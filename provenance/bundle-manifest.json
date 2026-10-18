@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 16098,
-      "sha256": "fa317aca4849b4f1206eb357d35c5cd60593db7efe8463d26ef3dac33a2ad926"
+      "bytes": 17339,
+      "sha256": "5e242e1733f630a630ddd13450989c1d9900f6bcc5541d25cf03099a009ba4f3"
     },
     "LICENSE.md": {
       "bytes": 1395,
@@ -18,8 +18,8 @@
       "sha256": "91a3b9816688c64b3af3347dbd47e3986645773451a9a81073aed33cd1ebc5ec"
     },
     "README.md": {
-      "bytes": 3713,
-      "sha256": "6d20bbb8006622dc1bebf15f16fee54de1ed5a092c3e16c6e817eae240cb20a2"
+      "bytes": 3859,
+      "sha256": "1347138a9ad6ff79defefdb001638aa5f00b834edda1593216564d29f04acb5d"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 23030,
-      "sha256": "46793773911e2ad1784396fcd6940aed3fd1d78a93ce7952e8fd8971c26a4001"
+      "bytes": 26426,
+      "sha256": "7a574fe2800193d4b8843aa9392fa82bcadce9dc3178be1f6e8af26d32114f31"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -917,6 +917,102 @@
       "bytes": 1322,
       "sha256": "a5524a43f3b293cfa48469c6897df1094e272c1a68160d7a52668bf4cd1df9ba"
     },
+    "plans/selinux-runtime-camera-stock-settings-20261018/README.md": {
+      "bytes": 3020,
+      "sha256": "f82b4134855360ec568e196262bc46874f935294044a0092adab7cd8b25a3f81"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/build-status.json": {
+      "bytes": 2058,
+      "sha256": "ddf2486dea7ee288065f14c594f57fa2457b0634d43086f74acd554781513eb1"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/candidate.patch": {
+      "bytes": 19592,
+      "sha256": "fdbfdfaf202b30976479aee3e68d57812bd0388c94d2caf789a6afe27bc8f1c7"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/component-build-summary.json": {
+      "bytes": 3781,
+      "sha256": "2cd6b0d5d437238e2c38e3b725a6bcb164fb11fea946ede0b53b84396f7f6d0e"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/early-boot-observation-plan.json": {
+      "bytes": 768,
+      "sha256": "e3dda50aa3ce4e02684c71ac105d6dcea73ac63591a5c394cb57c0ea2b3a2d11"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/effective-permission-delta.json": {
+      "bytes": 1525,
+      "sha256": "5a2f130451feb0a125ecd710c509d530b3b6ce33b39ea6a3e8a1a6dbbd732643"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/evidence-summary.json": {
+      "bytes": 548,
+      "sha256": "e89eacc3601baaad59726f96f9f84ca520a98b09f54c0a7aee2a4f6d08b355eb"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/external-inputs.json": {
+      "bytes": 642,
+      "sha256": "754aea9be0abb21c07c35d4be854cb5f98904ebb18a3f21a3225078708e072db"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/external-reproduction-result.json": {
+      "bytes": 120,
+      "sha256": "17b8e990ef57caca84d58a7e3545ea46166e22421e8d6ca84db9daaaf426ba72"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/installed-baseline-short-enforcing-result.json": {
+      "bytes": 1603,
+      "sha256": "c24ca55a0aca5ad43627fb6c66af023c496ed7765cffe2d18c7d4991bc924a2b"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/reproduce_external_config.py": {
+      "bytes": 547,
+      "sha256": "cd3d4059a1e33164da15fba8cf6df5532367b9b13a7b6a6f66a201330c20227f"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/rom-build-summary.json": {
+      "bytes": 2058,
+      "sha256": "ddf2486dea7ee288065f14c594f57fa2457b0634d43086f74acd554781513eb1"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source-baselines.json": {
+      "bytes": 5350,
+      "sha256": "a426e612f6c0c38c86fce191089b0d16fa9d7c561ea1a5047be2c6119e7fde6f"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/device.mk": {
+      "bytes": 2974,
+      "sha256": "da0c9b853a3bbf53c924319fb702bec78a1e1c71d100734a8f6f9e50caf857a4"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/device.mk.license": {
+      "bytes": 132,
+      "sha256": "64b8daf409e0432e52856d51dbe40f6f1b5b90f08432f797177ed59ac3ba53ed"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/properties/platform-system.prop": {
+      "bytes": 581,
+      "sha256": "2dad9912f2c315850f2314301396d4d0f07264f2c42bb6598097e1b815af37c1"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/properties/platform-system.prop.license": {
+      "bytes": 132,
+      "sha256": "64b8daf409e0432e52856d51dbe40f6f1b5b90f08432f797177ed59ac3ba53ed"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te": {
+      "bytes": 1327,
+      "sha256": "0eb8042cf038b663f01f41c2fd5df8561b71fbed0acc4c4cc8577ee1098851af"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te.license": {
+      "bytes": 132,
+      "sha256": "64b8daf409e0432e52856d51dbe40f6f1b5b90f08432f797177ed59ac3ba53ed"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/hal_camera_default.te": {
+      "bytes": 1126,
+      "sha256": "420a5c3f99a291f79453f6b0747b643e5a493a0481e5b3192d7fc344148b0308"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/hal_camera_default.te.license": {
+      "bytes": 132,
+      "sha256": "64b8daf409e0432e52856d51dbe40f6f1b5b90f08432f797177ed59ac3ba53ed"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source/packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java": {
+      "bytes": 33528,
+      "sha256": "f9d1b471b439e886517a2f6abd0a695736d946147e0b690bb7d3cd2d0cd72474"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/source/packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java.license": {
+      "bytes": 132,
+      "sha256": "64b8daf409e0432e52856d51dbe40f6f1b5b90f08432f797177ed59ac3ba53ed"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/working-source-files.json": {
+      "bytes": 12469,
+      "sha256": "9b3119141f2a7a41b2cc77fc830f4aa8551462f4b7607b35f1c198bd6f4666f8"
+    },
     "provenance/accepted-source-files.json": {
       "bytes": 8017,
       "sha256": "16274a2511ef2bcedfcfa1910e38d8a730a758903538561ef74a221a1cefb489"
@@ -968,6 +1064,10 @@
     "provenance/project-status-errors.json": {
       "bytes": 171,
       "sha256": "943fd975a9bbbc49c7f54734e14f2e76cb784598089f92cfb22d8657f178030f"
+    },
+    "provenance/runtime-camera-stock-source-files.json": {
+      "bytes": 3179,
+      "sha256": "7d1a6dca6cc341cd7edf940de8a68815cf207ab18145b2bc1b3c4c71fff79b93"
     },
     "provenance/sensitive-files-excluded.json": {
       "bytes": 2,

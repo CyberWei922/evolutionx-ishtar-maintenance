@@ -1,0 +1,22 @@
+{
+  "state": "PREPARED_NOT_STARTED",
+  "target_incremental": "1792325510",
+  "normal_boot_authorization_already_recorded": true,
+  "host_only": true,
+  "no_phone_settings_or_audit_rate_changes": true,
+  "capture_window_seconds_approximate": 180,
+  "per_stream_cap_bytes": 8388608,
+  "streams": [
+    "SELinux kernel security lines",
+    "SELinux/auditd logcat security lines"
+  ],
+  "critical_process_state_samples": [
+    "system_server",
+    "surfaceflinger",
+    "audioserver"
+  ],
+  "starts_after_verified_new_normal_android_adb_root_available": true,
+  "actual_coverage_will_record_first_uptime_and_loss_caps": true,
+  "no_zero_denial_or_full_coverage_claim": true,
+  "observer_source_sha256": "4fd249e621ad49a716dff7413a7a2672d579164f2e39df0eab37e336e1aaa352"
+}
