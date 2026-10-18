@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 13890,
-      "sha256": "ec138e2abda2e36b3c7083bf97a49ba91a92aeedba070266b0dd74b116e1ec37"
+      "bytes": 14629,
+      "sha256": "3a504a45e8a2e18ff381bfed8a8d5a564dac38b3b682327a425f68ba77080abd"
     },
     "LICENSE.md": {
       "bytes": 1395,
@@ -18,8 +18,8 @@
       "sha256": "f451f04ea5ac213cae40305f8c2b774e60926fd3c27434b08b6e232df3cd1ec2"
     },
     "README.md": {
-      "bytes": 3572,
-      "sha256": "0918748ac2a5555f5139da6c628e2c8053881674db62434310f600117d6bfeed"
+      "bytes": 3709,
+      "sha256": "1b5313251c83132d5cd3706694bb7aa3327b769369ce26c7cd74a0d465322f52"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 14764,
-      "sha256": "a4db5181f7c7c653b0d3fa87002eadb4756d9024195c3ccd4187a0a7c477066f"
+      "bytes": 17638,
+      "sha256": "e7721682c05c3373ad74a47774c4be0c8de1ec7115fb9bdafffa8285e9ce2314"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -546,12 +546,16 @@
       "sha256": "5aef9b50cb691394ce94d67b13ea64758143a0b84d64ae064342b1d7f948d15c"
     },
     "plans/selinux-enforcing-prep-20261018/README.md": {
-      "bytes": 7637,
-      "sha256": "afadb61d45546eac8d42ef1ef1a18290e95c8a0342532b9d9bbc4f81625917e7"
+      "bytes": 15271,
+      "sha256": "23160ed41a413ba6911b64de78ba47cb0cc7fe8f62b844ea9d7206d52571da7f"
+    },
+    "plans/selinux-enforcing-prep-20261018/actual-boot-properties.json": {
+      "bytes": 473,
+      "sha256": "4614bf25b8dae65153c47e7f3c795a4fe1670c65e8066aa8f583af54d4cf229e"
     },
     "plans/selinux-enforcing-prep-20261018/build-status.json": {
-      "bytes": 434,
-      "sha256": "c9716968b70778c5725d4bce40573937293d9fa445ef94c652fcf6fff36dd4c2"
+      "bytes": 4305,
+      "sha256": "f737802b71f800d07c45ecf38da5fd1b72587a5a4948c2abce80b75d31374003"
     },
     "plans/selinux-enforcing-prep-20261018/candidate.patch": {
       "bytes": 4264,
@@ -573,9 +577,21 @@
       "bytes": 11101,
       "sha256": "fa2b160618408d4273850724145b8f731e572e2e86cc8694251efb9b22659a92"
     },
+    "plans/selinux-enforcing-prep-20261018/installed-readback-summary.json": {
+      "bytes": 4305,
+      "sha256": "f737802b71f800d07c45ecf38da5fd1b72587a5a4948c2abce80b75d31374003"
+    },
+    "plans/selinux-enforcing-prep-20261018/original-permissive-status-summary.json": {
+      "bytes": 5631,
+      "sha256": "cd924bf89e55bb316f19d4f7053b0845309e9c7464ae24f155a9b24de5bb59de"
+    },
     "plans/selinux-enforcing-prep-20261018/relocate_bluetooth_property.py": {
       "bytes": 416,
       "sha256": "9655e19e098838e6a5631bb6a765707704ebe0cb11a559abb8325a6c288362d2"
+    },
+    "plans/selinux-enforcing-prep-20261018/rom-build-summary.json": {
+      "bytes": 1640,
+      "sha256": "6e0227f51d1b4c29172569c90c59258eae201d6b1a7298280a2d2ee2e009a7e3"
     },
     "plans/selinux-enforcing-prep-20261018/secure-element-property-analysis.json": {
       "bytes": 8517,
@@ -624,6 +640,10 @@
     "plans/selinux-enforcing-prep-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_init_qcc.te": {
       "bytes": 252,
       "sha256": "eccfc339a8b3b91b29e8fdbbb00b4d284cdade25637a3229577f9d5f6805ec18"
+    },
+    "plans/selinux-enforcing-prep-20261018/startup-avc-summary.json": {
+      "bytes": 1744,
+      "sha256": "17d520e12565c675b04ce39ce5eba40564663ca8f288654f021f8f22882b43c0"
     },
     "plans/selinux-enforcing-prep-20261018/thermal-analysis.json": {
       "bytes": 11068,
@@ -774,8 +794,8 @@
       "sha256": "e7aefe1862ef2a9e898f29e39f4e4429191a5619e85ab546d9461a1456b9ce8f"
     },
     "provenance/enforcing-prep-source-files.json": {
-      "bytes": 4465,
-      "sha256": "3b3c3dd8e630b240ab6abb5ee7f7f2063fca933fb2fdbf98ee93a05f813614ec"
+      "bytes": 4539,
+      "sha256": "edd5faff85cbae980125bd3ded79d584401f89fe7dafa8f81b5399b06ff3c304"
     },
     "provenance/excluded-camera-recipes.json": {
       "bytes": 1236,

@@ -1,5 +1,5 @@
 {
-  "status": "COMPONENT_VERIFIED_FULL_ROM_BUILDING_NOT_INSTALLED",
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_PASSED",
   "baseline_incremental": "1792266978",
   "files": [
     {
@@ -77,5 +77,7 @@
   ],
   "external_full_source_omissions": [
     "device/xiaomi/sm8550-common/configs/properties/vendor.prop"
-  ]
+  ],
+  "candidate_incremental": "1792300213",
+  "installed_incremental": "1792300213"
 }

@@ -1,0 +1,10 @@
+{
+  "status": "ACTUAL_SYSTEM_VENDOR_BLUETOOTH_OWNER_VERIFIED",
+  "system_value": "true",
+  "vendor_duplicates": 0,
+  "audio_noisy_delay_preserved": "600",
+  "bootanimation_sha256": "ca070ac28c5be9467e94d1c7de793a6e775d46ce968a2f26afe89bb4364b6684",
+  "system_build_prop_sha256": "d00eed7d6e3d9a9b0ccaa42478fd9c3e57582aeccaec1c39166f7e8cd8eca59f",
+  "vendor_build_prop_sha256": "c1cc8d0ee6b17635b41fc90fb60795909a02011086a6ff3970ae043ab28b4682",
+  "phone_accessed": false
+}

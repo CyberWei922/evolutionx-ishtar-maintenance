@@ -1,16 +1,30 @@
 # 当前维护状态
 
-## 最新集中候选（构建中，未安装）
+## 1792300213已保留数据刷入并启动，自动读回通过（最新）
 
-机主要求一次多修后统一打包。本轮10路径/68源码已合入并通过策略组件编译及verified01；策略1eaa4c3e…/1,604,627 bytes，有效权限新增32项/0删除。范围为MIUI导航键/PSI只读、开机QSPM、蓝牙true移system、QCC启动属性、ROM版本只读、热控两cap和精确状态。原9静态宽松域、文件MAC/genfs/ioctl、相机/音频/显示参数及保护二进制保持；热控cap不能按路径细分。
+本次新flash01完成74动作/73完整下载，wire SHA `51111b2b3512c3673e64fb04e5df8545323067a1b4f7d0f462d408eb69342250` 核验通过；2026-10-18 13:50:13正常重启。没有userdata/metadata/底层固件写入，未锁BL。授权只涵盖此次刷入及首次正常重启，现已使用，不复用作额外重启或Enforcing。
 
-活动输入是plans/selinux-enforcing-prep-20261018/working-source-files.json。统一整包enforcing-prep-rom-build-01及电脑审计等待器已派发；实际build.prop和34分区检查仍待成功后执行。中间camera-qspm只做组件、不单独打ROM。以下62/59项工作树入口是各历史基线。
+postboot01 success/worker exit0：47文件、21分区范围SHA全匹配，数据目录及属主权限/第三方应用数10的本次新鲜基线保持；127次命令尝试、0重试。新增16组加载策略契约覆盖32项权限，与实际编译策略一致。蓝牙自动连接值true；热控启动属性为vendor_thermal_normal_prop、值1，热控进程存在。六类默认入口仍为MIUI；初始快照未见MIUI进程，不称本版相机运行域/算法回退已验收。没有读取Google账号或凭据内容。
 
-手机仍为已验收1792266978/Permissive，无本轮手机操作或Enforcing；旧刷写授权已消耗。目标再约2–3版进入稳定Enforcing是计划估计，不是保证。原宽松域/KSU及真实功能、受控Enforcing、冷启动须分别报告。按直接受影响风险安排手工验收，避免重复麦克风/指纹。
+磁盘策略 `1eaa4c3edd8b9125a436029a52c8f7d673135ec55d7b4a956cf9134181f944fe` /1,604,627 bytes；加载策略 `52cf610059c121ae3acd1023ccf01382ee673eba89c199822e1d151f76f5adec` /2,151,918 bytes。原9静态宽松域+ksu保持，仍全局Permissive/enforce0；未进行Enforcing试验，也未声称本版获得新的机主功能验收。本版按实际风险不重复要求麦克风/指纹全套测试。
 
-2026-10-18，Xiaomi 13 Ultra / ishtar，Evolution X Android 16 / SDK36，当前已安装版本1792266978，Unofficial。上一验收源码基线为1792226532。
+24项运行证据已在Mac/Ubuntu归档，tar 1,518,646 bytes/SHA `3b27cdee9b78eb445a12491ebf02069ffca302fe910539028c3b067f41bf6f5a`，双方摘要及Mac逐文件匹配。有限构建/审计/刷写/读回worker均结束，无新增常驻采集/模块、自启或额外重启，未调整Ubuntu其他任务。保存的启动logcat有624条AVC/14域、kernel有15条，两份有重叠且audit_lost最大1；不是完整覆盖或修复完成比例。相机HAL属性枚举、Mtd DAC、私有属性及原宽松域等继续按必要功能处理，不能批量放行。
 
-## 当前安装与验收入口（2026-10-18）
+当前活动源码为control/ishtar-selinux-enforcing-prep-20261018-01/expected-source-files.json的68项，旧64/62清单仅描述中间/旧安装基线。正式ROM仍在Ubuntu同名delivery，Mac为54项薄交接，不含ROM；完整OTA签名未独立密码学核验。当前保留新1792300213及原1792266978/1792261801完整ROM和本轮暂存，尚未执行清理，待新版本正常使用反馈再按双版本规则收尾。
+
+维护者设置页展示明确留到下一版，等机主提供显示名及资料后实现；本版没有为此重包，不假定Git用户名，也不将个人维护者展示表述为官方资格。
+
+## 集中候选构建完成时的记录（刷入前历史）
+
+统一enforcing-prep-rom-build-01 exit0，audit-worker-status和audit-status均complete。实际34个payload分区、68输入源码、策略1eaa4c3edd8b9125a436029a52c8f7d673135ec55d7b4a956cf9134181f944fe、默认入口和原保护载荷通过；实际system/vendor以及其余三分区的属性位置检查通过，蓝牙true只在system侧，音频600参数保持。静态保留数据升级检查通过，完整OTA签名未独立密码学核验。
+
+Ubuntu正式目录：`/mnt/android-download/delivery/ishtar-selinux-enforcing-prep-permissive-candidate-20261018-01`，版本1792300213，ZIP 4,545,439,341 bytes/SHA `3b1e518603f2c3d911d7ffbca886df4c97531f419ac733ab201673c166deddec`。Mac同名薄交接54项，不含完整ROM。组件121项和实际有效权限增量32/0检查保持。原9静态宽松域未删除，KSU例外和实际Enforcing尚未验收。
+
+手机仍是机主已测1792266978/Permissive；本轮未刷入、重启、采集手机日志或切Enforcing。当前两版已安装完整回退ROM1792266978/1792261801保持，新候选可并存等待验收；不提前删回退版本。机主已授权本候选在新鲜预检通过后保留数据刷入及首次正常重启，Enforcing仍未授权；使用新runner，不复用旧刷写流程。维护者展示依机主指示留下一版，待其提供名字/资料。验收只按直接风险安排，本轮不默认重复麦克风/指纹。Ubuntu其他任务未调整。
+
+以下为各阶段历史，当前已安装版本及自动检查范围以上方1792300213节为准；原accepted源码标签仍为1792226532。
+
+## 1792266978历史安装与验收入口（2026-10-18）
 
 1792266978已保留数据刷入并正常启动，44文件/21分区范围匹配，新Mtd精确属性、GNSS/Goodix实际加载权限及SPI wakeup标签通过。机主确认所问Google账号/原应用照片、MIUI拍照新录像收音、指纹正常。仍全局Permissive，原9静态宽松域+ksu保持，没有Enforcing试验。当前62项源码入口为plans/selinux-device-io-20261018/working-source-files.json，安装/验收摘要见同plan的installed-acceptance-summary.json。
 

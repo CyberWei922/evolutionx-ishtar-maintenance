@@ -1,0 +1,48 @@
+{
+  "scope": "Finite startup security snapshots only; kernel/logcat overlap and audit loss prevent complete coverage.",
+  "enforcing_trial_performed": false,
+  "samples": {
+    "kernel-avc.log": {
+      "denial_lines": 15,
+      "source_domain_count": 8,
+      "source_domains": {
+        "hal_fingerprint_default": 4,
+        "vendor_init": 3,
+        "vendor_diag-router": 2,
+        "rild": 2,
+        "vendor_modprobe": 1,
+        "toolbox": 1,
+        "hal_camera_default": 1,
+        "system_server": 1
+      },
+      "audit_lost_max_seen": 1
+    },
+    "logcat-avc.log": {
+      "denial_lines": 624,
+      "source_domain_count": 14,
+      "source_domains": {
+        "hal_camera_default": 584,
+        "rild": 12,
+        "hal_sensors_default": 4,
+        "hal_secure_element_default": 4,
+        "hal_fingerprint_default": 4,
+        "vendor_init": 3,
+        "vendor_qti_init_shell": 3,
+        "hal_audio_default": 2,
+        "vendor_diag-router": 2,
+        "priv_app": 2,
+        "vendor_modprobe": 1,
+        "toolbox": 1,
+        "vendor_mtd": 1,
+        "system_server": 1
+      },
+      "audit_lost_max_seen": 1
+    }
+  },
+  "interpretation": [
+    "Most saved logcat denials are camera-HAL property enumeration; do not grant all property reads or treat each line as a functional fault.",
+    "Fingerprint generic system property, secure-element private init status, Mtd DAC and other startup ownership boundaries remain scoped follow-up items.",
+    "No completion percentage, Enforcing compatibility or owner functional acceptance is inferred from these counts.",
+    "The Bluetooth denial type alone does not identify the property key; the moved key was independently checked true in system build.prop and at runtime."
+  ]
+}

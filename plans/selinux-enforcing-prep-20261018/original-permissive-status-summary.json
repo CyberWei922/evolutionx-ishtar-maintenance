@@ -1,0 +1,79 @@
+{
+  "installed_baseline": "1792266978",
+  "scope": "Finite metadata inventory of original9 static permissive domains, saved runtime CIL, frozen baseline payload contexts/scripts and current staged APK package identities. No phone/ELF target execution, source/build/lock/worker changes or permissive removal.",
+  "output_mutability": "Concurrent newer full build may update O. APK manifest inventory below describes staged output at inspection time, not newly proven frozen installed package contents.",
+  "frozen_extraction_limit": "Actual inspection root is not a full extraction of system/system_ext/product; missing paths there were not treated as absence. Those partitions were read directly via read-only debugfs cat/stat/ls on frozen reconstructed images when used. Vendor/odm were previously fully extracted and exact negative paths are bounded to them.",
+  "source_analysis_sha256": "3e45f09efb2be20453d43a30ecbeb0fb98a8f78683625b8bc8cce1f5753f1184",
+  "static_permissive_domains": 9,
+  "domains": [
+    {
+      "domain": "aoncameraservice_app",
+      "entry_kind": "seapp",
+      "artifact_presence": "No matching package in current staged212-APK manifest scan. Frozen baseline contains domain/seapp mapping, not identified matching APK.",
+      "next_step": "Before removing permissive, retain mapping/type consistency and consider whether this platform-signed AON app will ever be shipped. Do not call it unused solely from test name."
+    },
+    {
+      "domain": "backuptool",
+      "entry_kind": "explicit process transition for OTA/recovery",
+      "artifact_presence": "Three backup scripts proved present in frozen system.img. These scripts are not labeled a special backuptool_exec.",
+      "next_step": "Treat as potentially required update/recovery path; inspect postinstall/domain selection and test preservation before removing permissive. Normal Android boot success does not cover OTA use."
+    },
+    {
+      "domain": "qti-testscripts",
+      "entry_kind": "init startup service and executable mapping",
+      "artifact_presence": "Frozen product.img exact /etc/init.qcom.testscripts.sh lookup returns File not found.",
+      "next_step": "Resolve intentional startup service vs missing script, rather than adding broad shell entrypoint or declaring test domain dead. Tightening can change startup service failure/audit behavior even if script is absent."
+    },
+    {
+      "domain": "su",
+      "entry_kind": "AOSP debug executable domain",
+      "artifact_presence": "Frozen system.img exact /system/xbin/su and /system/bin/su lookups both return File not found.",
+      "next_step": "Keep separate from dynamic KernelSU ksu domain. Absence of these two packaged executables does not prove no privileged relabel/manual transition/debug workflow can use su. Decide debug/VTS/root support boundary before tightening."
+    },
+    {
+      "domain": "vendor-qti-testscripts",
+      "entry_kind": "vendor init script/manual generic-shell transition",
+      "artifact_presence": "All three exact script paths are absent in frozen fully extracted vendor baseline. No matching explicit init service/seclabel found in frozen vendor/odm init RC search.",
+      "next_step": "Review init execution/seclabel and manual users before tightening; do not conclude dormant solely from missing scripts or test directory origin."
+    },
+    {
+      "domain": "vendor_cta_app",
+      "entry_kind": "seapp",
+      "artifact_presence": "Neither target package in current staged212-APK manifest scan; frozen baseline mapping is present.",
+      "next_step": "Candidate for later removal of permissive only after confirming product package/signature/UID inventory and future shipment requirements. No current runtime usage proof."
+    },
+    {
+      "domain": "vendor_hal_debugutils_default",
+      "entry_kind": "vendor HAL init executable",
+      "artifact_presence": "Exact /vendor/bin/hw/vendor.qti.hardware.debugutils@1.0-service absent in frozen extracted vendor; no matching init RC reference found in frozen vendor/odm.",
+      "next_step": "Payload absence supports a bounded cleanup candidate, not a universal assertion of no future/debug HAL use. Keep type/context dependencies valid and verify VINTF/service inventory before later tightening."
+    },
+    {
+      "domain": "vendor_logkit_app",
+      "entry_kind": "seapp",
+      "artifact_presence": "Target package not in current staged212-APK manifest scan; frozen mapping is present.",
+      "next_step": "Treat as policy-only observed in this product scope; do not remove on name alone. Confirm no required signed log/debug package will be installed/shipped."
+    },
+    {
+      "domain": "vendor_pdt_app",
+      "entry_kind": "seapp",
+      "artifact_presence": "Neither target name in current staged212-APK manifest scan. Preserve .pdtapps mapping exactly as recorded; do not infer wildcard semantics from its leading dot.",
+      "next_step": "Review product packaging/seapp semantics/signatures before removal. Current absence of matching staged package does not prove future/platform-signed installation impossible."
+    }
+  ],
+  "staged_package_scan": {
+    "count": 212,
+    "parsed": 212,
+    "unique_package_ids": 212,
+    "failed": 0,
+    "matching_target_ids": [],
+    "limits": [
+      "APK/JAR outside these directories and data-installed packages were not inventoried.",
+      "Seapp assignment additionally requires matching UID/seinfo/platform signing constraints.",
+      "No fresh installed-phone package inventory was requested or collected."
+    ]
+  },
+  "policy_changed": false,
+  "phone_accessed": false,
+  "enforcing_validation": false
+}
