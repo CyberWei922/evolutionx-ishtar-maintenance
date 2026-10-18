@@ -1,5 +1,20 @@
 # 当前维护状态
 
+## 1792339544已安装、桌面和数据验收通过（当前状态）
+
+本轮4路径OTA执行/错误传递/事务复制修复已完整编译并保留数据刷入。74动作/73完整下载及wire SHA ce68887bd0dd8249e4487ef1fb1cd9d88b127bb760600acc0f1d59c4d061e11c通过，2026-10-19 00:51:01首次正常重启。56文件/21分区范围、7组保留策略契约、六MIUI默认入口及三项数据基线均匹配；153次读回命令尝试、0重试。机主本次确认“桌面正常，应用和照片都在”，只记录桌面/应用照片保留验收，不补记相机、麦克风、指纹或全硬件验收。
+
+实际1792339544/A槽/FBE，仍为全局Permissive/enforce0。磁盘策略694b6134dfd89758742f964df8d6f288203df5c766c75f2225b30af0fbaaed53与上一版相同；加载49db1c52b7d70b4060dabefea3b523bc6cc201b4a13433e965bb2b5e0711dbec/2,152,173 bytes。静态宽松域仅backuptool，加载另含动态ksu；内核/KSU保持。四路径改动改善OTA脚本调用/失败处理，不代表已运行真实OTA或backuptool已可Enforcing。挂载代理、inactive隔离/精确权限、持久标签/security xattr、V3/EROFS及optional处理仍待完成，再做必要Enforcing运行和冷启动验证。
+
+有限启动采集已结束：uptime18.25–192.69秒，31样本，核心PID未观测到变化，采集传输失败0。合并缓冲快照与有限流保留709条唯一AVC行、audit_lost最大2；有速率/缓冲/窗口限制，不是全量开机拒绝、709个功能故障或修复进度百分比。初始快照无MIUI进程，不冒称初始域验证。读取监控666的host loop/caller超时保留，未影响独立刷写或触发分区重试。
+
+私有运行归档30项/1,521,192 bytes/SHA536a8f9ba9c5e4fc510f3344bccbe377792fee924ac44541b886523f0d9769ba双端一致；归档早于本次机主答复，验收另存补充，不改冻结归档。正式完整ROM在Ubuntu delivery/ishtar-selinux-ota-contracts-permissive-candidate-20261019-01，4,545,425,494 bytes/SHA d0cd1eae3de97d54052c8262c5fea80b662eb32f7bc38de6efef1e741de9a2ad；Mac仅薄交接/运行证据，Git仅许可明确源码和脱敏摘要。完整OTA签名未独立密码学核验。活动源码为ota-contracts control/expected-source-files.json共87项，已重新核对；所有本轮worker退出，构建锁空闲。
+
+按已有清理授权，在双端证据与本次数据验收后删除本轮完成的SSD刷写暂存及已核对同SHA的out重复ZIP，释放28,837,494,784 bytes（约26.86GiB），SSD空闲约108.88GiB。正式本版/上版1792333073保留，其他HDD旧档本轮未清；保留正式ZIP未重复全量哈希。源码/.repo/厂商依赖/当前增量缓存和其他Ubuntu任务未动，已删暂存禁止重放。
+
+本次刷入及首次正常重启授权已用完，未做Enforcing、冷启动Enforcing或真实OTA；不复用为额外重启或切模式。有限采集结束，手机无需继续连接USB。下方各阶段记录为历史。
+
+
 ## OTA 错误与直接入口组件已完成，尚未安装（最新活动源码）
 
 机主要求继续修复。Ubuntu活动入口改为 control/ishtar-selinux-ota-contracts-20261018-01/expected-source-files.json，共87项；已安装1792333073仍对应旧84项。4路径新批已合入：源分区失败/空路径检查；brillo直接执行已标记备份脚本，保留标准输出且无新输出管道；内层首错与清理、V3挂载失败守卫；helper/50-lineage错误传递及缺省文件成功。addon先复制pending目录再提交，覆盖“复制已写文件后报错”的情况。第三方脚本只传播实际返回码，不称其内部错误全已覆盖。

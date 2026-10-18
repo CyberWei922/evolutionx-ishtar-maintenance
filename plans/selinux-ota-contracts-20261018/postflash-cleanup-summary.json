@@ -1,0 +1,23 @@
+{
+  "state": "COMPLETE",
+  "released_bytes": 28837494784,
+  "free_bytes_before": 88072298496,
+  "free_bytes_after": 116909793280,
+  "retained_formal_roms_rehashed": false,
+  "duplicate_output_zip_rehashed": true,
+  "old_formal_roms_deleted": false,
+  "source_or_incremental_build_cache_deleted": false,
+  "phone_accessed": false,
+  "other_processes_changed": false,
+  "deleted_targets_absent": true,
+  "old_flash_runner_staging_no_longer_available": true,
+  "deleted_scope": [
+    "Only this completed flash SSD scratch",
+    "Only the matching duplicate build-output ZIP"
+  ],
+  "retained_complete_rom_incrementals": [
+    "1792339544",
+    "1792333073"
+  ],
+  "other_hdd_archives_not_cleaned": true
+}

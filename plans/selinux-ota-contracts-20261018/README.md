@@ -1,8 +1,15 @@
 # OTA 备份执行入口与错误传递
 
-基线为已安装 **1792333073 / Permissive**。本批4路径源码已合入Ubuntu，工作输入87项；组件编译及verified03通过，**尚未打完整ROM、未安装、未做真实OTA或Enforcing**。手机模式没有改变。
+## 当前安装：1792339544 / Permissive
 
-## 已完成
+完整ROM已保留数据刷入并正常启动，机主确认桌面正常、应用照片都在。56文件/21分区范围、7组保留契约/六MIUI默认入口及数据基线读回通过；策略权限与上一版保持。详见[安装读回](installed-readback-summary.json)、[机主验收](owner-desktop-data-acceptance.json)、[启动观察](early-boot-observation-summary.json)、[整包构建](rom-build-summary.json)和[暂存清理](postflash-cleanup-summary.json)。
+
+有限采集已结束，未观测到核心PID变化或采集传输失败。AVC汇总不完整，不代表功能故障个数或必要放行清单。本版未做Enforcing、冷启动Enforcing或真实OTA；安装文件读回不能替代OTA执行验证。正式本版/上一版ROM与源码缓存保留；本轮SSD刷写暂存和重复输出ZIP已删除，不可重放旧runner。下方组件核验描述此前构建阶段。
+
+
+基线为已安装 **1792333073 / Permissive**。本批4路径源码已合入Ubuntu，工作输入87项；组件编译及verified03通过，**该阶段尚未打完整ROM或安装，未做真实OTA或Enforcing**。手机模式没有改变。
+
+## 已完成源码修改
 
 - update_engine检查源分区解析失败及空路径，避免将解析失败误当成无需备份。
 - 直接运行已标记的backuptool_postinstall.sh，首个exec不再是system()的sh入口。沿用brillo进程实现，保留stdout/stderr且不引入输出管道或无限日志缓存；每个失败分支仍执行next-exec清理、卸载与恢复块设备只读。
@@ -24,7 +31,7 @@
 
 update_engine挂载代理、inactive视图隔离、执行所需精确文件/FD权限、持久标签和security xattr恢复、V3与EROFS兼容仍需实现。现有postinstall_optional=true保持，本批不保证备份失败会阻止整个OTA；第三方脚本内部吞错也无法靠外层完全发现。没有关闭addon.d或以neverallow例外绕过。
 
-下一步先实现受限挂载与标签方案，再做策略编译及独立授权的OTA/Enforcing运行和冷启动验证。这份组件归档不能直接刷机，当前无需机主重复硬件全量测试。
+下一步先实现受限挂载与标签方案，再做策略编译及独立授权的OTA/Enforcing运行和冷启动验证。组件归档仍不是可刷包；实际已安装的整包记录见上方。本轮无需重复硬件全量测试。
 
 ## 复现与许可
 

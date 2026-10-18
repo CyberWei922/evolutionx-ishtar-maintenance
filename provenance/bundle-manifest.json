@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 25508,
-      "sha256": "49ae674882ae514c246c41807fc739edc3efa9f91c3b73b9991bc71e34c98f4b"
+      "bytes": 28457,
+      "sha256": "03bbae0ee1f94cfa2968f15411d62dc0bed2e43e70a5c2904d1c6f3ae9d911a8"
     },
     "LICENSE.md": {
       "bytes": 1809,
@@ -18,8 +18,8 @@
       "sha256": "8e7dbed122428752a14bd09d70d63626762a103fb0c4b0fb923f95770fdf34c9"
     },
     "README.md": {
-      "bytes": 3846,
-      "sha256": "9497d6949851de9106ba2027099237248a1b3c13d4fb30d86f683f389629658c"
+      "bytes": 3651,
+      "sha256": "7126a59056dc0e3867bab771ba9f8c072ce7dd53b99290cd1f0c737792609fc0"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 41889,
-      "sha256": "6ecb83ec73ab21bf8d7bbff2720feeb5e505d189092f358c5bd7d6e5a9c5c912"
+      "bytes": 44838,
+      "sha256": "4d303b1d124980de320411c263f1afe2ae65ef93f6595027687b30885b1e8dd7"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -1142,8 +1142,8 @@
       "sha256": "9408363c9cb9854dc2490a4c88069e56919409a9b4e1518921bc56240c7f2672"
     },
     "plans/selinux-ota-contracts-20261018/README.md": {
-      "bytes": 3620,
-      "sha256": "60b4f671c51aaf78c4b0f410e3dc3405318b5706462b76133d5080159d1e96ce"
+      "bytes": 4611,
+      "sha256": "be9123a2be7c46220101a71c818a81eb773bc07067f9e70b7553bf2f8b88a61b"
     },
     "plans/selinux-ota-contracts-20261018/component-archive.json": {
       "bytes": 288,
@@ -1153,13 +1153,33 @@
       "bytes": 2364,
       "sha256": "4c1f4ca31041360026f135aa996aadcac3c1c866250c6948ed6f80623538897d"
     },
+    "plans/selinux-ota-contracts-20261018/early-boot-observation-summary.json": {
+      "bytes": 1423,
+      "sha256": "0719d89f3d7c77330357b5c0acade75f4e083c9ab4cc77e5e64ec6fce7c1b920"
+    },
     "plans/selinux-ota-contracts-20261018/failure-test-summary.json": {
       "bytes": 5861,
       "sha256": "bcf54c40d9766663f535efb7e28cdbfe4c94d4096483988d5efeef20fb60d8e6"
     },
+    "plans/selinux-ota-contracts-20261018/installed-readback-summary.json": {
+      "bytes": 3588,
+      "sha256": "d01748d991eb75715410b7ef7590f49dc93ec8b29de87ea7bdb2ddde7f26b3e8"
+    },
+    "plans/selinux-ota-contracts-20261018/owner-desktop-data-acceptance.json": {
+      "bytes": 471,
+      "sha256": "10c6cac1a1002c98d0c377a81c56bc1397c90f920de7958c518347f8d9fe009c"
+    },
+    "plans/selinux-ota-contracts-20261018/postflash-cleanup-summary.json": {
+      "bytes": 703,
+      "sha256": "a97a2d61981c6111803a2c6bc4f1918d52933f0d9d149eb9d4d6f06f0eaf28e9"
+    },
     "plans/selinux-ota-contracts-20261018/project-heads.json": {
       "bytes": 137,
       "sha256": "384e8079cb91f6e4390c550873e42dfb3243b13a7e2b89c2471ed66a18eac43b"
+    },
+    "plans/selinux-ota-contracts-20261018/rom-build-summary.json": {
+      "bytes": 2114,
+      "sha256": "df4a4cd22cd2111fc0069064d478d7cc734dbf9aa20bc9ac084bcbe23ecc8e38"
     },
     "plans/selinux-ota-contracts-20261018/source-baselines.json": {
       "bytes": 1605,
@@ -1410,8 +1430,8 @@
       "sha256": "95ca2d76b180220c9a6f5886cfb27d55695cf844ef6605c25b2479591948fc30"
     },
     "provenance/ota-contracts-source-files.json": {
-      "bytes": 2774,
-      "sha256": "776bbb6557fb9505bc3e24b1b2f4ae9c24f87f7d9fb258e3e5fd066cd0fa1ccb"
+      "bytes": 3181,
+      "sha256": "a1fb9da5773179c8ef03afdf84bcb9ef5e4dbcb3b32c9ec7466656245043b791"
     },
     "provenance/project-status-errors.json": {
       "bytes": 171,

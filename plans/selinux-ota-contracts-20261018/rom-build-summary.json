@@ -1,0 +1,52 @@
+{
+  "state": "COMPLETE_PERMISSIVE_ROM_BUILT_AND_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "baseline_incremental": "1792333073",
+  "candidate_incremental": "1792339544",
+  "rom": {
+    "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545425494,
+    "sha256": "d0cd1eae3de97d54052c8262c5fea80b662eb32f7bc38de6efef1e741de9a2ad"
+  },
+  "source_files": 87,
+  "changed_paths": 4,
+  "actual_payload_partitions": 34,
+  "static_permissive_domains": [
+    "backuptool"
+  ],
+  "policy_sha256": "694b6134dfd89758742f964df8d6f288203df5c766c75f2225b30af0fbaaed53",
+  "policy_bytes": 1604882,
+  "policy_byte_identical_to_installed_baseline": true,
+  "update_engine_sha256": "f72dc968797b147fe5aa062d0b1a2e4d0e081652a7b8b6cc52b671439cdf4744",
+  "host_isolated_tests": 56,
+  "actual_new_components_in_payload_verified": true,
+  "data_preserving_static_preflight": {
+    "status": "STATIC_DATA_PRESERVING_UPGRADE_PRECHECK_PASSED",
+    "installed_archive_baseline_incremental": "1792333073",
+    "candidate_incremental": "1792339544",
+    "candidate_timestamp_forward": true,
+    "sdk": "36",
+    "security_patch": "2026-10-01",
+    "no_wipe_or_downgrade_metadata": true,
+    "no_userdata_or_metadata_payload": true,
+    "ota_certificate_bytes_match": true,
+    "ota_certificate_sha256": "a4384ba815b9499a5ce349b4e33c1755278873fe2eac150a068823f526e6dbde",
+    "actual_payload_vendor_fstab_sha256": "b488efdf1a3923c33b3b4d7ca62db1149975e6aa6da8b71dabb6343c534ea0aa",
+    "fstab_matches_previously_preserved_encryption_baseline": true,
+    "whole_ota_signature_independently_verified": false,
+    "phone_accessed": false,
+    "phone_flash_authorized": true,
+    "live_phone_preflight_still_required": true,
+    "runtime_verified": false
+  },
+  "whole_ota_signature_independently_verified": false,
+  "record_phase": "Historical static build, before installation; installed-readback-summary.json is current.",
+  "build_exit": 0,
+  "build_duration": "32:40",
+  "build_and_audit_workers_complete": true,
+  "build_cpu_affinity": [
+    6,
+    7
+  ],
+  "cpu_expansion_skipped": true,
+  "other_tasks_changed": false
+}

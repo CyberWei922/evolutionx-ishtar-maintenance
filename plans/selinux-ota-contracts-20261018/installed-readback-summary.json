@@ -1,0 +1,95 @@
+{
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_AND_OWNER_DESKTOP_DATA_PASSED",
+  "baseline_incremental": "1792333073",
+  "installed_incremental": "1792339544",
+  "phone_installed": true,
+  "rom": {
+    "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545425494,
+    "sha256": "d0cd1eae3de97d54052c8262c5fea80b662eb32f7bc38de6efef1e741de9a2ad"
+  },
+  "source_files": 87,
+  "new_changed_paths": 4,
+  "mode": "Permissive",
+  "enforce": "0",
+  "static_permissive_domains": [
+    "backuptool"
+  ],
+  "loaded_permissive_domains": [
+    "backuptool",
+    "ksu"
+  ],
+  "policy_sha256": "694b6134dfd89758742f964df8d6f288203df5c766c75f2225b30af0fbaaed53",
+  "loaded_policy": {
+    "bytes": 2152173,
+    "sha256": "49db1c52b7d70b4060dabefea3b523bc6cc201b4a13433e965bb2b5e0711dbec"
+  },
+  "kernel_su_dynamic_exception_preserved": true,
+  "native_file_readbacks": 56,
+  "partition_range_readbacks": 21,
+  "retained_loaded_contracts": 7,
+  "command_attempts": 153,
+  "command_retries": 0,
+  "data_baseline_matches": {
+    "media_directory_stat": true,
+    "user_xml_owner_mode": true,
+    "third_party_package_count": true
+  },
+  "all_six_miui_default_routes_match": true,
+  "miui_domain_seen_in_initial_snapshot": false,
+  "runtime_dsp_hal_fallback_proven": false,
+  "system_legacy_property_values": {
+    "bluetooth.auto_connect_profiles.enabled": "true",
+    "bluetooth.profile.bap.unicast.server.enabled": "true",
+    "audio.sys.noisy.broadcast.delay": "600",
+    "audio.sys.offload.pstimeout.secs": "3",
+    "bluetooth.profile.tbs.server.enabled": "true",
+    "bluetooth.profile.vc.server.enabled": "true",
+    "ro.mediaserver.64b.enable": "true"
+  },
+  "wire_audit": {
+    "state": "write-transcript-verified",
+    "at": "2026-10-19T00:50:24.492014+08:00",
+    "completed_operations": 74,
+    "super_chunks": 59,
+    "boot_writes": 14,
+    "slot": "a",
+    "userdata_metadata_operations": 0,
+    "firmware_writes": 0,
+    "all_download_sizes_match": true,
+    "data_complete_count": 73,
+    "wire_sha256": "ce68887bd0dd8249e4487ef1fb1cd9d88b127bb760600acc0f1d59c4d061e11c",
+    "reboot_acknowledged": false
+  },
+  "normal_reboot_acknowledged": true,
+  "first_normal_reboot_local_time": "2026-10-19T00:51:01+08:00",
+  "runtime_archive": {
+    "state": "BOTH_HOSTS_PRIVATE_INSTALLED_RUNTIME_MATCH",
+    "files": 30,
+    "archive_bytes": 1521192,
+    "archive_sha256": "536a8f9ba9c5e4fc510f3344bccbe377792fee924ac44541b886523f0d9769ba",
+    "raw_logs_and_policy_are_private": true
+  },
+  "frozen_runtime_summary_predates_owner_reply": true,
+  "owner_acceptance_supplement": "owner-desktop-data-acceptance.json",
+  "owner_desktop_and_data_confirmed": true,
+  "owner_acceptance_scope": [
+    "normal desktop",
+    "existing apps and photos retained"
+  ],
+  "new_owner_hardware_acceptance_claimed": false,
+  "enforcing_trial_performed": false,
+  "cold_boot_enforcing_tested": false,
+  "actual_ota_performed": false,
+  "backuptool_execution_via_real_ota_tested": false,
+  "whole_ota_signature_independently_verified": false,
+  "flash_and_first_normal_reboot_authorization_consumed": true,
+  "additional_reboot_or_enforcing_authorized": false,
+  "all_own_build_flash_and_readback_workers_finished": true,
+  "other_tasks_changed": false,
+  "completed_flash_staging_and_duplicate_output_zip_deleted": true,
+  "old_formal_roms_deleted": false,
+  "host_status_watcher_timeout_count": 1,
+  "host_status_watcher_timeout_did_not_retry_partition_writes": true,
+  "build_phase_summary_is_historical": "rom-build-summary.json records the earlier uninstalled static build phase."
+}

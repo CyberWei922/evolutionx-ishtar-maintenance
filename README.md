@@ -1,14 +1,12 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
-最新工作源码：**87项输入、4路径OTA流程修复，组件已编译核验，未安装**。56个隔离场景通过，策略权限保持；见 [OTA执行与错误传递](plans/selinux-ota-contracts-20261018/README.md)。
-
-最新安装 **1792333073 / Permissive**：84项输入，53文件/21分区范围及数据基线读回通过，机主确认桌面正常、应用照片保留。静态宽松域仅backuptool，实际加载另含动态ksu；尚未做本版Enforcing冷启动或真实OTA。见 [调试域与OTA修复计划](plans/selinux-debug-ota-20261018/README.md)。
+最新安装 **1792339544 / Permissive**：87项输入、4路径OTA执行/错误传递/事务复制修复已完整编译并保留数据刷入。56文件/21分区范围及数据基线读回通过，机主确认桌面正常、应用照片保留。策略权限保持；静态宽松域仅backuptool，实际加载另含动态ksu。本版未做Enforcing或真实OTA。见[OTA执行修复与安装结果](plans/selinux-ota-contracts-20261018/README.md)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**
 
 ## 当前版本
 
-当前已安装Unofficial incremental **1792333073**，全局仍为 **Permissive**。本轮修正两项legacy属性与radio触发器归属、去掉8个静态域的宽松声明、移除缺失脚本的测试服务，并收紧update_engine/顶层备份脚本的范围及错误检查。原版Settings、MIUI默认相机及已验收载荷保持；这次只新增桌面和数据保留的机主验收。backuptool全链路与必要Enforcing运行/冷启动验证仍待完成；旧1792311835短时试验不能代替本版验证。
+当前已安装Unofficial incremental **1792339544**，全局仍为 **Permissive**。本轮检查源分区解析、直接执行已标记备份脚本、传播收到的失败并保护清理/事务复制；56个隔离主机场景通过。没有新增策略权限或标签；挂载代理、inactive视图、持久标签/security xattr、V3/EROFS、optional处理及必要Enforcing运行/冷启动验证仍待完成。机主本次只验收桌面与数据保留。
 
 camera03、MIUI默认入口、Recovery触控、自动亮度平滑、开机刷新率修复以及后续已安装SELinux增量完整保留。原accepted源码清单和验收标签仍描述1792226532；当前工作树由它叠加各累计计划复现。详见`docs/CURRENT_STATE.md`及各plan实际状态，不把旧未安装快照当最新结果。
 
@@ -23,7 +21,7 @@ camera03、MIUI默认入口、Recovery触控、自动亮度平滑、开机刷新
 - `artifacts/`、`provenance/`：二进制/外部文本的路径、尺寸、SHA和构建基线，不含其载荷。
 - `docs/`、`releases/`：版本、验收范围、依赖和后续修复方案。
 
-完整Android基线、原厂依赖、MIUI APK、Recovery镜像、Google软件、ROM及签名材料单独保存；**克隆本仓库不能直接编译完整ROM，也不代表全部ROM组件已获再分发授权。** 当前1792333073 ROM SHA256为`813f87bd22c32cf8d59b0287a01128e28969164cd5dfcf60b4f033c25983f503`，正式ROM保存在Ubuntu；上一1792325510保留。Mac只有薄交接和私有运行证据，Git仅存许可明确的维护源码与摘要。
+完整Android基线、原厂依赖、MIUI APK、Recovery镜像、Google软件、ROM及签名材料单独保存；**克隆本仓库不能直接编译完整ROM，也不代表全部ROM组件已获再分发授权。** 当前1792339544 ROM SHA256为`d0cd1eae3de97d54052c8262c5fea80b662eb32f7bc38de6efef1e741de9a2ad`，正式ROM保存在Ubuntu；上一1792333073保留。Mac仅薄交接和私有运行证据，Git仅存许可明确的维护源码与摘要。
 
 ## 本次许可整理
 

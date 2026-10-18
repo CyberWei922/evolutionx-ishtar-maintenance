@@ -1,5 +1,5 @@
 {
-  "status": "COMPONENTS_COMPILED_AND_VERIFIED_NOT_INSTALLED",
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_AND_OWNER_DESKTOP_DATA_PASSED",
   "baseline_incremental": "1792333073",
   "source_files": 87,
   "changed_paths": 4,
@@ -50,10 +50,23 @@
   "static_permissive_domains": [
     "backuptool"
   ],
-  "phone_installed": false,
-  "full_rom_built": false,
+  "phone_installed": true,
+  "full_rom_built": true,
   "global_phone_mode": "Permissive",
   "backuptool_enforcing_ready": false,
   "ksu_changed": false,
-  "compiled_artifacts_in_git": false
+  "compiled_artifacts_in_git": false,
+  "installed_incremental": "1792339544",
+  "loaded_policy": {
+    "bytes": 2152173,
+    "sha256": "49db1c52b7d70b4060dabefea3b523bc6cc201b4a13433e965bb2b5e0711dbec"
+  },
+  "loaded_permissive_domains": [
+    "backuptool",
+    "ksu"
+  ],
+  "owner_desktop_and_data_confirmed": true,
+  "enforcing_trial_performed": false,
+  "cold_boot_enforcing_tested": false,
+  "actual_ota_performed": false
 }

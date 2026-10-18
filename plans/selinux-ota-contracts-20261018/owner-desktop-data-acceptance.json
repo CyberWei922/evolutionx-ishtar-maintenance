@@ -1,0 +1,14 @@
+{
+  "state": "OWNER_DESKTOP_DATA_ACCEPTED",
+  "incremental": "1792339544",
+  "owner_reply": "桌面正常，应用和照片都在",
+  "desktop_normal": true,
+  "original_apps_and_photos_present": true,
+  "scope": [
+    "normal desktop",
+    "existing apps and photos retained"
+  ],
+  "new_camera_microphone_fingerprint_or_all_hardware_acceptance_claimed": false,
+  "phone_accessed_for_this_record": false,
+  "frozen_runtime_archive_was_created_before_this_reply": true
+}
