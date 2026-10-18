@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 35549,
-      "sha256": "243586f7ef8d500013d9c75673da66c793f48f5d4709305163bf9d42483769cd"
+      "bytes": 35983,
+      "sha256": "5778eb45e3c87618728cc8b0e846c9b943746b2f7995ee5b6e3b62a52a30b3a1"
     },
     "LICENSE.md": {
       "bytes": 2053,
@@ -18,8 +18,8 @@
       "sha256": "d4b4aab6c614be3dd0a0a28e045e1f5ff7db8f56b60dcc1ec99147cc896cd133"
     },
     "README.md": {
-      "bytes": 3494,
-      "sha256": "4316e4f5326f05876600a81ebccaaa7219d2169ab566d2c45acee0f0149c35d6"
+      "bytes": 3551,
+      "sha256": "d95ec5e2c8325580e51dd200a63e941f09b66dd81ec1485949922b345cecd9e6"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 51930,
-      "sha256": "a33980b48b39637699ff9cd70022ecdcfcb002e802dec504e6d2a13b2b816b52"
+      "bytes": 52364,
+      "sha256": "b5772662628817127aa0f4e2c571568ca63d2f1fa3ea14d6b757336db1c79c26"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -214,8 +214,8 @@
       "sha256": "7ceb5d64ea7cae6a59a1c0f5d445177d3f3877e1bb19ee7ac4f25fd2afb647fb"
     },
     "plans/selinux-backuptool-broker-20261019/README.md": {
-      "bytes": 4210,
-      "sha256": "4e15f302ff9d4b2784b4106f66e3a3732012f748d527048206c9fcc3daa1e636"
+      "bytes": 4396,
+      "sha256": "3d7e8fd85ef4cc87bb00c1cd4f17bbb6775b77f890ba320c00916c618401a17b"
     },
     "plans/selinux-backuptool-broker-20261019/component-archive.json": {
       "bytes": 293,
@@ -234,8 +234,12 @@
       "sha256": "8e08028efa0931d3ab21291dd43622c970db2224337a5aff8b49aed04382d0f2"
     },
     "plans/selinux-backuptool-broker-20261019/installed-readback-summary.json": {
-      "bytes": 2985,
-      "sha256": "3c1e996d7baab6c2491b40b29b3a6c3dc5e08ff8f5729907a4d1fdd2308046a6"
+      "bytes": 3186,
+      "sha256": "a4be127aa0635a19f8bf1c974b24d297ece627dffc9a65026b114f550d3aff78"
+    },
+    "plans/selinux-backuptool-broker-20261019/owner-functional-feedback.json": {
+      "bytes": 852,
+      "sha256": "512c1f59428d7bcd3b1839f72407e089eeaa2cd518cc8afcea0f4085d51966ee"
     },
     "plans/selinux-backuptool-broker-20261019/rom-archive-summary.json": {
       "bytes": 552,
@@ -1530,8 +1534,8 @@
       "sha256": "c2ea837c815df7f1e351f817a1e5893fbd926d511b0a18a22798656a62c90ba0"
     },
     "provenance/broker-source-files.json": {
-      "bytes": 7704,
-      "sha256": "e6a24082544562e68292189808cecb8574841b7bfd63f82c2f935d986f4c5b13"
+      "bytes": 7946,
+      "sha256": "a0e037123b6656d7aa6b5f453c74924471192f4884c118c096cc9617240f79cd"
     },
     "provenance/candidate-source-files.json": {
       "bytes": 3244,

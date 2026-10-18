@@ -1,0 +1,16 @@
+{
+  "state": "OWNER_FUNCTIONAL_FEEDBACK_RECORDED",
+  "incremental": "1792347689",
+  "owner_reply": "不知道是不是我的错觉 我记得这几个版本手机一直在变流畅 功能也没有问题",
+  "owner_reports_no_functional_issues": true,
+  "subjective_smoothness_improved": true,
+  "cross_version_performance_benchmark_performed": false,
+  "performance_cause_established": false,
+  "original_apps_and_photos_explicitly_confirmed": false,
+  "new_full_hardware_suite_claimed": false,
+  "last_verified_selinux_mode": "Permissive",
+  "phone_accessed_this_turn": false,
+  "new_capture_reboot_or_mode_switch": false,
+  "scope": "Owner reports perceived smoothness across recent versions and no functional issues during use; no separate exhaustive hardware or itemized app/photo acceptance.",
+  "recorded_at": "2026-10-19T02:58:27.232142+08:00"
+}

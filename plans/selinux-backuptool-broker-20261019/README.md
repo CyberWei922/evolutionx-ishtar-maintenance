@@ -1,6 +1,8 @@
 # Backuptool 原生挂载代理
 
-当前已安装 **1792347689 / Permissive**：94项输入、10路径修改，保留数据刷入并正常启动，57文件/21分区范围及实际策略/标签读回通过。机主桌面/应用照片验收待回复。见[安装读回](installed-readback-summary.json)和[有限启动观察](early-boot-observation-summary.json)。[整包摘要](rom-build-summary.json)及[归档](rom-archive-summary.json)描述此前静态候选阶段。全局仍Permissive，backuptool静态宽松域及KSU动态例外保持；本次没有真实OTA、Enforcing运行或冷启动验收。
+当前已安装 **1792347689 / Permissive**：94项输入、10路径修改，保留数据刷入并正常启动，57文件/21分区范围及实际策略/标签读回通过。机主反馈日常使用功能正常、体感更流畅；应用/照片保留未单独明确确认。见[安装读回](installed-readback-summary.json)和[有限启动观察](early-boot-observation-summary.json)。[整包摘要](rom-build-summary.json)及[归档](rom-archive-summary.json)描述此前静态候选阶段。全局仍Permissive，backuptool静态宽松域及KSU动态例外保持；本次没有真实OTA、Enforcing运行或冷启动验收。
+
+[机主使用反馈](owner-functional-feedback.json)：流畅度为主观感受，尚无跨版本性能测量或原因归因。
 
 ## 本轮修改
 

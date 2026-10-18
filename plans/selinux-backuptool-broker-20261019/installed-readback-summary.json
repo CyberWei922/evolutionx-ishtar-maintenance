@@ -77,5 +77,9 @@
   "other_tasks_changed": false,
   "completed_flash_staging_deleted": false,
   "old_formal_roms_deleted": false,
-  "rom_build_summary_describes_prior_static_phase": true
+  "rom_build_summary_describes_prior_static_phase": true,
+  "owner_reports_no_functional_issues": true,
+  "owner_subjective_smoothness_improved": true,
+  "owner_functional_feedback": "owner-functional-feedback.json",
+  "performance_cause_established": false
 }

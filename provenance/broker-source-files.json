@@ -163,5 +163,9 @@
   ],
   "owner_desktop_and_data_confirmed": false,
   "enforcing_trial_performed": false,
-  "cold_boot_enforcing_tested": false
+  "cold_boot_enforcing_tested": false,
+  "owner_reports_no_functional_issues": true,
+  "owner_subjective_smoothness_improved": true,
+  "owner_functional_feedback": "plans/selinux-backuptool-broker-20261019/owner-functional-feedback.json",
+  "performance_cause_established": false
 }
