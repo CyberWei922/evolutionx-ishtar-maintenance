@@ -1,5 +1,27 @@
 # ishtar maintenance repository
 
+## Final1792333073 ROM (current, not installed)
+
+Final02 full ROM and34 actual payload partitions/84 inputs/16 cumulative uninstalled paths passed static checks; build and audit workers are complete and no longer live, build lock free. Active source remains control/ishtar-selinux-debug-ota-next-20261018-02 and plans/selinux-debug-ota-20261018/working-source-files.json. ROM SHA813f87bd…/4,545,424,895 bytes; Mac78-file thin handoff only, full ROM on Ubuntu. Policy694b6134… static permissive list only backuptool; global boot remains Permissive. KSU/kernel and accepted payloads unchanged. See rom-build-summary.json; complete OTA signature not independently cryptographically verified.
+
+Phone last confirmed1792325510/Permissive with its original9 static domains. No new phone operations, flash/reboot/Enforcing/real OTA authorized. Owner chose source repairs without mode switch. Do not replay completed builds, superseded01 or deleted flash staging. Remaining backuptool mount/label/xattr/inner-error contracts and necessary cold-start validation are separate. Ordinary hardware does not require another full regression by default. Only own packaging processes/threads were expanded to measured-idle CPUs4–7; nice10/I/O7/Ninja2 and unrelated tasks preserved.
+
+
+## Final02 components and ROM build (current active source)
+
+Active input:plans/selinux-debug-ota-20261018/working-source-files.json,84 files; control/ishtar-selinux-debug-ota-next-20261018-02.23 method and16 wrapper combinations passed; components01:46/exit0 and verified01 passed. Backups are scoped to system/ext4 and validate source magic; vendor/EROFS normal postinstall is retained. Compiled policy694b6134… has only backuptool static permissive; effective allow/context/type/ioctl lines unchanged, KSU/kernel unchanged. Source snapshots now describe final02. Phone remains1792325510/Permissive with original9 static domains, unmodified.
+
+The01 full-ROM build was stopped before release after the EROFS issue; only verified owned sessions/children were terminated. Final02 ROM build1513333/audit1513334, actual job debug-ota-rom-build-02, is in progress. Do not replay01 or re-dispatch02. No flash/reboot/Enforcing/real OTA is authorized. Preserve existing payloads and unrelated Ubuntu work. Dispatch's initial job-name typo was corrected with original evidence preserved; no build restart or pipeline edits.
+
+
+## Debug-domain / OTA safety batch (current working source)
+
+- Use plans/selinux-debug-ota-20261018/working-source-files.json:84 pinned inputs,6 latest paths over the uninstalled78-input batch. Component policy694b6134… passed, with exactly3 typepermissive removals and no other exported CIL changes; candidate static permissive domains contain only backuptool. KernelSU/ksu and kernel are unchanged. The phone is still1792325510/Permissive with its original nine static domains.
+- Keep qcom-post-boot, radio diag_use and all existing AOSP su allow/dontaudit rules. AOSP su differs from ksu; adb-root/VTS is not newly runtime validated. OTA safety checks do not make backuptool enforcement-ready: inner addon errors, optional handling, broker mounts, isolated inactive labels, preserved security xattrs and final labels remain pending.
+- The complete Permissive ROM is building only on Ubuntu under the new debug-ota control/rom-candidate01; do not re-dispatch or alter unrelated tasks. No new flash/reboot/Enforcing/real OTA is authorized. The owner chose source fixes without a mode switch.
+- Reviewed upload scope:provenance/debug-ota-source-files.json. Preserve original Linux Foundation/QIC BSD notices, AOSP/Lineage Apache notices and the sepolicy public-domain NOTICE. No binaries/raw logs/disassembly or proprietary original text in Git.
+
+
 ## Boot ownership/test-domain components (current working input)
 
 - Current source is plans/selinux-boot-contracts-20261018/working-source-files.json:78 pinned inputs,10 paths over installed1792325510. Component policy0527e362… is verified; five optional test-domain permissive declarations are removed with all other exported CIL lines unchanged. Candidate static domains are backuptool,qti-testscripts,vendor-qti-testscripts,su. KernelSU is unchanged.

@@ -1,5 +1,39 @@
 # 当前维护状态
 
+## 1792333073完整候选已构建核验，未安装（最新）
+
+最终02整包debug-ota-rom-build-02 exit0（20:28），audit-status及worker complete；34实际payload分区、84项源码、累计16个未安装变更路径、新update_engine/顶层脚本/3个init输出及保护载荷检查通过。静态保留数据升级：与已安装1792325510的OTA证书字节/SDK/补丁/fstab保持，时间戳向前，无userdata/metadata及wipe/downgrade标记；完整OTA签名未独立密码学核验。候选仍为全局Permissive、静态宽松域仅backuptool，KSU动态例外/内核保持；不是Enforcing或真实OTA验收。
+
+Ubuntu正式delivery/ishtar-selinux-debug-ota-permissive-candidate-20261018-02，ZIP4,545,424,895 bytes/SHA813f87bd22c32cf8d59b0287a01128e28969164cd5dfcf60b4f033c25983f503，incremental1792333073。Mac同名薄交接78项/SHA51e3f5ad068db397e50eeeb378ec9bceb757e40d39b387220e82e7454c43bce8/386,562 bytes，不含完整ROM；小型证据和源码均双方一致。活动源码仍02 control/expected-source-files.json共84项；已再次匹配，全部本轮worker退出、构建锁空闲，不重跑01/02构建或旧刷写runner。
+
+手机最后确认1792325510/Permissive、原9静态宽松域，本轮无手机操作/重启/刷写/E/真实OTA；新刷入及首次正常重启尚未授权。backuptool的挂载代理/inactive标签/安全xattr/最终标签恢复、内层错误与optional处理及必要冷启动验证仍待办。静态域9→1不是完成百分比。当前普通硬件无需重复全量验收。打包后段测得CPU4/5闲置95%以上，仅将本任务及线程扩到4–7，保留nice10/I/O7/Ninja2，未调整其他任务。01整包因发现EROFS适用范围风险在交付前停止；修正后的02为唯一新交付。
+
+
+## 02组件与文件系统范围检查通过，最终完整候选构建中（最新）
+
+活动源码control/ishtar-selinux-debug-ota-next-20261018-02共84项；debug-ota-components-build-02 01:46/exit0、verified01/audit worker complete。策略694b6134…/1,604,882 bytes仍严格仅3条typepermissive删除，候选静态域仅backuptool，KSU/既有allow/标签及保护载荷保持。23方法场景+16脚本组合通过，新增system/ext4适用范围/源魔数核验及vendor/EROFS常规postinstall覆盖。实际update_engine SHA07a1a2070b15347e81f92f9fc764bc4e7c3a137de3ca4b0ba2138423f57d306a。
+
+双方149项组件归档SHAc83b359a2ccdd5ff83315bb4080fb9d220977ca3b70db866e9c477ede29752bc/3,219,623 bytes，delivery/ishtar-selinux-debug-ota-components-20261018-02。01整包已停止且不交付；新的02完整候选control/rom-candidate01，真实job debug-ota-rom-build-02/build1513333/audit1513334正在运行。dispatch最初job字段误写01，已保留原记录并按实际shell PREFIX/started修正元数据，没有重启构建或改流水线脚本。只观察这份新job/audit，不重派发。
+
+手机仍1792325510/Permissive、原9静态宽松域；本轮未读写手机、刷机、重启、E或真实OTA，也无这些新授权。backuptool全链路/标签/挂载及必要冷启动验证仍待完成，不把域数量当完成比例。其他Ubuntu任务保持。
+
+
+## EROFS后处理修正已合入，02组件构建中（覆盖下方01构建状态）
+
+发现旧备份分支对vendor/EROFS也读取ext4 mount_count；新的挂载错误检查可能令其常规postinstall被跳过。因此已核对归属并仅停止自己的01整包build1450807/audit1450808及同会话子组，全部退出且锁空闲；未停其他任务，01不是可发布ROM。02只在system/ext4上查询源槽并检查6字节中的ext4魔数；EROFS/其他分区继续正常只读postinstall，非ext4源不写目标。23个实际方法隔离测试及16个新旧脚本组合通过。首个02测试请求早于候选目录创建完成而停止（无源码改动），待准备实际结束后新的测试通过，原失败留存。
+
+当前活动control/ishtar-selinux-debug-ota-next-20261018-02，共84项。新component任务debug-ota-components-build-02/build1510622，audit1512355；仅看02状态，不重跑01。代码仍保留backuptool P、原allow/标签/KSU边界，未做手机操作。修正后的完整ROM尚未派发；新刷机/重启/Enforcing均未授权。
+
+
+## 调试域收紧组件通过；84项源码完整候选构建中（最新）
+
+机主要求继续源码修复、暂不切模式。活动入口已转为Ubuntu control/ishtar-selinux-debug-ota-next-20261018-01/expected-source-files.json，共84项；旧78项是中间组件，71项描述已安装1792325510。新6路径组件03:06/exit0，verified01与audit worker complete。策略694b6134dfd89758742f964df8d6f288203df5c766c75f2225b30af0fbaaed53/1,604,882 bytes；完整CIL严格仅qti-testscripts、vendor-qti-testscripts、su三条typepermissive删除，其他行一致，allow增删0。候选只剩backuptool静态宽松域；KSU动态例外及内核不动。手机仍1792325510/Permissive及原9静态宽松域，不能混为候选状态。
+
+删除缺失脚本的qti测试服务/启动行，保留qcom-post-boot及radio diag_use；AOSP su与ksu不同，旧allow/dontaudit保持，但adb-root/VTS工作流未实机验证。update_engine加入读取长度/小端、挂载、WIFEXITED/退出码及全部清理步骤检查；顶层backup→restore→sync次序/次数保持，保真收到的首错。16个实际方法依赖隔离测试+16个脚本新旧组合通过，无真实挂载/OTA。内层addon错误汇总、optional阶段容忍、挂载代理/inactive标签/安全xattr/最终持久标签仍待修，backuptool不称Enforcing就绪。
+
+149项组件交接双方SHA一致，delivery/ishtar-selinux-debug-ota-components-20261018-01，归档3,217,734 bytes/SHA9e73b6fcb298f811b6df798b563ba7469c1b8be73c4050620471b2e5bea266b1。完整候选在新control/rom-candidate01构建，debug-ota-rom-build-01，build1450807/audit1450808，CPU6/7 nice10 I/O7 Ninja2。只看此目录exit/audit状态，不重复派发。新刷入/重启/Enforcing/真实OTA均未授权；未动Ubuntu其他任务。首次本地ROM流水线准备因父目录不存在停止，已用缓存输入继续生成；未因此改Android源码/重跑组件。
+
+
 ## 开机属性/测试域组件核验完成；手机模式未切换（最新）
 
 78源/10路径新批正常编译07:53/exit0，verified01与审计worker complete。策略0527e36204650c33bccb04ee6dee41436f8613c982a68a4ea18d02130e9059da/1,604,918 bytes；完整CIL差异仅5条typepermissive删除，allow增删0、上下文/类型/genfs/ioctl保持。两条旧true值system初始化、radio两触发器core-init归属、实际复制字节及7条system-only值通过；其他保护载荷保持。候选剩4静态宽松域，KSU未改，不称全部修完。

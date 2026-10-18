@@ -1,0 +1,212 @@
+{
+  "state": "INACTIVE_DEBUG_OTA_CANDIDATE_TESTS_PASSED",
+  "changed_paths": 6,
+  "mount_method_tests": [
+    "success_and_cleanup_order PASS",
+    "nonzero_signaled_or_system_failure_1792 PASS",
+    "nonzero_signaled_or_system_failure_9 PASS",
+    "nonzero_signaled_or_system_failure_-1 PASS",
+    "read_failure_stops_before_write PASS",
+    "short_or_long_read_0 PASS",
+    "short_or_long_read_1 PASS",
+    "short_or_long_read_2 PASS",
+    "short_or_long_read_5 PASS",
+    "short_or_long_read_7 PASS",
+    "no_mounts_skips_backup PASS",
+    "little_endian_nonzero_high_byte PASS",
+    "non_ext4_source_does_not_write_target PASS",
+    "vendor_erofs_runs_normal_postinstall PASS",
+    "system_erofs_runs_normal_postinstall PASS",
+    "other_ext4_partition_skips_system_backup PASS",
+    "no_source_slot_skips_read PASS",
+    "rw_failure PASS",
+    "mount_failure_restores_ro PASS",
+    "setexec_failure_cleans_every_resource PASS",
+    "reset_failure_still_unmounts_and_sets_ro PASS",
+    "unmount_failure_still_sets_ro PASS",
+    "ro_failure_reported PASS"
+  ],
+  "mount_method_extracted_unmodified": true,
+  "method_sha256": "c51aec0220a245f63f16e1fe0f699aa4d6e5e2d4fa13d67feb7760d5a60e5e47",
+  "wrapper_tests": [
+    {
+      "source": "candidate",
+      "codes": [
+        0,
+        0,
+        0
+      ],
+      "actual_exit": 0,
+      "expected_first_error": 0,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "candidate",
+      "codes": [
+        0,
+        0,
+        9
+      ],
+      "actual_exit": 9,
+      "expected_first_error": 9,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "candidate",
+      "codes": [
+        0,
+        8,
+        0
+      ],
+      "actual_exit": 8,
+      "expected_first_error": 8,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "candidate",
+      "codes": [
+        0,
+        8,
+        9
+      ],
+      "actual_exit": 8,
+      "expected_first_error": 8,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "candidate",
+      "codes": [
+        7,
+        0,
+        0
+      ],
+      "actual_exit": 7,
+      "expected_first_error": 7,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "candidate",
+      "codes": [
+        7,
+        0,
+        9
+      ],
+      "actual_exit": 7,
+      "expected_first_error": 7,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "candidate",
+      "codes": [
+        7,
+        8,
+        0
+      ],
+      "actual_exit": 7,
+      "expected_first_error": 7,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "candidate",
+      "codes": [
+        7,
+        8,
+        9
+      ],
+      "actual_exit": 7,
+      "expected_first_error": 7,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "baseline",
+      "codes": [
+        0,
+        0,
+        0
+      ],
+      "actual_exit": 0,
+      "expected_first_error": 0,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "baseline",
+      "codes": [
+        0,
+        0,
+        9
+      ],
+      "actual_exit": 0,
+      "expected_first_error": 9,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "baseline",
+      "codes": [
+        0,
+        8,
+        0
+      ],
+      "actual_exit": 0,
+      "expected_first_error": 8,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "baseline",
+      "codes": [
+        0,
+        8,
+        9
+      ],
+      "actual_exit": 0,
+      "expected_first_error": 8,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "baseline",
+      "codes": [
+        7,
+        0,
+        0
+      ],
+      "actual_exit": 0,
+      "expected_first_error": 7,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "baseline",
+      "codes": [
+        7,
+        0,
+        9
+      ],
+      "actual_exit": 0,
+      "expected_first_error": 7,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "baseline",
+      "codes": [
+        7,
+        8,
+        0
+      ],
+      "actual_exit": 0,
+      "expected_first_error": 7,
+      "calls_order_preserved": true
+    },
+    {
+      "source": "baseline",
+      "codes": [
+        7,
+        8,
+        9
+      ],
+      "actual_exit": 0,
+      "expected_first_error": 7,
+      "calls_order_preserved": true
+    }
+  ],
+  "shell_paths_relocated_for_test_only": true,
+  "no_real_mounts_or_ota_or_phone_operations": true,
+  "backuptool_enforcing_ready": false
+}

@@ -1,0 +1,47 @@
+{
+  "state": "DEBUG_OTA_COMPONENTS_COMPILED_AND_VERIFIED",
+  "baseline_incremental": "1792325510",
+  "policy_sha256": "694b6134dfd89758742f964df8d6f288203df5c766c75f2225b30af0fbaaed53",
+  "policy_bytes": 1604882,
+  "source_files_verified": 84,
+  "changed_paths": 6,
+  "effective_allow_additions": 0,
+  "effective_allow_removals": 0,
+  "complete_exported_policy_delta_only_three_typepermissive_removals": true,
+  "static_permissive_domains": [
+    "backuptool"
+  ],
+  "removed_static_permissive_domains": [
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts"
+  ],
+  "file_property_contexts_types_genfs_xperm_unchanged": true,
+  "qcom_post_boot_and_diag_use_radio_retained": true,
+  "actual_copied_init_parser_passed": true,
+  "update_engine_elf_sha256": "07a1a2070b15347e81f92f9fc764bc4e7c3a137de3ca4b0ba2138423f57d306a",
+  "update_engine_new_checks_in_actual_elf": [
+    "Failed to read the source filesystem mount count",
+    "Failed to mount the backuptool target",
+    "Failed to clear the backuptool next-exec context",
+    "Failed to restore the target device read-only state",
+    "Source is not ext4; skipping mount-count based backup"
+  ],
+  "wrapper_exit_tests": 16,
+  "mount_method_tests": 23,
+  "backuptool_enforcing_ready": false,
+  "addon_inner_failures_and_optional_postinstall_handling_still_pending": true,
+  "debug_adb_root_vts_not_validated": true,
+  "kernel_and_ksu_unchanged": true,
+  "ksu_source_pins": {
+    "selinux/selinux.h": "9e7f9577dff4969573d2d4535b20b4947f2d9c05c3f3ec082db6f284e816fb10",
+    "selinux/rules.c": "962a9d100c0d7b0db77ebfd78b67030409a8e6550f56788ba1f9a66aa2699fe2",
+    "selinux/selinux.c": "95cc9a1d6377aa7dbaeb15cc126f972c1374b94431c92045d65ab24768a09692"
+  },
+  "phone_installed": false,
+  "full_rom_built": false,
+  "enforcing_trial_performed": false,
+  "global_phone_mode": "Permissive",
+  "other_tasks_changed": false,
+  "time": 1792333022.9701276
+}

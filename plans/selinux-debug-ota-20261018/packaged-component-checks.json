@@ -1,0 +1,15 @@
+{
+  "state": "ACTUAL_DEBUG_OTA_COMPONENTS_VERIFIED",
+  "files": {
+    "system/bin/update_engine": "07a1a2070b15347e81f92f9fc764bc4e7c3a137de3ca4b0ba2138423f57d306a",
+    "system/bin/backuptool_postinstall.sh": "795f706cb268bf0addafff069d62f63eab3c469e9bf6b416f762c95231631be7",
+    "vendor/etc/init/hw/init.qcom.rc": "76768b1fb6421b0ba7b1616711560c0d043eb77f9b32bfeac62663c9d16bafba",
+    "vendor/etc/init/qcrilNrd.rc": "a14642d2657bd662f9c21682e9be91268e700ef8a1b408c2ad2c3d3670f0e6ab",
+    "system_ext/etc/init/init.ishtar-radio-restart.rc": "1031954bcde5c8554bb8da97514fd7f9205a7005622d06fa99c95d10a96de8ea"
+  },
+  "static_permissive_domains": [
+    "backuptool"
+  ],
+  "backuptool_enforcing_ready": false,
+  "phone_accessed": false
+}

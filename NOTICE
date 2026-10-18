@@ -133,3 +133,7 @@ Boot initialization ownership and optional test-domain tightening (2026-10-18):
 - Five Qualcomm test-domain policy files retain their complete Linux Foundation copyright, redistribution conditions and disclaimer under BSD-3-Clause. Maintenance removes only their permissive declarations; it does not relicense those files or expand allow rules.
 - Full vendor.prop and proprietary qcrilNrd.rc remain external; pinned hashes and minimal reproduction transformations are included. No vendor executable, disassembly, compiled policy or original phone log is uploaded.
 - Exact exported files and licenses are recorded in provenance/boot-contracts-source-files.json.
+
+## Debug-domain / OTA safety changes (2026-10-18)
+
+Six reviewed files are listed in provenance/debug-ota-source-files.json with exact upstream project HEADs and before/after SHA. CyberWei922 modified test-service startup, removed three static permissive declarations and added checked OTA failure handling. No upstream ownership is claimed. Complete BSD grants/patent disclaimers stay in source; AOSP sepolicy public-domain warranty/liability NOTICE and LineageOS Apache notice stay in the plan's upstream-notices/. Existing KernelSU code/rules are unchanged.

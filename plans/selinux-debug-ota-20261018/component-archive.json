@@ -1,0 +1,8 @@
+{
+  "state": "BOTH_HOSTS_ARCHIVE_AND_FILES_MATCH",
+  "kind": "components",
+  "files": 149,
+  "bytes": 3219623,
+  "sha256": "c83b359a2ccdd5ff83315bb4080fb9d220977ca3b70db866e9c477ede29752bc",
+  "not_a_flash_package": true
+}

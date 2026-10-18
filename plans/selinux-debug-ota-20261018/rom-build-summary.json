@@ -1,0 +1,75 @@
+{
+  "state": "COMPLETE_PERMISSIVE_ROM_BUILT_AND_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "baseline_incremental": "1792325510",
+  "candidate_incremental": "1792333073",
+  "rom": {
+    "file": "EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545424895,
+    "sha256": "813f87bd22c32cf8d59b0287a01128e28969164cd5dfcf60b4f033c25983f503"
+  },
+  "source_files": 84,
+  "cumulative_uninstalled_changed_paths": 16,
+  "latest_source_paths": 6,
+  "actual_payload_partitions": 34,
+  "static_permissive_domains": [
+    "backuptool"
+  ],
+  "kernel_su_dynamic_exception_unchanged": true,
+  "policy_sha256": "694b6134dfd89758742f964df8d6f288203df5c766c75f2225b30af0fbaaed53",
+  "policy_bytes": 1604882,
+  "update_engine_sha256": "07a1a2070b15347e81f92f9fc764bc4e7c3a137de3ca4b0ba2138423f57d306a",
+  "system_ext4_and_source_magic_guard_checked": true,
+  "vendor_erofs_regular_postinstall_preserved": true,
+  "method_failure_tests": 23,
+  "new_and_old_wrapper_tests": 16,
+  "actual_new_components_in_payload_verified": true,
+  "data_preserving_static_preflight": {
+    "status": "STATIC_DATA_PRESERVING_UPGRADE_PRECHECK_PASSED",
+    "installed_archive_baseline_incremental": "1792325510",
+    "candidate_incremental": "1792333073",
+    "candidate_timestamp_forward": true,
+    "sdk": "36",
+    "security_patch": "2026-10-01",
+    "no_wipe_or_downgrade_metadata": true,
+    "no_userdata_or_metadata_payload": true,
+    "ota_certificate_bytes_match": true,
+    "ota_certificate_sha256": "a4384ba815b9499a5ce349b4e33c1755278873fe2eac150a068823f526e6dbde",
+    "actual_payload_vendor_fstab_sha256": "b488efdf1a3923c33b3b4d7ca62db1149975e6aa6da8b71dabb6343c534ea0aa",
+    "fstab_matches_previously_preserved_encryption_baseline": true,
+    "whole_ota_signature_independently_verified": false,
+    "phone_accessed": false,
+    "phone_flash_authorized": false,
+    "live_phone_preflight_still_required": true,
+    "runtime_verified": false
+  },
+  "phone_installed": false,
+  "phone_global_mode_last_confirmed": "Permissive",
+  "phone_incremental_last_confirmed": "1792325510",
+  "phone_original_nine_static_domains_remain": true,
+  "new_flash_authorized": false,
+  "new_reboot_authorized": false,
+  "enforcing_authorized": false,
+  "backuptool_enforcing_ready": false,
+  "whole_ota_signature_independently_verified": false,
+  "build_duration_seconds": 1228,
+  "actual_packaging_cpu_affinity_after_idle_observation": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "initial_cpu_affinity": [
+    6,
+    7
+  ],
+  "nice": 10,
+  "ninja_jobs": 2,
+  "other_processes_changed": false,
+  "thin_handoff": {
+    "files": 78,
+    "bytes": 386562,
+    "sha256": "51e3f5ad068db397e50eeeb378ec9bceb757e40d39b387220e82e7454c43bce8",
+    "complete_rom_included_on_mac": false
+  },
+  "all_own_build_audit_workers_finished": true
+}

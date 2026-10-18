@@ -1,0 +1,3 @@
+SPDX-License-Identifier: Apache-2.0 AND LicenseRef-AOSP-sepolicy-public-domain
+AOSP system/sepolicy package metadata includes Apache-2.0 and legacy_unencumbered. The original project NOTICE identifies the configuration as public domain; its complete warranty/liability text is retained in upstream-notices/system-sepolicy-NOTICE. Maintenance comments and the minimal removal are by CyberWei922 (2026).
+Source bytes are preserved. This adjacent metadata is not a build input.

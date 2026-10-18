@@ -1,0 +1,38 @@
+{
+  "test_scripts": {
+    "qti_boot_completed_start_removed_with_stale_service": true,
+    "qcom_post_boot_preserved": true,
+    "vendor_manual_domain_transition_retained": true,
+    "radio_diag_use_preserved": true,
+    "script_absence_does_not_prove_domain_unreachable_for_future_payloads": true
+  },
+  "su": {
+    "aosp_debug_domain_distinct_from_kernel_su_domain": true,
+    "kernel_su_domain": "ksu",
+    "ksu_dynamic_permissive_unchanged": true,
+    "existing_aosp_allow_and_dontaudit_rules_unchanged": true,
+    "ro_debuggable_zero_alone_does_not_disable_all_adb_root_paths": true,
+    "adb_root_vts_not_runtime_validated": true
+  },
+  "ota": {
+    "safety_only": true,
+    "backuptool_static_permissive_retained": true,
+    "mount_count_checked_read_and_little_endian_decode": "Six-byte mount-count/max-count/magic read; bounded little-endian decoding",
+    "checked_mount_script_status_and_all_cleanup_steps": true,
+    "wrapper_backup_restore_sync_order_retained": true,
+    "wrapper_only_propagates_failures_it_receives": true,
+    "inner_ab_script_addon_error_aggregation_pending": true,
+    "postinstall_optional_true_still_existing_behavior": true,
+    "full_enforcing_requires_broker_mounts_inactive_view_and_persistent_labels": true,
+    "preserve_a_copies_security_context_and_xattrs": true,
+    "no_neverallow_exceptions_or_kernel_root_bypasses_added": true,
+    "backup_scope": "system/ext4 only; verify source ext4 magic; vendor/EROFS and other partitions continue normal postinstall"
+  },
+  "phone": {
+    "installed_incremental": "1792325510",
+    "global_mode": "Permissive",
+    "static_permissive_domains_still_nine": true,
+    "this_batch_installed": false,
+    "this_round_enforcing_performed": false
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "state": "VERIFIED_DEBUG_OTA_COMPONENTS_FROZEN",
+  "baseline_incremental": "1792325510",
+  "active_source_control": "/mnt/android-download/control/ishtar-selinux-debug-ota-next-20261018-02",
+  "source_files": 84,
+  "latest_changed_paths": 6,
+  "policy_sha256": "694b6134dfd89758742f964df8d6f288203df5c766c75f2225b30af0fbaaed53",
+  "policy_bytes": 1604882,
+  "static_permissive_domains": [
+    "backuptool"
+  ],
+  "component_build_exit": 0,
+  "component_build_duration": "01:46",
+  "complete_policy_delta_only_three_typepermissive_removals": true,
+  "effective_allow_additions": 0,
+  "effective_allow_removals": 0,
+  "mount_method_tests": 23,
+  "wrapper_tests": 16,
+  "wrapper_baseline_always_success_regression_confirmed": true,
+  "backuptool_enforcing_ready": false,
+  "debug_adb_root_vts_not_validated": true,
+  "kernel_and_ksu_unchanged": true,
+  "phone_installed": false,
+  "full_rom_built": false,
+  "enforcing_performed": false,
+  "phone_mode": "Permissive",
+  "phone_original_nine_static_permissive_domains_remain": true,
+  "new_flash_or_reboot_authorized": false,
+  "not_a_flash_package": true,
+  "time": 1792333043.635784
+}

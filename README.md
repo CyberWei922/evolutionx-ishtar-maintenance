@@ -1,5 +1,7 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
+最新候选 **1792333073 已构建并通过实际34分区检查**：84项输入，静态宽松域仅backuptool，仍为Permissive；手机仍1792325510，未安装。见 [调试域与OTA修复计划](plans/selinux-debug-ota-20261018/README.md)。
+
 下一批源码/组件已完成：**78 项输入、10 路径，候选静态宽松域 9→4**，未安装、未打完整 ROM；手机仍1792325510/Permissive。见 [`plans/selinux-boot-contracts-20261018/`](plans/selinux-boot-contracts-20261018/)。
 
 最新安装：**1792325510 / Permissive**。原版Settings恢复、自定义维护者载荷缺席、48文件/21范围与7组新策略契约通过。开机安全日志已有限采集；新策略尚未做Enforcing冷启动。见 [`plans/selinux-runtime-camera-stock-settings-20261018/`](plans/selinux-runtime-camera-stock-settings-20261018/)。

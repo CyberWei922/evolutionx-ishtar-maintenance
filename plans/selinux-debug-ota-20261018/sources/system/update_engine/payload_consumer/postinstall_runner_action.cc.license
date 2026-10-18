@@ -1,0 +1,3 @@
+SPDX-License-Identifier: Apache-2.0
+Original AOSP/LineageOS project licensing and copyright retained; modified by CyberWei922 (2026) for checked failure handling. See source header or upstream-notices/vendor-lineage-LICENSE.
+Source bytes are preserved. This adjacent metadata is not a build input.

@@ -1,0 +1,8 @@
+{
+  "device/xiaomi/sm8550-common": "a27e05da9dea27a593deb11ba49e17dab39018c5",
+  "device/qcom/sepolicy": "d903f8e1e0c47ef5a9df528ee98203cac6de6b43",
+  "device/qcom/sepolicy_vndr/sm8550": "db3029437f1333528801d2ba815257287fa264aa",
+  "system/sepolicy": "e631d35d7bd7b7993e84f3d49eeb34ec87dd1a27",
+  "system/update_engine": "fc83053aa2a71885ba8615da9946033adf3462ce",
+  "vendor/lineage": "0ad4fa86fdaec71fa2daa8f0b59410dc93155ec5"
+}

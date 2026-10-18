@@ -1,0 +1,196 @@
+--- a/device/xiaomi/sm8550-common/init/init.qcom.rc
++++ b/device/xiaomi/sm8550-common/init/init.qcom.rc
+@@ -658,13 +658,6 @@
+     disabled
+     oneshot
+ 
+-service qti-testscripts /system/bin/sh /product/etc/init.qcom.testscripts.sh
+-    class late_start
+-    user root
+-    disabled
+-    oneshot
+-    seclabel u:r:qti-testscripts:s0
+-
+ service wifi-sdio-on /vendor/bin/init.qcom.sdio.sh
+     class late_start
+     group wifi inet
+@@ -679,7 +672,6 @@
+ 
+ on property:sys.boot_completed=1
+     start qcom-post-boot
+-    start qti-testscripts
+ 
+ on property:ro.vendor.ril.mbn_copy_completed=1
+     write /data/vendor/radio/copy_complete 1
+--- a/device/qcom/sepolicy/generic/private/qti-testscripts.te
++++ b/device/qcom/sepolicy/generic/private/qti-testscripts.te
+@@ -31,7 +31,6 @@
+ type qti-testscripts, domain, mlstrustedsubject;
+ userdebug_or_eng(`
+   typeattribute  qti-testscripts coredomain;
+-  permissive qti-testscripts;
+   init_daemon_domain(qti-testscripts)
+ 
+   #this is shell scripts and need /system/bin/sh
+--- a/device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/vendor-qti-testscripts.te
++++ b/device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/vendor-qti-testscripts.te
+@@ -28,7 +28,6 @@
+ userdebug_or_eng(`
+   type vendor-qti-testscripts, domain, mlstrustedsubject;
+   type vendor-qti-testscripts_exec, exec_type, file_type, vendor_file_type;
+-  permissive vendor-qti-testscripts;
+ 
+   domain_trans(init, vendor_shell_exec, vendor-qti-testscripts)
+ 
+--- a/system/sepolicy/private/su.te
++++ b/system/sepolicy/private/su.te
+@@ -133,5 +133,5 @@
+   typeattribute su hal_wifi_supplicant_client;
+ ')
+ 
+-# su is also permissive to permit setenforce.
+-permissive su;
++# Keep the AOSP debug su domain subject to its existing policy.
++# KernelSU uses its separate dynamically configured ksu domain.
+--- a/system/update_engine/payload_consumer/postinstall_runner_action.cc
++++ b/system/update_engine/payload_consumer/postinstall_runner_action.cc
+@@ -22,6 +22,7 @@
+ #include <selinux/selinux.h>
+ #include <sys/mount.h>
+ #include <sys/types.h>
++#include <sys/wait.h>
+ #include <unistd.h>
+ 
+ #include <cmath>
+@@ -203,7 +204,10 @@
+ 
+   string source_path;
+ 
+-  if (install_plan_.source_slot != BootControlInterface::kInvalidSlot) {
++  // Only system/ext4 supports this mount-count based addon retention path.
++  // Other partitions (notably vendor/EROFS) must continue normal postinstall.
++  if (partition.name == "system" && partition.filesystem_type == "ext4" &&
++      install_plan_.source_slot != BootControlInterface::kInvalidSlot) {
+     boot_control_->GetPartitionDevice(partition.name, install_plan_.source_slot, &source_path);
+   }
+ 
+@@ -212,8 +216,21 @@
+   if (!source_path.empty()) {
+     brillo::Blob chunk;
+ 
+-    utils::ReadFileChunk(source_path, 0x400 + 0x34, sizeof(uint16_t), &chunk);
+-    mount_count = *reinterpret_cast<uint16_t*>(chunk.data());
++    // Read mount count, maximum mount count and magic as on-disk bytes.
++    constexpr size_t kMountCountAndMagicBytes = 6;
++    if (!utils::ReadFileChunk(
++            source_path, 0x400 + 0x34, kMountCountAndMagicBytes, &chunk) ||
++        chunk.size() != kMountCountAndMagicBytes) {
++      LOG(ERROR) << "Failed to read the source filesystem mount count";
++      return false;
++    }
++    if (chunk[4] == 0x53 && chunk[5] == 0xef) {
++      // ext4 fields are little-endian and need not be aligned.
++      mount_count = static_cast<uint16_t>(chunk[0]) |
++                    (static_cast<uint16_t>(chunk[1]) << 8);
++    } else {
++      LOG(INFO) << "Source is not ext4; skipping mount-count based backup";
++    }
+   }
+ 
+   LOG(INFO) << source_path << " has been mounted R/W " << mount_count << " times.";
+@@ -225,31 +242,60 @@
+     }
+     // Mount the target partition R/W
+     LOG(INFO) << "Running backuptool scripts";
+-    utils::MountFilesystem(mountable_device, fs_mount_dir_, MS_NOATIME | MS_NODEV | MS_NODIRATIME,
+-                           partition.filesystem_type, "seclabel");
+-
+-    // Switch to a permissive domain
++    if (!utils::MountFilesystem(
++            mountable_device,
++            fs_mount_dir_,
++            MS_NOATIME | MS_NODEV | MS_NODIRATIME,
++            partition.filesystem_type,
++            "seclabel")) {
++      LOG(ERROR) << "Failed to mount the backuptool target";
++      if (!utils::SetBlockDeviceReadOnly(mountable_device, true)) {
++        LOG(ERROR) << "Failed to restore the target device read-only state";
++      }
++      return false;
++    }
++
++    // These cleanup steps must all run, even when an earlier step fails.
++    // Reset the next-exec label; this does not change update_engine's domain.
++    const auto cleanup_backuptool = [&]() {
++      const bool context_reset = setexeccon(nullptr) == 0;
++      if (!context_reset) {
++        LOG(ERROR) << "Failed to clear the backuptool next-exec context";
++      }
++      const bool unmounted = utils::UnmountFilesystem(fs_mount_dir_);
++      if (!unmounted) {
++        LOG(ERROR) << "Failed to unmount the backuptool target";
++      }
++      const bool readonly =
++          utils::SetBlockDeviceReadOnly(mountable_device, true);
++      if (!readonly) {
++        LOG(ERROR) << "Failed to restore the target device read-only state";
++      }
++      return context_reset && unmounted && readonly;
++    };
++
++    // Keep the existing backuptool domain while its enforcement contract is
++    // being repaired; no SELinux permissions or mode are changed here.
+     if (setexeccon("u:r:backuptool:s0")) {
+-      LOG(ERROR) << "Failed to set backuptool context";
++      LOG(ERROR) << "Failed to set backuptool next-exec context";
++      cleanup_backuptool();
+       return false;
+     }
+ 
+-    // Run backuptool script
+-    int ret = system("/postinstall/system/bin/backuptool_postinstall.sh");
+-    if (ret == -1 || WEXITSTATUS(ret) != 0) {
+-      LOG(ERROR) << "Backuptool postinstall step failed. ret=" << ret;
+-    }
+-
+-    // Switch back to update_engine domain
+-    if (setexeccon(nullptr)) {
+-      LOG(ERROR) << "Failed to set update_engine context";
++    const int ret = system("/postinstall/system/bin/backuptool_postinstall.sh");
++    const bool script_succeeded =
++        ret != -1 && WIFEXITED(ret) && WEXITSTATUS(ret) == 0;
++    if (!script_succeeded) {
++      LOG(ERROR) << "Backuptool postinstall step failed. status=" << ret;
++    }
++    const bool cleanup_succeeded = cleanup_backuptool();
++    if (!script_succeeded || !cleanup_succeeded) {
+       return false;
+     }
+   } else {
+     LOG(INFO) << "Skipping backuptool scripts";
+   }
+ 
+-  utils::UnmountFilesystem(fs_mount_dir_);
+ #endif  // !__ANDROID_RECOVERY__ && RUN_BACKUPTOOL
+ 
+   // In Chromium OS, the postinstall step is allowed to write to the block
+--- a/vendor/lineage/prebuilt/common/bin/backuptool_postinstall.sh
++++ b/vendor/lineage/prebuilt/common/bin/backuptool_postinstall.sh
+@@ -3,9 +3,16 @@
+ # LineageOS A/B OTA Postinstall Script
+ #
+ 
++# Preserve the established backup -> restore -> sync order. Propagate the
++# first failure instead of unconditionally returning success.
+ /postinstall/system/bin/backuptool_ab.sh backup
++backup_status=$?
+ /postinstall/system/bin/backuptool_ab.sh restore
++restore_status=$?
+ 
+ sync
++sync_status=$?
+ 
+-exit 0
++[ "$backup_status" -eq 0 ] || exit "$backup_status"
++[ "$restore_status" -eq 0 ] || exit "$restore_status"
++exit "$sync_status"

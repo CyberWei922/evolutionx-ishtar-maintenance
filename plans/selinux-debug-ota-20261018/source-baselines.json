@@ -1,0 +1,63 @@
+{
+  "state": "DEBUG_DOMAIN_AND_OTA_SAFETY_SOURCE_APPLIED",
+  "baseline_incremental": "1792325510",
+  "changes": [
+    {
+      "path": "device/xiaomi/sm8550-common/init/init.qcom.rc",
+      "before_sha256": "cfe4661c403d0a7eff35398c073d46c6f3dfb164c8ebe491905565bc1ab10239",
+      "after_sha256": "76768b1fb6421b0ba7b1616711560c0d043eb77f9b32bfeac62663c9d16bafba",
+      "bytes": 29956,
+      "new_file": false
+    },
+    {
+      "path": "device/qcom/sepolicy/generic/private/qti-testscripts.te",
+      "before_sha256": "ae00824a49551cd7a2fb3ce2a317ce617eec1c72f7f7a7bf08dd63ccbb7e4de1",
+      "after_sha256": "aa76f7066105a118d49db01207791ee004bfff25df16a7248cc3c9412bc71bfe",
+      "bytes": 5149,
+      "new_file": false
+    },
+    {
+      "path": "device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/vendor-qti-testscripts.te",
+      "before_sha256": "74fafb14bfa39af6b7fa326e9aa633f1741864ca43e3f6f25c9db24c72cb3050",
+      "after_sha256": "3deec2f59ae80024515373beca957499d55fe7b700bd2e10cae3e0dc9daf932b",
+      "bytes": 4443,
+      "new_file": false
+    },
+    {
+      "path": "system/sepolicy/private/su.te",
+      "before_sha256": "aa90a463c2e7a98f749c474f08c864be65467bca8118481de0388e8ce85e924f",
+      "after_sha256": "1f5702997f5df6eda38f18f296284342c1336db907ffa7c43e07c937326cf473",
+      "bytes": 5322,
+      "new_file": false
+    },
+    {
+      "path": "system/update_engine/payload_consumer/postinstall_runner_action.cc",
+      "before_sha256": "6bb58c10a3ba62220e07cc542bed0abdfed71d4256dadc5b8f1a6a62b7fc249d",
+      "after_sha256": "76e6ad6dee7a2a15cc3b70c9d50cce75fe189048498d30438fbf53fa39d7a4bb",
+      "bytes": 23166,
+      "new_file": false
+    },
+    {
+      "path": "vendor/lineage/prebuilt/common/bin/backuptool_postinstall.sh",
+      "before_sha256": "a4e71eab3b45878bcf4d384262d79bb8cb6bc67ee61fcf6706996b736c3d0e8d",
+      "after_sha256": "795f706cb268bf0addafff069d62f63eab3c469e9bf6b416f762c95231631be7",
+      "bytes": 477,
+      "new_file": false
+    }
+  ],
+  "mutated_this_step": [
+    "system/update_engine/payload_consumer/postinstall_runner_action.cc"
+  ],
+  "previous_component_control": "/mnt/android-download/control/ishtar-selinux-debug-ota-next-20261018-01",
+  "source_files": 84,
+  "changed_paths": 6,
+  "planned_static_permissive_domains": [
+    "backuptool"
+  ],
+  "actual_ota_filesystem_guard_tests": 23,
+  "backuptool_enforcing_ready": false,
+  "phone_accessed": false,
+  "new_flash_or_reboot_or_enforcing_authorized": false,
+  "other_tasks_changed": false,
+  "time": 1792332898.8757718
+}

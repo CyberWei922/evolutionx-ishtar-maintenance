@@ -421,5 +421,47 @@
       }
     ],
     "external_proprietary_text_files": 2
+  },
+  "debug_ota_additions": {
+    "provenance": "provenance/debug-ota-source-files.json",
+    "reviewed_sources": [
+      {
+        "after_sha256": "76768b1fb6421b0ba7b1616711560c0d043eb77f9b32bfeac62663c9d16bafba",
+        "repository_path": "plans/selinux-debug-ota-20261018/sources/device/xiaomi/sm8550-common/init/init.qcom.rc",
+        "license": "BSD-3-Clause",
+        "upstream_head": "a27e05da9dea27a593deb11ba49e17dab39018c5"
+      },
+      {
+        "after_sha256": "aa76f7066105a118d49db01207791ee004bfff25df16a7248cc3c9412bc71bfe",
+        "repository_path": "plans/selinux-debug-ota-20261018/sources/device/qcom/sepolicy/generic/private/qti-testscripts.te",
+        "license": "BSD-3-Clause",
+        "upstream_head": "d903f8e1e0c47ef5a9df528ee98203cac6de6b43"
+      },
+      {
+        "after_sha256": "3deec2f59ae80024515373beca957499d55fe7b700bd2e10cae3e0dc9daf932b",
+        "repository_path": "plans/selinux-debug-ota-20261018/sources/device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/vendor-qti-testscripts.te",
+        "license": "BSD-3-Clause",
+        "upstream_head": "db3029437f1333528801d2ba815257287fa264aa"
+      },
+      {
+        "after_sha256": "1f5702997f5df6eda38f18f296284342c1336db907ffa7c43e07c937326cf473",
+        "repository_path": "plans/selinux-debug-ota-20261018/sources/system/sepolicy/private/su.te",
+        "license": "Apache-2.0 AND LicenseRef-AOSP-sepolicy-public-domain",
+        "upstream_head": "e631d35d7bd7b7993e84f3d49eeb34ec87dd1a27"
+      },
+      {
+        "after_sha256": "76e6ad6dee7a2a15cc3b70c9d50cce75fe189048498d30438fbf53fa39d7a4bb",
+        "repository_path": "plans/selinux-debug-ota-20261018/sources/system/update_engine/payload_consumer/postinstall_runner_action.cc",
+        "license": "Apache-2.0",
+        "upstream_head": "fc83053aa2a71885ba8615da9946033adf3462ce"
+      },
+      {
+        "after_sha256": "795f706cb268bf0addafff069d62f63eab3c469e9bf6b416f762c95231631be7",
+        "repository_path": "plans/selinux-debug-ota-20261018/sources/vendor/lineage/prebuilt/common/bin/backuptool_postinstall.sh",
+        "license": "Apache-2.0",
+        "upstream_head": "0ad4fa86fdaec71fa2daa8f0b59410dc93155ec5"
+      }
+    ],
+    "external_proprietary_text_uploaded": false
   }
 }
