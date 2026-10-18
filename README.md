@@ -1,14 +1,12 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
-最新安装仍为 **1792311835 / Permissive**。已完成一次有限运行时Enforcing操作测试并恢复Permissive，桌面与MIUI打开/1×和5×由机主确认正常；冷启动未验。下一候选恢复原版Settings，并修复相机HAL QSPM与CPU/IO PSI读取，见 [`plans/selinux-runtime-camera-stock-settings-20261018/`](plans/selinux-runtime-camera-stock-settings-20261018/)。
+最新安装：**1792325510 / Permissive**。原版Settings恢复、自定义维护者载荷缺席、48文件/21范围与7组新策略契约通过。开机安全日志已有限采集；新策略尚未做Enforcing冷启动。见 [`plans/selinux-runtime-camera-stock-settings-20261018/`](plans/selinux-runtime-camera-stock-settings-20261018/)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**
 
 ## 当前版本
 
-当前已安装Unofficial incremental **1792311835**，SELinux仍为 **Permissive**。50文件、21分区范围、19组新加载策略契约、目录标签/原模式、三条system启动参数和维护者资源核对通过；原9静态宽松域/KSU保持。有限运行时Enforcing操作结果已记录，回退存在电脑兜底参与的证据限制；没有冷启动Enforcing结果。
-
-本轮累计20路径/82输入，修复精确属性及诊断数据标签和启动属性归属，合入CyberWei维护者卡片/群组与本地收款图入口。保留此前相机、亮度和开机刷新率修复，相机性能参数未调整。旧完整ROM/暂存保留，等待正常使用反馈，本轮未清理。
+当前已安装Unofficial incremental **1792325510**，全局仍为 **Permissive**。恢复固定上游Settings，保留MIUI默认相机；五条legacy配置仅在system初始化。新增相机HAL QSPM标准客户端和MIUI CPU/IO PSI只读。实际镜像、启动、数据基线和新加载策略读回通过。旧1792311835短时Enforcing机主操作正常，新策略及冷启动仍待独立验证；回退计时器证据限制保持。
 
 camera03、MIUI默认入口、Recovery触控、自动亮度平滑、开机刷新率修复以及后续已安装SELinux增量完整保留。原accepted源码清单和验收标签仍描述1792226532；当前工作树由它叠加各累计计划复现。详见`docs/CURRENT_STATE.md`及各plan实际状态，不把旧未安装快照当最新结果。
 

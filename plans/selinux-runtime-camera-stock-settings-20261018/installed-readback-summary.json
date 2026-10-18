@@ -1,0 +1,132 @@
+{
+  "status": "INSTALLED_BOOTED_AND_AUTOMATED_READBACK_PASSED",
+  "baseline_incremental": "1792311835",
+  "candidate_incremental": "1792325510",
+  "rom": {
+    "ubuntu_path": "/mnt/android-download/delivery/ishtar-selinux-stock-settings-permissive-candidate-20261018-02/EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+    "file": "EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545440761,
+    "sha256": "25ac87915377aa8e914e4951bf170528a822df807127f6afccd0994e7e645796"
+  },
+  "source_files": 71,
+  "changed_paths": 17,
+  "policy_sha256": "ade0b38afe44ecd4a0afbd364978ffa6479c58b9ad5dbba8958420f801dfb818",
+  "effective_permission_additions": 13,
+  "effective_permission_removals": 0,
+  "payload_partitions_verified": 34,
+  "removed_maintainer_paths_verified_absent": [
+    "app/IshtarMaintainerInfo",
+    "overlay/IshtarMaintainerOverlay.apk"
+  ],
+  "settings_apk": {
+    "path": "system_ext/priv-app/Settings/Settings.apk",
+    "bytes": 95943189,
+    "sha256": "50cedf20dcdad7cf238b17ba58d5605c7de2fb0374a1d81964720f7ded57c9bc",
+    "signer_sha256": "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+  },
+  "system_only_legacy_values": {
+    "bluetooth.auto_connect_profiles.enabled": "true",
+    "bluetooth.profile.bap.unicast.server.enabled": "true",
+    "audio.sys.noisy.broadcast.delay": "600",
+    "audio.sys.offload.pstimeout.secs": "3",
+    "bluetooth.profile.tbs.server.enabled": "true"
+  },
+  "mode": "Permissive",
+  "original_static_permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "phone_installed": true,
+  "new_policy_enforcing_tested": false,
+  "cold_boot_enforcing_tested": false,
+  "baseline_short_enforcing_user_checks_recorded_separately": true,
+  "whole_ota_signature_independently_verified": false,
+  "next_rom_flash_and_first_normal_reboot_already_authorized": true,
+  "other_tasks_changed": false,
+  "installed_incremental": "1792325510",
+  "native_file_readbacks": 48,
+  "partition_range_readbacks": 21,
+  "loaded_new_contracts": 7,
+  "loaded_policy": {
+    "bytes": 2152221,
+    "sha256": "7d32c21a5832b15bf88b6694047c4756dcf2b31baedb6d4746428873372a649c"
+  },
+  "loaded_permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "ksu",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "command_attempts": 141,
+  "command_retries": 0,
+  "data_baseline_matches": {
+    "media_directory_stat": true,
+    "user_xml_owner_mode": true,
+    "third_party_package_count": true
+  },
+  "all_six_miui_default_routes_match": true,
+  "miui_domain_seen_in_initial_snapshot": false,
+  "wire_audit": {
+    "state": "write-transcript-verified",
+    "at": "2026-10-18T20:56:00.127084+08:00",
+    "completed_operations": 74,
+    "super_chunks": 59,
+    "boot_writes": 14,
+    "slot": "a",
+    "userdata_metadata_operations": 0,
+    "firmware_writes": 0,
+    "all_download_sizes_match": true,
+    "data_complete_count": 73,
+    "wire_sha256": "4029a7ee4ffd0fa988cb5cb4141a57968b05e51950c16d16e5a5123504b45964",
+    "reboot_acknowledged": false
+  },
+  "runtime_archive": {
+    "state": "RUNTIME_ARCHIVE_AND_FILES_MATCH",
+    "files": 30,
+    "archive_bytes": 1524234,
+    "archive_sha256": "ee86c70d4999d6f729cfe0c326eaa287f89ea2f6de0d7c8b046eb460b868bbe9",
+    "manual_checks_required": true,
+    "enforcing_trial": false
+  },
+  "early_boot_security_observation": {
+    "state": "complete",
+    "first_observed_uptime": 15.76,
+    "capture_started": 1792328203.4642978,
+    "finished": 1792328384.2231073,
+    "boot_completed_seen": true,
+    "retained_security_lines": {
+      "kernel": 105,
+      "logcat": 115
+    },
+    "stream_bytes": {
+      "kernel": 30717,
+      "logcat": 39593
+    },
+    "streams_capped": {
+      "kernel": false,
+      "logcat": false
+    },
+    "logs_claimed_complete": false,
+    "coverage_limit": "ADB/root availability, ring-buffer retention, audit rate limiting, stream caps and finite observation window; no zero-denial guarantee.",
+    "error": null,
+    "critical_process_change_count": 0,
+    "bounded_transport_failures": 0
+  },
+  "stock_settings_interactively_tested": true,
+  "flash_and_first_normal_reboot_authorization_consumed": true,
+  "additional_reboot_or_enforcing_authorized": false,
+  "old_roms_or_staging_deleted": false
+}

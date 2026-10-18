@@ -1,0 +1,110 @@
+{
+  "state": "FINITE_PERMISSIVE_BOOT_EVIDENCE_REVIEWED",
+  "incremental": "1792325510",
+  "mode": "Permissive",
+  "phone_mutated_by_assessment": false,
+  "first_live_state_uptime_seconds": 15.76,
+  "last_live_state_uptime_seconds": 195.97,
+  "live_state_samples": 32,
+  "boot_completed_first_sample_uptime": 26.83,
+  "critical_process_changes_observed": 0,
+  "transport_failures": 0,
+  "streams_capped": {
+    "kernel": false,
+    "logcat": false
+  },
+  "earlier_kernel_events_retained": true,
+  "continuous_observation_from_kernel_time_zero": false,
+  "audit_lost_max_observed_cumulative": 844,
+  "audit_loss_is_not_unique_denial_count": true,
+  "coverage_is_incomplete": true,
+  "counts_include_duplicate_events_across_buffers_and_snapshots": true,
+  "streams": {
+    "early-boot-security01/kernel-avc.log": {
+      "bytes": 30717,
+      "sha256": "98e4b00552455bab1f6047daf2c48be7f34cd6d2ba688a8c68fd7a6e7654fd9b",
+      "retained_security_lines": 105,
+      "denial_line_occurrences": 94
+    },
+    "early-boot-security01/logcat-avc.log": {
+      "bytes": 39593,
+      "sha256": "470536ab0ee7376ceb631274d228ac1527c139330e1379c1fa038c4ae2fb4812",
+      "retained_security_lines": 115,
+      "denial_line_occurrences": 115
+    },
+    "postboot01/kernel-avc.log": {
+      "bytes": 3559,
+      "sha256": "589cb9bd2e78e6d59149e5eaf97f8bde636b8900a99616fd04823c3b9c4b3e12",
+      "retained_security_lines": 19,
+      "denial_line_occurrences": 12
+    },
+    "postboot01/logcat-avc.log": {
+      "bytes": 158887,
+      "sha256": "cdd63cb1d9af6d77781df0ff7dbe295d3556d91651b3952ae647b0b0f2069cbd",
+      "retained_security_lines": 531,
+      "denial_line_occurrences": 524
+    }
+  },
+  "source_type_class_groups": 202,
+  "camera_property_file_type_groups": 172,
+  "no_automatic_allow_generation": true,
+  "new_policy_enforcing_tested": false,
+  "cold_boot_enforcing_tested": false,
+  "miui_dedicated_domain_in_initial_postboot_process_snapshot": false,
+  "miui_dedicated_domain_in_later_retained_security_log": true,
+  "later_domain_log_is_not_camera_function_or_algorithm_validation": true,
+  "remaining_work": [
+    {
+      "priority": 1,
+      "area": "legacy boot property ownership",
+      "targets": [
+        "bluetooth.profile.vc.server.enabled",
+        "ro.mediaserver.64b.enable",
+        "persist.radio.restart_rild"
+      ],
+      "decision": "Trace definition, consumer and existing initialization ownership before migrating or removing legacy assignments; do not grant vendor_init generic system-property access."
+    },
+    {
+      "priority": 1,
+      "area": "vendor-service exact property consumers",
+      "targets": [
+        "hal_fingerprint_default/system_prop",
+        "rild/default_prop",
+        "ro.vendor.oem.psno"
+      ],
+      "decision": "Property-area AVC is insufficient to identify the required key. Trace exact key and fallback or assign a justified exact type; no generic default/system-property grants."
+    },
+    {
+      "priority": 2,
+      "area": "already observed optional probes and startup paths",
+      "targets": [
+        "hal_sensors_default/default_prop",
+        "hal_secure_element_default/init_service_status_private_prop",
+        "vendor_modprobe/block_device"
+      ],
+      "decision": "Retain previous fallback evidence and check any concrete cold-start dependency separately. Permissive survival alone does not prove enforcing safety."
+    },
+    {
+      "priority": 2,
+      "area": "camera property enumeration",
+      "decision": "Many unrelated property areas were enumerated during HAL startup. Do not grant each area; distinguish enumeration failures from required key lookups."
+    },
+    {
+      "priority": 3,
+      "area": "diagnostic and third-party probes",
+      "targets": [
+        "shell getprop readback",
+        "untrusted battery/proc reads",
+        "Google private-property/device probes",
+        "/data/adb probes",
+        "audio debugfs"
+      ],
+      "decision": "No broad new access. Shell property denials overlap our automated readback and are diagnostic observer effects, not proof of a phone startup blocker."
+    },
+    {
+      "priority": 1,
+      "area": "enforcing completion gates",
+      "decision": "Original nine static permissive domains and dynamic KSU remain; a separately authorized controlled enforcing cold boot and scoped function checks are still required."
+    }
+  ]
+}

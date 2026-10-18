@@ -1,0 +1,24 @@
+{
+  "state": "complete",
+  "first_observed_uptime": 15.76,
+  "capture_started": 1792328203.4642978,
+  "finished": 1792328384.2231073,
+  "boot_completed_seen": true,
+  "retained_security_lines": {
+    "kernel": 105,
+    "logcat": 115
+  },
+  "stream_bytes": {
+    "kernel": 30717,
+    "logcat": 39593
+  },
+  "streams_capped": {
+    "kernel": false,
+    "logcat": false
+  },
+  "logs_claimed_complete": false,
+  "coverage_limit": "ADB/root availability, ring-buffer retention, audit rate limiting, stream caps and finite observation window; no zero-denial guarantee.",
+  "error": null,
+  "critical_process_change_count": 0,
+  "bounded_transport_failures": 0
+}

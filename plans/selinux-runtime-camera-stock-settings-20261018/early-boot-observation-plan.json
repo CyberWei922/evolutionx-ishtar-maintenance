@@ -1,5 +1,5 @@
 {
-  "state": "PREPARED_NOT_STARTED",
+  "state": "COMPLETE",
   "target_incremental": "1792325510",
   "normal_boot_authorization_already_recorded": true,
   "host_only": true,
@@ -18,5 +18,12 @@
   "starts_after_verified_new_normal_android_adb_root_available": true,
   "actual_coverage_will_record_first_uptime_and_loss_caps": true,
   "no_zero_denial_or_full_coverage_claim": true,
-  "observer_source_sha256": "4fd249e621ad49a716dff7413a7a2672d579164f2e39df0eab37e336e1aaa352"
+  "observer_source_sha256": "4fd249e621ad49a716dff7413a7a2672d579164f2e39df0eab37e336e1aaa352",
+  "actual_summary": "early-boot-observation-summary.json",
+  "security_assessment": "boot-security-assessment.json",
+  "observer_finished": true,
+  "first_observed_uptime": 15.76,
+  "last_observed_uptime": 195.97,
+  "original_authorized_normal_reboot_consumed": true,
+  "additional_reboot_or_enforcing_authorized": false
 }

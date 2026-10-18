@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 17339,
-      "sha256": "5e242e1733f630a630ddd13450989c1d9900f6bcc5541d25cf03099a009ba4f3"
+      "bytes": 17506,
+      "sha256": "54934d0ca19073aea711454f3e7996ed61342ddcb39315ad29368f682de1f9a5"
     },
     "LICENSE.md": {
       "bytes": 1395,
@@ -18,8 +18,8 @@
       "sha256": "91a3b9816688c64b3af3347dbd47e3986645773451a9a81073aed33cd1ebc5ec"
     },
     "README.md": {
-      "bytes": 3859,
-      "sha256": "1347138a9ad6ff79defefdb001638aa5f00b834edda1593216564d29f04acb5d"
+      "bytes": 3546,
+      "sha256": "a950b8d74842e1fb97f474d8d1b3b206204f9531d87872d901b35198c72e862a"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 26426,
-      "sha256": "7a574fe2800193d4b8843aa9392fa82bcadce9dc3178be1f6e8af26d32114f31"
+      "bytes": 29017,
+      "sha256": "dcf395e55af99d29c31c9b967dba67d05aca4af8c565b4e5c0c79cfc74efd9a5"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -918,12 +918,20 @@
       "sha256": "a5524a43f3b293cfa48469c6897df1094e272c1a68160d7a52668bf4cd1df9ba"
     },
     "plans/selinux-runtime-camera-stock-settings-20261018/README.md": {
-      "bytes": 3020,
-      "sha256": "f82b4134855360ec568e196262bc46874f935294044a0092adab7cd8b25a3f81"
+      "bytes": 5611,
+      "sha256": "9f11cf0b1a16c42c9ecd5bebbedc9245f253917c54976e9ee8dffa517ba942fb"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/boot-security-assessment.json": {
+      "bytes": 4377,
+      "sha256": "88868ed99fad9bb9ef89123f6ea83cd007e6c00446c50fc889b8e5cd29e67f14"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/boot-security-review.md": {
+      "bytes": 4067,
+      "sha256": "e4ba603d5f8252abf1e90c8d4e69ebd106f982cfc8dfb0ce7e8f513d112c9e9d"
     },
     "plans/selinux-runtime-camera-stock-settings-20261018/build-status.json": {
-      "bytes": 2058,
-      "sha256": "ddf2486dea7ee288065f14c594f57fa2457b0634d43086f74acd554781513eb1"
+      "bytes": 4560,
+      "sha256": "c192cfa637969c44fffb4c1da3a45e88fb218b2d0b64b7ba8ae96c0541f51cd8"
     },
     "plans/selinux-runtime-camera-stock-settings-20261018/candidate.patch": {
       "bytes": 19592,
@@ -934,8 +942,12 @@
       "sha256": "2cd6b0d5d437238e2c38e3b725a6bcb164fb11fea946ede0b53b84396f7f6d0e"
     },
     "plans/selinux-runtime-camera-stock-settings-20261018/early-boot-observation-plan.json": {
-      "bytes": 768,
-      "sha256": "e3dda50aa3ce4e02684c71ac105d6dcea73ac63591a5c394cb57c0ea2b3a2d11"
+      "bytes": 1078,
+      "sha256": "8a0f0a1dd2578a969b35ba64c44eca5266e1732b94767660a738c0bf25289ff3"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/early-boot-observation-summary.json": {
+      "bytes": 656,
+      "sha256": "6b491e3881bd91dee48b7a93a0517689086acdfabe3477f08c57c4baf7b9ca95"
     },
     "plans/selinux-runtime-camera-stock-settings-20261018/effective-permission-delta.json": {
       "bytes": 1525,
@@ -956,6 +968,14 @@
     "plans/selinux-runtime-camera-stock-settings-20261018/installed-baseline-short-enforcing-result.json": {
       "bytes": 1603,
       "sha256": "c24ca55a0aca5ad43627fb6c66af023c496ed7765cffe2d18c7d4991bc924a2b"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/installed-readback-summary.json": {
+      "bytes": 4560,
+      "sha256": "c192cfa637969c44fffb4c1da3a45e88fb218b2d0b64b7ba8ae96c0541f51cd8"
+    },
+    "plans/selinux-runtime-camera-stock-settings-20261018/owner-settings-acceptance.json": {
+      "bytes": 326,
+      "sha256": "7dfe1bcc7d500be7bfadc7a8cf9daee9c7a5efae883d07805acde94aea694a93"
     },
     "plans/selinux-runtime-camera-stock-settings-20261018/reproduce_external_config.py": {
       "bytes": 547,
@@ -1066,8 +1086,8 @@
       "sha256": "943fd975a9bbbc49c7f54734e14f2e76cb784598089f92cfb22d8657f178030f"
     },
     "provenance/runtime-camera-stock-source-files.json": {
-      "bytes": 3179,
-      "sha256": "7d1a6dca6cc341cd7edf940de8a68815cf207ab18145b2bc1b3c4c71fff79b93"
+      "bytes": 3186,
+      "sha256": "fdd4b20330d07be00e7d27bacfdf4bf1eb32078898a7e3a492bc8ff3019ce21b"
     },
     "provenance/sensitive-files-excluded.json": {
       "bytes": 2,

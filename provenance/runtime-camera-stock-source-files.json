@@ -1,5 +1,5 @@
 {
-  "status": "FINAL_ROM_BUILT_AND_STATICALLY_VERIFIED",
+  "status": "INSTALLED_BOOTED_AND_AUTOMATED_READBACK_PASSED",
   "baseline_incremental": "1792311835",
   "files": [
     {
