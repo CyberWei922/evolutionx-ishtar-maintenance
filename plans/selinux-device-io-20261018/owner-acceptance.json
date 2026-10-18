@@ -1,0 +1,15 @@
+{
+  "incremental": "1792266978",
+  "reply": "正常 但是为什么每次都要侧什么麦克风 指纹 本来不就是好的吗",
+  "accepted_scope": [
+    "Google account remains signed in and original apps/photos remain",
+    "MIUI photo and newly recorded video sound",
+    "Fingerprint unlock"
+  ],
+  "limits": [
+    "Only the requested checks, not all camera modes or GNSS performance",
+    "No Enforcing functional or cold-boot validation"
+  ],
+  "manual_test_preference": "Request only tests directly affected by this build; avoid repeating unchanged audio tests without a concrete regression signal",
+  "recorded_at": 1792298181.893493
+}

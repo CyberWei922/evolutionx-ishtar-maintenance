@@ -1,0 +1,83 @@
+{
+  "incremental": "1792266978",
+  "mode": "Permissive",
+  "scope": "Existing finite startup security snapshots only; no new phone sampling",
+  "limits": [
+    "Not complete denial coverage; callbacks may be suppressed",
+    "Zero retained AVC is not proof that all branches ran",
+    "Loaded policy contracts and actual labels verified separately",
+    "No Enforcing trial or camera-performance change"
+  ],
+  "logs": {
+    "kernel-avc": {
+      "retained_denials": 29,
+      "domains": {
+        "vendor_init": 3,
+        "vendor_modprobe": 1,
+        "toolbox": 1,
+        "mi_thermald": 2,
+        "bootanim": 1,
+        "hal_camera_default": 1,
+        "vendor_diag-router": 2,
+        "hal_fingerprint_default": 2,
+        "system_server": 4,
+        "rild": 2,
+        "priv_app": 4,
+        "system_app": 3,
+        "ishtar_miui_camera_app": 3
+      },
+      "audit_lost_max_observed": 775,
+      "direct_new_contract_denials": {
+        "GNSS_sensor_read": 0,
+        "Goodix_private_socket": 0,
+        "Mtd_attestation_output": 0,
+        "suspend_labeled_node": 0
+      },
+      "mtd_remaining": [],
+      "camera_hal_reads_of_new_status_type": 0
+    },
+    "logcat-avc": {
+      "retained_denials": 648,
+      "domains": {
+        "vendor_init": 4,
+        "vendor_modprobe": 1,
+        "toolbox": 1,
+        "hal_sensors_default": 4,
+        "hal_secure_element_default": 4,
+        "hal_camera_default": 566,
+        "vendor_qti_init_shell": 3,
+        "vendor_mtd": 1,
+        "surfaceflinger": 1,
+        "hal_audio_default": 2,
+        "mi_thermald": 4,
+        "bootanim": 1,
+        "vendor_diag-router": 2,
+        "hal_fingerprint_default": 4,
+        "rild": 12,
+        "system_server": 5,
+        "priv_app": 8,
+        "untrusted_app": 3,
+        "gmscore_app": 4,
+        "system_app": 3,
+        "ishtar_miui_camera_app": 15
+      },
+      "audit_lost_max_observed": 775,
+      "direct_new_contract_denials": {
+        "GNSS_sensor_read": 0,
+        "Goodix_private_socket": 0,
+        "Mtd_attestation_output": 0,
+        "suspend_labeled_node": 0
+      },
+      "mtd_remaining": [
+        {
+          "target": "vendor_mtd",
+          "class": "capability",
+          "permissions": "dac_read_search",
+          "events": 1
+        }
+      ],
+      "camera_hal_reads_of_new_status_type": 3
+    }
+  },
+  "miui_domain_seen_in_startup_avc": true
+}

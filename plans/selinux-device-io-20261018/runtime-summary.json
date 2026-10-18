@@ -1,0 +1,131 @@
+{
+  "status": "INSTALLED_BOOTED_READBACK_AND_OWNER_CHECKS_PASSED",
+  "incremental": "1792266978",
+  "mode": "Permissive",
+  "native_files_verified": 44,
+  "partition_ranges_verified": 21,
+  "data_baseline_matches": {
+    "media_directory_stat": true,
+    "user_xml_owner_mode": true,
+    "third_party_package_count": true
+  },
+  "disk_policy_sha256": "1e158ee4b36d7c0847fc1888a7afcbd8a4c9d5742c9247bba46013a363f024d6",
+  "loaded_policy": {
+    "bytes": 2151822,
+    "sha256": "7fa98cac142459ff2853f29a792484f8e2a711f30d38ecee5ecf460a65f66efe"
+  },
+  "loaded_permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "ksu",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "library_label_verified": true,
+  "rkp_property_label_verified": true,
+  "all_six_camera_default_routes_match": true,
+  "miui_dedicated_domain_seen": false,
+  "camera_audio_ignore_absent": true,
+  "dsp_service_process_seen": true,
+  "dsp_hidl_registered": true,
+  "runtime_dsp_hal_fallback_proven": false,
+  "owner_checks_pending": false,
+  "enforcing_trial_performed": false,
+  "normal_reboot_count": 1,
+  "wire_audit": {
+    "state": "write-transcript-verified",
+    "at": "2026-10-18T12:31:25.054724+08:00",
+    "completed_operations": 74,
+    "super_chunks": 59,
+    "boot_writes": 14,
+    "slot": "a",
+    "userdata_metadata_operations": 0,
+    "firmware_writes": 0,
+    "all_download_sizes_match": true,
+    "data_complete_count": 73,
+    "wire_sha256": "ad3d2333354b1f758f6540dacd50e29c0cfa0e4898539ee367f67044d37c5258",
+    "reboot_acknowledged": false
+  },
+  "raw_logs_or_policy_binary_in_git": false,
+  "mtd_property_contexts": {
+    "persist.vendor.sys.pay.widevine": "u:object_r:vendor_mtd_widevine_prop:s0",
+    "vendor.sys.rpmb_state": "u:object_r:vendor_mtd_rpmb_prop:s0",
+    "persist.vendor.sys.provision.status": "u:object_r:vendor_mtd_provision_status_prop:s0",
+    "vendor.sys.feature_state": "u:object_r:vendor_mtd_feature_state_prop:s0",
+    "persist.vendor.sys.rkp.status": "u:object_r:vendor_mtd_rkp_status_prop:s0",
+    "persist.vendor.sys.attestation.status": "u:object_r:vendor_mtd_attestation_status_prop:s0"
+  },
+  "loaded_device_io_contracts": [
+    {
+      "source": "vendor_hal_gnss_qti",
+      "target": "vendor_sensors_prop",
+      "class": "file",
+      "permissions": [
+        "getattr",
+        "map",
+        "open",
+        "read"
+      ],
+      "matches": true
+    },
+    {
+      "source": "vendor_hal_gnss_qti",
+      "target": "vendor_sensors_prop",
+      "class": "property_service",
+      "permissions": [],
+      "matches": true
+    },
+    {
+      "source": "hal_fingerprint_default",
+      "target": "hal_fingerprint_default",
+      "class": "netlink_socket",
+      "permissions": [
+        "bind",
+        "create",
+        "read",
+        "write"
+      ],
+      "matches": true
+    },
+    {
+      "source": "vendor_mtd",
+      "target": "vendor_mtd_attestation_status_prop",
+      "class": "property_service",
+      "permissions": [
+        "set"
+      ],
+      "matches": true
+    },
+    {
+      "source": "vendor_mtd",
+      "target": "vendor_system_prop",
+      "class": "property_service",
+      "permissions": [],
+      "matches": true
+    }
+  ],
+  "spi_wakeup_labels": [
+    "u:object_r:sysfs_wakeup:s0 /sys/devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.spi/spi_master/spi1/spi1.0/wakeup/wakeup28/name"
+  ],
+  "device_io_process_snapshot": [
+    "u:r:vendor_hal_gnss_qti:s0     gps           1442     1   11539964  18976 binder_thread_read  0 S android.hardware.gnss-aidl-service-qti",
+    "u:r:hal_fingerprint_default:s0 system        2491     1   11040480   9616 binder_thread_read  0 S android.hardware.biometrics.fingerprint-service.xiaomi"
+  ],
+  "google_account_or_credentials_read": false,
+  "fresh_data_baseline_after_google_login": true,
+  "phone_installed": true,
+  "owner_acceptance_record": "owner-acceptance.json",
+  "owner_confirmed_scope": [
+    "Google account remains signed in and original apps/photos remain",
+    "MIUI photo and newly recorded video sound",
+    "Fingerprint unlock"
+  ],
+  "miui_ps_snapshot_seen": false,
+  "miui_domain_seen_in_startup_avc": true,
+  "manual_test_preference": "Request only tests directly affected by this build; avoid repeating unchanged audio tests without a concrete regression signal"
+}

@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 10214,
-      "sha256": "ee8b00995fcaef84ad158f3386c817c164170163838ebacdb33be831a8027eb1"
+      "bytes": 11907,
+      "sha256": "917b26cc299294fe350795ba646d7a9765031b6ba9bf787b8683d94242a35787"
     },
     "LICENSE.md": {
       "bytes": 1395,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 12677,
-      "sha256": "0bdf759b764b96f11433ebc3c0fb53f1cc389cee681a82b23f3e056ce8e51550"
+      "bytes": 13603,
+      "sha256": "1918fdaa75b4cbbcf7e087c9b1d1a304015fcca029db3cdb7a926b65cfb1d42c"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -466,12 +466,12 @@
       "sha256": "4e7ad5c21291ceaa473b21845f5ad820c9dc735601594c93f8b4c42afb1c756e"
     },
     "plans/selinux-device-io-20261018/README.md": {
-      "bytes": 3582,
-      "sha256": "41d4e75810c95ff7266995146acd4418392617bee625d698667c2772a647b9a8"
+      "bytes": 5696,
+      "sha256": "b9522cad418ed05f531a70244f5127c68c588aeaaf4e9c818092536e4aa252e4"
     },
     "plans/selinux-device-io-20261018/build-status.json": {
-      "bytes": 855,
-      "sha256": "b956ee02cae15db14bb3d2848f60ebba64696d2fc582bb0fbcaf4218451f16f8"
+      "bytes": 1206,
+      "sha256": "e3880e2ef4a61fd072d764d18ead513c186a759b7d7d5bcbf675c54b308c51ca"
     },
     "plans/selinux-device-io-20261018/candidate.patch": {
       "bytes": 2679,
@@ -485,6 +485,10 @@
       "bytes": 291,
       "sha256": "b208712681410cf3a35fb00e7e7ed495c3e31217668e8980ac0e777626c6eb95"
     },
+    "plans/selinux-device-io-20261018/installed-acceptance-summary.json": {
+      "bytes": 2861,
+      "sha256": "f6dd7522bdae3a492c215068477e3493919ed55bf3ded57583792c29e17a708a"
+    },
     "plans/selinux-device-io-20261018/mtd-attestation-analysis-next.json": {
       "bytes": 1251,
       "sha256": "36b0fe80ded96dfb4f52799fd64553c3390b8c7422446128abf3e1f7d4523d91"
@@ -493,9 +497,17 @@
       "bytes": 19334,
       "sha256": "aa2c3ba5f1e24625c8bcb5ae5a95bcd713fc0eb2f63fa033e116596c9bcdf613"
     },
+    "plans/selinux-device-io-20261018/owner-acceptance.json": {
+      "bytes": 648,
+      "sha256": "d015fa3c779b329ccee5335ba6b52345beec0feafb257b8e0a99a72d02113b64"
+    },
     "plans/selinux-device-io-20261018/rom-build-summary.json": {
-      "bytes": 2759,
-      "sha256": "b70e563f4a485e806e5f170ef895683ac4c42789f733307b390041eae389777c"
+      "bytes": 3173,
+      "sha256": "bdff8df058af8bd4d9f47853dd1f3a9ae2f4eb0d1a92c544b030d75a5c6debf5"
+    },
+    "plans/selinux-device-io-20261018/runtime-summary.json": {
+      "bytes": 4422,
+      "sha256": "2df811fe5ed91a8fe7cd77e71f802c5f728a7dfbcf532c61b5528d0409683f0f"
     },
     "plans/selinux-device-io-20261018/source-baselines.json": {
       "bytes": 2139,
@@ -524,6 +536,10 @@
     "plans/selinux-device-io-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/vendor_mtd.te": {
       "bytes": 2617,
       "sha256": "5c00ce4272fc29fc092368b61e0037d9f190172d7c0abbe5e39337d3a6517ace"
+    },
+    "plans/selinux-device-io-20261018/startup-avc-summary.json": {
+      "bytes": 2375,
+      "sha256": "fd0949ce188e4835bc8ddd3806f1a56e39a6093fad1ccda5c90c92fc42b3b59d"
     },
     "plans/selinux-device-io-20261018/working-source-files.json": {
       "bytes": 10937,
@@ -666,8 +682,8 @@
       "sha256": "acfeaf58b7c04c0e83255fe0be8da3b5939e77b1064b97ab25967a814eb0e3ec"
     },
     "provenance/device-io-source-files.json": {
-      "bytes": 3306,
-      "sha256": "d4c55f2fdf16061db8bb8a6a66e6c56aec90c1a787ee220c4a7ab375fbc0cb7f"
+      "bytes": 3482,
+      "sha256": "e7aefe1862ef2a9e898f29e39f4e4429191a5619e85ab546d9461a1456b9ce8f"
     },
     "provenance/excluded-camera-recipes.json": {
       "bytes": 1236,

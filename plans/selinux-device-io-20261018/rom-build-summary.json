@@ -1,5 +1,5 @@
 {
-  "status": "FULL_ROM_BUILT_ACTUAL_IMAGES_STATIC_UPGRADE_VERIFIED_NOT_INSTALLED",
+  "status": "INSTALLED_BOOTED_READBACK_AND_OWNER_CHECKS_PASSED",
   "candidate_incremental": "1792266978",
   "installed_baseline_incremental": "1792261801",
   "rom": {
@@ -43,9 +43,9 @@
   "protected_camera_recovery_brightness_surfaceflinger_kernel_ksu_checks": true,
   "static_data_preserving_upgrade_precheck_passed": true,
   "whole_ota_signature_independently_verified": false,
-  "phone_installed": false,
-  "phone_rebooted": false,
-  "runtime_validation_pending": true,
+  "phone_installed": true,
+  "phone_rebooted": true,
+  "runtime_validation_pending": false,
   "enforcing_trial_performed": false,
   "enforcing_ready": false,
   "unrelated_tasks_changed": false,
@@ -56,5 +56,15 @@
     "Other required-feature denials and secure XDSP/HAL fallback",
     "Original nine static permissive domains and KSU exception",
     "Separately authorized short Enforcing trial then cold boot validation"
+  ],
+  "additional_flash_or_reboot_requires_new_authorization": true,
+  "flash_and_first_normal_reboot_authorization_consumed": true,
+  "owner_checks_pending": false,
+  "runtime_readbacks_passed": true,
+  "owner_acceptance_record": "owner-acceptance.json",
+  "owner_confirmed_scope": [
+    "Google account remains signed in and original apps/photos remain",
+    "MIUI photo and newly recorded video sound",
+    "Fingerprint unlock"
   ]
 }

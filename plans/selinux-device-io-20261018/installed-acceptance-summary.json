@@ -1,0 +1,75 @@
+{
+  "status": "INSTALLED_READBACK_AND_OWNER_CHECKS_PASSED",
+  "incremental": "1792266978",
+  "accepted_scope": [
+    "Google account remains signed in and original apps/photos remain",
+    "MIUI photo and newly recorded video sound",
+    "Fingerprint unlock"
+  ],
+  "data_baseline_matches": {
+    "media_directory_stat": true,
+    "user_xml_owner_mode": true,
+    "third_party_package_count": true
+  },
+  "mode": "Permissive",
+  "disk_policy_sha256": "1e158ee4b36d7c0847fc1888a7afcbd8a4c9d5742c9247bba46013a363f024d6",
+  "loaded_policy": {
+    "bytes": 2151822,
+    "sha256": "7fa98cac142459ff2853f29a792484f8e2a711f30d38ecee5ecf460a65f66efe"
+  },
+  "loaded_permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "ksu",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "native_files": 44,
+  "partition_ranges": 21,
+  "command_attempts": 120,
+  "transport_retries": 0,
+  "all_camera_default_routes_match": true,
+  "mtd_property_labels": 6,
+  "loaded_device_io_contracts_verified": true,
+  "spi_wakeup_label_verified": true,
+  "miui_domain_in_ps_snapshot": false,
+  "miui_domain_in_startup_avc": true,
+  "runtime_dsp_hal_fallback_proven": false,
+  "enforcing_trial_performed": false,
+  "runtime_archive_sha256": "f24752a15c1d14c15fee8cc7ed246bdc74008790476d7f4e1989098b0b58766b",
+  "retained_roms": [
+    {
+      "path": "/mnt/android-download/delivery/ishtar-selinux-device-io-permissive-candidate-20261018-01/EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+      "incremental": "1792266978",
+      "bytes": 4545439425,
+      "sha256": "5021325057439cbbca4a35f89cb32c24575ebc5ebeefe2da3994f96e3c28b19b"
+    },
+    {
+      "path": "/mnt/android-download/delivery/ishtar-selinux-dependency-status-permissive-candidate-20261018-01/EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+      "incremental": "1792261801",
+      "bytes": 4545440201,
+      "sha256": "2bff039e93f5bec2ddc1e6c255d3300e4c7f65afa48354769cfb3456748b5ca0"
+    }
+  ],
+  "deleted_paths": [
+    "/mnt/android-build/Android/out/evolution-bka/target/product/ishtar/EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip",
+    "/mnt/android-build/Android/flash-staging/ishtar-selinux-device-io-20261018-01",
+    "/mnt/android-download/delivery/ishtar-camera-dsp-permissive-candidate-20261018-01/EvolutionX-16.0-20261018-ishtar-11.12-Unofficial.zip"
+  ],
+  "freed_GiB": {
+    "SSD": 26.86,
+    "HDD": 4.23
+  },
+  "free_GiB_after": {
+    "SSD": 154.52,
+    "HDD": 243.79
+  },
+  "retained_full_rom_hashes_recomputed_during_cleanup": false,
+  "manual_test_preference": "Request only tests directly affected by this build; avoid repeating unchanged audio tests without a concrete regression signal",
+  "raw_phone_logs_or_policy_binary_in_git": false
+}

@@ -1,6 +1,12 @@
 # 当前维护状态
 
-2026-10-18，Xiaomi 13 Ultra / ishtar，Evolution X Android 16 / SDK36，当前已安装版本1792261801，Unofficial。上一验收源码基线为1792226532。
+2026-10-18，Xiaomi 13 Ultra / ishtar，Evolution X Android 16 / SDK36，当前已安装版本1792266978，Unofficial。上一验收源码基线为1792226532。
+
+## 当前安装与验收入口（2026-10-18）
+
+1792266978已保留数据刷入并正常启动，44文件/21分区范围匹配，新Mtd精确属性、GNSS/Goodix实际加载权限及SPI wakeup标签通过。机主确认所问Google账号/原应用照片、MIUI拍照新录像收音、指纹正常。仍全局Permissive，原9静态宽松域+ksu保持，没有Enforcing试验。当前62项源码入口为plans/selinux-device-io-20261018/working-source-files.json，安装/验收摘要见同plan的installed-acceptance-summary.json。
+
+本轮所有有限worker已结束。完整ROM只保留1792266978和1792261801，旧1792257806 ZIP、自己的已完成刷写暂存及重复输出已删；SSD/HDD空闲154.52/243.79GiB，保留源码/闭源依赖/增量缓存。以下旧阶段状态保留历史，当前入口以上述本节为准。机主要求只测直接受影响项，避免无依据重复麦克风/全套硬件验收。
 
 ## 已完成并保留
 

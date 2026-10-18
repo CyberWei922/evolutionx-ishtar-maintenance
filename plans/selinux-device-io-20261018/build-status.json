@@ -1,10 +1,10 @@
 {
-  "status": "FULL_ROM_BUILT_ACTUAL_IMAGES_STATIC_UPGRADE_VERIFIED_NOT_INSTALLED",
+  "status": "INSTALLED_BOOTED_READBACK_AND_OWNER_CHECKS_PASSED",
   "baseline_incremental": "1792261801",
   "job": "device-io-rom-build-01",
   "source_files": 62,
   "component_verified": true,
-  "phone_installed": false,
+  "phone_installed": true,
   "enforcing_trial": false,
   "own_resources": "CPU6/7 nice10 ionice2/7 Ninja2 GOMAXPROCS2",
   "other_tasks_changed": false,
@@ -19,5 +19,14 @@
   "actual_image_checks_complete": true,
   "static_upgrade_checks_complete": true,
   "runtime_validation_pending": true,
-  "enforcing_ready": false
+  "enforcing_ready": false,
+  "flash_and_first_normal_reboot_authorization_consumed": true,
+  "owner_checks_pending": false,
+  "owner_acceptance_record": "owner-acceptance.json",
+  "owner_confirmed_scope": [
+    "Google account remains signed in and original apps/photos remain",
+    "MIUI photo and newly recorded video sound",
+    "Fingerprint unlock"
+  ],
+  "enforcing_trial_performed": false
 }

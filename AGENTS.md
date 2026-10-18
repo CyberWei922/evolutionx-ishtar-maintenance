@@ -48,3 +48,13 @@ This is an incremental maintenance source repository for Xiaomi 13 Ultra (ishtar
 ## Device-I/O complete candidate (latest)
 
 - Complete candidate 1792266978 is built and archived, with 34 actual payload partitions, 62 pinned sources, exact policy and retained GNSS/Goodix/Mtd plus accepted payload checks passed. Static preserve-data upgrade checks passed; whole OTA signature was not independently verified cryptographically. See plans/selinux-device-io-20261018/rom-build-summary.json. All computer workers ended. Phone is still owner-tested1792261801/Permissive; this candidate is not installed and no Enforcing trial occurred. New flash/reboot and Enforcing require separate specific authorization. Keep both installed rollback ROMs until new owner checks; never replay deleted flash scratch.
+
+## Owner acceptance scope preference (2026-10-18)
+
+- Request manual checks only for features directly affected by the current build and a concrete remaining runtime risk. Do not repeat microphone tests when audio was unchanged and no new recording issue exists. Fingerprint rechecks need a related policy/driver/kernel or Enforcing change and a brief reason. Use automated byte/label/loaded-policy/data-baseline readback for checks it can cover. Do not repeat the previously accepted full hardware checklist for every Permissive package.
+
+## 1792266978 installed and accepted (latest)
+
+- Phone is1792266978/Permissive. The newly authorized flash and first normal reboot completed with 74 operations/73 downloads, 44 file and21 partition-range matches, exact new loaded-policy contracts and SPI wakeup label verified. Owner confirmed the requested Google-account/data, MIUI photo/new video audio and fingerprint checks normal. Do not expand to GNSS performance/all modes or Enforcing. All finite workers ended; raw runtime24-item archive stays local.
+- Complete ROMs retained:1792266978 and1792261801. Older1792257806 ZIP, completed own flash staging and duplicate output ZIP were removed after both-host evidence verification and owner checks. Deleted staging cannot be replayed; source/.repo/blobs/current build cache remain. Authorization is consumed; no extra reboot or Enforcing is implied.
+- Initial ps snapshot lacked MIUI process, while startup AVC shows the dedicated MIUI domain. Keep those observations distinct. Audit-lost775 means no complete denial coverage. Mtd DAC, camera enumeration/other necessary-function denials and original permissive domains still require scoped work.
