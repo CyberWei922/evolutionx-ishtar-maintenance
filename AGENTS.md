@@ -1,5 +1,13 @@
 # ishtar maintenance repository
 
+## Boot ownership/test-domain components (current working input)
+
+- Current source is plans/selinux-boot-contracts-20261018/working-source-files.json:78 pinned inputs,10 paths over installed1792325510. Component policy0527e362… is verified; five optional test-domain permissive declarations are removed with all other exported CIL lines unchanged. Candidate static domains are backuptool,qti-testscripts,vendor-qti-testscripts,su. KernelSU is unchanged.
+- Current phone remains1792325510/Permissive with the original nine static domains; the new batch is not a complete ROM or installed. The owner chose source repairs and declined another runtime switch for now. Do not start Enforcing, reboot or flash, and do not reuse expired guard tokens.
+- Two legacy true values move to system initialization; two radio restart triggers move to core init while vendor services/commands remain unchanged. Preserve all accepted camera/brightness/Recovery/refresh/Settings payloads. Reviewed sources and Apache/BSD notices are in provenance/boot-contracts-source-files.json. Full vendor.prop/qcrilNrd.rc, binaries and original logs stay external.
+- All finite build/audit/preflight workers ended. The completed1792325510 SSD flash scratch and duplicate output ZIP were deleted after both-host evidence verification; never replay that old runner. Complete ROMs and active build cache remain. Leave unrelated Ubuntu work alone.
+
+
 ## Stock Settings and runtime-camera batch (current working input)
 
 - Use plans/selinux-runtime-camera-stock-settings-20261018/working-source-files.json:71 pinned inputs,17 paths over installed1792311835. Remove custom maintainer APP/RRO/resources and restore upstream Settings; preserve IshtarCameraDefaults and all accepted payloads.

@@ -1,5 +1,7 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
+下一批源码/组件已完成：**78 项输入、10 路径，候选静态宽松域 9→4**，未安装、未打完整 ROM；手机仍1792325510/Permissive。见 [`plans/selinux-boot-contracts-20261018/`](plans/selinux-boot-contracts-20261018/)。
+
 最新安装：**1792325510 / Permissive**。原版Settings恢复、自定义维护者载荷缺席、48文件/21范围与7组新策略契约通过。开机安全日志已有限采集；新策略尚未做Enforcing冷启动。见 [`plans/selinux-runtime-camera-stock-settings-20261018/`](plans/selinux-runtime-camera-stock-settings-20261018/)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**

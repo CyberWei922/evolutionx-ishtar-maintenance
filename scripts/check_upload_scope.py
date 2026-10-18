@@ -25,6 +25,15 @@ for inventory in ['candidate-source-files.json','next-source-files.json','framew
   assert p.resolve().is_relative_to(r/'plans') and not p.is_symlink(),p
   assert p.stat().st_size==row['bytes'] and hashlib.sha256(p.read_bytes()).hexdigest()==row['sha256'],p
   assert Path(str(p)+'.license').is_file() and row['license']=='Apache-2.0',p
+boot=r/'provenance/boot-contracts-source-files.json'
+if boot.exists():
+ for row in json.loads(boot.read_text())['files']:
+  p=r/row['repository_path']
+  assert p.resolve().is_relative_to(r/'plans/selinux-boot-contracts-20261018/sources') and not p.is_symlink(),p
+  b=p.read_bytes();assert len(b)==row['bytes'] and hashlib.sha256(b).hexdigest()==row['sha256'],p
+  assert Path(str(p)+'.license').is_file() and row['license'] in ['Apache-2.0','BSD-3-Clause'],p
+  if row['license']=='BSD-3-Clause':
+   assert b'The Linux Foundation' in b and b'Redistribution and use in source and binary forms' in b and b'THIS SOFTWARE IS PROVIDED' in b,p
 for p in r.rglob('*'):
  if not p.is_file() or '.git' in p.relative_to(r).parts:continue
  assert p.suffix.lower() not in ['.apk','.img','.zip','.ko','.so','.dex','.pk8','.key','.jks','.keystore','.p12','.pfx'],p

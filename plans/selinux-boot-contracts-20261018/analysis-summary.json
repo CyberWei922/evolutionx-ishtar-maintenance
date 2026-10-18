@@ -1,0 +1,36 @@
+{
+  "state": "BOUNDED_STATIC_EVIDENCE_REVIEWED",
+  "baseline_incremental": "1792325510",
+  "fingerprint": {
+    "artifact_sha256": "3d375442f6fd24ef11c7a4bc8f0f5ba80c15dc06d953ce80d414bb1078f62576",
+    "observed_getter": "sys.panel.touch_vendor",
+    "getter_call_address": "0x42cd4",
+    "failure_info_placeholder_address": "0x42d14",
+    "failure_info_placeholder_value": "0xF",
+    "observation": "The identified information-field getter has an empty/failure branch that continues with a placeholder.",
+    "not_proven": "Four property-area AVCs lack key/stack, so this is not unique runtime attribution or a full authentication/fallback guarantee.",
+    "display_getter_correction": "vendor.panel.display is the real second getter; sys.panel.display appears only in an error message.",
+    "decision": "Do not grant generic system_prop reads or migrate a sys. property without an authoritative producer/consumer contract."
+  },
+  "ril_psno": {
+    "artifact_sha256": "afd6b74896c8c5598778875d47b23298e6c9e39bf898a869d203b09f8e9cd108",
+    "function": "get_psno() at 0x3a6020",
+    "property_set_call": "0x3a612c",
+    "observation": "property_set return is not checked before the epilogue; bounded unpacked ELF scan did not identify a separate literal consumer.",
+    "decision": "Retain generic vendor_default_prop write denial; this does not prove all possible external consumers absent."
+  },
+  "remaining_rild_default_property_read": "No exact key/stack yet; unresolved, no generic default_prop permission granted.",
+  "test_domain_evidence": {
+    "current_staged_apks_parsed": 212,
+    "six_target_package_names_matched": 0,
+    "debugutils_service_absent_in_current_frozen_vendor_image": true,
+    "absence_does_not_cover_future_signed_app_installs": true,
+    "aoncameraservice_app_maps_to": "com.qualcomm.aontest, not the generic AON HAL or camera libraries"
+  },
+  "raw_evidence_digests": {
+    "fingerprint_analysis_sha256": "9fff264b2fa6752e945f0dfbb8212c7e23a5fd4fe4e735cdd58939205fb4439e",
+    "static_domains_analysis_sha256": "cffc02250c32fe0cfff46c573e586884d4e1175a4ec409397c5532b1b6db359f"
+  },
+  "raw_vendor_binaries_disassembly_or_phone_logs_in_repository": false,
+  "cold_boot_enforcing_tested": false
+}

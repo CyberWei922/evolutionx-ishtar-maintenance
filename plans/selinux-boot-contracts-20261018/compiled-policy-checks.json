@@ -1,0 +1,86 @@
+{
+  "state": "BOOT_CONTRACT_COMPONENTS_COMPILED_AND_VERIFIED",
+  "baseline_incremental": "1792325510",
+  "policy_sha256": "0527e36204650c33bccb04ee6dee41436f8613c982a68a4ea18d02130e9059da",
+  "policy_bytes": 1604918,
+  "source_files_verified": 78,
+  "changed_paths": 10,
+  "effective_allow_additions": 0,
+  "effective_allow_removals": 0,
+  "complete_exported_policy_delta_only_five_typepermissive_removals": true,
+  "static_permissive_domains": [
+    "backuptool",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts"
+  ],
+  "removed_static_permissive_domains": [
+    "aoncameraservice_app",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "file_property_contexts_types_genfs_xperm_unchanged": true,
+  "legacy_system_values": {
+    "bluetooth.auto_connect_profiles.enabled": "true",
+    "bluetooth.profile.bap.unicast.server.enabled": "true",
+    "audio.sys.noisy.broadcast.delay": "600",
+    "audio.sys.offload.pstimeout.secs": "3",
+    "bluetooth.profile.tbs.server.enabled": "true",
+    "bluetooth.profile.vc.server.enabled": "true",
+    "ro.mediaserver.64b.enable": "true"
+  },
+  "actual_property_placement": {
+    "bluetooth.auto_connect_profiles.enabled": [
+      {
+        "partition": "system",
+        "value": "true"
+      }
+    ],
+    "bluetooth.profile.bap.unicast.server.enabled": [
+      {
+        "partition": "system",
+        "value": "true"
+      }
+    ],
+    "audio.sys.noisy.broadcast.delay": [
+      {
+        "partition": "system",
+        "value": "600"
+      }
+    ],
+    "audio.sys.offload.pstimeout.secs": [
+      {
+        "partition": "system",
+        "value": "3"
+      }
+    ],
+    "bluetooth.profile.tbs.server.enabled": [
+      {
+        "partition": "system",
+        "value": "true"
+      }
+    ],
+    "bluetooth.profile.vc.server.enabled": [
+      {
+        "partition": "system",
+        "value": "true"
+      }
+    ],
+    "ro.mediaserver.64b.enable": [
+      {
+        "partition": "system",
+        "value": "true"
+      }
+    ]
+  },
+  "actual_init_source_bytes_and_parser_checks_passed": true,
+  "phone_installed": false,
+  "full_rom_built": false,
+  "enforcing_trial_performed": false,
+  "global_phone_mode": "Permissive",
+  "ksu_changed": false,
+  "other_tasks_changed": false,
+  "time": 1792330263.6548536
+}

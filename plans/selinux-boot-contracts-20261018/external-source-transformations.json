@@ -1,0 +1,20 @@
+{
+  "baseline_incremental": "1792325510",
+  "license_scope": "External original/derived text is intentionally omitted; only exact path, hashes and minimal transformation recipe are provided.",
+  "files": [
+    {
+      "path": "device/xiaomi/sm8550-common/configs/properties/vendor.prop",
+      "before_sha256": "6dfe2a638308282f7dadd88148c0b2208364501beca75d7375d22fdf06f7eb38",
+      "after_sha256": "03a192e5bfae5df15cbfaf2e1be09a91aed131d568be234a31ab3c0b19fafeb5",
+      "bytes": 8069,
+      "new_file": false
+    },
+    {
+      "path": "vendor/xiaomi/sm8550-common/proprietary/vendor/etc/init/qcrilNrd.rc",
+      "before_sha256": "6e1238fe5db4cb0ecf9fa34c74d2cf5a14a8d6341cc4e71b582f4d67fae4aec5",
+      "after_sha256": "a14642d2657bd662f9c21682e9be91268e700ef8a1b408c2ad2c3d3670f0e6ab",
+      "bytes": 1994,
+      "new_file": false
+    }
+  ]
+}

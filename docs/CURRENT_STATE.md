@@ -1,5 +1,14 @@
 # 当前维护状态
 
+## 开机属性/测试域组件核验完成；手机模式未切换（最新）
+
+78源/10路径新批正常编译07:53/exit0，verified01与审计worker complete。策略0527e36204650c33bccb04ee6dee41436f8613c982a68a4ea18d02130e9059da/1,604,918 bytes；完整CIL差异仅5条typepermissive删除，allow增删0、上下文/类型/genfs/ioctl保持。两条旧true值system初始化、radio两触发器core-init归属、实际复制字节及7条system-only值通过；其他保护载荷保持。候选剩4静态宽松域，KSU未改，不称全部修完。
+
+正式组件交接Mac/Ubuntu delivery/ishtar-selinux-boot-contracts-components-20261018-01，125项一致，归档1,884,308 bytes/SHA eb52ea9c8914312c07baaaf2996f9e15349e732cffc0e5d181c54239fba9eb8e。它不是完整ROM或可刷写包。活动源码是boot-contracts控制目录78项；旧71项只描述已安装1792325510。机主选择暂不切换，手机仍1792325510/Permissive及原9静态宽松域；新组件未安装/未做E或冷启动，禁止把候选4域写成手机状态。本轮所有有限worker已结束，没有额外刷写/重启授权。
+
+指纹仅证实具体信息getter失败占位分支，不唯一归因所有AVC；RIL psno输出返回未检查，不等于所有消费者不存在。继续保持generic属性/DSP边界，剩4测试/调试/OTA域单独处理。首轮source查询在非独立Git目录停止；已补有界文件扫描，原记录保留。首次host_init_verifier按其帮助文案使用下划线选项被CLI拒绝；按实际源码换成连字符后verified02通过，没有因此放宽策略。已删除的旧SSD暂存不再可用，正式ROM/源码/增量缓存保持。
+
+
 ## 1792325510设置回退验收、开机日志收尾（最新）
 
 机主确认“已恢复原版界面，正常”，只记设置回退通过。有限开机采集已 complete 并结束：32 状态样本至 uptime195.97秒，核心三进程PID无变化、无传输失败/流截断；缓冲区含更早日志，但 audit_lost最大844和速率限制使覆盖不全，不称零拒绝。Mac/Ubuntu的30文件运行证据归档一致（1,524,234 bytes/SHA ee86c70d4999d6f729cfe0c326eaa287f89ea2f6de0d7c8b046eb460b868bbe9）。所有本轮有限worker已结束，手机无需继续连接USB。

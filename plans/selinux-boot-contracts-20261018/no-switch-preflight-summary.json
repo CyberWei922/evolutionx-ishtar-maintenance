@@ -1,0 +1,15 @@
+{
+  "state": "NO_SWITCH_PREFLIGHT_PASSED",
+  "incremental": "1792325510",
+  "guard_seconds": 30,
+  "detached_guard_context": "ksu",
+  "natural_guard_deadline_observed": true,
+  "guard_exited": true,
+  "same_boot_after": true,
+  "final_mode": "Permissive",
+  "loaded_policy_unchanged": true,
+  "runtime_enforcing_performed": false,
+  "actual_enforcing_restoration_proven": false,
+  "owner_next_choice": "先继续源码修复，暂不切换",
+  "new_enforcing_authorized": false
+}

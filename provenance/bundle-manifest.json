@@ -6,20 +6,20 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 17506,
-      "sha256": "54934d0ca19073aea711454f3e7996ed61342ddcb39315ad29368f682de1f9a5"
+      "bytes": 18923,
+      "sha256": "5748d909eaa9d57844e38b73bd4a1bee76fcad978dee5bb9c1e706549efc5bee"
     },
     "LICENSE.md": {
-      "bytes": 1395,
-      "sha256": "ccb2f316976a3ab457d94652179151cece8650913d0e789b17a6cc31b598956c"
+      "bytes": 1584,
+      "sha256": "b619279496fb2afcdb7dfc236b81bab8ca0608a2488c6e681623d66df61fceb5"
     },
     "NOTICE": {
-      "bytes": 7469,
-      "sha256": "91a3b9816688c64b3af3347dbd47e3986645773451a9a81073aed33cd1ebc5ec"
+      "bytes": 8327,
+      "sha256": "90c6e10ca978c6495374dbe49d58ed9a889bc0c236d19a1d60aeac70ac6cfc87"
     },
     "README.md": {
-      "bytes": 3546,
-      "sha256": "a950b8d74842e1fb97f474d8d1b3b206204f9531d87872d901b35198c72e862a"
+      "bytes": 3796,
+      "sha256": "660f290f70d82a8db4885341469fd7af340b28664ca15191cb51a70a43532490"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 29017,
-      "sha256": "dcf395e55af99d29c31c9b967dba67d05aca4af8c565b4e5c0c79cfc74efd9a5"
+      "bytes": 30690,
+      "sha256": "cc9984011cf7d1cbb29bf3e87205e847ab33d84cce6527ac3dcf932fb75bf50e"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -102,8 +102,8 @@
       "sha256": "057cd58cbddb59d51d1942ebdb900481177d197dee8de1978c4877104802721f"
     },
     "licenses/component-map.json": {
-      "bytes": 15927,
-      "sha256": "5356c4426134705bb8ef1e298dbf576ec5adc3de5fa7d2d0966583ccad31e76f"
+      "bytes": 18288,
+      "sha256": "6a128d6766f66429b339f8e2bfdd805efc182929ee1050c673540feafd17c177"
     },
     "licenses/upstream/frameworks/native/NOTICE": {
       "bytes": 17680,
@@ -212,6 +212,118 @@
     "patches/vendor__lineage.patch": {
       "bytes": 1068,
       "sha256": "7ceb5d64ea7cae6a59a1c0f5d445177d3f3877e1bb19ee7ac4f25fd2afb647fb"
+    },
+    "plans/selinux-boot-contracts-20261018/README.md": {
+      "bytes": 3833,
+      "sha256": "a2776d4aa86a3c84000a92fc1b8c484e16f4e5cad480a767d5a84505ed2957b4"
+    },
+    "plans/selinux-boot-contracts-20261018/analysis-summary.json": {
+      "bytes": 2231,
+      "sha256": "bf1a1cebb0193c9b5f63853cbc9c0da70e5c4421459ae95f40086a97fa2a328d"
+    },
+    "plans/selinux-boot-contracts-20261018/compiled-policy-checks.json": {
+      "bytes": 2324,
+      "sha256": "10bd9e5d79711c2490ae8df14c4a676bb4e3b5115171dbf5df6d132d9d72b119"
+    },
+    "plans/selinux-boot-contracts-20261018/complete-source-reproduction-check.json": {
+      "bytes": 201,
+      "sha256": "52e3e7b313e837e274a392d15f1248ecd677cc7197210ad782dd56fdfc9d5a7b"
+    },
+    "plans/selinux-boot-contracts-20261018/component-build-summary.json": {
+      "bytes": 1726,
+      "sha256": "953cb3d35f40f806e160bbf7d97b22cf6dd8da293024b74bcab5dbff7b4f61d8"
+    },
+    "plans/selinux-boot-contracts-20261018/external-reproduction-check.json": {
+      "bytes": 157,
+      "sha256": "2e14bcd1880717368abf2349ccd2e4f6b45566aa19ecd1b2fca44eeb79db9697"
+    },
+    "plans/selinux-boot-contracts-20261018/external-source-transformations.json": {
+      "bytes": 850,
+      "sha256": "725c5e170fc9010f476b65dd5e66b8c83b5ec5e13ca8a66ccabf96883d770f6f"
+    },
+    "plans/selinux-boot-contracts-20261018/licensed-source-changes.patch": {
+      "bytes": 3829,
+      "sha256": "fb8dc64b52c8eaff61242e232c2df45b701b99c56cecd7694ba30cf664d7bca6"
+    },
+    "plans/selinux-boot-contracts-20261018/no-switch-preflight-summary.json": {
+      "bytes": 480,
+      "sha256": "c96c0cbfcc206c04887d5deeb74d1710095481b2523f78defda65079d918dd52"
+    },
+    "plans/selinux-boot-contracts-20261018/reproduce_external_changes.py": {
+      "bytes": 1647,
+      "sha256": "49c8e105e3245e93bcec7a19360cff5985860b753a7f1951b2924d7024c85a8e"
+    },
+    "plans/selinux-boot-contracts-20261018/source-baselines.json": {
+      "bytes": 3583,
+      "sha256": "6087e4c850ead537c2ba4debd44d50ba833eec01c0f4cd82215d1d8fb5d19c27"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/pdt_app.te": {
+      "bytes": 2048,
+      "sha256": "8446fa747d5041ad9270249fa3ab7005bc3a345c34445e1403bea20d2bf18724"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/pdt_app.te.license": {
+      "bytes": 233,
+      "sha256": "9599116373e856d8eac5c8ae7f5c87c6359b5994121f5a56360e154eee2f91f8"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/aoncameraservice_app.te": {
+      "bytes": 1955,
+      "sha256": "85509ad018592592a6b7e30bd2e6433d48a8a9a1f8168ca2585e186e25f8b988"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/aoncameraservice_app.te.license": {
+      "bytes": 233,
+      "sha256": "9599116373e856d8eac5c8ae7f5c87c6359b5994121f5a56360e154eee2f91f8"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/hal_debugutils_default.te": {
+      "bytes": 2116,
+      "sha256": "80681a4f6c1e35b4c86540f258e2e506e1c55a34e6058509e1f514a56486a894"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/hal_debugutils_default.te.license": {
+      "bytes": 233,
+      "sha256": "9599116373e856d8eac5c8ae7f5c87c6359b5994121f5a56360e154eee2f91f8"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_cta_app.te": {
+      "bytes": 1793,
+      "sha256": "4b53269c0e78085c1b50e4219f24a83601d235f78659d4a94abe196055ee7c3b"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_cta_app.te.license": {
+      "bytes": 233,
+      "sha256": "9599116373e856d8eac5c8ae7f5c87c6359b5994121f5a56360e154eee2f91f8"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_logkit_app.te": {
+      "bytes": 1799,
+      "sha256": "1d1798d7da434e85bea9d8f1dacfc96ef214c08f540d232f874b9e590a378190"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_logkit_app.te.license": {
+      "bytes": 233,
+      "sha256": "9599116373e856d8eac5c8ae7f5c87c6359b5994121f5a56360e154eee2f91f8"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/xiaomi/ishtar/device.mk": {
+      "bytes": 3189,
+      "sha256": "3470747d7f2ad3c966709eccc7b845b57e1974ae4a50b2605f7faa8fb8f6766f"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/xiaomi/ishtar/device.mk.license": {
+      "bytes": 205,
+      "sha256": "7cccb6d0dfed342272dd8ca8472567306adcdd7fb229eec706c16162e4bc010d"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/xiaomi/ishtar/init/init.ishtar-radio-restart.rc": {
+      "bytes": 438,
+      "sha256": "1031954bcde5c8554bb8da97514fd7f9205a7005622d06fa99c95d10a96de8ea"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/xiaomi/ishtar/init/init.ishtar-radio-restart.rc.license": {
+      "bytes": 205,
+      "sha256": "7cccb6d0dfed342272dd8ca8472567306adcdd7fb229eec706c16162e4bc010d"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/xiaomi/ishtar/properties/platform-system.prop": {
+      "bytes": 740,
+      "sha256": "0f3dac97b5da6aa2fadddf2afbbf7216ba993be79da949a9d7beeced9eafb734"
+    },
+    "plans/selinux-boot-contracts-20261018/sources/device/xiaomi/ishtar/properties/platform-system.prop.license": {
+      "bytes": 205,
+      "sha256": "7cccb6d0dfed342272dd8ca8472567306adcdd7fb229eec706c16162e4bc010d"
+    },
+    "plans/selinux-boot-contracts-20261018/working-source-files.json": {
+      "bytes": 13724,
+      "sha256": "9bb8606e1f61da98e57965678e8e3ba0e84edb3d9c8094b3fd481c006770c69f"
     },
     "plans/selinux-boundary-maintainer-20261018/README.md": {
       "bytes": 4707,
@@ -1037,6 +1149,10 @@
       "bytes": 8017,
       "sha256": "16274a2511ef2bcedfcfa1910e38d8a730a758903538561ef74a221a1cefb489"
     },
+    "provenance/boot-contracts-source-files.json": {
+      "bytes": 4167,
+      "sha256": "4c7e41392fad70398cae413cc77294fdedbaf4c8fbb229143c3a1609e29ddcf1"
+    },
     "provenance/boundary-maintainer-source-files.json": {
       "bytes": 7833,
       "sha256": "c2ea837c815df7f1e351f817a1e5893fbd926d511b0a18a22798656a62c90ba0"
@@ -1130,8 +1246,8 @@
       "sha256": "378c10388bdf62e106242231149414b1a9d34ddea5b0fc537abac3179b95b279"
     },
     "scripts/check_upload_scope.py": {
-      "bytes": 1981,
-      "sha256": "1eec23fec86c15012cea8a5d620bd52ba73cdb08a344ffcd265854cb36cd66ec"
+      "bytes": 2617,
+      "sha256": "6317c9b5551c4665e4d6258168cb194bfaaec068c9c2512b23cd8342cfd8760a"
     },
     "scripts/export_source_snapshot.py": {
       "bytes": 1134,

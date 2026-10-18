@@ -1,0 +1,88 @@
+--- a/device/xiaomi/ishtar/properties/platform-system.prop
++++ b/device/xiaomi/ishtar/properties/platform-system.prop
+@@ -12,3 +12,7 @@
+ # Preserve two remaining legacy defaults through system initialization.
+ audio.sys.offload.pstimeout.secs=3
+ bluetooth.profile.tbs.server.enabled=true
++
++# Preserve legacy framework values under system initialization; no new vendor grants.
++bluetooth.profile.vc.server.enabled=true
++ro.mediaserver.64b.enable=true
+--- /dev/null
++++ b/device/xiaomi/ishtar/init/init.ishtar-radio-restart.rc
+@@ -0,0 +1,13 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# The legacy system radio property is evaluated by core init.
++# Keep the shipped restart operations and vendor service identities unchanged.
++on property:persist.radio.restart_rild=1
++    stop vendor.qcrild
++    start vendor.qcrild
++on property:persist.radio.restart_rild=2
++    stop vendor.qcrild
++    stop vendor.qcrild2
++    start vendor.qcrild
++    start vendor.qcrild2
+--- a/device/xiaomi/ishtar/device.mk
++++ b/device/xiaomi/ishtar/device.mk
+@@ -76,3 +76,8 @@
+ PRODUCT_PACKAGES += IshtarCameraDefaults
+ PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/configs/ishtar-camera-preferred.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/preferred-apps/ishtar-camera.xml
++
++
++# System-owned trigger for the existing vendor RIL restart contract.
++PRODUCT_COPY_FILES += \
++    $(LOCAL_PATH)/init/init.ishtar-radio-restart.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.ishtar-radio-restart.rc
+--- a/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/aoncameraservice_app.te
++++ b/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/aoncameraservice_app.te
+@@ -27,7 +27,7 @@
+ 
+ userdebug_or_eng(`
+ type aoncameraservice_app, domain;
+-permissive aoncameraservice_app;
++# Enforce this optional test domain; retain its existing type and rules.
+ app_domain(aoncameraservice_app)
+ diag_use(aoncameraservice_app)
+ binder_call(aoncameraservice_app, hal_camera)
+--- a/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_cta_app.te
++++ b/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_cta_app.te
+@@ -31,5 +31,5 @@
+ userdebug_or_eng(`
+ type vendor_cta_app, domain;
+ app_domain(vendor_cta_app);
+-permissive vendor_cta_app;
++# Enforce this optional test domain; retain its existing type and rules.
+ ')
+--- a/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/hal_debugutils_default.te
++++ b/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/hal_debugutils_default.te
+@@ -31,7 +31,7 @@
+ hal_server_domain(vendor_hal_debugutils_default, vendor_hal_debugutils)
+ init_daemon_domain(vendor_hal_debugutils_default)
+ 
+-permissive vendor_hal_debugutils_default;
++# Enforce this optional test domain; retain its existing type and rules.
+ binder_call(vendor_hal_debugutils_server, vendor_hal_debugutils_client);
+ binder_call(vendor_hal_debugutils_client, vendor_hal_debugutils_server);
+ hal_attribute_hwservice(vendor_hal_debugutils,hal_debugutils_hwservice);
+--- a/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_logkit_app.te
++++ b/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_logkit_app.te
+@@ -31,5 +31,5 @@
+ userdebug_or_eng(`
+ type vendor_logkit_app, domain;
+ app_domain(vendor_logkit_app);
+-permissive vendor_logkit_app;
++# Enforce this optional test domain; retain its existing type and rules.
+ ')
+--- a/device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/pdt_app.te
++++ b/device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/pdt_app.te
+@@ -32,7 +32,7 @@
+ type vendor_pdt_app, domain;
+ app_domain(vendor_pdt_app);
+ net_domain(vendor_pdt_app)
+-permissive vendor_pdt_app;
++# Enforce this optional test domain; retain its existing type and rules.
+ # r_dir_file(vendor_pdt_app, domain)
+ dontaudit vendor_pdt_app service_manager_type:service_manager *;
+ dontaudit vendor_pdt_app hwservice_manager_type:hwservice_manager *;

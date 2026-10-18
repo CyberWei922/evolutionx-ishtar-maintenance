@@ -375,5 +375,51 @@
     }
   },
   "binary_redistribution_cleared": false,
-  "complete_corresponding_source_offer": false
+  "complete_corresponding_source_offer": false,
+  "boot_contracts_additions": {
+    "provenance": "provenance/boot-contracts-source-files.json",
+    "reviewed_sources": [
+      {
+        "repository_path": "plans/selinux-boot-contracts-20261018/sources/device/xiaomi/ishtar/properties/platform-system.prop",
+        "sha256": "0f3dac97b5da6aa2fadddf2afbbf7216ba993be79da949a9d7beeced9eafb734",
+        "license": "Apache-2.0"
+      },
+      {
+        "repository_path": "plans/selinux-boot-contracts-20261018/sources/device/xiaomi/ishtar/init/init.ishtar-radio-restart.rc",
+        "sha256": "1031954bcde5c8554bb8da97514fd7f9205a7005622d06fa99c95d10a96de8ea",
+        "license": "Apache-2.0"
+      },
+      {
+        "repository_path": "plans/selinux-boot-contracts-20261018/sources/device/xiaomi/ishtar/device.mk",
+        "sha256": "3470747d7f2ad3c966709eccc7b845b57e1974ae4a50b2605f7faa8fb8f6766f",
+        "license": "Apache-2.0"
+      },
+      {
+        "repository_path": "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/aoncameraservice_app.te",
+        "sha256": "85509ad018592592a6b7e30bd2e6433d48a8a9a1f8168ca2585e186e25f8b988",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "repository_path": "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_cta_app.te",
+        "sha256": "4b53269c0e78085c1b50e4219f24a83601d235f78659d4a94abe196055ee7c3b",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "repository_path": "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/hal_debugutils_default.te",
+        "sha256": "80681a4f6c1e35b4c86540f258e2e506e1c55a34e6058509e1f514a56486a894",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "repository_path": "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/qva/vendor/test/vendor_logkit_app.te",
+        "sha256": "1d1798d7da434e85bea9d8f1dacfc96ef214c08f540d232f874b9e590a378190",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "repository_path": "plans/selinux-boot-contracts-20261018/sources/device/qcom/sepolicy_vndr/sm8550/generic/vendor/test/pdt_app.te",
+        "sha256": "8446fa747d5041ad9270249fa3ab7005bc3a345c34445e1403bea20d2bf18724",
+        "license": "BSD-3-Clause"
+      }
+    ],
+    "external_proprietary_text_files": 2
+  }
 }
