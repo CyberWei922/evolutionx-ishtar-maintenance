@@ -1,0 +1,111 @@
+{
+  "state": "BACKUPTOOL_BROKER_COMPONENTS_COMPILED_VERIFIED",
+  "baseline_incremental": "1792339544",
+  "source_files_verified": 94,
+  "changed_paths": 10,
+  "policy_sha256": "597305253046a890c46339828658775648e0f0f28f8d2597c5d14d3a54f08f75",
+  "policy_bytes": 1605261,
+  "static_permissive_domains": [
+    "backuptool"
+  ],
+  "new_policy_types": [
+    "backuptool_broker_exec",
+    "backuptool_workspace_file"
+  ],
+  "existing_type_permissions_added": [
+    [
+      "update_engine",
+      "rootfs",
+      "dir",
+      "mounton"
+    ],
+    [
+      "update_engine",
+      "tmpfs",
+      "filesystem",
+      "mount"
+    ],
+    [
+      "update_engine",
+      "tmpfs",
+      "filesystem",
+      "relabelfrom"
+    ],
+    [
+      "update_engine",
+      "tmpfs",
+      "filesystem",
+      "unmount"
+    ],
+    [
+      "update_engine",
+      "update_engine",
+      "process",
+      "setfscreate"
+    ]
+  ],
+  "existing_type_permissions_removed": [],
+  "backuptool_capabilities_and_existing_access_unchanged": true,
+  "existing_genfs_and_ioctl_boundaries_preserved": true,
+  "broker_file_context": "u:object_r:backuptool_broker_exec:s0",
+  "outputs": {
+    "system/bin/backuptool_ab.sh": {
+      "bytes": 8057,
+      "sha256": "0e435d96ba4185ea694185b0b2cd43b8cb331ec6fda0a80ab2a26bbfbbc6a404"
+    },
+    "system/bin/backuptool_ab.functions": {
+      "bytes": 1707,
+      "sha256": "1255534c5768e024b39c1f21c8264adabf8c1888aa607864987a941201457d05"
+    },
+    "system/bin/backuptool_postinstall.sh": {
+      "bytes": 841,
+      "sha256": "c2d1e629690837997eba4e71692b9fea2149c6a5a0e4244cbe54273bfd1868dc"
+    },
+    "system/addon.d/50-lineage.sh": {
+      "bytes": 1051,
+      "sha256": "362fbbea03f91f8106bc19ef36cf5602b7a0a8b1190fa37f2495026fd3a49ab1"
+    },
+    "system/bin/update_engine": {
+      "bytes": 2845592,
+      "sha256": "edbb98d5c6fd0a937b07e5bcfd2f5afd6fc924d2cbd2f8e8b6855c3a7b61dca6"
+    },
+    "system/bin/backuptool_broker": {
+      "bytes": 27360,
+      "sha256": "7c712ff830119e1018d3d60dea582059de59e97209a2a7a51b5ca966bc57d9e6"
+    }
+  },
+  "host_isolated_cases": 72,
+  "private_mount_namespace_is_not_worker_sandbox": true,
+  "real_broker_mounts_or_ota_tested": false,
+  "backuptool_enforcing_ready": false,
+  "v3_and_persistent_labels_pending": true,
+  "phone_installed": false,
+  "full_rom_built": false,
+  "global_phone_mode": "Permissive",
+  "enforcing_trial_performed": false,
+  "cold_boot_enforcing_tested": false,
+  "actual_ota_performed": false,
+  "other_tasks_changed": false,
+  "legacy_old_updater_abi_tests": 5,
+  "native_and_old_wrapper_paths_separately_tested": true,
+  "prior_checker_literal_optimized_away": true,
+  "exact_native_caller_guard_source_test_cases": 14,
+  "native_broker_symbol_text_matches_installed_elf": true,
+  "component_build_job": "backuptool-broker-components-build-04",
+  "component_build_duration_seconds": 114,
+  "is_flashable_rom": false,
+  "source_baseline_incremental": "1792339544",
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "ninja_jobs": 7,
+  "highmem_jobs": 2,
+  "nice": 5,
+  "io_priority": 4
+}

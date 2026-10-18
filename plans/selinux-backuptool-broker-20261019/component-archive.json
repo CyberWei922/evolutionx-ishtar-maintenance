@@ -1,0 +1,10 @@
+{
+  "state": "BOTH_HOSTS_BROKER_COMPONENT_HANDOFF_MATCH",
+  "files": 147,
+  "archive_bytes": 2568245,
+  "archive_sha256": "e6d82e7ac58553c7d1d04022d9271d3d47ea40a462e7d37f903506efc7d0b2ae",
+  "source_files": 94,
+  "changed_paths": 10,
+  "phone_installed": false,
+  "is_flashable_rom": false
+}

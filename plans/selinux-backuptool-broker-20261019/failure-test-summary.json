@@ -1,0 +1,112 @@
+{
+  "state": "72_ISOLATED_SOURCE_SCENARIOS_PASSED",
+  "broker_cases": [
+    "valid_run_cleanup_order PASS",
+    "validate_failure_never_executes PASS",
+    "isolate_failure_never_executes PASS",
+    "workspace_failure_never_executes PASS",
+    "mkdir_inactive-root_failure_cleans PASS",
+    "mkdir_system_failure_cleans PASS",
+    "mkdir_tmp_failure_cleans PASS",
+    "mkdir_vendor_failure_cleans PASS",
+    "mkdir_product_failure_cleans PASS",
+    "mkdir_system_ext_failure_cleans PASS",
+    "target_mount_failure_cleans PASS",
+    "system_bind_failure_cleans PASS",
+    "worker_error_7 PASS",
+    "worker_error_26 PASS",
+    "worker_error_27 PASS",
+    "worker_error_28 PASS",
+    "worker_error_29 PASS",
+    "worker_error_126 PASS",
+    "worker_error_127 PASS",
+    "worker_error_137 PASS",
+    "unmount:/postinstall/system_ext_failure_does_not_skip_other_cleanup PASS",
+    "unmount:/postinstall/product_failure_does_not_skip_other_cleanup PASS",
+    "unmount:/postinstall/vendor_failure_does_not_skip_other_cleanup PASS",
+    "unmount:/postinstall/system_failure_does_not_skip_other_cleanup PASS",
+    "unmount:/postinstall/inactive-root_failure_does_not_skip_other_cleanup PASS",
+    "unmount:/postinstall_failure_does_not_skip_other_cleanup PASS",
+    "worker_first_error_survives_cleanup_error PASS",
+    "setup_failure_does_not_enter_worker PASS"
+  ],
+  "actual_mount_method_cases": [
+    "success_and_native_broker_order PASS",
+    "broker_error_restores_global_ro_7 PASS",
+    "broker_error_restores_global_ro_126 PASS",
+    "broker_error_restores_global_ro_127 PASS",
+    "broker_error_restores_global_ro_137 PASS",
+    "broker_error_restores_global_ro_-1 PASS",
+    "source_resolution_failure PASS",
+    "empty_source_rejected PASS",
+    "read_failure_no_write PASS",
+    "invalid_read_length_0 PASS",
+    "invalid_read_length_1 PASS",
+    "invalid_read_length_2 PASS",
+    "invalid_read_length_5 PASS",
+    "invalid_read_length_7 PASS",
+    "no_mounts_skips_broker PASS",
+    "non_ext4_source_does_not_write PASS",
+    "unrelated_vendorerofs PASS",
+    "unrelated_systemerofs PASS",
+    "unrelated_productext4 PASS",
+    "no_source_slot PASS",
+    "rw_failure_no_broker PASS",
+    "global_ro_failure_fails PASS",
+    "normal_postinstall_mount_failure_after_broker PASS"
+  ],
+  "shell_cases": [
+    "broker_owned_workspace_runs_V2_V3_without_tmp_mount",
+    "direct_invocation_rejected_before_workspace_mutation"
+  ],
+  "legacy_old_updater_abi_cases": [
+    {
+      "case": "old_updater_full_v2_v3",
+      "exit": 0,
+      "addon_stage_count": 12
+    },
+    {
+      "case": "old_updater_tmpfs_mount_fails",
+      "exit": 19,
+      "addon_stage_count": 0
+    },
+    {
+      "case": "old_updater_helper_copy_fails",
+      "exit": 21,
+      "addon_stage_count": 0
+    },
+    {
+      "case": "old_updater_tmpfs_unmount_fails",
+      "exit": 34,
+      "addon_stage_count": 12
+    },
+    {
+      "case": "unmounted_legacy_root_rejected_before_write",
+      "exit": 1,
+      "addon_stage_count": 0
+    }
+  ],
+  "actual_native_validate_cases": [
+    "exact_update_engine_domain_with_distinct_devices PASS",
+    "reject_before_block_io_u:r:shell:s0 PASS",
+    "reject_before_block_io_u:r:backuptool:s0 PASS",
+    "reject_before_block_io_u:r:recovery:s0 PASS",
+    "reject_before_block_io_u:r:overlay_remounter:s0 PASS",
+    "reject_before_block_io_unconfined PASS",
+    "reject_before_block_io_u:r:update_engine:s0_extra PASS",
+    "reject_null_context_before_io PASS",
+    "reject_getcon_failure_before_io PASS",
+    "reject_active_equals_inactive PASS",
+    "reject_non_ext4_target PASS",
+    "reject_non_ext4_source PASS",
+    "reject_existing_workspace_mount PASS",
+    "reject_symlink_or_non_directory_workspace PASS"
+  ],
+  "total_cases": 72,
+  "real_mounts_or_android_selinux_or_ota_tested": false,
+  "test_io_replaced_with_explicit_host_doubles": true,
+  "prior_host_build_and_checker_failures_preserved_privately": true,
+  "source_only_rom01_built_but_not_deliverable_due_old_updater_abi": true,
+  "no_private_logs_or_binary_payloads_in_git": true,
+  "phone_accessed": false
+}

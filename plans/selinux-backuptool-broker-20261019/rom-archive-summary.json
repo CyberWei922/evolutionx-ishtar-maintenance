@@ -1,0 +1,16 @@
+{
+  "state": "BOTH_HOSTS_COMPLETE_ROM_THIN_HANDOFF_MATCH",
+  "files": 72,
+  "archive_bytes": 383639,
+  "archive_sha256": "138f9d8d8847669e376bd1cb013a559d7071109bb19a49a99239c2ee5467c2c1",
+  "candidate_incremental": "1792347689",
+  "rom": {
+    "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545345933,
+    "sha256": "32df7de2c2648c2ed01b96bb2ffc42fa93f9e79ff3404b4db87ff3967590ff0a"
+  },
+  "complete_rom_included_on_mac": false,
+  "phone_installed": false,
+  "flash_authorized": false,
+  "enforcing_authorized": false
+}

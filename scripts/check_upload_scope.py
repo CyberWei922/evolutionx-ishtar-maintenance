@@ -53,6 +53,13 @@ if ota.exists():
   assert p.resolve().is_relative_to(r/'plans/selinux-ota-contracts-20261018/sources') and not p.is_symlink(),p
   b=p.read_bytes();assert len(b)==row['bytes'] and hashlib.sha256(b).hexdigest()==row['after_sha256'],p
   assert row['license']=='Apache-2.0' and Path(str(p)+'.license').is_file(),p
+broker=r/'provenance/broker-source-files.json'
+if broker.exists():
+ for row in json.loads(broker.read_text())['files']:
+  p=r/row['repository_path']
+  assert p.resolve().is_relative_to(r/'plans/selinux-backuptool-broker-20261019/sources') and not p.is_symlink(),p
+  b=p.read_bytes();assert len(b)==row['bytes'] and hashlib.sha256(b).hexdigest()==row['after_sha256'],p
+  assert row['license']=='Apache-2.0' and Path(str(p)+'.license').is_file(),p
 for p in r.rglob('*'):
  if not p.is_file() or '.git' in p.relative_to(r).parts:continue
  assert p.suffix.lower() not in ['.apk','.img','.zip','.ko','.so','.dex','.pk8','.key','.jks','.keystore','.p12','.pfx'],p

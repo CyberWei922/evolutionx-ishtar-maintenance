@@ -1,5 +1,29 @@
 # ishtar maintenance repository
 
+## 1792347689完整下一候选已编译核验，尚未安装（当前工作源码）
+
+本轮原生Backuptool挂载代理与旧升级入口兼容候选已完整编译（10:06/exit0），实际34个payload分区/94项源码/9份新或保留执行与init文件、broker inode执行标签和保护载荷检查通过。72个隔离主机场景通过；构建使用CPU0–6/Ninja7/highmem2/nice5/I/O4，一次实测payload生成进程约695%CPU，留CPU7余量，未调整或停止Ubuntu其他任务。
+
+正式完整ROM：Ubuntu delivery/ishtar-selinux-backuptool-broker-permissive-candidate-20261019-02/EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip，4,545,345,933 bytes，SHA 32df7de2c2648c2ed01b96bb2ffc42fa93f9e79ff3404b4db87ff3967590ff0a。Mac同名目录仅薄交接，不含完整ROM；双端薄交接72项/383,639 bytes/SHA 138f9d8d8847669e376bd1cb013a559d7071109bb19a49a99239c2ee5467c2c1匹配，组件交接147项/2,568,245 bytes另行保留。正式本候选、已安装1792339544与上一1792333073回退ROM均保留，本轮未清旧正式包/增量缓存或触碰其他任务。
+
+静态保留数据升级检查：与已安装1792339544归档的OTA证书字节、SDK36、补丁2026-10-01及fstab保持，时间戳向前，无userdata/metadata/wipe/downgrade载荷；完整OTA签名未独立密码学核验。以上为静态结果，不冒称刷入、冷启动或真实OTA通过。
+
+候选策略597305253046a890c46339828658775648e0f0f28f8d2597c5d14d3a54f08f75/1,605,261 bytes，静态宽松域仍仅backuptool，KSU动态例外/内核保持，全局仍P。本轮新增broker执行/临时目录两类型；现有类型只有5项update_engine权限新增、删除0，其他原权限及genfs/ioctl边界保持。代理在自身私有挂载命名空间建立tmpfs临时路径与inactive system视图，将单独子进程切到原backuptool域执行旧流程，尝试全部清理，父进程恢复system块设备只读；新broker路径不由worker挂临时盘；旧更新器直接运行新顶层脚本仍有经标志选择的过渡临时盘流程，5个兼容场景通过。未给worker新增SYS_ADMIN或一般system_file写权限。命名空间不是worker安全沙箱，V3挂载、inactive符号链接/路径隔离、持久标签/security xattr、精确权限、optional及必要Enforcing运行/冷启动仍待完成。
+
+当前活动源码仍broker control/expected-source-files.json共94项，最终source-candidate04/source-apply03、组件build04/verified03/component-audit04为准；前序host计数回滚、merged-policy断言冲突和优化字符串检查器失败均保留，不改写成成功。仅许可明确10份Apache-2.0源文件/NOTICE/REUSE及脱敏构建摘要进入维护仓库；ROM、ELF、策略二进制和原始日志不入Git。
+
+手机最近确认版本仍1792339544/Permissive、磁盘694b6134…/加载49db1c52…，本轮无手机读写、新采集、重启、刷入、切E或真实OTA。新候选未安装，没有本轮新的刷入/重启/Enforcing/OTA授权；旧授权已用完，不重放已删暂存/旧worker。下文描述历史阶段。
+
+
+## 94-input broker candidate building (current working source)
+
+Active source is plans/selinux-backuptool-broker-20261019/working-source-files.json (94 inputs/9 changed paths), final source-candidate03/source-apply02. Component build03 exit0, verified02 and component-audit03 complete;67 isolated source cases pass. Actual broker/updater ELFs, contexts and policy are checked. New policy59730525…/1,605,261 bytes retains backuptool permissive and the existing KSU exception; existing-type permission delta is5 updater-only additions/0 removals. No upstream neverallow change and no worker SYS_ADMIN or general system_file write grant.
+
+Complete ROM job backuptool-broker-rom-build-01 is running (own build1704835/audit1704836), CPU0–6,7 Ninja jobs/highmem2/nice5/I/O4, per owner's new resource instruction. Do not alter active source while locked; do not stop unrelated Ubuntu work. Broker namespace is not a worker security sandbox: precise rights, inactive symlink paths, final labels/security xattrs,V3/EROFS and optional OTA semantics remain pending. No Enforcing/cold startup/real OTA validation claimed.
+
+Phone remains installed1792339544/P on the87-input previous batch. New94-input components are not installed; no new flash/reboot/Enforcing/OTA authorization. The143-file private component handoff matches on both hosts. Git contains only9 reviewed Apache-2.0 source files/notices and summaries; never import its binaries, private policy or logs. Prior failed intermediate build/checker records remain local and are historical.
+
+
 ## 1792339544已安装、桌面和数据验收通过（当前状态）
 
 本轮4路径OTA执行/错误传递/事务复制修复已完整编译并保留数据刷入。74动作/73完整下载及wire SHA ce68887bd0dd8249e4487ef1fb1cd9d88b127bb760600acc0f1d59c4d061e11c通过，2026-10-19 00:51:01首次正常重启。56文件/21分区范围、7组保留策略契约、六MIUI默认入口及三项数据基线均匹配；153次读回命令尝试、0重试。机主本次确认“桌面正常，应用和照片都在”，只记录桌面/应用照片保留验收，不补记相机、麦克风、指纹或全硬件验收。

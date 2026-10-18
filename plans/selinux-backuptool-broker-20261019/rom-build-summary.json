@@ -1,0 +1,114 @@
+{
+  "state": "COMPLETE_PERMISSIVE_ROM_BUILT_AND_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "baseline_incremental": "1792339544",
+  "candidate_incremental": "1792347689",
+  "rom": {
+    "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545345933,
+    "sha256": "32df7de2c2648c2ed01b96bb2ffc42fa93f9e79ff3404b4db87ff3967590ff0a"
+  },
+  "source_files": 94,
+  "changed_paths": 10,
+  "actual_payload_partitions": 34,
+  "static_permissive_domains": [
+    "backuptool"
+  ],
+  "policy_sha256": "597305253046a890c46339828658775648e0f0f28f8d2597c5d14d3a54f08f75",
+  "policy_bytes": 1605261,
+  "policy_byte_identical_to_installed_baseline": false,
+  "existing_type_permissions_added": [
+    [
+      "update_engine",
+      "rootfs",
+      "dir",
+      "mounton"
+    ],
+    [
+      "update_engine",
+      "tmpfs",
+      "filesystem",
+      "mount"
+    ],
+    [
+      "update_engine",
+      "tmpfs",
+      "filesystem",
+      "relabelfrom"
+    ],
+    [
+      "update_engine",
+      "tmpfs",
+      "filesystem",
+      "unmount"
+    ],
+    [
+      "update_engine",
+      "update_engine",
+      "process",
+      "setfscreate"
+    ]
+  ],
+  "new_policy_types": [
+    "backuptool_broker_exec",
+    "backuptool_workspace_file"
+  ],
+  "backuptool_broker_sha256": "7c712ff830119e1018d3d60dea582059de59e97209a2a7a51b5ca966bc57d9e6",
+  "update_engine_sha256": "edbb98d5c6fd0a937b07e5bcfd2f5afd6fc924d2cbd2f8e8b6855c3a7b61dca6",
+  "host_isolated_tests": 72,
+  "actual_new_components_in_payload_verified": true,
+  "data_preserving_static_preflight": {
+    "status": "STATIC_DATA_PRESERVING_UPGRADE_PRECHECK_PASSED",
+    "installed_archive_baseline_incremental": "1792339544",
+    "candidate_incremental": "1792347689",
+    "candidate_timestamp_forward": true,
+    "sdk": "36",
+    "security_patch": "2026-10-01",
+    "no_wipe_or_downgrade_metadata": true,
+    "no_userdata_or_metadata_payload": true,
+    "ota_certificate_bytes_match": true,
+    "ota_certificate_sha256": "a4384ba815b9499a5ce349b4e33c1755278873fe2eac150a068823f526e6dbde",
+    "actual_payload_vendor_fstab_sha256": "b488efdf1a3923c33b3b4d7ca62db1149975e6aa6da8b71dabb6343c534ea0aa",
+    "fstab_matches_previously_preserved_encryption_baseline": true,
+    "whole_ota_signature_independently_verified": false,
+    "phone_accessed": false,
+    "phone_flash_authorized": false,
+    "live_phone_preflight_still_required": true,
+    "runtime_verified": false
+  },
+  "phone_installed": false,
+  "phone_incremental_last_confirmed": "1792339544",
+  "phone_global_mode_last_confirmed": "Permissive",
+  "flash_authorized": false,
+  "first_normal_reboot_after_verified_flash_authorized": false,
+  "enforcing_authorized": false,
+  "actual_ota_authorized": false,
+  "backuptool_enforcing_ready": false,
+  "whole_ota_signature_independently_verified": false,
+  "build_exit": 0,
+  "build_duration_seconds": 606,
+  "build_cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "ninja_jobs": 7,
+  "highmem_jobs": 2,
+  "other_tasks_changed": false,
+  "observed_delta_generator_cpu_percent": 695.0,
+  "observed_delta_generator_allowed_cpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "private_namespace_is_not_worker_security_sandbox": true,
+  "real_broker_mount_execution_tested": false,
+  "all_own_build_and_audit_workers_finished": true
+}

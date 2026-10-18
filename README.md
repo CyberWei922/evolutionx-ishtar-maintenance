@@ -1,5 +1,7 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
+最新工作源码：**94项输入、10路径 Backuptool 原生挂载代理**，完整候选 **1792347689** 已编译/实际镜像核验，尚未安装。72个隔离场景通过；全局Permissive及backuptool例外保持。见[代理修复计划](plans/selinux-backuptool-broker-20261019/README.md)。
+
 最新安装 **1792339544 / Permissive**：87项输入、4路径OTA执行/错误传递/事务复制修复已完整编译并保留数据刷入。56文件/21分区范围及数据基线读回通过，机主确认桌面正常、应用照片保留。策略权限保持；静态宽松域仅backuptool，实际加载另含动态ksu。本版未做Enforcing或真实OTA。见[OTA执行修复与安装结果](plans/selinux-ota-contracts-20261018/README.md)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**

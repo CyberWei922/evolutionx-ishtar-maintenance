@@ -1,0 +1,32 @@
+# Allow update_engine to call the callback function provided by updater_app
+binder_call(update_engine, updater_app)
+
+# Read updates from storage data
+r_dir_file(update_engine, mnt_user_file)
+r_dir_file(update_engine, storage_file)
+
+# Allow mount and unmount of system partition
+allow update_engine labeledfs:filesystem { mount unmount };
+
+# Allow transition to backuptool domain
+allow update_engine self:process setexec;
+domain_trans(update_engine, postinstall_exec, backuptool)
+
+# Native broker executes in update_engine, with a private mount namespace.
+# Its workspace is volatile; no system_file write or worker SYS_ADMIN grant.
+type backuptool_broker_exec, exec_type, system_file_type, file_type;
+type backuptool_workspace_file, file_type;
+allow update_engine backuptool_broker_exec:file { rx_file_perms execute_no_trans };
+allow update_engine self:process setfscreate;
+# Current kernel selinux_mount checks mounton even for MS_PRIVATE on /.
+allow update_engine rootfs:dir mounton;
+# rootcontext= calls may_context_mount_inode_relabel: relabelfrom is checked
+# against the tmpfs superblock; associate is checked for the new root label.
+allow update_engine tmpfs:filesystem { mount unmount relabelfrom };
+allow update_engine backuptool_workspace_file:dir create_dir_perms;
+allow update_engine backuptool_workspace_file:dir mounton;
+allow backuptool_workspace_file tmpfs:filesystem associate;
+# Retain the existing userdebug overlay_remounter's system_file_type rules.
+# The native broker independently requires getcon()==update_engine before I/O.
+# Applications, shell and addon workers must never execute this entrypoint.
+neverallow { appdomain shell backuptool } backuptool_broker_exec:file execute;

@@ -1,0 +1,502 @@
+--- a/system/update_engine/Android.bp
++++ b/system/update_engine/Android.bp
+@@ -600,6 +600,7 @@
+         "libgflags",
+     ],
+     required: [
++        "backuptool_broker",
+         "cacerts",
+         "otacerts",
+     ],
+--- a/system/update_engine/payload_consumer/postinstall_runner_action.cc
++++ b/system/update_engine/payload_consumer/postinstall_runner_action.cc
+@@ -245,64 +245,26 @@
+       LOG(ERROR) << "Error marking the device " << mountable_device << " writeable.";
+       return false;
+     }
+-    // Mount the target partition R/W
+-    LOG(INFO) << "Running backuptool scripts";
+-    if (!utils::MountFilesystem(
+-            mountable_device,
+-            fs_mount_dir_,
+-            MS_NOATIME | MS_NODEV | MS_NODIRATIME,
+-            partition.filesystem_type,
+-            "seclabel")) {
+-      LOG(ERROR) << "Failed to mount the backuptool target";
+-      if (!utils::SetBlockDeviceReadOnly(mountable_device, true)) {
+-        LOG(ERROR) << "Failed to restore the target device read-only state";
+-      }
+-      return false;
+-    }
+-
+-    // These cleanup steps must all run, even when an earlier step fails.
+-    // Reset the next-exec label; this does not change update_engine's domain.
+-    const auto cleanup_backuptool = [&]() {
+-      const bool context_reset = setexeccon(nullptr) == 0;
+-      if (!context_reset) {
+-        LOG(ERROR) << "Failed to clear the backuptool next-exec context";
+-      }
+-      const bool unmounted = utils::UnmountFilesystem(fs_mount_dir_);
+-      if (!unmounted) {
+-        LOG(ERROR) << "Failed to unmount the backuptool target";
+-      }
+-      const bool readonly =
+-          utils::SetBlockDeviceReadOnly(mountable_device, true);
+-      if (!readonly) {
+-        LOG(ERROR) << "Failed to restore the target device read-only state";
+-      }
+-      return context_reset && unmounted && readonly;
+-    };
+-
+-    // Keep the existing backuptool domain while its enforcement contract is
+-    // being repaired; no SELinux permissions or mode are changed here.
+-    if (setexeccon("u:r:backuptool:s0")) {
+-      LOG(ERROR) << "Failed to set backuptool next-exec context";
+-      cleanup_backuptool();
+-      return false;
+-    }
+-
+-    // Execute the labeled script as the first exec, rather than sh -c.
+-    // Keep inherited stdout/stderr and avoid introducing output pipes or
+-    // accumulating unbounded addon output in update_engine memory.
++    // The privileged broker owns a private mount namespace and a volatile
++    // workspace. The addon worker never creates a mountpoint on the image.
++    // This keeps the existing permissive worker while its remaining target
++    // labels, V3 mounts and precise access rights are handled separately.
+     brillo::ProcessImpl backuptool;
+-    backuptool.AddArg("/postinstall/system/bin/backuptool_postinstall.sh");
++    backuptool.AddArg("/system/bin/backuptool_broker");
++    backuptool.AddArg(mountable_device);
++    backuptool.AddArg(source_path);
+     backuptool.SetSearchPath(false);
+     backuptool.SetCloseUnusedFileDescriptors(true);
+     const int ret = backuptool.Run();
+     const bool script_succeeded = ret == 0;
+     if (!script_succeeded) {
+-      LOG(ERROR) << "Backuptool postinstall step failed. status=" << ret;
+-    }
+-    const bool cleanup_succeeded = cleanup_backuptool();
+-    if (!script_succeeded || !cleanup_succeeded) {
+-      return false;
+-    }
++      LOG(ERROR) << "Backuptool broker failed. status=" << ret;
++    }
++    // This device flag is global, so it remains the caller's responsibility
++    // even if the private-namespace helper could not start or was signalled.
++    const bool readonly = utils::SetBlockDeviceReadOnly(mountable_device, true);
++    if (!readonly) LOG(ERROR) << "Failed to restore target read-only state";
++    if (!script_succeeded || !readonly) return false;
+   } else {
+     LOG(INFO) << "Skipping backuptool scripts";
+   }
+--- a/vendor/lineage/prebuilt/common/bin/backuptool_ab.sh
++++ b/vendor/lineage/prebuilt/common/bin/backuptool_ab.sh
+@@ -13,6 +13,7 @@
+ export all_V3_partitions="vendor product system_ext"
+ 
+ result=0
++workspace_ready=0
+ record_failure() {
+   local status="$1"
+   shift
+@@ -178,9 +179,12 @@
+ 
+ cleanup() {
+   umount_extra $all_V3_partitions
+-  if mountpoint /postinstall/tmp >/dev/null 2>&1; then
+-    # A failed unmount must not be followed by deleting a mounted tree.
+-    run_checked umount /postinstall/tmp || return "$?"
++  if [ "$BACKUPTOOL_BROKER_WORKSPACE" != 1 ]; then
++    # Transitional ABI for an older updater running the new top-level script.
++    # A failed unmount must never be followed by deleting a mounted tree.
++    if mountpoint /postinstall/tmp >/dev/null 2>&1; then
++      run_checked umount /postinstall/tmp || return "$?"
++    fi
+   fi
+   run_checked rm -rf /postinstall/tmp
+ }
+@@ -203,14 +207,32 @@
+ # Scripts expect a temporary copy of the helper functions. Stop before addon
+ # execution if that workspace cannot be prepared, then still attempt cleanup.
+ setup_workspace() {
+-  run_checked mkdir -p /postinstall/tmp/ || return "$?"
+-  if ! mountpoint /postinstall/tmp >/dev/null 2>&1; then
+-    run_checked mount -t tmpfs tmpfs /postinstall/tmp || return "$?"
+-  fi
++  if [ "$BACKUPTOOL_BROKER_WORKSPACE" = 1 ]; then
++    if [ ! -d /postinstall/tmp ] || [ -L /postinstall/tmp ]; then
++      record_failure 1 "broker-owned workspace required"
++      return 1
++    fi
++  elif [ "$BACKUPTOOL_LEGACY_WORKSPACE" = 1 ]; then
++    # Only the new top-level wrapper selects compatibility for older callers.
++    # Require an existing postinstall mount before creating any legacy path.
++    if [ -L /postinstall/tmp ] || ! mountpoint /postinstall >/dev/null 2>&1; then
++      record_failure 1 "legacy postinstall mount required"
++      return 1
++    fi
++    run_checked mkdir -p /postinstall/tmp || return "$?"
++    if ! mountpoint /postinstall/tmp >/dev/null 2>&1; then
++      run_checked mount -t tmpfs tmpfs /postinstall/tmp || return "$?"
++    fi
++  else
++    record_failure 1 "broker or top-level legacy workspace required"
++    return 1
++  fi
++  workspace_ready=1
+   run_checked cp -f /postinstall/system/bin/backuptool_ab.functions /postinstall/tmp/backuptool.functions
+ }
++
+ if ! setup_workspace; then
+-  cleanup
++  [ "$workspace_ready" -ne 1 ] || cleanup
+   exit "$result"
+ fi
+ if ! run_checked check_prereq; then
+--- a/device/lineage/sepolicy/common/private/update_engine.te
++++ b/device/lineage/sepolicy/common/private/update_engine.te
+@@ -11,3 +11,22 @@
+ # Allow transition to backuptool domain
+ allow update_engine self:process setexec;
+ domain_trans(update_engine, postinstall_exec, backuptool)
++
++# Native broker executes in update_engine, with a private mount namespace.
++# Its workspace is volatile; no system_file write or worker SYS_ADMIN grant.
++type backuptool_broker_exec, exec_type, system_file_type, file_type;
++type backuptool_workspace_file, file_type;
++allow update_engine backuptool_broker_exec:file { rx_file_perms execute_no_trans };
++allow update_engine self:process setfscreate;
++# Current kernel selinux_mount checks mounton even for MS_PRIVATE on /.
++allow update_engine rootfs:dir mounton;
++# rootcontext= calls may_context_mount_inode_relabel: relabelfrom is checked
++# against the tmpfs superblock; associate is checked for the new root label.
++allow update_engine tmpfs:filesystem { mount unmount relabelfrom };
++allow update_engine backuptool_workspace_file:dir create_dir_perms;
++allow update_engine backuptool_workspace_file:dir mounton;
++allow backuptool_workspace_file tmpfs:filesystem associate;
++# Retain the existing userdebug overlay_remounter's system_file_type rules.
++# The native broker independently requires getcon()==update_engine before I/O.
++# Applications, shell and addon workers must never execute this entrypoint.
++neverallow { appdomain shell backuptool } backuptool_broker_exec:file execute;
+--- a/device/lineage/sepolicy/common/private/file_contexts
++++ b/device/lineage/sepolicy/common/private/file_contexts
+@@ -24,3 +24,6 @@
+ 
+ # Sandbox
+ /data/system_ce/[0-9]*/sandbox/vault(/.*)?  u:object_r:ax_sandbox_vault_file:s0
++
++# Native OTA mount broker; executes only from the privileged updater.
++/system/bin/backuptool_broker  u:object_r:backuptool_broker_exec:s0
+--- /dev/null
++++ b/system/update_engine/backuptool_broker/broker.h
+@@ -0,0 +1,32 @@
++// Copyright (C) 2026 CyberWei
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//     http://www.apache.org/licenses/LICENSE-2.0
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
++#pragma once
++#include <string>
++
++namespace backuptool_broker {
++// The worker still retains its existing permissive policy. A private mount
++// namespace prevents mount propagation; it is not a worker security sandbox.
++class Operations {
++ public:
++  virtual ~Operations() = default;
++  virtual bool Validate() = 0;
++  virtual bool IsolateMounts() = 0;
++  virtual bool MountWorkspace() = 0;
++  virtual bool MakeDirectory(const std::string& path) = 0;
++  virtual bool MountTarget(const std::string& path) = 0;
++  virtual bool BindSystem(const std::string& root, const std::string& view) = 0;
++  virtual int RunWorker() = 0;
++  virtual bool UnmountIfMounted(const std::string& path) = 0;
++};
++// First failure is preserved; every owned cleanup is attempted.
++int Run(Operations& operations);
++}  // namespace backuptool_broker
+--- /dev/null
++++ b/system/update_engine/backuptool_broker/broker.cpp
+@@ -0,0 +1,55 @@
++// Copyright (C) 2026 CyberWei
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//     http://www.apache.org/licenses/LICENSE-2.0
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
++#include "broker.h"
++#include <array>
++
++namespace backuptool_broker {
++int Run(Operations& operations) {
++  if (!operations.Validate()) return 20;
++  if (!operations.IsolateMounts()) return 21;
++  if (!operations.MountWorkspace()) return 22;
++
++  constexpr const char* root = "/postinstall/inactive-root";
++  constexpr const char* system = "/postinstall/system";
++  int result = 0;
++  const auto finish = [&]() {
++    // V3 scripts currently own these optional mounts. Even if their cleanup
++    // fails, attempt all known locations before removing the broker's views.
++    constexpr std::array<const char*, 6> mounts = {
++        "/postinstall/system_ext", "/postinstall/product",
++        "/postinstall/vendor", system, root, "/postinstall"};
++    for (const char* path : mounts) {
++      if (!operations.UnmountIfMounted(path) && result == 0) result = 70;
++    }
++    return result;
++  };
++  // These directories exist only on the fresh tmpfs, never on the target image.
++  for (const char* path : {root, system, "/postinstall/tmp",
++                           "/postinstall/vendor", "/postinstall/product",
++                           "/postinstall/system_ext"}) {
++    if (!operations.MakeDirectory(path)) {
++      result = 23;
++      return finish();
++    }
++  }
++  if (!operations.MountTarget(root)) {
++    result = 24;
++    return finish();
++  }
++  if (!operations.BindSystem(root, system)) {
++    result = 25;
++    return finish();
++  }
++  result = operations.RunWorker();
++  return finish();
++}
++}  // namespace backuptool_broker
+--- /dev/null
++++ b/system/update_engine/backuptool_broker/main.cpp
+@@ -0,0 +1,178 @@
++// Copyright (C) 2026 CyberWei
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//     http://www.apache.org/licenses/LICENSE-2.0
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
++#include "broker.h"
++
++#include <fcntl.h>
++#include <sched.h>
++#include <selinux/selinux.h>
++#include <sys/mount.h>
++#include <sys/stat.h>
++#include <sys/wait.h>
++#include <unistd.h>
++
++#include <cerrno>
++#include <cstring>
++#include <fstream>
++#include <iostream>
++#include <sstream>
++#include <string>
++
++namespace {
++constexpr char kWorkspace[] = "/postinstall";
++constexpr char kWorkspaceContext[] = "u:object_r:backuptool_workspace_file:s0";
++constexpr char kScript[] = "/postinstall/system/bin/backuptool_postinstall.sh";
++
++bool Error(const std::string& operation) {
++  std::cerr << "backuptool_broker: " << operation << ": "
++            << std::strerror(errno) << '\n';
++  return false;
++}
++// The paths queried here are fixed names with no mountinfo escapes.
++// Treat an unreadable mount table as an error, never as 'not mounted'.
++bool Mounted(const std::string& path, bool* mounted) {
++  std::ifstream input("/proc/self/mountinfo");
++  if (!input.is_open()) return Error("open mountinfo");
++  *mounted = false;
++  std::string line;
++  while (std::getline(input, line)) {
++    std::istringstream fields(line);
++    std::string field;
++    for (int i = 0; i < 5; ++i) {
++      if (!(fields >> field)) { errno = EIO; return Error("parse mountinfo"); }
++    }
++    if (field == path) *mounted = true;
++  }
++  if (input.bad()) { errno = EIO; return Error("read mountinfo"); }
++  return true;
++}
++bool Directory(const std::string& path) {
++  struct stat info {};
++  return lstat(path.c_str(), &info) == 0 && S_ISDIR(info.st_mode);
++}
++bool Ext4Block(const std::string& path, dev_t* device) {
++  const int fd = open(path.c_str(), O_RDONLY | O_CLOEXEC);
++  if (fd < 0) return Error("open block " + path);
++  struct stat info {};
++  unsigned char magic[2] = {};
++  const bool valid = fstat(fd, &info) == 0 && S_ISBLK(info.st_mode) &&
++      pread(fd, magic, sizeof(magic), 0x438) == sizeof(magic) &&
++      magic[0] == 0x53 && magic[1] == 0xef;
++  const int close_status = close(fd);
++  if (!valid || close_status != 0) {
++    errno = EINVAL;
++    return Error("require ext4 block " + path);
++  }
++  *device = info.st_rdev;
++  return true;
++}
++
++class RealOperations final : public backuptool_broker::Operations {
++ public:
++  RealOperations(std::string target, std::string source)
++      : target_(std::move(target)), source_(std::move(source)) {}
++  bool Validate() override {
++    char* context = nullptr;
++    if (getcon(&context) != 0) return Error("getcon");
++    const bool expected = context != nullptr &&
++        std::string(context) == "u:r:update_engine:s0";
++    freecon(context);
++    if (!expected) { errno = EPERM; return Error("caller domain"); }
++    dev_t target = 0, source = 0;
++    if (!Ext4Block(target_, &target) || !Ext4Block(source_, &source)) return false;
++    if (target == source) { errno = EINVAL; return Error("distinct slot devices"); }
++    bool mounted = false;
++    if (!Directory(kWorkspace) || !Mounted(kWorkspace, &mounted)) return false;
++    if (mounted) { errno = EBUSY; return Error("workspace already mounted"); }
++    return true;
++  }
++  bool IsolateMounts() override {
++    if (unshare(CLONE_NEWNS) != 0) return Error("private mount namespace");
++    if (mount(nullptr, "/", nullptr, MS_REC | MS_PRIVATE, nullptr) != 0)
++      return Error("disable mount propagation");
++    return true;
++  }
++  bool MountWorkspace() override {
++    // Only the root inode receives this initial label. Do not use context=:
++    // it would force every inode label and prevent cp -a preserving xattrs.
++    return mount("tmpfs", kWorkspace, "tmpfs", MS_NOSUID | MS_NODEV,
++                 "mode=0700,rootcontext=u:object_r:backuptool_workspace_file:s0")
++               == 0 || Error("mount workspace");
++  }
++  bool MakeDirectory(const std::string& path) override {
++    // There is no worker until setup completes; these are fixed names on a
++    // newly mounted tmpfs. Explicit fscreate avoids depending on inheritance.
++    if (setfscreatecon(kWorkspaceContext) != 0) return Error("fscreate label");
++    const bool created = mkdir(path.c_str(), 0700) == 0;
++    const int saved = errno;
++    const bool reset = setfscreatecon(nullptr) == 0;
++    if (!reset) return Error("reset fscreate label");
++    errno = saved;
++    return created || Error("mkdir " + path);
++  }
++  bool MountTarget(const std::string& path) override {
++    return mount(target_.c_str(), path.c_str(), "ext4",
++                 MS_NOATIME | MS_NODEV | MS_NOSUID | MS_NODIRATIME,
++                 "seclabel") == 0 || Error("mount inactive system");
++  }
++  bool BindSystem(const std::string& root, const std::string& view) override {
++    const std::string source = Directory(root + "/system") ? root + "/system" : root;
++    if (!Directory(source + "/bin")) {
++      errno = EINVAL;
++      return Error("inactive system layout");
++    }
++    return mount(source.c_str(), view.c_str(), nullptr, MS_BIND, nullptr) == 0 ||
++           Error("bind inactive system view");
++  }
++  int RunWorker() override {
++    if (setenv("BACKUPTOOL_BROKER_WORKSPACE", "1", 1) != 0) {
++      Error("workspace environment"); return 26;
++    }
++    const pid_t child = fork();
++    if (child < 0) { Error("fork worker"); return 27; }
++    if (child == 0) {
++      // Change only the worker's next exec; the broker and update_engine
++      // never carry a pending exec label or enter the backuptool domain.
++      if (setexeccon("u:r:backuptool:s0") != 0) {
++        Error("worker next-exec label"); _exit(126);
++      }
++      execl(kScript, kScript, static_cast<char*>(nullptr));
++      Error("exec worker"); _exit(127);
++    }
++    int status = 0;
++    pid_t waited;
++    do { waited = waitpid(child, &status, 0); } while (waited < 0 && errno == EINTR);
++    if (waited != child) { Error("wait worker"); return 28; }
++    if (WIFEXITED(status)) return WEXITSTATUS(status);
++    if (WIFSIGNALED(status)) return 128 + WTERMSIG(status);
++    return 29;
++  }
++  bool UnmountIfMounted(const std::string& path) override {
++    bool mounted = false;
++    if (!Mounted(path, &mounted)) return false;
++    if (!mounted) return true;
++    // No lazy detach: a busy filesystem is a reported cleanup failure.
++    return umount(path.c_str()) == 0 || Error("unmount " + path);
++  }
++ private:
++  const std::string target_;
++  const std::string source_;
++};
++}  // namespace
++
++int main(int argc, char** argv) {
++  if (argc != 3) {
++    std::cerr << "Usage: backuptool_broker <inactive-ext4-block> <active-ext4-block>\n";
++    return 2;
++  }
++  RealOperations operations(argv[1], argv[2]);
++  return backuptool_broker::Run(operations);
++}
+--- /dev/null
++++ b/system/update_engine/backuptool_broker/Android.bp
+@@ -0,0 +1,18 @@
++// Copyright (C) 2026 CyberWei
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//     http://www.apache.org/licenses/LICENSE-2.0
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
++cc_binary {
++    name: "backuptool_broker",
++    srcs: ["broker.cpp", "main.cpp"],
++    shared_libs: ["libselinux"],
++    cflags: ["-Wall", "-Wextra", "-Werror"],
++    cpp_std: "c++17",
++}
+--- a/vendor/lineage/prebuilt/common/bin/backuptool_postinstall.sh
++++ b/vendor/lineage/prebuilt/common/bin/backuptool_postinstall.sh
+@@ -5,6 +5,15 @@
+ 
+ # Preserve the established backup -> restore -> sync order. Propagate the
+ # first failure instead of unconditionally returning success.
++
++# Older installed update_engine versions directly execute this new script and
++# cannot provide a broker workspace. Keep that upgrade ABI until those callers
++# have migrated; new broker callers never use the legacy shell mount path.
++if [ "$BACKUPTOOL_BROKER_WORKSPACE" = 1 ]; then
++  unset BACKUPTOOL_LEGACY_WORKSPACE
++else
++  export BACKUPTOOL_LEGACY_WORKSPACE=1
++fi
+ /postinstall/system/bin/backuptool_ab.sh backup
+ backup_status=$?
+ /postinstall/system/bin/backuptool_ab.sh restore

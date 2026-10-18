@@ -137,3 +137,5 @@ Boot initialization ownership and optional test-domain tightening (2026-10-18):
 ## Debug-domain / OTA safety changes (2026-10-18)
 
 Six reviewed files are listed in provenance/debug-ota-source-files.json with exact upstream project HEADs and before/after SHA. CyberWei922 modified test-service startup, removed three static permissive declarations and added checked OTA failure handling. No upstream ownership is claimed. Complete BSD grants/patent disclaimers stay in source; AOSP sepolicy public-domain warranty/liability NOTICE and LineageOS Apache notice stay in the plan's upstream-notices/. Existing KernelSU code/rules are unchanged.
+
+2026 CyberWei: native Backuptool mount broker and integration changes. Original upstream Apache-2.0 attribution and LineageOS REUSE annotations are retained in plans/selinux-backuptool-broker-20261019/upstream-notices.

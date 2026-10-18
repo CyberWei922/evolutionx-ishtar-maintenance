@@ -12,3 +12,5 @@ This is a mixed-license maintenance source collection, not a license for an enti
 - No single repository-wide license overrides upstream terms. ROM distribution and corresponding-source obligations require a separate release review.
 
 Full license texts and upstream notices are under `licenses/`. This repository does not assert ownership of upstream code or grant rights to LineageOS, Evolution X, Android, Xiaomi, Google or Qualcomm trademarks.
+
+- The native Backuptool broker plan retains AOSP Apache-2.0 notices, vendor/lineage licensing and device/lineage/sepolicy REUSE Apache-2.0 annotations; original additions are Copyright 2026 CyberWei. See `provenance/broker-source-files.json`.
