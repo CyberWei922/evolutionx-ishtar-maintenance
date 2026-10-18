@@ -1,5 +1,18 @@
 # 当前维护状态
 
+## 1792347689 已安装、自动读回通过（当前状态）
+
+本轮Backuptool原生挂载代理及旧升级入口兼容候选已按机主“刷入 手机已连接”保留数据刷入并正常启动。74动作/73完整下载及wire SHA 9dcc1441a36325c6f909b25561ebb5eaf1fa2cd6892ac20543ba09a351fab765通过。57文件/21分区范围、7组保留策略契约和5组代理相关策略契约、broker执行标签/0:2000:755、六MIUI默认入口及三项数据基线匹配；158次读回命令尝试、0次只读重试。机主桌面/应用照片验收待回复；不补记相机、麦克风、指纹或全硬件验收。
+
+实际1792347689/A槽/FBE，仍为全局Permissive/enforce0。磁盘策略597305253046a890c46339828658775648e0f0f28f8d2597c5d14d3a54f08f75；加载b450c7d4760ffdf0bd9abfe47457fbc91fdb54756047621fa1b108144ed5b083/2,152,552 bytes。静态宽松域仅backuptool，实际加载另有动态ksu，内核保持。首轮只读检查把代理文件组误写为root，实际镜像及手机均为shell组2000；原postboot01失败保留，postboot02仅继续剩余读回，未重刷或重启。本次文件及策略读回不代表原生代理真实OTA执行、backuptool已可Enforcing或Enforcing冷启动通过。
+
+有限启动采集已结束：uptime12.18–192.15秒/32样本，核心PID观测变化0次，采集传输失败0次。缓冲快照和有限流合并保留620条唯一AVC行、audit_lost最大1064；不是全量开机拒绝、功能故障个数或完成百分比。初始MIUI进程域是否见到：False。
+
+私有运行证据双端一致：40项/3,011,906 bytes/SHA 110ea6328bc72aad5f308c56fad838c37b2ab21f4428ea189492d1334377eb82。正式完整ROM仍为Ubuntu delivery/ishtar-selinux-backuptool-broker-permissive-candidate-20261019-02（4,545,345,933 bytes/SHA32df7de2…），Mac仅薄交接及私有证据，Git只存许可明确源码与脱敏摘要。94项活动源码重新匹配；本轮构建/刷写/读回及有限observer均结束，不再进行手机采集或切模式。旧正式ROM、当前SSD暂存与增量缓存保留；未调整其他Ubuntu任务。
+
+本次刷入与首次正常重启授权已用完。未做Enforcing、额外重启或真实OTA，不复用本次授权。下一步仍需inactive路径/符号链接隔离、持久标签/security xattr、精确权限、V3/EROFS及optional处理，然后做另获授权的必要Enforcing运行/冷启动验证。下方候选未安装及刷入现场描述为历史。
+
+
 ## 1792347689完整下一候选已编译核验，尚未安装（当前工作源码）
 
 本轮原生Backuptool挂载代理与旧升级入口兼容候选已完整编译（10:06/exit0），实际34个payload分区/94项源码/9份新或保留执行与init文件、broker inode执行标签和保护载荷检查通过。72个隔离主机场景通过；构建使用CPU0–6/Ninja7/highmem2/nice5/I/O4，一次实测payload生成进程约695%CPU，留CPU7余量，未调整或停止Ubuntu其他任务。

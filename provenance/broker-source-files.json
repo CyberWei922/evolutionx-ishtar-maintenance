@@ -1,5 +1,5 @@
 {
-  "status": "COMPLETE_PERMISSIVE_ROM_BUILT_AND_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_PASSED_OWNER_DESKTOP_DATA_PENDING",
   "baseline_incremental": "1792339544",
   "source_files": 94,
   "changed_paths": 10,
@@ -130,7 +130,7 @@
     "backuptool"
   ],
   "global_phone_mode": "Permissive",
-  "phone_installed": false,
+  "phone_installed": true,
   "backuptool_enforcing_ready": false,
   "private_namespace_is_not_worker_sandbox": true,
   "compiled_artifacts_in_git": false,
@@ -151,5 +151,17 @@
   "flash_authorized": false,
   "reboot_authorized": false,
   "enforcing_authorized": false,
-  "actual_ota_performed": false
+  "actual_ota_performed": false,
+  "installed_incremental": "1792347689",
+  "loaded_policy": {
+    "bytes": 2152552,
+    "sha256": "b450c7d4760ffdf0bd9abfe47457fbc91fdb54756047621fa1b108144ed5b083"
+  },
+  "loaded_permissive_domains": [
+    "backuptool",
+    "ksu"
+  ],
+  "owner_desktop_and_data_confirmed": false,
+  "enforcing_trial_performed": false,
+  "cold_boot_enforcing_tested": false
 }

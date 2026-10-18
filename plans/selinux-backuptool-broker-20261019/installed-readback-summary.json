@@ -1,0 +1,81 @@
+{
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_PASSED_OWNER_DESKTOP_DATA_PENDING",
+  "baseline_incremental": "1792339544",
+  "installed_incremental": "1792347689",
+  "phone_installed": true,
+  "rom": {
+    "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545345933,
+    "sha256": "32df7de2c2648c2ed01b96bb2ffc42fa93f9e79ff3404b4db87ff3967590ff0a"
+  },
+  "source_files": 94,
+  "new_changed_paths": 10,
+  "mode": "Permissive",
+  "enforce": "0",
+  "static_permissive_domains": [
+    "backuptool"
+  ],
+  "loaded_permissive_domains": [
+    "backuptool",
+    "ksu"
+  ],
+  "policy_sha256": "597305253046a890c46339828658775648e0f0f28f8d2597c5d14d3a54f08f75",
+  "loaded_policy": {
+    "bytes": 2152552,
+    "sha256": "b450c7d4760ffdf0bd9abfe47457fbc91fdb54756047621fa1b108144ed5b083"
+  },
+  "kernel_su_dynamic_exception_preserved": true,
+  "native_file_readbacks": 57,
+  "partition_range_readbacks": 21,
+  "retained_loaded_contracts": 7,
+  "broker_loaded_contracts": 5,
+  "broker_inode_label_and_owner_verified": true,
+  "checker_failure_preserved": "postboot01 assumed gid0; audited image and phone both gid2000. postboot02 continues remaining reads; no reflash/reboot.",
+  "command_attempts": 158,
+  "command_retries": 0,
+  "data_baseline_matches": {
+    "media_directory_stat": true,
+    "user_xml_owner_mode": true,
+    "third_party_package_count": true
+  },
+  "all_six_miui_default_routes_match": true,
+  "miui_domain_seen_in_initial_snapshot": false,
+  "runtime_dsp_hal_fallback_proven": false,
+  "wire_audit": {
+    "state": "write-transcript-verified",
+    "at": "2026-10-19T02:52:31.111054+08:00",
+    "completed_operations": 74,
+    "super_chunks": 59,
+    "boot_writes": 14,
+    "slot": "a",
+    "userdata_metadata_operations": 0,
+    "firmware_writes": 0,
+    "all_download_sizes_match": true,
+    "data_complete_count": 73,
+    "wire_sha256": "9dcc1441a36325c6f909b25561ebb5eaf1fa2cd6892ac20543ba09a351fab765",
+    "reboot_acknowledged": false
+  },
+  "normal_reboot_acknowledged": true,
+  "runtime_archive": {
+    "state": "BOTH_HOSTS_PRIVATE_INSTALLED_RUNTIME_MATCH",
+    "files": 40,
+    "archive_bytes": 3011906,
+    "archive_sha256": "110ea6328bc72aad5f308c56fad838c37b2ab21f4428ea189492d1334377eb82",
+    "raw_logs_and_policy_are_private": true
+  },
+  "owner_desktop_and_data_confirmed": false,
+  "owner_acceptance_scope": null,
+  "new_owner_hardware_acceptance_claimed": false,
+  "enforcing_trial_performed": false,
+  "cold_boot_enforcing_tested": false,
+  "actual_ota_performed": false,
+  "broker_execution_via_real_ota_tested": false,
+  "whole_ota_signature_independently_verified": false,
+  "flash_and_first_normal_reboot_authorization_consumed": true,
+  "additional_reboot_or_enforcing_authorized": false,
+  "all_own_build_flash_and_readback_workers_finished": true,
+  "other_tasks_changed": false,
+  "completed_flash_staging_deleted": false,
+  "old_formal_roms_deleted": false,
+  "rom_build_summary_describes_prior_static_phase": true
+}
