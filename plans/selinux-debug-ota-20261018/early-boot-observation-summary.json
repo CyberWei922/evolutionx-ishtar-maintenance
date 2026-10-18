@@ -1,0 +1,50 @@
+{
+  "state": "complete",
+  "first_observed_uptime": 16.31,
+  "last_observed_uptime": 194.67,
+  "boot_completed_seen": true,
+  "retained_security_lines": {
+    "kernel": 69,
+    "logcat": 60
+  },
+  "stream_bytes": {
+    "kernel": 16246,
+    "logcat": 18929
+  },
+  "streams_capped": {
+    "kernel": false,
+    "logcat": false
+  },
+  "logs_claimed_complete": false,
+  "coverage_limit": "ADB/root availability, ring-buffer retention, audit rate limiting, stream caps and finite observation window; no zero-denial guarantee.",
+  "samples": 31,
+  "observed_critical_pid_change_count": 0,
+  "recovered_transport_failure_count": 1,
+  "all_finite_observers_finished": true,
+  "combined_buffered_security_observations": {
+    "sources": "Postboot buffered snapshots plus finite startup streams; not solely events inside the observed uptime window.",
+    "unique_retained_avc_lines": 514,
+    "avc_source_domains": {
+      "hal_camera_default": 373,
+      "untrusted_app": 43,
+      "ishtar_miui_camera_app": 22,
+      "priv_app": 16,
+      "shell": 15,
+      "rild": 10,
+      "hal_fingerprint_default": 8,
+      "hal_sensors_default": 4,
+      "hal_secure_element_default": 4,
+      "hal_audio_default": 4,
+      "system_app": 3,
+      "vendor_qti_init_shell": 3,
+      "vendor_init": 2,
+      "vendor_modprobe": 2,
+      "toolbox": 2,
+      "system_server": 2,
+      "vendor_mtd": 1
+    },
+    "audit_lost_max": 970,
+    "not_a_complete_denial_inventory": true
+  },
+  "denial_count_is_not_a_bug_count_or_completion_percentage": true
+}

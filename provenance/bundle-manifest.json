@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 22665,
-      "sha256": "cac5f76caf839ad6597687c52eddfd02460b29d6550190b2420e7956177d9d82"
+      "bytes": 24259,
+      "sha256": "1cee7a2fd24d78956cbd077aaeff222edf883dd24ce34f2f18b9cf4571a8fd84"
     },
     "LICENSE.md": {
       "bytes": 1809,
@@ -18,8 +18,8 @@
       "sha256": "8e7dbed122428752a14bd09d70d63626762a103fb0c4b0fb923f95770fdf34c9"
     },
     "README.md": {
-      "bytes": 4045,
-      "sha256": "29465f16f234f4c6267d7ab42cd26ef6643a3fa682ed546e3b5653227d4e4ab6"
+      "bytes": 3616,
+      "sha256": "17808d63386d2b0a8ec5736ab67de98e24cd913c4c7173d95c2f5fb12c284e90"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 36862,
-      "sha256": "15590bf39fb6add6c8be14b1a715db0744ac2beb8b81b47639d56356ae55aa23"
+      "bytes": 39648,
+      "sha256": "cb3c59b38b84ec12adc36c4d6c5cf467a5f9f84377aba2d765ab72388541bd59"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -654,8 +654,8 @@
       "sha256": "6e4dda1269867b22cc053a5a07cdcd1209d978852ab85d8efd5b1dbf97c30f84"
     },
     "plans/selinux-debug-ota-20261018/README.md": {
-      "bytes": 4243,
-      "sha256": "ed76bbcd9ed8451b155d0c475c9b86899f4b9d07176ceb2670089fdbea6d98b6"
+      "bytes": 5105,
+      "sha256": "e050ae6fc7ec5e57ec71ee6cc726503f510178cc623905844aeae069e454583e"
     },
     "plans/selinux-debug-ota-20261018/analysis-summary.json": {
       "bytes": 1734,
@@ -681,13 +681,29 @@
       "bytes": 838,
       "sha256": "34cc48cd5d1004a32b955b1980dfd1a3a1606afcb72dec3e4ecd298f741b7e93"
     },
+    "plans/selinux-debug-ota-20261018/early-boot-observation-summary.json": {
+      "bytes": 1527,
+      "sha256": "217d19c6c317985eb8ef3f6393f85ac7df59516dcdd9b42b5fd6c1385b29da2e"
+    },
     "plans/selinux-debug-ota-20261018/failure-test-summary.json": {
       "bytes": 4441,
       "sha256": "4a94a9b506bf9a162765957709f8153bb05d2c30c71baad99075808fd3a666f8"
     },
+    "plans/selinux-debug-ota-20261018/installed-readback-summary.json": {
+      "bytes": 3379,
+      "sha256": "2b56e86c5550f00675344c87341b8b708e7c42c6fba1a18f6d8943d1c246fb45"
+    },
+    "plans/selinux-debug-ota-20261018/owner-desktop-data-acceptance.json": {
+      "bytes": 314,
+      "sha256": "5e56bce8d82de6c857d7e46c5e93622a980cecdbd0f6bfd82b6a68de2e73f905"
+    },
     "plans/selinux-debug-ota-20261018/packaged-component-checks.json": {
       "bytes": 738,
       "sha256": "de088e42eb5ec16c97ae38ed25b983b8c38b6a7abecda1409d325c4b3d8e8493"
+    },
+    "plans/selinux-debug-ota-20261018/postflash-cleanup-summary.json": {
+      "bytes": 703,
+      "sha256": "cd4a2725c959260ec4d70dbeeab4aa064c4bfe76650f5438dc422312cab49b63"
     },
     "plans/selinux-debug-ota-20261018/project-heads.json": {
       "bytes": 431,
@@ -1278,8 +1294,8 @@
       "sha256": "f3ef58f0e3f256c15b3fc76bfa52ccc69174dd99662502828493ac90ad58099c"
     },
     "provenance/debug-ota-source-files.json": {
-      "bytes": 4377,
-      "sha256": "177bc9fe1efc3428fb17d54af31ad05925939762cf0589a177b006e49e9a08b2"
+      "bytes": 4744,
+      "sha256": "52e4b14ad964e7d115ce5616478070ee74b293179bbd6c4c98327571b254583b"
     },
     "provenance/dependency-status-source-files.json": {
       "bytes": 2668,

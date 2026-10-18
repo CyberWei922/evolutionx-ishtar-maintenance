@@ -1,5 +1,12 @@
 # 调试域收紧与 OTA 保留路径安全检查
 
+## 当前安装结果：1792333073
+
+本批累计已保留数据刷入并正常启动。机主确认桌面正常、原有应用和照片都在。自动读回53文件/21分区范围、7组保留契约/六MIUI默认入口及数据基线通过。仍为全局Permissive；静态宽松域仅backuptool，实际加载另含动态ksu。详见 [安装读回](installed-readback-summary.json)、[启动观察](early-boot-observation-summary.json)和[机主验收](owner-desktop-data-acceptance.json)。原始日志/策略二进制只在机主本地保存。
+
+有限采集已结束，一次传输失败已恢复；日志有丢失与速率限制，不声称全量或零拒绝。没有Enforcing或真实OTA验收。已清理本轮完成的SSD刷写暂存及out重复ZIP；正式本版/上版ROM与源码缓存保留，不能重放旧runner。以下基线与组件记录描述构建阶段。
+
+
 基线手机为 **1792325510 / Permissive**。前一 boot-contracts 批次的78项源码/4个静态宽松域未单独安装；本批继续合入，活动输入共 **84项**，在前批之上修改6个路径。
 
 ## 本批内容
@@ -16,7 +23,7 @@
 
 ## 明确未完成的部分
 
-候选静态宽松域剩 **backuptool一个**，另有保持原样的KernelSU动态例外。这不是SELinux完成百分比，也不是已完成Enforcing：手机仍是原9个静态宽松域/Permissive，未安装本批。最终完整候选 **1792333073** 已构建并通过34个实际payload分区及保留数据升级静态检查，见rom-build-summary.json。ROM为4,545,424,895 bytes，SHA `813f87bd22c32cf8d59b0287a01128e28969164cd5dfcf60b4f033c25983f503`，仅保存在Ubuntu正式delivery；Mac有78项薄交接。
+已安装策略的静态宽松域剩 **backuptool一个**，另有保持原样的KernelSU动态例外。这不是SELinux完成百分比，也不是已完成Enforcing：全局仍Permissive。最终完整候选 **1792333073** 已构建并通过34个实际payload分区及保留数据升级静态检查，见rom-build-summary.json。ROM为4,545,424,895 bytes，SHA `813f87bd22c32cf8d59b0287a01128e28969164cd5dfcf60b4f033c25983f503`，仅保存在Ubuntu正式delivery；Mac有78项薄交接。
 
 backuptool 当前还会挂载分区、修改 inactive 系统文件；其执行/写入路径与 neverallow 存在实际冲突。完整收紧需要让 update_engine 代理挂载和块设备操作、隔离 inactive 标签视图，并处理 `cp --preserve=a` 的安全上下文/xattr和新增文件最终持久标签。不能只换context挂载就称修完，也不关闭OTA/addon.d。
 
@@ -28,4 +35,4 @@ backuptool 当前还会挂载分区、修改 inactive 系统文件；其执行/�
 
 原Linux Foundation/Qualcomm Innovation Center的完整BSD式许可、专利免责声明均保留。AOSP C++/LineageOS脚本沿用Apache许可；AOSP su的public-domain NOTICE全文单独保留，新增维护内容按Apache-2.0。相邻 .license 是维护元数据，不复制进Android构建输入。不包含ROM、APK、策略二进制、私有手机日志或反汇编。
 
-机主本轮选择“先继续源码修复，暂不切换”。新刷入、重启、Enforcing和真实OTA均未授权；完整构建和审计已完成、所有本轮worker已退出。包仍保持Permissive，未刷入手机。Ubuntu其他任务未调整。
+机主曾选择继续源码修复、暂不切换；完成候选后另行授权本次保留数据刷入及首次正常重启，现已完成。该授权已用完，不包含额外重启、Enforcing或真实OTA。所有本轮worker已退出，Ubuntu其他任务未调整。

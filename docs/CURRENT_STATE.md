@@ -1,5 +1,20 @@
 # 当前维护状态
 
+## 1792333073已安装、桌面和数据验收通过（当前状态）
+
+本轮74动作/73完整下载成功，wire SHA `0e96eb62ede64068b3ecf973734f60564ef40bb462971d9d476702efcd6b28f8` 已核对，23:07:24首次正常重启。53个文件、21个分区范围、7组保留策略契约及六MIUI默认入口读回一致，150次命令尝试、0重试；数据三项基线保持。机主确认“桌面正常，应用和照片都在”，仅记录桌面/应用照片保留验收，不补记本版相机、麦克风、指纹或全硬件验收。
+
+实际1792333073/A槽/FBE，仍为全局Permissive/enforce0。磁盘策略694b6134dfd89758742f964df8d6f288203df5c766c75f2225b30af0fbaaed53；加载策略49db1c52b7d70b4060dabefea3b523bc6cc201b4a13433e965bb2b5e0711dbec/2,152,173 bytes。静态宽松域仅backuptool，实际加载backuptool及动态ksu两域，内核/KSU保持。本轮累计8个静态域已去宽松声明；全局仍P，不据域数量宣称完成比例或Enforcing就绪。未做Enforcing/冷启动Enforcing/真实OTA。
+
+有限启动observer及所有本轮worker已结束：实际uptime16.31–194.67秒、31样本，核心PID无观测到变化；有1次已恢复的传输/root响应失败。合并缓冲快照与有限流保留514条唯一AVC行、audit_lost最大970，含速率/缓冲限制，不是全量开机拒绝、零拒绝或514个功能故障。初始快照未见MIUI进程，后段日志有该域，不混同为初始域验证。后续继续按必要调用链排查，不批量放开相机枚举或诊断探针。
+
+私有运行证据31项/1,520,496 bytes/SHA `2ee429a7b62b31fc5078f81f2dd61b0e09e48641cf35ba6f5601e07e2fc8c6bc` 已在Mac/Ubuntu一致保存；原始日志、加载策略及ROM不入Git。完整ROM仍取Ubuntu正式delivery/ishtar-selinux-debug-ota-permissive-candidate-20261018-02（4,545,424,895 bytes/SHA813f87bd…），冻结交付不改；Mac只有薄交接和私有运行归档。活动输入为02 control/expected-source-files.json共84项。
+
+按已有清理授权，在双端证据/数据验收后仅删除本轮已完成SSD刷写暂存及同SHA的out重复ZIP，释放28,837,486,592 bytes（约26.86GiB），SSD空闲约108.88GiB。本版和上一版1792325510正式ROM保留，其他HDD旧档本轮未清；未重新全量哈希保留的正式ZIP，重复输出ZIP删除前已哈希。源码/.repo/厂商依赖/当前增量缓存、其他任务未动。旧runner暂存已删除，禁止重放。
+
+本次刷入及首次正常重启授权已用完，不复用作额外重启、切模式或OTA。手机无需继续连接USB。下一步仍是backuptool挂载代理、inactive标签/安全xattr/最终标签、内层错误汇总及optional处理，随后才是必要Enforcing运行/冷启动验证；当前P启动不替代这些测试。
+
+
 ## 1792333073完整候选已构建核验，未安装（最新）
 
 最终02整包debug-ota-rom-build-02 exit0（20:28），audit-status及worker complete；34实际payload分区、84项源码、累计16个未安装变更路径、新update_engine/顶层脚本/3个init输出及保护载荷检查通过。静态保留数据升级：与已安装1792325510的OTA证书字节/SDK/补丁/fstab保持，时间戳向前，无userdata/metadata及wipe/downgrade标记；完整OTA签名未独立密码学核验。候选仍为全局Permissive、静态宽松域仅backuptool，KSU动态例外/内核保持；不是Enforcing或真实OTA验收。

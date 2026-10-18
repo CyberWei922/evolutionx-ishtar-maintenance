@@ -1,5 +1,5 @@
 {
-  "status": "SOURCE_COMPONENTS_AND_COMPLETE_ROM_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "status": "INSTALLED_BOOTED_AND_AUTOMATED_READBACK_PASSED",
   "baseline_incremental": "1792325510",
   "source_files": 84,
   "latest_changed_paths": 6,
@@ -75,7 +75,7 @@
   "static_permissive_domains": [
     "backuptool"
   ],
-  "phone_installed": false,
+  "phone_installed": true,
   "global_phone_mode": "Permissive",
   "ksu_changed": false,
   "backuptool_enforcing_ready": false,
@@ -84,5 +84,18 @@
   "filesystem_guard_and_magic_checked": true,
   "candidate_incremental": "1792333073",
   "rom_sha256": "813f87bd22c32cf8d59b0287a01128e28969164cd5dfcf60b4f033c25983f503",
-  "rom_bytes": 4545424895
+  "rom_bytes": 4545424895,
+  "installed_incremental": "1792333073",
+  "loaded_policy": {
+    "bytes": 2152173,
+    "sha256": "49db1c52b7d70b4060dabefea3b523bc6cc201b4a13433e965bb2b5e0711dbec"
+  },
+  "loaded_permissive_domains": [
+    "backuptool",
+    "ksu"
+  ],
+  "owner_desktop_and_data_confirmed": true,
+  "enforcing_trial_performed": false,
+  "cold_boot_enforcing_tested": false,
+  "actual_ota_performed": false
 }

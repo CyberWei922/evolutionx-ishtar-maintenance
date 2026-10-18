@@ -1,5 +1,14 @@
 # ishtar maintenance repository
 
+## Installed1792333073 and owner desktop/data acceptance (current)
+
+The authorized preserve-data flash completed74 operations/73 downloads, wire0e96eb62… verified, then the first normal reboot. Installed53-file/21-range/7 retained-contract/six MIUI-route checks and data baselines passed;150 command attempts/0 retries. Owner confirmed normal desktop and existing apps/photos only. Do not expand this to new hardware, camera, microphone, fingerprint, Enforcing or OTA acceptance.
+
+Current source is the84-input final02 debug-ota plan; phone is1792333073, globally Permissive/enforce0. Static permissive list is only backuptool; loaded list is backuptool and dynamicksu. Disk policy694b6134…; loaded49db1c52…/2,152,173 bytes. All own build/flash/readback/finite observers ended; startup observation16.31–194.67s had31 samples, no observed core PID change and one recovered transport failure. Combined buffered AVC counts are incomplete and are not a list of necessary allows.
+
+Private31-file runtime archive matches on both hosts; only summaries enter Git. After evidence preservation and owner acceptance, this completed SSD flash scratch and matching duplicate output ZIP were removed; current/previous formal ROMs remain, other HDD archives were not cleaned. Do not replay deleted staging or successful runners. Authorization is consumed; no extra reboot/Enforcing/actual OTA is authorized. Remaining backuptool mount/labels/xattrs/error contracts and necessary Enforcing cold startup are separate. Leave unrelated Ubuntu jobs alone. Older entries below describe historical stages.
+
+
 ## Final1792333073 ROM (current, not installed)
 
 Final02 full ROM and34 actual payload partitions/84 inputs/16 cumulative uninstalled paths passed static checks; build and audit workers are complete and no longer live, build lock free. Active source remains control/ishtar-selinux-debug-ota-next-20261018-02 and plans/selinux-debug-ota-20261018/working-source-files.json. ROM SHA813f87bd…/4,545,424,895 bytes; Mac78-file thin handoff only, full ROM on Ubuntu. Policy694b6134… static permissive list only backuptool; global boot remains Permissive. KSU/kernel and accepted payloads unchanged. See rom-build-summary.json; complete OTA signature not independently cryptographically verified.
