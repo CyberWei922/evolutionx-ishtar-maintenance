@@ -1,0 +1,247 @@
+{
+  "state": "ISOLATED_HOST_TESTS_PASSED",
+  "total_cases": 56,
+  "mount_method_cases": [
+    "success_and_cleanup_order PASS",
+    "nonzero_signaled_or_system_failure_7 PASS",
+    "nonzero_signaled_or_system_failure_137 PASS",
+    "nonzero_signaled_or_system_failure_-1 PASS",
+    "source_resolution_failure_populated_path PASS",
+    "empty_source_path_rejected PASS",
+    "source_resolution_failure_empty_path PASS",
+    "read_failure_stops_before_write PASS",
+    "short_or_long_read_0 PASS",
+    "short_or_long_read_1 PASS",
+    "short_or_long_read_2 PASS",
+    "short_or_long_read_5 PASS",
+    "short_or_long_read_7 PASS",
+    "no_mounts_skips_backup PASS",
+    "little_endian_nonzero_high_byte PASS",
+    "non_ext4_source_does_not_write_target PASS",
+    "vendor_erofs_runs_normal_postinstall PASS",
+    "system_erofs_runs_normal_postinstall PASS",
+    "other_ext4_partition_skips_system_backup PASS",
+    "no_source_slot_skips_read PASS",
+    "rw_failure PASS",
+    "mount_failure_restores_ro PASS",
+    "setexec_failure_cleans_every_resource PASS",
+    "reset_failure_still_unmounts_and_sets_ro PASS",
+    "unmount_failure_still_sets_ro PASS",
+    "ro_failure_reported PASS"
+  ],
+  "mount_method_extracted_unmodified": true,
+  "mount_method_sha256": "174c649c0ebe1dce05b4f47937f7e1d0849db5e93a94f4dddd4de7fe3ccf4cf0",
+  "script_cases": [
+    {
+      "case": "normal_v2_v3",
+      "exit": 0,
+      "addon_calls": [
+        "V2:pre-backup:2",
+        "V2:backup:2",
+        "V2:post-backup:2",
+        "V3:pre-backup:3",
+        "V3:backup:3",
+        "V3:post-backup:3",
+        "V2:pre-restore:2",
+        "V2:restore:2",
+        "V2:post-restore:2",
+        "V3:pre-restore:3",
+        "V3:restore:3",
+        "V3:post-restore:3"
+      ]
+    },
+    {
+      "case": "multiple_stage_failures",
+      "exit": 7,
+      "addon_calls": [
+        "V2:pre-backup:2",
+        "V2:backup:2",
+        "V2:post-backup:2",
+        "V3:pre-backup:3",
+        "V3:backup:3",
+        "V3:post-backup:3",
+        "V2:pre-restore:2",
+        "V2:restore:2",
+        "V2:post-restore:2",
+        "V3:pre-restore:3",
+        "V3:restore:3",
+        "V3:post-restore:3"
+      ]
+    },
+    {
+      "case": "empty_addon_directory",
+      "exit": 0,
+      "addon_calls": []
+    },
+    {
+      "case": "workspace_mount_failure",
+      "exit": 19,
+      "addon_calls": []
+    },
+    {
+      "case": "helper_copy_failure",
+      "exit": 21,
+      "addon_calls": []
+    },
+    {
+      "case": "addon_copy_failure",
+      "exit": 22,
+      "addon_calls": []
+    },
+    {
+      "case": "addon_copy_failed_after_files_written",
+      "exit": 36,
+      "addon_calls": []
+    },
+    {
+      "case": "find_failure",
+      "exit": 23,
+      "addon_calls": []
+    },
+    {
+      "case": "sort_failure",
+      "exit": 24,
+      "addon_calls": []
+    },
+    {
+      "case": "v3_mount_failure",
+      "exit": 32,
+      "addon_calls": [
+        "V2:pre-backup:2",
+        "V2:backup:2",
+        "V2:post-backup:2",
+        "V2:pre-restore:2",
+        "V2:restore:2",
+        "V2:post-restore:2"
+      ]
+    },
+    {
+      "case": "v3_blockdev_failure",
+      "exit": 33,
+      "addon_calls": [
+        "V2:pre-backup:2",
+        "V2:backup:2",
+        "V2:post-backup:2",
+        "V2:pre-restore:2",
+        "V2:restore:2",
+        "V2:post-restore:2"
+      ]
+    },
+    {
+      "case": "tmp_unmount_failure",
+      "exit": 34,
+      "addon_calls": [
+        "V2:pre-backup:2",
+        "V2:backup:2",
+        "V2:post-backup:2",
+        "V2:pre-restore:2",
+        "V2:restore:2",
+        "V2:post-restore:2"
+      ]
+    },
+    {
+      "case": "sync_failure",
+      "exit": 35,
+      "addon_calls": [
+        "V2:pre-backup:2",
+        "V2:backup:2",
+        "V2:post-backup:2",
+        "V2:pre-restore:2",
+        "V2:restore:2",
+        "V2:post-restore:2"
+      ]
+    },
+    {
+      "case": "invalid_active_slot",
+      "exit": 1,
+      "addon_calls": []
+    },
+    {
+      "case": "invalid_version_metadata",
+      "exit": 1,
+      "addon_calls": [
+        "V2:pre-backup:2",
+        "V2:backup:2",
+        "V2:post-backup:2",
+        "V2:pre-restore:2",
+        "V2:restore:2",
+        "V2:post-restore:2"
+      ]
+    }
+  ],
+  "helper_cases": [
+    {
+      "case": "copy_with_spaces",
+      "exit": 0
+    },
+    {
+      "case": "mkdir_failure_stops_copy",
+      "exit": 41
+    },
+    {
+      "case": "missing_optional_backup_is_success",
+      "exit": 0
+    },
+    {
+      "case": "move_failure_keeps_obsolete",
+      "exit": 42
+    },
+    {
+      "case": "successful_move_removes_obsolete",
+      "exit": 0
+    },
+    {
+      "case": "50_lineage_no_saved_hosts_is_success",
+      "exit": 0
+    }
+  ],
+  "builtin_consumer_cases": [
+    {
+      "case": "50_lineage_backup_copy_failure",
+      "exit": 45
+    },
+    {
+      "case": "50_lineage_successful_backup",
+      "exit": 0
+    },
+    {
+      "case": "50_lineage_restore_move_failure",
+      "exit": 46
+    },
+    {
+      "case": "50_lineage_successful_restore",
+      "exit": 0
+    },
+    {
+      "case": "50_lineage_optional_missing_restore",
+      "exit": 0
+    },
+    {
+      "case": "50_lineage_pre-backup",
+      "exit": 0
+    },
+    {
+      "case": "50_lineage_post-backup",
+      "exit": 0
+    },
+    {
+      "case": "50_lineage_pre-restore",
+      "exit": 0
+    },
+    {
+      "case": "50_lineage_post-restore",
+      "exit": 0
+    }
+  ],
+  "test_seams": [
+    "Only absolute runtime roots relocated into test tree",
+    "Mount/device commands replaced by explicit host doubles",
+    "Only -b fake block predicate becomes -f for fake mapper files",
+    "Actual C++ method uses fake dependency I/O"
+  ],
+  "real_mounts_or_devices_accessed": false,
+  "phone_accessed": false,
+  "android_toybox_and_selinux_runtime_not_exercised": true,
+  "all_addon_internal_errors_detected": false,
+  "optional_postinstall_unchanged": true
+}

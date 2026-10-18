@@ -1,0 +1,66 @@
+{
+  "state": "OTA_CONTRACT_COMPONENTS_COMPILED_AND_VERIFIED",
+  "baseline_incremental": "1792333073",
+  "source_files_verified": 87,
+  "changed_paths": 4,
+  "policy_sha256": "694b6134dfd89758742f964df8d6f288203df5c766c75f2225b30af0fbaaed53",
+  "policy_bytes": 1604882,
+  "policy_byte_identical_to_installed_baseline": true,
+  "static_permissive_domains": [
+    "backuptool"
+  ],
+  "effective_permissions_and_contexts_unchanged": true,
+  "outputs": {
+    "system/bin/backuptool_ab.sh": {
+      "bytes": 7178,
+      "sha256": "1a8acb30d4ee505e52ce66b5e681462ea59c6ebf02051b7eeeec1ec6b153c7ed"
+    },
+    "system/bin/backuptool_ab.functions": {
+      "bytes": 1707,
+      "sha256": "1255534c5768e024b39c1f21c8264adabf8c1888aa607864987a941201457d05"
+    },
+    "system/addon.d/50-lineage.sh": {
+      "bytes": 1051,
+      "sha256": "362fbbea03f91f8106bc19ef36cf5602b7a0a8b1190fa37f2495026fd3a49ab1"
+    },
+    "system/bin/backuptool_postinstall.sh": {
+      "bytes": 477,
+      "sha256": "795f706cb268bf0addafff069d62f63eab3c469e9bf6b416f762c95231631be7"
+    },
+    "system/bin/update_engine": {
+      "bytes": 2845616,
+      "sha256": "f72dc968797b147fe5aa062d0b1a2e4d0e081652a7b8b6cc52b671439cdf4744"
+    }
+  },
+  "actual_mount_method_calls_brillo_run_not_system": true,
+  "symbol_copy_text_matches_installed_elf": true,
+  "direct_launch_preserves_stdout_stderr_and_avoids_new_output_pipes": true,
+  "atomic_addon_directory_publish": true,
+  "mount_method_cases": 26,
+  "script_cases": 15,
+  "helper_and_builtin_cases": 15,
+  "backuptool_enforcing_ready": false,
+  "optional_postinstall_unchanged": true,
+  "v3_erofs_not_solved": true,
+  "phone_installed": false,
+  "full_rom_built": false,
+  "enforcing_trial_performed": false,
+  "actual_ota_performed": false,
+  "global_phone_mode": "Permissive",
+  "other_tasks_changed": false,
+  "component_build_job": "ota-contracts-components-build-03",
+  "final_copy_build_duration_seconds": 74,
+  "native_update_engine_build02_duration_seconds": 120,
+  "is_flashable_rom": false,
+  "source_baseline_incremental": "1792333073",
+  "cpu_affinity": [
+    6,
+    7
+  ],
+  "nice": 10,
+  "ninja_jobs": 2,
+  "initial_host_gate_failure_preserved": true,
+  "initial_symbol_format_verifier_failure_preserved": true,
+  "mount_labels_xattrs_and_v3_erofs_still_pending": true,
+  "addon_can_only_propagate_status_actually_received": true
+}

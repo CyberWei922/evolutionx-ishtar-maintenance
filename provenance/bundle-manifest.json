@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 24259,
-      "sha256": "1cee7a2fd24d78956cbd077aaeff222edf883dd24ce34f2f18b9cf4571a8fd84"
+      "bytes": 25508,
+      "sha256": "49ae674882ae514c246c41807fc739edc3efa9f91c3b73b9991bc71e34c98f4b"
     },
     "LICENSE.md": {
       "bytes": 1809,
@@ -18,8 +18,8 @@
       "sha256": "8e7dbed122428752a14bd09d70d63626762a103fb0c4b0fb923f95770fdf34c9"
     },
     "README.md": {
-      "bytes": 3616,
-      "sha256": "17808d63386d2b0a8ec5736ab67de98e24cd913c4c7173d95c2f5fb12c284e90"
+      "bytes": 3846,
+      "sha256": "9497d6949851de9106ba2027099237248a1b3c13d4fb30d86f683f389629658c"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 39648,
-      "sha256": "cb3c59b38b84ec12adc36c4d6c5cf467a5f9f84377aba2d765ab72388541bd59"
+      "bytes": 41889,
+      "sha256": "6ecb83ec73ab21bf8d7bbff2720feeb5e505d189092f358c5bd7d6e5a9c5c912"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -1141,6 +1141,82 @@
       "bytes": 150,
       "sha256": "9408363c9cb9854dc2490a4c88069e56919409a9b4e1518921bc56240c7f2672"
     },
+    "plans/selinux-ota-contracts-20261018/README.md": {
+      "bytes": 3620,
+      "sha256": "60b4f671c51aaf78c4b0f410e3dc3405318b5706462b76133d5080159d1e96ce"
+    },
+    "plans/selinux-ota-contracts-20261018/component-archive.json": {
+      "bytes": 288,
+      "sha256": "509b935bfeaa49b9da6b73517ce5edbdc59dd20c5d22e56923e1d5e78536119f"
+    },
+    "plans/selinux-ota-contracts-20261018/component-build-summary.json": {
+      "bytes": 2364,
+      "sha256": "4c1f4ca31041360026f135aa996aadcac3c1c866250c6948ed6f80623538897d"
+    },
+    "plans/selinux-ota-contracts-20261018/failure-test-summary.json": {
+      "bytes": 5861,
+      "sha256": "bcf54c40d9766663f535efb7e28cdbfe4c94d4096483988d5efeef20fb60d8e6"
+    },
+    "plans/selinux-ota-contracts-20261018/project-heads.json": {
+      "bytes": 137,
+      "sha256": "384e8079cb91f6e4390c550873e42dfb3243b13a7e2b89c2471ed66a18eac43b"
+    },
+    "plans/selinux-ota-contracts-20261018/source-baselines.json": {
+      "bytes": 1605,
+      "sha256": "94d4aa301fd08b2a13ff63137e54873168e22dd345d93bbd0403a9122e75a583"
+    },
+    "plans/selinux-ota-contracts-20261018/source-changes.patch": {
+      "bytes": 17292,
+      "sha256": "34c2977be177dc82cd0089c4743e5695df744ad8b4ac8f844a3601eccd71daeb"
+    },
+    "plans/selinux-ota-contracts-20261018/source-reproduction-check.json": {
+      "bytes": 142,
+      "sha256": "070cb22220ca34452e42bd77a8929c7b7f62b637a539f42e9741ba5c670cf1b1"
+    },
+    "plans/selinux-ota-contracts-20261018/sources/system/update_engine/payload_consumer/postinstall_runner_action.cc": {
+      "bytes": 23643,
+      "sha256": "7504a3291da8ae0b8f4df3c5f88523b8092bc749a1e2bd2c37590d173d514a2d"
+    },
+    "plans/selinux-ota-contracts-20261018/sources/system/update_engine/payload_consumer/postinstall_runner_action.cc.license": {
+      "bytes": 298,
+      "sha256": "286337ba3cb26678678a7208fd61007b31851ae55f8db13c8ff6af3cf56722e1"
+    },
+    "plans/selinux-ota-contracts-20261018/sources/vendor/lineage/prebuilt/common/bin/50-lineage.sh": {
+      "bytes": 1051,
+      "sha256": "362fbbea03f91f8106bc19ef36cf5602b7a0a8b1190fa37f2495026fd3a49ab1"
+    },
+    "plans/selinux-ota-contracts-20261018/sources/vendor/lineage/prebuilt/common/bin/50-lineage.sh.license": {
+      "bytes": 293,
+      "sha256": "ed448badf2d25fdacea0cdb185264824352b701effce444c9e37544c00023ee5"
+    },
+    "plans/selinux-ota-contracts-20261018/sources/vendor/lineage/prebuilt/common/bin/backuptool_ab.functions": {
+      "bytes": 1707,
+      "sha256": "1255534c5768e024b39c1f21c8264adabf8c1888aa607864987a941201457d05"
+    },
+    "plans/selinux-ota-contracts-20261018/sources/vendor/lineage/prebuilt/common/bin/backuptool_ab.functions.license": {
+      "bytes": 293,
+      "sha256": "ed448badf2d25fdacea0cdb185264824352b701effce444c9e37544c00023ee5"
+    },
+    "plans/selinux-ota-contracts-20261018/sources/vendor/lineage/prebuilt/common/bin/backuptool_ab.sh": {
+      "bytes": 7178,
+      "sha256": "1a8acb30d4ee505e52ce66b5e681462ea59c6ebf02051b7eeeec1ec6b153c7ed"
+    },
+    "plans/selinux-ota-contracts-20261018/sources/vendor/lineage/prebuilt/common/bin/backuptool_ab.sh.license": {
+      "bytes": 293,
+      "sha256": "ed448badf2d25fdacea0cdb185264824352b701effce444c9e37544c00023ee5"
+    },
+    "plans/selinux-ota-contracts-20261018/upstream-notices/system-update_engine-NOTICE": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "plans/selinux-ota-contracts-20261018/upstream-notices/vendor-lineage-LICENSE": {
+      "bytes": 640,
+      "sha256": "6686cda24fdf8158112cea8bcea0ff7254696b09547374cc77c6f74d26744b46"
+    },
+    "plans/selinux-ota-contracts-20261018/working-source-files.json": {
+      "bytes": 15232,
+      "sha256": "33abf52ff1edab7fd478c49786013ccc039fc2d9c7acaf48a45411de92f850a4"
+    },
     "plans/selinux-phase3/README.md": {
       "bytes": 3875,
       "sha256": "055a8da997c4a887340d23ddd3786ea728cbe3987457e7c403677e2515e4149f"
@@ -1333,6 +1409,10 @@
       "bytes": 7835,
       "sha256": "95ca2d76b180220c9a6f5886cfb27d55695cf844ef6605c25b2479591948fc30"
     },
+    "provenance/ota-contracts-source-files.json": {
+      "bytes": 2774,
+      "sha256": "776bbb6557fb9505bc3e24b1b2f4ae9c24f87f7d9fb258e3e5fd066cd0fa1ccb"
+    },
     "provenance/project-status-errors.json": {
       "bytes": 171,
       "sha256": "943fd975a9bbbc49c7f54734e14f2e76cb784598089f92cfb22d8657f178030f"
@@ -1382,8 +1462,8 @@
       "sha256": "378c10388bdf62e106242231149414b1a9d34ddea5b0fc537abac3179b95b279"
     },
     "scripts/check_upload_scope.py": {
-      "bytes": 3477,
-      "sha256": "c59a218c86bc095268b08d40a54b6fdca3a1b05ec6b02f4f9ede2347e016742b"
+      "bytes": 3917,
+      "sha256": "ffef4f0f00abd334bc8ac6238519be0f034c634c9aa014314b63f39dea89983e"
     },
     "scripts/export_source_snapshot.py": {
       "bytes": 1134,

@@ -1,5 +1,18 @@
 # 当前维护状态
 
+## OTA 错误与直接入口组件已完成，尚未安装（最新活动源码）
+
+机主要求继续修复。Ubuntu活动入口改为 control/ishtar-selinux-ota-contracts-20261018-01/expected-source-files.json，共87项；已安装1792333073仍对应旧84项。4路径新批已合入：源分区失败/空路径检查；brillo直接执行已标记备份脚本，保留标准输出且无新输出管道；内层首错与清理、V3挂载失败守卫；helper/50-lineage错误传递及缺省文件成功。addon先复制pending目录再提交，覆盖“复制已写文件后报错”的情况。第三方脚本只传播实际返回码，不称其内部错误全已覆盖。
+
+56个隔离场景通过（26方法/15完整脚本/6helper/9内置消费者），未执行真实挂载、Android Toybox、OTA或手机操作。build02 01:48/exit0完成原生代码，最终build03 01:08/exit0及verified03通过。实际update_engine SHA f72dc968797b147fe5aa062d0b1a2e4d0e081652a7b8b6cc52b671439cdf4744，符号副本.text与安装ELF一致、MountPartition直接Run调用已核对。实际脚本/87源/保护载荷匹配，策略694b6134…/1,604,882 bytes与安装版字节一致，无allow/标签改变，静态backuptool及动态KSU例外保持。
+
+正式组件双方delivery/ishtar-selinux-ota-contracts-components-20261018-01，38项/1,827,850 bytes/SHA a4d045d7b66e6359d44093bf1fe15ecb4d18f0e6f4d7b910e973bf29c92d2901，非完整ROM/可刷包。未新打整包或刷机；手机仍1792333073/全局P。本轮无新采集、重启、切E或真实OTA，没有这些新授权，Ubuntu其他任务未调整，正式新旧ROM/增量缓存保留。
+
+保留过程失败：测试01根路径重定位错误（修正后原候选tests02通过）；Ubuntu缺rg的读取失败后用限定扫描；build01版本pin遗留1792325510，在编译前停止，修正build02；verified01不识别mangled PLT，按实际符号verified02通过。随后发现半途复制问题才形成候选02及最终build03/verified03，旧中间态不当正式交付。
+
+剩余挂载代理、inactive标签/安全xattr/最终标签、精确执行权限、V3/EROFS及optional升级契约、必要E/冷启动验证仍待完成，不把56个主机场景当OTA/Enforcing通过。
+
+
 ## 1792333073已安装、桌面和数据验收通过（当前状态）
 
 本轮74动作/73完整下载成功，wire SHA `0e96eb62ede64068b3ecf973734f60564ef40bb462971d9d476702efcd6b28f8` 已核对，23:07:24首次正常重启。53个文件、21个分区范围、7组保留策略契约及六MIUI默认入口读回一致，150次命令尝试、0重试；数据三项基线保持。机主确认“桌面正常，应用和照片都在”，仅记录桌面/应用照片保留验收，不补记本版相机、麦克风、指纹或全硬件验收。

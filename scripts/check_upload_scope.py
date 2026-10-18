@@ -46,6 +46,13 @@ if debug.exists():
    assert b'The Linux Foundation' in b and b'Redistribution and use in source and binary forms' in b and b'THIS SOFTWARE IS PROVIDED' in b,p
   if 'public-domain' in row['license']:
    assert 'public domain' in (r/'plans/selinux-debug-ota-20261018/upstream-notices/system-sepolicy-NOTICE').read_text(),p
+ota=r/'provenance/ota-contracts-source-files.json'
+if ota.exists():
+ for row in json.loads(ota.read_text())['files']:
+  p=r/row['repository_path']
+  assert p.resolve().is_relative_to(r/'plans/selinux-ota-contracts-20261018/sources') and not p.is_symlink(),p
+  b=p.read_bytes();assert len(b)==row['bytes'] and hashlib.sha256(b).hexdigest()==row['after_sha256'],p
+  assert row['license']=='Apache-2.0' and Path(str(p)+'.license').is_file(),p
 for p in r.rglob('*'):
  if not p.is_file() or '.git' in p.relative_to(r).parts:continue
  assert p.suffix.lower() not in ['.apk','.img','.zip','.ko','.so','.dex','.pk8','.key','.jks','.keystore','.p12','.pfx'],p

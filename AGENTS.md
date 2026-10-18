@@ -1,5 +1,12 @@
 # ishtar maintenance repository
 
+## OTA contract components (current source; not installed)
+
+Active input is plans/selinux-ota-contracts-20261018/working-source-files.json,87 files; Ubuntu control/ishtar-selinux-ota-contracts-20261018-01. Four paths add source resolution checks, direct labeled script execution, truthful received-error propagation/cleanup and transactional addon-directory publication.56 isolated host cases passed; finalbuild03/verified03 complete. Policy bytes694b6134… are unchanged; no permission/context/KSU change. Components are on both hosts, not a flashable ROM or phone installation. Keep1792333073/P and its84-input installed record distinct from this87-input working source.
+
+Use provenance/ota-contracts-source-files.json for four Apache-2.0 full sources and retained notices; no compiled/private payloads in Git. Optional postinstall stays optional; arbitrary addons can still swallow internal errors. Broker mounts, inactive persistent labels/security xattrs, precise execution rights, V3/EROFS and necessary Enforcing cold startup remain unvalidated. No phone logs, reboot, flash, mode switch or actual OTA was performed or newly authorized. Leave unrelated Ubuntu work and current caches alone. Do not replay older workers or deleted staging.
+
+
 ## Installed1792333073 and owner desktop/data acceptance (current)
 
 The authorized preserve-data flash completed74 operations/73 downloads, wire0e96eb62… verified, then the first normal reboot. Installed53-file/21-range/7 retained-contract/six MIUI-route checks and data baselines passed;150 command attempts/0 retries. Owner confirmed normal desktop and existing apps/photos only. Do not expand this to new hardware, camera, microphone, fingerprint, Enforcing or OTA acceptance.

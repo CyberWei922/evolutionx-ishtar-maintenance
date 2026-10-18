@@ -1,0 +1,10 @@
+{
+  "state": "BOTH_HOSTS_OTA_COMPONENT_HANDOFF_MATCH",
+  "files": 38,
+  "archive_bytes": 1827850,
+  "archive_sha256": "a4d045d7b66e6359d44093bf1fe15ecb4d18f0e6f4d7b910e973bf29c92d2901",
+  "source_files": 87,
+  "changed_paths": 4,
+  "phone_installed": false,
+  "is_flashable_rom": false
+}

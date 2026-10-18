@@ -1,0 +1,3 @@
+SPDX-License-Identifier: Apache-2.0
+Original AOSP/LineageOS source and notices retained; modifications by CyberWei922 (2026) for direct script entry, failure propagation and transactional addon copy.
+See upstream-notices/system-update_engine-NOTICE. Adjacent license metadata is not a build input.

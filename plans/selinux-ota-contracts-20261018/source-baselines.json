@@ -1,0 +1,42 @@
+{
+  "state": "OTA_CONTRACTS_WITH_ATOMIC_ADDON_COPY_APPLIED",
+  "baseline_incremental": "1792333073",
+  "changes": [
+    {
+      "path": "system/update_engine/payload_consumer/postinstall_runner_action.cc",
+      "before_sha256": "76e6ad6dee7a2a15cc3b70c9d50cce75fe189048498d30438fbf53fa39d7a4bb",
+      "after_sha256": "7504a3291da8ae0b8f4df3c5f88523b8092bc749a1e2bd2c37590d173d514a2d",
+      "bytes": 23643
+    },
+    {
+      "path": "vendor/lineage/prebuilt/common/bin/backuptool_ab.sh",
+      "before_sha256": "6747142ead826af77f01a69c1e89370163bac07253b3d9c6d1bcfff890dbf334",
+      "after_sha256": "1a8acb30d4ee505e52ce66b5e681462ea59c6ebf02051b7eeeec1ec6b153c7ed",
+      "bytes": 7178
+    },
+    {
+      "path": "vendor/lineage/prebuilt/common/bin/backuptool_ab.functions",
+      "before_sha256": "bb80d560491be77776e118c4137e3d033f3006e0364db7077550d29f4cd2a2c6",
+      "after_sha256": "1255534c5768e024b39c1f21c8264adabf8c1888aa607864987a941201457d05",
+      "bytes": 1707
+    },
+    {
+      "path": "vendor/lineage/prebuilt/common/bin/50-lineage.sh",
+      "before_sha256": "5b57f695f7c9bc54874e787d2e8594f496ace6bad14aefd8bf3e452c34b57538",
+      "after_sha256": "362fbbea03f91f8106bc19ef36cf5602b7a0a8b1190fa37f2495026fd3a49ab1",
+      "bytes": 1051
+    }
+  ],
+  "mutated_this_step": [
+    "vendor/lineage/prebuilt/common/bin/backuptool_ab.sh"
+  ],
+  "source_files": 87,
+  "changed_paths": 4,
+  "mount_cases": 26,
+  "script_cases": 15,
+  "helper_and_builtin_cases": 15,
+  "policy_changed": false,
+  "backuptool_enforcing_ready": false,
+  "phone_accessed": false,
+  "time": 1792339030.2297976
+}
