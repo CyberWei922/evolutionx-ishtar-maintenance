@@ -1,0 +1,90 @@
+{
+  "status": "ENFORCING_PREP_COMBINED_SOURCE_APPLIED",
+  "baseline_incremental": "1792266978",
+  "baseline_control": "/mnt/android-download/control/ishtar-selinux-device-io-20261018-01",
+  "intermediate_component": "/mnt/android-download/control/ishtar-selinux-camera-qspm-20261018-01/verified02",
+  "source_files": 68,
+  "changed_source_paths": 10,
+  "this_stage_changed_source_paths": 7,
+  "changes": [
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te",
+      "new_file": false,
+      "before_sha256": "3e2d538e6b1f03733a8f8ff4e24dfde49c08fe013d5f768730e4c8aee681837c",
+      "after_sha256": "5e726cc69bc4a59efce537d06719d6a1592b910ce368df5cd5382a96824b72ec",
+      "bytes": 1276
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/surfaceflinger.te",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "e23181c092344c9b62f6d832ebd75a8396803f17818054c08fd2e2d081e226c1",
+      "bytes": 350
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/bootanim.te",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "2deeb814f15715719e7b6698a02c964a79528baec9c8b48c7d532624a9b50800",
+      "bytes": 344
+    },
+    {
+      "path": "device/xiaomi/sm8550-common/configs/properties/vendor.prop",
+      "new_file": false,
+      "before_sha256": "f3f9de1dabd2daf43e209fdece6df270c8e5ad8d2951195d7d8f734270d03629",
+      "after_sha256": "3b8bc0baa96ec3f7cf76ae72084e2aeda307d6946bd55c100798a533c84c4ce5",
+      "bytes": 8304
+    },
+    {
+      "path": "device/xiaomi/ishtar/BoardConfig.mk",
+      "new_file": false,
+      "before_sha256": "8b1029aa3ee39cf36607dba64972b975cb78c16224be822026b32915e9d27166",
+      "after_sha256": "83723616c85f09b5af04a0cb3c9dddc0d2b5c60b7da9d6c69defae64d240398e",
+      "bytes": 2359
+    },
+    {
+      "path": "device/xiaomi/ishtar/properties/platform-system.prop",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "f62819bf6e4495e76aa9f6367b231bc62157a7618c7075ec40527f7e5399e8e4",
+      "bytes": 193
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/private/system_server.te",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "79dd6f6e1362b685a896b87b3d1ca0524e85c55bfc42c877ed9bdbd483d8f68a",
+      "bytes": 263
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/vendor_init_qcc.te",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "eccfc339a8b3b91b29e8fdbbb00b4d284cdade25637a3229577f9d5f6805ec18",
+      "bytes": 252
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/mi_thermald.te",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "160a75f21f44d177ab1bfbb37c063f296289fb6125fea817eb29cb6e4b665c1e",
+      "bytes": 347
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "new_file": false,
+      "before_sha256": "1f81011ce1a25769a7d58fe5b8fc6bf7bdd0ae8b2d80770c73dab8e85915eb28",
+      "after_sha256": "2fcc7ed8972ec54efdaf64e33a4519238efcf300c5ecad17b197b1dcdc673e30",
+      "bytes": 957
+    }
+  ],
+  "phone_accessed": false,
+  "enforcing_switched": false,
+  "unrelated_processes_changed": false,
+  "binary_payload_changed": false,
+  "bluetooth_value_preserved": "true",
+  "bluetooth_property_partition_moved": "vendor -> system",
+  "audio_properties_unchanged": true,
+  "unix_dac_or_persist_labels_changed": false,
+  "at": 1792299603.598618
+}

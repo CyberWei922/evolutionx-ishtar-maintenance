@@ -1,0 +1,8 @@
+{
+  "reason": "Full stock-derived vendor.prop omitted under existing license boundary; use the locally retained pinned dependency and the single-line delta/generator.",
+  "path": "device/xiaomi/sm8550-common/configs/properties/vendor.prop",
+  "before_sha256": "f3f9de1dabd2daf43e209fdece6df270c8e5ad8d2951195d7d8f734270d03629",
+  "after_sha256": "3b8bc0baa96ec3f7cf76ae72084e2aeda307d6946bd55c100798a533c84c4ce5",
+  "removed_exact_line": "bluetooth.auto_connect_profiles.enabled=true",
+  "value_preserved_in": "device/xiaomi/ishtar/properties/platform-system.prop"
+}

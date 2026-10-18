@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-18T04:50:05.052229+00:00",
+  "installed_baseline": "1792266978",
+  "scope": "Saved fingerprint AVC and read-only Ubuntu source/actual-output ELF inspection. No device access, source/build edits, process changes or enforcement actions.",
+  "conclusion": "Do not add generic system_prop read or relabel sys.panel.touch_vendor in vendor property_contexts. Exact getter and fallback are established; producer/required function contract is not established. Retain as an intentional unresolved optional metadata read pending evidence of a functional consequence.",
+  "method": "Focused LLVM dynamic-symbol, dynamic-table and disassembly inspection; no REA decompilation or runtime tracing. Previously unavailable Ghidra/IDA backends were not retried.",
+  "artifact": {
+    "path": "/mnt/android-build/Android/out/evolution-bka/target/product/ishtar/odm/lib64/libgf_hal.so",
+    "bytes": 659296,
+    "sha256": "3d375442f6fd24ef11c7a4bc8f0f5ba80c15dc06d953ce80d414bb1078f62576"
+  },
+  "saved_runtime": {
+    "logcat-avc.log": {
+      "sha256": "eeffb2b0f4626aa7fe1ee0a6b6f23b6afad888831f904627d95075c3f4758cfd",
+      "bytes": 198172,
+      "relevant_lines": [
+        596,
+        597,
+        598,
+        599
+      ]
+    },
+    "kernel-avc.log": {
+      "sha256": "1e400f0f9577a0ebd719ffa9037bcc486d4b1662081b10bede1464da1d686031",
+      "bytes": 8361,
+      "relevant_lines": [
+        15,
+        16
+      ]
+    }
+  },
+  "runtime_contract": {
+    "domain": "hal_fingerprint_default",
+    "target": "system_prop",
+    "class": "file",
+    "perms": [
+      "read",
+      "open",
+      "getattr",
+      "map"
+    ],
+    "time": "10-18 12:31:41.345",
+    "limits": "One area access sequence; neither stack nor actual requested property key is in the AVC. Two kernel lines duplicate the same audit IDs, not two extra accesses. Because global mode is Permissive, these AVCs do not prove the getter actually failed. The fallback is static code evidence, not an Enforcing execution result."
+  },
+  "exact_getter": {
+    "symbol": "_ZN6goodix27CustomizedDelmarProductTest19setVendorPropertiesEPNS_10HalContextE",
+    "symbol_range_hex": [
+      "0x42adc",
+      "0x4323c"
+    ],
+    "key": "sys.panel.touch_vendor",
+    "key_string_va": "0x20191",
+    "key_materialization": "0x42c84 adrp x0,0x20000 + 0x42c90 add x0,x0,#0x191",
+    "call_va": "0x42cd4",
+    "api": "property_get",
+    "default": "null",
+    "success": "After positive length: 0x42ce4 atoll; 0x42ce8 extracts low four bits and shifts to bits56..59 of assembled information value.",
+    "failure": "Length<=0 at0x42cdc branches to logging then0x42d14 fills bits56..59 with0xf and continues. This branch does not return or abort.",
+    "output": "After second display nibble, format information and0x42da4 property_set(\"persist.vendor.sys.fp.info\", formatted_value). Exact downstream consumers are not identified."
+  },
+  "display_message_correction": {
+    "actual_second_key": "vendor.panel.display",
+    "string_va": "0x2bf2e",
+    "getter_va": "0x42d28",
+    "failure_nibble": "0xf in bits60..63 at0x42d64",
+    "misleading_log": "sys.panel.display occurs inside failure message at0x201a8; no literal key sys.panel.display getter was found in focused full-library direct property_get call scan.",
+    "limit": "This is a bounded negative for direct literal getter keys in this ELF, not proof that no runtime-constructed or dependent-library access exists."
+  },
+  "call_chain": [
+    {
+      "symbol": "_ZN6goodix10HalContext16createExtModulesEPv",
+      "range_hex": [
+        "0x490d4",
+        "0x491e8"
+      ],
+      "call_va": "0x49188",
+      "target": "goodix::createProductTest(HalContext*)"
+    },
+    {
+      "symbol": "_ZN6goodix17createProductTestEPNS_10HalContextE",
+      "range_hex": [
+        "0x7a548",
+        "0x7a590"
+      ],
+      "condition": "HalContext+0x38 equals3; semantic meaning not established here",
+      "call_va": "0x7a574",
+      "target": "CustomizedDelmarProductTest constructor"
+    },
+    {
+      "symbol": "_ZN6goodix27CustomizedDelmarProductTestC2EPNS_10HalContextE",
+      "range_hex": [
+        "0x433d8",
+        "0x434f8"
+      ],
+      "call_va": "0x434ec",
+      "target": "Tail branch to setVendorProperties after threshold initialization"
+    }
+  ],
+  "factory_mode_limit": "The ProductTest class name does not prove factory-only execution. The shown extension-module construction path can initialize this object, and no factory-mode gate for the outer createExtModules caller was established. Do not claim ordinary boot cannot access it.",
+  "fixed_literal_getters_and_contexts": [
+    {
+      "key": "sys.panel.touch_vendor",
+      "calls": [
+        "0x42cd4"
+      ],
+      "context": "system_prop",
+      "mapping": "sys. prefix; actual plat_property_contexts line50"
+    },
+    {
+      "key": "vendor.panel.display",
+      "calls": [
+        "0x41c40",
+        "0x42d28",
+        "0x4af84"
+      ],
+      "context": "vendor_default_prop",
+      "mapping": "vendor. prefix; actual plat_property_contexts line309"
+    },
+    {
+      "key": "ro.product.device",
+      "calls": [
+        "0x41c5c",
+        "0x4209c",
+        "0x439f8",
+        "0x4b04c"
+      ],
+      "context": "build_prop",
+      "mapping": "exact; actual plat_property_contexts line1235"
+    },
+    {
+      "key": "ro.boot.hwlevel",
+      "calls": [
+        "0x437d0"
+      ],
+      "context": "bootloader_prop",
+      "mapping": "ro.boot. prefix; actual plat_property_contexts line1090"
+    },
+    {
+      "key": "ro.boot.oled_wp",
+      "calls": [
+        "0x4d714",
+        "0x4d8fc"
+      ],
+      "context": "bootloader_prop",
+      "mapping": "ro.boot. prefix; actual plat_property_contexts line1090"
+    },
+    {
+      "key": "ro.vendor.extension_library",
+      "calls": [
+        "0x4d95c"
+      ],
+      "context": "vendor_default_prop",
+      "mapping": "ro.vendor. prefix; actual plat_property_contexts line303"
+    },
+    {
+      "key": "debug.tracing.screen_brightness",
+      "calls": [
+        "0x4d104"
+      ],
+      "context": "debug_prop",
+      "mapping": "debug. prefix; actual plat_property_contexts line61",
+      "function": "CustomizedFingerprintCore::onAuthStart"
+    },
+    {
+      "key": "persist.vendor.sys.fp.fod.location.X_Y",
+      "calls": [
+        "0x426b0"
+      ],
+      "context": "not independently resolved in this scoped table"
+    },
+    {
+      "key": "persist.vendor.sys.fp.fod.size.width_height",
+      "calls": [
+        "0x4273c"
+      ],
+      "context": "not independently resolved in this scoped table"
+    },
+    {
+      "key": "persist.vendor.sys.fp.disable_study",
+      "calls": [
+        "0x4af98"
+      ],
+      "context": "not independently resolved in this scoped table"
+    },
+    {
+      "key": "gf.debug.write_talog_data",
+      "calls": [
+        "0x4f4c4"
+      ],
+      "context": "no explicit/prefix match found; default fallback not resolved here"
+    }
+  ],
+  "getter_coverage": "20 direct property_get/property_get_int32 call sites seen;17 have fixed literal keys resolved in straight-line argument preparation (duplicates collapsed in table). Three DelmarAlgo getters return dynamic key pointers through virtual calls and remain unexpanded. Complete transitive library getter coverage was not attempted.",
+  "producers_and_other_consumers": {
+    "source_text_search": {
+      "roots": [
+        "device/xiaomi",
+        "hardware/xiaomi",
+        "vendor/xiaomi/ishtar/proprietary",
+        "vendor/xiaomi/sm8550-common/proprietary"
+      ],
+      "terms": [
+        "sys.panel.touch_vendor",
+        "sys.panel.display",
+        "sys.panel.",
+        "touch_vendor"
+      ],
+      "limits": "Text-decodable regular files<=1.5MB; skipped ELF/images/APK/DEX/object/archive and selected media/JSON suffixes. No hits."
+    },
+    "elf_literal_search": {
+      "roots": "Output system/system_ext/product/vendor/odm bin,lib64,lib",
+      "regular_elf_files": 2556,
+      "bytes_read": 1281201665,
+      "max_individual_bytes": 25000000,
+      "skip": "Symlinks, duplicate inodes, larger files and non-ELF",
+      "terms": [
+        "sys.panel.touch_vendor",
+        "sys.panel.display",
+        "vendor.panel.display"
+      ],
+      "result": "Only odm/lib64/libgf_hal.so contains any of these byte strings. Its observed sys.panel.touch_vendor reference is a getter, not a setter."
+    },
+    "limits": [
+      "No producer was established within those exact search boundaries.",
+      "APK/JAR/APEX, larger binaries, dynamic string construction, firmware or external bootloader production are not excluded.",
+      "No phone getprop or runtime hooks were performed, so presence/current value is unknown."
+    ]
+  },
+  "migration_assessment": {
+    "generic_allow": "Reject get_prop(hal_fingerprint_default,system_prop): exposes the whole sys. area to solve one unproven metadata key.",
+    "vendor_relabel": "Do not add sys.panel.touch_vendor to vendor property_contexts with a vendor type. system/sepolicy/build/soong/selinux_contexts.go:364–381 allowed vendor property prefixes omit sys.; strict namespace check at404–405. No namespace bypass should be introduced.",
+    "platform_exact_type": "A dedicated exact core-owned public/restricted property type could preserve the immutable ELF key, but requires identifying the real producer and consumer set, policy ownership/export/version compatibility, and enforcing tests. None is proven sufficiently here.",
+    "vendor_key_rename": "Changing to vendor.panel.touch_vendor requires changing the proprietary getter/producer or a verified compatible wrapper. Pure property_contexts relabel does not rename keys; mirroring needs a real authoritative producer and lifecycle. Not proposed.",
+    "recommended_disposition": "Leave this candidate round unchanged. Treat the statically established empty/failed-read fallback as a bounded metadata path, not an established authentication blocker or a proven Enforcing success. Investigate further if enforcing causes a matching fingerprint/init problem or producer evidence appears."
+  },
+  "source_and_context_digests": [
+    {
+      "path": "system/sepolicy/public/property.te",
+      "bytes": 14875,
+      "sha256": "41dce140dc4c36d36069364cd44d34c80978e18b56c27f4c1b732488fd3ce39f",
+      "lines": [
+        260
+      ],
+      "fact": "system_public_prop(system_prop)"
+    },
+    {
+      "path": "system/sepolicy/private/property_contexts",
+      "bytes": 123510,
+      "sha256": "ddbbea0522d0d36880f3584c9eaeaf5e62179729155653a765c9e7712e5b1351"
+    },
+    {
+      "path": "system/sepolicy/build/soong/selinux_contexts.go",
+      "bytes": 24019,
+      "sha256": "f923ae17cad3fe3476ea46d9e9347b939df952bcb11d7f1d16e93ebe993db1a2",
+      "lines": [
+        364,
+        381,
+        404,
+        405
+      ]
+    },
+    {
+      "path": "output/system/etc/selinux/plat_property_contexts",
+      "bytes": 124582,
+      "sha256": "f4b41c3f807c948a5f437bc8605c0af5340335e96b95a3028e32d7c02b9a8221",
+      "limits": "Actual Ubuntu output inspected at analysis time; not a newly collected phone file."
+    }
+  ]
+}

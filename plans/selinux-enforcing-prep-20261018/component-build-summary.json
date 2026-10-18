@@ -1,0 +1,57 @@
+{
+  "status": "ENFORCING_PREP_COMBINED_COMPILED_VERIFIED",
+  "baseline_incremental": "1792266978",
+  "policy_sha256": "1eaa4c3edd8b9125a436029a52c8f7d673135ec55d7b4a956cf9134181f944fe",
+  "policy_bytes": 1604627,
+  "source_files_verified": 68,
+  "changed_source_paths": [
+    "device/xiaomi/ishtar/BoardConfig.mk",
+    "device/xiaomi/ishtar/properties/platform-system.prop",
+    "device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te",
+    "device/xiaomi/ishtar/sepolicy/private/system_server.te",
+    "device/xiaomi/ishtar/sepolicy/vendor/bootanim.te",
+    "device/xiaomi/ishtar/sepolicy/vendor/mi_thermald.te",
+    "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+    "device/xiaomi/ishtar/sepolicy/vendor/surfaceflinger.te",
+    "device/xiaomi/ishtar/sepolicy/vendor/vendor_init_qcc.te",
+    "device/xiaomi/sm8550-common/configs/properties/vendor.prop"
+  ],
+  "effective_permission_additions": 32,
+  "effective_permission_removals": 0,
+  "permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "file_context_cases": 22,
+  "file_and_seapp_contexts_byte_unchanged": true,
+  "thermal_property_exact_mapping_added": true,
+  "thermal_file_permissions_unchanged": true,
+  "bluetooth_value_preserved": "true",
+  "bluetooth_source_partition_move_verified": true,
+  "actual_build_property_move_pending_full_rom": true,
+  "genfs_and_extended_permissions_unchanged": true,
+  "protected_payloads": {
+    "system/bin/surfaceflinger": "099b882b2e71941a25a10b45f0c73ff15e060f3243b2700755545c2251d1dc99",
+    "system/bin/bootanimation": "ca070ac28c5be9467e94d1c7de793a6e775d46ce968a2f26afe89bb4364b6684",
+    "vendor/lib64/libc++_shared.so": "1b27c5ec6f0dba72ad91e59ecbd2cabeaa5cb58e6f9b1adb600ec3f60b837ded",
+    "vendor/lib64/libgnss.so": "9ae162029e867ac3c8dbd6674d707cb4ad4d7383b7670bad3abe59a23035658b",
+    "odm/lib64/libgf_hal.so": "3d375442f6fd24ef11c7a4bc8f0f5ba80c15dc06d953ce80d414bb1078f62576"
+  },
+  "phone_installed": false,
+  "enforcing_trial": false,
+  "binary_payload_changed": false,
+  "full_rom_built": false,
+  "remaining": [
+    "Private/default property probes and absent MiSys service",
+    "Mtd DAC and optional attestation reload",
+    "Original permissive domains and KSU exception",
+    "Controlled Enforcing and cold boot validation not performed"
+  ]
+}

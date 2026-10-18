@@ -1,0 +1,94 @@
+--- a/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te
++++ b/device/xiaomi/ishtar/sepolicy/private/ishtar_miui_camera_app.te
+@@ -24,3 +24,11 @@
+ 
+ # Preserve the existing app-data type and MCS convention during data-preserving OTA.
+ # No raw persist access, generic vendor library access or permissive declaration.
++
++# Preserve the standard platform-app navigation-key configuration read.
++# qemu.hw.mainkeys is the only exact key assigned to this public type.
++get_prop(ishtar_miui_camera_app, qemu_hw_prop)
++
++# Camera worker reads aggregate memory PSI statistics during setup.
++# Limit this to the dedicated camera domain and read/open/getattr only.
++allow ishtar_miui_camera_app proc_pressure_mem:file { read open getattr };
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/vendor/surfaceflinger.te
+@@ -0,0 +1,7 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# The shipped startup path calls the registered Qualcomm QSPM HAL.
++# Use its existing HIDL client contract, including callbacks and fd passing.
++# No compositor, frame-rate, performance hint or HAL implementation is changed.
++hal_client_domain(surfaceflinger, vendor_hal_qspmhal)
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/vendor/bootanim.te
+@@ -0,0 +1,7 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# The shipped startup path calls the registered Qualcomm QSPM HAL.
++# Use its existing HIDL client contract, including callbacks and fd passing.
++# No compositor, frame-rate, performance hint or HAL implementation is changed.
++hal_client_domain(bootanim, vendor_hal_qspmhal)
+--- a/device/xiaomi/sm8550-common/configs/properties/vendor.prop
++++ b/device/xiaomi/sm8550-common/configs/properties/vendor.prop
+@@ -56 +55,0 @@
+-bluetooth.auto_connect_profiles.enabled=true
+--- a/device/xiaomi/ishtar/BoardConfig.mk
++++ b/device/xiaomi/ishtar/BoardConfig.mk
+@@ -52,6 +52,8 @@
+ 
+ # Properties
+ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/camera-system.prop
++# Framework-owned properties must be loaded from the system partition.
++TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/platform-system.prop
+ TARGET_ODM_PROP += $(DEVICE_PATH)/properties/odm.prop
+ TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
+ TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
+--- /dev/null
++++ b/device/xiaomi/ishtar/properties/platform-system.prop
+@@ -0,0 +1,5 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# Preserve the existing enabled value through its framework property owner.
++bluetooth.auto_connect_profiles.enabled=true
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/private/system_server.te
+@@ -0,0 +1,6 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# Framework runtime reads the ROM version metadata owned by system_ext.
++# These are the existing ro.lineage.* keys; no property write is granted.
++get_prop(system_server, custom_version_prop)
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/vendor/vendor_init_qcc.te
+@@ -0,0 +1,6 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# init.sm8550.rc configures vendor.qti.qcc.oper.mode=3 at boot.
++# Reuse its existing vendor-owned type; never grant generic property writes.
++set_prop(vendor_init, vendor_qcc_prop)
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/vendor/mi_thermald.te
+@@ -0,0 +1,7 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# The shipped daemon initializes ownership/mode of its thermal data files.
++# File MAC rules remain unchanged; capabilities cannot be restricted by path.
++# Do not add DAC bypasses, generic file setattr or sysfs permissions.
++allow mi_thermald self:capability { chown fowner };
+--- a/device/xiaomi/ishtar/sepolicy/vendor/property_contexts
++++ b/device/xiaomi/ishtar/sepolicy/vendor/property_contexts
+@@ -12,3 +12,6 @@
+ 
+ # Exact status output; keep the surrounding persist.vendor.sys prefix intact.
+ persist.vendor.sys.attestation.status u:object_r:vendor_mtd_attestation_status_prop:s0 exact string
++
++# Boot status from mi_thermald; reuse its existing thermal property ownership.
++vendor.sys.thermal.bcl.boot_completed u:object_r:vendor_thermal_normal_prop:s0 exact string

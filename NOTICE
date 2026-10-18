@@ -111,3 +111,13 @@ Original exact Mtd attestation status, GNSS property read, Goodix private-event
 netlink permissions and specific SPI wakeup genfs mapping: CyberWei922, Apache-2.0.
 No GNSS, Goodix or Mtd proprietary implementation is included. See
 provenance/device-io-source-files.json and the matching plan for scope.
+
+Combined Enforcing-preparation maintenance (2026-10-18)
+Original camera read-only, QSPM client, framework-property relocation, QCC and
+thermal maintenance additions and evidence metadata: CyberWei922, Apache-2.0.
+The reviewed LineageOS BoardConfig snapshot retains its upstream copyright and
+SPDX notice. The full stock-derived vendor.prop remains external; only its
+single-line factual delta, pinned metadata and original reproduction script are
+included. No proprietary implementation, disassembly listing, policy binary or
+original phone log is included. Reviewed paths are recorded in
+provenance/enforcing-prep-source-files.json. No Enforcing validation is implied.

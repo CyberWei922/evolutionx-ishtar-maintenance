@@ -1,5 +1,13 @@
 # 当前维护状态
 
+## 最新集中候选（构建中，未安装）
+
+机主要求一次多修后统一打包。本轮10路径/68源码已合入并通过策略组件编译及verified01；策略1eaa4c3e…/1,604,627 bytes，有效权限新增32项/0删除。范围为MIUI导航键/PSI只读、开机QSPM、蓝牙true移system、QCC启动属性、ROM版本只读、热控两cap和精确状态。原9静态宽松域、文件MAC/genfs/ioctl、相机/音频/显示参数及保护二进制保持；热控cap不能按路径细分。
+
+活动输入是plans/selinux-enforcing-prep-20261018/working-source-files.json。统一整包enforcing-prep-rom-build-01及电脑审计等待器已派发；实际build.prop和34分区检查仍待成功后执行。中间camera-qspm只做组件、不单独打ROM。以下62/59项工作树入口是各历史基线。
+
+手机仍为已验收1792266978/Permissive，无本轮手机操作或Enforcing；旧刷写授权已消耗。目标再约2–3版进入稳定Enforcing是计划估计，不是保证。原宽松域/KSU及真实功能、受控Enforcing、冷启动须分别报告。按直接受影响风险安排手工验收，避免重复麦克风/指纹。
+
 2026-10-18，Xiaomi 13 Ultra / ishtar，Evolution X Android 16 / SDK36，当前已安装版本1792266978，Unofficial。上一验收源码基线为1792226532。
 
 ## 当前安装与验收入口（2026-10-18）

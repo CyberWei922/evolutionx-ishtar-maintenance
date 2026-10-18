@@ -1,0 +1,5 @@
+# Copyright (C) 2026 CyberWei922
+# SPDX-License-Identifier: Apache-2.0
+
+# Preserve the existing enabled value through its framework property owner.
+bluetooth.auto_connect_profiles.enabled=true

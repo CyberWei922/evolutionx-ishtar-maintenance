@@ -1,0 +1,278 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-18T05:00:21.124786+00:00",
+  "installed_baseline": "1792266978",
+  "scope": "Read-only shipped mi_thermald, saved runtime policy/AVC and source policy/API inspection; no phone/source/build/process changes.",
+  "method": "LLVM static disassembly/dynamic imports plus GNU .gnu_debugdata decompressed and parsed only in memory for function names. Not REA decompilation. No engine installation or retry.",
+  "artifact": {
+    "path": "vendor/bin/mi_thermald",
+    "bytes": 753736,
+    "sha256": "659fe2afe90316244d240afcb24661d701e7d450f304daa58bd2fd2d69f9b0e7",
+    "debugdata_section": {
+      "offset_hex": "0xb7151",
+      "bytes_hex": "0x830",
+      "handling": "LZMA decompressed to memory; ELF symbol table parsed without saving vendor code/ELF"
+    }
+  },
+  "evidence": {
+    "logcat-avc.log": {
+      "bytes": 198172,
+      "sha256": "eeffb2b0f4626aa7fe1ee0a6b6f23b6afad888831f904627d95075c3f4758cfd"
+    },
+    "loaded-policy.cil": {
+      "bytes": 16644972,
+      "sha256": "46620a65998209b009b26ed8c98116aeacfd5f2b95722af34e4c1d264dd4cc39"
+    }
+  },
+  "runtime": {
+    "capability_avc_lines": [
+      588,
+      589
+    ],
+    "capability_numbers": {
+      "fowner": 3,
+      "chown": 0
+    },
+    "property_avc_lines": [
+      655,
+      656
+    ],
+    "duplicate_limit": "Both property lines refer to audit652, one denial duplicated by two log producers.",
+    "mode": "Permissive",
+    "limits": "No syscall stack/path in capability AVC. Static call sites corroborate operation class; no Enforcing result or exact first triggering path proved."
+  },
+  "chown_calls": [
+    {
+      "va": "0x9b5f0",
+      "function": "main",
+      "path": "/data/vendor/thermal/report.dump",
+      "uid": 1000,
+      "gid": 1000,
+      "related_chmod_va": "0x9b5c0",
+      "mode_octal": "0664"
+    },
+    {
+      "va": "0x9b64c",
+      "function": "main",
+      "path": "/data/vendor/thermal/thermal.dump",
+      "uid": 1000,
+      "gid": 1000,
+      "related_chmod_va": "0x9b61c",
+      "mode_octal": "0644"
+    },
+    {
+      "va": "0x9b6a8",
+      "function": "main",
+      "path": "/data/vendor/thermal/last_thermal.dump",
+      "uid": 1000,
+      "gid": 1000,
+      "related_chmod_va": "0x9b678",
+      "mode_octal": "0644"
+    },
+    {
+      "va": "0x9b73c",
+      "function": "main",
+      "path": "/data/vendor/thermal/thermal-global-mode",
+      "uid": 1000,
+      "gid": 1000,
+      "related_chmod_va": "0x9b70c",
+      "mode_octal": "0664",
+      "creation": "If access check fails, open(O_WRONLY|O_CREAT,0600) precedes chmod/chown."
+    }
+  ],
+  "other_chmod_calls": [
+    {
+      "va": "0x9bd58",
+      "function": "main",
+      "mode_octal": "0644",
+      "target": "Assembled thermal config path in global buffer VA0xb9240"
+    },
+    {
+      "va": "0x9c788",
+      "function": "parse_thermal_map",
+      "mode_octal": "0644",
+      "target": "Selected map file pointer; data thermal-map.conf candidate literal exists"
+    },
+    {
+      "va": "0x9cd70",
+      "function": "thermal_select_backup_config",
+      "mode_octal": "0644",
+      "target": "Assembled thermal backup config path in global buffer VA0xb9644"
+    },
+    {
+      "va": "0x9d79c",
+      "function": "thermal_switch_config",
+      "mode_octal": "0644",
+      "target": "Assembled thermal config path in stack buffer"
+    }
+  ],
+  "chmod_bounds": {
+    "path_formats": [
+      "/data/vendor/thermal/config/%s",
+      "/odm/etc/%s"
+    ],
+    "guard": "For config paths, stat success and a test that required0644 mode bits are missing precede chmod. If required bits already present, chmod is skipped.",
+    "failure": "Shown direct chmod/chown negative return branches conditionally log and continue rather than abort.",
+    "limits": [
+      "No direct sysfs chmod/chown call was found among these fixed direct PLT call sites.",
+      "Changing ownership/mode is not path-confined by a capability grant.",
+      "Do not describe all config calls as data-only: /odm/etc/%s is also an assembled branch."
+    ]
+  },
+  "existing_mac_contract": {
+    "source": "device/xiaomi/sm8550-common/sepolicy/vendor/mi_thermald.te",
+    "thermal_files": "thermal_data_file:file already allows create/getattr/open/read/rename/setattr/unlink/write. Common file_contexts:50 labels /data/vendor/thermal(/.*)? thermal_data_file.",
+    "sysfs": "Existing sysfs/vendor battery/display/graphics policy provides read/write but no newly proposed setattr. Vendor/ODm file_type reads/execute do not gain setattr.",
+    "other_existing_setattr": "Saved loaded policy also has inherited vendor_gles_data_file create/manage/setattr. Proposed capabilities are constrained by all existing MAC permissions, not just thermal_data_file.",
+    "service": "Existing init.mi_thermald.rc runs user root/group system with explicit mi_thermald seclabel. No service capability-list or UID change is proposed."
+  },
+  "bcl_status": {
+    "property": "vendor.sys.thermal.bcl.boot_completed",
+    "literal_va": "0x4313",
+    "writer_function": "main",
+    "setter_va": "0x9c674",
+    "value": "1",
+    "value_literal_va": "0x4145",
+    "placement": "At the end of main setup path; next instructions call pause at0x9c678 and branch back to pause. Setter return value is ignored.",
+    "own_reader": "No direct literal property_get of this exact key found. Only one literal copy and corresponding immediate reference to setter was found in focused scan; dynamically constructed reads are not excluded.",
+    "distinct_bcl_inputs": [
+      {
+        "key": "persist.vendor.thermal.shutdown.bcl",
+        "getter_va": "0x9c248"
+      },
+      {
+        "key": "persist.vendor.special_cpu.thermal.shutdown.bcl",
+        "getter_va": "0x9c264"
+      },
+      {
+        "key": "persist.vendor.thermal.brightness.bcl",
+        "getter_va": "0xaa80c"
+      }
+    ],
+    "algorithm_limit": "Boot-completed status write is not evidence of a BCL power-target or brightness algorithm modification.",
+    "consumer_search": {
+      "source_roots": [
+        "device/xiaomi/ishtar",
+        "device/xiaomi/sm8550-common",
+        "hardware/xiaomi"
+      ],
+      "output_etc_text_files_by_partition": {
+        "system": 165,
+        "system_ext": 72,
+        "product": 106,
+        "vendor": 406,
+        "odm": 277
+      },
+      "exact_key_hits": 0,
+      "limits": "Scoped text search excludes APK/JAR/constructed keys and unrelated full binary collection; no general claim that all consumers are absent."
+    },
+    "needed_libraries": [
+      "libcutils.so",
+      "liblog.so",
+      "libcrypto.so",
+      "libssl.so",
+      "libc++.so",
+      "libc.so",
+      "libm.so",
+      "libdl.so"
+    ],
+    "needed_key_search": "Exact key not found in directly named vendor/odm lib64 dependencies that existed. This is not transitive dynamic-load coverage."
+  },
+  "reuse_existing_property_type": {
+    "type": "vendor_thermal_normal_prop",
+    "declaration": "device/xiaomi/sm8550-common/sepolicy/vendor/property.te:5 vendor_public_prop(vendor_thermal_normal_prop)",
+    "existing_mapping": "device/xiaomi/sm8550-common/sepolicy/vendor/property_contexts:11 vendor.sys.thermal.data.path -> vendor_thermal_normal_prop (prefix form)",
+    "existing_writer": "device/xiaomi/sm8550-common/sepolicy/vendor/mi_thermald.te:26 set_prop(mi_thermald,vendor_thermal_normal_prop)",
+    "saved_type_attributes": [
+      "property_type",
+      "vendor_property_type",
+      "vendor_public_property_type"
+    ],
+    "saved_file_and_property_service_contracts": [
+      {
+        "subject": "mi_thermald",
+        "file": [
+          "read",
+          "getattr",
+          "map",
+          "open"
+        ],
+        "property_service": [
+          "set"
+        ]
+      },
+      {
+        "subject": "init",
+        "via": "property_type",
+        "file": "Existing broad property-file management",
+        "property_service": [
+          "set"
+        ]
+      },
+      {
+        "subject": "dumpstate",
+        "via": "property_type",
+        "file": [
+          "read",
+          "getattr",
+          "map",
+          "open"
+        ]
+      },
+      {
+        "subject": "ksu",
+        "via": [
+          "property_type",
+          "vendor_property_type",
+          "vendor_public_property_type"
+        ],
+        "rights": "Existing dynamic broad rights; unchanged and not considered evidence of ordinary API access"
+      }
+    ],
+    "reader_limit": "No other ordinary explicit readers found through these loaded type/attribute targets. vendor_public_prop is an ownership category, not an automatic read grant to every domain.",
+    "ownership": "Key is vendor.-namespaced. Exact mapping to existing vendor-owned public thermal type avoids an unproven new type and avoids generic vendor_default_prop set. Keep existing neverallows and prefix validators enabled."
+  },
+  "proposed_minimal_delta": {
+    "device_policy_file": "device/xiaomi/ishtar/sepolicy/vendor/mi_thermald.te",
+    "capability_rule": "allow mi_thermald self:capability { chown fowner };",
+    "device_contexts_file": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+    "exact_mapping": "vendor.sys.thermal.bcl.boot_completed u:object_r:vendor_thermal_normal_prop:s0 exact string",
+    "no_changes": [
+      "No new property type",
+      "No broad thermal prefix relabel",
+      "No new file setattr or file access",
+      "No DAC override/read_search or other capabilities",
+      "No service credentials/UID/init-capabilities list change",
+      "No thermal algorithms/values or CPU/brightness tuning"
+    ],
+    "neverallow_status": "Explicit chown/fowner neverallow statements were not found in inspected platform/domain and sm8550 source policy sets; broader subject/wildcard rules still require the full normal compiler neverallow gate. This analysis is not a compilation result.",
+    "capability_boundary": "Capabilities cannot be constrained per pathname. Restriction comes from mi_thermald domain and existing file MAC/RO-filesystem protections. This includes all current allowed targets, not only the listed calls."
+  },
+  "source_digests": [
+    {
+      "path": "device/xiaomi/sm8550-common/sepolicy/vendor/mi_thermald.te",
+      "bytes": 1419,
+      "sha256": "406d1bd9a45abb0c5402958a349e13b278cb81706fc7b0121491a6ec7d3b3c4d"
+    },
+    {
+      "path": "device/xiaomi/sm8550-common/sepolicy/vendor/property_contexts",
+      "bytes": 768,
+      "sha256": "f1f2ca18d8ff46eec108afa52db541159cb44506c647a0f7641bf036a3d6d904"
+    },
+    {
+      "path": "device/xiaomi/sm8550-common/sepolicy/vendor/property.te",
+      "bytes": 274,
+      "sha256": "ebff57fdba84733a6affee0a342b7544186160a714ef511720177c8fc5e5db31"
+    },
+    {
+      "path": "device/xiaomi/sm8550-common/sepolicy/vendor/file_contexts",
+      "bytes": 2591,
+      "sha256": "17d6f80e95c20e037dd80089ab66c0d12718f24f31677e0dc92b088a05f1dbce"
+    },
+    {
+      "path": "vendor/xiaomi/sm8550-common/proprietary/vendor/etc/init/hw/init.mi_thermald.rc",
+      "bytes": 277,
+      "sha256": "68c94bfebde4a1ab4d7bc14353a7211e0702fd3caba68922d39d7157bdb8950c"
+    }
+  ]
+}

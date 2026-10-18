@@ -1,0 +1,7 @@
+{
+  "status": "CUMULATIVE_PATCH_REPRODUCES_TEN_VERIFIED_SOURCE_FILES",
+  "files": 10,
+  "git_apply_option": "--unidiff-zero",
+  "context_blank_lines_in_patch_are_unified_diff_syntax": true,
+  "phone_accessed": false
+}

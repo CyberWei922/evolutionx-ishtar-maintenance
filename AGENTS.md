@@ -13,6 +13,14 @@ This is an incremental maintenance source repository for Xiaomi 13 Ultra (ishtar
 - No device reboot, flashing, data wipe, bootloader relock, automatic log capture, repo sync/reset/clean, or production changes are implied by maintaining this repository.
 - Review proposed source and metadata differences before applying. A repository snapshot is not a flash instruction.
 
+## Current combined candidate (2026-10-18, newest working input)
+
+- The owner requested a larger combined batch before the next ROM. Working input is now plans/selinux-enforcing-prep-20261018/working-source-files.json,68 files;10 source paths differ from installed1792266978. The old64-file camera-qspm component was an intermediate build only, never a separate ROM. The old62-file map describes the installed baseline.
+- Combined component build and verified01 passed: policy1eaa4c3e…/1,604,627 bytes; complete effective allow delta32 additions/0 removals, with contexts/neverallow/retained payload checks. Camera read-only/QSPM, Bluetooth true relocated vendor→system, QCC initialization, core ROM metadata read, thermal chown/fowner and exact status mapping are combined. Capabilities cannot be limited by path; no file setattr or DAC bypass was added. Actual build.prop placement still needs the full ROM check.
+- One cumulative ROM build is running at Ubuntu control/ishtar-selinux-enforcing-prep-20261018-01/rom-candidate01, job enforcing-prep-rom-build-01. Its computer-only audit waiter runs after success. CPU6/7 nice10 I/O7 Ninja2; do not adjust unrelated Ubuntu work. Never replay the intermediate build/old flash runners.
+- Phone remains owner-accepted1792266978/Permissive; no new phone access, reboot, flash or Enforcing. A concrete new candidate flash/first reboot and any short Enforcing trial/cold boot require separate authorization. About2–3 builds to stable Enforcing is an estimate, not a promise or measured completion percentage; original permissive domains/KSU exceptions must be reported separately.
+- Reviewed upload paths also include provenance/enforcing-prep-source-files.json. Full stock-derived vendor.prop stays external; the plan provides a pinned single-line reproduction step. Keep the two installed rollback ROMs while the new candidate builds. Request only directly affected manual checks; do not repeat microphone/fingerprint by default.
+
 ## License-scoped upload (2026-10-17)
 
 - Read LICENSE.md, NOTICE and docs/LICENSE_AND_DISTRIBUTION.md. Preserve per-file upstream licenses; original maintenance additions use Apache-2.0.

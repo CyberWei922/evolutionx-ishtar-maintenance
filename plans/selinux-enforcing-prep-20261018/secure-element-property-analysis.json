@@ -1,0 +1,192 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-18T04:54:08.891019+00:00",
+  "installed_baseline": "1792266978",
+  "scope": "Read-only saved startup AVC, focused shipped secure-element DT_NEEDED chain and LLVM inspection. No phone/source/build/process operations. No engine installation, no full artifact scan.",
+  "method": "LLVM dynamic tables, relocations and focused AArch64 disassembly plus current source policy/API inspection. Not REA decompilation; unavailable Ghidra/IDA backends not retried.",
+  "runtime": {
+    "path": "recovery/ishtar-selinux-device-io-20261018-01/runtime/postboot01/logcat-avc.log",
+    "sha256": "eeffb2b0f4626aa7fe1ee0a6b6f23b6afad888831f904627d95075c3f4758cfd",
+    "bytes": 198172,
+    "lines": [
+      11,
+      12,
+      13,
+      14
+    ],
+    "domain": "hal_secure_element_default",
+    "target": "init_service_status_private_prop",
+    "class": "file",
+    "perms": [
+      "read",
+      "open",
+      "getattr",
+      "map"
+    ],
+    "time": "10-18 12:31:36.097",
+    "limits": [
+      "AVC identifies the property area, not exact requested key or call stack.",
+      "Global Permissive means AVC does not prove getter actually returned failure.",
+      "No Enforcing eSE/APDU behavior was observed in this scope."
+    ]
+  },
+  "artifact_chain": [
+    {
+      "path": "vendor/bin/hw/vendor.qti.secure_element@1.2-service",
+      "bytes": 49896,
+      "sha256": "7773f33cb11bedc189b5cfe6430d9fb6ce1925a66b0db6f7389c106a2986bd05",
+      "needed_edge": "android.hardware.secure_element@1.0-impl.so"
+    },
+    {
+      "path": "vendor/lib64/android.hardware.secure_element@1.0-impl.so",
+      "bytes": 58952,
+      "sha256": "1ee8c8d9dccaaa2f615c2eeb01738fe0edbc0d8c460402d1df6f5aa65378a2db",
+      "needed_edge": "libGPTEE_vendor.so"
+    },
+    {
+      "path": "vendor/lib64/libGPTEE_vendor.so",
+      "bytes": 28200,
+      "sha256": "559340d72724be3683c2f27e731a3c53e53b12e3fd1e55e63c4578f6628e74b2"
+    },
+    {
+      "path": "vendor/lib64/libGPMTEEC_vendor.so",
+      "bytes": 50088,
+      "sha256": "34045f72da91527b8ed986a0cb108b8656e2c67d41998ddf80b81707729fec55",
+      "role": "Default backend; NEEDED libminkdescriptor.so/libminksocket_vendor.so/libdmabufheap.so plus GPTEE/common libraries. This is a Mink backend, not proof of MediaTek platform use."
+    },
+    {
+      "path": "vendor/lib64/libGPQTEEC_vendor.so",
+      "bytes": 32160,
+      "sha256": "bd696d7598dbae7be4d9e678956224f02746d8e7e796c9ce5e551878900365c2",
+      "role": "Running-qteeconnector backend; NEEDED libQTEEConnector_vendor.so/vendor.qti.hardware.qteeconnector@1.0.so plus GPTEE/common libraries."
+    },
+    {
+      "path": "vendor/lib64/libQTEEConnector_vendor.so",
+      "bytes": 42872,
+      "sha256": "37b21566751039536d29c9b02441c460bec114f622cf325433e321d8c60eda95"
+    },
+    {
+      "path": "vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service",
+      "bytes": 19960,
+      "sha256": "d95e42bcbb69a3f40f2455faff0c72e7ba8056a9eadb2233702ba502fa9510fc",
+      "limit": "Executable is present; process registration/running state was not established here."
+    }
+  ],
+  "exact_getter": {
+    "library": "vendor/lib64/libGPTEE_vendor.so",
+    "key": "init.svc.qteeconnector-hal-1-0",
+    "key_va": "0x1336",
+    "api": "android::base::GetProperty(std::string const&,std::string const&)",
+    "call_va": "0x20e4",
+    "default": "empty string",
+    "initializer": {
+      "symbol": "_Z8initTEECv",
+      "range": [
+        "0x51b0",
+        "0x51c0"
+      ],
+      "branch": "0x51b4 ->0x2020",
+      "body_range": [
+        "0x2020",
+        "0x21a4"
+      ],
+      "init_array_evidence": "Relocation at0x6020 in .init_array refers to _Z8initTEECv."
+    },
+    "comparison": "Result is compared to the exact seven-byte string running at0x2138–0x2148.",
+    "running_case": "At0x2154–0x2158 pointer0x7358 is updated to string GPQTEEC at0x16c2.",
+    "missing_denied_or_other_value": "Branches to cleanup at0x215c; default pointer remains GPMTEEC (initial .data VA0x7358/file0x6358 contains pointer0x152a). Returns at0x219c without wait, retry loop, sleep or property-failure abort.",
+    "backend_use": "Later code loads selected pointer0x7358 at0x3228/0x3244, formats lib%s%s.so (format VA0x1795, suffix _vendor VA0x16ca), then dlopen at0x32cc. Both resulting backend files exist.",
+    "limits": "This establishes static fallback selection, not that GPM backend succeeds under Enforcing or that qteeconnector running state currently equals/does not equal running. Other unrelated C++ abort sites are not property-failure behavior."
+  },
+  "service_metadata": {
+    "secure_element_rc": "vendor/etc/init/vendor.qti.secure_element@1.2-service.rc declares secureelement-hal_1_2, class hal, user system, group system.",
+    "qtee_bounded_search": {
+      "vendor_init_text_files": 111,
+      "odm_init_text_files": 9,
+      "vendor_vintf_text_files": 61,
+      "odm_vintf_text_files": 9,
+      "limits": "Recursive regular decodable files<=500KB under each output etc/init or etc/vintf.",
+      "matches": "Only an init.qcom.rc comment about a QTEEConnector app directory; no service declaration or VINTF registration match containing qteeconnector.",
+      "do_not_infer": "Do not say executable/service is absent: the executable is present, and loading via other configuration or constructed names is not excluded."
+    }
+  },
+  "policy_contract": [
+    {
+      "path": "system/sepolicy/private/property_contexts",
+      "line": 1001,
+      "fact": "init.svc. prefix maps init_service_status_private_prop; no exact qteeconnector-hal-1-0 mapping observed in inspected merged sources."
+    },
+    {
+      "path": "system/sepolicy/private/property.te",
+      "line": 34,
+      "fact": "system_internal_prop(init_service_status_private_prop)"
+    },
+    {
+      "path": "system/sepolicy/public/te_macros",
+      "lines": [
+        954,
+        955,
+        956,
+        957,
+        958,
+        959
+      ],
+      "fact": "system_internal_prop enforces neverallow {domain -coredomain} type:file no_rw_file_perms under normal Treble property gates."
+    },
+    {
+      "path": "system/sepolicy/private/property.te",
+      "lines": [
+        657,
+        658,
+        659,
+        660,
+        661,
+        662,
+        663
+      ],
+      "fact": "Only init can set private/public init-service-status properties."
+    },
+    {
+      "path": "system/sepolicy/public/property.te",
+      "line": 84,
+      "fact": "init_service_status_prop is a separate public restricted type; it is not the private type in this AVC."
+    },
+    {
+      "path": "device/qcom/sepolicy_vndr/sm8550/qva/vendor/common/hal_secure_element_default.te",
+      "lines": [
+        62,
+        63,
+        69
+      ],
+      "fact": "Existing QTEEConnector/eSE-power-manager HAL client contracts and vendor_ese_prop reads. No existing private init state API."
+    }
+  ],
+  "decision": {
+    "immediate": "Retain the denial for this candidate; do not grant init_service_status_private_prop reads and do not disable Treble neverallow/export platform private types.",
+    "risk": "No unconditional startup wait/abort established; failure/empty value changes backend choice. This is a real conditional eSE behavior risk, not proof it is harmless.",
+    "future_validation": "When authorized Enforcing validation reaches eSE/APDU/OMAPI, test actual secure-element initialization and session operations. Basic NFC tag reading does not validate eSE sessions.",
+    "if_problem_reproduces": "Establish actual backend used and authoritative qteeconnector service lifecycle first. A deliberate exact exported status API or compatible source-level backend selection can then be assessed; do not retype the whole init.svc namespace or infer a fix from the AVC alone."
+  },
+  "source_digests": [
+    {
+      "path": "system/sepolicy/private/property.te",
+      "bytes": 20261,
+      "sha256": "db60e92ed01dfbb15e131a89e7886bb54d97e5d4e8a80a481c50af0e6a21d01b"
+    },
+    {
+      "path": "system/sepolicy/private/property_contexts",
+      "bytes": 123510,
+      "sha256": "ddbbea0522d0d36880f3584c9eaeaf5e62179729155653a765c9e7712e5b1351"
+    },
+    {
+      "path": "system/sepolicy/public/te_macros",
+      "bytes": 42239,
+      "sha256": "b749c90e4ad0b7873eaa03192309846fddc7a33b06284e1925ad849c2d5111cd"
+    },
+    {
+      "path": "device/qcom/sepolicy_vndr/sm8550/qva/vendor/common/hal_secure_element_default.te",
+      "bytes": 4132,
+      "sha256": "82141108e0f57c359c0978b8e72104246602d5fb0c2c5e85ffeafbf743e1f329"
+    }
+  ]
+}
