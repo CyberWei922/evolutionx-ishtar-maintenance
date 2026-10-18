@@ -1,5 +1,26 @@
 # 当前维护状态
 
+## 边界与维护者候选1792311835完整构建完成（2026-10-18，最新）
+
+boundary-maintainer-rom-build-01 exit0，audit-worker-status/audit-status均complete。实际34个payload分区、82项源码、策略38cde3d5a478bc285ba63fdb16c39cea8a1961208633dc6cd36e9239dd4f8bdc及保护载荷通过；三条启动参数仅在system，诊断目录重标记紧随原mkdir。三个维护者APK与组件摘要相同；原9静态宽松域/KSU保持，全局仍Permissive。没有Enforcing或UI交互验收，未据此声称相机性能提升。
+
+正式Ubuntu `delivery/ishtar-selinux-boundary-maintainer-permissive-candidate-20261018-01`，ZIP 4,546,311,909 bytes/SHA `4f40938189396d92f2fa2a294a82ef6f7c6bf954bf149abd54c2f47a0fda3bd1`。Mac同名薄交接68项，不含ROM；静态保留数据升级检查通过，手机现场预检仍待授权后进行，完整OTA签名未独立密码学核验。
+
+手机最近读回仍1792300213/Permissive。本轮没有手机采集/刷写/重启/setenforce；新候选刷入及首次正常重启、短时Enforcing试验须具体另确认。短时试验计划以先启动独立30秒回退guard、核对就绪后才临时开启为前提；真实E到P回退尚未验证，原静态宽松域和KSU例外不等于全域强制。模块启动拒绝完成限定静态分析仍不能唯一归因，留给另行授权的受控冷启动，不随意开放块设备。原三版完整ROM及当前暂存保持，未清理或调整Ubuntu其他任务。
+
+许可明确16份Apache-2.0源码及最小补丁/元数据准备上传；完整file_contexts/vendor.prop和两张收款图继续外置。原图仅本地整包内使用，三个APK/策略二进制/ROM/原始手机日志不进Git。组件194项和失败检查器记录仍保留，不重跑旧worker。
+
+
+## 下一候选：SELinux边界与维护者页面（2026-10-18）
+
+活动源码为plans/selinux-boundary-maintainer-20261018/working-source-files.json的82项，累计20路径相对已安装1792300213；原68项清单仅描述安装基线。组件12:10/exit0及verified03通过，策略38cde3d5…/1,604,906 bytes，与中间边界策略完全一致。原类型权限增删0；新diag类型105项有效权限含8项明确目录/FIFO权限和结构属性继承，不能称105个bug修复。
+
+保留600/true的两条legacy启动配置并移至system初始化；虚拟相机状态/OEM serial精确复用现有相机/radio属性类型；RIL diag复用radio标签，diag-router日志目录使用专用类型，重标记紧随原mkdir。生成的五分区build.prop已确认三项值仅在system；完整payload检查仍待整包完成。
+
+维护者显示CyberWei，独立普通APP和专用system_ext RRO提供GitHub、QQ复制、TG、微信/支付宝原图展示和主动保存、PayPal外链；非官方卡片不显示官方徽标。三个APK签名、idmap、原图字节检查通过，APP不请求权限；实机卡片/图片保存/支付应用扫码尚未验收。
+
+boundary-maintainer-rom-build-01和电脑审计等待器正在Ubuntu同名control/rom-candidate01运行；CPU6/7 nice10 I/O7 Ninja2，未调整其他任务。本轮无手机操作或Enforcing，原9静态宽松域/KSU保持。新刷入/正常重启及受控Enforcing须具体新授权；待需要配合时再请求，不重复完整硬件清单。Git仅包含16份许可明确源码及最小补丁/元数据，完整file_contexts/vendor.prop及两张图片保持外部依赖。
+
 ## 1792300213已保留数据刷入并启动，自动读回通过（最新）
 
 本次新flash01完成74动作/73完整下载，wire SHA `51111b2b3512c3673e64fb04e5df8545323067a1b4f7d0f462d408eb69342250` 核验通过；2026-10-18 13:50:13正常重启。没有userdata/metadata/底层固件写入，未锁BL。授权只涵盖此次刷入及首次正常重启，现已使用，不复用作额外重启或Enforcing。

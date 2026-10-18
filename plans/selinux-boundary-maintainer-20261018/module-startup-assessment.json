@@ -1,0 +1,15 @@
+{
+  "status": "STATIC_REVIEW_COMPLETE_NO_POLICY_CHANGE",
+  "evidence_sha256": "80bf881b03a829b375f7c453c4ebed526521f6c9e1f4dedd5b2a041e9410407d",
+  "scope": "Actual frozen toolbox/module loader,403 vendor_dlkm modules and bounded relevant module sources",
+  "finding": "One early vendor_modprobe block_device:dir search denial has no stack or module argument. The actual loader calls finit_module; no unique userspace or module path was established.",
+  "not_proven": [
+    "Optional or harmless denial",
+    "Necessary module initialization failure",
+    "Complete module load under Enforcing"
+  ],
+  "action": "Keep this candidate unchanged. Revisit during separately authorized controlled Enforcing cold boot. Consider only dir search if correlated with a required module EACCES/init failure; never block-device read/write.",
+  "phone_accessed": false,
+  "source_changed": false,
+  "raw_device_log_included": false
+}

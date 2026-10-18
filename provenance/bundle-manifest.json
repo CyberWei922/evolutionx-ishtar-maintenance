@@ -6,20 +6,20 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 14629,
-      "sha256": "3a504a45e8a2e18ff381bfed8a8d5a564dac38b3b682327a425f68ba77080abd"
+      "bytes": 15814,
+      "sha256": "66c12d7fbbbb498aff0090f4d21f3a8ca53e27dcf135dfb2323e4ca6437c8364"
     },
     "LICENSE.md": {
       "bytes": 1395,
       "sha256": "ccb2f316976a3ab457d94652179151cece8650913d0e789b17a6cc31b598956c"
     },
     "NOTICE": {
-      "bytes": 6959,
-      "sha256": "f451f04ea5ac213cae40305f8c2b774e60926fd3c27434b08b6e232df3cd1ec2"
+      "bytes": 7469,
+      "sha256": "91a3b9816688c64b3af3347dbd47e3986645773451a9a81073aed33cd1ebc5ec"
     },
     "README.md": {
-      "bytes": 3709,
-      "sha256": "1b5313251c83132d5cd3706694bb7aa3327b769369ce26c7cd74a0d465322f52"
+      "bytes": 3779,
+      "sha256": "472b3f0f113375cd44a0e15c76d704abbae3e0fe3723099be34d7c08b80e8dd0"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,16 +62,16 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 17638,
-      "sha256": "e7721682c05c3373ad74a47774c4be0c8de1ec7115fb9bdafffa8285e9ce2314"
+      "bytes": 21057,
+      "sha256": "1690d9d184fdfdd152492e29cb07ccefc9ad13ce8f2cbd87692b816ec45100dd"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
       "sha256": "4461ea65ce0a35d0cc5389e9da8f009d9b76fc14eaece914002b1b425ade1b34"
     },
     "docs/LICENSE_AND_DISTRIBUTION.md": {
-      "bytes": 2965,
-      "sha256": "a54eb938275b1f70b0b4f869a1f1a60f43f269abe4400ef2262d4d4a89fdf363"
+      "bytes": 3499,
+      "sha256": "61e2c888607ec4e104386b87c798ec9f7cefbef723cdc7130bcae4c1196a0062"
     },
     "docs/RECOVERY_TOUCH.md": {
       "bytes": 947,
@@ -212,6 +212,134 @@
     "patches/vendor__lineage.patch": {
       "bytes": 1068,
       "sha256": "7ceb5d64ea7cae6a59a1c0f5d445177d3f3877e1bb19ee7ac4f25fd2afb647fb"
+    },
+    "plans/selinux-boundary-maintainer-20261018/README.md": {
+      "bytes": 1682,
+      "sha256": "6a886a98543f10931b3bf2761a81b08846efda8cd2f327ca8da02b5e48bea8ec"
+    },
+    "plans/selinux-boundary-maintainer-20261018/actual-boot-properties.json": {
+      "bytes": 593,
+      "sha256": "1819117dc7c3026113b60f0263fde75147d7d7d840d1d4f800ed1f1096fc76c4"
+    },
+    "plans/selinux-boundary-maintainer-20261018/actual-maintainer-components.json": {
+      "bytes": 700,
+      "sha256": "737f3401893480cd83debc0ba7b443e6af41fd390bf739c5beada421ec4c0507"
+    },
+    "plans/selinux-boundary-maintainer-20261018/build-status.json": {
+      "bytes": 2607,
+      "sha256": "644c9e179b8bf40de9e1a0c538e6cb80356eb92fe23cd5200ea2777ca41a5732"
+    },
+    "plans/selinux-boundary-maintainer-20261018/candidate.patch": {
+      "bytes": 20961,
+      "sha256": "80f90014343ae1ec44571833954dcee151e1e4818d244c0ca2604f3e990176bf"
+    },
+    "plans/selinux-boundary-maintainer-20261018/component-build-summary.json": {
+      "bytes": 4774,
+      "sha256": "a47272a37656bca4e5fd7a5011b0be39345dc2c185a5262808651ecb6ab3bb4b"
+    },
+    "plans/selinux-boundary-maintainer-20261018/effective-permission-delta.json": {
+      "bytes": 11412,
+      "sha256": "61ce63e3772953f03541f946b950b1ab00aa53a9e38495c7d4f3b7cae4e956d6"
+    },
+    "plans/selinux-boundary-maintainer-20261018/enforcing-trial-plan.json": {
+      "bytes": 2048,
+      "sha256": "552827745138d2b839470440fcbb788229253387c50f135547903d20b01f6067"
+    },
+    "plans/selinux-boundary-maintainer-20261018/external-inputs.json": {
+      "bytes": 2041,
+      "sha256": "091e4fc0c9acd6d463047f6e14ee5d4b8ef5d695e98b3452f462587236e03ba6"
+    },
+    "plans/selinux-boundary-maintainer-20261018/external-reproduction-check.json": {
+      "bytes": 178,
+      "sha256": "67429fb60826c8ed6aaba7b24b3647f7664ae74c79213383030390d902cfaad1"
+    },
+    "plans/selinux-boundary-maintainer-20261018/module-startup-assessment.json": {
+      "bytes": 920,
+      "sha256": "d5e5174e019b0037df84cb10cd0bc6fe8178a72b2d3808e42a19d07d818b90aa"
+    },
+    "plans/selinux-boundary-maintainer-20261018/optional-probe-assessment.json": {
+      "bytes": 618,
+      "sha256": "45e1af0f9f187714517ecefed4df06a83ebfdad0039964581fa4711e8b9cbf20"
+    },
+    "plans/selinux-boundary-maintainer-20261018/reproduce_external_config.py": {
+      "bytes": 746,
+      "sha256": "3a46d85a19724d4715a2e0ab14e787e6881dea59481a18da9ba9cb386938a9d3"
+    },
+    "plans/selinux-boundary-maintainer-20261018/rom-build-summary.json": {
+      "bytes": 2607,
+      "sha256": "644c9e179b8bf40de9e1a0c538e6cb80356eb92fe23cd5200ea2777ca41a5732"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source-baselines.json": {
+      "bytes": 10229,
+      "sha256": "c0858ab8bcb7d3ca5d2e6ad25a9753987ab1d331140c8db72cae793069e890f9"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/device.mk": {
+      "bytes": 3119,
+      "sha256": "b85cfe07268d03756a682c5f9574eff13fb38f25358f9ec30aeb0f5e52f7cc77"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/maintainer/Android.bp": {
+      "bytes": 271,
+      "sha256": "62a2be42fc29df6763cdd7d646396cd9d22bc0baf137ba9381f1925d04458463"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/maintainer/AndroidManifest.xml": {
+      "bytes": 490,
+      "sha256": "2b34147bc4232f08a93b5c12139da4780550cd4364b6146b7e4fd2fa410f1a14"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/maintainer/res/values-zh-rCN/strings.xml": {
+      "bytes": 1050,
+      "sha256": "4174afbcad28165837b51fe9f1fc940bc9931e4917e77ececfa36892a92c13bd"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/maintainer/res/values/strings.xml": {
+      "bytes": 1616,
+      "sha256": "72e87bd582589874f0b99e3d946b104da0fc46beb2e1bee4fcbf357dcc5447ee"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/maintainer/src/org/evolution/ishtar/maintainer/MaintainerActivity.java": {
+      "bytes": 7438,
+      "sha256": "aa93b254460e83bba2788b5ae01920e24cf450a8ee835f8feb7e595e1053dd90"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/Android.bp": {
+      "bytes": 198,
+      "sha256": "2b5d23234f4195c0ec72d1de988cde45755b0bdef9e2d9833ef450de8003c7f5"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/AndroidManifest.xml": {
+      "bytes": 456,
+      "sha256": "e14d4ce2c0d82a309e428017fa225c8d12cd8885b54dd69ddbf2fb0f5a1a6c5d"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/res/values/config.xml": {
+      "bytes": 472,
+      "sha256": "f973c8d47afc71143c6811de461dd491d2d76e6cebc0d352b90fa3f8fd5894f6"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/properties/platform-system.prop": {
+      "bytes": 431,
+      "sha256": "f6215dec38768a630387cc6f0aa69d8ae201c7030ec3782a63f24ecab0098d50"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/diag_router_data.te": {
+      "bytes": 445,
+      "sha256": "91ddd125f60681b19d697233816a32ef04df4e778924bf33280b326de083c15a"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/file.te": {
+      "bytes": 293,
+      "sha256": "ec5c010bdb42b004d0e6c709fe300d0b96c3cfef518f2ae90446446dfd2f3973"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/property_contexts": {
+      "bytes": 1244,
+      "sha256": "b3a31afbb36b2bf6003e4b27191132d4b69dcbc7fe4c09be9295393aaa1f21e9"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/sm8550-common/init/init.sm8550.rc": {
+      "bytes": 12832,
+      "sha256": "54db143b2c70da0bb8708f9410d0f3300924495fc9ecdfbc798dd1a1fc909480"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/packages/apps/Settings/res/values/ishtar_maintainer.xml": {
+      "bytes": 718,
+      "sha256": "f0d7c0b9c2819938b8db915fe290dea140e74fc6e4f137933c2d29cf79d71cd0"
+    },
+    "plans/selinux-boundary-maintainer-20261018/source/packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java": {
+      "bytes": 34853,
+      "sha256": "14ba8e2f613db73c55b130712c95d56a52e8b988a8cf51c7cb3d8b935a49834b"
+    },
+    "plans/selinux-boundary-maintainer-20261018/working-source-files.json": {
+      "bytes": 14421,
+      "sha256": "7f6bab63b530e27b7f73d3f1ead3397302b5715e23c8443413e2e24495ccece4"
     },
     "plans/selinux-camera-next-20261017/CameraDefaultsPolicyTest.java": {
       "bytes": 4620,
@@ -780,6 +908,10 @@
     "provenance/accepted-source-files.json": {
       "bytes": 8017,
       "sha256": "16274a2511ef2bcedfcfa1910e38d8a730a758903538561ef74a221a1cefb489"
+    },
+    "provenance/boundary-maintainer-source-files.json": {
+      "bytes": 7793,
+      "sha256": "a28e0cfa9aa2f828a56210e357829d9d7bb71baef6c8517280f2bb30ad28a9ae"
     },
     "provenance/candidate-source-files.json": {
       "bytes": 3244,

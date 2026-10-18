@@ -1,0 +1,30 @@
+{
+  "status": "DESIGN_ONLY_FRESH_OWNER_AUTHORIZATION_REQUIRED",
+  "target": "New permissive candidate only after successful separately authorized preserve-data flash, first boot and readback",
+  "guard_reference": "plans/selinux-framework-api-20261018/enforcing-return-guard.sh",
+  "guard_sha256": "57f712673431951458f254871b7dc4478de1f20198711b9f0bb7a2442c53b7db",
+  "guard_limit_seconds": 30,
+  "guard_token": "New random 128-bit token per authorized attempt; never reuse the historical token/PID",
+  "preconditions": [
+    "Fresh known-device identity, incremental/policy hash, boot ID and global Permissive readback",
+    "Root control process and detached live guard both in u:r:ksu:s0; retain actual KSU permissive exception",
+    "New READY status, matching PID/boot-ID/token and sufficient remaining time before any enable command",
+    "No flash/reboot/service restart or persistent boot-mode edit inside this runtime trial"
+  ],
+  "order": [
+    "Start the separately authorized restore-permissive guard before enabling",
+    "Only after readiness checks, enable global Enforcing temporarily",
+    "Capture only bounded relevant denial/process/mode evidence; request focused UI/camera and fingerprint actions appropriate to the mode change",
+    "Guard returns to Permissive by its original monotonic deadline or earlier restore-now trigger",
+    "Read back global mode/enforce node and finite worker exits; archive evidence locally"
+  ],
+  "limit": "The guard deadline includes preparation, so actual Enforcing time is less than 30 seconds; no extension or automatic repeat",
+  "historical_guard_proof": "25-second marker-only detached survival/deadline test; actual restoration from Enforcing has not yet been tested",
+  "original_static_permissive_domains_unchanged": true,
+  "ksu_exception_unchanged": true,
+  "runtime_pass_not_cold_boot_proof": true,
+  "module_startup_review_pending": false,
+  "phone_actions_performed_by_this_plan": false,
+  "authorization_granted": false,
+  "module_startup_cold_boot_uncertainty_remains": true
+}

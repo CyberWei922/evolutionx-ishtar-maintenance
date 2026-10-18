@@ -1,0 +1,13 @@
+{
+  "status": "ACTUAL_SYSTEM_VENDOR_PROPERTY_OWNERS_VERIFIED",
+  "system_values": {
+    "bluetooth.auto_connect_profiles.enabled": "true",
+    "bluetooth.profile.bap.unicast.server.enabled": "true",
+    "audio.sys.noisy.broadcast.delay": "600"
+  },
+  "vendor_duplicates": 0,
+  "bootanimation_sha256": "ca070ac28c5be9467e94d1c7de793a6e775d46ce968a2f26afe89bb4364b6684",
+  "system_build_prop_sha256": "869cda1729cb652725280273e76ec5d440ff278a8abeffbf405511a70849dce0",
+  "vendor_build_prop_sha256": "23fda805e44e07c3621f07fadee1024ff3206267b9f0a9218e96ec3ee28f23a2",
+  "phone_accessed": false
+}

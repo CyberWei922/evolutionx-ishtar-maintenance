@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="ishtar_maintainer_name" translatable="false"></string>
+    <string name="ishtar_maintainer_profile_package" translatable="false"></string>
+    <string name="ishtar_maintainer_profile_activity" translatable="false"></string>
+    <overlayable name="IshtarMaintainerOverlay">
+        <policy type="system">
+            <item type="string" name="ishtar_maintainer_name" />
+            <item type="string" name="ishtar_maintainer_profile_package" />
+            <item type="string" name="ishtar_maintainer_profile_activity" />
+        </policy>
+    </overlayable>
+</resources>

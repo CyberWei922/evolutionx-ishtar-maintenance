@@ -1,0 +1,141 @@
+{
+  "status": "ROM_BUILT_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "baseline_incremental": "1792300213",
+  "files": [
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/properties/platform-system.prop",
+      "source_path": "device/xiaomi/ishtar/properties/platform-system.prop",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 431,
+      "sha256": "f6215dec38768a630387cc6f0aa69d8ae201c7030ec3782a63f24ecab0098d50"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 1244,
+      "sha256": "b3a31afbb36b2bf6003e4b27191132d4b69dcbc7fe4c09be9295393aaa1f21e9"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/file.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/file.te",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 293,
+      "sha256": "ec5c010bdb42b004d0e6c709fe300d0b96c3cfef518f2ae90446446dfd2f3973"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/sepolicy/vendor/diag_router_data.te",
+      "source_path": "device/xiaomi/ishtar/sepolicy/vendor/diag_router_data.te",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 445,
+      "sha256": "91ddd125f60681b19d697233816a32ef04df4e778924bf33280b326de083c15a"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/maintainer/Android.bp",
+      "source_path": "device/xiaomi/ishtar/maintainer/Android.bp",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 271,
+      "sha256": "62a2be42fc29df6763cdd7d646396cd9d22bc0baf137ba9381f1925d04458463"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/maintainer/AndroidManifest.xml",
+      "source_path": "device/xiaomi/ishtar/maintainer/AndroidManifest.xml",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 490,
+      "sha256": "2b34147bc4232f08a93b5c12139da4780550cd4364b6146b7e4fd2fa410f1a14"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/maintainer/res/values/strings.xml",
+      "source_path": "device/xiaomi/ishtar/maintainer/res/values/strings.xml",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 1616,
+      "sha256": "72e87bd582589874f0b99e3d946b104da0fc46beb2e1bee4fcbf357dcc5447ee"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/maintainer/res/values-zh-rCN/strings.xml",
+      "source_path": "device/xiaomi/ishtar/maintainer/res/values-zh-rCN/strings.xml",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 1050,
+      "sha256": "4174afbcad28165837b51fe9f1fc940bc9931e4917e77ececfa36892a92c13bd"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/maintainer/src/org/evolution/ishtar/maintainer/MaintainerActivity.java",
+      "source_path": "device/xiaomi/ishtar/maintainer/src/org/evolution/ishtar/maintainer/MaintainerActivity.java",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 7438,
+      "sha256": "aa93b254460e83bba2788b5ae01920e24cf450a8ee835f8feb7e595e1053dd90"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/Android.bp",
+      "source_path": "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/Android.bp",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 198,
+      "sha256": "2b5d23234f4195c0ec72d1de988cde45755b0bdef9e2d9833ef450de8003c7f5"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/AndroidManifest.xml",
+      "source_path": "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/AndroidManifest.xml",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 456,
+      "sha256": "e14d4ce2c0d82a309e428017fa225c8d12cd8885b54dd69ddbf2fb0f5a1a6c5d"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/res/values/config.xml",
+      "source_path": "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/res/values/config.xml",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 472,
+      "sha256": "f973c8d47afc71143c6811de461dd491d2d76e6cebc0d352b90fa3f8fd5894f6"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/packages/apps/Settings/res/values/ishtar_maintainer.xml",
+      "source_path": "packages/apps/Settings/res/values/ishtar_maintainer.xml",
+      "license": "Apache-2.0",
+      "review": "Original maintenance code, Apache-2.0; retain header.",
+      "bytes": 718,
+      "sha256": "f0d7c0b9c2819938b8db915fe290dea140e74fc6e4f137933c2d29cf79d71cd0"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java",
+      "source_path": "packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java",
+      "license": "Apache-2.0",
+      "review": "Evolution X Apache-2.0 source at pinned Settings db45a93f300e53110cc5306bb484b5175bbcf188 plus explicit local unofficial-profile routing; preserve upstream header.",
+      "bytes": 34853,
+      "sha256": "14ba8e2f613db73c55b130712c95d56a52e8b988a8cf51c7cb3d8b935a49834b"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/ishtar/device.mk",
+      "source_path": "device/xiaomi/ishtar/device.mk",
+      "license": "Apache-2.0",
+      "review": "Previously reviewed LineageOS Apache-2.0 source; preserve its original copyright and SPDX header.",
+      "bytes": 3119,
+      "sha256": "b85cfe07268d03756a682c5f9574eff13fb38f25358f9ec30aeb0f5e52f7cc77"
+    },
+    {
+      "repository_path": "plans/selinux-boundary-maintainer-20261018/source/device/xiaomi/sm8550-common/init/init.sm8550.rc",
+      "source_path": "device/xiaomi/sm8550-common/init/init.sm8550.rc",
+      "license": "Apache-2.0",
+      "review": "Previously reviewed LineageOS Apache-2.0 source; preserve its original copyright and SPDX header.",
+      "bytes": 12832,
+      "sha256": "54db143b2c70da0bb8708f9410d0f3300924495fc9ecdfbc798dd1a1fc909480"
+    }
+  ],
+  "external_full_source_omissions": [
+    "device/xiaomi/ishtar/maintainer/res/drawable-nodpi/ishtar_donate_alipay.jpg",
+    "device/xiaomi/ishtar/maintainer/res/drawable-nodpi/ishtar_donate_wechat.jpg",
+    "device/xiaomi/ishtar/sepolicy/vendor/file_contexts",
+    "device/xiaomi/sm8550-common/configs/properties/vendor.prop"
+  ],
+  "candidate_incremental": "1792311835"
+}

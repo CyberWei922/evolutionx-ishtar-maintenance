@@ -1,0 +1,11 @@
+# SELinux边界修复与本地维护者页面
+
+基线已安装1792300213/Permissive。当前82项输入清单、20路径累计改动；组件12:10/exit0及verified03通过，完整候选1792311835已通过实际34分区及升级静态检查，尚未安装或进行Enforcing。实际状态以build-status.json和后续ROM摘要为准。
+
+修复保留600/true两条legacy配置并移至system初始化；两条相机/radio状态属性复用已有精确类型；RIL诊断目录复用radio标签，diag-router目录使用专用类型及8项明确目录/FIFO权限；重标记紧随原mkdir。原类型权限增删为0，新增类型105项有效权限包含结构属性继承，不是105个bug修复。
+
+本地普通APP与system_ext RRO在设置卡片展示CyberWei，提供GitHub、QQ复制、TG和赞助入口；两张二维码原图本地展示和用户主动保存，PayPal为外链。APP不请求权限，非官方卡片不显示官方徽标。三个APK签名、原图字节与idmap映射检查通过；未有实机UI/相册保存/支付应用扫码验收。
+
+上传16份Apache-2.0源码和最小补丁/元数据；完整file_contexts和vendor.prop沿用既有授权边界，两个机主图片不上传。外部配置SHA及复现器见external-inputs.json；图像必须单独提供。不要把本仓库许可证套用到图片、厂商依赖或ROM。
+
+原9静态宽松域、KSU和全局Permissive保持。传感器可选probe有默认继续分支，不开放default_prop；Mtd可选重载/DAC、必要功能的受控Enforcing及冷启动仍待验证。新刷入/正常重启与Enforcing需要具体新授权，不重复麦克风/指纹全套测试。Ubuntu其他任务未调整。

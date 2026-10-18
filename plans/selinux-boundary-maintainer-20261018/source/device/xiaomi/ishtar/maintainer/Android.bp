@@ -1,0 +1,10 @@
+// Copyright (C) 2026 CyberWei922
+// SPDX-License-Identifier: Apache-2.0
+android_app {
+    name: "IshtarMaintainerInfo",
+    srcs: ["src/**/*.java"],
+    sdk_version: "current",
+    min_sdk_version: "29",
+    system_ext_specific: true,
+    optimize: { enabled: true },
+}

@@ -1,0 +1,141 @@
+{
+  "status": "BOUNDARY_MAINTAINER_COMPONENTS_COMPILED_VERIFIED",
+  "baseline_incremental": "1792300213",
+  "policy_sha256": "38cde3d5a478bc285ba63fdb16c39cea8a1961208633dc6cd36e9239dd4f8bdc",
+  "policy_bytes": 1604906,
+  "source_files_verified": 82,
+  "changed_source_paths": 20,
+  "new_type": "vendor_ishtar_diag_router_data_file",
+  "effective_permission_additions": 105,
+  "old_type_permission_additions": 0,
+  "effective_permission_removals": 0,
+  "explicit_fifo_permissions": [
+    [
+      "vendor_diag-router",
+      "vendor_ishtar_diag_router_data_file",
+      "dir",
+      "add_name"
+    ],
+    [
+      "vendor_diag-router",
+      "vendor_ishtar_diag_router_data_file",
+      "dir",
+      "getattr"
+    ],
+    [
+      "vendor_diag-router",
+      "vendor_ishtar_diag_router_data_file",
+      "dir",
+      "search"
+    ],
+    [
+      "vendor_diag-router",
+      "vendor_ishtar_diag_router_data_file",
+      "dir",
+      "write"
+    ],
+    [
+      "vendor_diag-router",
+      "vendor_ishtar_diag_router_data_file",
+      "fifo_file",
+      "create"
+    ],
+    [
+      "vendor_diag-router",
+      "vendor_ishtar_diag_router_data_file",
+      "fifo_file",
+      "getattr"
+    ],
+    [
+      "vendor_diag-router",
+      "vendor_ishtar_diag_router_data_file",
+      "fifo_file",
+      "open"
+    ],
+    [
+      "vendor_diag-router",
+      "vendor_ishtar_diag_router_data_file",
+      "fifo_file",
+      "write"
+    ]
+  ],
+  "permissive_domains": [
+    "aoncameraservice_app",
+    "backuptool",
+    "qti-testscripts",
+    "su",
+    "vendor-qti-testscripts",
+    "vendor_cta_app",
+    "vendor_hal_debugutils_default",
+    "vendor_logkit_app",
+    "vendor_pdt_app"
+  ],
+  "file_context_cases": {
+    "/data/vendor/diag": "vendor_radio_vendor_data_file",
+    "/data/vendor/diag/sync_info": "vendor_radio_vendor_data_file",
+    "/data/vendor/modem/diag_logs": "vendor_ishtar_diag_router_data_file",
+    "/data/vendor/modem/diag_logs/bootup": "vendor_ishtar_diag_router_data_file",
+    "/data/vendor/modem": "vendor_data_file",
+    "/data/vendor/modem/unrelated": "vendor_data_file",
+    "/data/vendor/qrtr": "vendor_qrtr_lookup_data_file"
+  },
+  "property_cases": {
+    "vendor.miui.vcamera.state": "vendor_camera_prop",
+    "ro.vendor.oem.sno": "vendor_radio_prop"
+  },
+  "protected_payloads": {
+    "system/bin/surfaceflinger": "099b882b2e71941a25a10b45f0c73ff15e060f3243b2700755545c2251d1dc99",
+    "system/bin/bootanimation": "ca070ac28c5be9467e94d1c7de793a6e775d46ce968a2f26afe89bb4364b6684",
+    "vendor/lib64/libc++_shared.so": "1b27c5ec6f0dba72ad91e59ecbd2cabeaa5cb58e6f9b1adb600ec3f60b837ded",
+    "vendor/lib64/libgnss.so": "9ae162029e867ac3c8dbd6674d707cb4ad4d7383b7670bad3abe59a23035658b",
+    "odm/lib64/libgf_hal.so": "3d375442f6fd24ef11c7a4bc8f0f5ba80c15dc06d953ce80d414bb1078f62576"
+  },
+  "new_generic_property_or_dac_permissions": false,
+  "source_property_values_preserved": true,
+  "actual_build_property_move_pending_full_rom": true,
+  "preserved_data_relabel_pending_phone": true,
+  "phone_installed": false,
+  "enforcing_trial": false,
+  "full_rom_built": false,
+  "remaining": [
+    "Full ROM actual payload and property ownership/boot init checks",
+    "Owner authorized flash and controlled Enforcing trial",
+    "Original static permissive domains, KSU exception and cold boot validation",
+    "Maintainer card/QR save user interaction and payment-app image scanning"
+  ],
+  "policy_identical_to_intermediate": true,
+  "maintainer_apks": {
+    "app": {
+      "path": "system_ext/app/IshtarMaintainerInfo/IshtarMaintainerInfo.apk",
+      "bytes": 283236,
+      "sha256": "5bd3f67a13eb4bb4e53845eb8dac5cdccc358e232b18a3bc637341841a2b1edd",
+      "original_images": {
+        "ishtar_donate_alipay.jpg": {
+          "member": "res/drawable-nodpi-v4/ishtar_donate_alipay.jpg",
+          "sha256": "5ab99ab5aef6fc04ae8e7c090a3d05bfe23933528685aaeb18f806d9c46799da",
+          "bytes": 174530
+        },
+        "ishtar_donate_wechat.jpg": {
+          "member": "res/drawable-nodpi-v4/ishtar_donate_wechat.jpg",
+          "sha256": "025561eb9f0310e854d15f8986fe967d5af8881dcd88b8b028e62bbb82f146f1",
+          "bytes": 73884
+        }
+      }
+    },
+    "Settings": {
+      "path": "system_ext/priv-app/Settings/Settings.apk",
+      "bytes": 95947285,
+      "sha256": "d8d1290def01b4c37c8046a0499f7bd425f8974aa16e7968d0827cbd5699f71c"
+    },
+    "overlay": {
+      "path": "system_ext/overlay/IshtarMaintainerOverlay.apk",
+      "bytes": 8542,
+      "sha256": "4a80d7219a303c20d671459da2654fb1c2784d8457c04047f77470b6e143ccaa"
+    }
+  },
+  "idmap_overlayable_checked": true,
+  "ui_permissions_requested": [],
+  "ui_installed_or_interactively_tested": false,
+  "actual_init_install_pending_full_rom": true,
+  "original_images_byte_identical_in_apk": true
+}

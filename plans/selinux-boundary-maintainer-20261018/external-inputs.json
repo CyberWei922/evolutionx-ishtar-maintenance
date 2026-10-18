@@ -1,0 +1,39 @@
+{
+  "full_source_omissions": [
+    {
+      "path": "device/xiaomi/sm8550-common/configs/properties/vendor.prop",
+      "before_sha256": "3b8bc0baa96ec3f7cf76ae72084e2aeda307d6946bd55c100798a533c84c4ce5",
+      "after_sha256": "39557a26a1baa5c1eb7487eaefdbba95c0513e69b3fc0f4152223d81148062c0",
+      "bytes": 8218,
+      "reason": "Preserved prior explicit-license omission; only our minimal configuration delta is uploaded."
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/file_contexts",
+      "before_sha256": "1cfd6bc36e1ce0a59052652d5dcd235c9132a01bb4eefb098bff2b2fc199d2d3",
+      "after_sha256": "b939adcb99440c613f85c95da219002338adbd883fd2f17b70ccc074ca042b81",
+      "bytes": 1794,
+      "reason": "Preserved prior explicit-license omission; only our minimal configuration delta is uploaded."
+    }
+  ],
+  "owner_images": [
+    {
+      "path": "device/xiaomi/ishtar/maintainer/res/drawable-nodpi/ishtar_donate_alipay.jpg",
+      "before_sha256": null,
+      "after_sha256": "5ab99ab5aef6fc04ae8e7c090a3d05bfe23933528685aaeb18f806d9c46799da",
+      "bytes": 174530,
+      "reason": "Owner-supplied payment image, not relicensed or uploaded; supply the original separately."
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/res/drawable-nodpi/ishtar_donate_wechat.jpg",
+      "before_sha256": null,
+      "after_sha256": "025561eb9f0310e854d15f8986fe967d5af8881dcd88b8b028e62bbb82f146f1",
+      "bytes": 73884,
+      "reason": "Owner-supplied payment image, not relicensed or uploaded; supply the original separately."
+    }
+  ],
+  "property_lines_removed": [
+    "audio.sys.noisy.broadcast.delay=600",
+    "bluetooth.profile.bap.unicast.server.enabled=true"
+  ],
+  "file_contexts_appended": "\n# Xiaomi RIL synchronization output uses the existing radio data contract.\n/data/vendor/diag(/.*)? u:object_r:vendor_radio_vendor_data_file:s0\n# Dedicated diag-router boot FIFO directory; do not label all modem data.\n/data/vendor/modem/diag_logs(/.*)? u:object_r:vendor_ishtar_diag_router_data_file:s0\n"
+}

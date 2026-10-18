@@ -1,0 +1,13 @@
+{
+  "scope": "Metadata only; raw phone AVC and binary/disassembly artifacts stay local.",
+  "sensor_analysis_sha256": "56b5fd78c46f663a836912f4cf814d9179489427ae73ea98ac1d6258b8e67391",
+  "strongest_sensor_candidate": "persist.sensor.sardisable in SSC static initialization",
+  "read_default": false,
+  "false_branch": "continues SAR registration/request_datatype",
+  "dynamic_legacy_getters_not_current_subhal_path": true,
+  "ro_arch_already_exact_build_prop": true,
+  "avc_call_stack_available": false,
+  "unique_cause_proven": false,
+  "default_property_read_permission_added": false,
+  "enforcing_tested": false
+}

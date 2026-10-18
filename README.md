@@ -1,6 +1,6 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
-最新安装：**1792300213 / Permissive**，已保留数据刷入并正常启动，47文件/21分区范围及加载策略检查通过。见[`plans/selinux-enforcing-prep-20261018/`](plans/selinux-enforcing-prep-20261018/)，10路径集中修复、68项输入；未进行Enforcing。维护者展示留下一版，等机主提供名字和资料。
+最新安装：**1792300213 / Permissive**，47文件/21分区范围及加载策略检查通过，未进行Enforcing。下一候选见[`plans/selinux-boundary-maintainer-20261018/`](plans/selinux-boundary-maintainer-20261018/)：82项输入、20路径，边界策略及CyberWei本地维护者页面组件已编译核验，完整候选1792311835已通过实际镜像检查；尚未安装或进行UI/Enforcing验收。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**
 

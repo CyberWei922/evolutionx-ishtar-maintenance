@@ -1,0 +1,438 @@
+--- a/device/xiaomi/sm8550-common/configs/properties/vendor.prop
++++ b/device/xiaomi/sm8550-common/configs/properties/vendor.prop
+@@ -8 +7,0 @@
+-audio.sys.noisy.broadcast.delay=600
+@@ -60 +58,0 @@
+-bluetooth.profile.bap.unicast.server.enabled=true
+--- a/device/xiaomi/ishtar/properties/platform-system.prop
++++ b/device/xiaomi/ishtar/properties/platform-system.prop
+@@ -3,3 +3,8 @@
+ 
+ # Preserve the existing enabled value through its framework property owner.
+ bluetooth.auto_connect_profiles.enabled=true
++
++# Keep legacy framework configuration values, initialized by system init.
++# BAP server has no current AOSP consumer; preserve its existing value only.
++audio.sys.noisy.broadcast.delay=600
++bluetooth.profile.bap.unicast.server.enabled=true
+--- a/device/xiaomi/ishtar/sepolicy/vendor/property_contexts
++++ b/device/xiaomi/ishtar/sepolicy/vendor/property_contexts
+@@ -15,3 +15,8 @@
+ 
+ # Boot status from mi_thermald; reuse its existing thermal property ownership.
+ vendor.sys.thermal.bcl.boot_completed u:object_r:vendor_thermal_normal_prop:s0 exact string
++
++# Exact status output from the shipped virtual-camera helper in camera HAL.
++vendor.miui.vcamera.state u:object_r:vendor_camera_prop:s0 exact string
++# Radio-owned OEM serial publication from libxiaomi_qcril; no generic set.
++ro.vendor.oem.sno u:object_r:vendor_radio_prop:s0 exact string
+--- a/device/xiaomi/ishtar/sepolicy/vendor/file_contexts
++++ b/device/xiaomi/ishtar/sepolicy/vendor/file_contexts
+@@ -30,0 +31,5 @@
++
++# Xiaomi RIL synchronization output uses the existing radio data contract.
++/data/vendor/diag(/.*)? u:object_r:vendor_radio_vendor_data_file:s0
++# Dedicated diag-router boot FIFO directory; do not label all modem data.
++/data/vendor/modem/diag_logs(/.*)? u:object_r:vendor_ishtar_diag_router_data_file:s0
+--- a/device/xiaomi/ishtar/sepolicy/vendor/file.te
++++ b/device/xiaomi/ishtar/sepolicy/vendor/file.te
+@@ -2,3 +2,6 @@
+ 
+ # QRTR lookup output only; keep other vendor data outside this type.
+ type vendor_qrtr_lookup_data_file, file_type, data_file_type;
++
++# Only /data/vendor/modem/diag_logs and descendants.
++type vendor_ishtar_diag_router_data_file, file_type, data_file_type;
+--- /dev/null
++++ b/device/xiaomi/ishtar/sepolicy/vendor/diag_router_data.te
+@@ -0,0 +1,9 @@
++# Copyright (C) 2026 CyberWei922
++# SPDX-License-Identifier: Apache-2.0
++
++# diag-router checks, creates and writes the bootup FIFO (mkfifo + O_WRONLY).
++# Keep regular files and other vendor/modem data inaccessible.
++userdebug_or_eng(`
++    allow vendor_diag-router vendor_ishtar_diag_router_data_file:dir { search getattr write add_name };
++    allow vendor_diag-router vendor_ishtar_diag_router_data_file:fifo_file { create getattr open write };
++')
+--- /dev/null
++++ b/device/xiaomi/ishtar/maintainer/Android.bp
+@@ -0,0 +1,10 @@
++// Copyright (C) 2026 CyberWei922
++// SPDX-License-Identifier: Apache-2.0
++android_app {
++    name: "IshtarMaintainerInfo",
++    srcs: ["src/**/*.java"],
++    sdk_version: "current",
++    min_sdk_version: "29",
++    system_ext_specific: true,
++    optimize: { enabled: true },
++}
+--- /dev/null
++++ b/device/xiaomi/ishtar/maintainer/AndroidManifest.xml
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="org.evolution.ishtar.maintainer">
++    <application android:label="@string/app_name" android:allowBackup="false"
++        android:theme="@android:style/Theme.DeviceDefault.DayNight">
++        <activity android:name=".MaintainerActivity" android:exported="true" />
++    </application>
++</manifest>
+--- /dev/null
++++ b/device/xiaomi/ishtar/maintainer/res/values/strings.xml
+@@ -0,0 +1,26 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
++<resources>
++    <string name="app_name">Maintainer</string>
++    <string name="maintainer_name" translatable="false">CyberWei</string>
++    <string name="build_description">Unofficial Evolution X for Xiaomi 13 Ultra</string>
++    <string name="github_label" translatable="false">GitHub · CyberWei922</string>
++    <string name="github_url" translatable="false">https://github.com/CyberWei922</string>
++    <string name="community">Community</string>
++    <string name="telegram">Telegram group</string>
++    <string name="telegram_url" translatable="false">https://t.me/+r_3D9v2WYIA3MDc1</string>
++    <string name="qq_group">QQ group · 1121408238 (copy)</string>
++    <string name="qq_number" translatable="false">1121408238</string>
++    <string name="copied">Group number copied</string>
++    <string name="support">Support the maintainer</string>
++    <string name="wechat">WeChat</string>
++    <string name="alipay">Alipay</string>
++    <string name="paypal" translatable="false">PayPal</string>
++    <string name="paypal_url" translatable="false">https://paypal.me/CyberWei</string>
++    <string name="qr_help">Save the original image, then select it from your payment app’s album scanner.</string>
++    <string name="save_image">Save image</string>
++    <string name="close">Close</string>
++    <string name="image_saved">Saved to Pictures/Ishtar</string>
++    <string name="save_failed">Could not save the image</string>
++    <string name="no_browser">No app available to open this link</string>
++</resources>
+--- /dev/null
++++ b/device/xiaomi/ishtar/maintainer/res/values-zh-rCN/strings.xml
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
++<resources>
++    <string name="app_name">维护者</string>
++    <string name="build_description">小米 13 Ultra 非官方 Evolution X</string>
++    <string name="community">交流群</string>
++    <string name="telegram">Telegram 交流群</string>
++    <string name="qq_group">QQ群 · 1121408238（点击复制）</string>
++    <string name="copied">群号已复制</string>
++    <string name="support">支持维护者</string>
++    <string name="wechat">微信</string>
++    <string name="alipay">支付宝</string>
++    <string name="qr_help">保存原图后，在支付应用的扫一扫中从相册选择图片。</string>
++    <string name="save_image">保存图片</string>
++    <string name="close">关闭</string>
++    <string name="image_saved">已保存至相册 Pictures/Ishtar</string>
++    <string name="save_failed">图片保存失败</string>
++    <string name="no_browser">没有可打开此链接的应用</string>
++</resources>
+--- /dev/null
++++ b/device/xiaomi/ishtar/maintainer/src/org/evolution/ishtar/maintainer/MaintainerActivity.java
+@@ -0,0 +1,172 @@
++/*
++ * Copyright (C) 2026 CyberWei922
++ * SPDX-License-Identifier: Apache-2.0
++ */
++package org.evolution.ishtar.maintainer;
++
++import android.app.Activity;
++import android.app.AlertDialog;
++import android.content.ActivityNotFoundException;
++import android.content.ClipData;
++import android.content.ClipboardManager;
++import android.content.ContentValues;
++import android.content.Intent;
++import android.graphics.Color;
++import android.net.Uri;
++import android.os.Bundle;
++import android.provider.MediaStore;
++import android.view.MenuItem;
++import android.view.View;
++import android.widget.Button;
++import android.widget.ImageView;
++import android.widget.LinearLayout;
++import android.widget.ScrollView;
++import android.widget.TextView;
++import android.widget.Toast;
++
++import java.io.InputStream;
++import java.io.OutputStream;
++
++/** Local information page: no network, storage or privileged permission. */
++public final class MaintainerActivity extends Activity {
++    private LinearLayout content;
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setTitle(R.string.app_name);
++        if (getActionBar() != null) getActionBar().setDisplayHomeAsUpEnabled(true);
++        ScrollView scroll = new ScrollView(this);
++        content = new LinearLayout(this);
++        content.setOrientation(LinearLayout.VERTICAL);
++        int pad = dp(20);
++        content.setPadding(pad, pad, pad, pad);
++        scroll.addView(content);
++        setContentView(scroll);
++        text(R.string.maintainer_name, 28);
++        text(R.string.build_description, 16);
++        button(R.string.github_label, v -> openLink(R.string.github_url));
++        text(R.string.community, 20);
++        button(R.string.telegram, v -> openLink(R.string.telegram_url));
++        button(R.string.qq_group, v -> {
++            getSystemService(ClipboardManager.class).setPrimaryClip(
++                    ClipData.newPlainText("QQ", getString(R.string.qq_number)));
++            Toast.makeText(this, R.string.copied, Toast.LENGTH_SHORT).show();
++        });
++        button(R.string.support, v -> new AlertDialog.Builder(this)
++                .setTitle(R.string.support)
++                .setItems(new CharSequence[] {getString(R.string.wechat),
++                        getString(R.string.alipay), getString(R.string.paypal)}, (d, which) -> {
++                    if (which == 0) showCode(R.drawable.ishtar_donate_wechat,
++                            R.string.wechat, "CyberWei-WeChat.jpg");
++                    else if (which == 1) showCode(R.drawable.ishtar_donate_alipay,
++                            R.string.alipay, "CyberWei-Alipay.jpg");
++                    else openLink(R.string.paypal_url);
++                }).setNegativeButton(android.R.string.cancel, null).show());
++    }
++
++    private int dp(int value) {
++        return Math.round(value * getResources().getDisplayMetrics().density);
++    }
++
++    private void text(int resource, int size) {
++        TextView view = new TextView(this);
++        view.setText(resource);
++        view.setTextSize(size);
++        view.setPadding(0, dp(12), 0, dp(8));
++        content.addView(view);
++    }
++
++    private void button(int resource, View.OnClickListener action) {
++        Button button = new Button(this);
++        button.setText(resource);
++        button.setAllCaps(false);
++        button.setOnClickListener(action);
++        content.addView(button, new LinearLayout.LayoutParams(-1, -2));
++    }
++
++    private void openLink(int resource) {
++        try {
++            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(resource))));
++        } catch (ActivityNotFoundException exception) {
++            Toast.makeText(this, R.string.no_browser, Toast.LENGTH_SHORT).show();
++        }
++    }
++
++    private void showCode(int imageResource, int title, String filename) {
++        LinearLayout body = new LinearLayout(this);
++        body.setOrientation(LinearLayout.VERTICAL);
++        body.setPadding(dp(12), dp(8), dp(12), dp(8));
++        TextView help = new TextView(this);
++        help.setText(R.string.qr_help);
++        help.setPadding(0, 0, 0, dp(12));
++        body.addView(help);
++        ImageView image = new ImageView(this);
++        image.setImageResource(imageResource);
++        image.setContentDescription(getString(title));
++        image.setAdjustViewBounds(true);
++        image.setScaleType(ImageView.ScaleType.FIT_CENTER);
++        image.setBackgroundColor(Color.WHITE);
++        image.setForceDarkAllowed(false);
++        body.addView(image, new LinearLayout.LayoutParams(-1, -2));
++        ScrollView scroll = new ScrollView(this);
++        scroll.addView(body);
++        AlertDialog dialog = new AlertDialog.Builder(this).setTitle(title).setView(scroll)
++                .setPositiveButton(R.string.save_image, null)
++                .setNegativeButton(R.string.close, null).create();
++        dialog.setOnShowListener(d -> dialog.getButton(AlertDialog.BUTTON_POSITIVE)
++                .setOnClickListener(v -> {
++                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
++                    new Thread(() -> {
++                        boolean saved = saveOriginal(imageResource, filename);
++                        runOnUiThread(() -> {
++                            Toast.makeText(this, saved ? R.string.image_saved : R.string.save_failed,
++                                    Toast.LENGTH_LONG).show();
++                            if (dialog.isShowing()) dialog.getButton(AlertDialog.BUTTON_POSITIVE)
++                                    .setEnabled(true);
++                        });
++                    }, "SaveMaintainerImage").start();
++                }));
++        dialog.show();
++    }
++
++    private boolean saveOriginal(int resource, String filename) {
++        Uri uri = null;
++        try {
++            ContentValues values = new ContentValues();
++            values.put(MediaStore.Images.Media.DISPLAY_NAME, filename);
++            values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
++            values.put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/Ishtar");
++            values.put(MediaStore.Images.Media.IS_PENDING, 1);
++            uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
++            if (uri == null) return false;
++            try (InputStream input = getResources().openRawResource(resource);
++                    OutputStream output = getContentResolver().openOutputStream(uri)) {
++                if (output == null) throw new java.io.IOException("No output stream");
++                byte[] buffer = new byte[16384];
++                int count;
++                while ((count = input.read(buffer)) != -1) output.write(buffer, 0, count);
++            }
++            values.clear();
++            values.put(MediaStore.Images.Media.IS_PENDING, 0);
++            if (getContentResolver().update(uri, values, null, null) != 1)
++                throw new java.io.IOException("Could not publish image");
++            return true;
++        } catch (Exception exception) {
++            if (uri != null) {
++                try { getContentResolver().delete(uri, null, null); }
++                catch (RuntimeException ignored) { }
++            }
++            return false;
++        }
++    }
++
++    @Override
++    public boolean onOptionsItemSelected(MenuItem item) {
++        if (item.getItemId() == android.R.id.home) {
++            finish();
++            return true;
++        }
++        return super.onOptionsItemSelected(item);
++    }
++}
+--- /dev/null
++++ b/device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/Android.bp
+@@ -0,0 +1,7 @@
++// Copyright (C) 2026 CyberWei922
++// SPDX-License-Identifier: Apache-2.0
++runtime_resource_overlay {
++    name: "IshtarMaintainerOverlay",
++    sdk_version: "current",
++    system_ext_specific: true,
++}
+--- /dev/null
++++ b/device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/AndroidManifest.xml
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="org.evolution.ishtar.maintainer.overlay">
++    <application android:hasCode="false" />
++    <overlay android:isStatic="true" android:priority="10"
++        android:targetPackage="com.android.settings" android:targetName="IshtarMaintainerOverlay" />
++</manifest>
+--- /dev/null
++++ b/device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/res/values/config.xml
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
++<resources>
++    <string name="ishtar_maintainer_name" translatable="false">CyberWei</string>
++    <string name="ishtar_maintainer_profile_package" translatable="false">org.evolution.ishtar.maintainer</string>
++    <string name="ishtar_maintainer_profile_activity" translatable="false">org.evolution.ishtar.maintainer.MaintainerActivity</string>
++</resources>
+--- /dev/null
++++ b/packages/apps/Settings/res/values/ishtar_maintainer.xml
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
++<resources>
++    <string name="ishtar_maintainer_name" translatable="false"></string>
++    <string name="ishtar_maintainer_profile_package" translatable="false"></string>
++    <string name="ishtar_maintainer_profile_activity" translatable="false"></string>
++    <overlayable name="IshtarMaintainerOverlay">
++        <policy type="system">
++            <item type="string" name="ishtar_maintainer_name" />
++            <item type="string" name="ishtar_maintainer_profile_package" />
++            <item type="string" name="ishtar_maintainer_profile_activity" />
++        </policy>
++    </overlayable>
++</resources>
+--- a/packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java
++++ b/packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java
+@@ -407,8 +407,34 @@
+      * overlay string. Will be overwritten if OTA fetch succeeds.
+      * Covers the case where network is unavailable or GitHub is blocked.
+      */
++    private String getOverlayMaintainerName() {
++        String local = UrlUtils.trimToEmpty(mContext.getString(R.string.ishtar_maintainer_name));
++        return local.isEmpty() ? mContext.getString(R.string.build_maintainer_summary) : local;
++    }
++
++    /** Explicit local destination for unofficial device builds. */
++    private boolean setupLocalMaintainerProfile(View card, ImageView chevron) {
++        String profilePackage = UrlUtils.trimToEmpty(
++                mContext.getString(R.string.ishtar_maintainer_profile_package));
++        String profileActivity = UrlUtils.trimToEmpty(
++                mContext.getString(R.string.ishtar_maintainer_profile_activity));
++        if (profilePackage.isEmpty() || profileActivity.isEmpty()) return false;
++        if (chevron != null) chevron.setVisibility(View.VISIBLE);
++        card.setClickable(true);
++        card.setFocusable(true);
++        card.setOnClickListener(v -> {
++            try {
++                mContext.startActivity(new Intent().setClassName(profilePackage, profileActivity)
++                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
++            } catch (ActivityNotFoundException exception) {
++                Log.w(TAG, "Local maintainer page unavailable", exception);
++            }
++        });
++        return true;
++    }
++
+     private void showOverlayMaintainerFallback(LayoutPreference layoutPref) {
+-        String summary = UrlUtils.trimToEmpty(mContext.getString(R.string.build_maintainer_summary));
++        String summary = UrlUtils.trimToEmpty(getOverlayMaintainerName());
+         if (summary.isEmpty() || summary.equalsIgnoreCase("Unknown")) return;
+ 
+         String donateUrl = UrlUtils.trimToEmpty(
+@@ -441,7 +467,7 @@
+             final String overlayMaintainer;
+             final String overlayDonateUrl;
+             if (data == null || data.maintainer == null || data.maintainer.isEmpty()) {
+-                String summary = UrlUtils.trimToEmpty(mContext.getString(R.string.build_maintainer_summary));
++                String summary = UrlUtils.trimToEmpty(getOverlayMaintainerName());
+                 overlayMaintainer = summary.equalsIgnoreCase("Unknown") ? null : summary;
+                 overlayDonateUrl  = UrlUtils.trimToEmpty(mContext.getString(R.string.build_maintainer_donate_url));
+             } else {
+@@ -520,8 +546,10 @@
+             }
+         } else {
+             if (badgeView != null) badgeView.setVisibility(View.GONE);
+-            final String donateUrl = UrlUtils.sanitizeUrl(overlayDonateUrl);
+-            setupChevronAndClick(card, chevron, displayName, null, donateUrl);
++            if (!setupLocalMaintainerProfile(card, chevron)) {
++                final String donateUrl = UrlUtils.sanitizeUrl(overlayDonateUrl);
++                setupChevronAndClick(card, chevron, displayName, null, donateUrl);
++            }
+         }
+ 
+         card.setVisibility(View.VISIBLE);
+--- a/device/xiaomi/ishtar/device.mk
++++ b/device/xiaomi/ishtar/device.mk
+@@ -76,3 +76,6 @@
+ PRODUCT_PACKAGES += IshtarCameraDefaults
+ PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/configs/ishtar-camera-preferred.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/preferred-apps/ishtar-camera.xml
++
++# Local unofficial maintainer page; no platform permissions or network access.
++PRODUCT_PACKAGES += IshtarMaintainerInfo IshtarMaintainerOverlay
+--- a/device/xiaomi/sm8550-common/init/init.sm8550.rc
++++ b/device/xiaomi/sm8550-common/init/init.sm8550.rc
+@@ -11,6 +11,10 @@
+     # Modem
+     mkdir /data/vendor/modem 0777 root root
+     mkdir /data/vendor/modem/diag_logs 0777 root root
++    # Migrate existing diagnostic labels after the stock directory creation.
++    restorecon_recursive /data/vendor/modem/diag_logs
++    mkdir /data/vendor/diag 2771 root log
++    restorecon_recursive /data/vendor/diag
+ 
+ on early-init
+     export ADSP_LIBRARY_PATH /odm/lib/rfsa/adsp;/vendor/lib/rfsa/adsp/;/system/lib/rfsa/adsp;/system/vendor/lib/rfsa/adsp;/dsp

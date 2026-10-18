@@ -1,0 +1,22 @@
+{
+  "status": "ACTUAL_PAYLOAD_MAINTAINER_COMPONENTS_VERIFIED",
+  "files": [
+    {
+      "path": "system_ext/app/IshtarMaintainerInfo/IshtarMaintainerInfo.apk",
+      "sha256": "5bd3f67a13eb4bb4e53845eb8dac5cdccc358e232b18a3bc637341841a2b1edd",
+      "bytes": 283236
+    },
+    {
+      "path": "system_ext/priv-app/Settings/Settings.apk",
+      "sha256": "d8d1290def01b4c37c8046a0499f7bd425f8974aa16e7968d0827cbd5699f71c",
+      "bytes": 95947285
+    },
+    {
+      "path": "system_ext/overlay/IshtarMaintainerOverlay.apk",
+      "sha256": "4a80d7219a303c20d671459da2654fb1c2784d8457c04047f77470b6e143ccaa",
+      "bytes": 8542
+    }
+  ],
+  "interactive_ui_tested": false,
+  "phone_accessed": false
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="app_name">维护者</string>
+    <string name="build_description">小米 13 Ultra 非官方 Evolution X</string>
+    <string name="community">交流群</string>
+    <string name="telegram">Telegram 交流群</string>
+    <string name="qq_group">QQ群 · 1121408238（点击复制）</string>
+    <string name="copied">群号已复制</string>
+    <string name="support">支持维护者</string>
+    <string name="wechat">微信</string>
+    <string name="alipay">支付宝</string>
+    <string name="qr_help">保存原图后，在支付应用的扫一扫中从相册选择图片。</string>
+    <string name="save_image">保存图片</string>
+    <string name="close">关闭</string>
+    <string name="image_saved">已保存至相册 Pictures/Ishtar</string>
+    <string name="save_failed">图片保存失败</string>
+    <string name="no_browser">没有可打开此链接的应用</string>
+</resources>

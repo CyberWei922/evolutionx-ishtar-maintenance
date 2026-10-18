@@ -1,0 +1,282 @@
+{
+  "status": "BOUNDARY_MAINTAINER_SOURCE_APPLIED",
+  "baseline_incremental": "1792300213",
+  "intermediate_policy": {
+    "status": "BOUNDARY_CLEANUP_COMPONENT_COMPILED_VERIFIED",
+    "baseline_incremental": "1792300213",
+    "policy_sha256": "38cde3d5a478bc285ba63fdb16c39cea8a1961208633dc6cd36e9239dd4f8bdc",
+    "policy_bytes": 1604906,
+    "source_files_verified": 70,
+    "changed_source_paths": 7,
+    "new_type": "vendor_ishtar_diag_router_data_file",
+    "effective_permission_additions": 105,
+    "old_type_permission_additions": 0,
+    "effective_permission_removals": 0,
+    "explicit_fifo_permissions": [
+      [
+        "vendor_diag-router",
+        "vendor_ishtar_diag_router_data_file",
+        "dir",
+        "add_name"
+      ],
+      [
+        "vendor_diag-router",
+        "vendor_ishtar_diag_router_data_file",
+        "dir",
+        "getattr"
+      ],
+      [
+        "vendor_diag-router",
+        "vendor_ishtar_diag_router_data_file",
+        "dir",
+        "search"
+      ],
+      [
+        "vendor_diag-router",
+        "vendor_ishtar_diag_router_data_file",
+        "dir",
+        "write"
+      ],
+      [
+        "vendor_diag-router",
+        "vendor_ishtar_diag_router_data_file",
+        "fifo_file",
+        "create"
+      ],
+      [
+        "vendor_diag-router",
+        "vendor_ishtar_diag_router_data_file",
+        "fifo_file",
+        "getattr"
+      ],
+      [
+        "vendor_diag-router",
+        "vendor_ishtar_diag_router_data_file",
+        "fifo_file",
+        "open"
+      ],
+      [
+        "vendor_diag-router",
+        "vendor_ishtar_diag_router_data_file",
+        "fifo_file",
+        "write"
+      ]
+    ],
+    "permissive_domains": [
+      "aoncameraservice_app",
+      "backuptool",
+      "qti-testscripts",
+      "su",
+      "vendor-qti-testscripts",
+      "vendor_cta_app",
+      "vendor_hal_debugutils_default",
+      "vendor_logkit_app",
+      "vendor_pdt_app"
+    ],
+    "file_context_cases": {
+      "/data/vendor/diag": "vendor_radio_vendor_data_file",
+      "/data/vendor/diag/sync_info": "vendor_radio_vendor_data_file",
+      "/data/vendor/modem/diag_logs": "vendor_ishtar_diag_router_data_file",
+      "/data/vendor/modem/diag_logs/bootup": "vendor_ishtar_diag_router_data_file",
+      "/data/vendor/modem": "vendor_data_file",
+      "/data/vendor/modem/unrelated": "vendor_data_file",
+      "/data/vendor/qrtr": "vendor_qrtr_lookup_data_file"
+    },
+    "property_cases": {
+      "vendor.miui.vcamera.state": "vendor_camera_prop",
+      "ro.vendor.oem.sno": "vendor_radio_prop"
+    },
+    "protected_payloads": {
+      "system/bin/surfaceflinger": "099b882b2e71941a25a10b45f0c73ff15e060f3243b2700755545c2251d1dc99",
+      "system/bin/bootanimation": "ca070ac28c5be9467e94d1c7de793a6e775d46ce968a2f26afe89bb4364b6684",
+      "vendor/lib64/libc++_shared.so": "1b27c5ec6f0dba72ad91e59ecbd2cabeaa5cb58e6f9b1adb600ec3f60b837ded",
+      "vendor/lib64/libgnss.so": "9ae162029e867ac3c8dbd6674d707cb4ad4d7383b7670bad3abe59a23035658b",
+      "odm/lib64/libgf_hal.so": "3d375442f6fd24ef11c7a4bc8f0f5ba80c15dc06d953ce80d414bb1078f62576"
+    },
+    "new_generic_property_or_dac_permissions": false,
+    "source_property_values_preserved": true,
+    "actual_build_property_move_pending_full_rom": true,
+    "preserved_data_relabel_pending_phone": true,
+    "phone_installed": false,
+    "enforcing_trial": false,
+    "full_rom_built": false,
+    "remaining": [
+      "Controlled Enforcing validation of optional probes and required services",
+      "Mtd optional attestation reload and DAC branch",
+      "Original nine static permissive domains and dynamic KSU exception",
+      "Maintainer UI integration before next full ROM"
+    ]
+  },
+  "source_files": 82,
+  "changed_source_paths": 20,
+  "this_stage_changed_paths": 15,
+  "changes": [
+    {
+      "path": "device/xiaomi/sm8550-common/configs/properties/vendor.prop",
+      "new_file": false,
+      "before_sha256": "3b8bc0baa96ec3f7cf76ae72084e2aeda307d6946bd55c100798a533c84c4ce5",
+      "after_sha256": "39557a26a1baa5c1eb7487eaefdbba95c0513e69b3fc0f4152223d81148062c0",
+      "bytes": 8218,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/properties/platform-system.prop",
+      "new_file": false,
+      "before_sha256": "f62819bf6e4495e76aa9f6367b231bc62157a7618c7075ec40527f7e5399e8e4",
+      "after_sha256": "f6215dec38768a630387cc6f0aa69d8ae201c7030ec3782a63f24ecab0098d50",
+      "bytes": 431,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/property_contexts",
+      "new_file": false,
+      "before_sha256": "2fcc7ed8972ec54efdaf64e33a4519238efcf300c5ecad17b197b1dcdc673e30",
+      "after_sha256": "b3a31afbb36b2bf6003e4b27191132d4b69dcbc7fe4c09be9295393aaa1f21e9",
+      "bytes": 1244,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/file_contexts",
+      "new_file": false,
+      "before_sha256": "1cfd6bc36e1ce0a59052652d5dcd235c9132a01bb4eefb098bff2b2fc199d2d3",
+      "after_sha256": "b939adcb99440c613f85c95da219002338adbd883fd2f17b70ccc074ca042b81",
+      "bytes": 1794,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/file.te",
+      "new_file": false,
+      "before_sha256": "b1bdee784a8264d9e3e2969724d00b8f548f3871c264cbb98c3ee4268a074a90",
+      "after_sha256": "ec5c010bdb42b004d0e6c709fe300d0b96c3cfef518f2ae90446446dfd2f3973",
+      "bytes": 293,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/sepolicy/vendor/diag_router_data.te",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "91ddd125f60681b19d697233816a32ef04df4e778924bf33280b326de083c15a",
+      "bytes": 445,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/Android.bp",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "62a2be42fc29df6763cdd7d646396cd9d22bc0baf137ba9381f1925d04458463",
+      "bytes": 271,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/AndroidManifest.xml",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "2b34147bc4232f08a93b5c12139da4780550cd4364b6146b7e4fd2fa410f1a14",
+      "bytes": 490,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/res/values/strings.xml",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "72e87bd582589874f0b99e3d946b104da0fc46beb2e1bee4fcbf357dcc5447ee",
+      "bytes": 1616,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/res/values-zh-rCN/strings.xml",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "4174afbcad28165837b51fe9f1fc940bc9931e4917e77ececfa36892a92c13bd",
+      "bytes": 1050,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/src/org/evolution/ishtar/maintainer/MaintainerActivity.java",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "aa93b254460e83bba2788b5ae01920e24cf450a8ee835f8feb7e595e1053dd90",
+      "bytes": 7438,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/Android.bp",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "2b5d23234f4195c0ec72d1de988cde45755b0bdef9e2d9833ef450de8003c7f5",
+      "bytes": 198,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/AndroidManifest.xml",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "e14d4ce2c0d82a309e428017fa225c8d12cd8885b54dd69ddbf2fb0f5a1a6c5d",
+      "bytes": 456,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/overlay/IshtarMaintainerOverlay/res/values/config.xml",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "f973c8d47afc71143c6811de461dd491d2d76e6cebc0d352b90fa3f8fd5894f6",
+      "bytes": 472,
+      "owner_image": false
+    },
+    {
+      "path": "packages/apps/Settings/res/values/ishtar_maintainer.xml",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "f0d7c0b9c2819938b8db915fe290dea140e74fc6e4f137933c2d29cf79d71cd0",
+      "bytes": 718,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/res/drawable-nodpi/ishtar_donate_alipay.jpg",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "5ab99ab5aef6fc04ae8e7c090a3d05bfe23933528685aaeb18f806d9c46799da",
+      "bytes": 174530,
+      "owner_image": true
+    },
+    {
+      "path": "device/xiaomi/ishtar/maintainer/res/drawable-nodpi/ishtar_donate_wechat.jpg",
+      "new_file": true,
+      "before_sha256": null,
+      "after_sha256": "025561eb9f0310e854d15f8986fe967d5af8881dcd88b8b028e62bbb82f146f1",
+      "bytes": 73884,
+      "owner_image": true
+    },
+    {
+      "path": "packages/apps/Settings/src/com/android/settings/deviceinfo/hardwareinfo/HardwareInfoPreferenceController.java",
+      "new_file": false,
+      "before_sha256": "f9d1b471b439e886517a2f6abd0a695736d946147e0b690bb7d3cd2d0cd72474",
+      "after_sha256": "14ba8e2f613db73c55b130712c95d56a52e8b988a8cf51c7cb3d8b935a49834b",
+      "bytes": 34853,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/ishtar/device.mk",
+      "new_file": false,
+      "before_sha256": "da0c9b853a3bbf53c924319fb702bec78a1e1c71d100734a8f6f9e50caf857a4",
+      "after_sha256": "b85cfe07268d03756a682c5f9574eff13fb38f25358f9ec30aeb0f5e52f7cc77",
+      "bytes": 3119,
+      "owner_image": false
+    },
+    {
+      "path": "device/xiaomi/sm8550-common/init/init.sm8550.rc",
+      "new_file": false,
+      "before_sha256": "29fc233f44274edd31cae8d1e76caf92707170e03a561a8e5b57850a9526ef96",
+      "after_sha256": "54db143b2c70da0bb8708f9410d0f3300924495fc9ecdfbc798dd1a1fc909480",
+      "bytes": 12832,
+      "owner_image": false
+    }
+  ],
+  "init_migration_order": "immediately after common modem/diag_logs mkdir",
+  "maintainer_display_name": "CyberWei",
+  "owner_images_external_to_git": true,
+  "phone_accessed": false,
+  "enforcing_switched": false,
+  "unrelated_processes_changed": false,
+  "at": 1792310773.8633747
+}

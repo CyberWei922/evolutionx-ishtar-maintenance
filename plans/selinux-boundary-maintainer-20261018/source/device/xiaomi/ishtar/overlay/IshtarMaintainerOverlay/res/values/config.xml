@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="ishtar_maintainer_name" translatable="false">CyberWei</string>
+    <string name="ishtar_maintainer_profile_package" translatable="false">org.evolution.ishtar.maintainer</string>
+    <string name="ishtar_maintainer_profile_activity" translatable="false">org.evolution.ishtar.maintainer.MaintainerActivity</string>
+</resources>

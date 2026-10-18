@@ -121,3 +121,8 @@ single-line factual delta, pinned metadata and original reproduction script are
 included. No proprietary implementation, disassembly listing, policy binary or
 original phone log is included. Reviewed paths are recorded in
 provenance/enforcing-prep-source-files.json. No Enforcing validation is implied.
+
+Boundary/maintainer additions (2026-10-18):
+- Original local profile application, Settings overlay resources, policy additions and reproduction tools: Copyright (C) 2026 CyberWei922, Apache-2.0.
+- HardwareInfoPreferenceController retains Evolution X Apache-2.0 attribution; the common init and device product files retain their LineageOS notices.
+- Payment images and full external file_contexts/vendor.prop are not relicensed or included. See plans/selinux-boundary-maintainer-20261018/external-inputs.json.

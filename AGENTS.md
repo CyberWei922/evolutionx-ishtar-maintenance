@@ -13,6 +13,13 @@ This is an incremental maintenance source repository for Xiaomi 13 Ultra (ishtar
 - No device reboot, flashing, data wipe, bootloader relock, automatic log capture, repo sync/reset/clean, or production changes are implied by maintaining this repository.
 - Review proposed source and metadata differences before applying. A repository snapshot is not a flash instruction.
 
+## Boundary/maintainer next build (2026-10-18, current working input)
+
+- Working input is plans/selinux-boundary-maintainer-20261018/working-source-files.json,82 files,20 paths over installed1792300213. Component build/verified03 and candidate1792311835 full34-partition/static preserve-data audits passed. ROM is not installed or Enforcing-tested. Preserve original nine static permissive domains/KSU and accepted payloads.
+- Reviewed new upload paths are in provenance/boundary-maintainer-source-files.json. Only16 Apache-2.0 source snapshots plus minimal deltas/metadata are included. Continue omitting full file_contexts/vendor.prop and both owner payment images; no APK/policy/ROM/raw phone log in Git.
+- Local maintainer name CyberWei, GitHub CyberWei922, QQ1121408238 and owner-supplied TG/PayPal links are integrated. No official badge or official-build designation. Images are separate pinned inputs. Static signature/idmap/image-byte checks do not establish UI interaction or payment success.
+- No new phone collection, flash, reboot or setenforce is authorized by this source upload. Preserve prior ROMs pending new normal-use feedback. Leave unrelated Ubuntu tasks alone.
+
 ## Current combined build 1792300213 (installed, latest; 2026-10-18)
 
 - The owner requested a larger combined batch before the next ROM. Working input is now plans/selinux-enforcing-prep-20261018/working-source-files.json,68 files;10 source paths differ from installed1792266978. The old64-file camera-qspm component was an intermediate build only, never a separate ROM. The old62-file map describes the installed baseline.

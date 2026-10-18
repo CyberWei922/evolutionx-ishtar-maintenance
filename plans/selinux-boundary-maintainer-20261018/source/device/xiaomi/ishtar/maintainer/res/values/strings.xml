@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 CyberWei922; SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="app_name">Maintainer</string>
+    <string name="maintainer_name" translatable="false">CyberWei</string>
+    <string name="build_description">Unofficial Evolution X for Xiaomi 13 Ultra</string>
+    <string name="github_label" translatable="false">GitHub · CyberWei922</string>
+    <string name="github_url" translatable="false">https://github.com/CyberWei922</string>
+    <string name="community">Community</string>
+    <string name="telegram">Telegram group</string>
+    <string name="telegram_url" translatable="false">https://t.me/+r_3D9v2WYIA3MDc1</string>
+    <string name="qq_group">QQ group · 1121408238 (copy)</string>
+    <string name="qq_number" translatable="false">1121408238</string>
+    <string name="copied">Group number copied</string>
+    <string name="support">Support the maintainer</string>
+    <string name="wechat">WeChat</string>
+    <string name="alipay">Alipay</string>
+    <string name="paypal" translatable="false">PayPal</string>
+    <string name="paypal_url" translatable="false">https://paypal.me/CyberWei</string>
+    <string name="qr_help">Save the original image, then select it from your payment app’s album scanner.</string>
+    <string name="save_image">Save image</string>
+    <string name="close">Close</string>
+    <string name="image_saved">Saved to Pictures/Ishtar</string>
+    <string name="save_failed">Could not save the image</string>
+    <string name="no_browser">No app available to open this link</string>
+</resources>
