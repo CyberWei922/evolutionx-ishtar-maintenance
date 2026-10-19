@@ -1,0 +1,83 @@
+{
+  "state": "BOOT_ENFORCING_COMPONENT_READY_NOT_INSTALLED",
+  "baseline_installed_system_incremental": "1792357362",
+  "working_source_inputs": 104,
+  "changed_source_paths": [
+    "device/xiaomi/ishtar/BoardConfig.mk"
+  ],
+  "candidate_mode": "Enforcing",
+  "current_phone_last_verified_mode": "Permissive",
+  "source_before_sha256": "83723616c85f09b5af04a0cb3c9dddc0d2b5c60b7da9d6c69defae64d240398e",
+  "source_after_sha256": "252a3577a93b3076b384d27330029fcda008a65166afc5a405058db3cdf522b5",
+  "requested_build_target": "vendorbootimage",
+  "build_exit": 0,
+  "wall_time": "06:39",
+  "m_reported_build_time": "06:19",
+  "cpu_limit": "4-7",
+  "ninja_jobs": 4,
+  "nice": 15,
+  "io_priority": 7,
+  "gpu_used": false,
+  "candidate_images": {
+    "vendor_boot": {
+      "bytes": 100663296,
+      "sha256": "7df0dde9214d37f5a081fd5f972e051c2c026f7b03abcd2415a3a4fd52a17670"
+    },
+    "vbmeta": {
+      "bytes": 8192,
+      "sha256": "8704c186b031a83383c60be6bcaeed304b8a4f33d58ed129ba1a125191c06963"
+    }
+  },
+  "possible_write_partitions": [
+    "vendor_boot_a",
+    "vbmeta_a"
+  ],
+  "kernel_ramdisk_dtb_table_preserved": true,
+  "vendor_header_non_mode_bytes_preserved": true,
+  "original_vbmeta_reproduced_byte_identically": true,
+  "old_and_new_vbmeta_signatures_verified": true,
+  "root_descriptor_count": 28,
+  "only_vendor_boot_hash_descriptor_changed": true,
+  "avb_flags": 3,
+  "avb_rollback_index": 0,
+  "selinux_policy_sha256": "a1152f338c5f9f012206e166aadbc7eb280c4b6fd0725ee2eaaa48e5cead283f",
+  "static_permissive_domains": [],
+  "ksu_dynamic_exception_retained": true,
+  "archive": {
+    "state": "BOOT_ENFORCING_COMPONENT_BOTH_HOSTS_MATCH",
+    "files": 15,
+    "archive_bytes": 25047566,
+    "archive_sha256": "0f6c2059e82e68745cd5d751c6fc0fdc212235c40a884fc34bd06edede1261eb",
+    "manifest_sha256": "c237e0688865acc59b55a914c9c0d648bea16270938c4a82d4bdc32ae94e68b6",
+    "baseline_incremental": "1792357362",
+    "full_rom": false,
+    "candidate_and_permissive_rollback_on_both_hosts": true,
+    "phone_accessed": false,
+    "phone_installed": false
+  },
+  "rollback_images": {
+    "vendor_boot": {
+      "bytes": 100663296,
+      "sha256": "cff6504cddfa7d115d68b4804da80ffbb64b21e7f227eb88c468aa07b9163adc"
+    },
+    "vbmeta": {
+      "bytes": 8192,
+      "sha256": "51b30f07148143c854f95490af44960b88c51ff6b94844a640e5b89a991a7647"
+    }
+  },
+  "recovery_sha256": "c39e0236d4aac787e59827f835d58ec3af127357bcd576fb2b66da72c2c4057e",
+  "other_slot_is_not_complete_rom_rollback": true,
+  "phone_accessed_this_task": false,
+  "phone_installed": false,
+  "enforcing_boot_tested": false,
+  "full_rom_built_this_task": false,
+  "flash_authorized": false,
+  "reboot_authorized": false,
+  "owner_requires_notice_before_any_reboot": true,
+  "known_host_failures_preserved": [
+    "887 cache equality gate stopped before source/build; vendor boot body/components subsequently proved equal. Installed payload is rollback/descriptor truth.",
+    "901 unsupported release_string CLI option stopped host packaging;902 default same release asserted and native signature/byte reproduction checks passed. No second compile or phone retry."
+  ],
+  "all_own_build_jobs_finished": true,
+  "other_tasks_changed": false
+}

@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 44141,
-      "sha256": "cb6d30f80ea951d3f407ca5b1e5ff9fd273908ed9dc05b46081b03f11a5348ec"
+      "bytes": 46501,
+      "sha256": "3da18cffeffae242808836c8a7c8b6a33fb9d5134bee706d4caae8234c36ae71"
     },
     "LICENSE.md": {
       "bytes": 2453,
@@ -18,8 +18,8 @@
       "sha256": "ed3b2704aa9020c95371c012b8d3f4c784c2ce2ece5ec660a27947b4b17482dc"
     },
     "README.md": {
-      "bytes": 3498,
-      "sha256": "d0f978cffd896947a2f4f928da6a0b33800a98a47ec6d76e743773f063e53225"
+      "bytes": 3765,
+      "sha256": "fa3d2f664e96daebb9b4b63d6a8b9ceae13cf140a5e472ec659f0efd4a1ea2e0"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 60522,
-      "sha256": "6de096f2b3558f6998f20bb99cd5d66b5858c65fa5113569ca953f618624d0cc"
+      "bytes": 62882,
+      "sha256": "d0d313937c1987c24dcdfb393fb27be10c4ead771e2c6310c47157f53630783a"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -1345,6 +1345,34 @@
       "bytes": 10937,
       "sha256": "5aef9b50cb691394ce94d67b13ea64758143a0b84d64ae064342b1d7f948d15c"
     },
+    "plans/selinux-enforcing-boot-20261019/README.md": {
+      "bytes": 2090,
+      "sha256": "f8fac56bff9df8069db343407e22849ced7416b90c940160633de8f49aa60dea"
+    },
+    "plans/selinux-enforcing-boot-20261019/component-candidate-summary.json": {
+      "bytes": 3224,
+      "sha256": "88dcb42a85213d5fd67ee0683f495c8205dfde19484333db7203380119a73579"
+    },
+    "plans/selinux-enforcing-boot-20261019/scripts/build-vendor-boot.sh": {
+      "bytes": 2583,
+      "sha256": "230707ebbd05172469bb0b45059be3d1f2042607179db7929e7d66f220630fbc"
+    },
+    "plans/selinux-enforcing-boot-20261019/scripts/package_verify_boot.py": {
+      "bytes": 9345,
+      "sha256": "a9dce619e1b1240de7bec7ba348a63ef4e64c0dea347c4e8e65f182a5f891d16"
+    },
+    "plans/selinux-enforcing-boot-20261019/source-change.patch": {
+      "bytes": 667,
+      "sha256": "f267f44fc22f23bf4ab2eb4ec00baa95f0f2767894ee464aed69d99cda9a6728"
+    },
+    "plans/selinux-enforcing-boot-20261019/sources/device/xiaomi/ishtar/BoardConfig.mk": {
+      "bytes": 2346,
+      "sha256": "252a3577a93b3076b384d27330029fcda008a65166afc5a405058db3cdf522b5"
+    },
+    "plans/selinux-enforcing-boot-20261019/working-source-files.json": {
+      "bytes": 17968,
+      "sha256": "33fba77904c7f68605b926961ecf1865729cb051d70af700588af54c9e22f00d"
+    },
     "plans/selinux-enforcing-prep-20261018/README.md": {
       "bytes": 15271,
       "sha256": "23160ed41a413ba6911b64de78ba47cb0cc7fe8f62b844ea9d7206d52571da7f"
@@ -1824,6 +1852,10 @@
     "provenance/device-io-source-files.json": {
       "bytes": 3482,
       "sha256": "e7aefe1862ef2a9e898f29e39f4e4429191a5619e85ab546d9461a1456b9ce8f"
+    },
+    "provenance/enforcing-boot-source-files.json": {
+      "bytes": 1178,
+      "sha256": "cef96a4f7ad2495f992f33577415337b75949cd70fcf97a1d07710f6474918f7"
     },
     "provenance/enforcing-prep-source-files.json": {
       "bytes": 4539,

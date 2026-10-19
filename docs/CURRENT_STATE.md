@@ -1,5 +1,18 @@
 # 当前维护状态
 
+## 1792357362 开机Enforcing组件已准备核验，待机主重启前确认（最新）
+
+本轮按“开始第一步，重启之前喊我”完成主机源码与组件准备，没有操作手机。当前活动入口enforcing-boot control/expected-source-files.json共104项；只改BoardConfig1路径，SHA252a3577…，明确bootconfig androidboot.selinux=enforcing与vendor cmdline enforcing=1。增量vendorbootimage已6:39/exit0；CPU4–7/Ninja4/nice15/I/O7，无GPU，构建进程退出、锁空闲，未调整其他Ubuntu任务。
+
+实际候选只需vendor_boot_a/vbmeta_a：vendor_boot 100,663,296 bytes/SHA7df0dde9214d37f5a081fd5f972e051c2c026f7b03abcd2415a3a4fd52a17670，vbmeta 8,192 bytes/SHA8704c186b031a83383c60be6bcaeed304b8a4f33d58ed129ba1a125191c06963。ramdisk/DTB/table及非模式header逐字匹配安装版，AVB属性/salt/公钥/flags3/rollback保持；原root VBMeta用原生API逐字复现、原与新签名通过，28个描述符仅vendor_boot哈希变化。boot/init_boot/Recovery/SELinux策略a1152f33…保持。
+
+正式组件双端delivery/ishtar-selinux-enforcing-boot-candidate-20261019-01，15项、归档25,047,566 bytes/SHA0f6c2059e82e68745cd5d751c6fc0fdc212235c40a884fc34bd06edede1261eb，两端逐文件匹配，含原Permissive vendor_boot/vbmeta回退；7个已安装启动镜像与修好Recovery独立留Ubuntu baseline-images，旧完整ROM保留。现有super只填A槽，不能把切B槽当完整ROM回退。组件不是完整ROM或Recovery OTA。
+
+887缓存boot哈希差异门禁在源码/构建前停止；后证vendor_boot本体、ramdisk/DTB/table/config逐字一致，仅AVB元数据不同；init_boot缓存本体不同、未采用。所有回退和root描述符取已安装payload。901 AVB CLI不支持release_string导致主机封装停止，902改用同版本默认并检查一致、通过实际签名和原root逐字复现；旧失败留存，没有重编或手机重试。
+
+当前手机仍最后确认的P，本轮无手机读写/刷入/重启/切模式，新候选尚未实机启动；本轮没有刷入或重启授权。按机主要求，在进入Recovery/fastbootd、刷两项和首次Enforcing正常启动前先喊机主确认；不能复用短试/旧刷写授权。刷前现场预检仍待执行。不清数据/metadata、不写底层固件、不锁BL。下方准备中与短试记录为历史。
+
+
 ## 1792357362 短时Enforcing与独立回退验收通过（最新）
 
 机主明确授权“开启enforcing试试”。874新鲜确认1792357362/P/root；875派发新不切模式演练，877确认独立guard自然到期退出且始终P。Mac/Ubuntu各8项门禁测试通过。878唯一新trial01/控制器2022740实际切入E，19个enforce1样本、uptime983.54–1010.04，样本跨度26.5秒，guard窗口30秒；不冒称完整30秒强制执行。system_server/SF/audioserver PID与boot保持，加载策略1f4f9aef…未变；静态宽松域空，动态ksu例外保持。

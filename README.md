@@ -1,5 +1,7 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
+下一候选：**1792357362基线的开机Enforcing启动组件已准备核验，尚未安装**。仅vendor_boot+匹配vbmeta，原P回退双端保存；手机重启/刷入待机主确认。见[启动组件计划](plans/selinux-enforcing-boot-20261019/README.md)。
+
 当前安装 **1792357362**：保留数据安装/61文件与21分区范围读回通过，机主日常使用验收通过。**短时Enforcing及指定指纹/桌面/MIUI功能测试通过，独立guard实际自动恢复Permissive**；19个E样本跨度26.5秒。静态宽松域0，加载仅动态ksu。开机模式未变，Enforcing启动及真实OTA尚未验证。见[本版记录](plans/selinux-backuptool-final-20261019/README.md)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**

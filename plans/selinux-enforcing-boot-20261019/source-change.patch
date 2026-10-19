@@ -1,0 +1,11 @@
+--- a/device/xiaomi/ishtar/BoardConfig.mk
++++ b/device/xiaomi/ishtar/BoardConfig.mk
+@@ -48,4 +48,4 @@
+-# Preserve the current owner-tested engineering boot mode from full07-permissive-02.
+-# Enforcing policy adaptation is a separate task; AVB configuration is unchanged.
+-BOARD_BOOTCONFIG += androidboot.selinux=permissive
+-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive enforcing=0
++# Boot-Enforcing validation candidate for the installed 1792357362 baseline.
++# Preserve the current SELinux policy, kernel, Recovery and AVB configuration.
++BOARD_BOOTCONFIG += androidboot.selinux=enforcing
++BOARD_KERNEL_CMDLINE += androidboot.selinux=enforcing enforcing=1
