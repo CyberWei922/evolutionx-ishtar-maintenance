@@ -15,8 +15,11 @@
   "first_setup_and_desktop_owner_confirmed": true,
   "focused_function_acceptance_pending": true,
   "rom_images_keys_and_raw_logs_not_in_git": true,
-  "camera_current_boot_owner_tests_passed": true,
+  "camera_current_boot_owner_tests_passed": false,
   "first_clean_boot_camera_reliability_issue_open": true,
   "permanent_camera_fix_established": false,
-  "camera_recovery_plan": "plans/camera-multisensor-regression-20261019"
+  "camera_recovery_plan": "plans/camera-multisensor-regression-20261019",
+  "camera_final_acceptance_passed": false,
+  "pro32x_stall_issue_open": true,
+  "camera_current_diagnostic_plan": "plans/camera-pro32x-stall-20261019"
 }

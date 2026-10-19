@@ -1,0 +1,86 @@
+{
+  "state": "PRO32X_STALL_REPRODUCED_CCI_STREAMON_SUCCEEDED_ROOT_CAUSE_OPEN",
+  "build_incremental": "1792357362",
+  "selinux": "Enforcing",
+  "camera_final_acceptance_passed": false,
+  "first_clean_boot_initialization_issue_open": true,
+  "pro32x_stall_issue_open": true,
+  "root_shell_verified": true,
+  "android_source_or_policy_changed": false,
+  "new_fix_binary_or_rom_created": false,
+  "phone_reboot_or_flash_or_setenforce_performed": false,
+  "sensor_registers_or_firmware_manually_written": false,
+  "trace08": {
+    "successful_pro32x_start": "2026-10-19 16:29:42.935 +0800",
+    "successful_first_frame": "2026-10-19 16:29:43.000 +0800",
+    "failed_pro32x_start": "2026-10-19 16:29:45.579 +0800",
+    "failed_timeout": "2026-10-19 16:29:51.103 +0800",
+    "streamon_write_success_and_failure_equal": {
+      "n": 1,
+      "addr": 256,
+      "data": 1,
+      "ccmd": 6,
+      "atype": 2,
+      "dtype": 1,
+      "delay": 0,
+      "ret": 0
+    },
+    "observed_cci_entries": 2711,
+    "observed_cci_returns": 2711,
+    "observed_negative_returns": 0,
+    "complete_initialization_array_contents_not_captured": true,
+    "physical_sensor_readback_not_performed": true,
+    "all_own_probes_removed": true,
+    "debug_mdl_final": 0,
+    "finite_collector_ended": true
+  },
+  "corrections": [
+    "Earlier held18 frames belonged to a rebuilt session after mode change; not evidence of original session producing18 frames then freezing.",
+    "No out-of-line STREAMOFF probe event does not establish no streamoff; trace08 captured the actual CCI stop write.",
+    "Trace07 had zero camera events and ended before late owner freeze reply; it does not cover that freeze."
+  ],
+  "limitations": [
+    "CCI success reports controller/driver completion, not independent sensor register readback or physical MIPI delivery.",
+    "Matching command headers and first register do not prove complete initialization arrays identical.",
+    "No complete audit-loss count or full boot coverage from this bounded window."
+  ],
+  "next_step": "Prepared kernel-debug04 CAM_CCI-only log mask16384 with120sec independent restoration and48MiB host cap; dryrun passed, not activated. Await owner availability to compare complete controller commands for good/bad startup.",
+  "archives_both_hosts": [
+    {
+      "state": "PRO32X_HELD_FREEZE_EVIDENCE_BOTH_HOSTS_MATCH",
+      "files": 41,
+      "bytes": 2712117,
+      "sha256": "89acccb7092ba5bfac81ccfbe7a06d7cd9edc05e2f8e6296701049a0440a08ac",
+      "phone_accessed": false
+    },
+    {
+      "state": "PRO32X_HELD_FREEZE_EVIDENCE_BOTH_HOSTS_MATCH",
+      "files": 23,
+      "bytes": 3654093,
+      "sha256": "30965b518d58e243ec5b0b563d87e3a9e8af9b3e9d922f0f79d9463092dab25c",
+      "phone_accessed": false
+    },
+    {
+      "state": "PRO32X_HELD_FREEZE_EVIDENCE_BOTH_HOSTS_MATCH",
+      "files": 28,
+      "bytes": 1655396,
+      "sha256": "b050425c76d40911be58a170c912f9d127f8813e3253818690ad96b035e461b4",
+      "phone_accessed": false
+    },
+    {
+      "state": "PRO32X_HELD_FREEZE_EVIDENCE_BOTH_HOSTS_MATCH",
+      "files": 35,
+      "bytes": 1559063,
+      "sha256": "b05d9a5a07322402b73615f5496db9bf2b7310bbe5dbd0a7b887bea60f91cddd",
+      "phone_accessed": false
+    },
+    {
+      "state": "PRO32X_HELD_FREEZE_EVIDENCE_BOTH_HOSTS_MATCH",
+      "files": 22,
+      "bytes": 1117654,
+      "sha256": "33cf204aaa7d71dfa9e12a977369c14647782e796392d0206e66244a8630182b",
+      "phone_accessed": false
+    }
+  ],
+  "time": 1792399032.367742
+}

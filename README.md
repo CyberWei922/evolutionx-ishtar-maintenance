@@ -1,5 +1,7 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
+当前相机状态：**专业3.2×偶发停帧再次复现，最终相机验收未通过**。开流指令已实际提交CCI并返回成功，失效环节仍待定位，尚无新修复包。见[专业3.2×排查](plans/camera-pro32x-stall-20261019/README.md)。
+
 当前相机状态：**清刷后发生过多摄初始化不完整，单次Enforcing正常重启后恢复，机主指定镜头测试正常；首次初始化可靠性问题仍未关闭**。没有改策略或重新打包。详见[相机回归与恢复记录](plans/camera-multisensor-regression-20261019/README.md)。
 
 当前：**1792357362 完整 Enforcing 包已 clean flash，首次设置和桌面、实际 Enforcing1 读回通过**。干净初始化关键功能机主验收待补充；详见[完整包和清刷记录](plans/selinux-enforcing-final-20261019/README.md)。
