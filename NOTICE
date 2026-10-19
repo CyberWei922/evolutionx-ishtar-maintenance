@@ -141,3 +141,6 @@ Six reviewed files are listed in provenance/debug-ota-source-files.json with exa
 2026 CyberWei: native Backuptool mount broker and integration changes. Original upstream Apache-2.0 attribution and LineageOS REUSE annotations are retained in plans/selinux-backuptool-broker-20261019/upstream-notices.
 
 2026 CyberWei: tmpfs stage and offline restore maintenance in plans/selinux-backuptool-final-20261019. Store is GPL-2.0-only (complete COPYING included) and links unchanged libext2fs; broker/worker/staged script and integration changes remain Apache-2.0. Original LineageOS/AOSP notices and REUSE annotations remain in upstream-notices/. No upstream ownership is claimed.
+
+Full Enforcing OTA packaging and clean-install records (2026-10-19):
+Original package/audit maintenance recipes and documentation in plans/selinux-enforcing-final-20261019 are Apache-2.0, Copyright 2026 CyberWei922. No external Android tool implementation, key, ROM, compiled image or raw phone log is included. The Android source input remains the 104-file enforcing-boot manifest.

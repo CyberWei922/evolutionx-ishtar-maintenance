@@ -1,14 +1,12 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
-当前安装：**1792357362 已通过两项启动镜像从开机进入 Enforcing**。61 文件/21 分区范围及数据保持自动核对通过，原 P 回退双端保留；机主本轮指定功能已验收，SELinux 非严格执行提示已消失；长时使用与真实 OTA 尚未验收。见[启动组件与验收记录](plans/selinux-enforcing-boot-20261019/README.md)。
-
-当前安装 **1792357362**：保留数据安装/61文件与21分区范围读回通过，机主日常使用验收通过。**短时Enforcing及指定指纹/桌面/MIUI功能测试通过，独立guard实际自动恢复Permissive**；19个E样本跨度26.5秒。静态宽松域0，加载仅动态ksu。开机模式未变，Enforcing启动及真实OTA尚未验证。见[本版记录](plans/selinux-backuptool-final-20261019/README.md)。
+当前：**1792357362 完整 Enforcing 包已 clean flash，首次设置和桌面、实际 Enforcing1 读回通过**。干净初始化关键功能机主验收待补充；详见[完整包和清刷记录](plans/selinux-enforcing-final-20261019/README.md)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**
 
 ## 当前版本
 
-当前已安装Unofficial incremental **1792357362**，全局仍为 **Permissive**。Backuptool最后静态宽松声明已从实际安装策略移除，实际加载仅KSU动态例外；短时Enforcing运行及指定功能验收通过，Enforcing冷启动、长时间运行与真实OTA仍未验收。
+当前已安装Unofficial incremental **1792357362**，开机模式 **Enforcing**，静态宽松域0。本次普通ADB读回37文件和6个MIUI默认入口匹配；干净数据没有保留Root，因此受保护文件/加载策略/块分区没有重新读回。真实OTA与长时使用尚未验收。
 
 camera03、MIUI默认入口、Recovery触控、自动亮度平滑、开机刷新率修复以及后续已安装SELinux增量完整保留。原accepted源码清单和验收标签仍描述1792226532；当前工作树由它叠加各累计计划复现。详见`docs/CURRENT_STATE.md`及各plan实际状态，不把旧未安装快照当最新结果。
 
@@ -23,7 +21,7 @@ camera03、MIUI默认入口、Recovery触控、自动亮度平滑、开机刷新
 - `artifacts/`、`provenance/`：二进制/外部文本的路径、尺寸、SHA和构建基线，不含其载荷。
 - `docs/`、`releases/`：版本、验收范围、依赖和后续修复方案。
 
-完整Android基线、原厂依赖、MIUI APK、Recovery镜像、Google软件、ROM及签名材料单独保存；**克隆本仓库不能直接编译完整ROM，也不代表全部ROM组件已获再分发授权。** 当前1792357362 ROM SHA256为`a2c7945bcd847a9109c409313d13723e55d2d148d00701c29c7f4b53eea48ebc`，正式ROM保存在Ubuntu；上一1792347689及1792339544回退ROM保留。Mac仅薄交接和私有运行证据，Git仅存许可明确的维护源码与摘要。
+完整Android基线、原厂依赖、MIUI APK、Recovery镜像、Google软件、ROM及签名材料单独保存；**克隆本仓库不能直接编译完整ROM，也不代表全部ROM组件已获再分发授权。** 当前1792357362完整Enforcing ROM SHA256为`d604f00d55c647e49ca0767ae259e7b208e6a99ae55e54b7e3bf5b094ba4c63a`；原Permissive ROM SHA256为`a2c7945bcd847a9109c409313d13723e55d2d148d00701c29c7f4b53eea48ebc`，正式ROM保存在Ubuntu；上一1792347689及1792339544回退ROM保留。Mac仅薄交接和私有运行证据，Git仅存许可明确的维护源码与摘要。
 
 ## 本次许可整理
 

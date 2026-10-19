@@ -1,0 +1,18 @@
+{
+  "state": "FULL_ENFORCING_CLEAN_INSTALL_AUTOMATIC_READBACK_PASSED",
+  "source_plan": "plans/selinux-enforcing-boot-20261019",
+  "full_package_plan": "plans/selinux-enforcing-final-20261019",
+  "source_files": 104,
+  "new_android_source_changes": 0,
+  "original_packaging_recipes_license": "Apache-2.0",
+  "full_package": {
+    "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial-Enforcing.zip",
+    "bytes": 4545237004,
+    "sha256": "d604f00d55c647e49ca0767ae259e7b208e6a99ae55e54b7e3bf5b094ba4c63a"
+  },
+  "complete_package_generated": true,
+  "clean_flash_completed": true,
+  "first_setup_and_desktop_owner_confirmed": true,
+  "focused_function_acceptance_pending": true,
+  "rom_images_keys_and_raw_logs_not_in_git": true
+}

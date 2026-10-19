@@ -1,0 +1,165 @@
+{
+  "state": "FULL_ENFORCING_OTA_ACTUAL_PAYLOAD_AND_SIGNATURES_VERIFIED",
+  "incremental": "1792357362",
+  "zip": "/mnt/android-build/Android/out/evolution-bka/tmp/ishtar-selinux-enforcing-final-20261019-01/EvolutionX-16.0-20261019-ishtar-11.12-Unofficial-Enforcing.zip",
+  "zip_bytes": 4545237004,
+  "zip_sha256": "d604f00d55c647e49ca0767ae259e7b208e6a99ae55e54b7e3bf5b094ba4c63a",
+  "partitions": {
+    "abl": {
+      "bytes": 233472,
+      "sha256": "920ba7bffecc995cf6cc20c290c65318e8265ea8a4d009fba03fc4d711147749"
+    },
+    "aop": {
+      "bytes": 282624,
+      "sha256": "481f2077997b0ba736eb449504a5ef52bfa700c0ea34c5d1161978a48dd4eeba"
+    },
+    "aop_config": {
+      "bytes": 16384,
+      "sha256": "31661ddc91bb3402c48d36b83bb385f2ba9da93801f0f301b8ff3238f9660999"
+    },
+    "bluetooth": {
+      "bytes": 1257472,
+      "sha256": "b366848eec71272a29ecb4ef1fa02e995d68f1ccddce565ad127e051c6af2ec3"
+    },
+    "boot": {
+      "bytes": 201326592,
+      "sha256": "d7524bb169f4e84d92d8a5eaab9f3c8131f02d55bc3a97ebd647c4637adb4030"
+    },
+    "cpucp": {
+      "bytes": 192512,
+      "sha256": "a26f225287285f6adb42d5847940de947f6c739cc2741877291afed7854e25b5"
+    },
+    "devcfg": {
+      "bytes": 57344,
+      "sha256": "014d24647297d007fbcd93c720d42e6a38e0a83d4d7a8efae8eac4672edfcdcf"
+    },
+    "dsp": {
+      "bytes": 67108864,
+      "sha256": "7ae8afea0ecd45cb64323e0ba0a86eb8f39fee6c0f683e1e2d0557f02d45f188"
+    },
+    "dtbo": {
+      "bytes": 25165824,
+      "sha256": "e8bed21d32dace86a403869dad92b238867ef23c7fd41d74035afdb295a8b63b"
+    },
+    "featenabler": {
+      "bytes": 98304,
+      "sha256": "4ffcda8b36fed24399c47d911bc0767691c986c895e524eecfa5820fe782a837"
+    },
+    "hyp": {
+      "bytes": 1458176,
+      "sha256": "52b697bd1ef1fbc47f9f279e60b25b929bdd3c77091474fa9c3af039087da01a"
+    },
+    "imagefv": {
+      "bytes": 6299648,
+      "sha256": "883383ea8059bcdcc7248dffd97e8b5f14d47b879b51414cea28ec2124de03cd"
+    },
+    "init_boot": {
+      "bytes": 8388608,
+      "sha256": "93b6b2fbec72ba489eb4139b1fd0f47098979acffc4bddc1447b814d392aa02b"
+    },
+    "keymaster": {
+      "bytes": 413696,
+      "sha256": "88880c37914ff19a63059457b84635961579b2fa764f111b61249e6a69c161a1"
+    },
+    "modem": {
+      "bytes": 372895744,
+      "sha256": "f7b5eae12b20dadbb4f687fc97bb3d27c56ba8fb315aaf6214cfc6dfafc34a44"
+    },
+    "odm": {
+      "bytes": 1692659712,
+      "sha256": "20a7a350c9ab62d3b399d26d2199d303cf54682e766a5c81133d136fbe728221"
+    },
+    "product": {
+      "bytes": 3135356928,
+      "sha256": "2b46a654bb431b9df56058c282264d49cf2278f074a6c24e5d57d6ccbc2eab22"
+    },
+    "qupfw": {
+      "bytes": 57344,
+      "sha256": "2c503303816780aaa0feb86f88ef9819506d2b1d254fb781233f7bf8ea515e09"
+    },
+    "recovery": {
+      "bytes": 104857600,
+      "sha256": "c39e0236d4aac787e59827f835d58ec3af127357bcd576fb2b66da72c2c4057e"
+    },
+    "shrm": {
+      "bytes": 65536,
+      "sha256": "a0ef0a811dc90db1d4371ea237b716bcb47025d815bd0627c5944759a2177630"
+    },
+    "system": {
+      "bytes": 1133035520,
+      "sha256": "37d9f380f9a2e6d7cef8d7e1be7e63a82b0d1df71f0783d97e65b652436946c2"
+    },
+    "system_dlkm": {
+      "bytes": 348160,
+      "sha256": "b058b738c5388dee6a39525bb8bd906d3a245efffe062bfe892dbb0038050c4c"
+    },
+    "system_ext": {
+      "bytes": 1199845376,
+      "sha256": "57a5c85e65236820581a8a5c961212d772b0d0cb1658d881418b37587d048b45"
+    },
+    "tz": {
+      "bytes": 3973120,
+      "sha256": "f8aae4dffe9c0aa1d3e02538ff23c21bf9e93e9a86a818fede3ae71bada6c9b4"
+    },
+    "uefi": {
+      "bytes": 2945024,
+      "sha256": "96dd61ec3d52bbe464e8722c82fc88c8f631c2fcae71f4e0dac872f7b76e7207"
+    },
+    "uefisecapp": {
+      "bytes": 180224,
+      "sha256": "48f223f33dd0b826dbefc6ddc6530bcf809850b40a28d48f22aa17bb590b22c6"
+    },
+    "vbmeta": {
+      "bytes": 8192,
+      "sha256": "8704c186b031a83383c60be6bcaeed304b8a4f33d58ed129ba1a125191c06963"
+    },
+    "vbmeta_system": {
+      "bytes": 4096,
+      "sha256": "0a34a2c7056f17938cc9455734cc5738783b55c1aebdca89899788e36ed6f22f"
+    },
+    "vendor": {
+      "bytes": 632885248,
+      "sha256": "8cd0fbe8c0b6fa8ba36b9d0314220cbedb9175354bd9bee6a5e0f22bf7ccb82c"
+    },
+    "vendor_boot": {
+      "bytes": 100663296,
+      "sha256": "7df0dde9214d37f5a081fd5f972e051c2c026f7b03abcd2415a3a4fd52a17670"
+    },
+    "vendor_dlkm": {
+      "bytes": 33284096,
+      "sha256": "003bc1095b802798d7e81566007bc3925354f1746480d3b59d791929db124b8d"
+    },
+    "xbl": {
+      "bytes": 1200128,
+      "sha256": "9c79c4a13bba44bfb8f3486f251e1ebf3e8175bd337c1a03ca440035b3183f19"
+    },
+    "xbl_config": {
+      "bytes": 188416,
+      "sha256": "d9c74f05871ed94098b60580a9f4fc16ddf4e5887b11dcc8c489b5f2c32888e1"
+    },
+    "xbl_ramdump": {
+      "bytes": 884736,
+      "sha256": "2b8739648740e39325fe921191591c0327ad9a5865efa935c8acf58866d1691e"
+    }
+  },
+  "actual_images": "/mnt/android-download/control/ishtar-selinux-enforcing-final-20261019-01/package-audit01/images",
+  "partition_count": 34,
+  "changed_partitions": [
+    "vbmeta",
+    "vendor_boot"
+  ],
+  "unchanged_partitions": 32,
+  "zip_crc_passed": true,
+  "whole_file_signature_verified_against_matching_installed_certificate": true,
+  "payload_rsa_signature_verified": true,
+  "payload_properties_verified": true,
+  "full_nonincremental_payload": true,
+  "static_permissive_domains": [],
+  "global_boot_mode": "Enforcing",
+  "kernel_ksu_and_recovery_retained": true,
+  "data_wipe_not_embedded_in_ota": true,
+  "clean_flash_still_required": true,
+  "real_ota_device_install_not_tested": true,
+  "phone_accessed": false,
+  "finished": 1792387603.020905
+}

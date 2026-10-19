@@ -1,0 +1,72 @@
+{
+  "state": "FULL_ENFORCING_CLEAN_INSTALL_AUTOMATIC_READBACK_PASSED",
+  "incremental": "1792357362",
+  "slot": "a",
+  "selinux_mode": "Enforcing",
+  "enforce": 1,
+  "rom": {
+    "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial-Enforcing.zip",
+    "bytes": 4545237004,
+    "sha256": "d604f00d55c647e49ca0767ae259e7b208e6a99ae55e54b7e3bf5b094ba4c63a"
+  },
+  "ubuntu_delivery": "/mnt/android-download/delivery/ishtar-enforcing-final-1792357362-20261019-01",
+  "all_payload_partitions_verified": 34,
+  "other_payload_partitions_unchanged": 32,
+  "changed_payload_partitions": [
+    "vendor_boot",
+    "vbmeta"
+  ],
+  "whole_ota_signature_verified": true,
+  "payload_rsa_signature_verified": true,
+  "source_files_matched": 104,
+  "disk_policy_sha256": "a1152f338c5f9f012206e166aadbc7eb280c4b6fd0725ee2eaaa48e5cead283f",
+  "static_permissive_domains": [],
+  "root_route": "shell",
+  "adb_uid": 2000,
+  "ro_debuggable": "0",
+  "native_files_read_back": 37,
+  "protected_native_files_not_read_back": 24,
+  "postclean_partition_ranges_read_back": 0,
+  "postclean_loaded_policy_read_back": false,
+  "postclean_bootconfig_read_back": false,
+  "root_unavailable_reason": "Clean user data removed prior Root setup; su unavailable and user adbd has ro.debuggable=0. No app/grant installed for readback.",
+  "miui_default_routes_matched": 6,
+  "fbe": "file",
+  "setup_complete": "1",
+  "device_provisioned": "1",
+  "third_party_package_count_at_initial_readback": 0,
+  "userdata_metadata_erase_and_f2fs_format_verified": true,
+  "owner_confirmed_welcome_and_desktop": true,
+  "owner_focused_function_tests_pending": true,
+  "samples": 7,
+  "first_observed_uptime": "587.07",
+  "last_observed_uptime": "650.89",
+  "core_pid_changes": 0,
+  "observation_starts_after_adb_authorization": true,
+  "full_boot_avc_capture_performed": false,
+  "first_readback_stopped_on_protected_library": true,
+  "first_readback_failure_preserved": true,
+  "image_wire_sha256": "977150267215b3a5ee3385ca2f304c1dff6a40d0f2769db8a089886ea3367ce1",
+  "clean_wire_sha256": "3424aaa5cae29dd09030555c87015b48d54dc091e81a81976417373eeda61cff",
+  "runtime_setenforce_used": false,
+  "extra_normal_reboots_used": false,
+  "real_recovery_or_update_engine_ota_tested": false,
+  "power_off_cold_start_tested": false,
+  "long_term_use_tested": false,
+  "known_prior_fast_charging_issue_not_addressed": true,
+  "own_workers_finished": true,
+  "other_ubuntu_tasks_changed": false,
+  "finished": 1792389146.6950612,
+  "private_evidence_archives": {
+    "thin": {
+      "files": 6,
+      "bytes": 11854,
+      "sha256": "9a68e6cab3ffe0fe0abdca84d3f847be6f84674d059f64d60cc0a35103cb949e"
+    },
+    "private": {
+      "files": 77,
+      "bytes": 108035,
+      "sha256": "6314aa0c5dfba548cafeb1b430a846497ae4d23130cb9dc805653d62546eaf04"
+    }
+  }
+}

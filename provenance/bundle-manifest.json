@@ -6,20 +6,20 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 49088,
-      "sha256": "3433f9edaa36c9555c2c2f8b57e28e66ba1c78b89790a122ac2cf6a4d061994b"
+      "bytes": 51045,
+      "sha256": "a50f39009eefa4a1dcda47c41cc055746f5be0b47cdf92c128775894e692187a"
     },
     "LICENSE.md": {
       "bytes": 2453,
       "sha256": "2f79807e3803c4e46dab6ffa9085ecbcfd6be0ebc7d3622858f9bfc879e199b4"
     },
     "NOTICE": {
-      "bytes": 9481,
-      "sha256": "ed3b2704aa9020c95371c012b8d3f4c784c2ce2ece5ec660a27947b4b17482dc"
+      "bytes": 9865,
+      "sha256": "bbd12193dbabaa68babbbd6505d3aff32fa3721fc67eef67e0c09ebfc02a8a94"
     },
     "README.md": {
-      "bytes": 3875,
-      "sha256": "817915033386f94f95061348e7c0590afab043c22a087a02233be5537f3769ee"
+      "bytes": 3431,
+      "sha256": "a05d268b5b09541ca9bf5d1e9a4048d9f889dd82e530b638a6c38cdc422b2eaf"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 65469,
-      "sha256": "3e6a01b881b207efe02c1959f34fd9eeac93c9ad12797e86ea38c8f9c4f7c380"
+      "bytes": 67426,
+      "sha256": "271a87d23f86e1355a8107d34174d78bc2e0a7bbd6efbf1b9845b4dcb9718590"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -1381,6 +1381,38 @@
       "bytes": 17968,
       "sha256": "33fba77904c7f68605b926961ecf1865729cb051d70af700588af54c9e22f00d"
     },
+    "plans/selinux-enforcing-final-20261019/README.md": {
+      "bytes": 4013,
+      "sha256": "a543c9b9f2a28a2ce8353c51db529d08e3ee3c55aaf7de7d1d01c7dfdfa0e2f6"
+    },
+    "plans/selinux-enforcing-final-20261019/actual-payload-verification.json": {
+      "bytes": 5616,
+      "sha256": "309449fe727710eeae0c47a86456a88b0465d0676642d1e9fdd53f9456446b32"
+    },
+    "plans/selinux-enforcing-final-20261019/clean-install-summary.json": {
+      "bytes": 2805,
+      "sha256": "b77e444e7593033d89916bda3fd007ff74ed9f90702a820c232b93f0120c1f1b"
+    },
+    "plans/selinux-enforcing-final-20261019/scripts/audit-package.py": {
+      "bytes": 9741,
+      "sha256": "fe05734f16d2611266ac7796f448d8aee927365e963eebd6dd75ab933f96d233"
+    },
+    "plans/selinux-enforcing-final-20261019/scripts/audit-package.py.license": {
+      "bytes": 181,
+      "sha256": "c86ec2aff3a31266b8e2b5f37dc08d5cf48e48e8ab86ca10361725eab136747e"
+    },
+    "plans/selinux-enforcing-final-20261019/scripts/package-worker.py": {
+      "bytes": 5432,
+      "sha256": "651a443af22e4fbd21928f49d0e4cbad9c8d6091642e33b4057d8065745f1a79"
+    },
+    "plans/selinux-enforcing-final-20261019/scripts/package-worker.py.license": {
+      "bytes": 181,
+      "sha256": "c86ec2aff3a31266b8e2b5f37dc08d5cf48e48e8ab86ca10361725eab136747e"
+    },
+    "plans/selinux-enforcing-final-20261019/working-source-files.json": {
+      "bytes": 17968,
+      "sha256": "33fba77904c7f68605b926961ecf1865729cb051d70af700588af54c9e22f00d"
+    },
     "plans/selinux-enforcing-prep-20261018/README.md": {
       "bytes": 15271,
       "sha256": "23160ed41a413ba6911b64de78ba47cb0cc7fe8f62b844ea9d7206d52571da7f"
@@ -1864,6 +1896,10 @@
     "provenance/enforcing-boot-source-files.json": {
       "bytes": 1514,
       "sha256": "60e01b7d7a00723aef2af9f6e30ade1220a6c04f718c7aa4509ff35dd8ae9cf3"
+    },
+    "provenance/enforcing-final-package.json": {
+      "bytes": 736,
+      "sha256": "77a44dabb85e91b5506b3f4ebb7e91b3108774615e621afb7be6223fe7a9c7c7"
     },
     "provenance/enforcing-prep-source-files.json": {
       "bytes": 4539,

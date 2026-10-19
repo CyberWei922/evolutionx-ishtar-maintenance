@@ -1,5 +1,17 @@
 # 当前维护状态
 
+## 完整 Enforcing 包已清刷并读回 E1（当前）
+
+正式包1792357362已完成clean flash、首次设置并进入桌面，读回Enforcing/enforce1、A槽/FBE、user_setup_complete=1、初始第三方应用0。完整ZIP 4,545,237,004 bytes，SHA256 `d604f00d55c647e49ca0767ae259e7b208e6a99ae55e54b7e3bf5b094ba4c63a`；Ubuntu delivery/ishtar-enforcing-final-1792357362-20261019-01。Mac同名目录仅薄交接，不含完整ROM。
+
+34个payload实际分区与整包CMS/payload RSA签名均核对通过；仅vendor_boot/vbmeta与最后P整包变化，其他32项保持。镜像74动作/73完整下载、两数据分区各擦除及空F2FS格式化完成，wire已独立核对；首次正常重启一次，无runtime setenforce、额外正常重启、固件写入或锁BL。
+
+本次37个可读文件、磁盘策略a1152f33…和6个MIUI默认入口匹配；7样本uptime587.07–650.89均E、核心PID变化0。干净user构建ro.debuggable=0且su不可用，24个受保护文件、块分区/加载策略/bootconfig未读回，不能补记上一轮61文件/21分区到本轮。没有安装Root或改权限。首次只读检查受保护库停止保留，第二份按实际可读范围完成。不是全开机AVC采集或长时验收。
+
+机主已确认首次设置和桌面；干净初始化的相机/录像收音、指纹新录入及亮度/高刷功能测试待答复，不提前称最终全功能验收。真实Recovery/在线OTA和断电冷启动未测，既有快充问题仍待修。原完整P ROM与启动回退、修好Recovery保持。所有本轮worker结束，不再采集；刷入/清空/首次重启授权已用完。
+
+私有运行证据双端77项/108,035 bytes/SHA6314aa0c5dfba548cafeb1b430a846497ae4d23130cb9dc805653d62546eaf04，薄交接6项/11,854 bytes/SHA9a68e6ca…均匹配。原冻结包清单不改写，机主验收另存补充。Ubuntu其他任务未调整，未使用Gemini。下方未安装、ADB待连和P状态为历史。
+
 ## 1792357362 Enforcing 开机及机主指定功能验收通过（当前）
 
 机主本轮“刷”授权已执行：只刷 A 槽 vendor_boot/vbmeta 两项，完整 wire 核验后唯一首次正常 reboot 成功。系统 incremental 仍 1792357362；不是新完整 OTA。没有 userdata/metadata、动态分区或底层固件写入、切槽或锁 BL，未调用 setenforce，没有使用 P 回退。当前全局 Enforcing/enforce1，cmdline 与 bootconfig 均 E；不是短试后自动恢复 P。
