@@ -1,0 +1,28 @@
+{
+  "state": "READY_FOR_GUARDED_RUNTIME_ENFORCING_VALIDATION_NOT_PROVEN_FOR_ENFORCING_BOOT",
+  "incremental": "1792357362",
+  "basis": "Archived 1792357362 runtime evidence and new owner feedback; no new phone access.",
+  "global_last_verified_mode": "Permissive",
+  "static_permissive_domains": [],
+  "loaded_permissive_domains": [
+    "ksu"
+  ],
+  "owner_reports_no_functional_issues": true,
+  "remaining_retained_unique_avc_lines": 1247,
+  "avc_lines_not_bug_count": true,
+  "camera_domain_avc_lines": 1181,
+  "remaining_avc_categories": [
+    "camera broad property reads and service lookup",
+    "fingerprint system_prop reads",
+    "radio default_prop reads and vendor_default_prop set",
+    "other sensor, NFC, audio, vendor init, diagnostic and collection-related accesses"
+  ],
+  "functional_necessity_of_each_remaining_denial_not_proven": true,
+  "all_audit_denials_resolved": false,
+  "enforcing_runtime_on_this_candidate_tested": false,
+  "enforcing_boot_tested": false,
+  "real_ota_and_native_restore_tested": false,
+  "recommended_next_step": "Fresh preflight and independently verified rollback guard, then explicitly authorized temporary Enforcing runtime validation on installed build, without recompilation or flashing. If successful, prepare boot-Enforcing candidate and recovery path for separately authorized boot validation.",
+  "new_mode_switch_or_reboot_authorized": false,
+  "phone_accessed_this_turn": false
+}

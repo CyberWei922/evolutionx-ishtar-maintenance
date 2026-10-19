@@ -1,0 +1,14 @@
+{
+  "state": "OWNER_DESKTOP_DATA_AND_GENERAL_USE_ACCEPTED",
+  "incremental": "1792357362",
+  "owner_reply": "没问题 一切正常",
+  "desktop_normal": true,
+  "original_apps_and_photos_present": true,
+  "owner_reports_no_functional_issues": true,
+  "scope": "Owner replies all normal to previous desktop/original apps/photos confirmation. General use accepted; no new itemized full hardware suite or Enforcing validation claimed.",
+  "new_full_hardware_suite_claimed": false,
+  "last_verified_selinux_mode": "Permissive",
+  "phone_accessed_this_turn": false,
+  "new_capture_reboot_or_mode_switch": false,
+  "recorded_at": "2026-10-19T11:45:08.193007+08:00"
+}

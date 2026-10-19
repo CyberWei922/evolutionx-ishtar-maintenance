@@ -1,5 +1,5 @@
 {
-  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_PASSED_OWNER_DESKTOP_DATA_PENDING",
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_AND_OWNER_DESKTOP_DATA_PASSED",
   "baseline_incremental": "1792347689",
   "source_files": 104,
   "changed_paths": 19,
@@ -258,10 +258,14 @@
   "loaded_permissive_domains": [
     "ksu"
   ],
-  "owner_desktop_and_data_confirmed": false,
+  "owner_desktop_and_data_confirmed": true,
   "flash_and_first_normal_reboot_authorization_consumed": true,
   "additional_reboot_or_enforcing_authorized": false,
   "enforcing_trial_performed": false,
   "cold_boot_enforcing_tested": false,
-  "actual_ota_performed": false
+  "actual_ota_performed": false,
+  "owner_reports_no_functional_issues": true,
+  "owner_acceptance_file": "plans/selinux-backuptool-final-20261019/owner-desktop-data-acceptance.json",
+  "enforcing_runtime_on_current_candidate_tested": false,
+  "enforcing_boot_tested": false
 }

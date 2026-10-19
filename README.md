@@ -1,6 +1,6 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
-最新安装 **1792357362 / Permissive**：104项输入/19路径Backuptool暂存与离线恢复修复，保留数据正常启动，61文件/21分区范围及策略、标签读回通过。静态宽松域为0，加载仅动态ksu；机主桌面/应用照片验收待回复。未做Enforcing或真实OTA。见[安装记录](plans/selinux-backuptool-final-20261019/README.md)。
+最新安装 **1792357362 / Permissive**：104项输入/19路径Backuptool暂存与离线恢复修复，保留数据正常启动，61文件/21分区范围及策略、标签读回通过。静态宽松域为0，加载仅动态ksu；机主随后回复“没问题 一切正常”，桌面、原有应用和照片及日常使用验收通过。未做Enforcing或真实OTA。见[安装记录](plans/selinux-backuptool-final-20261019/README.md)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**
 

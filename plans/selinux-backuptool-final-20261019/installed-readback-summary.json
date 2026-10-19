@@ -1,5 +1,5 @@
 {
-  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_PASSED_OWNER_DESKTOP_DATA_PENDING",
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_AND_OWNER_DESKTOP_DATA_PASSED",
   "baseline_incremental": "1792347689",
   "installed_incremental": "1792357362",
   "phone_installed": true,
@@ -61,8 +61,8 @@
     "raw_logs_and_policy_are_private": true,
     "phone_accessed": false
   },
-  "owner_desktop_and_data_confirmed": false,
-  "owner_acceptance_scope": null,
+  "owner_desktop_and_data_confirmed": true,
+  "owner_acceptance_scope": "Owner replies all normal to previous desktop/original apps/photos confirmation. General use accepted; no new itemized full hardware suite or Enforcing validation claimed.",
   "new_owner_hardware_acceptance_claimed": false,
   "enforcing_trial_performed": false,
   "cold_boot_enforcing_tested": false,
@@ -76,5 +76,8 @@
   "completed_flash_staging_deleted": false,
   "old_formal_roms_deleted": false,
   "rom_build_summary_describes_prior_static_phase": true,
-  "monitor_failure_preserved": "848 status read caller timeout; fresh849 instant status read. Flash/preparation not retried."
+  "monitor_failure_preserved": "848 status read caller timeout; fresh849 instant status read. Flash/preparation not retried.",
+  "owner_reports_no_functional_issues": true,
+  "owner_acceptance_file": "owner-desktop-data-acceptance.json",
+  "enforcing_readiness_review": "enforcing-readiness-review.json"
 }
