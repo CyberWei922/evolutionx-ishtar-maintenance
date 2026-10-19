@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 48929,
-      "sha256": "b095c44bd37712c20b2802addbb76b83894eb9020f0279d82cdd69cb01a3d092"
+      "bytes": 49088,
+      "sha256": "3433f9edaa36c9555c2c2f8b57e28e66ba1c78b89790a122ac2cf6a4d061994b"
     },
     "LICENSE.md": {
       "bytes": 2453,
@@ -18,8 +18,8 @@
       "sha256": "ed3b2704aa9020c95371c012b8d3f4c784c2ce2ece5ec660a27947b4b17482dc"
     },
     "README.md": {
-      "bytes": 3831,
-      "sha256": "9c157c2058954bbcbd911cd4d91860e4d5b6594903dc787045528d0661205465"
+      "bytes": 3875,
+      "sha256": "817915033386f94f95061348e7c0590afab043c22a087a02233be5537f3769ee"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 65310,
-      "sha256": "068471df944f574defe66aa7282be1a84058545df5e155eb87d33e5a2dc91a38"
+      "bytes": 65469,
+      "sha256": "3e6a01b881b207efe02c1959f34fd9eeac93c9ad12797e86ea38c8f9c4f7c380"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -1346,16 +1346,20 @@
       "sha256": "5aef9b50cb691394ce94d67b13ea64758143a0b84d64ae064342b1d7f948d15c"
     },
     "plans/selinux-enforcing-boot-20261019/README.md": {
-      "bytes": 2654,
-      "sha256": "53b4cd60ea614251d50421b1d6cc950e15d9d2104c5088e5677ba09d512356a4"
+      "bytes": 2747,
+      "sha256": "5ead03200499b4dfaf34a11da0e0ac094f5133015d42872ee4396972a53df26a"
     },
     "plans/selinux-enforcing-boot-20261019/component-candidate-summary.json": {
       "bytes": 3224,
       "sha256": "88dcb42a85213d5fd67ee0683f495c8205dfde19484333db7203380119a73579"
     },
     "plans/selinux-enforcing-boot-20261019/installed-boot-summary.json": {
-      "bytes": 1477,
-      "sha256": "faeeea0a0a8f6cec25b345eca26124d9a01b842d892b3c53e4948ce03d783608"
+      "bytes": 1548,
+      "sha256": "ef80b45fb843918e15e136dbd0ec960c840c4267884cb173b3b9d10e80ac4022"
+    },
+    "plans/selinux-enforcing-boot-20261019/owner-acceptance.json": {
+      "bytes": 650,
+      "sha256": "014d65a8dfaf34dbdf20ac0c010da5893b96c350560b92a9fd1460f5aca019be"
     },
     "plans/selinux-enforcing-boot-20261019/scripts/build-vendor-boot.sh": {
       "bytes": 2583,
@@ -1858,8 +1862,8 @@
       "sha256": "e7aefe1862ef2a9e898f29e39f4e4429191a5619e85ab546d9461a1456b9ce8f"
     },
     "provenance/enforcing-boot-source-files.json": {
-      "bytes": 1371,
-      "sha256": "1740813a7848eb54aab7d49a5d7ec80b796ed88304824dada5130e09d2c2841a"
+      "bytes": 1514,
+      "sha256": "60e01b7d7a00723aef2af9f6e30ade1220a6c04f718c7aa4509ff35dd8ae9cf3"
     },
     "provenance/enforcing-prep-source-files.json": {
       "bytes": 4539,

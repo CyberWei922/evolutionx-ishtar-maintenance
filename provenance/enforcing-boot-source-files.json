@@ -25,6 +25,8 @@
   "delivery_patch_retains_standard_context_and_is_unchanged": true,
   "first_normal_reboot_tested": true,
   "power_off_cold_start_tested": false,
-  "owner_functional_acceptance_pending": true,
-  "flash_and_first_reboot_authorization_consumed": true
+  "owner_functional_acceptance_pending": false,
+  "flash_and_first_reboot_authorization_consumed": true,
+  "state": "FIRST_ENFORCING_BOOT_OWNER_ACCEPTED",
+  "owner_acceptance_record": "plans/selinux-enforcing-boot-20261019/owner-acceptance.json"
 }

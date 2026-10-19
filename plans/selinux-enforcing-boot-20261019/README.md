@@ -1,6 +1,6 @@
 # 1792357362 开机 Enforcing 启动组件候选
 
-当前：已按机主本轮“刷”完成 A 槽 vendor_boot/vbmeta 两项刷入，首次正常启动实际为 Enforcing。61 文件/21 分区范围/数据保持自动核对通过；静态无宽松域，保留 KSU 动态例外。有限启动记录已结束，机主本轮功能验收待答。详见 installed-boot-summary.json。
+当前：已按机主本轮“刷”完成 A 槽 vendor_boot/vbmeta 两项刷入，首次正常启动实际为 Enforcing。61 文件/21 分区范围/数据保持自动核对通过；静态无宽松域，保留 KSU 动态例外。有限启动记录已结束，机主本轮确认桌面/数据保留、指纹、MIUI 打开与1×/5×切换正常，SELinux 非严格执行提示已消失。详见 installed-boot-summary.json。
 
 后续验证重点：日常通信、蓝牙、相机及长时使用；有限 AVC 不等于功能失败，不整体放宽 default 属性或 DAC 能力。断电冷启动和真实 OTA 尚未验证。下面候选准备说明为历史。
 

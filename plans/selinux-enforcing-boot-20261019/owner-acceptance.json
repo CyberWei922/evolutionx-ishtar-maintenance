@@ -1,0 +1,18 @@
+{
+  "state": "FIRST_ENFORCING_BOOT_OWNER_ACCEPTED",
+  "incremental": "1792357362",
+  "owner_reply": "功能完全正常；系统 SELinux 非严格执行提示已消失。",
+  "accepted_in_response_to": [
+    "desktop_and_existing_apps_photos",
+    "fingerprint_unlock",
+    "miui_camera_open",
+    "miui_camera_1x_5x_switch"
+  ],
+  "selinux_warning_disappeared_reported_by_owner": true,
+  "full_hardware_or_video_audio_tests_not_added": true,
+  "power_off_cold_start_tested": false,
+  "real_ota_tested": false,
+  "no_new_phone_access_collection_reboot_or_mode_switch": true,
+  "frozen_runtime_archive_unchanged": true,
+  "time": 1792386477.2328372
+}

@@ -1,5 +1,5 @@
 {
-  "state": "FIRST_NORMAL_BOOT_ENFORCING_AUTOMATIC_VERIFICATION_PASSED",
+  "state": "FIRST_ENFORCING_BOOT_OWNER_ACCEPTED",
   "incremental": "1792357362",
   "slot": "a",
   "selinux_mode": "Enforcing",
@@ -34,11 +34,12 @@
   "first_normal_reboot_tested": true,
   "power_off_cold_start_tested": false,
   "real_ota_tested": false,
-  "owner_functional_acceptance_pending": true,
+  "owner_functional_acceptance_pending": false,
   "own_finite_workers_finished": true,
   "other_ubuntu_tasks_changed": false,
   "wire_sha256": "2b96c5373776f7817d3bb706c9708881456e38865025191f8a53a19f22b0a03e",
   "readback_checker_first_attempt_stopped_on_shell_property_restriction": true,
   "readback_checker_root_property_fix_only": true,
-  "finished": 1792386268.913948
+  "finished": 1792386268.913948,
+  "owner_acceptance_record": "plans/selinux-enforcing-boot-20261019/owner-acceptance.json"
 }
