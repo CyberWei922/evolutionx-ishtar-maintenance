@@ -1,5 +1,18 @@
 # ishtar maintenance repository
 
+## 1792357362 已从开机进入 Enforcing，自动读回通过（当前）
+
+机主本轮“刷”授权已执行：只刷 A 槽 vendor_boot/vbmeta 两项，完整 wire 核验后唯一首次正常 reboot 成功。系统 incremental 仍 1792357362；不是新完整 OTA。没有 userdata/metadata、动态分区或底层固件写入、切槽或锁 BL，未调用 setenforce，没有使用 P 回退。当前全局 Enforcing/enforce1，cmdline 与 bootconfig 均 E；不是短试后自动恢复 P。
+
+实际 61 文件/21 分区范围、六 MIUI 默认入口及三项数据基线读回匹配；磁盘策略 a1152f33…、加载 1f4f9aef…/2,153,184 bytes 保持，静态宽松域空，KSU 动态例外仅 ksu。有限记录 uptime 12.54–192.71 秒、32 样本均 E，核心 PID 观测变化0次；一次读取/响应失败后恢复。机主本轮桌面、指纹、相机功能反馈仍待答，不能用自动读回冒称手动或全硬件验收。
+
+有限缓冲与 observer 共保留117条唯一 AVC 行，含电话服务属性探针、MTD 的 DAC 能力尝试、诊断 shell 读蓝牙属性等，受缓冲/审计/窗口限制；未采到 audit_lost 数值，不记零丢失。不代表117个功能故障或零剩余问题。后续应结合通信/蓝牙/相机等真实异常定位必要访问，不能整体放开 default 属性、DAC 能力或一般服务枚举。长时使用、断电冷启动、真实 OTA/Store 恢复仍未验收。
+
+首次 postboot01 在普通 shell 读取 bluetooth_prop 时被 E 正常阻止；922 root 复读实际 true 且蓝牙 HAL running。postboot-read02 仅将10处受保护属性的只读检查改用已有 root，未改手机权限/策略，最终 exit0。原失败、921日志解码错误及913过早 USB 枚举停止均保留；没有重复写分区、重启或切模式。
+
+私有运行归档两端45项/3,003,896 bytes/SHA 9d9b051ededb12538437b3cec3eef91d946047dff5a7c9b01d2a1010f60a734a 一致。所有本轮有限采集与读回已结束；手机无需为本轮继续接 USB。组件及原 P 两项回退在双端 delivery/ishtar-selinux-enforcing-boot-candidate-20261019-01，原完整 P ROM 与 Recovery 保留，B槽不是完整 ROM 回退。Git仅保存源码/脱敏摘要，镜像、原始日志、加载策略不入 Git。Ubuntu其他任务未调整。刷入与首次重启授权已用完，不自动额外重启、再切模式或做OTA。下方准备/验证中记载为历史。
+
+
 ## 1792357362 开机Enforcing组件已准备核验，待机主重启前确认（最新）
 
 本轮按“开始第一步，重启之前喊我”完成主机源码与组件准备，没有操作手机。当前活动入口enforcing-boot control/expected-source-files.json共104项；只改BoardConfig1路径，SHA252a3577…，明确bootconfig androidboot.selinux=enforcing与vendor cmdline enforcing=1。增量vendorbootimage已6:39/exit0；CPU4–7/Ninja4/nice15/I/O7，无GPU，构建进程退出、锁空闲，未调整其他Ubuntu任务。

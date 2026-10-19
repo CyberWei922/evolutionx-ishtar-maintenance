@@ -1,5 +1,5 @@
 {
-  "status": "BOOT_ENFORCING_COMPONENT_READY_NOT_INSTALLED",
+  "status": "FIRST_NORMAL_BOOT_ENFORCING_AUTOMATIC_VERIFICATION_PASSED",
   "baseline_plan": "plans/selinux-backuptool-final-20261019",
   "baseline_incremental": "1792357362",
   "source_files": 104,
@@ -16,11 +16,15 @@
   ],
   "scripts_are_original_maintenance_recipes": "Apache-2.0",
   "avb_dependency": "external/avb pinned by existing Android manifest; not bundled",
-  "phone_installed": false,
-  "enforcing_boot_tested": false,
+  "phone_installed": true,
+  "enforcing_boot_tested": true,
   "reboot_authorized": false,
   "rom_images_keys_and_raw_logs_not_in_git": true,
   "git_patch_uses_zero_context_to_avoid_patch_context_blank_line_whitespace_check": true,
   "git_patch_applies_to_exact_baseline_and_matches_compiled_source": true,
-  "delivery_patch_retains_standard_context_and_is_unchanged": true
+  "delivery_patch_retains_standard_context_and_is_unchanged": true,
+  "first_normal_reboot_tested": true,
+  "power_off_cold_start_tested": false,
+  "owner_functional_acceptance_pending": true,
+  "flash_and_first_reboot_authorization_consumed": true
 }

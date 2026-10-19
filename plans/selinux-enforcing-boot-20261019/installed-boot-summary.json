@@ -1,0 +1,44 @@
+{
+  "state": "FIRST_NORMAL_BOOT_ENFORCING_AUTOMATIC_VERIFICATION_PASSED",
+  "incremental": "1792357362",
+  "slot": "a",
+  "selinux_mode": "Enforcing",
+  "selinux_enforce": 1,
+  "static_permissive_domains": [],
+  "loaded_permissive_domains": [
+    "ksu"
+  ],
+  "disk_policy_sha256": "a1152f338c5f9f012206e166aadbc7eb280c4b6fd0725ee2eaaa48e5cead283f",
+  "loaded_policy": {
+    "bytes": 2153184,
+    "sha256": "1f4f9aef3bcadf98783426c0eef00d8042330c02781ef094e241f7f6c7337709"
+  },
+  "native_files_verified": 61,
+  "partition_ranges_verified": 21,
+  "data_baseline_matches": {
+    "media_directory_stat": true,
+    "user_xml_owner_mode": true,
+    "third_party_package_count": true
+  },
+  "miui_default_routes": 6,
+  "first_uptime": 12.54,
+  "last_uptime": 192.71,
+  "samples": 32,
+  "critical_pid_changes": [],
+  "transport_failures": 1,
+  "unique_avc_lines": 117,
+  "audit_lost_max": null,
+  "audit_coverage_limited": true,
+  "runtime_setenforce_used": false,
+  "permissive_rollback_used": false,
+  "first_normal_reboot_tested": true,
+  "power_off_cold_start_tested": false,
+  "real_ota_tested": false,
+  "owner_functional_acceptance_pending": true,
+  "own_finite_workers_finished": true,
+  "other_ubuntu_tasks_changed": false,
+  "wire_sha256": "2b96c5373776f7817d3bb706c9708881456e38865025191f8a53a19f22b0a03e",
+  "readback_checker_first_attempt_stopped_on_shell_property_restriction": true,
+  "readback_checker_root_property_fix_only": true,
+  "finished": 1792386268.913948
+}
