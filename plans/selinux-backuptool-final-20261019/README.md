@@ -1,5 +1,7 @@
 # Backuptool 暂存与离线恢复
 
+已安装 **1792357362 / Permissive**：61文件/21分区范围、实际策略与执行标签读回通过；静态宽松域为0，加载仅动态ksu。机主桌面/应用照片验收待回复。见[安装结果](installed-readback-summary.json)及[有限启动观察](early-boot-observation-summary.json)。未做Enforcing/冷启动Enforcing或真实OTA，以下候选构建描述为历史。
+
 本批基线1792347689，104项活动输入/19路径修改。完整候选 **1792357362** 已编译并通过实际镜像检查，尚未安装，全局仍Permissive，静态宽松域为0。见[整包摘要](rom-build-summary.json)及[双端归档](rom-archive-summary.json)。
 
 ## 修改

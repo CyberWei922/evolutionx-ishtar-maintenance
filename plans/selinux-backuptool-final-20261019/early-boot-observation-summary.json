@@ -1,0 +1,47 @@
+{
+  "state": "complete",
+  "first_observed_uptime": 12.22,
+  "last_observed_uptime": 186.88,
+  "boot_completed_seen": true,
+  "retained_security_lines": {
+    "kernel": 26,
+    "logcat": 481
+  },
+  "stream_bytes": {
+    "kernel": 4546,
+    "logcat": 147705
+  },
+  "streams_capped": {
+    "kernel": false,
+    "logcat": false
+  },
+  "logs_claimed_complete": false,
+  "coverage_limit": "ADB/root availability, ring-buffer retention, audit rate limiting, stream caps and finite observation window; no zero-denial guarantee.",
+  "samples": 31,
+  "observed_critical_pid_change_count": 0,
+  "transport_failure_count": 0,
+  "all_finite_observers_finished": true,
+  "combined_buffered_security_observations": {
+    "unique_retained_avc_lines": 1247,
+    "avc_source_domains": {
+      "hal_camera_default": 1181,
+      "shell": 15,
+      "hal_fingerprint_default": 12,
+      "rild": 12,
+      "hal_audio_default": 4,
+      "priv_app": 4,
+      "hal_sensors_default": 4,
+      "hal_secure_element_default": 4,
+      "vendor_qti_init_shell": 3,
+      "vendor_init": 2,
+      "vendor_modprobe": 2,
+      "toolbox": 2,
+      "vendor_mtd": 1,
+      "system_server": 1
+    },
+    "audit_lost_max": 613,
+    "not_a_complete_denial_inventory": true
+  },
+  "buffered_snapshots_are_not_confined_to_sampled_uptime": true,
+  "denial_count_is_not_bug_count_or_completion_percentage": true
+}

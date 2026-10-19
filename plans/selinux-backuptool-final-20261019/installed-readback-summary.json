@@ -1,0 +1,80 @@
+{
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_PASSED_OWNER_DESKTOP_DATA_PENDING",
+  "baseline_incremental": "1792347689",
+  "installed_incremental": "1792357362",
+  "phone_installed": true,
+  "rom": {
+    "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip",
+    "bytes": 4545237136,
+    "sha256": "a2c7945bcd847a9109c409313d13723e55d2d148d00701c29c7f4b53eea48ebc"
+  },
+  "source_files": 104,
+  "new_changed_paths": 19,
+  "mode": "Permissive",
+  "enforce": "0",
+  "static_permissive_domains": [],
+  "loaded_permissive_domains": [
+    "ksu"
+  ],
+  "policy_sha256": "a1152f338c5f9f012206e166aadbc7eb280c4b6fd0725ee2eaaa48e5cead283f",
+  "loaded_policy": {
+    "bytes": 2153184,
+    "sha256": "1f4f9aef3bcadf98783426c0eef00d8042330c02781ef094e241f7f6c7337709"
+  },
+  "kernel_su_dynamic_exception_preserved": true,
+  "native_file_readbacks": 61,
+  "partition_range_readbacks": 21,
+  "retained_loaded_contracts": 7,
+  "broker_loaded_contracts": 11,
+  "new_executable_labels_and_owners_verified": true,
+  "command_attempts": 164,
+  "command_retries": 0,
+  "data_baseline_matches": {
+    "media_directory_stat": true,
+    "user_xml_owner_mode": true,
+    "third_party_package_count": true
+  },
+  "all_six_miui_default_routes_match": true,
+  "miui_domain_seen_in_initial_snapshot": false,
+  "runtime_dsp_hal_fallback_proven": false,
+  "wire_audit": {
+    "state": "write-transcript-verified",
+    "at": "2026-10-19T11:37:48.893408+08:00",
+    "completed_operations": 74,
+    "super_chunks": 59,
+    "boot_writes": 14,
+    "slot": "a",
+    "userdata_metadata_operations": 0,
+    "firmware_writes": 0,
+    "all_download_sizes_match": true,
+    "data_complete_count": 73,
+    "wire_sha256": "8eb16b2e3aa510319b4b67a2e80f04fc9686e0d1c72adbbb9ddd1331390909b2",
+    "reboot_acknowledged": false
+  },
+  "normal_reboot_acknowledged": true,
+  "runtime_archive": {
+    "state": "PRIVATE_RUNTIME_BOTH_HOSTS_MATCH",
+    "incremental": "1792357362",
+    "files": 30,
+    "archive_bytes": 1530140,
+    "archive_sha256": "ab0466a40732b63128662c5a029eb4f8e2e8d652540e70de4c32a655f79835bc",
+    "raw_logs_and_policy_are_private": true,
+    "phone_accessed": false
+  },
+  "owner_desktop_and_data_confirmed": false,
+  "owner_acceptance_scope": null,
+  "new_owner_hardware_acceptance_claimed": false,
+  "enforcing_trial_performed": false,
+  "cold_boot_enforcing_tested": false,
+  "actual_ota_performed": false,
+  "broker_execution_via_real_ota_tested": false,
+  "whole_ota_signature_independently_verified": false,
+  "flash_and_first_normal_reboot_authorization_consumed": true,
+  "additional_reboot_or_enforcing_authorized": false,
+  "all_own_build_flash_and_readback_workers_finished": true,
+  "other_tasks_changed": false,
+  "completed_flash_staging_deleted": false,
+  "old_formal_roms_deleted": false,
+  "rom_build_summary_describes_prior_static_phase": true,
+  "monitor_failure_preserved": "848 status read caller timeout; fresh849 instant status read. Flash/preparation not retried."
+}

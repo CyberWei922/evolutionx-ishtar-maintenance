@@ -1,14 +1,12 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
-新候选 **1792357362 / Permissive** 已完整打包并通过实际镜像检查，静态宽松域为0，**尚未安装**。包含Backuptool暂存、受控worker及离线标签恢复；220项主机场景通过，Enforcing实机/冷启动和真实OTA仍待验证。见[修复与打包记录](plans/selinux-backuptool-final-20261019/README.md)。
-
-最新安装 **1792347689 / Permissive**：94项输入、10路径Backuptool原生挂载代理及旧升级入口兼容修复。已保留数据刷入并正常启动，57文件/21分区范围及实际策略/标签读回通过；机主反馈日常使用功能正常、体感更流畅；应用/照片保留未单独明确确认。未做真实OTA或Enforcing测试。见[代理修复与安装结果](plans/selinux-backuptool-broker-20261019/README.md)。
+最新安装 **1792357362 / Permissive**：104项输入/19路径Backuptool暂存与离线恢复修复，保留数据正常启动，61文件/21分区范围及策略、标签读回通过。静态宽松域为0，加载仅动态ksu；机主桌面/应用照片验收待回复。未做Enforcing或真实OTA。见[安装记录](plans/selinux-backuptool-final-20261019/README.md)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**
 
 ## 当前版本
 
-当前已安装Unofficial incremental **1792347689**，全局仍为 **Permissive**。新代理已入实际system并读回执行标签，静态backuptool及动态ksu例外保持。剩余inactive路径隔离、持久标签/security xattr、精确权限、V3/EROFS及optional OTA处理；真实OTA/Enforcing运行和冷启动均未验收。
+当前已安装Unofficial incremental **1792357362**，全局仍为 **Permissive**。Backuptool最后静态宽松声明已从实际安装策略移除，实际加载仅KSU动态例外；Enforcing运行、冷启动与真实OTA仍未验收。
 
 camera03、MIUI默认入口、Recovery触控、自动亮度平滑、开机刷新率修复以及后续已安装SELinux增量完整保留。原accepted源码清单和验收标签仍描述1792226532；当前工作树由它叠加各累计计划复现。详见`docs/CURRENT_STATE.md`及各plan实际状态，不把旧未安装快照当最新结果。
 
@@ -23,7 +21,7 @@ camera03、MIUI默认入口、Recovery触控、自动亮度平滑、开机刷新
 - `artifacts/`、`provenance/`：二进制/外部文本的路径、尺寸、SHA和构建基线，不含其载荷。
 - `docs/`、`releases/`：版本、验收范围、依赖和后续修复方案。
 
-完整Android基线、原厂依赖、MIUI APK、Recovery镜像、Google软件、ROM及签名材料单独保存；**克隆本仓库不能直接编译完整ROM，也不代表全部ROM组件已获再分发授权。** 当前1792347689 ROM SHA256为`32df7de2c2648c2ed01b96bb2ffc42fa93f9e79ff3404b4db87ff3967590ff0a`，正式ROM保存在Ubuntu；上一1792339544及1792333073回退ROM保留。Mac仅薄交接和私有运行证据，Git仅存许可明确的维护源码与摘要。
+完整Android基线、原厂依赖、MIUI APK、Recovery镜像、Google软件、ROM及签名材料单独保存；**克隆本仓库不能直接编译完整ROM，也不代表全部ROM组件已获再分发授权。** 当前1792357362 ROM SHA256为`a2c7945bcd847a9109c409313d13723e55d2d148d00701c29c7f4b53eea48ebc`，正式ROM保存在Ubuntu；上一1792347689及1792339544回退ROM保留。Mac仅薄交接和私有运行证据，Git仅存许可明确的维护源码与摘要。
 
 ## 本次许可整理
 

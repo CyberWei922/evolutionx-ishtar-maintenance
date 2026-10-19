@@ -1,5 +1,5 @@
 {
-  "status": "FULL_PERMISSIVE_CANDIDATE_COMPILED_STATICALLY_VERIFIED_NOT_INSTALLED",
+  "status": "INSTALLED_BOOTED_AUTOMATED_READBACK_PASSED_OWNER_DESKTOP_DATA_PENDING",
   "baseline_incremental": "1792347689",
   "source_files": 104,
   "changed_paths": 19,
@@ -234,7 +234,7 @@
     }
   ],
   "patch_applies_to_exact_baseline": true,
-  "phone_installed": false,
+  "phone_installed": true,
   "global_candidate_mode": "Permissive",
   "static_permissive_domains": [],
   "flash_reboot_enforcing_authorized": false,
@@ -249,5 +249,19 @@
     "file": "EvolutionX-16.0-20261019-ishtar-11.12-Unofficial.zip",
     "bytes": 4545237136,
     "sha256": "a2c7945bcd847a9109c409313d13723e55d2d148d00701c29c7f4b53eea48ebc"
-  }
+  },
+  "installed_incremental": "1792357362",
+  "loaded_policy": {
+    "bytes": 2153184,
+    "sha256": "1f4f9aef3bcadf98783426c0eef00d8042330c02781ef094e241f7f6c7337709"
+  },
+  "loaded_permissive_domains": [
+    "ksu"
+  ],
+  "owner_desktop_and_data_confirmed": false,
+  "flash_and_first_normal_reboot_authorization_consumed": true,
+  "additional_reboot_or_enforcing_authorized": false,
+  "enforcing_trial_performed": false,
+  "cold_boot_enforcing_tested": false,
+  "actual_ota_performed": false
 }
