@@ -1,12 +1,12 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
-最新安装 **1792357362 / Permissive**：104项输入/19路径Backuptool暂存与离线恢复修复，保留数据正常启动，61文件/21分区范围及策略、标签读回通过。静态宽松域为0，加载仅动态ksu；机主随后回复“没问题 一切正常”，桌面、原有应用和照片及日常使用验收通过。未做Enforcing或真实OTA。见[安装记录](plans/selinux-backuptool-final-20261019/README.md)。
+当前安装 **1792357362**：保留数据安装/61文件与21分区范围读回通过，机主日常使用验收通过。**短时Enforcing及指定指纹/桌面/MIUI功能测试通过，独立guard实际自动恢复Permissive**；19个E样本跨度26.5秒。静态宽松域0，加载仅动态ksu。开机模式未变，Enforcing启动及真实OTA尚未验证。见[本版记录](plans/selinux-backuptool-final-20261019/README.md)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**
 
 ## 当前版本
 
-当前已安装Unofficial incremental **1792357362**，全局仍为 **Permissive**。Backuptool最后静态宽松声明已从实际安装策略移除，实际加载仅KSU动态例外；Enforcing运行、冷启动与真实OTA仍未验收。
+当前已安装Unofficial incremental **1792357362**，全局仍为 **Permissive**。Backuptool最后静态宽松声明已从实际安装策略移除，实际加载仅KSU动态例外；短时Enforcing运行及指定功能验收通过，Enforcing冷启动、长时间运行与真实OTA仍未验收。
 
 camera03、MIUI默认入口、Recovery触控、自动亮度平滑、开机刷新率修复以及后续已安装SELinux增量完整保留。原accepted源码清单和验收标签仍描述1792226532；当前工作树由它叠加各累计计划复现。详见`docs/CURRENT_STATE.md`及各plan实际状态，不把旧未安装快照当最新结果。
 

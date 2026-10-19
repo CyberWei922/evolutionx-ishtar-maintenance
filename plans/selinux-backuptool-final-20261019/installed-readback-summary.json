@@ -64,7 +64,7 @@
   "owner_desktop_and_data_confirmed": true,
   "owner_acceptance_scope": "Owner replies all normal to previous desktop/original apps/photos confirmation. General use accepted; no new itemized full hardware suite or Enforcing validation claimed.",
   "new_owner_hardware_acceptance_claimed": false,
-  "enforcing_trial_performed": false,
+  "enforcing_trial_performed": true,
   "cold_boot_enforcing_tested": false,
   "actual_ota_performed": false,
   "broker_execution_via_real_ota_tested": false,
@@ -79,5 +79,10 @@
   "monitor_failure_preserved": "848 status read caller timeout; fresh849 instant status read. Flash/preparation not retried.",
   "owner_reports_no_functional_issues": true,
   "owner_acceptance_file": "owner-desktop-data-acceptance.json",
-  "enforcing_readiness_review": "enforcing-readiness-review.json"
+  "enforcing_readiness_review": "enforcing-readiness-review.json",
+  "initial_postboot_readback_phase_was_permissive_only": true,
+  "subsequent_bounded_runtime_enforcing_passed": true,
+  "runtime_trial_summary": "runtime-enforcing-trial-summary.json",
+  "current_mode": "Permissive",
+  "persistent_boot_mode_changed": false
 }

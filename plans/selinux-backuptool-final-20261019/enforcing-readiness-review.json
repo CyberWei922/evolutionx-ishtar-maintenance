@@ -1,5 +1,5 @@
 {
-  "state": "READY_FOR_GUARDED_RUNTIME_ENFORCING_VALIDATION_NOT_PROVEN_FOR_ENFORCING_BOOT",
+  "state": "BOUNDED_RUNTIME_ENFORCING_VALIDATED_BOOT_NOT_YET_VALIDATED",
   "incremental": "1792357362",
   "basis": "Archived 1792357362 runtime evidence and new owner feedback; no new phone access.",
   "global_last_verified_mode": "Permissive",
@@ -19,10 +19,13 @@
   ],
   "functional_necessity_of_each_remaining_denial_not_proven": true,
   "all_audit_denials_resolved": false,
-  "enforcing_runtime_on_this_candidate_tested": false,
+  "enforcing_runtime_on_this_candidate_tested": true,
   "enforcing_boot_tested": false,
   "real_ota_and_native_restore_tested": false,
-  "recommended_next_step": "Fresh preflight and independently verified rollback guard, then explicitly authorized temporary Enforcing runtime validation on installed build, without recompilation or flashing. If successful, prepare boot-Enforcing candidate and recovery path for separately authorized boot validation.",
+  "recommended_next_step": "Prepare recovery path and boot-Enforcing candidate, followed by separately authorized boot validation. Bounded runtime trial does not prove boot/long-term or actual OTA behavior.",
   "new_mode_switch_or_reboot_authorized": false,
-  "phone_accessed_this_turn": false
+  "phone_accessed_this_turn": false,
+  "enforcing_runtime_specified_functions_passed": true,
+  "guard_independent_actual_enforcing_to_permissive_restore_verified": true,
+  "runtime_enforcing_summary": "runtime-enforcing-trial-summary.json"
 }

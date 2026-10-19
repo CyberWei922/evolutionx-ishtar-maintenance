@@ -261,11 +261,16 @@
   "owner_desktop_and_data_confirmed": true,
   "flash_and_first_normal_reboot_authorization_consumed": true,
   "additional_reboot_or_enforcing_authorized": false,
-  "enforcing_trial_performed": false,
+  "enforcing_trial_performed": true,
   "cold_boot_enforcing_tested": false,
   "actual_ota_performed": false,
   "owner_reports_no_functional_issues": true,
   "owner_acceptance_file": "plans/selinux-backuptool-final-20261019/owner-desktop-data-acceptance.json",
-  "enforcing_runtime_on_current_candidate_tested": false,
-  "enforcing_boot_tested": false
+  "enforcing_runtime_on_current_candidate_tested": true,
+  "enforcing_boot_tested": false,
+  "bounded_runtime_enforcing_and_specified_functions_passed": true,
+  "independent_guard_actual_restore_verified": true,
+  "current_mode": "Permissive",
+  "persistent_boot_mode_changed": false,
+  "runtime_trial_summary": "plans/selinux-backuptool-final-20261019/runtime-enforcing-trial-summary.json"
 }
