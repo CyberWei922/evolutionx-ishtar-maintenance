@@ -1,5 +1,7 @@
 # Evolution X · Xiaomi 13 Ultra (ishtar) maintenance
 
+当前相机状态：**清刷后发生过多摄初始化不完整，单次Enforcing正常重启后恢复，机主指定镜头测试正常；首次初始化可靠性问题仍未关闭**。没有改策略或重新打包。详见[相机回归与恢复记录](plans/camera-multisensor-regression-20261019/README.md)。
+
 当前：**1792357362 完整 Enforcing 包已 clean flash，首次设置和桌面、实际 Enforcing1 读回通过**。干净初始化关键功能机主验收待补充；详见[完整包和清刷记录](plans/selinux-enforcing-final-20261019/README.md)。
 
 小米13 Ultra / ishtar，Evolution X Android 16个人维护源码。**这是混合许可证的维护增量仓库，不是完整Android源码或ROM编译结果。**

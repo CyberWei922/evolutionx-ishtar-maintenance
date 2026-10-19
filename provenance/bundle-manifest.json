@@ -6,8 +6,8 @@
       "sha256": "c5a4ba73792960fef0d78292e8cc196da9ba38f7017c41bc05f907a5cc701429"
     },
     "AGENTS.md": {
-      "bytes": 51045,
-      "sha256": "a50f39009eefa4a1dcda47c41cc055746f5be0b47cdf92c128775894e692187a"
+      "bytes": 52769,
+      "sha256": "f1dcd21ba365a2eba8532d27cb36698b5b5f236febe8186aaba1107e0aca586f"
     },
     "LICENSE.md": {
       "bytes": 2453,
@@ -18,8 +18,8 @@
       "sha256": "bbd12193dbabaa68babbbd6505d3aff32fa3721fc67eef67e0c09ebfc02a8a94"
     },
     "README.md": {
-      "bytes": 3431,
-      "sha256": "a05d268b5b09541ca9bf5d1e9a4048d9f889dd82e530b638a6c38cdc422b2eaf"
+      "bytes": 3747,
+      "sha256": "77761a09583e87c50f5eba1d03b38f441a07418f90ffb9760ebe592b323c9740"
     },
     "artifacts/binary-dependencies.json": {
       "bytes": 512228,
@@ -62,8 +62,8 @@
       "sha256": "6fdeb46074be12b6958b68860535be431b3991e58699392b0195d9e83c141d88"
     },
     "docs/CURRENT_STATE.md": {
-      "bytes": 67426,
-      "sha256": "271a87d23f86e1355a8107d34174d78bc2e0a7bbd6efbf1b9845b4dcb9718590"
+      "bytes": 69150,
+      "sha256": "a993fbf81a73466e5eb6fdfda027e08e564d300ea93a46dc20772359060542e2"
     },
     "docs/DIRECTORY_LAYOUT.md": {
       "bytes": 793,
@@ -212,6 +212,14 @@
     "patches/vendor__lineage.patch": {
       "bytes": 1068,
       "sha256": "7ceb5d64ea7cae6a59a1c0f5d445177d3f3877e1bb19ee7ac4f25fd2afb647fb"
+    },
+    "plans/camera-multisensor-regression-20261019/README.md": {
+      "bytes": 2000,
+      "sha256": "f0b70ff4984385290efe997716fe115a711035191f0940e17e024ef953c71838"
+    },
+    "plans/camera-multisensor-regression-20261019/recovery-summary.json": {
+      "bytes": 1972,
+      "sha256": "24854e4462bbc53867fa345004b7ca10639b9f2aaabe60c36bf4eb18cdca707f"
     },
     "plans/selinux-backuptool-broker-20261019/README.md": {
       "bytes": 4396,
@@ -1898,8 +1906,8 @@
       "sha256": "60e01b7d7a00723aef2af9f6e30ade1220a6c04f718c7aa4509ff35dd8ae9cf3"
     },
     "provenance/enforcing-final-package.json": {
-      "bytes": 736,
-      "sha256": "77a44dabb85e91b5506b3f4ebb7e91b3108774615e621afb7be6223fe7a9c7c7"
+      "bytes": 963,
+      "sha256": "a2b4aa2a13d538cc2be8de86d991e22ce3b38c8584793af4cca27610c0697a25"
     },
     "provenance/enforcing-prep-source-files.json": {
       "bytes": 4539,
