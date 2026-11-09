@@ -1,0 +1,140 @@
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/ActivatableNotificationView.java b/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/ActivatableNotificationView.java
+index 1edb3d79b..866ca8e4e 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/ActivatableNotificationView.java
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/ActivatableNotificationView.java
+@@ -209,6 +209,14 @@ public abstract class ActivatableNotificationView extends ExpandableOutlineView
+         updateOutlineAlpha();
+     }
+ 
++    @Override
++    protected void onAttachedToWindow() {
++        super.onAttachedToWindow();
++        // Notifications are inflated on a worker thread, so defer this UiThread-only update
++        // until the row has moved to the main thread and is attached to its window.
++        mBackgroundNormal.setBlurBackgroundEnabled(usesBlurredBackground());
++    }
++
+     /**
+      * Sets the custom background on {@link #mBackgroundNormal}
+      * This method can also be used to reload the backgrounds on both of those views, which can
+@@ -216,7 +224,6 @@ public abstract class ActivatableNotificationView extends ExpandableOutlineView
+      */
+     protected void initBackground() {
+         mBackgroundNormal.setCustomBackground(R.drawable.notification_material_bg);
+-        mBackgroundNormal.setBlurBackgroundEnabled(usesBlurredBackground());
+     }
+ 
+     protected boolean hideBackground() {
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/NotificationBackgroundView.java b/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/NotificationBackgroundView.java
+index a4c71815a..4716f1c33 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/NotificationBackgroundView.java
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/NotificationBackgroundView.java
+@@ -31,6 +31,7 @@ import android.graphics.drawable.LayerDrawable;
+ import android.graphics.drawable.RippleDrawable;
+ import android.util.AttributeSet;
+ import android.view.View;
++import android.view.ViewTreeObserver;
+ 
+ import androidx.annotation.NonNull;
+ import androidx.annotation.Nullable;
+@@ -80,6 +81,60 @@ public class NotificationBackgroundView extends View implements Dumpable,
+     private final int convexR = 9;
+     private final int concaveR = 22;
+     private BackgroundBlurDrawable mBackgroundBlurDrawable;
++    private final ViewTreeObserver.OnPreDrawListener mBlurAlphaListener = () -> {
++        syncBlurAlpha();
++        return true;
++    };
++
++    /**
++     * SurfaceFlinger composites blur regions with the drawable's alpha, independently of the
++     * RenderNode's alpha. Include the host and ancestor fade so a disappearing shelf cannot leave
++     * an opaque blur region behind after the shade's fullscreen blur has gone.
++     */
++    private void syncBlurAlpha() {
++        if (mBackgroundBlurDrawable == null) {
++            return;
++        }
++        float alpha = mBackground != null ? mBackground.getAlpha() : mDrawableAlpha;
++        final int clipTop = Math.max(mClipTopAmount, mTopOverlap);
++        final int clipBottom = Math.max(mClipBottomAmount, mBottomOverlap);
++        if (!isAttachedToWindow() || !isShown() || getWindowVisibility() != VISIBLE
++                || (!mExpandAnimationRunning && clipTop + clipBottom >= getActualHeight())) {
++            alpha = 0f;
++        }
++        View view = this;
++        while (view != null && alpha > 0f) {
++            alpha *= view.getAlpha() * view.getTransitionAlpha();
++            view = view.getParent() instanceof View ? (View) view.getParent() : null;
++        }
++        final int blurAlpha = Math.round(Math.max(0f, Math.min(255f, alpha)));
++        if (mBackgroundBlurDrawable.getAlpha() != blurAlpha) {
++            mBackgroundBlurDrawable.setAlpha(blurAlpha);
++        }
++    }
++
++    @Override
++    protected void onAttachedToWindow() {
++        super.onAttachedToWindow();
++        getViewTreeObserver().addOnPreDrawListener(mBlurAlphaListener);
++        syncBlurAlpha();
++    }
++
++    @Override
++    protected void onDetachedFromWindow() {
++        getViewTreeObserver().removeOnPreDrawListener(mBlurAlphaListener);
++        if (mBackgroundBlurDrawable != null) {
++            mBackgroundBlurDrawable.setAlpha(0);
++        }
++        super.onDetachedFromWindow();
++    }
++
++    @Override
++    public void onVisibilityAggregated(boolean isVisible) {
++        super.onVisibilityAggregated(isVisible);
++        syncBlurAlpha();
++    }
++
+     @VisibleForTesting
+     protected View.OnAttachStateChangeListener mOnAttachStateChangeListener;
+ 
+@@ -366,6 +421,7 @@ public class NotificationBackgroundView extends View implements Dumpable,
+                                 mBackgroundBlurDrawable.setColor(mNormalColor);
+ 
+                                 updateBackgroundRadii();
++                                syncBlurAlpha();
+                                 invalidate();
+                             }
+                             NotificationBackgroundView.this.removeOnAttachStateChangeListener(this);
+@@ -386,6 +442,7 @@ public class NotificationBackgroundView extends View implements Dumpable,
+                 mOnAttachStateChangeListener = null;
+             }
+             if (mBackgroundBlurDrawable != null) {
++                mBackgroundBlurDrawable.setAlpha(0);
+                 mBackgroundBlurDrawable.setCallback(null);
+             }
+             mBackgroundBlurDrawable = null;
+@@ -508,7 +565,7 @@ public class NotificationBackgroundView extends View implements Dumpable,
+         }
+         mBackground.setAlpha(drawableAlpha);
+         if (mBackgroundBlurDrawable != null) {
+-            mBackgroundBlurDrawable.setAlpha(drawableAlpha);
++            syncBlurAlpha();
+         }
+     }
+ 
+diff --git a/services/core/java/com/android/server/pm/AppsFilterBase.java b/services/core/java/com/android/server/pm/AppsFilterBase.java
+index 02e7af441..284ab4a8b 100644
+--- a/services/core/java/com/android/server/pm/AppsFilterBase.java
++++ b/services/core/java/com/android/server/pm/AppsFilterBase.java
+@@ -402,6 +402,10 @@ public abstract class AppsFilterBase implements AppsFilterSnapshot {
+         if (!isHiddenPackage(targetPackageName)) {
+             return false;
+         }
++        // Package hiding must not prevent an app from resolving its own components.
++        if (snapshot.isCallerSameApp(targetPackageName, callingUid)) {
++            return false;
++        }
+         final int callingAppId = UserHandle.getAppId(callingUid);
+         if (callingAppId < Process.FIRST_APPLICATION_UID) {
+             return false;

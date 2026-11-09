@@ -1,0 +1,125 @@
+diff --git a/src/java/com/android/internal/telephony/ServiceStateTracker.java b/src/java/com/android/internal/telephony/ServiceStateTracker.java
+index f2e4fad..d77bd2b 100644
+--- a/src/java/com/android/internal/telephony/ServiceStateTracker.java
++++ b/src/java/com/android/internal/telephony/ServiceStateTracker.java
+@@ -121,6 +121,7 @@ import java.io.FileDescriptor;
+ import java.io.PrintWriter;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.RetentionPolicy;
++import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Collections;
+ import java.util.Comparator;
+@@ -1539,6 +1540,7 @@ public class ServiceStateTracker extends Handler {
+                 ar = (AsyncResult) msg.obj;
+                 if (ar.exception == null) {
+                     List<PhysicalChannelConfig> list = (List<PhysicalChannelConfig>) ar.result;
++                    list = completeLtePhysicalChannelConfigs(list, mSS);
+                     if (VDBG) {
+                         log("EVENT_PHYSICAL_CHANNEL_CONFIG: list=" + list
+                                 + (list == null ? "" : ", list.size()=" + list.size()));
+@@ -1704,6 +1706,87 @@ public class ServiceStateTracker extends Handler {
+         }
+     }
+ 
++    /**
++     * Complete only the primary LTE channel metadata that some vendor HALs leave as unknown.
++     * CellIdentityLte is accepted as the fallback solely when its PCI identifies the same
++     * primary cell. Secondary carriers and every other radio type remain untouched.
++     */
++    private List<PhysicalChannelConfig> completeLtePhysicalChannelConfigs(
++            List<PhysicalChannelConfig> configs, ServiceState ss) {
++        if (configs == null || configs.isEmpty() || ss == null) {
++            return configs;
++        }
++        NetworkRegistrationInfo regInfo = ss.getNetworkRegistrationInfo(
++                NetworkRegistrationInfo.DOMAIN_PS,
++                AccessNetworkConstants.TRANSPORT_TYPE_WWAN);
++        CellIdentity cellIdentity = regInfo == null ? null : regInfo.getCellIdentity();
++        if (!(cellIdentity instanceof CellIdentityLte)) {
++            return configs;
++        }
++        CellIdentityLte lteIdentity = (CellIdentityLte) cellIdentity;
++        int primaryPci = lteIdentity.getPci();
++        if (primaryPci == PhysicalChannelConfig.PHYSICAL_CELL_ID_UNKNOWN) {
++            return configs;
++        }
++
++        int fallbackBand = PhysicalChannelConfig.BAND_UNKNOWN;
++        int[] bands = lteIdentity.getBands();
++        if (bands != null) {
++            for (int band : bands) {
++                if (band <= PhysicalChannelConfig.BAND_UNKNOWN) {
++                    continue;
++                }
++                if (fallbackBand != PhysicalChannelConfig.BAND_UNKNOWN) {
++                    fallbackBand = PhysicalChannelConfig.BAND_UNKNOWN;
++                    break;
++                }
++                fallbackBand = band;
++            }
++        }
++        int fallbackChannel = lteIdentity.getEarfcn();
++        boolean changed = false;
++        List<PhysicalChannelConfig> completed = new ArrayList<>(configs.size());
++        for (PhysicalChannelConfig config : configs) {
++            if (config == null
++                    || config.getConnectionStatus()
++                    != PhysicalChannelConfig.CONNECTION_PRIMARY_SERVING
++                    || config.getNetworkType() != TelephonyManager.NETWORK_TYPE_LTE
++                    || config.getPhysicalCellId() != primaryPci) {
++                completed.add(config);
++                continue;
++            }
++
++            int configBand = config.getBand();
++            int configChannel = config.getDownlinkChannelNumber();
++            boolean needsBand = configBand == PhysicalChannelConfig.BAND_UNKNOWN
++                    && fallbackBand != PhysicalChannelConfig.BAND_UNKNOWN;
++            boolean needsChannel = (configChannel <= 0
++                    || configChannel == PhysicalChannelConfig.CHANNEL_NUMBER_UNKNOWN)
++                    && fallbackChannel > 0
++                    && fallbackChannel != PhysicalChannelConfig.CHANNEL_NUMBER_UNKNOWN;
++            if (!needsBand && !needsChannel) {
++                completed.add(config);
++                continue;
++            }
++
++            PhysicalChannelConfig.Builder builder = new PhysicalChannelConfig.Builder(config);
++            if (needsBand) {
++                builder.setBand(fallbackBand);
++            }
++            if (needsChannel) {
++                builder.setDownlinkChannelNumber(fallbackChannel);
++            }
++            completed.add(builder.build());
++            changed = true;
++        }
++        if (!changed) {
++            return configs;
++        }
++        log("Completed primary LTE PhysicalChannelConfig from matching CellIdentityLte: band="
++                + fallbackBand + ", earfcn=" + fallbackChannel + ", pci=" + primaryPci);
++        return completed;
++    }
++
+     private boolean updateNrFrequencyRangeFromPhysicalChannelConfigs(
+             List<PhysicalChannelConfig> physicalChannelConfigs, ServiceState ss) {
+         int newFrequencyRange = ServiceState.FREQUENCY_RANGE_UNKNOWN;
+@@ -2936,6 +3019,16 @@ public class ServiceStateTracker extends Handler {
+         useDataRegStateForDataOnlyDevices();
+         processIwlanRegistrationInfo();
+ 
++        // Vendor RILs may report the primary PhysicalChannelConfig before the polled
++        // ServiceState contains the matching LTE CellIdentity. Re-evaluate the cached
++        // config after this poll and publish only if an actual field was completed.
++        List<PhysicalChannelConfig> completedConfigs =
++                completeLtePhysicalChannelConfigs(mLastPhysicalChannelConfigList, mNewSS);
++        if (completedConfigs != mLastPhysicalChannelConfigList) {
++            mLastPhysicalChannelConfigList = completedConfigs;
++            mPhone.notifyPhysicalChannelConfig(completedConfigs);
++        }
++
+         updateNrFrequencyRangeFromPhysicalChannelConfigs(mLastPhysicalChannelConfigList, mNewSS);
+         updateNrStateFromPhysicalChannelConfigs(mLastPhysicalChannelConfigList, mNewSS);
+         updateNtnCapability();

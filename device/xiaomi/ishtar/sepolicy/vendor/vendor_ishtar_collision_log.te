@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: Apache-2.0
+# CIT collisionAlgo rotates these two diagnostic logs after 100 records.
+# Keep calibration files on vendor_persist_sensors_file read-only for CIT.
+type vendor_ishtar_collision_log_file, file_type, vendor_persist_type;
+
+# Directory name operations are required for the temporary copy's lifetime.
+# Only the named log transitions below permit CIT to create writable files;
+# no write/create/unlink access is added to the calibration file type.
+allow vendor_ishtar_als vendor_persist_sensors_file:dir { write add_name remove_name };
+allow vendor_ishtar_als vendor_ishtar_collision_log_file:file { create read open getattr write append unlink };
+type_transition vendor_ishtar_als vendor_persist_sensors_file:file vendor_ishtar_collision_log_file "collisionData.txt";
+type_transition vendor_ishtar_als vendor_persist_sensors_file:file vendor_ishtar_collision_log_file "temp-collisionData.txt";

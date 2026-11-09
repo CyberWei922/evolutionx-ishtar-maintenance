@@ -1,0 +1,510 @@
+diff --git a/Android.bp b/Android.bp
+index 386da60..e6e1640 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -22,6 +22,7 @@ cc_binary {
+ 		"thermalConfig.cpp",
+ 		"thermalCommon.cpp",
+ 		"thermalUtilsNetlink.cpp",
++		"IshtarSkin.cpp",
+ 		"thermalMonitorNetlink.cpp",
+ 	],
+ 	header_libs: [
+@@ -58,6 +59,7 @@ cc_fuzz {
+         "thermalConfig.cpp",
+         "thermalCommon.cpp",
+         "thermalUtilsNetlink.cpp",
++		"IshtarSkin.cpp",
+         "thermalMonitorNetlink.cpp",
+     ],
+     header_libs: [
+diff --git a/IshtarSkin.cpp b/IshtarSkin.cpp
+new file mode 100644
+index 0000000..f2c93e9
+--- /dev/null
++++ b/IshtarSkin.cpp
+@@ -0,0 +1,190 @@
++/* SPDX-License-Identifier: Apache-2.0 */
++#include "IshtarSkin.h"
++
++#include <algorithm>
++#include <cerrno>
++#include <chrono>
++#include <cmath>
++#include <cstdint>
++#include <cstdlib>
++#include <dirent.h>
++#include <fstream>
++#include <limits>
++#include <sstream>
++#include <system_error>
++#include <utility>
++
++namespace aidl::android::hardware::thermal {
++namespace {
++constexpr std::array<const char*, IshtarSkin::kSensorCount> kSensorNames = {
++        "battery", "pa_therm0", "pa_therm1", "quiet_therm",
++        "charger_therm0", "wifi_therm", "cpu_therm"};
++// Factory VIRTUAL-SENSOR0 uses a divisor of 1000, although these weights sum to 923.
++constexpr std::array<int, IshtarSkin::kSensorCount> kWeights = {471, 12, 23, 242, 31, 11, 133};
++constexpr int kWeightDivisor = 1000;
++constexpr int kCompensationMillidegrees = 1732;
++// Android severity mapping derived from ishtar's factory CPU3/7 mitigation policy.
++// These are an adaptation, not severity labels supplied by Xiaomi. No shutdown
++// threshold is inferred; mi_thermald and the kernel keep their existing controls.
++constexpr float kNaN = std::numeric_limits<float>::quiet_NaN();
++constexpr std::array<float, 7> kHotThresholds = {kNaN, 39.f, 41.f, 45.f, 48.f, 50.f, kNaN};
++constexpr std::array<float, 6> kClearThresholds = {kNaN, 37.f, 39.f, 44.f, 46.f, 48.f};
++
++bool readToken(const std::string& path, std::string& token) {
++    std::ifstream file(path);
++    std::string extra;
++    return (file >> token) && !(file >> extra);
++}
++
++bool readMillidegrees(const std::string& path, int& temperature) {
++    std::string token;
++    if (!readToken(path, token)) return false;
++    errno = 0;
++    char* end = nullptr;
++    const long value = std::strtol(token.c_str(), &end, 10);
++    if (errno || end == token.c_str() || *end || value < -40000 || value > 125000) {
++        return false;
++    }
++    temperature = static_cast<int>(value);
++    return true;
++}
++}  // namespace
++
++IshtarSkin::IshtarSkin(bool enabled, std::string sysfsRoot)
++    : enabled_(enabled), sysfsRoot_(std::move(sysfsRoot)) {
++    Sample initial;
++    if (enabled_) read(initial);  // No thread or callback during construction.
++}
++
++IshtarSkin::~IshtarSkin() {
++    stop();
++}
++
++const std::array<const char*, IshtarSkin::kSensorCount>& IshtarSkin::sensorNames() {
++    return kSensorNames;
++}
++
++std::array<float, 7> IshtarSkin::hotThresholds() {
++    return kHotThresholds;
++}
++
++bool IshtarSkin::calculate(const std::array<int, kSensorCount>& temperatures, float& celsius) {
++    int64_t weighted = 0;
++    for (size_t i = 0; i < temperatures.size(); ++i) {
++        if (temperatures[i] < -40000 || temperatures[i] > 125000) return false;
++        weighted += static_cast<int64_t>(temperatures[i]) * kWeights[i];
++    }
++    // Positive compensation was checked against the live factory board_sensor_temp.
++    celsius = static_cast<float>(weighted / kWeightDivisor + kCompensationMillidegrees) / 1000.f;
++    return std::isfinite(celsius);
++}
++
++int IshtarSkin::estimateSeverity(float celsius, int previousSeverity) {
++    if (!std::isfinite(celsius)) return -1;
++    for (int severity = 5; severity > 0; --severity) {
++        if (celsius >= kHotThresholds[severity] ||
++            (previousSeverity >= severity && celsius >= kClearThresholds[severity])) {
++            return severity;
++        }
++    }
++    return 0;
++}
++
++bool IshtarSkin::resolveLocked() {
++    paths_.fill("");
++    DIR* directory = opendir(sysfsRoot_.c_str());
++    if (!directory) return false;
++    for (dirent* entry; (entry = readdir(directory)) != nullptr;) {
++        const std::string name(entry->d_name);
++        if (name.rfind("thermal_zone", 0) != 0 || name.size() == 12 ||
++            !std::all_of(name.begin() + 12, name.end(), [](unsigned char c) {
++                return c >= '0' && c <= '9';
++            })) continue;
++        const std::string zone = sysfsRoot_ + "/" + name;
++        std::string type;
++        if (!readToken(zone + "/type", type)) continue;
++        for (size_t i = 0; i < kSensorNames.size(); ++i) {
++            if (type == kSensorNames[i]) paths_[i] = zone + "/temp";
++        }
++    }
++    closedir(directory);
++    return std::all_of(paths_.begin(), paths_.end(), [](const auto& path) { return !path.empty(); });
++}
++
++bool IshtarSkin::isInitialized() const {
++    std::lock_guard<std::mutex> lock(sensorMutex_);
++    return enabled_ && initialized_;
++}
++
++bool IshtarSkin::read(Sample& sample) {
++    std::lock_guard<std::mutex> lock(sensorMutex_);
++    if (!enabled_) return false;
++    if (std::any_of(paths_.begin(), paths_.end(), [](const auto& path) { return path.empty(); }) &&
++        !resolveLocked()) {
++        initialized_ = false;
++        return false;
++    }
++    std::array<int, kSensorCount> values{};
++    for (size_t i = 0; i < paths_.size(); ++i) {
++        if (!readMillidegrees(paths_[i], values[i])) {
++            paths_.fill("");  // Re-resolve by type after disappearance or re-enumeration.
++            initialized_ = false;
++            return false;  // No stale temperature or synthetic NONE status is published.
++        }
++    }
++    float celsius;
++    if (!calculate(values, celsius)) {
++        initialized_ = false;
++        return false;
++    }
++    previousSeverity_ = estimateSeverity(celsius, previousSeverity_);
++    initialized_ = true;
++    sample = {celsius, previousSeverity_};
++    return true;
++}
++
++bool IshtarSkin::start(Callback callback) {
++    std::lock_guard<std::mutex> lock(lifecycleMutex_);
++    if (!enabled_ || !callback) return false;
++    if (monitorThread_.joinable()) return true;
++    {
++        std::lock_guard<std::mutex> waitLock(waitMutex_);
++        stopping_ = false;
++    }
++    try {
++        monitorThread_ = std::thread(&IshtarSkin::monitor, this, std::move(callback));
++    } catch (const std::system_error&) {
++        std::lock_guard<std::mutex> waitLock(waitMutex_);
++        stopping_ = true;
++        return false;
++    }
++    return true;
++}
++
++void IshtarSkin::stop() {
++    std::lock_guard<std::mutex> lock(lifecycleMutex_);
++    {
++        std::lock_guard<std::mutex> waitLock(waitMutex_);
++        stopping_ = true;
++    }
++    wake_.notify_all();
++    if (monitorThread_.joinable()) monitorThread_.join();
++}
++
++void IshtarSkin::monitor(Callback callback) {
++    int lastNotifiedSeverity = -1;
++    std::unique_lock<std::mutex> waitLock(waitMutex_);
++    while (!stopping_) {
++        waitLock.unlock();
++        Sample sample;
++        if (read(sample) && sample.severity != lastNotifiedSeverity) {
++            // Callback is outside both sensorMutex_ and waitMutex_; callers can read.
++            callback(sample);
++            lastNotifiedSeverity = sample.severity;
++        }
++        waitLock.lock();
++        wake_.wait_for(waitLock, std::chrono::seconds(2), [this] { return stopping_; });
++    }
++}
++
++}  // namespace aidl::android::hardware::thermal
+diff --git a/IshtarSkin.h b/IshtarSkin.h
+new file mode 100644
+index 0000000..0d47633
+--- /dev/null
++++ b/IshtarSkin.h
+@@ -0,0 +1,59 @@
++/* SPDX-License-Identifier: Apache-2.0 */
++#pragma once
++
++#include <array>
++#include <condition_variable>
++#include <functional>
++#include <mutex>
++#include <string>
++#include <thread>
++
++namespace aidl::android::hardware::thermal {
++
++// A read-only implementation of ishtar's factory VIRTUAL-SENSOR0 board model.
++// It reports Android thermal information; mi_thermald retains all device control.
++class IshtarSkin {
++  public:
++    struct Sample {
++        float celsius;
++        int severity;  // Android ThrottlingSeverity NONE..EMERGENCY (0..5).
++    };
++    using Callback = std::function<void(const Sample&)>;
++    static constexpr const char* kName = "ishtar-skin";
++    static constexpr size_t kSensorCount = 7;
++
++    explicit IshtarSkin(bool enabled, std::string sysfsRoot = "/sys/class/thermal");
++    ~IshtarSkin();
++    IshtarSkin(const IshtarSkin&) = delete;
++    IshtarSkin& operator=(const IshtarSkin&) = delete;
++
++    bool enabled() const { return enabled_; }
++    bool isInitialized() const;
++    bool read(Sample& sample);
++    // Start only after the callback owner's members are fully constructed.
++    bool start(Callback callback);
++    void stop();  // Interruptible wait and join, before the callback owner is destroyed.
++
++    static const std::array<const char*, kSensorCount>& sensorNames();
++    static std::array<float, 7> hotThresholds();
++    static bool calculate(const std::array<int, kSensorCount>& millidegrees, float& celsius);
++    static int estimateSeverity(float celsius, int previousSeverity);
++
++  private:
++    bool resolveLocked();
++    void monitor(Callback callback);
++
++    const bool enabled_;
++    const std::string sysfsRoot_;
++    mutable std::mutex sensorMutex_;
++    std::array<std::string, kSensorCount> paths_{};
++    bool initialized_ = false;
++    int previousSeverity_ = 0;
++    std::mutex lifecycleMutex_;
++    std::mutex waitMutex_;
++    std::condition_variable wake_;
++    bool stopping_ = true;
++    std::thread monitorThread_;
++};
++
++}  // namespace aidl::android::hardware::thermal
+diff --git a/android.hardware.thermal-service.qti.rc b/android.hardware.thermal-service.qti.rc
+index 1311e23..888f276 100644
+--- a/android.hardware.thermal-service.qti.rc
++++ b/android.hardware.thermal-service.qti.rc
+@@ -40,4 +40,4 @@ service vendor.thermal-hal /vendor/bin/hw/android.hardware.thermal-service.qti
+ 
+ on boot
+     wait /sys/kernel/boot_adsp/boot
+-    restart android.thermal-hal
++    restart vendor.thermal-hal
+diff --git a/thermal.cpp b/thermal.cpp
+index 0a122d1..cb5b60f 100644
+--- a/thermal.cpp
++++ b/thermal.cpp
+@@ -74,7 +74,17 @@ Thermal::Thermal():
+ 				std::placeholders::_1),
+ 		std::bind(&Thermal::sendCoolingDeviceChangeCB, this,
+ 				std::placeholders::_1))
+-{ }
++{
++#ifdef ENABLE_THERMAL_NETLINK
++    utils.startSkinMonitoring();
++#endif
++}
++
++Thermal::~Thermal() {
++#ifdef ENABLE_THERMAL_NETLINK
++    utils.stopSkinMonitoring();
++#endif
++}
+ 
+ ScopedAStatus Thermal::getCoolingDevices(std::vector<CoolingDevice>* out_data) {
+ 
+diff --git a/thermal.h b/thermal.h
+index ebc3c3a..e1a9c34 100644
+--- a/thermal.h
++++ b/thermal.h
+@@ -78,7 +78,7 @@ struct CdevCallbackSetting {
+ class Thermal : public BnThermal {
+   public:
+     Thermal();
+-    ~Thermal() = default;
++    ~Thermal();
+ 
+     Thermal(const Thermal &) = delete;
+     void operator=(const Thermal &) = delete;
+diff --git a/thermalUtilsNetlink.cpp b/thermalUtilsNetlink.cpp
+index 2b4be75..629e538 100644
+--- a/thermalUtilsNetlink.cpp
++++ b/thermalUtilsNetlink.cpp
+@@ -34,6 +34,8 @@
+ Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ SPDX-License-Identifier: BSD-3-Clause-Clear */
+ 
++#include <algorithm>
++#include <limits>
+ #include <android-base/file.h>
+ #include <android-base/logging.h>
+ #include <android-base/properties.h>
+@@ -48,6 +50,31 @@ namespace aidl {
+ namespace android {
+ namespace hardware {
+ namespace thermal {
++namespace {
++bool isIshtarDevice() {
++    return ::android::base::GetProperty("ro.product.vendor.device", "") == "ishtar" ||
++           ::android::base::GetProperty("ro.product.device", "") == "ishtar";
++}
++
++void filterIshtarSkinConfig(std::vector<target_therm_cfg>& config, bool ishtar) {
++    if (!ishtar) return;
++    config.erase(std::remove_if(config.begin(), config.end(), [](const auto& entry) {
++        return entry.type == TemperatureType::SKIN && entry.sensor_list.size() == 1 &&
++               entry.sensor_list.front() == "skin-msm-therm";
++    }), config.end());
++}
++
++Temperature skinTemperature(const IshtarSkin::Sample& sample) {
++    static_assert(static_cast<int>(ThrottlingSeverity::NONE) == 0);
++    static_assert(static_cast<int>(ThrottlingSeverity::EMERGENCY) == 5);
++    Temperature temperature;
++    temperature.type = TemperatureType::SKIN;
++    temperature.name = IshtarSkin::kName;
++    temperature.value = sample.celsius;
++    temperature.throttlingStatus = static_cast<ThrottlingSeverity>(sample.severity);
++    return temperature;
++}
++}  // namespace
+ 
+ ThermalUtils::ThermalUtils(const ueventCB &inp_cb, const notifyCB &inp_cdev_cb):
+ 	cfg(),
+@@ -67,11 +94,13 @@ ThermalUtils::ThermalUtils(const ueventCB &inp_cb, const notifyCB &inp_cdev_cb):
+ 				std::placeholders::_1,
+ 				std::placeholders::_2)),
+ 	cb(inp_cb),
+-	notify(inp_cdev_cb)
++	notify(inp_cdev_cb),
++    skin(isIshtarDevice())
+ {
+ 	int ret = 0;
+ 	std::vector<struct therm_sensor> sensorList;
+ 	std::vector<struct target_therm_cfg> therm_cfg = cfg.fetchConfig();
++    filterIshtarSkinConfig(therm_cfg, skin.enabled());
+ 
+ 	ret = cmnInst.initThermalZones(therm_cfg);
+ 	if (ret > 0) {
+@@ -97,18 +126,49 @@ ThermalUtils::ThermalUtils(const ueventCB &inp_cb, const notifyCB &inp_cdev_cb):
+ 	}
+ }
+ 
++void ThermalUtils::startSkinMonitoring() {
++    if (!skin.enabled()) return;
++    if (!skin.start([this](const IshtarSkin::Sample& sample) {
++        auto temperature = skinTemperature(sample);
++        cb(temperature);
++    })) {
++        LOG(ERROR) << "Failed to start ishtar skin temperature monitoring";
++    }
++}
++
++void ThermalUtils::stopSkinMonitoring() {
++    skin.stop();
++}
++
++void ThermalUtils::appendSkinTemperature(std::vector<Temperature>& temperatures) {
++    IshtarSkin::Sample sample;
++    if (skin.read(sample)) temperatures.push_back(skinTemperature(sample));
++}
++
++void ThermalUtils::appendSkinThreshold(std::vector<TemperatureThreshold>& thresholds) {
++    if (!skin.enabled()) return;
++    TemperatureThreshold threshold;
++    threshold.type = TemperatureType::SKIN;
++    threshold.name = IshtarSkin::kName;
++    const auto hot = IshtarSkin::hotThresholds();
++    threshold.hotThrottlingThresholds.assign(hot.begin(), hot.end());
++    threshold.coldThrottlingThresholds.assign(hot.size(), std::numeric_limits<float>::quiet_NaN());
++    thresholds.push_back(std::move(threshold));
++}
++
+ bool ThermalUtils::isSensorInitialized()
+ {
+ 	std::lock_guard<std::mutex> _lock(sens_cb_mutex);
+ 
+ 	if (thermalConfig.begin() == thermalConfig.end())
+-		return false;
++        return skin.isInitialized();
+ 
+ 	return true;
+ }
+ 
+ bool ThermalUtils::isSensorInitialized(TemperatureType type)
+ {
++    if (type == TemperatureType::SKIN && skin.isInitialized()) return true;
+ 	std::unordered_map<int, struct therm_sensor>::iterator it;
+ 	std::lock_guard<std::mutex> _lock(sens_cb_mutex);
+ 
+@@ -246,6 +306,7 @@ void ThermalUtils::eventCreateParse(int tzn, const char *name)
+ 	int ret = 0;
+ 	std::vector<struct therm_sensor> sensorList;
+ 	std::vector<struct target_therm_cfg> therm_cfg = cfg.fetchConfig();
++    filterIshtarSkinConfig(therm_cfg, skin.enabled());
+ 	std::vector<struct target_therm_cfg>::iterator it_vec;
+ 	std::vector<std::string>::iterator it;
+ 
+@@ -301,6 +362,7 @@ int ThermalUtils::readTemperatures(std::vector<Temperature>& temp)
+ 		_temp.push_back(sens.t);
+ 	}
+ 
++    appendSkinTemperature(_temp);
+ 	temp = _temp;
+ 	return temp.size();
+ }
+@@ -325,6 +387,7 @@ int ThermalUtils::readTemperatures(TemperatureType type,
+ 		_temp.push_back(sens.t);
+ 	}
+ 
++    if (type == TemperatureType::SKIN) appendSkinTemperature(_temp);
+ 	temp = _temp;
+ 	return temp.size();
+ }
+@@ -340,6 +403,7 @@ int ThermalUtils::readTemperatureThreshold(std::vector<TemperatureThreshold>& th
+ 		_thresh.push_back(sens.thresh);
+ 	}
+ 
++    appendSkinThreshold(_thresh);
+ 	thresh = _thresh;
+ 	return thresh.size();
+ }
+@@ -358,6 +422,7 @@ int ThermalUtils::readTemperatureThreshold(TemperatureType type,
+ 		_thresh.push_back(sens.thresh);
+ 	}
+ 
++    if (type == TemperatureType::SKIN) appendSkinThreshold(_thresh);
+ 	thresh = _thresh;
+ 	return thresh.size();
+ }
+diff --git a/thermalUtilsNetlink.h b/thermalUtilsNetlink.h
+index 7608e93..b71e533 100644
+--- a/thermalUtilsNetlink.h
++++ b/thermalUtilsNetlink.h
+@@ -44,6 +44,7 @@ SPDX-License-Identifier: BSD-3-Clause-Clear */
+ #include "thermalMonitorNetlink.h"
+ #include "thermalCommon.h"
+ #include "thermalData.h"
++#include "IshtarSkin.h"
+ 
+ namespace aidl {
+ namespace android {
+@@ -57,6 +58,8 @@ class ThermalUtils {
+ 	public:
+ 		ThermalUtils(const ueventCB &inp_cb, const notifyCB &inp_cdev_cb);
+ 		~ThermalUtils() = default;
++        void startSkinMonitoring();
++        void stopSkinMonitoring();
+ 		bool isCdevInitialized();
+ 		bool isCdevInitialized(CoolingType type);
+ 		bool isSensorInitialized();
+@@ -83,6 +86,10 @@ class ThermalUtils {
+ 		std::mutex cdev_cb_mutex;
+ 		ueventCB cb;
+ 		notifyCB notify;
++        // Last member: joins its thread before callback/state members are destroyed.
++        IshtarSkin skin;
++        void appendSkinTemperature(std::vector<Temperature>& temperatures);
++        void appendSkinThreshold(std::vector<TemperatureThreshold>& thresholds);
+ 
+ 		void VirturalSensorEventParse(struct therm_sensor& sens, int tzn, int temp);
+ 		void eventParse(int tzn, int trip, int temp);

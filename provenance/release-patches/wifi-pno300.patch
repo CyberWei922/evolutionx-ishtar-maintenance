@@ -1,0 +1,12 @@
+--- a/device/xiaomi/ishtar/overlay/Wifi/res/values/config.xml
++++ b/device/xiaomi/ishtar/overlay/Wifi/res/values/config.xml
+@@ -4,6 +4,9 @@
+      SPDX-License-Identifier: Apache-2.0
+ -->
+ <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
++    <!-- The chipset supports disconnected PNO scans while the host is asleep. -->
++    <bool name="config_wifi_background_scan_support">true</bool>
++
+     <!-- Default access point SSID used for tethering -->
+     <string name="wifi_tether_configure_ssid_default" translatable="false">Xiaomi 13 Ultra</string>
+ </resources>

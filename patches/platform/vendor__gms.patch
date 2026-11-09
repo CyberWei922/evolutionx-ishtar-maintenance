@@ -1,0 +1,13 @@
+diff --git a/product/blobs/etc/sysconfig/google.xml b/product/blobs/etc/sysconfig/google.xml
+index 4e01836..6d24b15 100644
+--- a/product/blobs/etc/sysconfig/google.xml
++++ b/product/blobs/etc/sysconfig/google.xml
+@@ -122,6 +122,8 @@
+     <allow-association target="com.google.android.as" allowed="com.google.android.providers.media.module" />
+     <!-- AI services can bind to its open-source network component. -->
+     <allow-association target="com.google.android.as" allowed="com.google.android.as.oss" />
++    <!-- PCS also has an explicit allowlist; keep the AS relationship reciprocal. -->
++    <allow-association target="com.google.android.as.oss" allowed="com.google.android.as" />
+     <!-- AI services can bind to Settings Intelligence. -->
+     <allow-association target="com.google.android.as" allowed="com.google.android.settings.intelligence"/>
+ 

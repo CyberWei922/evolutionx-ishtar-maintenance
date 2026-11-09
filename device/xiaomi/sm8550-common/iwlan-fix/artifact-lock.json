@@ -1,0 +1,43 @@
+{
+  "schema": "iwlan-fix288-reviewed-content/v1",
+  "original_apk_sha256": "909d14bff0bc85943ead69f08bb795b56736256502466b522c80b30a70dad2ef",
+  "original_dex_sha256": "626a72021bb02388bf1f7e667887957241970eea52d02edc5d4bd65ff34cc22b",
+  "unsigned_apk_sha256": "c66f190fd4aa8f010a8f7d03a157e57bd5d379b125e24d1b4282d987a5047a68",
+  "patched_dex_sha256": "64d105d629ae7fc799d75d43c2415d4dc8b43feea8fe2e480ac211411d16ad9a",
+  "helper_dex_sha256": "05739ee27e078550c23b58dac1d2ff49d2d61fe797a1f182c1e21df81e2017ba",
+  "production_helper_source_sha256": "7841ecbdcc90896f3687ab9c41b56281366825fd1509ca901a5107b58b0eba84",
+  "patcher_source_sha256": "fd625d8e607b20b17912323b48d063cb8df850568e9e0af46c245133aedb9302",
+  "host_tests_log_sha256": "9c2b0a2da3e4916adf6d3dc808f55b7f70e44175373b05afe1c0151a4830fba9",
+  "host_tests": {
+    "passed": 21,
+    "failed": 0,
+    "productionSourceTested": true,
+    "raceIterations": 500
+  },
+  "source_files": {
+    "README.md": "aea8f7691d41544d8f801787875200d86944eea789b63de1587ea8523832e327",
+    "apply.py": "d07629326e827ec6a3ae286a634bc03ff6b3a15208d521d1cfa7a7aedb6c5a34",
+    "build.py": "850df571b0ae3f0b4a93cf69f8382d249014586bbab1171ea31cd619bf54fbd2",
+    "host-stubs/android/hardware/radio/V1_4/DataProfileInfo.java": "b628925b9aca4afede36a000fc2b08fa1b754ec118775139a4d635256860a45b",
+    "host-stubs/android/hardware/radio/V1_5/DataProfileInfo.java": "c927d286756bdfe0f7595c94cd757501abfe4ed9f70c6e0ecb8b816026d4f682",
+    "host-stubs/android/hardware/radio/V1_6/OptionalTrafficDescriptor.java": "80d73efe73e9c7470dd41bf73e6c904952dd6dd7a1d9c7218055af5eda6f0969",
+    "host-stubs/android/os/Handler.java": "290462e1f664c136d13cd74f02321de01ada1641a9ce4b3f15941c43eb94ed17",
+    "host-stubs/android/os/Message.java": "6785706ff8a8599e2ca62815206b0632ece3427a8c365f8a446ea705f5e2ef42",
+    "host-stubs/android/os/PowerManager.java": "999fb35ccd3284e017bdd3a5146416f51ccce29686bb3ed6315597aa09173e2a",
+    "host-stubs/android/os/RemoteException.java": "875156b3611b050ba3df8cc682f907ff44fa6c03659782cf1ae873b4a1033dd0",
+    "host-stubs/android/util/SparseArray.java": "e6938460215dd761fc89dfd215c7ffed9ad3ec4522c40f5a2c102fb2d83acee8",
+    "host-stubs/vendor/qti/hardware/data/iwlan/V1_0/IWlanResponseInfo.java": "45e03980bfebf7342c6110e0773e59467faea8954ed7d877530ca60397ab9b09",
+    "host-stubs/vendor/qti/hardware/data/iwlan/V1_1/IIWlan.java": "79a5c71cc564196f67c0b4aa9bf933fd14b06dc8d5557693f8348c021643e6de",
+    "host-stubs/vendor/qti/iwlan/AsyncResult.java": "a510957b4d58deb0d90b2a98b019f1d453b48d0e72670903fda3cdfa178e600c",
+    "host-stubs/vendor/qti/iwlan/CommandException.java": "6237130e9ee21a85a9ffe4e1de26311bcdfa648e075f4f4c9ce856f8d97e9b5b",
+    "host-stubs/vendor/qti/iwlan/IWlanLog.java": "1dab1fe6ef7cb5ef8e856d9973477b4ec4a542f835396ce581e4e0cdc3b1822b",
+    "host-stubs/vendor/qti/iwlan/IWlanProxy.java": "e732b54541ff67a79672882a045c2a6debb42e43ba76ee07622b4a8e31e717b0",
+    "host-stubs/vendor/qti/iwlan/IWlanRequest.java": "8e696c584780e9e136f49fe752ff22c19b4e55fd533806e465f2744df4426674",
+    "src/vendor/qti/iwlan/IWlanWakeLockFix.java": "7841ecbdcc90896f3687ab9c41b56281366825fd1509ca901a5107b58b0eba84",
+    "tests/ProductionHelperTest.java": "db4e4448ece28b334837af6f8867338e9a7f9d8910fbbe0748342f457f028452",
+    "tools/PatchIwlan.java": "fd625d8e607b20b17912323b48d063cb8df850568e9e0af46c245133aedb9302",
+    "verify.py": "9b7691afff6712a96ec265be6fb819e474331f82b1c94b5aa32d0e82939096b6"
+  },
+  "payload": "payload/IWlanService-unsigned.apk",
+  "rebuilt_twice_same_unsigned_sha256": true
+}

@@ -1,0 +1,248 @@
+{
+  "phase": "completed_installed_runtime_verified_not_published",
+  "authoritative_runtime_summary": true,
+  "created_utc": "2026-11-07T12:21:19.684973+00:00",
+  "supersedes_runtime_state_only": "/Users/wei/Projects/13Ultra/17/control/ishtar-errorfix-install305-mac-20261107-01/completion305-summary.json",
+  "static_build_summary_preserved": "/Users/wei/Projects/13Ultra/17/control/ishtar-errorfix-install305-mac-20261107-01/completion305-summary.json",
+  "static_build_summary_sha256": "bcbccc7427871df05352b4a1cf058140ef7f1cdaf9e47c77e28a7c0ea559d07a",
+  "authorization": {
+    "fix_reported_errors": true,
+    "build_sign_package": true,
+    "preserve_data_flash": true,
+    "focused_runtime_test": true,
+    "publication": false,
+    "wipe": false,
+    "extra_permission_or_module_changes": false
+  },
+  "artifact": {
+    "incremental": "1794048426",
+    "kernel_release": "5.15.224",
+    "rom_mac_path": "/Users/wei/Downloads/ishtar-android17-20261107/errorfix305/native-recovery-ksu/EvolutionX-17.0-20261107-ishtar-12.3-Unofficial.zip",
+    "rom_linux_path": "/mnt/android-build/Android/delivery/ishtar-errorfix305-20261107-01/native-recovery-ksu/EvolutionX-17.0-20261107-ishtar-12.3-Unofficial.zip",
+    "rom_bytes": 4550939112,
+    "rom_sha256": "205107f2548f7f7c239130cd89dec6fd7987ed28f7d9487919152e319ec2ee7e",
+    "target_files_bytes": 10441170216,
+    "target_files_sha256": "dc68886525608feb11ac46893f892217ed2ea547ba016e15f0437f9afd7e4f7e",
+    "source_pins": "2844 candidate / 130 protected"
+  },
+  "static_verification": {
+    "result": "passed",
+    "partition_payload_hashes": 34,
+    "zip_crc": true,
+    "payload_properties": true,
+    "cms_avb_whole_file_signature": true,
+    "actual_kernel_modules_verified": 403,
+    "prior_repairs_retained": true,
+    "initial_audit_failure_preserved": true,
+    "initial_audit_failure_reason": "DEX checker false-negative hard-coded p0; corrected and retried without changing the OTA."
+  },
+  "installation": {
+    "result": "passed",
+    "previous_incremental": "1794041751",
+    "current_incremental": "1794048426",
+    "previous_slot": "_a",
+    "current_slot": "_b",
+    "boot_id": "92e5a35a-02f7-432f-9e0d-c2afd86e7704",
+    "kernel": "5.15.224",
+    "host_sideload_exit": 0,
+    "wipe_dispatched": false,
+    "actual_installed_partitions_verified": 34,
+    "all_actual_partition_hashes_match": true,
+    "user_package_count_before": 44,
+    "user_packages_preserved": true,
+    "app_data_identity_preserved": true,
+    "module_state_preserved": true,
+    "root_verified": true,
+    "selinux": "Enforcing",
+    "recovery_install_status": null,
+    "recovery_status_note": "Recovery logs do not expose the new payload; installation proof uses host exit 0 and all 34 partition hashes read from the installed slot."
+  },
+  "fixes": {
+    "B03": {
+      "result": "passed",
+      "change": "Moved notification-row blur initialization from asynchronous onFinishInflate to onAttachedToWindow.",
+      "runtime_evidence": "async_row_main_thread_assertions=0"
+    },
+    "B04": {
+      "result": "passed",
+      "change": "Corrected the Earpiece sink to AUDIO_CHANNEL_OUT_MONO.",
+      "runtime_evidence": "Earpiece output mask 0x0001; legitimate telephony receive inputs remain 0x0010."
+    },
+    "B05": {
+      "result": "passed",
+      "change": "Captured SecurityException from NotificationManager.getActiveNotifications and kept the listener alive.",
+      "runtime_evidence": "3 allow/disallow cycles; GameSpace process remained alive; no listener fatal/ANR."
+    },
+    "R02": {
+      "result": "passed",
+      "change": "Completed the cached primary LTE PhysicalChannelConfig after a matching LTE CellIdentity became available.",
+      "runtime_evidence": "Band 3, downlink channel 1506, PCI 141 matched ServiceState."
+    },
+    "S01": {
+      "result": "intentionally_unchanged",
+      "change": "OTA remains testkey signed.",
+      "release_caveat": "Testkey signing remains visible to installations that enforce production trust."
+    }
+  },
+  "regression_checks": {
+    "focused_fixes_all_passed": true,
+    "wifi_hardware_pno": {
+      "result": "passed",
+      "temporary_override_used": false,
+      "cycles": 2,
+      "elapsed_seconds": [
+        2.4562825000000004,
+        2.6071948749999976
+      ],
+      "screen_remained_off_all_cycles": true,
+      "hardware_pno_result_increments": [
+        1,
+        1
+      ],
+      "lan_packet_loss_percent": [
+        0,
+        0
+      ]
+    },
+    "ois": {
+      "result": "passed_protocol_checks",
+      "preview_lifecycles": 3,
+      "five_known_error_patterns_total": 0,
+      "physical_stabilization_quality_measured": false
+    },
+    "composition_cache": {
+      "result": "passed",
+      "usesClientComposition": true,
+      "reusedClientComposition": true,
+      "flipClientTarget": false,
+      "boot_and_core_pids_stable": true
+    },
+    "observation": {
+      "result": "passed",
+      "seconds": 180.531426084,
+      "core_pid_stability": {
+        "system_server": true,
+        "surfaceflinger": true,
+        "netd": true,
+        "cameraserver": true,
+        "vendor.qti.camera.provider-service_64": true,
+        "vendor.xiaomi.sensor.citsensorservice@2.0-service": true,
+        "com.android.systemui": true
+      },
+      "fatal_or_anr_lines": 0,
+      "kernel_panic_lines": 0,
+      "crash_buffer_bytes": 0,
+      "raw_avc_count": 128,
+      "audit_lost_max": 85,
+      "avc_caveat": "Raw AVC and audit-loss counters are reported as observed; this is not asserted to be zero AVC or a complete SELinux denial audit."
+    },
+    "focused_ui": {
+      "phase": "completed_visual_review_passed",
+      "utc": "2026-11-07T12:21:19.684973+00:00",
+      "reviewed_artifact": "/Users/wei/Projects/13Ultra/17/control/ishtar-errorfix-install305-mac-20261107-01/ui305-retry6-media/ui305-retry6-contact.png",
+      "contact_sheet_sha256": "7009004633ab4b084c5817396801bb8feb8e5615917b5eca2e233a614d592ee6",
+      "status_report_preserved": "/Users/wei/Projects/13Ultra/17/control/ishtar-errorfix-install305-mac-20261107-01/ui305-retry6-status.json",
+      "status_report_sha256": "c3767f22881bc015e9dce9960eaae9abde5d0facae2a3aeecf223220d7cc8ed4",
+      "review_method": "Contact-sheet inspection covering all eight screenshots, together with decoded-video and UI state-machine checks.",
+      "states_reviewed": [
+        "home",
+        "landscape",
+        "portrait_restored",
+        "shade_open",
+        "shade_closed",
+        "recents",
+        "app_drawer",
+        "final_home"
+      ],
+      "observations": {
+        "notification_shade_renders_across_full_width": true,
+        "persistent_horizontal_blur_strip_observed": false,
+        "clear_color_and_content_rendered_while_shade_open": true,
+        "rotation_content_correct": true,
+        "portrait_restored_correctly": true,
+        "recents_visible": true,
+        "app_drawer_visible": true,
+        "final_home_restored": true,
+        "obvious_ui_breakage_observed": false
+      },
+      "video_review": {
+        "sha256": "1ea4cfcccff47d6eab6d87808b3165083ab06345a04200701cd6876ddc39239b",
+        "duration_seconds": 17.903089,
+        "dimensions": [
+          1440,
+          3200
+        ],
+        "decoded_frames": 548,
+        "probe_frames": 548,
+        "decode_passed": true
+      },
+      "result": "passed",
+      "limitations": [
+        "This is a focused UI matrix, not a full graphics stress or long-duration frame-pacing benchmark."
+      ]
+    },
+    "historical_tombstone": {
+      "phase": "reviewed_historical_not_305_regression",
+      "utc": "2026-11-07T12:21:19.684973+00:00",
+      "source_device_path": "/data/tombstones/tombstone_15",
+      "local_evidence": "/Users/wei/Projects/13Ultra/17/control/ishtar-errorfix-install305-mac-20261107-01/tombstone_15.private.txt",
+      "bytes": 1387708,
+      "sha256": "98d8979dc60a77a9e1e65b7d92b9cf7e66b59a7cb8586acb8451ca7c8433235f",
+      "tombstone_timestamp": "2026-11-07 11:26:03.513290346+0800",
+      "current_boot_id": "92e5a35a-02f7-432f-9e0d-c2afd86e7704",
+      "current_build_incremental": "1794048426",
+      "current_boot_reference_count": 0,
+      "previous_boot_ashmem_name_reference_count": 2,
+      "process": "/odm/bin/hw/vendor.qti.camera.provider-service_64",
+      "pid": 1519,
+      "signal": "6 (SIGABRT)",
+      "top_vendor_frame": "Usecase::DumpSystemEvent()+900 in /odm/lib64/hw/com.qti.chi.override.so",
+      "classification": "historical vendor camera-provider abort from before the 305 installation",
+      "counted_as_305_runtime_failure": false,
+      "current_305_evidence": {
+        "crash_buffer_bytes": 0,
+        "fatal_or_anr_lines": 0,
+        "kernel_panic_lines": 0,
+        "camera_provider_pid_stable_during_observation": true
+      },
+      "limitations": [
+        "The original vendor crash root cause was not reproduced on the 305 boot and has not been rewritten without a reproducible ROM-side cause."
+      ]
+    }
+  },
+  "workflow": {
+    "retry": 6,
+    "phase": "installed_verified_pno_errorfixes_and_ui_cycles_complete",
+    "installation_replayed": false,
+    "device_rebooted": false,
+    "wipe_dispatched": false
+  },
+  "release_assessment": {
+    "status": "ready_for_owner_use_with_declared_limitations",
+    "confirmed_requested_code_defects_fixed": [
+      "B03",
+      "B04",
+      "B05",
+      "R02"
+    ],
+    "historical_or_unreproducible_items_not_claimed_fixed": [
+      "B06 ART dex2oat64 historical abort",
+      "R01 intermittent IWLAN transport preference",
+      "R03 historical vendor camera-provider abort",
+      "W02/W03 lower-confidence leads"
+    ],
+    "not_physically_verified": [
+      "actual call audio quality and carrier VoLTE/VoWi-Fi/WFC",
+      "long unplugged standby and doze power",
+      "dark-room ALS and brightness response",
+      "physical OIS stabilization image quality",
+      "active collision-log rotation workload",
+      "NFC transaction",
+      "Bluetooth accessory/audio",
+      "physical haptic feel",
+      "full graphics stress matrix and long-term stability",
+      "user acceptance of overall daily usability"
+    ],
+    "published": false
+  }
+}

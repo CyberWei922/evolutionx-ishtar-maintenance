@@ -1,0 +1,50 @@
+# SPDX-License-Identifier: Apache-2.0
+# Xiaomi ishtar .307 CIT/under-display ALS compensation service.
+# See policy-review/review120.md for evidence and runtime gates.
+type vendor_ishtar_als, domain;
+type vendor_ishtar_als_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_ishtar_als)
+hwbinder_use(vendor_ishtar_als)
+# The private display client obtains dimensions and CWB through vendor Binder.
+vndbinder_use(vendor_ishtar_als)
+allow vendor_ishtar_als vendor_qdisplay_service:service_manager find;
+
+# Private factory interface; its constructor also starts ALS processing.
+type vendor_ishtar_als_hwservice, hwservice_manager_type, protected_hwservice;
+add_hwservice(vendor_ishtar_als, vendor_ishtar_als_hwservice)
+
+# ISensorManager, its event-queue callback and returned file descriptors.
+allow vendor_ishtar_als fwk_sensor_hwservice:hwservice_manager find;
+binder_call(vendor_ishtar_als, sensor_service_server)
+binder_call(sensor_service_server, vendor_ishtar_als)
+
+# CWB: composer call/callback, allocator and in-process mapper.
+# Existing platform/QCOM attributes supply corresponding find/binder rules.
+hal_client_domain(vendor_ishtar_als, hal_graphics_composer)
+hal_client_domain(vendor_ishtar_als, hal_graphics_allocator)
+allow vendor_ishtar_als dmabuf_system_heap_device:chr_file r_file_perms;
+
+# SSC/QMI transport, using the existing QTI calibration/sensors policy model.
+# No network capability or IP socket classes are granted here.
+allow vendor_ishtar_als self:{ socket qipcrtr_socket } create_socket_perms;
+allowxperm vendor_ishtar_als self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+allowxperm vendor_ishtar_als self:qipcrtr_socket ioctl msm_sock_qrtr_ioctls;
+
+# Existing configuration/calibration; no calibration writes are granted.
+allow vendor_ishtar_als mnt_vendor_file:dir search;
+r_dir_file(vendor_ishtar_als, vendor_persist_sensors_file)
+r_dir_file(vendor_ishtar_als, vendor_sysfs_graphics)
+r_dir_file(vendor_ishtar_als, vendor_sysfs_displayfeature)
+
+# Kernel event stream: O_RDONLY and register/deregister only.
+allow vendor_ishtar_als vendor_displayfeature_device:chr_file { getattr open read ioctl };
+allowxperm vendor_ishtar_als vendor_displayfeature_device:chr_file ioctl { 0x4407 0x4408 };
+
+# Existing display-client property family and the observed algoInit write:
+# persist.vendor.sensors.used.framebuffer=1. set_prop also supplies read access.
+get_prop(vendor_ishtar_als, vendor_display_prop)
+set_prop(vendor_ishtar_als, vendor_sensors_prop)
+
+# System compositor sends only a frame-change hint over the existing HIDL service.
+allow surfaceflinger vendor_ishtar_als_hwservice:hwservice_manager find;
+binder_call(surfaceflinger, vendor_ishtar_als)

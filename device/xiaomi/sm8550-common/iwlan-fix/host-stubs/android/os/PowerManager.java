@@ -1,0 +1,1 @@
+package android.os; public class PowerManager {public static class WakeLock {public volatile boolean held;public int acquires,releases;public boolean isHeld(){return held;}public void acquire(){held=true;acquires++;}public void release(){if(!held)throw new AssertionError("double physical release");held=false;releases++;}}}

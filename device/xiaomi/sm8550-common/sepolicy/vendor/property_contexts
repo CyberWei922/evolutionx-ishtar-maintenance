@@ -1,0 +1,25 @@
+# Bluetooth
+# Keep the codec capability on the vendor property label rather than the
+# broader system_ext persist.vendor.bt.a2dp prefix.
+persist.vendor.bt.a2dp_offload_cap u:object_r:vendor_bluetooth_prop:s0 exact string
+
+# Camera
+persist.vendor.EnableP3ColorSpace               u:object_r:vendor_camera_p3enable_prop:s0
+vendor.camera.sensor.                           u:object_r:vendor_camera_sensor_prop:s0
+
+# Fingerprint
+persist.vendor.fingerprint. u:object_r:vendor_fp_prop:s0
+persist.vendor.sys.fp. u:object_r:vendor_fp_prop:s0
+ro.hardware.fp.udfps u:object_r:vendor_fp_prop:s0
+
+# Thermal
+vendor.sys.thermal.data.path u:object_r:vendor_thermal_normal_prop:s0
+
+# Mlipay
+persist.vendor.sys.pay.fido u:object_r:vendor_payment_security_prop:s0
+persist.vendor.sys.pay.fido2 u:object_r:vendor_payment_security_prop:s0
+persist.vendor.sys.pay.ifaa u:object_r:vendor_payment_security_prop:s0
+
+# NFC
+ro.vendor.nfc. u:object_r:vendor_nfc_mi_prop:s0
+ro.vendor.se. u:object_r:vendor_nfc_mi_prop:s0

@@ -1,0 +1,110 @@
+diff --git a/server/NetworkController.cpp b/server/NetworkController.cpp
+index 5105f9f..c7d0222 100644
+--- a/server/NetworkController.cpp
++++ b/server/NetworkController.cpp
+@@ -303,6 +303,10 @@ unsigned NetworkController::getNetworkForUser(uid_t uid) const {
+ // means that fallthrough to the default network does not work, physical networks not expected
+ // ever to be split tunnels.
+ unsigned NetworkController::getNetworkForConnectLocked(uid_t uid) const {
++    VirtualNetwork* virtualNetwork = getVirtualNetworkForUserLocked(uid);
++    if (virtualNetwork && !virtualNetwork->isSecure()) {
++        return virtualNetwork->getNetId();
++    }
+     if (Network* network = getPhysicalOrUnreachableNetworkForUserLocked(uid)) {
+         return network->getNetId();
+     }
+diff --git a/tests/ishtar_vpn80/Android.bp b/tests/ishtar_vpn80/Android.bp
+new file mode 100644
+index 0000000..1fa7100
+--- /dev/null
++++ b/tests/ishtar_vpn80/Android.bp
+@@ -0,0 +1,8 @@
++cc_binary {
++    name: "ishtar_netd_vpn_probe80",
++    defaults: ["netd_aidl_interface_lateststable_cpp_static"],
++    srcs: ["probe.cpp"],
++    shared_libs: ["libbinder", "libutils", "liblog", "libbase"],
++    compile_multilib: "64",
++    cflags: ["-Wall", "-Werror"],
++}
+diff --git a/tests/ishtar_vpn80/probe.cpp b/tests/ishtar_vpn80/probe.cpp
+new file mode 100644
+index 0000000..09c654b
+--- /dev/null
++++ b/tests/ishtar_vpn80/probe.cpp
+@@ -0,0 +1,75 @@
++// Focused runtime contract from AOSP NetdBinderTest.BypassableVPNFallthrough.
++// Uses only an unused UID and a temporary VPN NetId. Never changes the default
++// network or app data, and connects only to IPv6 loopback port 9.
++#include <android/net/INetd.h>
++#include <binder/IServiceManager.h>
++#include <utils/String16.h>
++#include <sys/socket.h>
++#include <sys/wait.h>
++#include <netinet/in.h>
++#include <grp.h>
++#include <unistd.h>
++#include <cerrno>
++#include <cstdint>
++#include <cstdio>
++#include <cstdlib>
++
++using android::net::INetd;
++constexpr int VPN_ID=64555;
++constexpr uid_t TEST_UID=1012345;
++struct Sample { int setup; uint32_t mark; int connect_errno; };
++static Sample sample(uid_t uid) {
++    int p[2]; if(pipe(p)) return {errno,0,0};
++    pid_t child=fork();
++    if(child==0) {
++        close(p[0]); Sample s={0,0,0}; gid_t group=3003;
++        if(setgroups(1,&group)||setresgid(uid,uid,uid)||setresuid(uid,uid,uid))s.setup=errno;
++        int fd=s.setup?-1:socket(AF_INET6,SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK,0);
++        if(fd<0&&!s.setup)s.setup=errno;
++        if(!s.setup) {
++            sockaddr_in6 a={}; a.sin6_family=AF_INET6;a.sin6_port=htons(9);a.sin6_addr=in6addr_loopback;
++            if(connect(fd,reinterpret_cast<sockaddr*>(&a),sizeof(a)))s.connect_errno=errno;
++            socklen_t n=sizeof(s.mark);if(getsockopt(fd,SOL_SOCKET,SO_MARK,&s.mark,&n))s.setup=errno;
++            close(fd);
++        }
++        if(write(p[1],&s,sizeof(s))!=sizeof(s))_exit(3);
++        _exit(0);
++    }
++    close(p[1]); Sample s={EIO,0,0};
++    if(child>0){ssize_t n=read(p[0],&s,sizeof(s));int st=0;waitpid(child,&st,0);if(n!=sizeof(s)||!WIFEXITED(st)||WEXITSTATUS(st))s.setup=EIO;}
++    close(p[0]);return s;
++}
++int main() {
++    auto b=android::defaultServiceManager()->checkService(android::String16("netd"));
++    auto netd=android::interface_cast<INetd>(b);
++    if(!netd){std::puts("SETUP_ERROR no_netd");return 2;}
++    int defaultId=-1;auto status=netd->networkGetDefault(&defaultId);
++    if(!status.isOk()||defaultId<=0){std::puts("SETUP_ERROR no_default");return 2;}
++    int failed=0;bool owned=false;
++    auto check=[&](const char*name,uid_t uid,int expected){
++        Sample s=sample(uid); bool pass=!s.setup&&int(s.mark&65535)==expected;
++        std::printf("CASE %s uid=%u expected_netid=%d actual_netid=%u mark=0x%x setup_errno=%d connect_errno=%d pass=%d\n",name,uid,expected,s.mark&65535,s.mark,s.setup,s.connect_errno,pass);
++        if(!pass)++failed;
++    };
++    check("no_vpn",TEST_UID,defaultId);
++    for(bool secure:{false,true}) {
++        android::net::NativeNetworkConfig c;c.netId=VPN_ID;c.networkType=android::net::NativeNetworkType::VIRTUAL;
++        c.permission=INetd::PERMISSION_NONE;c.secure=secure;c.excludeLocalRoutes=false;
++        status=netd->networkCreate(c);
++        if(!status.isOk()){std::printf("SETUP_ERROR create=%s\n",status.toString8().c_str());return 2;}
++        owned=true;
++        android::net::UidRangeParcel range;range.start=TEST_UID;range.stop=TEST_UID;
++        status=netd->networkAddUidRanges(VPN_ID,{range});
++        if(!status.isOk()) {netd->networkDestroy(VPN_ID);std::printf("SETUP_ERROR range=%s\n",status.toString8().c_str());return 2;}
++        check(secure?"secure_vpn":"bypassable_vpn",TEST_UID,secure?defaultId:VPN_ID);
++        check(secure?"secure_other_uid":"bypassable_other_uid",TEST_UID+1,defaultId);
++        status=netd->networkDestroy(VPN_ID);owned=false;
++        if(!status.isOk()){std::puts("SETUP_ERROR destroy");return 2;}
++    }
++    if(owned)netd->networkDestroy(VPN_ID);
++    int after=-1;status=netd->networkGetDefault(&after);
++    if(!status.isOk()||after!=defaultId){std::puts("SETUP_ERROR default_changed");return 2;}
++    check("after_cleanup",TEST_UID,defaultId);
++    std::printf("RESULT cases=6 failed=%d default_unchanged=1 temp_network_removed=1\n",failed);
++    return failed?1:0;
++}

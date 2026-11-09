@@ -1,0 +1,1 @@
+package vendor.qti.iwlan; public class IWlanLog {public final java.util.List<String> lines=java.util.Collections.synchronizedList(new java.util.ArrayList<>());public void w(String tag,String s){lines.add(tag+":"+s);}}

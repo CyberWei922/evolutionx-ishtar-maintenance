@@ -1,0 +1,20 @@
+diff --git a/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java b/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java
+--- a/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java
++++ b/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java
+@@ -3019,6 +3019,16 @@
+         useDataRegStateForDataOnlyDevices();
+         processIwlanRegistrationInfo();
+ 
++        // Vendor RILs may report the primary PhysicalChannelConfig before the polled
++        // ServiceState contains the matching LTE CellIdentity. Re-evaluate the cached
++        // config after this poll and publish only if an actual field was completed.
++        List<PhysicalChannelConfig> completedConfigs =
++                completeLtePhysicalChannelConfigs(mLastPhysicalChannelConfigList, mNewSS);
++        if (completedConfigs != mLastPhysicalChannelConfigList) {
++            mLastPhysicalChannelConfigList = completedConfigs;
++            mPhone.notifyPhysicalChannelConfig(completedConfigs);
++        }
++
+         updateNrFrequencyRangeFromPhysicalChannelConfigs(mLastPhysicalChannelConfigList, mNewSS);
+         updateNrStateFromPhysicalChannelConfigs(mLastPhysicalChannelConfigList, mNewSS);
+         updateNtnCapability();

@@ -1,0 +1,6 @@
+vendor.xiaomi.hardware.mfidoca::IFidoService u:object_r:vendor_mfidoca_hwservice:s0
+vendor.xiaomi.hardware.mtdservice::IMTService u:object_r:vendor_mtd_hwservice:s0
+vendor.xiaomi.hardware.tidaservice::ITidaService u:object_r:vendor_tida_hwservice:s0
+
+# HIDL context keys omit version, covering inherited1.1 and2.0 interfaces.
+vendor.xiaomi.sensor.citsensorservice::ICitSensorService u:object_r:vendor_ishtar_als_hwservice:s0

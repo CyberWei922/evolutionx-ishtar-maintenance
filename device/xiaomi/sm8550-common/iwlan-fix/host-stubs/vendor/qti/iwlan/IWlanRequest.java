@@ -1,0 +1,1 @@
+package vendor.qti.iwlan; public class IWlanRequest { static final java.util.concurrent.atomic.AtomicInteger sNextSerial=new java.util.concurrent.atomic.AtomicInteger(); int mSerial,mRequest,mWakeLockType=-1;String mClientId;android.os.Message mResult;IWlanRequest(int r,android.os.Message m){mSerial=sNextSerial.getAndIncrement();mRequest=r;mResult=m;mClientId=""+mSerial;}}

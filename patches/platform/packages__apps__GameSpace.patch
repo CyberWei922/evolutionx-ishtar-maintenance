@@ -1,0 +1,45 @@
+diff --git a/app/src/main/java/io/chaldeaprjkt/gamespace/gamebar/DanmakuServiceListener.kt b/app/src/main/java/io/chaldeaprjkt/gamespace/gamebar/DanmakuServiceListener.kt
+index 412abfb..d58f6c7 100644
+--- a/app/src/main/java/io/chaldeaprjkt/gamespace/gamebar/DanmakuServiceListener.kt
++++ b/app/src/main/java/io/chaldeaprjkt/gamespace/gamebar/DanmakuServiceListener.kt
+@@ -22,6 +22,7 @@ package io.chaldeaprjkt.gamespace.gamebar
+ import android.app.Notification
+ import android.service.notification.NotificationListenerService
+ import android.service.notification.StatusBarNotification
++import android.util.Log
+ 
+ class DanmakuServiceListener : NotificationListenerService() {
+ 
+@@ -33,13 +34,19 @@ class DanmakuServiceListener : NotificationListenerService() {
+ 
+     override fun onListenerConnected() {
+         super.onListenerConnected()
+-        getActiveNotifications()?.forEach { sbn ->
+-            if (sbn.isClearable && !sbn.isOngoing) {
+-                val danmakuText = extractDanmakuText(sbn)
+-                if (danmakuText.isNotBlank()) {
+-                    postedNotifications[danmakuText] = System.currentTimeMillis()
++        try {
++            getActiveNotifications()?.forEach { sbn ->
++                if (sbn.isClearable && !sbn.isOngoing) {
++                    val danmakuText = extractDanmakuText(sbn)
++                    if (danmakuText.isNotBlank()) {
++                        postedNotifications[danmakuText] = System.currentTimeMillis()
++                    }
+                 }
+             }
++        } catch (securityException: SecurityException) {
++            // The listener can be connected before privileged notification access is fully
++            // settled. Keep the service alive and process later posted notifications.
++            Log.w(TAG, "Unable to enumerate active notifications", securityException)
+         }
+     }
+ 
+@@ -103,6 +110,7 @@ class DanmakuServiceListener : NotificationListenerService() {
+     }
+ 
+     companion object {
++        private const val TAG = "DanmakuServiceListener"
+         private const val NOTIFICATIONS_MAX_CACHED = 99
+     }
+ }

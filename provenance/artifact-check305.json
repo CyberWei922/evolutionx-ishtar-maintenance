@@ -1,0 +1,1831 @@
+{
+  "state": "candidate_static_checks_passed_device_test_pending",
+  "ota": "/mnt/android-work/Android/source/evox17-official-candidate/out/target/product/ishtar/lineage_ishtar-ota.zip",
+  "target_files": "/mnt/android-work/Android/source/evox17-official-candidate/out/target/product/ishtar/obj/PACKAGING/target_files_intermediates/lineage_ishtar-target_files.zip",
+  "phone_accessed": false,
+  "runtime_verified": false,
+  "cryptographic_signatures_independently_verified": true,
+  "official_approval": false,
+  "phase": "complete",
+  "metadata": {
+    "ota-property-files": "payload_metadata.bin:4694:242841,payload.bin:4694:4550930804,payload_properties.txt:4550935556:156,apex_info.pb:2206:1448,care_map.pb:3701:926,metadata:69:680,metadata.pb:817:1341                        ",
+    "ota-required-cache": "0",
+    "ota-streaming-property-files": "payload.bin:4694:4550930804,payload_properties.txt:4550935556:156,apex_info.pb:2206:1448,care_map.pb:3701:926,metadata:69:680,metadata.pb:817:1341                          ",
+    "ota-type": "AB",
+    "post-build": "google/bluejay_beta/bluejay:CANARY/ZP11.260918.007/16484274:user/release-keys",
+    "post-build-incremental": "1794048426",
+    "post-sdk-level": "37",
+    "post-security-patch-level": "2026-10-01",
+    "post-timestamp": "1794048426",
+    "pre-device": "ishtar"
+  },
+  "ota_sha256": "205107f2548f7f7c239130cd89dec6fd7987ed28f7d9487919152e319ec2ee7e",
+  "ota_bytes": 4550939112,
+  "zip_crc_passed": true,
+  "payload_properties_passed": true,
+  "partitions": {
+    "abl": {
+      "bytes": 233472,
+      "sha256": "920ba7bffecc995cf6cc20c290c65318e8265ea8a4d009fba03fc4d711147749"
+    },
+    "aop": {
+      "bytes": 282624,
+      "sha256": "481f2077997b0ba736eb449504a5ef52bfa700c0ea34c5d1161978a48dd4eeba"
+    },
+    "aop_config": {
+      "bytes": 16384,
+      "sha256": "31661ddc91bb3402c48d36b83bb385f2ba9da93801f0f301b8ff3238f9660999"
+    },
+    "bluetooth": {
+      "bytes": 1257472,
+      "sha256": "b366848eec71272a29ecb4ef1fa02e995d68f1ccddce565ad127e051c6af2ec3"
+    },
+    "boot": {
+      "bytes": 201326592,
+      "sha256": "06199e2122f315533a2d8532f8b8d4558d9922352804c2be1639ded3f069c31c"
+    },
+    "cpucp": {
+      "bytes": 192512,
+      "sha256": "a26f225287285f6adb42d5847940de947f6c739cc2741877291afed7854e25b5"
+    },
+    "devcfg": {
+      "bytes": 57344,
+      "sha256": "014d24647297d007fbcd93c720d42e6a38e0a83d4d7a8efae8eac4672edfcdcf"
+    },
+    "dsp": {
+      "bytes": 67108864,
+      "sha256": "7ae8afea0ecd45cb64323e0ba0a86eb8f39fee6c0f683e1e2d0557f02d45f188"
+    },
+    "dtbo": {
+      "bytes": 25165824,
+      "sha256": "bfff8f22ba942a2d7660516245c7cdcb2b5eccbb0ee97d080162474dd07af9e5"
+    },
+    "featenabler": {
+      "bytes": 98304,
+      "sha256": "4ffcda8b36fed24399c47d911bc0767691c986c895e524eecfa5820fe782a837"
+    },
+    "hyp": {
+      "bytes": 1458176,
+      "sha256": "52b697bd1ef1fbc47f9f279e60b25b929bdd3c77091474fa9c3af039087da01a"
+    },
+    "imagefv": {
+      "bytes": 6299648,
+      "sha256": "883383ea8059bcdcc7248dffd97e8b5f14d47b879b51414cea28ec2124de03cd"
+    },
+    "init_boot": {
+      "bytes": 8388608,
+      "sha256": "5ec0851a60faebf2763c883ad467707b71a72ffd8d20f25cdba2736cbcb43691"
+    },
+    "keymaster": {
+      "bytes": 413696,
+      "sha256": "88880c37914ff19a63059457b84635961579b2fa764f111b61249e6a69c161a1"
+    },
+    "modem": {
+      "bytes": 372895744,
+      "sha256": "f7b5eae12b20dadbb4f687fc97bb3d27c56ba8fb315aaf6214cfc6dfafc34a44"
+    },
+    "odm": {
+      "bytes": 1693560832,
+      "sha256": "2e711c1ead0202c28da2c9b8017643b7c298378f93031cd03a0e7cd0f9ead062"
+    },
+    "product": {
+      "bytes": 3050143744,
+      "sha256": "3db1942487d44e55a71891d3fd5e0d803da82640e0124db0dc3f26984f3763d7"
+    },
+    "qupfw": {
+      "bytes": 57344,
+      "sha256": "2c503303816780aaa0feb86f88ef9819506d2b1d254fb781233f7bf8ea515e09"
+    },
+    "recovery": {
+      "bytes": 104857600,
+      "sha256": "d79b57501ef397e39d89d09f9324bdf3bfdb4e007958d7f279618630db240b1d"
+    },
+    "shrm": {
+      "bytes": 65536,
+      "sha256": "a0ef0a811dc90db1d4371ea237b716bcb47025d815bd0627c5944759a2177630"
+    },
+    "system": {
+      "bytes": 1164087296,
+      "sha256": "decc275cb77108ae98f1581e62fa2b3089e3d3f7f86ca30aae64f25fcdf01e99"
+    },
+    "system_dlkm": {
+      "bytes": 348160,
+      "sha256": "b57835cb5be7099ed046da2ee13079026fa2aeb968d13d3f64a7b7e32bc734fe"
+    },
+    "system_ext": {
+      "bytes": 1313038336,
+      "sha256": "5fd1d1cbe957e51ed4d3fa74f792bf388fba0c45a65cdf179b410f8bda8139a2"
+    },
+    "tz": {
+      "bytes": 3973120,
+      "sha256": "f8aae4dffe9c0aa1d3e02538ff23c21bf9e93e9a86a818fede3ae71bada6c9b4"
+    },
+    "uefi": {
+      "bytes": 2945024,
+      "sha256": "96dd61ec3d52bbe464e8722c82fc88c8f631c2fcae71f4e0dac872f7b76e7207"
+    },
+    "uefisecapp": {
+      "bytes": 180224,
+      "sha256": "48f223f33dd0b826dbefc6ddc6530bcf809850b40a28d48f22aa17bb590b22c6"
+    },
+    "vbmeta": {
+      "bytes": 8192,
+      "sha256": "ce8b0144bb96633f6350fb057588aa3762d0995eca572185896e96b25e400733"
+    },
+    "vbmeta_system": {
+      "bytes": 4096,
+      "sha256": "6ac425457874d0bd6086de95aa566ce3eb7b4ea511cd36007d81ea44793f6d91"
+    },
+    "vendor": {
+      "bytes": 633458688,
+      "sha256": "abb29724dbe121debaa06597747ca2eceb879fe75b823cc428df2cb83d14aede"
+    },
+    "vendor_boot": {
+      "bytes": 100663296,
+      "sha256": "ecc1cbe55c329bf7d2c1b556034ecbf8343db83344bf232ca193e982e518c8df"
+    },
+    "vendor_dlkm": {
+      "bytes": 33435648,
+      "sha256": "325c57842226e873a6306433f7a3b243f3d9d84265ebce31c8b25cbb7ca307a3"
+    },
+    "xbl": {
+      "bytes": 1200128,
+      "sha256": "9c79c4a13bba44bfb8f3486f251e1ebf3e8175bd337c1a03ca440035b3183f19"
+    },
+    "xbl_config": {
+      "bytes": 188416,
+      "sha256": "d9c74f05871ed94098b60580a9f4fc16ddf4e5887b11dcc8c489b5f2c32888e1"
+    },
+    "xbl_ramdump": {
+      "bytes": 884736,
+      "sha256": "2b8739648740e39325fe921191591c0327ad9a5865efa935c8acf58866d1691e"
+    }
+  },
+  "radio_images_matching_target_files": [
+    "abl",
+    "aop",
+    "aop_config",
+    "bluetooth",
+    "cpucp",
+    "devcfg",
+    "dsp",
+    "featenabler",
+    "hyp",
+    "imagefv",
+    "keymaster",
+    "modem",
+    "qupfw",
+    "shrm",
+    "tz",
+    "uefi",
+    "uefisecapp",
+    "xbl",
+    "xbl_config",
+    "xbl_ramdump"
+  ],
+  "ota_whole_file_signature288": {
+    "all_passed": true,
+    "ota": "/mnt/android-work/Android/source/evox17-official-candidate/out/target/product/ishtar/lineage_ishtar-ota.zip",
+    "bytes": 4550939112,
+    "signed_prefix_bytes": 4550937376,
+    "signature_der_sha256": "fec157be6cfed0e9501452dcb56988f19b0c0e286b66cfa90272269a86d9c243",
+    "trust_certificate_sha256": "a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc",
+    "certificate": "/mnt/android-work/Android/source/evox17-official-candidate/build/make/target/product/security/testkey.x509.pem",
+    "openssl_exit_code": 0,
+    "command": [
+      "openssl",
+      "cms",
+      "-verify",
+      "-binary",
+      "-inform",
+      "DER",
+      "-in",
+      "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/ota-signature288/signature.p7",
+      "-content",
+      "/dev/stdin",
+      "-nointern",
+      "-certfile",
+      "/mnt/android-work/Android/source/evox17-official-candidate/build/make/target/product/security/testkey.x509.pem",
+      "-noverify",
+      "-out",
+      "/dev/null"
+    ],
+    "recovery_footer_and_eocd_checks_passed": true,
+    "trusted_signer_only": true,
+    "phone_accessed": false
+  },
+  "ota_whole_file_signature_verified_against_expected_testkey": true,
+  "all_payload_partition_hashes_verified": true,
+  "ims_availability_properties_preserved288": {
+    "persist.dbg.volte_avail_ovr": "1",
+    "persist.dbg.vt_avail_ovr": "1",
+    "persist.dbg.wfc_avail_ovr": "1"
+  },
+  "actual_system_properties": {
+    "ro.build.version.release": "17",
+    "ro.build.version.sdk": "37",
+    "ro.build.version.incremental": "1794048426",
+    "ro.build.version.security_patch": "2026-10-01",
+    "ro.build.fingerprint": "google/bluejay_beta/bluejay:CANARY/ZP11.260918.007/16484274:user/release-keys",
+    "ro.surface_flinger.ishtar_als_frame_hint": "true"
+  },
+  "actual_evolution_properties": {
+    "ro.evolution.build.version": "EvolutionX-17.0-20261107-ishtar-12.3-Unofficial",
+    "ro.evolution.build.type": "Unofficial",
+    "ro.evolution.version": "17.0"
+  },
+  "rom_version": "EvolutionX-17.0-20261107-ishtar-12.3-Unofficial",
+  "static_permissive_domains": [],
+  "actual_policy_sha256": "0b0e2626eb6a55b71629ece6ccd5f466343e9300eec41e084d23eedd696bbf6a",
+  "absent_thermal_boot_complete_wait_removed": true,
+  "thermal_sconfig_action_preserved": true,
+  "factory_as_pcs_artifact_and_manifest_gate": {
+    "factory_path": "/product/priv-app/DeviceIntelligenceNetworkPrebuiltAstrea/DeviceIntelligenceNetworkPrebuiltAstrea.apk",
+    "factory_apk_sha256": "83dacca58a475d8c9cbe4e09c3404f29c0c5080a28727e67f071b48839039897",
+    "as_signer_sha256": "3af39ab967aaa5d279e49b5f769cb66e40799838bc8799343ee57ae435d2455b",
+    "factory_pcs_manifest_includes_actual_as_signer": true,
+    "phone_changed": false,
+    "runtime_bind_after_fix_tested": false,
+    "as_path": "/product/priv-app/DevicePersonalizationAiAiPrebuiltPixel2026/DevicePersonalizationAiAiPrebuiltPixel2026.apk",
+    "as_apk_sha256": "8371170e6b80c2ce842592171bce7d65f8aeaeae78955bb414517d6883109f2c",
+    "factory_pcs_signature_verified": true
+  },
+  "runtime_fixes106_actual_images": {
+    "reciprocal_as_pcs_system_association": true,
+    "nowplaying_relationship_preserved": true,
+    "thermal_restart_declared_service": true,
+    "google_xml_sha256": "90e8df89df68f0c296e1f4e0353c43f3f29d8d62ef85c368145654d40ec85356",
+    "thermal_rc_sha256": "a5d4c6ce15eecd71904df7d8a55703476cd931ae2ce3cb0a1339348a6a6c7184",
+    "phone_runtime_test_pending": true
+  },
+  "thermal_existing_policy_readability_verified": {
+    "source": "hal_thermal_default",
+    "mask_bits": 32,
+    "unconditional_allow_only": true,
+    "checks": [
+      {
+        "target": "sysfs_thermal",
+        "class": "file",
+        "permission": "open",
+        "permission_bit": 18,
+        "allow": true
+      },
+      {
+        "target": "sysfs_thermal",
+        "class": "file",
+        "permission": "read",
+        "permission_bit": 1,
+        "allow": true
+      },
+      {
+        "target": "sysfs_thermal",
+        "class": "file",
+        "permission": "getattr",
+        "permission_bit": 4,
+        "allow": true
+      },
+      {
+        "target": "sysfs_thermal",
+        "class": "dir",
+        "permission": "open",
+        "permission_bit": 18,
+        "allow": true
+      },
+      {
+        "target": "sysfs_thermal",
+        "class": "dir",
+        "permission": "read",
+        "permission_bit": 1,
+        "allow": true
+      },
+      {
+        "target": "sysfs_thermal",
+        "class": "dir",
+        "permission": "search",
+        "permission_bit": 28,
+        "allow": true
+      },
+      {
+        "target": "sysfs_thermal",
+        "class": "dir",
+        "permission": "getattr",
+        "permission_bit": 4,
+        "allow": true
+      },
+      {
+        "target": "sysfs_thermal",
+        "class": "lnk_file",
+        "permission": "read",
+        "permission_bit": 1,
+        "allow": true
+      },
+      {
+        "target": "sysfs_thermal",
+        "class": "lnk_file",
+        "permission": "getattr",
+        "permission_bit": 4,
+        "allow": true
+      },
+      {
+        "target": "sysfs",
+        "class": "dir",
+        "permission": "open",
+        "permission_bit": 18,
+        "allow": false
+      },
+      {
+        "target": "sysfs",
+        "class": "dir",
+        "permission": "read",
+        "permission_bit": 1,
+        "allow": false
+      },
+      {
+        "target": "sysfs",
+        "class": "dir",
+        "permission": "search",
+        "permission_bit": 28,
+        "allow": true
+      },
+      {
+        "target": "sysfs",
+        "class": "dir",
+        "permission": "getattr",
+        "permission_bit": 4,
+        "allow": true
+      },
+      {
+        "target": "sysfs",
+        "class": "lnk_file",
+        "permission": "read",
+        "permission_bit": 1,
+        "allow": true
+      },
+      {
+        "target": "sysfs",
+        "class": "lnk_file",
+        "permission": "getattr",
+        "permission_bit": 4,
+        "allow": true
+      }
+    ],
+    "missing": 2
+  },
+  "residual_fixes110_actual_images": {
+    "all_three_fixes_present": true,
+    "ueventd_three_rules_valid": true,
+    "ueventd_sha256": "2ad2a6a051f2ea71695170710d7b0a83753558a58fe35486a827c37c2018cbf1",
+    "skin_hal_sha256": "850b5480c1cfc2a75d142eb72d8aa634e92625655d7464ba4ad193021e4d3113",
+    "skin_model_uses_stock_sensors": true,
+    "stock_native_thermal_policy_unchanged": true,
+    "stock_thermal_inputs_sha256": {
+      "odm/etc/thermal-4k.conf": "2179ddb4c2c8a88fe8895e3be351cb8015c35845365227306b9547e717bcb0eb",
+      "odm/etc/thermal-arvr.conf": "b22007c96788a05051aa8673d54ec3b551409b918525e0a13f251421997d40a2",
+      "odm/etc/thermal-camera.conf": "c2e4734a9026075d24ff8f73bcf6ecfaf5aad6aaae6fa3fac08478fac4f40364",
+      "odm/etc/thermal-cclassvideo.conf": "94c4a243c4da47eca60206339886005c228ec2d7de3d4e0e46507e08ebffaa99",
+      "odm/etc/thermal-cgame.conf": "ea629a8d901898230736f3196ba583bd6be6ae37892b07a15d690be66b4ef6c9",
+      "odm/etc/thermal-chg-only.conf": "cd9fa4ead4a0dab1497ab97001e827b603bd7c1b07e06a9f15978e25fef43a25",
+      "odm/etc/thermal-class0.conf": "73e8328450fe3821e92f209ef1e572c924e998e4c6a3e1e9d1e244e4538e3923",
+      "odm/etc/thermal-hp-mgame.conf": "c89c61983e8eff606ee8cccdec98929dbb5b1bba40b4aea10f3e466174803abe",
+      "odm/etc/thermal-hp-normal.conf": "a0baee9bf3178d0624c297203e697e0c88939c2905ff262f4653276c8df5f706",
+      "odm/etc/thermal-huanji.conf": "86962add2235b856d13044f9e137041a75162cdb19a5f4dbcaeebf69925c142b",
+      "odm/etc/thermal-mgame.conf": "eca3a7e3a439d2cf968a2d6fe1121a3b247319d0345a6bdb68b05eea6f08ac86",
+      "odm/etc/thermal-navigation.conf": "5c6e43b7352120e0f3b83565aec94b0ed5912d38d49ef931e19e77e42b289573",
+      "odm/etc/thermal-nolimits.conf": "f204e76c3a64249f3b9488c6f5e5045c168e6155af5fb784e494413e6eab6f42",
+      "odm/etc/thermal-normal.conf": "32f7f498e3c9280431158b963a1ef4fe433a2dc29a8e14bf93f7907c9073dece",
+      "odm/etc/thermal-per-class0.conf": "395534a2afde3c68fcf556350f3191c59c88800248b20a220a52c480c7dd4cc9",
+      "odm/etc/thermal-per-normal.conf": "a0af006121f92bc61f32a5798223549cd68357da06f9dca38468eb469c0f1af6",
+      "odm/etc/thermal-per-video.conf": "6c9aca488469fd9b72f8f7252c412df0a9125f4b63d481084d690e97b3e1cb4b",
+      "odm/etc/thermal-phone.conf": "8a9f801a8b2cc203d86c9bc3d37134bf224c00ed337fb5494d9289f74ea5ceb4",
+      "odm/etc/thermal-tgame.conf": "3744c13539e529066d536bf1a7f8f8e7b3ae85cff8f19179460e5566fd704d80",
+      "odm/etc/thermal-video.conf": "f32ac1e320b843cb41776da87e3666b81ab0490a35fd9eeca101617984a536d4",
+      "odm/etc/thermal-videochat.conf": "f02836c00f3308cce0e0468630ac2812fbd3dc70dd56a28409c1c89e630bf0f8",
+      "vendor/bin/mi_thermald": "659fe2afe90316244d240afcb24661d701e7d450f304daa58bd2fd2d69f9b0e7",
+      "vendor/bin/thermal-engine-v2": "599aa335da5a4bc061d66d9e238b90ecc46eac61f2a7517286d0dee5fee043f2",
+      "vendor/etc/thermal-engine.conf": "c32b39af7a19759a7db7f8b2d92d069a0534848aa7a195ca2cec24aa6c317cb3",
+      "vendor/etc/thermal-map.conf": "0f327096fa25847e411582f7ad8ea2370951f87e642511dabc50379d8ba6bb9c",
+      "vendor/etc/thermald-devices.conf": "52fdfb9b59f46527a9d4cfcb8028409368d811f46d6b8440d2477c0140eff6b1"
+    },
+    "explicit_required_resource_path_present_in_both_libcs": true,
+    "bootstrap_libc_sha256": "0ab338d2f49877ec1e22cd8b9faa79fdc551ece0c070fa42f771b3454453a60e",
+    "runtime_apex_libc_sha256": "28b5a8ab946fc71552ca4e9d5036b60f0d392dca8bc932e880b3719ab4505b11",
+    "runtime_apex_linker_sha256": "ca1137b1795d789def6078a3defd8b0e19484bb36b4d2b835c33142985bff0b7",
+    "runtime_apex_sha256": "45c5073b665523605035cf8705e9eebd180b5684d347375c6e77a9383977983f",
+    "new_OTA_device_test_pending": true
+  },
+  "runtime_components_match_current_built_product": true,
+  "bluetooth_capability_exact_vendor_label_verified": true,
+  "radio_psno_exact_vendor_label_verified": true,
+  "all_eight_oem_radio_exact_labels_verified": true,
+  "camera_debug_property_exact_vendor_label_verified": true,
+  "vendor_property_contexts_sha256": "c12e595af4285579a8cd58d1dd680676cfc704c97c60c005a598d696d91125de",
+  "ois_driver_source_sha256": "40b1d14331cc195f4447a024315c5ec225fd845caaf7d5760d1e35ff488b289c",
+  "camera_module_sha256": "c8d13b84ad0deb1f0ec2ffe026e85e5641c78657fa23c11ff17d16b3b578748c",
+  "camera_existing_property_set_permission_verified": true,
+  "kernel_reclaim_cpuset_setsched_rule_verified": true,
+  "exact_service_rules_verified": [
+    {
+      "source": "esimswitcher_app",
+      "target": "gpu_service",
+      "permission": "service_manager find",
+      "allowed": true
+    },
+    {
+      "source": "updater_app",
+      "target": "system_update_service",
+      "permission": "service_manager find",
+      "allowed": true
+    }
+  ],
+  "kernel_post_boot_readproc_group_verified": true,
+  "sys_ptrace_not_allowed_to_boot_script": true,
+  "global_selinux_boot_mode": "Enforcing",
+  "actual_boot_parameters_permissive": false,
+  "policy_mapping_pairs": {
+    "system": "495ca6fe092932e9772d731830cf760435c187c57444422146c57e109c14bca7",
+    "system_ext": "90d6e12ce5331152a816452d90023516d4cac647909be10c2d098db4d2883d36",
+    "product": "3cbb7c2459534c0a7978e02723ed655e629faf620e1cd14cc76bfe9ee197e0c7"
+  },
+  "actual_vbmeta_flags": 3,
+  "kernel_selinux_develop": true,
+  "init_build_debuggable": true,
+  "full_lto": true,
+  "global_mode_is_distinct_from_policy_permissive_domain_list": true,
+  "avb_key_version_properties_match_clean56": {
+    "boot": {
+      "com.android.build.boot.os_version": "17"
+    },
+    "init_boot": {
+      "com.android.build.init_boot.os_version": "17"
+    },
+    "vendor_boot": {},
+    "recovery": {},
+    "vbmeta": {
+      "com.android.build.boot.os_version": "17",
+      "com.android.build.init_boot.os_version": "17",
+      "com.android.build.odm.os_version": "17",
+      "com.android.build.system_dlkm.os_version": "17",
+      "com.android.build.vendor.os_version": "17",
+      "com.android.build.vendor.security_patch": "2026-02-01",
+      "com.android.build.vendor_dlkm.os_version": "17"
+    },
+    "vbmeta_system": {
+      "com.android.build.product.os_version": "17",
+      "com.android.build.product.security_patch": "2026-10-01",
+      "com.android.build.system.os_version": "17",
+      "com.android.build.system.security_patch": "2026-10-01",
+      "com.android.build.system_ext.os_version": "17",
+      "com.android.build.system_ext.security_patch": "2026-10-01"
+    }
+  },
+  "desktop_components270": {
+    "launcher": {
+      "sha256": "19a140dff8a22fdbeb53126f0824c4dff95975311370888b6352e48fe44d323f",
+      "matches_release47": true
+    },
+    "systemui": {
+      "sha256": "409f0f68d7f6f7bde07e50364c5a456cea9b98b1039be0945d793bead726875b",
+      "matches_pre305_systemui": false,
+      "matches_release47": false,
+      "errorfix305_dex_audit_pending": false,
+      "blur_call_moved_to_attached": true
+    },
+    "framework": {
+      "sha256": "cba33418445b0ad71f98c9f280fda37572591f98b0bf646dbdbc8da8435a03b7",
+      "matches_release47": true
+    },
+    "services": {
+      "sha256": "348b6c73ec69c65c0bd43288e9fb487a62dc3ab03bb0ed31c4e59a56868f883c",
+      "matches_release47": true
+    }
+  },
+  "launcher_framework_services_preserved_systemui_rebuilt_for_errorfix305": true,
+  "vpn_routing_source_runtime_six_case_result": {
+    "exit_code": 0,
+    "cases": [
+      "CASE no_vpn uid=1012345 expected_netid=100 actual_netid=100 mark=0x64 setup_errno=0 connect_errno=115 pass=1",
+      "CASE bypassable_vpn uid=1012345 expected_netid=64555 actual_netid=64555 mark=0xfc2b setup_errno=0 connect_errno=115 pass=1",
+      "CASE bypassable_other_uid uid=1012346 expected_netid=100 actual_netid=100 mark=0x64 setup_errno=0 connect_errno=115 pass=1",
+      "CASE secure_vpn uid=1012345 expected_netid=100 actual_netid=100 mark=0x64 setup_errno=0 connect_errno=115 pass=1",
+      "CASE secure_other_uid uid=1012346 expected_netid=100 actual_netid=100 mark=0x64 setup_errno=0 connect_errno=115 pass=1",
+      "CASE after_cleanup uid=1012345 expected_netid=100 actual_netid=100 mark=0x64 setup_errno=0 connect_errno=115 pass=1"
+    ],
+    "all_six_passed": true,
+    "source_fix_runtime_verified": true
+  },
+  "vpn_routing_netd_sha256": "dfb18c53c08a7bd78e985d13c5fef01ce200500b633f700d43842861fd145985",
+  "owner_temporary_workaround_passed": true,
+  "netd_regular_partition_file_owner_mode_label_verified": "system/bin/netd 0 2000 755 capabilities=0x0",
+  "netd_actual_image_selinux_label": "u:object_r:netd_exec:s0",
+  "diagnostic_probe_and_test_apks_absent": true,
+  "animation_owner_acceptance": false,
+  "baseline_network_fix_device_and_owner_tests_passed": true,
+  "new_OTA_device_test_pending": true,
+  "kernel_maintenance295": {
+    "release": "5.15.224",
+    "image_sha256": "b4b1f645a8f80dbe852c707be037b36ce23b6be1f375b9563952151840773c30",
+    "config_sha256": "fc7c4531e4f580bbc8695ae9caa56bcaa8f7138053e98b55bbefb88486179c25",
+    "matching_modules": 731,
+    "core_type_layout_comparison": {
+      "task_struct": {
+        "before_size": 4608,
+        "after_size": 4608,
+        "existing_member_differences": {}
+      },
+      "cred": {
+        "before_size": 176,
+        "after_size": 176,
+        "existing_member_differences": {}
+      },
+      "file": {
+        "before_size": 264,
+        "after_size": 264,
+        "existing_member_differences": {}
+      },
+      "inode": {
+        "before_size": 752,
+        "after_size": 752,
+        "existing_member_differences": {}
+      },
+      "dentry": {
+        "before_size": 208,
+        "after_size": 208,
+        "existing_member_differences": {}
+      },
+      "path": {
+        "before_size": 16,
+        "after_size": 16,
+        "existing_member_differences": {}
+      },
+      "linux_binprm": {
+        "before_size": 416,
+        "after_size": 416,
+        "existing_member_differences": {}
+      },
+      "module": {
+        "before_size": 960,
+        "after_size": 960,
+        "existing_member_differences": {}
+      },
+      "vfsmount": {
+        "before_size": 64,
+        "after_size": 64,
+        "existing_member_differences": {}
+      },
+      "super_block": {
+        "before_size": 1600,
+        "after_size": 1600,
+        "existing_member_differences": {}
+      },
+      "mm_struct": {
+        "before_size": 992,
+        "after_size": 992,
+        "existing_member_differences": {}
+      },
+      "signal_struct": {
+        "before_size": 1120,
+        "after_size": 1120,
+        "existing_member_differences": {}
+      },
+      "security_hook_list": {
+        "before_size": 40,
+        "after_size": 40,
+        "existing_member_differences": {}
+      },
+      "tty_struct": {
+        "before_size": 832,
+        "after_size": 856,
+        "existing_member_differences": {}
+      },
+      "timer_list": {
+        "before_size": 56,
+        "after_size": 56,
+        "existing_member_differences": {}
+      }
+    },
+    "ksu_static_compatibility": {
+      "sha256": "70da6b2b93329441b81d18581671ff4e0580984630095bc155b295d07e9802fd",
+      "loader_sha256": "365c66e5435a9ecdb3dbb23ceda2d9253568defeee3682af95220087094eff5d",
+      "loader_matches_accepted_ramdisk": true,
+      "required_undefined_symbols": 229,
+      "missing_required_system_map_symbols": [],
+      "previously_exported_symbols_no_longer_exported": [],
+      "dynamic_symbols_nonexported_in_both": [
+        "__arm64_sys_close",
+        "__arm64_sys_setns",
+        "__hashtab_insert",
+        "__set_fixmap",
+        "__tracepoint_sys_enter",
+        "alloc_uid",
+        "avc_has_perm",
+        "avc_ss_reset",
+        "avtab_alloc",
+        "avtab_destroy",
+        "avtab_insert_nonunique",
+        "avtab_search_node",
+        "avtab_search_node_next",
+        "change_pid",
+        "cond_compute_av",
+        "copy_to_kernel_nofault",
+        "current_is_single_threaded",
+        "dcache_clean_inval_poc",
+        "ebitmap_cmp",
+        "ebitmap_contains",
+        "ebitmap_destroy",
+        "ebitmap_get_bit",
+        "ebitmap_set_bit",
+        "ext4_unregister_sysfs",
+        "init_mm",
+        "kallsyms_lookup",
+        "kallsyms_lookup_name",
+        "kallsyms_lookup_size_offset",
+        "ksys_unshare",
+        "mls_compute_context_len",
+        "mls_context_to_sid",
+        "mls_sid_to_context",
+        "mntns_operations",
+        "ns_get_path",
+        "path_mount",
+        "path_umount",
+        "policydb_context_isvalid",
+        "policydb_destroy",
+        "policydb_filenametr_search",
+        "policydb_load_isids",
+        "policydb_read",
+        "policydb_write",
+        "seccomp_filter_release",
+        "security_bounded_transition",
+        "security_inode_init_security_anon",
+        "selinux_blob_sizes",
+        "selinux_state",
+        "selinux_status_update_policyload",
+        "selnl_notify_policyload",
+        "set_cred_ucounts",
+        "set_fs_pwd",
+        "sidtab_context_to_sid",
+        "sidtab_destroy",
+        "sidtab_search_entry",
+        "sidtab_sid2str_get",
+        "sidtab_sid2str_put",
+        "strncpy_from_user_nofault",
+        "symtab_insert",
+        "symtab_search",
+        "task_work_add"
+      ],
+      "newly_nonexported_required_symbols": [],
+      "required_symbols_removed_from_system_map": [],
+      "loader_mechanism_reference": "https://github.com/tiann/KernelSU/blob/v3.3.1/userspace/ksuinit/src/lib.rs",
+      "source_reference_sha256": "0675e479df17f0ff9b8f0478887c8723be0bba73ae2087923ac9851ed25f1064",
+      "reference_is_not_reproducible_binary_proof": true,
+      "version_crc_entries": 0,
+      "zero_crc_entries_do_not_prove_abi_compatibility": true,
+      "runtime_load_test_pending": true,
+      "native_decompilation_unavailable": "No configured Ghidra/Hopper/IDA provider; no native execution performed"
+    },
+    "runtime_verified": false,
+    "actual_payload_modules_verified": {
+      "vendor_dlkm/lib/modules/adsp_loader_dlkm.ko": "beb479a20fc1820627781ed9cd45d99d130ec795955a46585aa4264cdc1bb98d",
+      "vendor_dlkm/lib/modules/adsp_sleepmon.ko": "185c791248db6734bde9a736d70da65fce39b6711b656569c86d8464762d8723",
+      "vendor_dlkm/lib/modules/altmode-glink.ko": "975925f663882ac12f71f6dd8917a646cb5355716d534a18d9f9b161c57c0940",
+      "vendor_dlkm/lib/modules/arm_smmu.ko": "b8567ce0ada166a20331e337c136a56c8b81c01c62eb8b9ef9701a493eeb5784",
+      "vendor_dlkm/lib/modules/at803x.ko": "2e496034772b0e85cbdce59c8c523dbc8c2c718f9e092151f574e90028d7c33b",
+      "vendor_dlkm/lib/modules/audio_pkt_dlkm.ko": "fa97c27dc5d6aa696408882ac38bbda6dbd34e27f9d5e4046d1a864326a39292",
+      "vendor_dlkm/lib/modules/audio_prm_dlkm.ko": "6ba7309463a4c44dfee7dc19b936222fc6dab0e7e9adb8ac6f79ae12e728abdd",
+      "vendor_dlkm/lib/modules/audpkt_ion_dlkm.ko": "42ce48297d8c83aeeda57730afa5c88edd039d3149b63b30660415aab0cd5e41",
+      "vendor_dlkm/lib/modules/aw882xx_dlkm.ko": "165a8e4bb1df6f3d1e6b8033c49b920436d10281269119693f3dd7e60f3c8cdb",
+      "vendor_dlkm/lib/modules/bam_dma.ko": "1d47af2fde17462b10587a58dc8e63401619f45cb1693c034048a8344c7c3207",
+      "vendor_dlkm/lib/modules/bcl_pmic5.ko": "191c996e95aa87d8ad622d4ee524c132bd5c6924371486162d5f9a9d7775ff27",
+      "vendor_dlkm/lib/modules/bcl_soc.ko": "8b7f6d91460a21c5939af224fd5ce09554945db52d14bdc4edfee3b12a3c8ee5",
+      "vendor_dlkm/lib/modules/block2mtd.ko": "582a8a98e3505f2d184141e1c3f4c057f50ee279c685e6b576fc3643bd26ddac",
+      "vendor_dlkm/lib/modules/boot_stats.ko": "ab6a1cd703e331594d6edeafe633578d2b4cb7474f107525370e069c1df77eb6",
+      "vendor_dlkm/lib/modules/bt_fm_slim.ko": "dccfd291a5fad199c1bb606f87371edef9155e1cc730b89ceb1239ecf5e6f8b2",
+      "vendor_dlkm/lib/modules/btpower.ko": "67821655b25c6590cd4fb0eff8007a66768422be6d36bb720d8b6bc96bb83620",
+      "vendor_dlkm/lib/modules/bwmon.ko": "8b15d59fe36d4f4627964708339f4b98c0f077faa82e1280384a73ab40f28b7b",
+      "vendor_dlkm/lib/modules/c1dcvs_scmi.ko": "4663665ea0a3638a64c2899d2d2625171318ad5846cbd5df970cdd85937ec1d7",
+      "vendor_dlkm/lib/modules/c1dcvs_vendor.ko": "1a2b70b000642574c95c15ba531ed53daf25c5b4fed05d1874479a838f80b5d9",
+      "vendor_dlkm/lib/modules/camcc-crow.ko": "c725172c46d2764e708b5501b90b0531f6ad0a32bbf7299dbeb20d59b3bb7687",
+      "vendor_dlkm/lib/modules/camcc-kalama.ko": "731bc031f42ed6917451322d07bd473e882cff8d98488c79f94f2d24ce43eb8e",
+      "vendor_dlkm/lib/modules/camera.ko": "c8d13b84ad0deb1f0ec2ffe026e85e5641c78657fa23c11ff17d16b3b578748c",
+      "vendor_dlkm/lib/modules/cdsp-loader.ko": "9132831acae3d359812fb89c4df63803af3ab2a876dc4fd66d0533bffc959500",
+      "vendor_dlkm/lib/modules/cdsprm.ko": "6c4950c4bbe52d6de3e2370fdf9aa9329be0de53678a7bec57a4d145679cf6d2",
+      "vendor_dlkm/lib/modules/cfg80211.ko": "2ca660898e25c46eb5f999448ee0def5b2db349b9c708cd446bb898c2f883ab1",
+      "vendor_dlkm/lib/modules/charger-ulog-glink.ko": "568d3f988a80795dc51df714b6f78bf970224c0190ca71e9e6a9dafebbc90265",
+      "vendor_dlkm/lib/modules/chipreg.ko": "7d56ed11cbdd6483ed673e9526f8258be9865cc3eb3cc9e38a66ee82c7a1206a",
+      "vendor_dlkm/lib/modules/clk-dummy.ko": "be2ad9c8334a264feff34ac9585e3d732efb593fd763ea4a255e4f732daa360e",
+      "vendor_dlkm/lib/modules/clk-qcom.ko": "2957d5b482b0da9b3b237a68ec3f2c672e26fe2bf42ed0aee7ae072b9a2641b9",
+      "vendor_dlkm/lib/modules/clk-rpmh.ko": "c71e430be6755d606bff8aa37fa6a2fc011dfe2d13c4a5bf565f73c598f36ae8",
+      "vendor_dlkm/lib/modules/cmd-db.ko": "6e4d6460e8f07daf6cae835e194621679d137cced3c286e2454303abf5599709",
+      "vendor_dlkm/lib/modules/cnss2.ko": "06443ab77f9c1e3addeac3277071514532b9ca1416eb2222794fad0bdc2ee645",
+      "vendor_dlkm/lib/modules/cnss_nl.ko": "19e7965f994f31ccd5b6341175cfb4cb25253ff2d7fccd0b901b1ac8aa01d79a",
+      "vendor_dlkm/lib/modules/cnss_plat_ipc_qmi_svc.ko": "5bf9dfca491b802bbe1666cef35ea479a6c2f173be32c1d4104acf3c8ef2aeba",
+      "vendor_dlkm/lib/modules/cnss_prealloc.ko": "644571c5d7d93cef0e5f2597bbf415292062073b5e95db279f567650502edd49",
+      "vendor_dlkm/lib/modules/cnss_utils.ko": "892f33e05a17aa4e41e80a3e517c5045345c84557060d6977b4a70162dccd520",
+      "vendor_dlkm/lib/modules/core_hang_detect.ko": "4a81b549516a041512b809dc6503fa48905a40eeecf14d9e04dc0c1fe6e3e874",
+      "vendor_dlkm/lib/modules/coresight-csr.ko": "929fa81f222bb0c8d85f894143e4d36d58fae71260f709a639ac66df8b8a16ec",
+      "vendor_dlkm/lib/modules/coresight-cti.ko": "586ecb3630cb82e91aa9231802e00da2b48fe9266b9062d60def3399318a9c68",
+      "vendor_dlkm/lib/modules/coresight-dummy.ko": "4ffffa5f8630c69429c6b2612a0aeed245b37222501ffebc13fa02d17b00389b",
+      "vendor_dlkm/lib/modules/coresight-funnel.ko": "6a1f96a353034ae61a9eaf6baec987ececb68e7f6200efbad81cb6cdb1f07e9e",
+      "vendor_dlkm/lib/modules/coresight-hwevent.ko": "ca3cd84ae1eac06d4c3a72c39fb5373d9ec6143ee4ca8c2a02c5e7c85cd5bf27",
+      "vendor_dlkm/lib/modules/coresight-remote-etm.ko": "34c5e20f48079fcd177bd1b24550353de5d92aa0d9d36b8392faa058767c0aa4",
+      "vendor_dlkm/lib/modules/coresight-replicator.ko": "d9513d6d394066c85d408bdd872876271e706236f01848913d0e5f97a326cf4a",
+      "vendor_dlkm/lib/modules/coresight-stm.ko": "fed3081ae0734b1754f2aff477ba5df0a0f246d778cac6441dc423a8edc827f7",
+      "vendor_dlkm/lib/modules/coresight-tgu.ko": "f8f6b17bd92706209c8a2cb7ea1a7035993d401ac744d46f214844ae018c7a66",
+      "vendor_dlkm/lib/modules/coresight-tmc.ko": "a075dc471dd559beb80767eda091ff3a78fec480ae617c8be6d86c094b56b613",
+      "vendor_dlkm/lib/modules/coresight-tpda.ko": "3985652c0e6f35e0084f31d97dc8fa55ea60e7a9eefaf602578e88b3a2aca64d",
+      "vendor_dlkm/lib/modules/coresight-tpdm.ko": "74ae95befaeb71c11c76ad9f5dca6de24037fe0dabc2d36d5d3da8a2691e3744",
+      "vendor_dlkm/lib/modules/coresight.ko": "475931efb3f0134b77febe528f410f1a9fcd06bd1c464bd0b2e302ddeca08abe",
+      "vendor_dlkm/lib/modules/cpu_hotplug.ko": "0735aa05a35b8e52328c0e0289ae535b992d4feabd8e61b03d2b47f715c28b8a",
+      "vendor_dlkm/lib/modules/cpu_voltage_cooling.ko": "e2fd8a3de895e874aaef9aae3f399a26af4901bfd28b6a93fe26f77e24add3ba",
+      "vendor_dlkm/lib/modules/cpufreq_stats_scmi.ko": "d0210d6fa959df51660b8e9c52871ae66fca6acdfdad3a2ec838f2e05fdad262",
+      "vendor_dlkm/lib/modules/cpufreq_stats_vendor.ko": "298629399fbb4bc6ddb8eb929b538dee8d10362c7996c3eeafc85e79c73ac206",
+      "vendor_dlkm/lib/modules/cqhci.ko": "fdd87169981574d8dcda477bd30db6d69057fc6a39b1c29ebda32c9412d2f962",
+      "vendor_dlkm/lib/modules/crypto-qti-common.ko": "52929bbf13a3e1ca302fedaa27f0096acef90b00ef4c349f8675d5a73e426e3c",
+      "vendor_dlkm/lib/modules/crypto-qti-hwkm.ko": "c04bdfb13c1cd6ab6aff5284c2a2fa9a892c41656ea930c4004e6617b08f2152",
+      "vendor_dlkm/lib/modules/cs35l41_dlkm.ko": "b06baf250aa13cd44c4bf36ffc92469a11d39f8f73b21e7d67bb2451c51fdf70",
+      "vendor_dlkm/lib/modules/dcc_v2.ko": "2bddfea66eab0a9954d5356609178bdb82ee0b1079396a3dcdd00b1a86271272",
+      "vendor_dlkm/lib/modules/dcvs_fp.ko": "20ab8f5a6d2854d5ee223056887d18cc5c7d39d7353f04faf743622e2165b164",
+      "vendor_dlkm/lib/modules/ddr_cdev.ko": "bcad7245e84128ff83970807fa2f000604be28f193680233d77f25e6c47aaef4",
+      "vendor_dlkm/lib/modules/debug-regulator.ko": "2ae8c722cbf5f6dca3d952c8d267236c20428899aac496c3fef6f05c47522453",
+      "vendor_dlkm/lib/modules/debug_symbol.ko": "8b3ddce65cc8b8c841634a11536d9eaecc5c8c7472e36c9ef71d4e0ddcf0a005",
+      "vendor_dlkm/lib/modules/debugcc-crow.ko": "057299ab67c2ace37bc12dfe2ef7f8674cae34d9d9f39cddb91ae32b6b216fa4",
+      "vendor_dlkm/lib/modules/debugcc-kalama.ko": "e18200b99cb7046066298f32141110fd24b8be79d1372bd48961126855c078fc",
+      "vendor_dlkm/lib/modules/dispcc-crow.ko": "0c7ba4c1b5fb613340880c95bb777c530c418c7e60bf6d241672897c76233a36",
+      "vendor_dlkm/lib/modules/dispcc-kalama.ko": "34c42a979e1bc050c71972d3ed935e2c5bd864cdee37d99965ad846172a5b219",
+      "vendor_dlkm/lib/modules/dmesg_dumper.ko": "1ae2c34eaa116816f5b9ae24e2ed509ec9263612dc1098560921d24f890f0870",
+      "vendor_dlkm/lib/modules/dwc3-msm.ko": "9af3a0776d377bcadf53319f30bd39be9a2e04fbdf73e2a2fc3404b9e1d8d62b",
+      "vendor_dlkm/lib/modules/ehset.ko": "f06666c8c161271c6f8f484b2002ac5257bbcdabadeb0fcce01c46756c78d25f",
+      "vendor_dlkm/lib/modules/ep_pcie_drv.ko": "bd630d65d9f082cefc8d4f77fee06f00118a450612e94f2f17cd65fd3c6bfa40",
+      "vendor_dlkm/lib/modules/eud.ko": "f3991353a0cd3a858d181e6080a8d8e183946eef9c354c4cf847458d18bf1cbc",
+      "vendor_dlkm/lib/modules/extcon-ktm5030.ko": "9285a25d5c60a478b0d67da9aa393cfab27c87097c81c7168e12013f3f1fa0cd",
+      "vendor_dlkm/lib/modules/extcon-lt8711uxe2.ko": "40f75c4b28eb34682be623360629f2aee329d2898cd47bc59b79d77c8c701ad4",
+      "vendor_dlkm/lib/modules/f_fs_ipc_log.ko": "4c4cacbf304d53dd2b8ed20d42e96fd753d7c1de24c534d54a3cc71fbf30ca67",
+      "vendor_dlkm/lib/modules/frpc-adsprpc.ko": "29c9fe365940b33ebd0d214e4345abda1045430f91e88bf6c14e669aa3052d28",
+      "vendor_dlkm/lib/modules/fsa4480-i2c.ko": "59d6737bb1cf225d0b6e9ce4db9924d0ed108ac0cae36624e1099c71f08107cd",
+      "vendor_dlkm/lib/modules/fts_touch_spi.ko": "4c2d364bd1495ce17d7a80dbdfaf1c59b7ce08cf73d4dcf8dfa8bc3b9c9946c7",
+      "vendor_dlkm/lib/modules/gcc-crow.ko": "75b8b162c5d7a6012259ca62f2d6825a1a48451fb5b130cd08cb45a10954ca83",
+      "vendor_dlkm/lib/modules/gcc-kalama.ko": "f43d41c8d568769b4e42e1492569e4046df8b3bd13884dfed0bfd166e91b7d80",
+      "vendor_dlkm/lib/modules/gdsc-regulator.ko": "e0009fa8bf58b79bcc93558e47e7030402a8fded67eac1607b17d8b1b656d6a1",
+      "vendor_dlkm/lib/modules/gh_arm_drv.ko": "a13f5bab7e542a28dd0ba7d3ed54d2e18f61ea05e5e73719c18cb11a67f68386",
+      "vendor_dlkm/lib/modules/gh_ctrl.ko": "8f5e2fd895c723bbb769d5cf1bc36169870ffb0351051855bb7a3162a0fa0602",
+      "vendor_dlkm/lib/modules/gh_dbl.ko": "7e3d5d02fd722510267c9438b0e215d376827558f194c4dbc68e7af77640bdc8",
+      "vendor_dlkm/lib/modules/gh_irq_lend.ko": "2c25801d0729d0ba52794a2d4adc6b720552a795ee9fb7feb44aaa3ec506be74",
+      "vendor_dlkm/lib/modules/gh_mem_notifier.ko": "18d7c18cbf1468c714a84afd84aef17f2afad555651e829020296628d92b13e9",
+      "vendor_dlkm/lib/modules/gh_msgq.ko": "8e8a03cb3b426f3a9f3a1f7bb56c8fec0b93d13bdb8c493a0c02fc3d2ae42570",
+      "vendor_dlkm/lib/modules/gh_rm_drv.ko": "ca1d9b1326a6d2851fe30cbeaa5fc97a4943e5f4d92b82a5004ca937efb9434c",
+      "vendor_dlkm/lib/modules/gh_tlmm_vm_mem_access.ko": "950e530d8b22c5cca24dda54d0fdb01210a341170f5962742d1fcd30bd60164d",
+      "vendor_dlkm/lib/modules/gh_virt_wdt.ko": "81d31adc84b9fed5eeea1d89efc2feb4a5bc8e4721f4dc92ec1c94f2add34077",
+      "vendor_dlkm/lib/modules/glink_pkt.ko": "682cb1a74d289c45821213b3a687495e36ba1a585e7b90d6beae6543bdac9516",
+      "vendor_dlkm/lib/modules/glink_probe.ko": "bdd0c8c6403ba03900684902804740ee451b85a4174b1cc84c9ff79428ce22ee",
+      "vendor_dlkm/lib/modules/goodix_fod.ko": "89106a4a29242736965d008e479e5b2f92efabf2b186c4458bf052d4741ca98a",
+      "vendor_dlkm/lib/modules/gpr_dlkm.ko": "e36ff7c32e8c7814230bd4ed6c9fa698bf38baf99e37b789ea3e8eb0fe562a9d",
+      "vendor_dlkm/lib/modules/gpucc-crow.ko": "93309b4e2fa8e5c85a9e6b4a8dbcacb300e8aea543cdb5f54b2d75c8d7a9a0aa",
+      "vendor_dlkm/lib/modules/gpucc-kalama.ko": "0609642adb01977fc9570422a87784f8b1ab498296c023db7a1430107281eaaa",
+      "vendor_dlkm/lib/modules/gsim.ko": "85c624fdd36c429029e05fb781a02844fff69bae35481f2b67430180b455cec1",
+      "vendor_dlkm/lib/modules/gunyah.ko": "4ec4c0fc49f42adf32e026ae15edfde15b91d3090dd090e981d2a8e90416c52b",
+      "vendor_dlkm/lib/modules/hdcp_qseecom_dlkm.ko": "05354078afbac1c544924e93f93965ce714b2a9f6ae6de80868e7a28f1b2581b",
+      "vendor_dlkm/lib/modules/hdmi_dlkm.ko": "0ed55e035de9482ebfa421518704da0c46cbc7c13f8d6aee35dd098e735dc8a7",
+      "vendor_dlkm/lib/modules/hdmi_input_mux.ko": "d9c26f2795db7df489fac44a4e63fd08c3ae66b68f81e630245b1d9e66af3eb3",
+      "vendor_dlkm/lib/modules/heap_mem_ext_v01.ko": "38bbf705484c2bcc2afd530f1b4e41d6e569347fdce2692da3b0942cc1b541b7",
+      "vendor_dlkm/lib/modules/hung_task_enh.ko": "c0afcfd991432e9e4f7abdf73f5bf1ddfec27a6085aa9e5591455664b772bc87",
+      "vendor_dlkm/lib/modules/hvc_gunyah.ko": "ba57e3c682199f3b115870456cb0a99446871d623643cd4317acde416a3b54a7",
+      "vendor_dlkm/lib/modules/hwid.ko": "1d17415ad6a3f43fac91b25c86b6c48d9c16eec4de7984ba168163f563a4395c",
+      "vendor_dlkm/lib/modules/hwkm.ko": "2b091e659fd3006546b9dba4ac2fa21eccbbbfd1ecd292a6ec4a95893efe1572",
+      "vendor_dlkm/lib/modules/hwmon.ko": "a28825b687dd0fb5057066dba23d6ed5e1210845816d2b287b04979e95ddaadf",
+      "vendor_dlkm/lib/modules/i2c-msm-geni.ko": "78be723027413837bc09fe85343d120f46aefa3c77112ea8963ae45cc627a75c",
+      "vendor_dlkm/lib/modules/i3c-master-msm-geni.ko": "72dc182b2e8aa160a6af08f917ae4098ba09ed6a491ad48d4a05e7fcba67def7",
+      "vendor_dlkm/lib/modules/icc-bcm-voter.ko": "2ebe49a58f4b485101c76db61b1e6db2609824f6c0da36460d5b76dd21b5653a",
+      "vendor_dlkm/lib/modules/icc-debug.ko": "07fea012f40bba04e15ca0b331353c09c8610c302b3888f3527ef4fd6633c5b0",
+      "vendor_dlkm/lib/modules/icc-rpmh.ko": "833105e8f08f4640504e3d8659a6dfb1bd9d8357252365e8f0ca609f6c315bc8",
+      "vendor_dlkm/lib/modules/icc-test.ko": "0b9f642cd48b0a591c413ef5e53bdc91d0c131198ccea2653fa594a22c727612",
+      "vendor_dlkm/lib/modules/icnss2.ko": "d1bc01ba6ab2008799e4386e034d7caccae44617ae781b7762a99d1872c3efdf",
+      "vendor_dlkm/lib/modules/industrialio-buffer-cb.ko": "d9e7089e2c9d9633fd916ec1af75fb5050ecaa45e92218e6815c4784c402f85c",
+      "vendor_dlkm/lib/modules/iommu-logger.ko": "ee03221d96660b94f8566551c8236a0893d9d38ac4b1dc7c6deb527b415a8f55",
+      "vendor_dlkm/lib/modules/ipa_clientsm.ko": "c67d27fe3e974e4da01fba62891d4d64de4abd561d69d4d4f07e752cac88019d",
+      "vendor_dlkm/lib/modules/ipa_fmwk.ko": "c3bebdcb5fae545765b958b0cdd0c56624105d35a7178d05dce346271fd03371",
+      "vendor_dlkm/lib/modules/ipam.ko": "da81e30dab817bfe30c80784e8f4d819504d5cf6837e630bd44cc6a2ded76369",
+      "vendor_dlkm/lib/modules/ipanetm.ko": "d65307343c97d1c8750beee8b072ec9d43be939d982e5d23636688eb1f5588b4",
+      "vendor_dlkm/lib/modules/ir-spi.ko": "83d70eeed6a0a15fd96a68d80eb3dbadac2558e179f2d64f0f8c1b6364b26ad2",
+      "vendor_dlkm/lib/modules/kunit.ko": "e7266a6a3f56b95b9b0f45c863b589630b86ab2f939249f9859648c2f72c32d5",
+      "vendor_dlkm/lib/modules/leds-gpio.ko": "7c2b01e5fdb9b0b9070cec2ca006e670ed492812b3814384482330647f4e5f96",
+      "vendor_dlkm/lib/modules/leds-qpnp-vibrator-ldo.ko": "d2dee40ef4bd079aaedd970e6173c39e21c8849e017aa605ea174a84fd41db0d",
+      "vendor_dlkm/lib/modules/leds-qti-flash.ko": "0e5a4b22fbbd7a428ee58cfd33b3f47d5f9c8129862cec24040fb987269a8ef7",
+      "vendor_dlkm/lib/modules/leds-qti-tri-led.ko": "14094cd39030d24afa90034156d100205976d9e58ff9e2e84bb3e6f5f59f5258",
+      "vendor_dlkm/lib/modules/llcc-qcom.ko": "4a5ec05d33151ea879bb782be76b6167477e0dea662949cbc0e2354246bd4ae0",
+      "vendor_dlkm/lib/modules/llcc_perfmon.ko": "24be88ade8d8cb80e92fbb49a6693b435f0d220391aea585d47a30cb4a1a0f90",
+      "vendor_dlkm/lib/modules/lpass_cdc_dlkm.ko": "847f1d910149586b64930f88c3f9cc7c47664614214fbacbab2be4365f4822a4",
+      "vendor_dlkm/lib/modules/lpass_cdc_rx_macro_dlkm.ko": "a0e27495a28dd27da130dc16215d601361048291892d2fc1de9451c0bf86b243",
+      "vendor_dlkm/lib/modules/lpass_cdc_tx_macro_dlkm.ko": "275a5a849ff9b38ed31c73c6ca631a86205ec793b464d9eb8eb902a3bbcad18d",
+      "vendor_dlkm/lib/modules/lpass_cdc_va_macro_dlkm.ko": "5ea5d63a07be562c81eea7e75b7a2a6e60dfbbfd07913d173dffcddc4967380f",
+      "vendor_dlkm/lib/modules/lpass_cdc_wsa2_macro_dlkm.ko": "2d2954b3e2c2b30848fc174329773671c11932690089d4272f581f6b146ee95f",
+      "vendor_dlkm/lib/modules/lpass_cdc_wsa_macro_dlkm.ko": "ffba5e0d95400af64d61250080f11d002bf56bb6b76b3505b0e8c7ff2960f6b3",
+      "vendor_dlkm/lib/modules/lt9611uxc.ko": "8b9a80cb95c6d49eb805cb447be9d18b22e6d10c0b95828910c99fb89fa9759b",
+      "vendor_dlkm/lib/modules/mac80211.ko": "3584e809f336ab9ea16669e945f765576c8414e27ea04b48be7cfff1d57ca13d",
+      "vendor_dlkm/lib/modules/machine_dlkm.ko": "1007a828a72d4484477682937ef13fbf5d4673fdf383472e8769ee6f0caf2a99",
+      "vendor_dlkm/lib/modules/max31760_fan.ko": "3614414610266868209a30c05cb15285afaab58fb955fe24afa8424735c86403",
+      "vendor_dlkm/lib/modules/mbhc_dlkm.ko": "ded30769145d15faed080a6c90b6b91b89b5f0a60689169485faaa8c23ab9afd",
+      "vendor_dlkm/lib/modules/mcp25xxfd.ko": "c8731dbc69ef7783cf7e434a03965d6a596398e1cf3c47a78a0da54ce1827ef4",
+      "vendor_dlkm/lib/modules/mdt_loader.ko": "f095614904bc910ec39bc9c8b62e32c49e210779199b1ef4dc37f7be9c14e03a",
+      "vendor_dlkm/lib/modules/mem-hooks.ko": "709f28950e5d28d52f40d443b9cc523af982b3cd6977ff010f07c96b71297b5d",
+      "vendor_dlkm/lib/modules/mem-offline.ko": "ab87b7bb19133bf09b178ecadf740b08cec1670beabcc1381f07a295b9e23744",
+      "vendor_dlkm/lib/modules/mem_buf.ko": "0a7847e1a917194625578b60495013984b3019a906f4c59cf787c3170e100272",
+      "vendor_dlkm/lib/modules/mem_buf_dev.ko": "69db32986c9be206b8251c0fc446567e3ad6480f522ef7cf6195d6cad1beb287",
+      "vendor_dlkm/lib/modules/mem_buf_msgq.ko": "ee2f42e9b16d18432d7db37be09e637a4a265a4de1610e429b121b62c19b5f32",
+      "vendor_dlkm/lib/modules/memlat.ko": "593f38429ac7e86e6b3c9a3dc8a29d204b61eb8b9d45fda2f399ebd3ac46a520",
+      "vendor_dlkm/lib/modules/memlat_scmi.ko": "2e8674db576457caed35f2182579ad40410a8aa094d0b67a812e741daa279cac",
+      "vendor_dlkm/lib/modules/memlat_vendor.ko": "240b3404d0b7bfc59da7ad852798ab204b33bec10d262e53889c8b5a5cefd5de",
+      "vendor_dlkm/lib/modules/memory_dump_v2.ko": "33c129749ea97794772c34b3ffbc4c766aaf7ad55773746b226cbca7acfdd43f",
+      "vendor_dlkm/lib/modules/mhi.ko": "b61d7e1da5d1833a7c7f3880f934e34b0e024c0ee97a4fc1102cd0055de2ee5b",
+      "vendor_dlkm/lib/modules/mhi_cntrl_qcom.ko": "51ef09e07c212d1667dd55fe49f8a921234ba5bba4d3ed32e8eb840e62b56753",
+      "vendor_dlkm/lib/modules/mhi_dev_drv.ko": "8152312a5a85588031cdf4157b47fe4be222d8bcf9234f0b556eee08b39365c3",
+      "vendor_dlkm/lib/modules/mhi_dev_dtr.ko": "a182cf76181e4713e968168590c6ad4d851c5174d94be385e9b8264393fe2410",
+      "vendor_dlkm/lib/modules/mhi_dev_net.ko": "4b93a47c3a9c435363cf66dac126c172d66ad2d17237ce9f7db8d46e7f1f9189",
+      "vendor_dlkm/lib/modules/mhi_dev_netdev.ko": "2d74db112ac16e5b34b2fb138660c9d474553c951a2e43d61e1c8c82edfee4d6",
+      "vendor_dlkm/lib/modules/mhi_dev_satellite.ko": "33bc20027ad229e744267895da6b74de9abecb639248383bb11afc915f38e489",
+      "vendor_dlkm/lib/modules/mhi_dev_uci.ko": "324ee975c52c773be9f6490094b2720cbaf6a278c7d00b2c979b3c9494aa87c4",
+      "vendor_dlkm/lib/modules/mi_disp_notifier.ko": "51642972e40650f3c86892c79469086f0eb046e37f6096de2b6f445cad4172d6",
+      "vendor_dlkm/lib/modules/mi_thermal_interface.ko": "3c811c5042763584e153788edc87b04553cf1cf5f00b529fc830dbcf4970d47a",
+      "vendor_dlkm/lib/modules/microdump_collector.ko": "4c0c6e9e2c7683ecdfe201b9c9c2789edd8993536636aa8f16a297fc9e1b0559",
+      "vendor_dlkm/lib/modules/minidump.ko": "7d70330e1df7a2e44c93c268f8c7e7bef60f94890ac998e53be62c899ceb6ed7",
+      "vendor_dlkm/lib/modules/msm-eva.ko": "afd547ebfeda99dc030eeac4595f96deba1dfd64036dfb6fe6f48f7742da509f",
+      "vendor_dlkm/lib/modules/msm-mmrm.ko": "7371a360ecf225967ee3ddebc0d19c012011cc256a6942ce735f834ec0f72ea6",
+      "vendor_dlkm/lib/modules/msm_dma_iommu_mapping.ko": "df3a46359b51ee9478e7ecc9eb3ecdb0d5edf0eb13869a0f26ae8830b8da6311",
+      "vendor_dlkm/lib/modules/msm_drm.ko": "16921fdd8a15ec3e861cae40d85c30f13fa0c552cd37c8a555aaae5ce4d7e533",
+      "vendor_dlkm/lib/modules/msm_ext_display.ko": "790cf46a5a41fc9cadee87dde796457bc0b8666163a729ec65ae5cf0c39e4b31",
+      "vendor_dlkm/lib/modules/msm_geni_serial.ko": "c5c08c09cdf2ce9ac7146da2e52cb3be13d13fd6a61e81835daa75cf412d04bb",
+      "vendor_dlkm/lib/modules/msm_gpi.ko": "f1ba95f66171a4beef1b3efb6cb7ad5b201c88188da4f84492a4e7c60666adf0",
+      "vendor_dlkm/lib/modules/msm_hw_fence.ko": "301037caafcce2b089a606d4ab403edf71252076078aafe00449c4be41c0183c",
+      "vendor_dlkm/lib/modules/msm_kgsl.ko": "59840bb71c5501824a1a3aa27a4c6e4b0879e3d9c7e4ca8f288ac08e5046e21c",
+      "vendor_dlkm/lib/modules/msm_lmh_dcvs.ko": "80d566d5e03a4447ce7763941ab6cf9e443d8a6d67e56731ae7b12997c6e97d0",
+      "vendor_dlkm/lib/modules/msm_memshare.ko": "87b928c2e0a207574b6e244379728043a13840f8c1fc85162ac5738b514d057f",
+      "vendor_dlkm/lib/modules/msm_performance.ko": "7fdd2d9df1538440c6686afacf01c4c9c6d1fa1be4747a2c8d18382138b9c8c9",
+      "vendor_dlkm/lib/modules/msm_qmp.ko": "a4967a7c419f06cb60f2fdfc4e333b603de63b88a0e3329b9566c33304ce1e6a",
+      "vendor_dlkm/lib/modules/msm_sharedmem.ko": "0192d6384e718cf42dac46ee83118d76d03df8f3ffec59aac3e59e766b570060",
+      "vendor_dlkm/lib/modules/msm_show_epoch.ko": "998e445915b257b7902deb58bb62e88372a983d7dfd25849dcfa11ec43bf666a",
+      "vendor_dlkm/lib/modules/msm_show_resume_irq.ko": "23f15129658fa64e043d27933df5afd35a91b3a391ccb3ae92005e076af8f9e3",
+      "vendor_dlkm/lib/modules/msm_sysstats.ko": "50ff627f80c631ff6154b0394b779859113768c14f6a1a69b698f90fbb4d9c17",
+      "vendor_dlkm/lib/modules/msm_video.ko": "9c616d48faebff87ae4ce09f3d723e82abab153fb89a4f1e7b61e00f0ca3c4a6",
+      "vendor_dlkm/lib/modules/mtd.ko": "d9ffc7e38115dd5cdbc195e2a2f8917ad65f8c3552f641198c15f499f003db5c",
+      "vendor_dlkm/lib/modules/mtd_blkdevs.ko": "c582598d6d80a81d69273d2cacbd342feaa5c9998784906a8d385babe131ca12",
+      "vendor_dlkm/lib/modules/mtdblock.ko": "76d67122b7c9ec684a3f4e37045c375db62c8803b9db4708e6f3b4d3775eaa62",
+      "vendor_dlkm/lib/modules/mtdoops.ko": "584b267414f50a588ecd10f1f233295055b19d1859df53ebd17b7cda8ef3cd10",
+      "vendor_dlkm/lib/modules/nb7vpq904m.ko": "77b5f0122e7ffb93f96713e2799a0e36316aecd77908f25d20b299ce9d71c81b",
+      "vendor_dlkm/lib/modules/nvme-core.ko": "0d9dc543b46dd73a98799bab8ca948aaf3b53cf4af79d39a46032ccb50b2895a",
+      "vendor_dlkm/lib/modules/nvme.ko": "cc2fb60986ad819a13b8f7714cb0711cd02375be77ba9302c0b23926778c40eb",
+      "vendor_dlkm/lib/modules/nvmem_qcom-spmi-sdam.ko": "445e16d91b9f675e4ff30775215892436bbe50e9be83fbaef6a212856cad53b2",
+      "vendor_dlkm/lib/modules/nvmem_qfprom.ko": "98290dd73b2ddec80b0339dc251aabae3470acc1a479da2007f22e0d71c52573",
+      "vendor_dlkm/lib/modules/ofpart.ko": "dd119f66cf760ce0965e265d34ac9ff468d0e3b0049c5e954e6ff4b0c2fa1dca",
+      "vendor_dlkm/lib/modules/panel_event_notifier.ko": "e318cc838a342f0e47735b0f84677171ae44c9514165dbd86cbc0b874d47fccc",
+      "vendor_dlkm/lib/modules/pci-msm-drv.ko": "9b5b81cf817eb1a46fb076144ebbc1f81bb0514171fdd9107a39c06da569772e",
+      "vendor_dlkm/lib/modules/pdr_interface.ko": "e30639748a6308a099854d70b4402ff82b96762df49db228603c4048cd82d18d",
+      "vendor_dlkm/lib/modules/phy-generic.ko": "0eac4f9c45e3a30a84d5d3d7be723a06f6f51679a96e83ec4164dea3ef493e72",
+      "vendor_dlkm/lib/modules/phy-msm-m31-eusb2.ko": "16e5247cf89f4c4d83c48e53d55aba90d32c4e65e140acc0d6d6700519f399a4",
+      "vendor_dlkm/lib/modules/phy-msm-snps-eusb2.ko": "a97dd32549138308a637d49128691e078a4989f9e6b2f22a41351518432c628a",
+      "vendor_dlkm/lib/modules/phy-msm-ssusb-qmp.ko": "8eedbe907ca9608d6ec742f6b7e48bba6ba884d0bb0b7ca20f3649fe7cd73b53",
+      "vendor_dlkm/lib/modules/phy-qcom-emu.ko": "79984d674458dbd3eddd181195b2fadfaf5be51023beb63e6ac66d26484f90b8",
+      "vendor_dlkm/lib/modules/phy-qcom-ufs-qmp-v4-crow.ko": "a2ac18269d3a264ef246d843a2c66eac13adfad4f242c0ea48cdb4e3b0e16356",
+      "vendor_dlkm/lib/modules/phy-qcom-ufs-qmp-v4-kalama.ko": "9cca30db81ffc76aed0a2a2e165f939e82432fe7415db40d99ca2d5fdecdbd4b",
+      "vendor_dlkm/lib/modules/phy-qcom-ufs-qmp-v4-khaje.ko": "3230aa11f287189ce67675d8765b8e5636dbcc7c359e996b644abf8027e100d9",
+      "vendor_dlkm/lib/modules/phy-qcom-ufs-qmp-v4-kona.ko": "d7f447307fd058d353f5f05d2e68f7bc38c762e0fba9bc4fdc3a4a5d54e45e52",
+      "vendor_dlkm/lib/modules/phy-qcom-ufs-qmp-v4-lahaina.ko": "b8b2146fb0cbfb29597c43174cc2bf87959d036c3a7f385eb5550ea0311e4266",
+      "vendor_dlkm/lib/modules/phy-qcom-ufs-qmp-v4-waipio.ko": "7c925e690c5a5763e0839a957752c950ceafc20b5baebd5a399927bcaa1448c5",
+      "vendor_dlkm/lib/modules/phy-qcom-ufs-qmp-v4.ko": "215df928977cac8e7d370e6ee427e5d0b77d1d2d8afd145607aa2bf8659dc320",
+      "vendor_dlkm/lib/modules/phy-qcom-ufs-qrbtc-sdm845.ko": "91faa564400965a1b38453b37b81859adbc79a3f0cad1b1379b81e9a2e52f121",
+      "vendor_dlkm/lib/modules/phy-qcom-ufs.ko": "50b52a54436444b85e59c020be8b0991f036d3deae00bd4305135716afe42394",
+      "vendor_dlkm/lib/modules/pinctrl-crow.ko": "4bd6befa85292f06cb7f86494471725f0670cf448e74c94fc88d8e80ec0c275c",
+      "vendor_dlkm/lib/modules/pinctrl-kalama.ko": "75ab9cc68104b56c0d332c0871fa002f8a81d25527f2e0bfafb37d1546fd5d9f",
+      "vendor_dlkm/lib/modules/pinctrl-msm.ko": "e531b4c9415cf70a8b704cdb3159a74a4ac89832417d4f28fc6bf3dd8e839693",
+      "vendor_dlkm/lib/modules/pinctrl-spmi-gpio.ko": "35b9aeae5205f2252fa284cbe273926bd354802a928ffacef872a4cece62abde",
+      "vendor_dlkm/lib/modules/pinctrl-spmi-mpp.ko": "450491da26cb2852a885270b4d0d7d8481e60d655d9fc410e1181daa13adde70",
+      "vendor_dlkm/lib/modules/pinctrl_lpi_dlkm.ko": "8a7c2c96134be374579885cdcfcc6411709b6bd3ab22101f56a22cb715bee33a",
+      "vendor_dlkm/lib/modules/plh_scmi.ko": "ac1d2aa42c446f03cf7c0cd68d91a8a1d938a99795c10f701d738a25592654a5",
+      "vendor_dlkm/lib/modules/plh_vendor.ko": "93e795a378a9f798ef76763a1b53b57d9cd21ea4ebca11eb8a12d2bb2fa1cc57",
+      "vendor_dlkm/lib/modules/pm8941-pwrkey.ko": "56f30baf77ee48e3c32052d03d8367eca194b33396ed6648b04732172c91d564",
+      "vendor_dlkm/lib/modules/pmic-glink-debug.ko": "a77db4649b7639596be47026a82653efab2add17fffd08a14cd67806bd0dbb4d",
+      "vendor_dlkm/lib/modules/pmic-pon-log.ko": "d598f2e6940294c1446a902307a46471e6e5ff804c4ceafded27de3d40a7cea3",
+      "vendor_dlkm/lib/modules/pmic_glink.ko": "32605d0c6d9bfaf1144cf90610c9f712e586e9834354f929349ec0aaa2b16310",
+      "vendor_dlkm/lib/modules/pmu_scmi.ko": "efb7f6229c1bcc1461841204447c2e0822439fe36ea7cc3399348c15595a7431",
+      "vendor_dlkm/lib/modules/pmu_vendor.ko": "1dae4a0e7e5a64922fbb73b61688003a1d87a156ce499929c549089bff059fed",
+      "vendor_dlkm/lib/modules/policy_engine.ko": "b1d9d3d6c4a5e625923a0fc89683a7515d40f5dd9e4cd0ed4f8ac1ea3ae16650",
+      "vendor_dlkm/lib/modules/proxy-consumer.ko": "c52bce9b77256d8c0e76caa186e700cc484892456bf18a7097dcc6662aed494b",
+      "vendor_dlkm/lib/modules/pwm-qti-lpg.ko": "77fe6988961eb1324e29bd9ab023cc9e7bbb0e6e5bb4fddcc920596c93dc773a",
+      "vendor_dlkm/lib/modules/q6_dlkm.ko": "8c012b45874f5e72709c3e87dd039f5ba8157c501baf4f076949207fe1cc1286",
+      "vendor_dlkm/lib/modules/q6_notifier_dlkm.ko": "95aca5631b712c95455a555f6615939c605aafcb66f695820546723b2c8b94db",
+      "vendor_dlkm/lib/modules/q6_pdr_dlkm.ko": "140692021f84adf0e7fddff27a5de5fdf0fbf55fc600558a1a0bb613eb9bc78f",
+      "vendor_dlkm/lib/modules/qbt_handler.ko": "89fd19af02f1e0b8eb791039c27c9431f755d3e4b686a247f0f39b08121e8678",
+      "vendor_dlkm/lib/modules/qca_cld3_kiwi_v2.ko": "ab3c7bdd18ec1ce8b20308a7630b778e4c5b9de9cb2bc3550126bc4d272830b8",
+      "vendor_dlkm/lib/modules/qce50_dlkm.ko": "a64f3a20a283b8c2a8beb1d21e05edc9e0070bd78e90ea6a762768ecb124af99",
+      "vendor_dlkm/lib/modules/qcedev-mod_dlkm.ko": "fcff39e8f767ecd1160ed3884a7d89c77a8cbd94ec3b3e8a750c1635f1d7194c",
+      "vendor_dlkm/lib/modules/qcom-cpufreq-hw-debug.ko": "b20190af8358feb5278c8b2fb843b81a55ca5ae3005fe3712beee97555ee2e51",
+      "vendor_dlkm/lib/modules/qcom-cpufreq-hw.ko": "de46f641b41dc6d97a0188235ef8a7c870bdcd08b731ea809af4975838d27e66",
+      "vendor_dlkm/lib/modules/qcom-dcvs.ko": "092ff648998d2b0a829ed1b950ee234ac4ea4c4294a37b131af82eb5fed5c4aa",
+      "vendor_dlkm/lib/modules/qcom-dload-mode.ko": "a8e829ecc6591d867c42a8969f2a53e325c9c6cb6984f83faeea0b401a018164",
+      "vendor_dlkm/lib/modules/qcom-hv-haptics.ko": "0e2ef6b77c06449d721218a26582f1853635711e9e86db7cd8a537f1932c9f9f",
+      "vendor_dlkm/lib/modules/qcom-i2c-pmic.ko": "9d501a1aaee81a3340e3abfc28dd200652d359a002318be58fb0d0134ecc87d2",
+      "vendor_dlkm/lib/modules/qcom-pdc.ko": "be3863aefea87483d3ee7e17b8f305cf39e947767c48d028f94d3f2a6d957dfa",
+      "vendor_dlkm/lib/modules/qcom-pmu-lib.ko": "6938538ea3df599a40e193b0dc5e5854e7ecdcc22b932022d26e06d486c4b638",
+      "vendor_dlkm/lib/modules/qcom-pon.ko": "c26e8107bd1b753c129e2e4c543da10ea035e55a24d7d0b6253d84079039f8f5",
+      "vendor_dlkm/lib/modules/qcom-reboot-reason.ko": "146a5472717565a6c0e8f27d60e9d0ba4f4988e4bca366728696742cd86e2f9c",
+      "vendor_dlkm/lib/modules/qcom-scm.ko": "481c9fb3803dc126e3fe014184a87542fba4735c1e0a0b6f3667b35caf7f4bbb",
+      "vendor_dlkm/lib/modules/qcom-spmi-adc5-gen3.ko": "3f405df04ba6ac1f803d0bd20a6685c240c26f543d148bda8b3524cb61d1abfb",
+      "vendor_dlkm/lib/modules/qcom-spmi-pmic.ko": "eca1e7e45dc9cab2094f9c716d44e0bfd7fd8097d1c7a28332d6d1f4b47afd96",
+      "vendor_dlkm/lib/modules/qcom-spmi-temp-alarm.ko": "dbc2282f94394d3e5f9e0f27224916957844c2156c942baaa8a82b698bcd05ba",
+      "vendor_dlkm/lib/modules/qcom-vadc-common.ko": "dce53dee49c0bbab97bdea4fbfdbdffef315f0b54ccea7ec2557fb67c5f80af8",
+      "vendor_dlkm/lib/modules/qcom_aoss.ko": "e2de0296fb0e63a2be72f37be5419d10a4cdccd98c358ef18a184d91ec7088d7",
+      "vendor_dlkm/lib/modules/qcom_cpu_vendor_hooks.ko": "2407525d9f3a8a8f1138b0f7e5c0558459a07ec3ae20285a73181d4c1aa0a46d",
+      "vendor_dlkm/lib/modules/qcom_cpuss_sleep_stats.ko": "2aea0c94d26823d65524499e36783fac4240d448abba64fb6f10c680715d44f6",
+      "vendor_dlkm/lib/modules/qcom_dma_heaps.ko": "b4ff06e2fe73346e670026d8aa3dd946f1f930a9a8cc8b561f099982403f5f8e",
+      "vendor_dlkm/lib/modules/qcom_edac.ko": "bbeeafcc7f448689a3ba96c936125b2c10e1d4636dd1415ea040390030ced772",
+      "vendor_dlkm/lib/modules/qcom_esoc.ko": "1f373b012e1a6761a041e21ad8f289e76c2bba439d7f94097f49dd95c9cb3bbf",
+      "vendor_dlkm/lib/modules/qcom_glink.ko": "186f82f0e0eab3c9e96c0c56da7e6646b97902db31a9e0792ac22c68b983a2f3",
+      "vendor_dlkm/lib/modules/qcom_glink_smem.ko": "79515cce8b3673074607be310bac1c829f7144ca8eeab3064c5eb58b14448089",
+      "vendor_dlkm/lib/modules/qcom_glink_spss.ko": "390a88785a9dea9ad8a12e5c508cef01ed714b3d48dbc5a881df6f65d8ec49ce",
+      "vendor_dlkm/lib/modules/qcom_hwspinlock.ko": "37cc8be6a07b852de29644c3228e13fb134074d2af402cf8937ffa4d93475501",
+      "vendor_dlkm/lib/modules/qcom_iommu_debug.ko": "1c8ded3353fcd9279fd70dc25b1e81794a433da46fcd85389639e17b9a6e34a3",
+      "vendor_dlkm/lib/modules/qcom_iommu_util.ko": "3d940ad4df7ba6d81bc01930c165d24e3a54a8245756e36d14d488d5c98f568f",
+      "vendor_dlkm/lib/modules/qcom_ipc_lite.ko": "6ecaf9304403bfb57b62a158846e241da762d5c0e7a37f6a69dda75081dcd584",
+      "vendor_dlkm/lib/modules/qcom_ipc_logging.ko": "9696295d8888fe68e06df8e5669b5fef5efd0d13f6d3288628dff7861e6b3e91",
+      "vendor_dlkm/lib/modules/qcom_ipcc.ko": "7f337c945bbcd7630fa4e703e66794019191be465a5ee39343357e9aa5a6cc91",
+      "vendor_dlkm/lib/modules/qcom_llcc_pmu.ko": "7b57a95693eaf8d4c9faca201143dc1bf0be457a037a2099f367d15ed7ce12b4",
+      "vendor_dlkm/lib/modules/qcom_logbuf_vh.ko": "488055bf035874e2b56e4f0e1bec72b5ce7ac2a2afc533946a6db12f55040901",
+      "vendor_dlkm/lib/modules/qcom_lpm.ko": "cd2b51d60015e422ba011888b76d379a9b40a2702a3d6fe63ff5cfbf40178982",
+      "vendor_dlkm/lib/modules/qcom_pil_info.ko": "383dec038decfcbef37bd9d74e76657de366cbff021cabc60f4af94c1a91b2d1",
+      "vendor_dlkm/lib/modules/qcom_pm8008-regulator.ko": "61fdb560708d9ab64a9ffc5d209e532bfcac8da385e58fe5fb3dda2de4e57aed",
+      "vendor_dlkm/lib/modules/qcom_q6v5.ko": "f5c3abbb46d8d71f3d5c853a917af9697ad4c891063a5a8d9ebdebbe6936538b",
+      "vendor_dlkm/lib/modules/qcom_q6v5_pas.ko": "5ce1f4bafb6eb125e4acee825be24fd9896ccddd2e4ed74f6ec6ad0d049f7db7",
+      "vendor_dlkm/lib/modules/qcom_ramdump.ko": "087acd3c312eb0732034611e76d2bcf65d45941969da0bc188f7d34b3ef754c0",
+      "vendor_dlkm/lib/modules/qcom_rimps.ko": "c339ef7e1f8ad6f3401e23d16d337951fb17b1e2ebd3ac5cce5a11b6de499ada",
+      "vendor_dlkm/lib/modules/qcom_rpmh.ko": "08e478c3f647cae256ccf83ce550097ca8e07134763d8d43d24362cbfe81f1ac",
+      "vendor_dlkm/lib/modules/qcom_smd.ko": "869fb33e000e8a5627657bf88c2b57dc3acd6ecd1b67a92f8dfa9669891349ad",
+      "vendor_dlkm/lib/modules/qcom_spss.ko": "3a7056448a2bfcfbf90ba534b63894f2d7b80ba4ee32be42c9040471db6117af",
+      "vendor_dlkm/lib/modules/qcom_sysmon.ko": "d5e2cf8ee0458644437a4aafc8b8ede4cd6e9765d88f91ace241fa8b48d798ab",
+      "vendor_dlkm/lib/modules/qcom_tsens.ko": "f443e1cc7b75f98dd64b9d0f6c41c353f5f1f2c081a768b7529a11fb1c51cb89",
+      "vendor_dlkm/lib/modules/qcom_va_minidump.ko": "b1c054f5a1531612b1fcb59e7bc284716501f8e1e879c2add5d74dda67b93f2f",
+      "vendor_dlkm/lib/modules/qcom_wdt_core.ko": "e9052ad793e6725e23257bbe10ec051f511923a69dfb66cf1b0f6a1432e25c8a",
+      "vendor_dlkm/lib/modules/qcrypto-msm_dlkm.ko": "a78f26f80a2f87381d4af292bec2b92a9e7961da3ac3acb9f228e4e63ea08719",
+      "vendor_dlkm/lib/modules/qdss_bridge.ko": "649fdd92289a1ba25dbc5b597973e8973b56fa77b32bc904c0aedf6e9efa672d",
+      "vendor_dlkm/lib/modules/qfprom-sys.ko": "0d67bdea52cb17939634c6d81c3873713a4641d55aa440313117587b3d62965f",
+      "vendor_dlkm/lib/modules/qmi_helpers.ko": "963172fd6ec576e5886c5c1a7f2ed056c1c3aee843fc3bdeeae02c4d456d7922",
+      "vendor_dlkm/lib/modules/qnoc-crow.ko": "7fcdec9b7e7eb60e1450106bec2ec01a64b714e1f57f49e08bde4807c882e152",
+      "vendor_dlkm/lib/modules/qnoc-kalama.ko": "b53e1a0e236583ff0678433254868e266047e645cb677c36b4b5524c50bda526",
+      "vendor_dlkm/lib/modules/qnoc-qos.ko": "f4ec5a7dcfbce94310a75bf1554f5ea4beb314cb8d7e5242231435967e9ae1d2",
+      "vendor_dlkm/lib/modules/qpnp-amoled-regulator.ko": "c2c3448d49bf8c47e7fb0c1dbba6fa0bc3dc268aa08a5aa309d48d5f1249f034",
+      "vendor_dlkm/lib/modules/qrng_dlkm.ko": "15d822c9dfc6dc1f4c7f5f2ab391ef02d0fe2f91c0020250e9683b953b273772",
+      "vendor_dlkm/lib/modules/qrtr-gunyah.ko": "5542b617781befc0e79023f281c08cfdf429542fb47ba97b173bb4d1c4e8ba07",
+      "vendor_dlkm/lib/modules/qrtr-mhi.ko": "ae22ddc7daa07ad56424d01e0a2b447747be160b7457e877c82c4e86d5558117",
+      "vendor_dlkm/lib/modules/qrtr-smd.ko": "74ffbb9802c25d6323c805d36656725d92fbe92b08ca95078ac0e4283092cfcd",
+      "vendor_dlkm/lib/modules/qrtr.ko": "0a47aafe964d8906cc63fead90b0f980167f6c2345e62fa2bff5e08548d70ac2",
+      "vendor_dlkm/lib/modules/qsee_ipc_irq_bridge.ko": "fc941dc59a4a9d38839a2f0f5db69566a2cb2ff41a92454364478da1f0a1076a",
+      "vendor_dlkm/lib/modules/qseecom_proxy.ko": "8985463138bd2593e7132759901158c98ec95e3af29a57d82f203ecbac73376b",
+      "vendor_dlkm/lib/modules/qti-fixed-regulator.ko": "f80dd18858e12232a7a97ce2ac837a1f2ff5429890f4a3cc8e0d3cac305a8e03",
+      "vendor_dlkm/lib/modules/qti-glink-adc.ko": "1e6f034263aaef92de259015ae87d29eb26b1538f0c44924daa963dfefeb87de",
+      "vendor_dlkm/lib/modules/qti-ocp-notifier.ko": "6ebcd53a101aec24b53dbba4f3eccd9182fbc92a0dc3e7fd4fc790b1e500f9ed",
+      "vendor_dlkm/lib/modules/qti-regmap-debugfs.ko": "21e1c1b6d2ac9347a960733816464228fccd98265994fb9de0dbb4c07120465b",
+      "vendor_dlkm/lib/modules/qti_amoled_ecm.ko": "548ba1eb68619111a383957e5f7b27b91569a1f91ad7a177f9ff988730bb7322",
+      "vendor_dlkm/lib/modules/qti_battery_charger.ko": "a6d1266101e7caefa901b9063d1b11bb67cea8647369656c360d832ac36981d7",
+      "vendor_dlkm/lib/modules/qti_battery_debug.ko": "e9d2c699ebafe8842c9485324a4a51ff28f1c1c7a56984e95953fde58bb249ed",
+      "vendor_dlkm/lib/modules/qti_cpufreq_cdev.ko": "c6977aa898ae5805c3f32f38ba94525387406bb76b32f7588739b52d208d128a",
+      "vendor_dlkm/lib/modules/qti_devfreq_cdev.ko": "21f6288a0cf9575090856b3c6aee0aa7bf6ebaf411a746e27ddb5e1af136e9f2",
+      "vendor_dlkm/lib/modules/qti_qmi_cdev.ko": "ac6cab9a9d38e6130cade7cb1542441f18c5af0c0d4417e794aac0e0f532198c",
+      "vendor_dlkm/lib/modules/qti_qmi_sensor_v2.ko": "1511db6a34a2dc5a94a641f1085fea1514301d67662a7a47ac2bf8be3a41d721",
+      "vendor_dlkm/lib/modules/qti_userspace_cdev.ko": "685499ac8bf42ae66ec26233b7e9dc3f613954a9939c46aef48d76ad5c8fdc70",
+      "vendor_dlkm/lib/modules/radio-i2c-rtc6226-qca.ko": "c0e8db7a63f5bc4205e1e9df8fb1d28da4797be752f0f27de9472d23ab2c7b2d",
+      "vendor_dlkm/lib/modules/rdbg.ko": "f1a446b5b3ba5fabad3e7804aa9095485b01f536f943bac806d25bdd3dd5612b",
+      "vendor_dlkm/lib/modules/realtek.ko": "3a57dcf328b3c87a770bc77a838354d9c1c656ff415d5f825437fe9f6e389f34",
+      "vendor_dlkm/lib/modules/reboot-mode.ko": "04f32f8837eeac087e017fbfd989daa2d733ee3c72c7eca630a1e84070d584a2",
+      "vendor_dlkm/lib/modules/redriver.ko": "1bdd866521e3bc63c872122b7d8049cea83102f4c854eccb592e2cab3e43b330",
+      "vendor_dlkm/lib/modules/regmap-spmi.ko": "9014a484bb3866b29fb7d938d3d2cccc77a7d319433fba08531d8acbb64e02ef",
+      "vendor_dlkm/lib/modules/repeater-i2c-eusb2.ko": "80d7e5b24458e5c557b3b9070eda0c276653050602d08145f91c9579029d9894",
+      "vendor_dlkm/lib/modules/repeater-qti-pmic-eusb2.ko": "683a7f998689f57c35dc8783e8439de4337d29c2f87d37b6e72943bd6dd9c388",
+      "vendor_dlkm/lib/modules/repeater.ko": "61e395d7feb279e470b5e379dbbbbfd5b42a0b626e01364679c8603fc6170ef9",
+      "vendor_dlkm/lib/modules/rimps_log.ko": "4237991f0c67a2991ac6eea1dee2059fe2fce50f1cceb8166b56b20615f8f571",
+      "vendor_dlkm/lib/modules/rmnet_aps.ko": "9663d0f6b04d84d59bc9f4ea0991ad1ad35055596b98cd13857045d9f7611e0d",
+      "vendor_dlkm/lib/modules/rmnet_core.ko": "fb2d61c2176689e4f853c3d1b49e2cfc372d8d677421abd96153da062e55219c",
+      "vendor_dlkm/lib/modules/rmnet_ctl.ko": "5d7a84516aac63d9df019c34463a4d11c304a6db5f408a5538e424015dfcb508",
+      "vendor_dlkm/lib/modules/rmnet_offload.ko": "abdcecd04b95885f037679b2baf8e7e5ea49a66ca72b01f927aa03cea49cb680",
+      "vendor_dlkm/lib/modules/rmnet_perf.ko": "29ad95140996f427579b5cedf7b8a60e7d108bfea6b62d416a3eb516284662bb",
+      "vendor_dlkm/lib/modules/rmnet_perf_tether.ko": "2123603eeae46449101bb5186962c120fc0b896c20f8be2a1fe20422b3c8101d",
+      "vendor_dlkm/lib/modules/rmnet_sch.ko": "df8915e387753331ea66e656ba7dd1affd4b8403a5fd5100e79ecbb7ad5eb941",
+      "vendor_dlkm/lib/modules/rmnet_shs.ko": "f3192ba3d7795b44163b97af1f7ddc230fe0cc8df78bba4c0556077c06a2eaa5",
+      "vendor_dlkm/lib/modules/rmnet_wlan.ko": "70a5cb5b1dddda9fe39bb54b1b12c0e5504a2509142e59b1cc111bb541b48429",
+      "vendor_dlkm/lib/modules/rndisipam.ko": "9993855a0baa3f44c1689ab199335a521304f9fea6f97460bfcf68f59e382f0f",
+      "vendor_dlkm/lib/modules/rpmh-regulator.ko": "e5e98dcb7106a989a3774c82565eca9664441b446dc5862a4c214ca5f272738e",
+      "vendor_dlkm/lib/modules/rproc_qcom_common.ko": "f178e3a080a7d38f75cb811002a18d36bc4cf01d1aa5db2852eeb08f6c399cac",
+      "vendor_dlkm/lib/modules/rq_stats.ko": "28bf20e0f9bb012f4fe6866c754f4394399160594955f5fb6b34d715d1f61d5e",
+      "vendor_dlkm/lib/modules/rtc-pm8xxx.ko": "f8be411b9598d2a38e2fee139d826378101ca68010cfe2406c46791d5b85e942",
+      "vendor_dlkm/lib/modules/sched-walt.ko": "5d7f3bdf24854d48378f8ac128594c0bb38f5091220d2bdfd46de6be938d7a6b",
+      "vendor_dlkm/lib/modules/sdhci-msm.ko": "b7fbf3bcacefa4ded6902e0e617a11c1b7e9c01cae9957169ab1ca9a1be9ed11",
+      "vendor_dlkm/lib/modules/sdpm_clk.ko": "8a0f618ddc27c4497958aa7ef8d4ba91019d55c208026834558cc6f5973a48c7",
+      "vendor_dlkm/lib/modules/secure_buffer.ko": "c52b330bbea5597376e8b658a7f3daa246785eb1124d152b8ffcdda9c65ac411",
+      "vendor_dlkm/lib/modules/sg.ko": "2c688abf4e69ed53ee3f93dfea3b07f08520c73c498f1a8ee34cf18be8871104",
+      "vendor_dlkm/lib/modules/slim-qcom-ngd-ctrl.ko": "f97c87efff97e8f986d917eff9eb8c1fd345ec2ce4d64cdc99d92947594ca4a0",
+      "vendor_dlkm/lib/modules/slimbus.ko": "e58e6b71cdc7bb12eb493a59976a11e8c386f7e0dd6bd5fc164da1cf5bee8c52",
+      "vendor_dlkm/lib/modules/smcinvoke_dlkm.ko": "a98e513dcbadb491ab900c4ac8de9fc7b885470bb06915b3a600845a015ad35c",
+      "vendor_dlkm/lib/modules/smem.ko": "5506712835dfb4a9fa569f06912cfd65b97c878dc5fcc3299f8e20699c4288bc",
+      "vendor_dlkm/lib/modules/smp2p.ko": "3030c8b208137b74b9ffaed2bdaa07f1e2373aeef233b0353c9f63d1c6f6ee88",
+      "vendor_dlkm/lib/modules/smp2p_sleepstate.ko": "87a31d4970170434b8abd025bed3d0a14eecd4394acf695a80c5dd1b3103bbaa",
+      "vendor_dlkm/lib/modules/snd-soc-add2010.ko": "10f0eec25fc4bd6df93964dba2d770132a893190e367566833d051bc57965186",
+      "vendor_dlkm/lib/modules/snd-soc-hdmi-codec.ko": "4a83da3def91e6bfc8547684876c405bad6ff9f329648f7d195c74e50db4f62d",
+      "vendor_dlkm/lib/modules/snd-soc-tas5805m.ko": "33f45bcfd42ec97400657b7f65b2dc963bd383fd2472a99da67cbf5706fd910f",
+      "vendor_dlkm/lib/modules/snd-usb-audio-qmi.ko": "b4e984cb6d18bd851945925f93e2770ffaaa963b6bf9e5e92d4adf14ea48f59d",
+      "vendor_dlkm/lib/modules/snd_event_dlkm.ko": "550be17eb46af0525fe49e4d8c771224f88387522d35136c32564f71c2023bbe",
+      "vendor_dlkm/lib/modules/soc_sleep_stats.ko": "024e32aa7c57395dfb2fee0c4b80a34e6d290902a0e2e4d685f19aa85c00f8fe",
+      "vendor_dlkm/lib/modules/socinfo.ko": "d778bfc9449770a81e4164f6310e0f72d06e6eed0981f793134671f456adc672",
+      "vendor_dlkm/lib/modules/spcom.ko": "57b9665630ca15065dd39a9ede0e77fa720ec8b20101725259de20d2f4583a73",
+      "vendor_dlkm/lib/modules/spf_core_dlkm.ko": "d00589a41977b93c9fffd731b267c41b5510ec5071ec2a02218ded6b82aff079",
+      "vendor_dlkm/lib/modules/spi-msm-geni.ko": "345f1e5464b43f6c8c95f53db7c84b61bf9e054b3dc5eb7351b0c340778d0847",
+      "vendor_dlkm/lib/modules/spmi-pmic-arb-debug.ko": "3dd22a18e29bd599ace5413b799e895ce7b9ea37d96969fcd2dc15dc28c6a4bc",
+      "vendor_dlkm/lib/modules/spmi-pmic-arb.ko": "e010154daa752d726ad9beb0ef9869049e8d68af9bece620ed637e837cc891af",
+      "vendor_dlkm/lib/modules/sps_drv.ko": "12c81371d8eb92fb855e16b34462cd8924a882aee3f3aa2b787027861c224e65",
+      "vendor_dlkm/lib/modules/spss_utils.ko": "ea330960a746be63d4ff57e64d99f8b88669c03dec75f074e318411463b52cd4",
+      "vendor_dlkm/lib/modules/stm_console.ko": "462096ea31890544a2b6bbb296a8e580f64f985eccdb12f3bb0aed29759862fb",
+      "vendor_dlkm/lib/modules/stm_core.ko": "9545bb2219658bd08cd4eb3fd9f694566f7281446c6e067a59135219e0c59117",
+      "vendor_dlkm/lib/modules/stm_ftrace.ko": "9a03456340d76a1ed33c7d3a79c9680eaa5dac2ac4de78f5b104f35cdafd8ad3",
+      "vendor_dlkm/lib/modules/stm_nfc_i2c.ko": "9acbcc9d9e1889d212dbe02ffbebe67ce9648ad0396a045073cfcd201211c6a8",
+      "vendor_dlkm/lib/modules/stm_p_basic.ko": "1f208af4cf197afa74eb5ea65c7538affcc5e72b954ca4d865e23ca559bb018d",
+      "vendor_dlkm/lib/modules/stm_p_ost.ko": "8d09059fb53e67f334f2c08b02de7c910aaeb553924a4840211ce671d84809bb",
+      "vendor_dlkm/lib/modules/stmvl53l5.ko": "cebbd7318b4583a0356aee0d958e1d5d14633357136b7a83bac786d2275335c1",
+      "vendor_dlkm/lib/modules/stub-regulator.ko": "fba5301b871d016f963f0930f403662795bc80ffd1ac695810fbdb93b8518da9",
+      "vendor_dlkm/lib/modules/stub_dlkm.ko": "737743020373ff780adeb396f4c811f36808b1deb48854750b74a404c31083bb",
+      "vendor_dlkm/lib/modules/subsystem_sleep_stats.ko": "74eaf76a44b10cbd8cf3bf412fc15728e9bcaac269d3509c753d16f864163538",
+      "vendor_dlkm/lib/modules/swr_ctrl_dlkm.ko": "21941f454d0561e0e7d363e775295c7be45dc87390ea7561ad19bb4f1a731b5c",
+      "vendor_dlkm/lib/modules/swr_dlkm.ko": "0f2e7d3ddaa39774567ac3a9041a691bd1bda4730e52c9be3bdcc2ad31e57997",
+      "vendor_dlkm/lib/modules/swr_dmic_dlkm.ko": "c817efef9085ad4dc99ce69c9f3401ec9e5a6c9b2efa51043cf79731b25f87d6",
+      "vendor_dlkm/lib/modules/swr_haptics_dlkm.ko": "08b4fe81a857fb4c0a1d75596af1242c2400d837d76a80c2717892e13af3cadb",
+      "vendor_dlkm/lib/modules/sync_fence.ko": "612612c12c8c97093efa6226e8a0327a52a7445cb0c7f39332e3804fd5210d36",
+      "vendor_dlkm/lib/modules/synx-driver.ko": "c1ff3bfe8ad3b559e1e208b1902d0dd7184b19ea632c62f7ed44dcc467fb7f0b",
+      "vendor_dlkm/lib/modules/sys_pm_vx.ko": "39622afd6c5fa553f71ac371de8227fc9e8c91ad16a82a53b1b77c5ca49b8df1",
+      "vendor_dlkm/lib/modules/sysmon_subsystem_stats.ko": "7d7695ccefdff7b1b84da2ed8740a00832ffc09c8a7fd53388e9fb043110f693",
+      "vendor_dlkm/lib/modules/tcsrcc-kalama.ko": "0e9c8d61763052407ce779af040656beb38eb3eec3846ea23b706dd1c496e90f",
+      "vendor_dlkm/lib/modules/thermal_minidump.ko": "42c0ba75af39deba0c005f190ea8fa2aaf72fa88fb782eeeb29e061c239fcab8",
+      "vendor_dlkm/lib/modules/thermal_pause.ko": "578210de346a617f6932c0fcd1c43da3f955db07ee88523125568b2c77010a3d",
+      "vendor_dlkm/lib/modules/tmecom-intf.ko": "94601e260392ac1613bc65b3f0c3053bf175ccd4031bf938809aff18c71222ea",
+      "vendor_dlkm/lib/modules/tz_log_dlkm.ko": "ef470a42246d45a17b3e57a53ae004edb980b8be65db422db6a6bbbb09614470",
+      "vendor_dlkm/lib/modules/ucsi_glink.ko": "83dabbc0e1a41661d519783d7a0d2da4132b1931f81d666cffd29a70876c0560",
+      "vendor_dlkm/lib/modules/ufs_qcom.ko": "2dac67457924cc2f32f8708143e0c0f38cff06714037e9b149b961ce2ce17ba1",
+      "vendor_dlkm/lib/modules/ufshcd-crypto-qti.ko": "a3c4fe207a15b289e1b5d60622b4b2841d85188c9c2828d29907bca2ba519e15",
+      "vendor_dlkm/lib/modules/usb_bam.ko": "d5a991b0fe78e992c95a686a85bf2ea0fb200f03e4246f9aba10a4bb1625ec7a",
+      "vendor_dlkm/lib/modules/usb_f_ccid.ko": "5a7ee7debb75ed1549f84daddbb233d512325ea0a6e6634560768b3d2774cf57",
+      "vendor_dlkm/lib/modules/usb_f_cdev.ko": "97e309f274701207eedb5f350a48f79bf600a0acb559fb28650d28db732e5c3b",
+      "vendor_dlkm/lib/modules/usb_f_diag.ko": "1a0822a1232af5322cc995d5bcf8097c707cccd4faaec376237ec9420f7fb753",
+      "vendor_dlkm/lib/modules/usb_f_gsi.ko": "79d1a8c6840a7dc84d25a007e513ec028feb625afc96eca0f71fbdb356a95d9d",
+      "vendor_dlkm/lib/modules/usb_f_qdss.ko": "d1686387a2e310eaf52901f8b4add9f2cad464d9c35d7fba17cd2d6c22d6ec21",
+      "vendor_dlkm/lib/modules/usbmon.ko": "8bf6251f72e2cf0c2bbc8323e52e180a5006c17e90393d869aae5b63c7a12cd1",
+      "vendor_dlkm/lib/modules/videocc-crow.ko": "e33ec1d69ac8e6ee0d80e58bbd133bb50736de416dcfff621512cd18d794e7d4",
+      "vendor_dlkm/lib/modules/videocc-kalama.ko": "77d8b2f6fdcfbbe802087aa236622837639f3ad5f1da6bf1555ac02c4e1fe1a2",
+      "vendor_dlkm/lib/modules/wcd937x_dlkm.ko": "18abf3aa4569b20aac926752b85e86b056fc5eeb7a45e79895c6ee1ee56951a3",
+      "vendor_dlkm/lib/modules/wcd937x_slave_dlkm.ko": "8a06f73b857918ecaeb231b2d3e0f8c05922193e6a585faaf475ea784900a24a",
+      "vendor_dlkm/lib/modules/wcd938x_dlkm.ko": "21ebb601f342e6c6547d20d61e025f7634af70730cd2fb73b9deef975c60a567",
+      "vendor_dlkm/lib/modules/wcd938x_slave_dlkm.ko": "31baaaafb431c88ff8619d55bc02fcb5cf5f9f1adf8d796bfb81c39cb6715a68",
+      "vendor_dlkm/lib/modules/wcd939x_dlkm.ko": "3712b617b13a17c93d84a4535bdb6e12862894b4ca71e9589503a474f1cd0f41",
+      "vendor_dlkm/lib/modules/wcd939x_slave_dlkm.ko": "fef7d10609154570dc89a5126d2ca3af6a8711f2b92e8c9ad18aacc19be1dc87",
+      "vendor_dlkm/lib/modules/wcd9xxx_dlkm.ko": "6b54d36be48f219de44e5e695c2aed87c162dafcab9cef3e40b4506ebc5461db",
+      "vendor_dlkm/lib/modules/wcd_core_dlkm.ko": "e95f19bb1e5b287e6aec1fe97b2c3f508838650237567e84c32d3c80826fcbad",
+      "vendor_dlkm/lib/modules/wl2866d.ko": "4e139bfa8f21d15c9bfd11db971a174362ab4d130f6c2e253cfb9f83ac668fc5",
+      "vendor_dlkm/lib/modules/wlan_firmware_service.ko": "958aecdcfa816c248ad73f326ed1d7614d2263d7e880e53a38f6bca7f7144b3d",
+      "vendor_dlkm/lib/modules/wsa883x_dlkm.ko": "4d4722f252b1bc755937c69983ffa85f6c47d051d26be4a09a288ce75a816775",
+      "vendor_dlkm/lib/modules/wsa884x_dlkm.ko": "a7cce5613729e0abb0e9d6087cbae46a6a11015d673fc9310528c8e9ea81d495",
+      "vendor_dlkm/lib/modules/xiaomi_touch.ko": "549b5df7e07ba7dc161dbc86042a6ec4f5a475ce767ce2e122e0540cbc1c8fd0",
+      "vendor_dlkm/lib/modules/zram.ko": "492fd61b1fab3050ceb548642da241c85ab3e5d464bedc7ba4ce387814707cde",
+      "vendor_dlkm/lib/modules/zsmalloc.ko": "78b23bdce1465bca287b1f9ce6390f5acf2c86c2bfc1e6a2345ab25d244b69ba"
+    }
+  },
+  "ksu_ramdisk_verified_against_accepted_native_date_image": true,
+  "avb_signatures_and_descriptors_verified": true,
+  "source_boot_images": {
+    "phone_accessed": false,
+    "runtime_verified": false,
+    "images": {
+      "recovery": {
+        "sha256": "d79b57501ef397e39d89d09f9324bdf3bfdb4e007958d7f279618630db240b1d",
+        "bytes": 104857600,
+        "header": "boot magic: ANDROID!\nkernel_size: 0\nramdisk size: 18938090\nos version: 17.0.0\nos patch level: 2026-10\nboot image header version: 4\ncommand line args: \nboot.img signature size: 0\n",
+        "entry_count": 646,
+        "source_built_contents_verified": true,
+        "whole_image_matches_standalone_product": false,
+        "whole_image_matches_target_files": true,
+        "no_prebuilt_twrp_or_ksu_entries": true
+      }
+    },
+    "avb_hash_integrity": {
+      "recovery": "Verifying image /mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/images/recovery.img using embedded public key\nvbmeta: Successfully verified footer and NONE vbmeta struct in /mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/images/recovery.img\nrecovery: Successfully verified sha256 hash of /mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/images/recovery.img for image of 18944000 bytes\n"
+    },
+    "recovery_body_and_all_entries_match_standalone_product": true,
+    "recovery_only_avb_footer_differs": true,
+    "recovery_policy_permissive_domains": [
+      "recovery",
+      "su"
+    ],
+    "recovery_domain_exception_is_unmodified_upstream_userdebug_only": true,
+    "su_domain_exception_is_recovery_only_source_fix55": true,
+    "recovery_collision_contexts_exact_two_additions_verified": {
+      "all_passed": true,
+      "old270_recovery_sha256": "fee9241a5e8f8b4a1e336b88530948ab1be3f83891febf16d5a3137bf3691325",
+      "new_recovery_sha256": "79e346f5e56fdb38cfd53eabf2af26f514331d3dfd16d742c94c47583960cb3d",
+      "old_vendor_file_contexts_sha256": "79685e187aacc5413169dde7eb0afeb7e367c9f5aa4d89ad73ed7aaba072660c",
+      "new_vendor_file_contexts_sha256": "c25aea1c3a2585bbe0828a5771707b3021414f3d358b43725d705dd6ef86c792",
+      "only_two_added_rows": [
+        [
+          "/mnt/vendor/persist/sensors/collisionData\\.txt",
+          "u:object_r:vendor_ishtar_collision_log_file:s0"
+        ],
+        [
+          "/mnt/vendor/persist/sensors/temp-collisionData\\.txt",
+          "u:object_r:vendor_ishtar_collision_log_file:s0"
+        ]
+      ],
+      "no_removed_rows": true,
+      "product_unchanged_after_build": true,
+      "phone_accessed": false
+    },
+    "bionic_and_dedicated_als_policy_recovery_entries120": {
+      "plat_property_contexts": {
+        "before": {
+          "bytes": 128267,
+          "mode": 33188,
+          "uid": 0,
+          "gid": 0,
+          "sha256": "a3b5a45cdc71e1f2438f781bb3683b15eb66e66e4c0a8bf81523f19879eac910"
+        },
+        "after": {
+          "bytes": 128369,
+          "mode": 33188,
+          "uid": 0,
+          "gid": 0,
+          "sha256": "a190bfeda4e70ad27253b5bc1380d588190242c6760b8bf0ddb8ab6797275ab8"
+        }
+      },
+      "sepolicy": {
+        "before": {
+          "bytes": 1841701,
+          "mode": 33188,
+          "uid": 0,
+          "gid": 0,
+          "sha256": "cd729d14fe2cdddebcd6cb677fcc922fbdb15b0ac391dfd400379daedc36402f"
+        },
+        "after": {
+          "bytes": 1847126,
+          "mode": 33188,
+          "uid": 0,
+          "gid": 0,
+          "sha256": "704b5695fc431de8aa40c279d54645b6ca319486cd37f94b469d5f2a3fe43b98"
+        }
+      },
+      "system/bin/linker64": {
+        "before": {
+          "bytes": 2316808,
+          "mode": 33261,
+          "uid": 0,
+          "gid": 0,
+          "sha256": "74ef7c09d4c76661e81124ccaabc4246931a8e800271749a43daff597f50f647"
+        },
+        "after": {
+          "bytes": 2316808,
+          "mode": 33261,
+          "uid": 0,
+          "gid": 0,
+          "sha256": "220bdc277fb5a9307aa553d73e4f4e5b13e4c51a138c57bafe0bc2f73b085c0b"
+        }
+      },
+      "system/lib64/libc.so": {
+        "before": {
+          "bytes": 1295792,
+          "mode": 33188,
+          "uid": 0,
+          "gid": 0,
+          "sha256": "64438b31072d4af66de1a4d54be5aaa61882c247b34667f48fa1da2f94d03a64"
+        },
+        "after": {
+          "bytes": 1295792,
+          "mode": 33188,
+          "uid": 0,
+          "gid": 0,
+          "sha256": "0ab338d2f49877ec1e22cd8b9faa79fdc551ece0c070fa42f771b3454453a60e"
+        }
+      },
+      "vendor_file_contexts": {
+        "before": {
+          "bytes": 123608,
+          "mode": 33188,
+          "uid": 0,
+          "gid": 0,
+          "sha256": "c64f5b463fef60f8b62c424ba436f2196509c05f886ac0728c2f62853ead0400"
+        },
+        "after": {
+          "bytes": 123904,
+          "mode": 33188,
+          "uid": 0,
+          "gid": 0,
+          "sha256": "c25aea1c3a2585bbe0828a5771707b3021414f3d358b43725d705dd6ef86c792"
+        }
+      }
+    },
+    "recovery55_firmware_and_policy_fix_present": true,
+    "all_non_property_entries_match_device_tested_clean_recovery55": false,
+    "recovery55_non_policy_configuration_preserved": true,
+    "dedicated_als_policy_update_only": false,
+    "dedicated_als_and_exact_collision_policy_update_only": true,
+    "no_temporary_public_key_or_diagnostic_services": true,
+    "recovery_fstab_matches_source": true,
+    "recovery_binary_matches_source_built_product": true,
+    "recovery_differs_from_build47_twrp": true,
+    "recovery_source_head": "7f7a7931ed6e5d1eda50a096917f766b17d59f6b",
+    "state": "static_checks_passed_runtime_pending"
+  },
+  "vendor_boot_recovery_modules": {
+    "regulator_loads_before_touch": true,
+    "modules": {
+      "qcom_pm8008-regulator.ko": "61fdb560708d9ab64a9ffc5d209e532bfcac8da385e58fe5fb3dda2de4e57aed",
+      "fts_touch_spi.ko": "4c2d364bd1495ce17d7a80dbdfaf1c59b7ce08cf73d4dcf8dfa8bc3b9c9946c7"
+    },
+    "kernel_release": "5.15.224",
+    "runtime_verified": false
+  },
+  "client_composition_cache303": {
+    "source_value": "0",
+    "target_files_vendor_build_prop_value": "0",
+    "actual_vendor_build_prop_value": "0",
+    "max_frame_buffer_acquired_buffers": 3,
+    "surfaceflinger_binary_supports_property": true,
+    "surfaceflinger_sha256": "ca0459c61f02150c6491c88cdfb7503f0855d6661b00638b447457e406d80827",
+    "cache_hit_runtime_pending": true
+  },
+  "event_driven_original_cwb_refresh144": {
+    "surfaceflinger_sha256": "ca0459c61f02150c6491c88cdfb7503f0855d6661b00638b447457e406d80827",
+    "property_enabled": true,
+    "property_exact_surfaceflinger_type": true,
+    "diagnostic_probe_not_packaged": true,
+    "interval_ms": 300,
+    "settle_ms": 20,
+    "actual_worker_runtime_pending": true
+  },
+  "als_compensation144_actual_images": {
+    "files": {
+      "odm/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service": {
+        "sha256": "9de6ec34c017130c07672b9e51e133d805b0df2a52e3cd953afa068daa3f5b47",
+        "bytes": 11432
+      },
+      "odm/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so": {
+        "sha256": "6e3e908d14d5350c7c25f28747672dc043e10a47f1119c85f228e7ae2dda4efb",
+        "bytes": 686904
+      },
+      "odm/lib64/libssccalapi@2.0.so": {
+        "sha256": "00e6f3ce6aef71b1e73513ffdac71430ed4086cbe21b8f7b06c85cdba33af117",
+        "bytes": 355048
+      },
+      "odm/lib64/libdisplayconfig.als.so": {
+        "sha256": "7e47ae3c956269e64c995c64d33d2b13e9f8b46dcc29b7daea3898aa7f5b5e33",
+        "bytes": 227017
+      },
+      "odm/etc/init/vendor.xiaomi.sensor.citsensorservice@2.0-service.rc": {
+        "sha256": "775722b0a81cc344a2daa873ba8101c90c8593c8601fc373b8375fca73444da3",
+        "bytes": 280
+      },
+      "odm/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice@2.0-service.xml": {
+        "sha256": "233fc042df3ad8a9d5a50a554fbe8d416a2ba959a88fbe1fdbc6d25671d35f85",
+        "bytes": 631
+      }
+    },
+    "exact307_source_manifest": "/home/wei/13ultra-control/ishtar17-als-integration120-20261030-01/stock307-files120.json",
+    "isolated_display_client_code_preserved": true,
+    "global_display_client_unchanged": true,
+    "dedicated_exec_label": "u:object_r:vendor_ishtar_als_exec:s0",
+    "dedicated_enforcing_permissions": [
+      {
+        "source": "surfaceflinger",
+        "target": "vendor_ishtar_als_hwservice",
+        "object_class": "hwservice_manager",
+        "permission": "find"
+      },
+      {
+        "source": "surfaceflinger",
+        "target": "vendor_ishtar_als",
+        "object_class": "binder",
+        "permission": "call"
+      },
+      {
+        "source": "vendor_ishtar_als",
+        "target": "vndbinder_device",
+        "object_class": "chr_file",
+        "permission": "read"
+      },
+      {
+        "source": "vendor_ishtar_als",
+        "target": "vndbinder_device",
+        "object_class": "chr_file",
+        "permission": "write"
+      },
+      {
+        "source": "vendor_ishtar_als",
+        "target": "vndservicemanager",
+        "object_class": "binder",
+        "permission": "call"
+      },
+      {
+        "source": "vendor_ishtar_als",
+        "target": "vendor_qdisplay_service",
+        "object_class": "service_manager",
+        "permission": "find"
+      },
+      {
+        "source": "init",
+        "target": "vendor_ishtar_als",
+        "object_class": "process",
+        "permission": "transition"
+      },
+      {
+        "source": "vendor_ishtar_als",
+        "target": "vendor_ishtar_als_exec",
+        "object_class": "file",
+        "permission": "entrypoint"
+      },
+      {
+        "source": "vendor_ishtar_als",
+        "target": "vendor_ishtar_als_hwservice",
+        "object_class": "hwservice_manager",
+        "permission": "add"
+      },
+      {
+        "source": "vendor_ishtar_als",
+        "target": "fwk_sensor_hwservice",
+        "object_class": "hwservice_manager",
+        "permission": "find"
+      },
+      {
+        "source": "vendor_ishtar_als",
+        "target": "vendor_displayfeature_device",
+        "object_class": "chr_file",
+        "permission": "read"
+      },
+      {
+        "source": "vendor_ishtar_als",
+        "target": "vendor_persist_sensors_file",
+        "object_class": "file",
+        "permission": "read"
+      },
+      {
+        "source": "vendor_ishtar_als",
+        "target": "vendor_sensors_prop",
+        "object_class": "property_service",
+        "permission": "set"
+      }
+    ],
+    "real_CWB_and_light_response_pending": true
+  },
+  "camera_fixes242_actual_images": {
+    "camera_apk_sha256": "b7b2c4c77c4a4656e94569b918b208293f4d1a0d60900c0e805082770452f9ea",
+    "hal_sha256": "8dd04166117042d1315910e944acc027f52022a65373d0ecb10924a9b89017e6",
+    "overlay_sha256": "af9d324b956720a6a33e22acf9760c8a40cc38c6f1d6e194bfafa417caffeb9b",
+    "matching_signer_sha256": "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8",
+    "camera_original_unchanged": true,
+    "hall_matches_runtime_verified_candidate225_227": true,
+    "only_overlay_target": "com.android.camera",
+    "overlay_default_enabled_static_manifest": true,
+    "overlay_has_no_code_or_permissions": true,
+    "exact_theme_parent_and_all_11_items_verified": true,
+    "single_theme_difference": "android:windowTranslucentNavigation true -> false",
+    "target_namespace": "0x7f",
+    "overlay_namespace": "0x7e",
+    "idmap_mappings": [
+      "0x7f150407 -> 0x7e010000"
+    ],
+    "runtime_full_rom_verified": false,
+    "no_partition_overlay_config_overrides_static_default": true
+  },
+  "combined_repairs288": {
+    "all_passed": true,
+    "baseline_policy_sha256": "f3861acf5fb85fd4056b088589ae73ecc558ccd2e55cc5d5497a03e2227f8929",
+    "new_policy_sha256": "0b0e2626eb6a55b71629ece6ccd5f466343e9300eec41e084d23eedd696bbf6a",
+    "normalized_policy_comparison": {
+      "all_previous_unconditional_allows_preserved": true,
+      "all_previous_allowxperms_preserved": true,
+      "old_allow_permission_atoms": 5439943,
+      "old_allowxperm_entries": 14434110,
+      "added_old_type_allow_atoms": 3,
+      "new_log_type_rule_entries": 4416,
+      "only_reviewed_old_type_additions": true,
+      "conditional_rules_present": false,
+      "exact_two_filename_transitions": true,
+      "log_create_write_unlink_allowed": true,
+      "calibration_file_write_create_unlink_rename_setattr_denied": true
+    },
+    "policy_checker_sha256": "e5be61b16dd442ef99a51075426fad963d02ec2581b0661c0d91606706ae5eb4",
+    "neverallow_rules_sha256": "8fd30cab6cdf34ca746cbd9c385eba3148bdecbdc4805bfd228c324bafde2840",
+    "neverallow": {
+      "all_passed": true,
+      "ignored_neverallows": false,
+      "soong_variables_path": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/soong.lineage_ishtar.variables",
+      "soong_variables_sha256": "0d390c9ce499c36ab3b39ce60a43a9c1dc8042e7529c73adda670f117418f794",
+      "normal_user_gate": {
+        "checkpolicy_conf_sha256": "b3e229d101eefb87db50bc8b1d0e4f11c192964681baa2b08cfe7e6bbadf520e",
+        "analyze_conf_sha256": "8fd30cab6cdf34ca746cbd9c385eba3148bdecbdc4805bfd228c324bafde2840",
+        "user_policy_sha256": "964c4dac17f735a8d7ecfb0d5c6977e87e19dc5c15b2a8fc799413cad6c2f278",
+        "compile": {
+          "command": [
+            "/mnt/android-build/Android/out/ishtar-evox17-validation-20261024-01/host/linux-x86/bin/checkpolicy",
+            "-M",
+            "-c",
+            "30",
+            "-o",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/neverallow288/normal-user-policy",
+            "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/sepolicy_neverallows.checkpolicy.conf/android_common/sepolicy_neverallows.checkpolicy.conf"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "system/sepolicy/vendor/hal_vm_capabilities_default.te:10:WARNING 'omitting avrule with no permission set' at token ';' on line 119279:\nneverallow hal_vm_capabilities_default crosvm_vendor:fd ~use;\nallow hal_vm_capabilities_default crosvm_vendor:fd use;\n"
+        },
+        "analyze": {
+          "command": [
+            "/mnt/android-build/Android/out/ishtar-evox17-validation-20261024-01/host/linux-x86/bin/sepolicy-analyze",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/neverallow288/normal-user-policy",
+            "neverallow",
+            "-w",
+            "-f",
+            "/mnt/android-build/Android/out/ishtar-evox17-validation-20261024-01/soong/.intermediates/system/sepolicy/sepolicy_neverallows.sepolicy_analyze.conf/android_common/sepolicy_neverallows.sepolicy_analyze.conf"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      },
+      "actual_combined_gate": {
+        "compiler_ignore_flag_present": false,
+        "inputs": [
+          {
+            "partition": "system",
+            "path": "etc/selinux/plat_sepolicy_genfs_202604.cil",
+            "sha256": "3bdfcfba699936cb12d007fee7bca2feb1a88c75cc947f98b14c55fe4932b0d3",
+            "build_input": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/compat/plat_sepolicy_genfs_202604.cil/android_arm64_armv8-2a-dotprod_kryo/plat_sepolicy_genfs_202604.cil"
+          },
+          {
+            "partition": "system",
+            "path": "etc/selinux/plat_sepolicy.cil",
+            "sha256": "f3a307753d2c21df2948c52608ae5fb002d8f2871b4a69a37517cf9037c7874d",
+            "build_input": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/plat_sepolicy.cil/android_common/plat_sepolicy.cil"
+          },
+          {
+            "partition": "system_ext",
+            "path": "etc/selinux/system_ext_sepolicy.cil",
+            "sha256": "1ef27eb96b16006bac93c9f85e8ade3ca5c92b590e11ec2c09a6f6c075657540",
+            "build_input": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/system_ext_sepolicy.cil/android_common/ishtar/system_ext_sepolicy.cil"
+          },
+          {
+            "partition": "product",
+            "path": "etc/selinux/product_sepolicy.cil",
+            "sha256": "b8717b587f8c5c89bf6d291ddfe760adf06b349d0e44292665b3003e73107610",
+            "build_input": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/product_sepolicy.cil/android_common/ishtar/product_sepolicy.cil"
+          },
+          {
+            "partition": "vendor",
+            "path": "etc/selinux/plat_pub_versioned.cil",
+            "sha256": "c69a6a305400189fa0f68420f041a7fa665f856b1f10df74c1ee193a414e3419",
+            "build_input": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/plat_pub_versioned.cil/android_common/ishtar/plat_pub_versioned.cil"
+          },
+          {
+            "partition": "vendor",
+            "path": "etc/selinux/vendor_sepolicy.cil",
+            "sha256": "df04b609cf6f88e8a0eb88a206e8ffa21105d6658aa2bdcf0679b46d4085555a",
+            "build_input": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/vendor_sepolicy.cil/android_common/ishtar/vendor_sepolicy.cil"
+          },
+          {
+            "partition": "odm",
+            "path": "etc/selinux/odm_sepolicy.cil",
+            "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "build_input": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/odm_sepolicy.cil/android_common/ishtar/odm_sepolicy.cil"
+          },
+          {
+            "partition": "system",
+            "path": "etc/selinux/mapping/202604.cil",
+            "sha256": "34f9db1571f43aab25ee785130fb2a080c99a49bd87a8a8a4f5c574969b5365e",
+            "build_input": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/plat_mapping_file/android_common/202604.cil"
+          },
+          {
+            "partition": "system_ext",
+            "path": "etc/selinux/mapping/202604.cil",
+            "sha256": "7800d430079c1a953ad69be9c40ea4939590d3e91e541a659b307889e4e48461",
+            "build_input": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/system_ext_mapping_file/android_common/ishtar/202604.cil"
+          },
+          {
+            "partition": "product",
+            "path": "etc/selinux/mapping/202604.cil",
+            "sha256": "96724db22a779415a441191a1a4f0eebb79f0753b21b10883cfc6d50d9a3186a",
+            "build_input": "/mnt/android-work/Android/source/evox17-official-candidate/out/soong/.intermediates/system/sepolicy/product_mapping_file/android_common/ishtar/202604.cil"
+          }
+        ],
+        "command_record_sha256": "c88f990d11295ab9c0ee629f2400e839e752a41717b3366404ad5972448a397b",
+        "compile": {
+          "command": [
+            "/mnt/android-build/Android/out/ishtar-evox17-validation-20261024-01/host/linux-x86/bin/secilc",
+            "-v",
+            "-m",
+            "-M",
+            "true",
+            "-G",
+            "-c",
+            "30",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/system/etc/selinux/plat_sepolicy_genfs_202604.cil",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/system/etc/selinux/plat_sepolicy.cil",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/system_ext/etc/selinux/system_ext_sepolicy.cil",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/product/etc/selinux/product_sepolicy.cil",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/vendor/etc/selinux/plat_pub_versioned.cil",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/vendor/etc/selinux/vendor_sepolicy.cil",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/odm/etc/selinux/odm_sepolicy.cil",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/system/etc/selinux/mapping/202604.cil",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/system_ext/etc/selinux/mapping/202604.cil",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/product/etc/selinux/mapping/202604.cil",
+            "-o",
+            "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/neverallow288/actual-combined-policy",
+            "-f",
+            "/dev/null"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "reconstructed_policy_sha256": "0b0e2626eb6a55b71629ece6ccd5f466343e9300eec41e084d23eedd696bbf6a",
+        "matches_actual_policy": true
+      },
+      "actual_payload_cil_used": true,
+      "runtime_verified": false
+    },
+    "static_permissive_domains": [],
+    "actual_vendor_contexts_sha256": "c25aea1c3a2585bbe0828a5771707b3021414f3d358b43725d705dd6ef86c792",
+    "exact_collision_file_contexts": [
+      "/mnt/vendor/persist/sensors/collisionData\\.txt",
+      "/mnt/vendor/persist/sensors/temp-collisionData\\.txt"
+    ],
+    "label_lookup": [
+      {
+        "path": "/mnt/vendor/persist/sensors/collisionData.txt",
+        "expected": "vendor_ishtar_collision_log_file",
+        "actual": "u:object_r:vendor_ishtar_collision_log_file:s0",
+        "passed": true
+      },
+      {
+        "path": "/mnt/vendor/persist/sensors/temp-collisionData.txt",
+        "expected": "vendor_ishtar_collision_log_file",
+        "actual": "u:object_r:vendor_ishtar_collision_log_file:s0",
+        "passed": true
+      },
+      {
+        "path": "/mnt/vendor/persist/sensors/sns.reg",
+        "expected": "vendor_persist_sensors_file",
+        "actual": "u:object_r:vendor_persist_sensors_file:s0",
+        "passed": true
+      },
+      {
+        "path": "/mnt/vendor/persist/sensors/sensors_settings",
+        "expected": "vendor_persist_sensors_file",
+        "actual": "u:object_r:vendor_persist_sensors_file:s0",
+        "passed": true
+      },
+      {
+        "path": "/mnt/vendor/persist/sensors/registry/registry/sensors_registry",
+        "expected": "vendor_persist_sensors_file",
+        "actual": "u:object_r:vendor_persist_sensors_file:s0",
+        "passed": true
+      },
+      {
+        "path": "/mnt/vendor/persist/sensors/collisionDataXtxt",
+        "expected": "vendor_persist_sensors_file",
+        "actual": "u:object_r:vendor_persist_sensors_file:s0",
+        "passed": true
+      },
+      {
+        "path": "/mnt/vendor/persist/sensors/collisionData.txt.backup",
+        "expected": "vendor_persist_sensors_file",
+        "actual": "u:object_r:vendor_persist_sensors_file:s0",
+        "passed": true
+      },
+      {
+        "path": "/mnt/vendor/persist/sensors/temp-collisionData.txt.backup",
+        "expected": "vendor_persist_sensors_file",
+        "actual": "u:object_r:vendor_persist_sensors_file:s0",
+        "passed": true
+      },
+      {
+        "path": "/mnt/vendor/persist/sensors",
+        "expected": "vendor_persist_sensors_file",
+        "actual": "u:object_r:vendor_persist_sensors_file:s0",
+        "passed": true
+      }
+    ],
+    "init_rc_sha256": "f8de44bbe35b8c8636a773896128e14fb72b75cd6c623ce56197078f84e96c05",
+    "migration_commands": [
+      [
+        "restorecon",
+        "/mnt/vendor/persist/sensors/collisionData.txt"
+      ],
+      [
+        "restorecon",
+        "/mnt/vendor/persist/sensors/temp-collisionData.txt"
+      ],
+      [
+        "chown",
+        "system",
+        "system",
+        "/mnt/vendor/persist/sensors/collisionData.txt"
+      ],
+      [
+        "chown",
+        "system",
+        "system",
+        "/mnt/vendor/persist/sensors/temp-collisionData.txt"
+      ],
+      [
+        "chmod",
+        "0600",
+        "/mnt/vendor/persist/sensors/collisionData.txt"
+      ],
+      [
+        "chmod",
+        "0600",
+        "/mnt/vendor/persist/sensors/temp-collisionData.txt"
+      ]
+    ],
+    "init_verifier": {
+      "command": [
+        "/mnt/android-build/Android/out/ishtar-evox17-validation-20261024-01/host/linux-x86/bin/host_init_verifier",
+        "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/vendor/etc/init/init.ishtar.rc"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "original_collision_library_sha256": "00e6f3ce6aef71b1e73513ffdac71430ed4086cbe21b8f7b06c85cdba33af117",
+    "iwlan": {
+      "sha256": "0c3394aa69dad058b97c4ebbb9c5ef505e97061386c44319cdd4f7cbddf552a9",
+      "signer_sha256": "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8",
+      "signature_verification": {
+        "command": [
+          "/mnt/android-build/Android/out/ishtar-evox17-validation-20261024-01/host/linux-x86/bin/apksigner",
+          "verify",
+          "--verbose",
+          "--print-certs",
+          "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/vendor/app/IWlanService/IWlanService.apk"
+        ],
+        "exit_code": 0,
+        "stdout": "Verifies\nVerified using v1 scheme (JAR signing): false\nVerified using v2 scheme (APK Signature Scheme v2): false\nVerified using v3 scheme (APK Signature Scheme v3): true\nVerified using v3.1 scheme (APK Signature Scheme v3.1): false\nVerified using v3.2 scheme (APK Signature Scheme v3.2): false\nVerified using v4 scheme (APK Signature Scheme v4): false\nVerified for SourceStamp: false\nNumber of signers: 1\nV3.0 Signer: certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US\nV3.0 Signer: certificate SHA-256 digest: c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8\nV3.0 Signer: certificate SHA-1 digest: 27196e386b875e76adf700e7ea84e4c6eee33dfa\nV3.0 Signer: certificate MD5 digest: 8ddb342f2da5408402d7568af21e29f9\nV3.0 Signer: key algorithm: RSA\nV3.0 Signer: key size (bits): 2048\nV3.0 Signer: public key SHA-256 digest: 3d3df7dc9bf26e02d4cd76256d41d45e41a4dedebe7feb95c40e3697681be8a7\nV3.0 Signer: public key SHA-1 digest: 06cac910fdbd67398c0bb8e297ef679dea589f61\nV3.0 Signer: public key MD5 digest: f3714d30107c5b7d1e29325669b80e05\n",
+        "stderr": ""
+      },
+      "badging": {
+        "command": [
+          "/mnt/android-build/Android/out/ishtar-evox17-validation-20261024-01/host/linux-x86/bin/aapt2",
+          "dump",
+          "badging",
+          "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/filesystems/vendor/app/IWlanService/IWlanService.apk"
+        ],
+        "exit_code": 0,
+        "stdout": "package: name='vendor.qti.iwlan' versionCode='13' versionName='13.5' platformBuildVersionName='13' platformBuildVersionCode='33' compileSdkVersion='33' compileSdkVersionCodename='13'\nminSdkVersion:'33'\ntargetSdkVersion:'33'\nuses-permission: name='android.permission.WAKE_LOCK'\napplication: label='' icon=''\nfeature-group: label=''\n  uses-feature: name='android.hardware.faketouch'\n  uses-implied-feature: name='android.hardware.faketouch' reason='default feature for all apps'\nother-services\nsupports-screens: 'small' 'normal' 'large' 'xlarge'\nsupports-any-density: 'true'\nlocales:\ndensities:\n",
+        "stderr": ""
+      }
+    },
+    "runtime_verified": false,
+    "built_policy_verified": true
+  },
+  "accepted144_surfaceflinger_unchanged_and_policy_additive288": true,
+  "errorfixes305_actual_payload": {
+    "B03_blur_background_ui_thread_dex": {
+      "payload_sha256": "409f0f68d7f6f7bde07e50364c5a456cea9b98b1039be0945d793bead726875b",
+      "set_blur_absent_from_on_finish_inflate": true,
+      "set_blur_present_in_on_attached_to_window": true
+    },
+    "B04_earpiece_output_channel_mask": {
+      "payload_sha256": "761d2d18ad2a6e001cd5d4be8fb708ea4115ad5aa2e2127ab4ebcc0fe23fde03",
+      "earpiece_channel_masks": [
+        "AUDIO_CHANNEL_OUT_MONO"
+      ]
+    },
+    "B05_gamespace_security_exception": {
+      "payload_sha256": "a6d1e123335709d71e62313460450647e3280824fb614a125172983ed247dade",
+      "active_notification_access_guarded": true,
+      "warning_logged_and_listener_retained": true
+    },
+    "R02_lte_physical_channel_metadata": {
+      "payload_sha256": "31c6cf10e5bb6b967092a9cfd5f90afb12dd40bb2fc4ef5cee97a6028b3086a9",
+      "lte_cell_identity_fallback_present": true,
+      "fallback_reapplied_after_state_poll": true,
+      "poll_cached_list_updated_after_fallback": true,
+      "physical_channel_config_renotified_after_poll": true
+    },
+    "target_files_product_and_payload_match": true,
+    "runtime_pending": true
+  },
+  "wifi_pno300_preserved": {
+    "actual_payload_overlay_sha256": "8d836d067915c62ac6c63353b864e24a0908f7485ebf28ed770c588759dc88bc",
+    "background_scan_support": true,
+    "target_files_and_product_match": true,
+    "signature_verified": true,
+    "certificate": "V3.0 Signer: certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US\nV3.0 Signer: certificate SHA-256 digest: a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc\nV3.0 Signer: certificate SHA-1 digest: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81\nV3.0 Signer: certificate MD5 digest: e89b158e4bcf988ebd09eb83f5378e87\n",
+    "runtime_verified": false
+  },
+  "actual_image_files": {
+    "system/bin/update_engine": {
+      "sha256": "5046f977902f88a4d20808a7454291b75230fd7b74096a2b9aa9d52bd1b88535",
+      "matches_built_product": true
+    },
+    "system/bin/update_engine_nonetd": {
+      "sha256": "70ba91c253c2b040c1e23cc32be6387d1dcfedd9a6c64a8b47e811fbe76cc1ef",
+      "matches_built_product": true
+    },
+    "system/bin/backuptool_broker": {
+      "sha256": "5f37c1ebb87afde1042d19b35c01401b497913ed18eecf79b3b8e0b4f8df8851",
+      "matches_built_product": true
+    },
+    "system/bin/backuptool_store": {
+      "sha256": "005f2eeaceee8395c61b9746bc0d91a752e5284e3d89b291f7240d890ac14c14",
+      "matches_built_product": true
+    },
+    "system/bin/backuptool_staged.sh": {
+      "sha256": "0835b6701de36661a04e1f37a723002b861fb3bce4efbc9eef31c9076dc32bcb",
+      "matches_built_product": true
+    },
+    "system/bin/surfaceflinger": {
+      "sha256": "ca0459c61f02150c6491c88cdfb7503f0855d6661b00638b447457e406d80827",
+      "matches_built_product": true
+    },
+    "system/framework/services.jar": {
+      "sha256": "348b6c73ec69c65c0bd43288e9fb487a62dc3ab03bb0ed31c4e59a56868f883c",
+      "matches_built_product": true
+    },
+    "system/framework/framework.jar": {
+      "sha256": "cba33418445b0ad71f98c9f280fda37572591f98b0bf646dbdbc8da8435a03b7",
+      "matches_built_product": true
+    },
+    "system/bin/netd": {
+      "sha256": "dfb18c53c08a7bd78e985d13c5fef01ce200500b633f700d43842861fd145985",
+      "matches_built_product": true
+    },
+    "system_ext/priv-app/SystemUIGoogle/SystemUIGoogle.apk": {
+      "sha256": "409f0f68d7f6f7bde07e50364c5a456cea9b98b1039be0945d793bead726875b",
+      "matches_built_product": true
+    },
+    "vendor_dlkm/lib/modules/camera.ko": {
+      "sha256": "c8d13b84ad0deb1f0ec2ffe026e85e5641c78657fa23c11ff17d16b3b578748c",
+      "matches_built_product": true
+    },
+    "vendor_dlkm/lib/modules/qcom_pm8008-regulator.ko": {
+      "sha256": "61fdb560708d9ab64a9ffc5d209e532bfcac8da385e58fe5fb3dda2de4e57aed",
+      "matches_built_product": true
+    },
+    "vendor_dlkm/lib/modules/fts_touch_spi.ko": {
+      "sha256": "4c2d364bd1495ce17d7a80dbdfaf1c59b7ce08cf73d4dcf8dfa8bc3b9c9946c7",
+      "matches_built_product": true
+    },
+    "product/etc/permissions/privapp-permissions-hotword.xml": {
+      "sha256": "62c652d772041159962d05eef2dff24b187838b282de9c748aea3479d7c3a571",
+      "matches_built_product": true
+    },
+    "vendor/etc/init/init.vendor.sensors.rc": {
+      "sha256": "4dbc4e5eb55b12872a865fb1757ed114b1d5c83ccf29732fb86739248e540c40",
+      "matches_built_product": true
+    },
+    "vendor/etc/init/init.sm8550.rc": {
+      "sha256": "055e6a298df8b537414c751106d3daae2cb69622cae95a9d58ccf77f2d3bcd5d",
+      "matches_built_product": true
+    },
+    "vendor/etc/init/hw/init.qcom.rc": {
+      "sha256": "c46ab8487d257dbf1f6cc5a3c140cc29ec8bc1c46310e68b0c7269ec9f176a08",
+      "matches_built_product": true
+    },
+    "vendor/bin/init.kernel.post_boot-kalama.sh": {
+      "sha256": "688c1c3f11b90d69eb4e59ce73774ffe2120d35e115adbaff9c872e0c8cf82a5",
+      "matches_built_product": true
+    },
+    "vendor/etc/init/hw/init.qti.kernel.rc": {
+      "sha256": "e5e215d591381bc827f7c7eaaf723157cffbcd0196b206f54f3e9a8b7ff62333",
+      "matches_built_product": true
+    },
+    "vendor/bin/init.qcom.class_core.sh": {
+      "sha256": "74d475c30023f102010cea36e14849b4967ea7401d59ed60f0a99de523f455a8",
+      "matches_built_product": true
+    },
+    "vendor/etc/perf/perfboostsconfig.xml": {
+      "sha256": "57119404b42f55f0e18334e853f1c935a433ecff699314c86a37b9a2b1b9ed57",
+      "matches_built_product": true
+    },
+    "vendor/etc/perf/perfboostselection.xml": {
+      "sha256": "209bec2075c3d04c0fac0c7ea0981ab25c593f8af50cc4869ed6503ea857dd7e",
+      "matches_built_product": true
+    },
+    "vendor/lib64/libqtivibratoreffect.xiaomi.so": {
+      "sha256": "b66065ef5c95c1a5c706b01b0418ab741732a0d3d5ac15f212da8549ba85924d",
+      "matches_built_product": true
+    },
+    "vendor/lib64/vendor.qti.hardware.vibratorOL.impl.so": {
+      "sha256": "575012646ca1025322dabe10cbc5a29ec1bcecabae9bc9b73495dd180f103cec",
+      "matches_built_product": true
+    },
+    "vendor/bin/hw/vendor.qti.hardware.vibrator.service": {
+      "sha256": "19f3fedeb3009de9c239a8d24dbc1ce8a3bb7e5fa8634fa593d234de40cf96d8",
+      "matches_built_product": true
+    }
+  },
+  "actual_boot_parameters_enforcing": true,
+  "kernel_release": "5.15.224",
+  "camera_module_vermagic": "5.15.224 SMP preempt mod_unload modversions aarch64",
+  "recovery_is_source_built": true,
+  "images": "/mnt/android-work/Android/validation/ishtar-errorfix305-audit-retry2-20261107-01/images",
+  "s01_unchanged_by_explicit_user_request": true,
+  "s01_release_caveat": "OTA is still signed with testkey; S01 was intentionally left unfixed",
+  "errorfixes305_static_verified": true
+}

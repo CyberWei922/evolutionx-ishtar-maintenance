@@ -1,0 +1,13 @@
+diff --git a/Android.bp b/Android.bp
+index 89459ff..3d779e4 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -86,6 +86,8 @@ android_app {
+     resource_dirs: [],
+     asset_dirs: ["assets"],
+     aaptflags: [
++        // Replace older /data SystemUI updates during a data-preserving OTA.
++        "--version-code", "20261104",
+         "-0 .tflite",
+         "-0 .vocab",
+     ],

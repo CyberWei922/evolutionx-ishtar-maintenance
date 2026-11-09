@@ -1,0 +1,16 @@
+<resources>
+    <!-- Exact MiuiCamera 6.4.000140.0 main theme. Only the navigation translucency differs. -->
+    <style name="CameraNavigationTheme" parent="@*com.android.camera:style/hlh">
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textViewStyle">@*com.android.camera:style/h7i</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">always</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="*com.android.camera:at5">@*com.android.camera:style/hi9</item>
+    </style>
+</resources>

@@ -1,0 +1,46 @@
+diff --git a/libc/bionic/custom_rom_hide.cpp b/libc/bionic/custom_rom_hide.cpp
+index 6e52a90..51f59df 100644
+--- a/libc/bionic/custom_rom_hide.cpp
++++ b/libc/bionic/custom_rom_hide.cpp
+@@ -432,6 +432,14 @@ static bool is_rom_path(const char* path) {
+     return false;
+ }
+ 
++static bool should_block_rom_path(const char* path) {
++    // PackageManager exposes this resource-only APK in application resource paths.
++    // Explicit opens and metadata queries must agree so apps can load its labels.
++    // Directory discovery still uses is_rom_path() and remains filtered.
++    if (strcmp(path, "/system/framework/org.lineageos.platform-res.apk") == 0) return false;
++    return is_rom_path(path);
++}
++
+ static bool resolve_fd_path(int fd, char* buf, size_t size) {
+     char proc_link[64];
+     if (fd < 0) return false;
+@@ -448,7 +456,7 @@ bool custom_rom_hide_should_block(const char* path) {
+     if (!path || reinterpret_cast<uintptr_t>(path) < 0x1000000) return false;
+     if (path[0] != '/') return false;
+     if (!is_app_process()) return false;
+-    return is_rom_path(path);
++    return should_block_rom_path(path);
+ }
+ 
+ bool custom_rom_hide_should_block_at(int dirfd, const char* path) {
+@@ -459,7 +467,7 @@ bool custom_rom_hide_should_block_at(int dirfd, const char* path) {
+     bool result = false;
+ 
+     if (path[0] == '/') {
+-        result = is_rom_path(path);
++        result = should_block_rom_path(path);
+     } else if (dirfd != AT_FDCWD) {
+         size_t plen = strlen(path);
+         bool candidate = plen > 0 && path[plen - 1] == '/';
+@@ -475,7 +483,7 @@ bool custom_rom_hide_should_block_at(int dirfd, const char* path) {
+             if (resolve_fd_path(dirfd, dir_path, sizeof(dir_path))) {
+                 char full_path[512];
+                 snprintf(full_path, sizeof(full_path), "%s/%s", dir_path, path);
+-                result = is_rom_path(full_path);
++                result = should_block_rom_path(full_path);
+             }
+         }
+     }

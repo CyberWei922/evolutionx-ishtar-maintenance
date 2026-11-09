@@ -1,0 +1,1 @@
+package vendor.qti.iwlan; public class AsyncResult {public Object userObj,result;public Throwable exception; public static AsyncResult forMessage(android.os.Message m,Object v,Throwable e){AsyncResult a=new AsyncResult();a.userObj=m.obj;a.result=v;a.exception=e;m.obj=a;return a;}}

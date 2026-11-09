@@ -1,0 +1,16 @@
+Xiaomi 13 Ultra / ishtar Android 17 maintenance archive
+
+This repository contains maintenance work and source snapshots derived from
+the Android Open Source Project, Evolution X, LineageOS, Linux kernel
+contributors, Android Common Kernel contributors, ishtar-aosp, Xiaomi,
+Qualcomm and other upstream authors identified in individual files.
+
+The imported device, hardware, DTS, manifest and patch material is maintained
+here for device continuity. Upstream projects and their original authors are
+not claimed as original work of this archive.
+
+Copyright, SPDX identifiers, NOTICE files and component licenses remain in
+effect. See LICENSE.md, licenses/upstream/ and manifests/platform-pinned.xml.
+
+No proprietary vendor payload, Google application payload, firmware package,
+signing key or release image is included.

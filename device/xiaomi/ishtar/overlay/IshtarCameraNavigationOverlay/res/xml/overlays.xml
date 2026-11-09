@@ -1,0 +1,3 @@
+<overlay>
+    <item target="style/hlv" value="@style/CameraNavigationTheme" />
+</overlay>

@@ -1,0 +1,28 @@
+#
+# Copyright (C) 2026 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# qcom_q6v5_pas probes with rproc->recovery_disabled. An ADSP fatal then panics
+# the SoC via qcom_q6v5_crash_handler_work instead of restarting just ADSP.
+# QCOM labels these recovery nodes vendor_sysfs_ssr_toggle (kalama file_contexts).
+# Child index is probe-order; on ishtar ADSP is remoteproc0, CDSP 1, MSS 2.
+
+on boot
+    wait /sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc0/recovery
+    write /sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc0/recovery enabled
+    write /sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc1/recovery enabled
+    write /sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc2/recovery enabled
+
+# Persist is mounted by fstab in fs, before post-fs-data and late_start CIT.
+# Migrate only existing collision logs on data-preserving upgrades. Missing
+# files are left absent; filename transitions label files created later by CIT.
+# These builtins do not clear, copy or recursively relabel calibration data.
+on post-fs-data
+    restorecon /mnt/vendor/persist/sensors/collisionData.txt
+    restorecon /mnt/vendor/persist/sensors/temp-collisionData.txt
+    chown system system /mnt/vendor/persist/sensors/collisionData.txt
+    chown system system /mnt/vendor/persist/sensors/temp-collisionData.txt
+    chmod 0600 /mnt/vendor/persist/sensors/collisionData.txt
+    chmod 0600 /mnt/vendor/persist/sensors/temp-collisionData.txt

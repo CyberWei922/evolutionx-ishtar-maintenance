@@ -1,0 +1,213 @@
+diff --git a/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/ActivatableNotificationView.java b/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/ActivatableNotificationView.java
+--- a/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/ActivatableNotificationView.java
++++ b/frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/notification/row/ActivatableNotificationView.java
+@@ -209,6 +209,14 @@
+         updateOutlineAlpha();
+     }
+ 
++    @Override
++    protected void onAttachedToWindow() {
++        super.onAttachedToWindow();
++        // Notifications are inflated on a worker thread, so defer this UiThread-only update
++        // until the row has moved to the main thread and is attached to its window.
++        mBackgroundNormal.setBlurBackgroundEnabled(usesBlurredBackground());
++    }
++
+     /**
+      * Sets the custom background on {@link #mBackgroundNormal}
+      * This method can also be used to reload the backgrounds on both of those views, which can
+@@ -216,7 +224,6 @@
+      */
+     protected void initBackground() {
+         mBackgroundNormal.setCustomBackground(R.drawable.notification_material_bg);
+-        mBackgroundNormal.setBlurBackgroundEnabled(usesBlurredBackground());
+     }
+ 
+     protected boolean hideBackground() {
+
+diff --git a/device/xiaomi/sm8550-common/configs/audio/sku_kalama/audio_policy_configuration.xml b/device/xiaomi/sm8550-common/configs/audio/sku_kalama/audio_policy_configuration.xml
+--- a/device/xiaomi/sm8550-common/configs/audio/sku_kalama/audio_policy_configuration.xml
++++ b/device/xiaomi/sm8550-common/configs/audio/sku_kalama/audio_policy_configuration.xml
+@@ -209,7 +209,7 @@
+                 <!-- Output devices declaration, i.e. Sink DEVICE PORT -->
+                 <devicePort tagName="Earpiece" type="AUDIO_DEVICE_OUT_EARPIECE" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+-                            samplingRates="48000" channelMasks="AUDIO_CHANNEL_IN_MONO"/>
++                            samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
+                 </devicePort>
+                 <devicePort tagName="Speaker" role="sink" type="AUDIO_DEVICE_OUT_SPEAKER" address="">
+                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+
+diff --git a/packages/apps/GameSpace/app/src/main/java/io/chaldeaprjkt/gamespace/gamebar/DanmakuServiceListener.kt b/packages/apps/GameSpace/app/src/main/java/io/chaldeaprjkt/gamespace/gamebar/DanmakuServiceListener.kt
+--- a/packages/apps/GameSpace/app/src/main/java/io/chaldeaprjkt/gamespace/gamebar/DanmakuServiceListener.kt
++++ b/packages/apps/GameSpace/app/src/main/java/io/chaldeaprjkt/gamespace/gamebar/DanmakuServiceListener.kt
+@@ -22,6 +22,7 @@
+ import android.app.Notification
+ import android.service.notification.NotificationListenerService
+ import android.service.notification.StatusBarNotification
++import android.util.Log
+ 
+ class DanmakuServiceListener : NotificationListenerService() {
+ 
+@@ -33,13 +34,19 @@
+ 
+     override fun onListenerConnected() {
+         super.onListenerConnected()
+-        getActiveNotifications()?.forEach { sbn ->
+-            if (sbn.isClearable && !sbn.isOngoing) {
+-                val danmakuText = extractDanmakuText(sbn)
+-                if (danmakuText.isNotBlank()) {
+-                    postedNotifications[danmakuText] = System.currentTimeMillis()
++        try {
++            getActiveNotifications()?.forEach { sbn ->
++                if (sbn.isClearable && !sbn.isOngoing) {
++                    val danmakuText = extractDanmakuText(sbn)
++                    if (danmakuText.isNotBlank()) {
++                        postedNotifications[danmakuText] = System.currentTimeMillis()
++                    }
+                 }
+             }
++        } catch (securityException: SecurityException) {
++            // The listener can be connected before privileged notification access is fully
++            // settled. Keep the service alive and process later posted notifications.
++            Log.w(TAG, "Unable to enumerate active notifications", securityException)
+         }
+     }
+ 
+@@ -103,6 +110,7 @@
+     }
+ 
+     companion object {
++        private const val TAG = "DanmakuServiceListener"
+         private const val NOTIFICATIONS_MAX_CACHED = 99
+     }
+ }
+
+diff --git a/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java b/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java
+--- a/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java
++++ b/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java
+@@ -121,6 +121,7 @@
+ import java.io.PrintWriter;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.RetentionPolicy;
++import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Collections;
+ import java.util.Comparator;
+@@ -1539,6 +1540,7 @@
+                 ar = (AsyncResult) msg.obj;
+                 if (ar.exception == null) {
+                     List<PhysicalChannelConfig> list = (List<PhysicalChannelConfig>) ar.result;
++                    list = completeLtePhysicalChannelConfigs(list, mSS);
+                     if (VDBG) {
+                         log("EVENT_PHYSICAL_CHANNEL_CONFIG: list=" + list
+                                 + (list == null ? "" : ", list.size()=" + list.size()));
+@@ -1702,6 +1704,84 @@
+             updateRoamingState();
+             pollStateDone();
+         }
++    }
++
++    /**
++     * Complete only the primary LTE channel metadata that some vendor HALs leave as unknown.
++     * CellIdentityLte is accepted as the fallback solely when its PCI identifies the same
++     * primary cell. Secondary carriers and every other radio type remain untouched.
++     */
++    private List<PhysicalChannelConfig> completeLtePhysicalChannelConfigs(
++            List<PhysicalChannelConfig> configs, ServiceState ss) {
++        if (configs == null || configs.isEmpty() || ss == null) {
++            return configs;
++        }
++        NetworkRegistrationInfo regInfo = ss.getNetworkRegistrationInfo(
+                NetworkRegistrationInfo.DOMAIN_PS,
+                AccessNetworkConstants.TRANSPORT_TYPE_WWAN);
+        CellIdentity cellIdentity = regInfo == null ? null : regInfo.getCellIdentity();
++        if (!(cellIdentity instanceof CellIdentityLte)) {
++            return configs;
++        }
++        CellIdentityLte lteIdentity = (CellIdentityLte) cellIdentity;
++        int primaryPci = lteIdentity.getPci();
++        if (primaryPci == PhysicalChannelConfig.PHYSICAL_CELL_ID_UNKNOWN) {
++            return configs;
++        }
++
++        int fallbackBand = PhysicalChannelConfig.BAND_UNKNOWN;
++        int[] bands = lteIdentity.getBands();
++        if (bands != null) {
++            for (int band : bands) {
++                if (band <= PhysicalChannelConfig.BAND_UNKNOWN) {
++                    continue;
++                }
++                if (fallbackBand != PhysicalChannelConfig.BAND_UNKNOWN) {
++                    fallbackBand = PhysicalChannelConfig.BAND_UNKNOWN;
++                    break;
++                }
++                fallbackBand = band;
++            }
++        }
++        int fallbackChannel = lteIdentity.getEarfcn();
++        boolean changed = false;
++        List<PhysicalChannelConfig> completed = new ArrayList<>(configs.size());
++        for (PhysicalChannelConfig config : configs) {
++            if (config == null
++                    || config.getConnectionStatus()
++                    != PhysicalChannelConfig.CONNECTION_PRIMARY_SERVING
++                    || config.getNetworkType() != TelephonyManager.NETWORK_TYPE_LTE
++                    || config.getPhysicalCellId() != primaryPci) {
++                completed.add(config);
++                continue;
++            }
++
++            int configBand = config.getBand();
++            int configChannel = config.getDownlinkChannelNumber();
++            boolean needsBand = configBand == PhysicalChannelConfig.BAND_UNKNOWN
++                    && fallbackBand != PhysicalChannelConfig.BAND_UNKNOWN;
++            boolean needsChannel = (configChannel <= 0
++                    || configChannel == PhysicalChannelConfig.CHANNEL_NUMBER_UNKNOWN)
++                    && fallbackChannel > 0
++                    && fallbackChannel != PhysicalChannelConfig.CHANNEL_NUMBER_UNKNOWN;
++            if (!needsBand && !needsChannel) {
++                completed.add(config);
++                continue;
++            }
++
++            PhysicalChannelConfig.Builder builder = new PhysicalChannelConfig.Builder(config);
++            if (needsBand) {
++                builder.setBand(fallbackBand);
++            }
++            if (needsChannel) {
++                builder.setDownlinkChannelNumber(fallbackChannel);
++            }
++            completed.add(builder.build());
++            changed = true;
++        }
++        if (!changed) {
++            return configs;
++        }
++        log("Completed primary LTE PhysicalChannelConfig from matching CellIdentityLte: band="
++                + fallbackBand + ", earfcn=" + fallbackChannel + ", pci=" + primaryPci);
++        return completed;
+     }
+ 
+     private boolean updateNrFrequencyRangeFromPhysicalChannelConfigs(
+
+diff --git a/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java b/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java
+--- a/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java
++++ b/frameworks/opt/telephony/src/java/com/android/internal/telephony/ServiceStateTracker.java
+@@ -3019,6 +3019,16 @@
+         useDataRegStateForDataOnlyDevices();
+         processIwlanRegistrationInfo();
+ 
++        // Vendor RILs may report the primary PhysicalChannelConfig before the polled
++        // ServiceState contains the matching LTE CellIdentity. Re-evaluate the cached
++        // config after this poll and publish only if an actual field was completed.
++        List<PhysicalChannelConfig> completedConfigs =
++                completeLtePhysicalChannelConfigs(mLastPhysicalChannelConfigList, mNewSS);
++        if (completedConfigs != mLastPhysicalChannelConfigList) {
++            mLastPhysicalChannelConfigList = completedConfigs;
++            mPhone.notifyPhysicalChannelConfig(completedConfigs);
++        }
++
+         updateNrFrequencyRangeFromPhysicalChannelConfigs(mLastPhysicalChannelConfigList, mNewSS);
+         updateNrStateFromPhysicalChannelConfigs(mLastPhysicalChannelConfigList, mNewSS);
+         updateNtnCapability();

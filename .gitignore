@@ -1,0 +1,46 @@
+# Build products and local checkouts
+.repo/
+out/
+__pycache__/
+*.py[cod]
+
+# Flashable and compiled artifacts
+*.img
+*.apk
+*.jar
+*.zip
+*.so
+*.ko
+*.o
+*.a
+*.elf
+*.dtbo
+*.dex
+*.odex
+*.vdex
+*.oat
+*.art
+*.bin
+
+# Proprietary payloads and external inputs
+device/xiaomi/ishtar/root/
+device/xiaomi/*/proprietary/
+vendor/xiaomi/*/proprietary/
+vendor/gms/
+
+# Signing material and secrets
+*.p12
+*.jks
+*.keystore
+*.pem
+*.key
+*.crt.private
+keys/
+signing/
+
+# Editor and OS noise
+.DS_Store
+*~
+*.swp
+.idea/
+.vscode/

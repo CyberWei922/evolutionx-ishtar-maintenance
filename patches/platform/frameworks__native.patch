@@ -1,0 +1,547 @@
+diff --git a/services/surfaceflinger/Android.bp b/services/surfaceflinger/Android.bp
+index c32ab36..88481d4 100644
+--- a/services/surfaceflinger/Android.bp
++++ b/services/surfaceflinger/Android.bp
+@@ -320,6 +320,7 @@ filegroup {
+         "FrontEnd/Caching/MergeableHierarchyManager.cpp",
+         "FrontEnd/Caching/TexturePool.cpp",
+         "HdrLayerInfoReporter.cpp",
++        "IshtarAlsFrameHint.cpp",
+         "HdrSdrRatioOverlay.cpp",
+         "RenderResourceCache.cpp",
+         "Jank/JankTracker.cpp",
+diff --git a/services/surfaceflinger/IshtarAlsFrameHint.cpp b/services/surfaceflinger/IshtarAlsFrameHint.cpp
+new file mode 100644
+index 0000000..0146d63
+--- /dev/null
++++ b/services/surfaceflinger/IshtarAlsFrameHint.cpp
+@@ -0,0 +1,161 @@
++// ishtar .307 under-display ALS expects CWB refresh hints from the compositor.
++// Wire layout verified against matching BpHwCitSensorService::_hidl_transfer_msg
++// and CitSensorService::transfer_msg; -9 only refreshes the screen sample.
++#ifdef LOG_TAG
++#undef LOG_TAG
++#endif
++#define LOG_TAG "IshtarAlsFrameHint"
++#include "IshtarAlsFrameHint.h"
++#include <android-base/properties.h>
++#include <hidl/HidlBinderSupport.h>
++#include <hidl/ServiceManagement.h>
++#include <hidl/Status.h>
++#include <hwbinder/IBinder.h>
++#include <hwbinder/Parcel.h>
++#include <log/log.h>
++#include <sys/eventfd.h>
++#include <sys/resource.h>
++#include <poll.h>
++#include <pthread.h>
++#include <sched.h>
++#include <unistd.h>
++#include <algorithm>
++#include <array>
++#include <atomic>
++#include <cerrno>
++#include <chrono>
++#include <cstring>
++#include <thread>
++
++namespace android {
++namespace {
++using Clock = std::chrono::steady_clock;
++constexpr char kDescriptor[] = "vendor.xiaomi.sensor.citsensorservice@2.0::ICitSensorService";
++constexpr auto kMinInterval = std::chrono::milliseconds(300);
++constexpr auto kSettleDelay = std::chrono::milliseconds(20);
++
++class FrameHintWorker {
++public:
++    FrameHintWorker() : mEventFd(eventfd(0, EFD_CLOEXEC | EFD_NONBLOCK)) {
++        if (mEventFd >= 0) std::thread([this] { run(); }).detach();
++        else ALOGE("Cannot create ALS frame hint eventfd: %s", strerror(errno));
++    }
++    // No Binder, mutex wait, allocation, or sleeping on the compositor thread.
++    void notify(const sp<Fence>& presentFence) {
++        if (mEventFd < 0) return;
++        const int fenceFd = presentFence != nullptr ? presentFence->dup() : -1;
++        const int replaced = mFenceFd.exchange(fenceFd, std::memory_order_acq_rel);
++        if (replaced >= 0) close(replaced);
++        if (mPending.exchange(true, std::memory_order_acq_rel)) return;
++        uint64_t value = 1;
++        ssize_t n;
++        do { n = write(mEventFd, &value, sizeof(value)); } while (n < 0 && errno == EINTR);
++        if (n != static_cast<ssize_t>(sizeof(value))) mPending.store(false, std::memory_order_release);
++    }
++private:
++    status_t send() {
++        using namespace hardware;
++        if (mBinder == nullptr) {
++            auto service = details::getRawServiceInternal(kDescriptor, "default", false, false);
++            if (service == nullptr || !service->isRemote()) return NAME_NOT_FOUND;
++            mBinder = getOrCreateCachedBinder(service.get());
++            if (mBinder == nullptr) return NAME_NOT_FOUND;
++        }
++        // Fixed-size POD message. No strings, vectors, calibration or setting writes.
++        std::array<unsigned char, 264> msg{};
++        constexpr float refreshCommand = -9.0f;
++        memcpy(msg.data() + 12, &refreshCommand, sizeof(refreshCommand));
++        Parcel data, reply;
++        size_t handle = 0;
++        status_t rc = data.writeInterfaceToken(kDescriptor);
++        if (rc == OK) rc = data.writeBuffer(msg.data(), msg.size(), &handle);
++        bool callback = false;
++        status_t response = UNKNOWN_ERROR;
++        if (rc == OK) {
++            rc = mBinder->transact(4, data, &reply, 0, [&](Parcel& p) {
++                callback = true;
++                Status status;
++                response = readFromParcel(&status, p);
++                if (response == OK && !status.isOk()) response = UNKNOWN_ERROR;
++                if (response == OK) {
++                    const void* returned = nullptr;
++                    size_t returnedHandle;
++                    response = p.readBuffer(msg.size(), &returnedHandle, &returned);
++                    if (response == OK && memcmp(returned, msg.data(), msg.size()) != 0)
++                        response = BAD_VALUE;
++                }
++            });
++        }
++        if (rc != OK) { mBinder.clear(); return rc; }
++        return callback ? response : UNKNOWN_ERROR;
++    }
++    void run() {
++        // Never inherit the compositor's latency-sensitive scheduler priority.
++        pthread_setname_np(pthread_self(), "ishtar-als-hint");
++        sched_param normal{};
++        if (sched_setscheduler(0, SCHED_OTHER, &normal) != 0)
++            ALOGW("Cannot reset ALS worker scheduler: %s", strerror(errno));
++        setpriority(PRIO_PROCESS, 0, 10);
++        auto previous = Clock::time_point::min();
++        auto lastWarning = Clock::time_point::min();
++        uint64_t successCount = 0;
++        for (;;) {
++            pollfd pfd{mEventFd, POLLIN, 0};
++            int ready;
++            do { ready = poll(&pfd, 1, -1); } while (ready < 0 && errno == EINTR);
++            if (ready <= 0) return;
++            uint64_t count;
++            ssize_t n;
++            do { n = read(mEventFd, &count, sizeof(count)); } while (n < 0 && errno == EINTR);
++            if (n != static_cast<ssize_t>(sizeof(count))) continue;
++            // Coalesce burst frames and keep the trailing update for a static screen.
++            auto due = Clock::now() + kSettleDelay;
++            if (previous != Clock::time_point::min()) due = std::max(due, previous + kMinInterval);
++            std::this_thread::sleep_until(due);
++            // Clear pending before taking the latest fence: a concurrent later
++            // presentation then necessarily queues another trailing notification.
++            mPending.store(false, std::memory_order_release);
++            const int fenceFd = mFenceFd.exchange(-1, std::memory_order_acq_rel);
++            bool presented = true;
++            if (fenceFd >= 0) {
++                pollfd fencePoll{fenceFd, POLLIN, 0};
++                int signaled;
++                do { signaled = poll(&fencePoll, 1, 1000); }
++                while (signaled < 0 && errno == EINTR);
++                presented = signaled > 0 && (fencePoll.revents & POLLIN);
++                close(fenceFd);
++            }
++            status_t rc = presented ? send() : TIMED_OUT;
++            previous = Clock::now();
++            if (rc == OK) {
++                if (++successCount == 1) ALOGI("Original ALS CWB frame refresh connected");
++            } else if (lastWarning == Clock::time_point::min() || previous - lastWarning > std::chrono::seconds(30)) {
++                ALOGW("ALS frame refresh unavailable: %d", rc);
++                lastWarning = previous;
++            }
++            if (fenceFd < 0 && rc == OK) {
++                // Without a reliable present fence, one bounded trailing refresh
++                // covers late presentation. Never create a recurring idle timer.
++                std::this_thread::sleep_until(previous + kMinInterval);
++                if (!mPending.load(std::memory_order_acquire)) {
++                    send();
++                    previous = Clock::now();
++                }
++            }
++        }
++    }
++    const int mEventFd;
++    std::atomic<bool> mPending{false};
++    std::atomic<int> mFenceFd{-1};
++    sp<hardware::IBinder> mBinder;
++};
++} // namespace
++
++void notifyIshtarAlsContentChanged(const sp<Fence>& presentFence) {
++    static const bool enabled = base::GetBoolProperty("ro.surface_flinger.ishtar_als_frame_hint", false);
++    if (!enabled) return;
++    // Process lifetime matches SurfaceFlinger; no shutdown work on its main thread.
++    static FrameHintWorker* const worker = new FrameHintWorker;
++    worker->notify(presentFence);
++}
++} // namespace android
+diff --git a/services/surfaceflinger/IshtarAlsFrameHint.h b/services/surfaceflinger/IshtarAlsFrameHint.h
+new file mode 100644
+index 0000000..a544764
+--- /dev/null
++++ b/services/surfaceflinger/IshtarAlsFrameHint.h
+@@ -0,0 +1,8 @@
++#pragma once
++#include <ui/Fence.h>
++
++namespace android {
++// Called only after an actual visual change is presented on the primary ON display.
++// Binder work is confined to a separate worker; the compositor only writes eventfd.
++void notifyIshtarAlsContentChanged(const sp<Fence>& presentFence);
++} // namespace android
+diff --git a/services/surfaceflinger/Scheduler/Scheduler.cpp b/services/surfaceflinger/Scheduler/Scheduler.cpp
+index d53c93d..984ebe4 100644
+--- a/services/surfaceflinger/Scheduler/Scheduler.cpp
++++ b/services/surfaceflinger/Scheduler/Scheduler.cpp
+@@ -1685,6 +1685,42 @@ auto Scheduler::applyPolicy(S Policy::* statePtr, T&& newState,
+     return consideredSignals;
+ }
+ 
++void Scheduler::reapplyDisplayModes() {
++    SFTRACE_CALL();
++    DisplayModeChoiceMap modeChoices;
++    std::vector<display::DisplayModeRequest> modeRequests;
++    GlobalSignals consideredSignals;
++    Fps pacesetterFps;
++    {
++        std::scoped_lock policyLock(mPolicyLock);
++        std::scoped_lock displayLock(mDisplayLock);
++        if (!mPacesetterDisplayId) return;
++
++        modeChoices = chooseDisplayModes();
++        modeRequests.reserve(modeChoices.size());
++        for (const auto& [id, choice] : modeChoices) {
++            mPolicy.modeOpt[id] = choice.mode;
++            if (id == *mPacesetterDisplayId) {
++                consideredSignals = choice.consideredSignals;
++                pacesetterFps = choice.mode.fps;
++            }
++            modeRequests.emplace_back(
++                    display::DisplayModeRequest{.mode = choice.mode, .seamless = true});
++        }
++    }
++
++    // Always resubmit, even if the cache already contains these choices. As in applyPolicy,
++    // release Scheduler locks before calling SurfaceFlinger and emit events separately.
++    mSchedulerCallback.requestDisplayModes(std::move(modeRequests));
++    const bool frameRateOverridesChanged = updateFrameRateOverrides(consideredSignals, pacesetterFps);
++    for (const auto& [id, choice] : modeChoices) {
++        if (choice.consideredSignals.shouldEmitEvent() || frameRateOverridesChanged) {
++            onDisplayModeAndFrameRateOverridesChanged(id, choice.mode,
++                                                      /*clearContentRequirements*/ true);
++        }
++    }
++}
++
+ auto Scheduler::chooseDisplayModes() const -> DisplayModeChoiceMap {
+     SFTRACE_CALL();
+ 
+diff --git a/services/surfaceflinger/Scheduler/Scheduler.h b/services/surfaceflinger/Scheduler/Scheduler.h
+index 47772a8..8731da9 100644
+--- a/services/surfaceflinger/Scheduler/Scheduler.h
++++ b/services/surfaceflinger/Scheduler/Scheduler.h
+@@ -269,6 +269,9 @@ public:
+     void chooseRefreshRateForContent(const surfaceflinger::frontend::LayerHierarchy*,
+                                      bool updateAttachedChoreographer) EXCLUDES(mDisplayLock);
+ 
++    // Recompute choices whose requests may have been dropped before boot completed.
++    void reapplyDisplayModes() REQUIRES(kMainThreadContext) EXCLUDES(mPolicyLock, mDisplayLock);
++
+     void resetAllIdleTimers() EXCLUDES(mDisplayLock);
+ 
+     // Indicates that touch interaction is taking place.
+diff --git a/services/surfaceflinger/SurfaceFlinger.cpp b/services/surfaceflinger/SurfaceFlinger.cpp
+index 032d6f4..5d94100 100644
+--- a/services/surfaceflinger/SurfaceFlinger.cpp
++++ b/services/surfaceflinger/SurfaceFlinger.cpp
+@@ -157,6 +157,7 @@
+ #include "FrontEnd/LayerLog.h"
+ #include "FrontEnd/LayerSnapshot.h"
+ #include "HdrLayerInfoReporter.h"
++#include "IshtarAlsFrameHint.h"
+ #include "Jank/JankTracker.h"
+ #include "Layer.h"
+ #include "LayerProtoHelper.h"
+@@ -880,7 +881,16 @@ void SurfaceFlinger::bootFinished() {
+             }
+         }
+ 
+-        mBootStage = BootStage::FINISHED;
++        {
++            Mutex::Autolock stateLock(mStateLock);
++            ConditionalLock modeLock(mModeTransitionMutex,
++                                     FlagManager::getInstance()
++                                             .follower_arbitrary_refresh_rate_selection_combined());
++            mBootStage = BootStage::FINISHED;
++            // Earlier choices may be cached even though their requests were rejected during boot.
++            SFTRACE_NAME("reapplyDisplayModesAfterBoot");
++            mScheduler->reapplyDisplayModes();
++        }
+ 
+         if (base::GetBoolProperty("sf.debug.show_refresh_rate_overlay"s, false)) {
+             ftl::FakeGuard guard(mStateLock);
+@@ -2989,6 +2999,11 @@ bool SurfaceFlinger::updateLayerSnapshots(VsyncId vsyncId, nsecs_t frameTimeNs,
+         mLegacyLayers.erase(destroyedLayer->id);
+     }
+ 
++    // Preserve genuine frontend changes before commitChanges clears them.
++    // HWC refresh/scheduleRepaint alone must not trigger a new ALS capture.
++    mIshtarAlsFrameHintPending |= mLayerLifecycleManager.getGlobalChanges().any(
++            frontend::RequestedLayerState::kMustComposite);
++
+     {
+         SFTRACE_NAME("LayerLifecycleManager:commitChanges");
+         mLayerLifecycleManager.commitChanges();
+@@ -3377,6 +3392,7 @@ CompositeResultsPerDisplay SurfaceFlinger::composite(
+     refreshArgs.outputColorSetting = mDisplayColorSetting;
+     refreshArgs.forceOutputColorMode = mForceColorMode;
+ 
++    mIshtarAlsFrameHintPending |= mDrawingState.colorMatrixChanged;
+     refreshArgs.updatingOutputGeometryThisFrame = mVisibleRegionsDirty;
+     refreshArgs.updatingGeometryThisFrame = mGeometryDirty.exchange(false) ||
+             mVisibleRegionsDirty || mDrawingState.colorMatrixChanged;
+@@ -3539,8 +3555,22 @@ CompositeResultsPerDisplay SurfaceFlinger::composite(
+     }
+ 
+     mNotifyExpectedPresentMap[pacesetterId].hintStatus = NotifyExpectedPresentHintStatus::Start;
++    mIshtarAlsFrameHintPending |= !mLayersWithQueuedFrames.empty();
+     onCompositionPresented(pacesetterId, frameTargeters, presentTime);
+ 
++    if (mIshtarAlsFrameHintPending) {
++        for (const auto& [displayId, _] : frameTargeters) {
++            const auto display =
++                    FTL_FAKE_GUARD(mStateLock, getDisplayDeviceLocked(displayId));
++            if (display && display->isPrimary() &&
++                display->getPowerMode() == hal::PowerMode::ON) {
++                mIshtarAlsFrameHintPending = false;
++                notifyIshtarAlsContentChanged(getHwComposer().getPresentFence(displayId));
++                break;
++            }
++        }
++    }
++
+     const bool hadGpuComposited =
+             multiDisplayUnion(mCompositionCoverage).test(CompositionCoverage::Gpu);
+     mCompositionCoverage.clear();
+@@ -5108,16 +5138,17 @@ void SurfaceFlinger::requestHardwareVsync(PhysicalDisplayId displayId, bool enab
+ }
+ 
+ void SurfaceFlinger::requestDisplayModes(std::vector<display::DisplayModeRequest> modeRequests) {
++    // Main-thread callers already hold the transition lock, including boot reconciliation.
++    MODE_TRANSITION_LOCK_IF(std::this_thread::get_id() != mMainThreadId);
++
++    SFTRACE_INT("DisplayModeRequestBootStage", static_cast<int>(mBootStage));
+     if (mBootStage != BootStage::FINISHED) [[unlikely]] {
++        SFTRACE_NAME("displayModeRequestDeferredDuringBoot");
+         return;
+     }
+ 
+     SFTRACE_CALL();
+ 
+-    // The caller context may be the main thread (via Scheduler::chooseRefreshRateForContent) or a
+-    // OneShotTimer thread. The main thread already locks, so only lock when off the main thread.
+-    MODE_TRANSITION_LOCK_IF(std::this_thread::get_id() != mMainThreadId);
+-
+     for (auto& request : modeRequests) {
+         const auto& modePtr = request.mode.modePtr;
+ 
+diff --git a/services/surfaceflinger/SurfaceFlinger.h b/services/surfaceflinger/SurfaceFlinger.h
+index 9d8ef03..aaf8846 100644
+--- a/services/surfaceflinger/SurfaceFlinger.h
++++ b/services/surfaceflinger/SurfaceFlinger.h
+@@ -1447,6 +1447,7 @@ private:
+     // don't need synchronization
+     State mDrawingState;
+     bool mVisibleRegionsDirty = false;
++    bool mIshtarAlsFrameHintPending = false;
+ 
+     bool mHdrLayerInfoChanged = false;
+ 
+diff --git a/services/surfaceflinger/tests/unittests/SchedulerTest.cpp b/services/surfaceflinger/tests/unittests/SchedulerTest.cpp
+index 6c9abe5..ddf1a21 100644
+--- a/services/surfaceflinger/tests/unittests/SchedulerTest.cpp
++++ b/services/surfaceflinger/tests/unittests/SchedulerTest.cpp
+@@ -452,6 +452,138 @@ TEST_F(SchedulerTest, chooseRefreshRateForContentSelectsMaxRefreshRate) {
+                                             /*updateAttachedChoreographer*/ false);
+ }
+ 
++TEST_F(SchedulerTest, reapplyDisplayModesRequestsCachedChoice) {
++    mScheduler->registerDisplay(kDisplayId1, ui::DisplayConnectionType::Internal,
++                                std::make_shared<RefreshRateSelector>(kDisplay1Modes,
++                                                                      kDisplay1Mode60->getId()));
++    auto layer = kLayer;
++    layer.vote = RefreshRateSelector::LayerVoteType::Max;
++    mScheduler->setContentRequirements({layer});
++    // getPreferredDisplayMode caches 120Hz without submitting a mode request.
++    ASSERT_EQ(mScheduler->getPreferredDisplayMode(), kDisplay1Mode120_120);
++
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode120_120))))
++            .Times(1);
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->reapplyDisplayModes());
++}
++
++TEST_F(SchedulerTest, reapplyDisplayModesRecomputesAfterIdle) {
++    mScheduler->registerDisplay(kDisplayId1, ui::DisplayConnectionType::Internal,
++                                std::make_shared<RefreshRateSelector>(kDisplay1Modes,
++                                                                      kDisplay1Mode60->getId()));
++    auto layer = kLayer;
++    layer.vote = RefreshRateSelector::LayerVoteType::Max;
++    mScheduler->setContentRequirements({layer});
++    ASSERT_EQ(mScheduler->getPreferredDisplayMode(), kDisplay1Mode120_120);
++    // An old 120Hz choice must not be replayed if the display has since become idle.
++    mScheduler->setTouchStateAndIdleTimerPolicy(kDisplayId1, {.idle = true});
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode60_60))))
++            .Times(1);
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->reapplyDisplayModes());
++    // Reconciliation must also update the cache so the next activity transition can raise it.
++    mScheduler->setTouchStateAndIdleTimerPolicy(kDisplayId1, {.idle = false});
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode120_120))))
++            .Times(1);
++    mScheduler->touchTimerCallback(TestableScheduler::TimerState::Reset);
++}
++
++TEST_F(SchedulerTest, reapplyDisplayModesHonorsSingleModeDisplay) {
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode60_60))))
++            .Times(1);
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->reapplyDisplayModes());
++}
++
++TEST_F(SchedulerTest, reapplyDisplayModesIncludesPoweredOnFollowers) {
++    SET_FLAG_FOR_TEST(flags::follower_arbitrary_refresh_rate_selection, true);
++    SET_FLAG_FOR_TEST(flags::follower_arbitrary_refresh_rate_selection_platform, true);
++    mScheduler->registerDisplay(kDisplayId1, ui::DisplayConnectionType::Internal,
++                                std::make_shared<RefreshRateSelector>(kDisplay1Modes,
++                                                                      kDisplay1Mode60->getId()));
++    mScheduler->registerDisplay(kDisplayId2, ui::DisplayConnectionType::External,
++                                std::make_shared<RefreshRateSelector>(kDisplay2Modes,
++                                                                      kDisplay2Mode60->getId()));
++    // The external display would otherwise win a same-rate pacesetter tie.
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->forcePacesetterDisplay(kDisplayId1));
++    FTL_FAKE_GUARD(kMainThreadContext,
++                   mScheduler->setDisplayPowerMode(kDisplayId1, hal::PowerMode::ON));
++    FTL_FAKE_GUARD(kMainThreadContext,
++                   mScheduler->setDisplayPowerMode(kDisplayId2, hal::PowerMode::ON));
++    ASSERT_EQ(mScheduler->getPacesetterDisplayId(), kDisplayId1);
++    auto layer = kLayer;
++    layer.vote = RefreshRateSelector::LayerVoteType::Max;
++    mScheduler->setContentRequirements({layer});
++    mScheduler->setTouchStateAndIdleTimerPolicy(kDisplayId2, {.idle = true});
++
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode120_120),
++                        Field(&DisplayModeRequest::mode, kDisplay2Mode60_60))))
++            .Times(1);
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->reapplyDisplayModes());
++}
++
++TEST_F(SchedulerTest, reapplyDisplayModesUsesSeamlessRequestsAndSeparateEvents) {
++    mScheduler->registerDisplay(kDisplayId1, ui::DisplayConnectionType::Internal,
++                                std::make_shared<RefreshRateSelector>(kDisplay1Modes,
++                                                                      kDisplay1Mode60->getId()));
++    auto layer = kLayer;
++    layer.vote = RefreshRateSelector::LayerVoteType::Max;
++    mScheduler->setContentRequirements({layer});
++    ASSERT_EQ(mScheduler->getPreferredDisplayMode(), kDisplay1Mode120_120);
++
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(testing::AllOf(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode120_120),
++                        Field(&DisplayModeRequest::seamless, true),
++                        Field(&DisplayModeRequest::emitEvent, false)))))
++            .WillOnce([&](const auto&) {
++                // Reentering the Scheduler also verifies its locks are released for callbacks.
++                EXPECT_EQ(mScheduler->getPreferredDisplayMode(), kDisplay1Mode120_120);
++            });
++    EXPECT_CALL(*mEventThread,
++                onModeAndFrameRateOverridesChanged(_, kDisplay1Mode120_120, _, _, _))
++            .Times(1);
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->reapplyDisplayModes());
++}
++
++TEST_F(SchedulerTest, reapplyDisplayModesOmitsPoweredOffFollowers) {
++    SET_FLAG_FOR_TEST(flags::follower_arbitrary_refresh_rate_selection, true);
++    SET_FLAG_FOR_TEST(flags::follower_arbitrary_refresh_rate_selection_platform, true);
++    mScheduler->registerDisplay(kDisplayId1, ui::DisplayConnectionType::Internal,
++                                std::make_shared<RefreshRateSelector>(kDisplay1Modes,
++                                                                      kDisplay1Mode60->getId()));
++    mScheduler->registerDisplay(kDisplayId2, ui::DisplayConnectionType::External,
++                                std::make_shared<RefreshRateSelector>(kDisplay2Modes,
++                                                                      kDisplay2Mode60->getId()));
++    // The external display would otherwise win a same-rate pacesetter tie.
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->forcePacesetterDisplay(kDisplayId1));
++    FTL_FAKE_GUARD(kMainThreadContext,
++                   mScheduler->setDisplayPowerMode(kDisplayId1, hal::PowerMode::ON));
++    FTL_FAKE_GUARD(kMainThreadContext,
++                   mScheduler->setDisplayPowerMode(kDisplayId2, hal::PowerMode::OFF));
++
++    // Empty content selects the highest rate; request it explicitly for this test.
++    auto layer = kLayer;
++    layer.vote = RefreshRateSelector::LayerVoteType::Max;
++    mScheduler->setContentRequirements({layer});
++    ASSERT_EQ(mScheduler->getPacesetterDisplayId(), kDisplayId1);
++    ASSERT_EQ(mScheduler->getPreferredDisplayMode(), kDisplay1Mode120_120);
++
++    EXPECT_CALL(mSchedulerCallback,
++                requestDisplayModes(UnorderedElementsAre(
++                        Field(&DisplayModeRequest::mode, kDisplay1Mode120_120))))
++            .Times(1);
++    FTL_FAKE_GUARD(kMainThreadContext, mScheduler->reapplyDisplayModes());
++}
++
+ TEST_F(SchedulerTest, chooseRefreshRateForContentFollowerModeChangeRequest) {
+     SET_FLAG_FOR_TEST(flags::follower_arbitrary_refresh_rate_selection, true);
+     SET_FLAG_FOR_TEST(flags::follower_arbitrary_refresh_rate_selection_platform, true);
+diff --git a/services/surfaceflinger/tests/unittests/SurfaceFlinger_DisplayTransactionCommitTest.cpp b/services/surfaceflinger/tests/unittests/SurfaceFlinger_DisplayTransactionCommitTest.cpp
+index 11a4929..b9d22a5 100644
+--- a/services/surfaceflinger/tests/unittests/SurfaceFlinger_DisplayTransactionCommitTest.cpp
++++ b/services/surfaceflinger/tests/unittests/SurfaceFlinger_DisplayTransactionCommitTest.cpp
+@@ -106,16 +106,12 @@ void DisplayTransactionCommitTest::verifyDisplayIsConnected(const sp<IBinder>& d
+     ASSERT_TRUE(hasDisplayDevice(displayToken));
+     const auto& display = getDisplayDevice(displayToken);
+ 
+-    // Physical external displays start non-secure when HDCP support is enabled, and only become
+-    // secure later after HDCP negotiation succeeds. Pixel devices set debug.sf.hdcp_support=1.
+-    // When DisplayModeController::supportsHdcp() is true, DisplayModeController::registerDisplay()
+-    // sets external displays to non-secure initially. They become secure later via
+-    // SurfaceFlinger::updateHdcpLevels() once HDCP negotiation reports connectedLevel >= HDCP_V1.
+-    // Doesn't seem straightforward to mock negotiations here.
++    // Physical external displays start non-secure in processHotplugConnect and
++    // DisplayModeController::registerDisplay. They become secure only after
++    // onComposerHalHdcpLevelsChanged reports connectedLevel >= HDCP_V1.
+     const auto connectionType = Case::Display::CONNECTION_TYPE::value;
+     const bool hdcpExternalConnection = connectionType &&
+-            *connectionType == ui::DisplayConnectionType::External &&
+-            mFlinger.mutableDisplayModeController().supportsHdcp();
++            *connectionType == ui::DisplayConnectionType::External;
+     if (hdcpExternalConnection) {
+         EXPECT_EQ(false, display.isSecure());
+     } else {
+diff --git a/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h b/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h
+index d842716..b149614 100644
+--- a/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h
++++ b/services/surfaceflinger/tests/unittests/TestableSurfaceFlinger.h
+@@ -385,9 +385,11 @@ public:
+ 
+     auto acquireVirtualDisplay(ui::Size resolution, ui::PixelFormat format,
+                                const std::string& uniqueId,
+-                               compositionengine::DisplayCreationArgsBuilder& builder) {
++                               compositionengine::DisplayCreationArgsBuilder& builder,
++                               bool canAllocateHwcForVDS = true) {
+         ftl::FakeGuard guard(mFlinger->mStateLock);
+-        return mFlinger->acquireVirtualDisplay(resolution, format, uniqueId, builder);
++        return mFlinger->acquireVirtualDisplay(resolution, format, uniqueId, builder,
++                                               canAllocateHwcForVDS);
+     }
+ 
+     auto destroyVirtualDisplay(const sp<IBinder>& displayToken) {

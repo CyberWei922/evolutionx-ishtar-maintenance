@@ -1,0 +1,1 @@
+package android.os; public class Message { public int what,arg1; public Object obj; public java.util.function.Consumer<Message> onSend; public int sent; public void sendToTarget() {sent++; if(onSend!=null)onSend.accept(this);} }

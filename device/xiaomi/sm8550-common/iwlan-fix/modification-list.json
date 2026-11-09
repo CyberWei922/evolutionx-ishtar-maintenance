@@ -1,0 +1,142 @@
+{
+  "schema": "iwlan-fix288-change-list/v1",
+  "changed_original_methods": [
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy$1;->handleMessage[Landroid/os/Message;]V",
+      "before": "26a571441a51b817a27e8e927a993bf1d1ffba542435da61c4653df6c2572765",
+      "after": "df8c42c891b65cb4e891d343e434931530c39ae9dd14453788fffe0bad1294c7"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->acquireWakeLock[Lvendor/qti/iwlan/IWlanRequest;, I]V",
+      "before": "75f5260f7b6456eaaabda94e5eb546a5121ddb4d72feb25b2b6430973f9e34b0",
+      "after": "5e8ff6048a0dc0b31f664ac40ff1426e2d5a69af164ecd118b41826732fb0794"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->clearWakeLock[I]Z",
+      "before": "bfcbfbdbdeda3ea0da2f67c9fcca3a031cc97a4239e0c1619d61c43912d6a7dd",
+      "after": "98a818a880db6453c60f6e71390611a54d0cc1e966caeffbe6dbc1930e7f92c6"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->findAndRemoveRequestFromList[I]Lvendor/qti/iwlan/IWlanRequest;",
+      "before": "fe85e56f3a1f119daf8c2c60fea72db02b0eab9c480d4e620df3a609eb03a61d",
+      "after": "012f57f70367b582ec563d3e4009ba9ef9d6b798f24466436ad26132fe4f8b5f"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->obtainRequest[I, Landroid/os/Message;]Lvendor/qti/iwlan/IWlanRequest;",
+      "before": "8369d1efc3b53f09be6fd39260cb1897c8c8e18bec7c8602a0f5140c018ed486",
+      "after": "93747b33591a90605d2022f9f5f980c154ea63e17be63052c56267f8a910e7b1"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->resetProxyAndRequestList[]V",
+      "before": "6389d5869e3d15c777bbb7a7722fa9fd11f89d77bf3223ccf72f16027b0cb449",
+      "after": "6708222752889dfe64586c175355cae15d7e13cd95b5ee56a362eff68aacbcfc"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->deactivateDataCall[I, I, Landroid/os/Message;]V",
+      "before": "a68dc133aa31e747b090e30ab833173d13951be6795a6815f28db99a787c9f2d",
+      "after": "d1cf85989bcc8d2eb12853d4de51c1ad4b6adfe71a5192494386e5649ead3c57"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->decrementWakeLock[Lvendor/qti/iwlan/IWlanRequest;]V",
+      "before": "a80bc55325d9ab1a935e395d5269a957f978901fe67ed3f3c404f6cc1fb88b7f",
+      "after": "bdd662b8e184d677be96c22b4c38b62a83ea590983c957a80c993152e666eedf"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->getAllQualifiedNetworks[Landroid/os/Message;]V",
+      "before": "0c97a27c430469bc380a628bb79c3daec9503aeecebb4df3a8acce6ec99ed178",
+      "after": "25d30e32f0aeff1bfb749ce47145a13037ce99bd2274b1c0acdc275d300f952e"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->getDataRegistrationState[Landroid/os/Message;]V",
+      "before": "1f5dd3262e326fe2cd893a376bfbd7aa1d351a2dc1cd060008c02933595cdb5f",
+      "after": "2a79cff86f3c620c5a9a71769630346a0decb85183135abe109acd760226c895"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->processRequestAck[I]V",
+      "before": "9c1ef2e331fab576b3af023e3e59ad9df15bca500e22c85d142284cb920767e1",
+      "after": "3858bc22a478283ecf9ae75a609123ee138367b506f9abfca751bfe9310143e7"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->processResponse[Lvendor/qti/hardware/data/iwlan/V1_0/IWlanResponseInfo;, Z, Ljava/lang/String;]Lvendor/qti/iwlan/IWlanRequest;",
+      "before": "7aa9f473e90297d84cc52d8cfc917b6d3428a53a9691584435957c660f0e7bc9",
+      "after": "ec18f81791155baea1d86cbbd2f49b264d4ef75dafeea1bd0fd3cccc30344480"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->requestDataCallList[Landroid/os/Message;]V",
+      "before": "e49a7ae67bf28ac3658b09dafd9c4e815284e5e919809954c1cf8c7f7f79c4ee",
+      "after": "99421a99c62fdbfac634a9b0d7dd82f3e1af5265b696fac4e95ec7e6807c445f"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->setupDataCall[Landroid/telephony/data/DataProfile;, Z, Z, I, Landroid/net/LinkProperties;, Landroid/os/Message;]V",
+      "before": "25016627511441dc112ab509c99f94033a4e4d40a68b52c332cde42642fb678b",
+      "after": "17473752a7129f289ece29939935201464f1f72246e47fb1fff7edede667f14f"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanProxy;->setupDataCall_1_1[Landroid/telephony/data/DataProfile;, Z, Z, I, Landroid/net/LinkProperties;, Landroid/telephony/data/TrafficDescriptor;, Z, Landroid/os/Message;]V",
+      "before": "cbb7b738e7f4ce568bcce6227589f6926bc8d7e26d16ae2311a41eee72bdd34a",
+      "after": "96e480ab5e3e4d907494167a7f6329a77a270c1746899d9e90d9303935b9e081"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanResponse;->responseDataCallList[Lvendor/qti/hardware/data/iwlan/V1_0/IWlanResponseInfo;, Ljava/util/ArrayList;]V",
+      "before": "27929b3c247463aa5c30a2d86959cb72bde8cf28418eeb3dc65bf6e4238b8c0d",
+      "after": "51701e101b7f73643067504369d12f830d20760558f3c77507864102193245b5"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanResponse;->responseDataRegistrationState[Lvendor/qti/hardware/data/iwlan/V1_0/IWlanResponseInfo;, Lvendor/qti/hardware/data/iwlan/V1_0/IWlanDataRegStateResult;]V",
+      "before": "f1786591a1b8919b6ce0db43b5716d5fed67c8d991a228deac8ed5f457962e21",
+      "after": "169f482ba4e074ea335182d7d2c5c3a3631d410af0f473cfa0f4fb1a5fda67c4"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanResponse;->responseQualifiedNetworksChanged[Lvendor/qti/hardware/data/iwlan/V1_0/IWlanResponseInfo;, Ljava/util/ArrayList;]V",
+      "before": "c2a84aaea5784e436d6a0ead2616f75c5de735ba1d5ce0b34927a40a66579fe4",
+      "after": "bd192933a0d041b7254d7e04ce84dc6f4583890d1542ecd42cb2531ed995fd3e"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanResponse;->responseSetupDataCall[Lvendor/qti/hardware/data/iwlan/V1_0/IWlanResponseInfo;, Landroid/hardware/radio/V1_6/SetupDataCallResult;]V",
+      "before": "98d1fddf8d0ac259e50a699ed3dc85777948ce91cc4c587779a271bc5d078c7c",
+      "after": "c915b74d101ad5bf9d4376c1ac4f47d662985f64aeb383f120d2276128ecd84e"
+    },
+    {
+      "method": "Lvendor/qti/iwlan/IWlanResponse;->responseVoid[Lvendor/qti/hardware/data/iwlan/V1_0/IWlanResponseInfo;, Ljava/lang/String;]V",
+      "before": "c039f833ee95455d24bb909dfbb3cf76cb5f83ec932282ffb7bbf1c449e5f11a",
+      "after": "5d1606251d2a20ff9e840b726b978d30c7b2e242732249c9d20e71346994f1a2"
+    }
+  ],
+  "added_fields": [
+    {
+      "class": "vendor.qti.iwlan.IWlanProxy",
+      "field": "mLeaseState",
+      "type": "IWlanWakeLockFix.State",
+      "flags": "volatile/package-private"
+    }
+  ],
+  "added_original_class_methods": 0,
+  "added_helper_classes": 6,
+  "original_classes": 498,
+  "unrelated_methods_symbolic_code_unchanged": 7585,
+  "original_getService_and_HIDL_wire_invocations": "unchanged original instructions; no internal lock across calls",
+  "exception_scope": "Six sends: original handlers first failRequest; preparation after successful obtain covered by added catch-all that cleans and rethrows; final helper finally covers ACK plus dispatch",
+  "counter_type_correction": "Original mWlSequenceNum/mRespWlSequenceNum are volatile; TOCTOU requires common lock regardless of volatility",
+  "apk_members": {
+    "non_dex_content_bytes_unchanged": [
+      {
+        "name": "AndroidManifest.xml",
+        "sha256": "581d1cfa12eb268bad6d4056042481febb81a509fd2b6168701dc5cbb958bc0c"
+      },
+      {
+        "name": "resources.arsc",
+        "sha256": "1fa3cb291285348ec1b33c85e7317d989467707f4791c4e5302f2d312d1e18c8"
+      }
+    ],
+    "removed_old_signature_members": [
+      "META-INF/CERT.RSA",
+      "META-INF/CERT.SF",
+      "META-INF/MANIFEST.MF"
+    ],
+    "added_dex_members": [
+      "classes2.dex"
+    ]
+  },
+  "integration_boundary": "No WFC/retry/transport/property change; original service/reset in-flight RPC window retained, late completions are idempotent",
+  "artifact_sha256": "c66f190fd4aa8f010a8f7d03a157e57bd5d379b125e24d1b4282d987a5047a68"
+}
