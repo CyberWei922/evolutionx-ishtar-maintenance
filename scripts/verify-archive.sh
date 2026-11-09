@@ -67,8 +67,8 @@ if find . -type l -print -quit | grep -q .; then
     fail "symlinks are not allowed"
 fi
 
-if find . -mindepth 1 -name .git -print -quit | grep -q .; then
-    find . -mindepth 1 -name .git -print >&2
+if find . -mindepth 1 -name .git ! -path './.git' -print -quit | grep -q .; then
+    find . -mindepth 1 -name .git ! -path './.git' -print >&2
     fail "nested .git entries are not allowed"
 fi
 

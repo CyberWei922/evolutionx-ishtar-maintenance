@@ -6263,7 +6263,7 @@ cc3824e9541b6517e2bf97cf0cf38871fc2167033479dd667d1704ccebeef521  ./provenance/r
 14c906470d350d47d1d3a8fa0c871e0de42efd8817efc080616e3713f00a7a90  ./provenance/source-inputs305.json
 082e20afec056f10ccfa5f56c89f970ea421f67fc30af21c1af9bd463364cd6c  ./releases/305.json
 00f79fc988ce4352c18cee2471c7dd2f991966b83127ea71ce50b36492bf988f  ./scripts/apply.sh
-f75f15a4dda54a138834b4d69115b0c347319abb6ef3a23f675219317f7ee214  ./scripts/verify-archive.sh
+7545168d510507d884bca4bf2de7dfa00d09fa298163a42f9442af6d160710ff  ./scripts/verify-archive.sh
 cbe4b534d467707e1e20929fbec2b559c113d631974e0a3d3c7115becb14fc21  ./vendor/xiaomi/ishtar-camera-platform/Android.bp
 8a999b335e48d2b0f945c0b17f9f64c5cb1a29014074aaba24c9c2879f3687ac  ./vendor/xiaomi/ishtar-camera-platform/README.md
 82a9bb6a9365f30e6eea160719653a62724427b5bb7d5e8391c1ca5ac5379ff8  ./vendor/xiaomi/ishtar-camera/Android.bp
